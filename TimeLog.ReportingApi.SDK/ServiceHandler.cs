@@ -48,12 +48,12 @@
         /// <summary>
         /// Gets the user associated with the reporting service
         /// </summary>
-        public string User { get; private set; }
+        public string ApiId { get; private set; }
 
         /// <summary>
         /// Gets the password associated with the reporting service
         /// </summary>
-        public string Password { get; private set; }
+        public string ApiPassword { get; private set; }
 
         /// <summary>
         /// Gets the client associated with the reporting service
@@ -90,8 +90,8 @@
         public bool TryAuthenticate()
         {
             string siteCode = ConfigurationManager.AppSettings["TimeLogProjectReportingSiteCode"];
-            string user = ConfigurationManager.AppSettings["TimeLogProjectReportingUser"];
-            string password = ConfigurationManager.AppSettings["TimeLogProjectReportingPassword"];
+            string user = ConfigurationManager.AppSettings["TimeLogProjectReportingApiId"];
+            string password = ConfigurationManager.AppSettings["TimeLogProjectReportingApiPassword"];
 
             if (string.IsNullOrWhiteSpace(siteCode))
             {
@@ -100,12 +100,12 @@
 
             if (string.IsNullOrWhiteSpace(user))
             {
-                throw new ArgumentException("The AppSetting \"TimeLogProjectReportingUser\" is missing");
+                throw new ArgumentException("The AppSetting \"TimeLogProjectReportingApiId\" is missing");
             }
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                throw new ArgumentException("The AppSetting \"TimeLogProjectReportingPassword\" is missing");
+                throw new ArgumentException("The AppSetting \"TimeLogProjectReportingApiPassword\" is missing");
             }
 
             return TryAuthenticate(siteCode, user, password);
@@ -116,21 +116,21 @@
         /// </summary>
         /// <param name="siteCode">Site code part of the credentials to authenticate with</param>
         /// <param name="user">Username part of the credentials to authenticate with</param>
-        /// <param name="password">Password part of the credentials to authenticate with</param>
+        /// <param name="password">ApiPassword part of the credentials to authenticate with</param>
         /// <returns>A value indicating whether the authentication is successful</returns>
         public bool TryAuthenticate(string siteCode, string user, string password)
         {
-            if (this.client.ValidateCredentials(siteCode, user, password))
+            if (this.Client.ValidateCredentials(siteCode, user, password))
             {
                 SiteCode = siteCode;
-                User = user;
-                Password = password;
+                this.ApiId = user;
+                this.ApiPassword = password;
                 return true;
             }
 
             SiteCode = string.Empty;
-            User = string.Empty;
-            Password = string.Empty;
+            this.ApiId = string.Empty;
+            this.ApiPassword = string.Empty;
             return false;
         }
 

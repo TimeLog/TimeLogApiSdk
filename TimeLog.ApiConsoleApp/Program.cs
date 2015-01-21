@@ -26,38 +26,67 @@
                     Logger.Info("Running application");
                 }
 
+                if (ReportingApi.SDK.ServiceHandler.Instance.TryAuthenticate())
+                {
+                    var customersRaw = ReportingApi.SDK.ServiceHandler.Instance.Client.GetCustomersShortList(
+                        ReportingApi.SDK.ServiceHandler.Instance.SiteCode,
+                        ReportingApi.SDK.ServiceHandler.Instance.ApiId,
+                        ReportingApi.SDK.ServiceHandler.Instance.ApiPassword,
+                        ReportingApi.SDK.CustomerStatus.All,
+                        ReportingApi.SDK.AccountManager.All);
+
+                    Logger.Debug(customersRaw.OuterXml);
+                }
+                else
+                {
+                    if (Logger.IsWarnEnabled)
+                    {
+                        Logger.Warn("Failed to authenticate to reporting API");
+                    }
+                }
+
                 IEnumerable<string> messages;
-                SecurityHandler.Instance.TryAuthenticate(out messages);
+                if (SecurityHandler.Instance.TryAuthenticate(out messages))
+                {
 
-                const string ProjectTemplate = "standard skabelon";
-                string projectName = string.Empty;
-                string projectNo = string.Empty;
-                string customerName = string.Empty;
-                Guid priceListId = Guid.Empty;
-                Guid priceGroupId = Guid.Empty;
-                string projectManagerInitials = string.Empty;
-                string accountManagerInitials = string.Empty;
-                string handledByDepartmentNo = string.Empty;
-                string orderedByDepartmentNo = string.Empty;
+                }
+                else
+                {
+                    if (Logger.IsWarnEnabled)
+                    {
+                        Logger.Warn("Failed to authenticate to transactional API");
+                    }
+                }
 
-                ProjectManagementHandler.Instance.ProjectManagementClient.CreateProjectFromTemplate(
-                    ProjectTemplate,
-                    projectName,
-                    projectNo,
-                    customerName,
-                    priceListId,
-                    priceGroupId,
-                    projectManagerInitials,
-                    accountManagerInitials,
-                    handledByDepartmentNo,
-                    orderedByDepartmentNo,
-                    true,
-                    true,
-                    true,
-                    false,
-                    false,
-                    99,
-                    ProjectManagementHandler.Instance.Token);
+                //const string ProjectTemplate = "standard skabelon";
+                //string projectName = string.Empty;
+                //string projectNo = string.Empty;
+                //string customerName = string.Empty;
+                //Guid priceListId = Guid.Empty;
+                //Guid priceGroupId = Guid.Empty;
+                //string projectManagerInitials = string.Empty;
+                //string accountManagerInitials = string.Empty;
+                //string handledByDepartmentNo = string.Empty;
+                //string orderedByDepartmentNo = string.Empty;
+
+                //ProjectManagementHandler.Instance.ProjectManagementClient.CreateProjectFromTemplate(
+                //    ProjectTemplate,
+                //    projectName,
+                //    projectNo,
+                //    customerName,
+                //    priceListId,
+                //    priceGroupId,
+                //    projectManagerInitials,
+                //    accountManagerInitials,
+                //    handledByDepartmentNo,
+                //    orderedByDepartmentNo,
+                //    true,
+                //    true,
+                //    true,
+                //    false,
+                //    false,
+                //    99,
+                //    ProjectManagementHandler.Instance.Token);
             }
             catch (Exception ex)
             {

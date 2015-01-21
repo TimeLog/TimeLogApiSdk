@@ -127,7 +127,7 @@ namespace TimeLog.TransactionalApi.SDK
         /// <returns>A value indicating whether the authentication is successful</returns>
         public bool TryAuthenticate(string username, string password, out IEnumerable<string> messages)
         {
-            var tokenResponse = this.securityClient.GetToken(username, password);
+            var tokenResponse = this.SecurityClient.GetToken(username, password);
             if (tokenResponse.ResponseState == SecurityService.ExecutionStatus.Success &&
                 tokenResponse.Return.Any())
             {

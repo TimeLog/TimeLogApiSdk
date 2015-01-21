@@ -55,6 +55,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TimeLog.ReportingApi.SDK\TimeLog.ReportingApi.SDK.csproj">
+      <Project>{bb65da9a-999b-4eeb-b236-3cb45140c7b7}</Project>
+      <Name>TimeLog.ReportingApi.SDK</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TimeLog.TransactionalApi.SDK\TimeLog.TransactionalApi.SDK.csproj">
       <Project>{a1d54caf-4bcb-43fb-917c-4f392c76a0e4}</Project>
       <Name>TimeLog.TransactionalApi.SDK</Name>
