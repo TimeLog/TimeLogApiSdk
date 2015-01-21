@@ -1,4 +1,6 @@
-﻿namespace TimeLog.ApiConsoleApp
+﻿using System.Xml;
+
+namespace TimeLog.ApiConsoleApp
 {
     using System;
     using System.Collections.Generic;
@@ -16,8 +18,8 @@
 
         public static void Main(string[] args)
         {
-            BasicConfigurator.Configure();
             XmlConfigurator.Configure(new FileInfo(AppPath + "\\log4net.config"));
+            BasicConfigurator.Configure();
 
             try
             {
@@ -28,6 +30,11 @@
 
                 if (ReportingApi.SDK.ServiceHandler.Instance.TryAuthenticate())
                 {
+                    if (Logger.IsInfoEnabled)
+                    {
+                        Logger.Info("Sucessfully authenticated on reporting API");
+                    }
+
                     var customersRaw = ReportingApi.SDK.ServiceHandler.Instance.Client.GetCustomersShortList(
                         ReportingApi.SDK.ServiceHandler.Instance.SiteCode,
                         ReportingApi.SDK.ServiceHandler.Instance.ApiId,
@@ -35,7 +42,24 @@
                         ReportingApi.SDK.CustomerStatus.All,
                         ReportingApi.SDK.AccountManager.All);
 
-                    Logger.Debug(customersRaw.OuterXml);
+                    if (customersRaw.OwnerDocument != null)
+                    {
+                        var namespaceManager = new XmlNamespaceManager(customersRaw.OwnerDocument.NameTable);
+                        namespaceManager.AddNamespace("tlp", "http://www.timelog.com/XML/Schema/tlp/v4_4");
+                        var customers = customersRaw.SelectNodes("tlp:Customer", namespaceManager);
+
+                        if (customers != null)
+                        {
+                            foreach (XmlNode customer in customers)
+                            {
+                                var customerName = customer.SelectSingleNode("tlp:Name", namespaceManager);
+                                if (customerName != null)
+                                {
+                                    Logger.Debug(customerName.InnerText);
+                                }
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -48,13 +72,17 @@
                 IEnumerable<string> messages;
                 if (SecurityHandler.Instance.TryAuthenticate(out messages))
                 {
-
+                    if (Logger.IsInfoEnabled)
+                    {
+                        Logger.Info("Sucessfully authenticated on transactional API");
+                    }
                 }
                 else
                 {
                     if (Logger.IsWarnEnabled)
                     {
                         Logger.Warn("Failed to authenticate to transactional API");
+                        Logger.Warn(string.Join(",", messages));
                     }
                 }
 

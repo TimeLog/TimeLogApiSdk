@@ -4,6 +4,16 @@
         <name>TimeLog.ReportingApi.SDK</name>
     </assembly>
     <members>
+        <member name="T:TimeLog.ReportingApi.SDK.AccountManager">
+            <summary>
+            Placeholder for account manager related constants
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.AccountManager.All">
+            <summary>
+            Gets the default parameter value for filtereing for all account managers
+            </summary>
+        </member>
         <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/> class from being created.
