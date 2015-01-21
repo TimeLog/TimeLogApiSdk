@@ -20,6 +20,8 @@ Also ensure that you enable all the methods you need in the system administratio
 
 It's encouraged to require SSL connections. This SDK will enforce it.
 
+Use the Deploy\TimeLog.ReportingApi.SDK.dll for scaffolding classes for initialization and authentication.
+
 ### TimeLog Project Transactional API
 
 Use the transactional API for transferring data to and from TimeLog Project to keep other systems in sync or automatically push updates to TimeLog Project.
@@ -29,3 +31,5 @@ For the transactional API you will need to use the credentials of a normal TimeL
 To activate and setup the transactional API, please go to "System administration" > "Integrations and API" > "API settings (WCF)".
 
 It's encouraged to require SSL connections. This SDK will enforce it.
+
+Use the Deploy\TimeLog.TransactionalApi.SDK.dll for scaffolding classes for initialization and authentication.

@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TimeLog.TransactionalApi.SDK</name>
+    </assembly>
+    <members>
+        <member name="M:TimeLog.TransactionalApi.SDK.CrmHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.CrmHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.CrmHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.TransactionalApi.SDK.CrmHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.CrmHandler.CrmServiceUrl">
+            <summary>
+            Gets the uri associated with the CRM service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.CrmHandler.Token">
+            <summary>
+            Gets the CRM token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.ProjectManagementHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.ProjectManagementHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ProjectManagementHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.TransactionalApi.SDK.ProjectManagementHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ProjectManagementHandler.ProjectManagementServiceUrl">
+            <summary>
+            Gets the uri associated with the project management service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ProjectManagementHandler.Token">
+            <summary>
+            Gets the project management token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.SecurityHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.TryAuthenticate(System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary>
+            Executes an authentication request to the API using the application settings
+            TimeLogProjectUsername and TimeLogProjectPassword. If successful the token is
+            set to the Token property.
+            </summary>
+            <remarks>
+            Make sure to set the application setting TimeLogProjectUri.
+            </remarks>
+            <param name="messages">Outputs the messages returned from the API</param>
+            <returns>A value indicating whether the authentication is succesful</returns>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.TryAuthenticate(System.String,System.String,System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary>
+            Executes an authentication request to the API using the parameters. If successful
+            the token is set to the Token property.
+            </summary>
+            <param name="username">Username part of the credentials to authenticate with</param>
+            <param name="password">Password part of the credentials to authenticate with</param>
+            <param name="messages">Outputs the messages returned from the API</param>
+            <returns>A value indicating whether the authentication is successful</returns>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.Dispose">
+            <summary>
+            Disposes the handler.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SecurityHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.TransactionalApi.SDK.SecurityHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SecurityHandler.SecurityServiceUrl">
+            <summary>
+            Gets the uri associated with the security service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SecurityHandler.SecurityClient">
+            <summary>
+            Gets the client associated with the security service
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SecurityHandler.Token">
+            <summary>
+            Gets the security token for use in other methods. Make sure to call TryAuthenticate 
+            before trying to access this property.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.SettingsHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.SettingsHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.Instance">
+            <summary>
+            Gets the singleton instance of the SettingsHandler.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.Url">
+            <summary>
+            Gets the base uri for the TimeLog Project site read from the
+            application setting TimeLogProjectUri.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.MaxReceivedMessageSize">
+            <summary>
+            Gets the default max received message size for all calls to the TimeLog Project API.
+            Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
+            </summary>
+        </member>
+    </members>
+</doc>

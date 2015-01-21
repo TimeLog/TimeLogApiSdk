@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TimeLog.ReportingApi.SDK</name>
+    </assembly>
+    <members>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate">
+            <summary>
+            Executes an authentication request to the API using the application settings
+            TimeLogProjectReportingSiteCode, TimeLogProjectReportingUser and TimeLogProjectReportingPassword.
+            </summary>
+            <remarks>
+            Make sure to set the application setting TimeLogProjectUri.
+            </remarks>
+            <returns>A value indicating whether the authentication is successful</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate(System.String,System.String,System.String)">
+            <summary>
+            Executes an authentication request to the API using the parameters.
+            </summary>
+            <param name="siteCode">Site code part of the credentials to authenticate with</param>
+            <param name="user">Username part of the credentials to authenticate with</param>
+            <param name="password">ApiPassword part of the credentials to authenticate with</param>
+            <returns>A value indicating whether the authentication is successful</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.Dispose">
+            <summary>
+            Disposes the handler.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ServiceUrl">
+            <summary>
+            Gets the uri associated with the reporting service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.SiteCode">
+            <summary>
+            Gets the sitecode associated with the reporting service
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ApiId">
+            <summary>
+            Gets the user associated with the reporting service
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ApiPassword">
+            <summary>
+            Gets the password associated with the reporting service
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Client">
+            <summary>
+            Gets the client associated with the reporting service
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.SettingsHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.SettingsHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.Instance">
+            <summary>
+            Gets the singleton instance of the SettingsHandler.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.Url">
+            <summary>
+            Gets the base uri for the TimeLog Project site read from the
+            application setting TimeLogProjectUri.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.MaxReceivedMessageSize">
+            <summary>
+            Gets the default max received message size for all calls to the TimeLog Project API.
+            Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
+            </summary>
+        </member>
+    </members>
+</doc>
