@@ -91,7 +91,7 @@ namespace TimeLog.TransactionalApi.SDK
 
         /// <summary>
         /// Executes an authentication request to the API using the application settings
-        /// TimeLogProjectUsername and TimeLogProjectPassword. If successful the token is
+        /// TimeLogProjectTransactionalUsername and TimeLogProjectTransactionalPassword. If successful the token is
         /// set to the Token property.
         /// </summary>
         /// <remarks>
@@ -101,17 +101,17 @@ namespace TimeLog.TransactionalApi.SDK
         /// <returns>A value indicating whether the authentication is succesful</returns>
         public bool TryAuthenticate(out IEnumerable<string> messages)
         {
-            string username = ConfigurationManager.AppSettings["TimeLogProjectUsername"];
-            string password = ConfigurationManager.AppSettings["TimeLogProjectPassword"];
+            string username = ConfigurationManager.AppSettings["TimeLogProjectTransactionalUsername"];
+            string password = ConfigurationManager.AppSettings["TimeLogProjectTransactionalPassword"];
 
             if (string.IsNullOrWhiteSpace(username))
             {
-                throw new ArgumentException("The AppSetting \"TimeLogProjectUsername\" is missing");
+                throw new ArgumentException("The AppSetting \"TimeLogProjectTransactionalUsername\" is missing");
             }
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                throw new ArgumentException("The AppSetting \"TimeLogProjectPassword\" is missing");
+                throw new ArgumentException("The AppSetting \"TimeLogProjectTransactionalPassword\" is missing");
             }
 
             return TryAuthenticate(username, password, out messages);

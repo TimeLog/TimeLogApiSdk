@@ -68,7 +68,7 @@
                     return result;
                 }
 
-                return 1024000;
+                return 4096000;
             }
         }
 

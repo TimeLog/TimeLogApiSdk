@@ -52,7 +52,7 @@
         <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.TryAuthenticate(System.Collections.Generic.IEnumerable{System.String}@)">
             <summary>
             Executes an authentication request to the API using the application settings
-            TimeLogProjectUsername and TimeLogProjectPassword. If successful the token is
+            TimeLogProjectTransactionalUsername and TimeLogProjectTransactionalPassword. If successful the token is
             set to the Token property.
             </summary>
             <remarks>
