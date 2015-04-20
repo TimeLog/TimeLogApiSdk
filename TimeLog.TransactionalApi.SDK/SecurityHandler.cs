@@ -7,18 +7,25 @@ namespace TimeLog.TransactionalApi.SDK
     using System.Linq;
     using System.ServiceModel;
 
+    /// <summary>
+    /// Security handler class for transactional API calls
+    /// </summary>
     public class SecurityHandler : IDisposable
     {
-        private static SecurityHandler instance;
-        private SecurityService.SecurityServiceClient securityClient;
+        private static SecurityHandler _instance;
+        
+        private SecurityService.SecurityServiceClient _securityClient;
 
-        private SecurityService.SecurityToken token;
+        private SecurityService.SecurityToken _token;
+
+        private readonly Dictionary<string, SecurityService.SecurityToken> _cachedTokens;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="SecurityHandler"/> class from being created.
         /// </summary>
         private SecurityHandler()
         {
+            _cachedTokens = new Dictionary<string, SecurityService.SecurityToken>();
         }
 
         /// <summary>
@@ -28,7 +35,7 @@ namespace TimeLog.TransactionalApi.SDK
         {
             get
             {
-                return instance ?? (instance = new SecurityHandler());
+                return _instance ?? (_instance = new SecurityHandler());
             }
         }
 
@@ -55,7 +62,7 @@ namespace TimeLog.TransactionalApi.SDK
         {
             get
             {
-                if (securityClient == null)
+                if (_securityClient == null)
                 {
                     var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
                     var endpoint = new EndpointAddress(SecurityServiceUrl);
@@ -65,10 +72,10 @@ namespace TimeLog.TransactionalApi.SDK
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    securityClient = new SecurityService.SecurityServiceClient(binding, endpoint);
+                    _securityClient = new SecurityService.SecurityServiceClient(binding, endpoint);
                 }
 
-                return securityClient;
+                return _securityClient;
             }
         }
 
@@ -80,12 +87,12 @@ namespace TimeLog.TransactionalApi.SDK
         {
             get
             {
-                if (this.token == null)
+                if (_token == null)
                 {
                     throw new Exception("Please authenticate using the \"SecurityHandler.Instance.TryAuthenticate\" method before use");
                 }
 
-                return this.token;
+                return _token;
             }
         }
 
@@ -127,11 +134,29 @@ namespace TimeLog.TransactionalApi.SDK
         /// <returns>A value indicating whether the authentication is successful</returns>
         public bool TryAuthenticate(string username, string password, out IEnumerable<string> messages)
         {
-            var tokenResponse = this.SecurityClient.GetToken(username, password);
+            // Reuse the token if we already have it in the cache
+            if (_cachedTokens.ContainsKey(username))
+            {
+                _token = _cachedTokens[username];
+
+                // Check if the token has expired - leave a minute to other code to run
+                if (_token.Expires > DateTime.Now.AddMinutes(1))
+                {
+                    messages = new List<string>();
+                    return true;
+                }
+                
+                _cachedTokens.Remove(username);
+            }
+
+            var tokenResponse = SecurityClient.GetToken(username, password);
             if (tokenResponse.ResponseState == SecurityService.ExecutionStatus.Success &&
                 tokenResponse.Return.Any())
             {
-                this.token = tokenResponse.Return[0];
+                _token = tokenResponse.Return[0];
+
+                _cachedTokens.Add(username, _token);
+
                 messages = new List<string>();
                 return true;
             }
@@ -145,9 +170,9 @@ namespace TimeLog.TransactionalApi.SDK
         /// </summary>
         public void Dispose()
         {
-            this.securityClient = null;
-            this.token = null;
-            instance = null;
+            _securityClient = null;
+            _token = null;
+            _instance = null;
         }
     }
 }

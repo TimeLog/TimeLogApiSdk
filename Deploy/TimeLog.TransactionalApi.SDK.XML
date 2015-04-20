@@ -44,6 +44,11 @@
             Gets the project management token for use in other methods. Makes use of SecurityHandler.Instance.Token.
             </summary>
         </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.SecurityHandler">
+            <summary>
+            Security handler class for transactional API calls
+            </summary>
+        </member>
         <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.SecurityHandler"/> class from being created.
