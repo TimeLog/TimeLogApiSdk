@@ -1,10 +1,11 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using log4net;
-
-namespace TimeLog.ApiConsoleApp
+﻿namespace TimeLog.ApiConsoleApp
 {
+    using System;
+    using System.IO;
+    using System.Reflection;
+
+    using log4net;
+
     /// <summary>
     /// Template class for consuming a csv file
     /// </summary>
@@ -23,12 +24,14 @@ namespace TimeLog.ApiConsoleApp
                 {
                     if (Logger.IsDebugEnabled)
                     {
-                        Logger.DebugFormat("Found project \"{0}\" for customer \"{1}\" with period {2} to {3} with a budget of {4} hours",
+                        Logger.DebugFormat(
+                            "Found project \"{0}\" for customer \"{1}\" with period {2} to {3} with a budget of {4} hours ({5})",
                             csvReader.GetString("ProjectName"),
                             csvReader.GetString("CustomerName"),
                             csvReader.GetDateTime("StartDate").ToString("r"),
                             csvReader.GetDateTime("EndDate").ToString("r"),
-                            csvReader.GetDouble("BudgetHours"));
+                            csvReader.GetDouble("BudgetHours"),
+                            csvReader.GetString("Comment"));
                     }
                 }
             }

@@ -1,4 +1,4 @@
-﻿ProjectName,CustomerName,ProjectManager,ProjectTemplate,StartDate,EndDate,BudgetHours
-"My test project","TimeLog A/S",sox,"Standard TM project","2015-01-01","2015-06-01",123.34
-"My super project","LEGO A/S",sox,"Standard TM project","2015-01-01","2015-06-01",321.00
-"My internal project","TimeLog A/S",sox,"Standard TM project","2015-01-01","2015-12-31",948.23
+﻿ProjectName,CustomerName,ProjectManager,ProjectTemplate,StartDate,EndDate,BudgetHours,Comment
+"My test project","TimeLog A/S",sox,"Standard TM project","2015-01-01","2015-06-01",123.34,Test comment
+"My super project","LEGO A/S",sox,"Standard TM project","2015-01-01","2015-06-01",321.00,
+"My internal project","TimeLog A/S",sox,"Standard TM project","2015-01-01","2015-12-31",948.23,Nothing

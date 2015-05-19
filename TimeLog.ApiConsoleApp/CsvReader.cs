@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Text;
-
-namespace TimeLog.ApiConsoleApp
+﻿namespace TimeLog.ApiConsoleApp
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.IO;
+    using System.Text;
+
     /// <summary>
     /// Reads from a CSV file
     /// </summary>
@@ -19,6 +19,66 @@ namespace TimeLog.ApiConsoleApp
     /// </remarks>
     public class CsvReader
     {
+        /// <summary>
+        /// Initializes a new instance of the CsvReader class with all settings for default.
+        /// </summary>
+        /// <remarks>Default: Headers, European file encoding (1252) and comma as splitter</remarks>
+        /// <param name="csvFilePath">The full path of the CSV file to read</param>
+        public CsvReader(string csvFilePath)
+            : this(csvFilePath, true)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the CsvReader class with optional headers
+        /// </summary>
+        /// <param name="csvFilePath">The full path of the CSV file to read</param>
+        /// <param name="hasHeaders">Indication if the file has headers</param>
+        public CsvReader(string csvFilePath, bool hasHeaders)
+            : this(csvFilePath, hasHeaders, Encoding.GetEncoding(1252), new CultureInfo("en-US"))
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the CsvReader class with optional headers
+        /// </summary>
+        /// <param name="csvFilePath">The full path of the CSV file to read</param>
+        /// <param name="hasHeaders">
+        /// Indication if the file has headers
+        /// </param>
+        /// <param name="encoding">
+        /// Specific file encoding format
+        /// </param>
+        /// <param name="culture">
+        /// Culture for detecting integers, double, dates etc.
+        /// </param>
+        public CsvReader(string csvFilePath, bool hasHeaders, Encoding encoding, CultureInfo culture)
+        {
+            this.Culture = culture;
+            this.Splitter = ',';
+            this.HasHeaders = hasHeaders;
+            this.Encoding = encoding;
+            this.CsvFile = new FileInfo(csvFilePath);
+            this.Reset();
+
+            if (!this.CsvFile.Exists)
+            {
+                throw new ArgumentException("CSV file path not found (" + csvFilePath + ")");
+            }
+
+            if (this.CsvFile.Length == 0)
+            {
+                throw new ArgumentException("CSV file empty (" + csvFilePath + ")");
+            }
+
+            this.Lines = File.ReadAllLines(this.CsvFile.FullName, this.Encoding);
+
+            if (hasHeaders)
+            {
+                this.Columns = this.Split(this.Lines[0]);
+            }
+        }
+
         /// <summary>
         /// Gets the culture for detecting values
         /// </summary>
@@ -65,60 +125,6 @@ namespace TimeLog.ApiConsoleApp
         public char Splitter { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the CsvReader class with all settings for default.
-        /// </summary>
-        /// <remarks>Default: Headers, European file encoding (1252) and comma as splitter</remarks>
-        /// <param name="csvFilePath">The full path of the CSV file to read</param>
-        public CsvReader(string csvFilePath)
-            : this(csvFilePath, true)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the CsvReader class with optional headers
-        /// </summary>
-        /// <param name="csvFilePath">The full path of the CSV file to read</param>
-        /// <param name="hasHeaders">Indication if the file has headers</param>
-        public CsvReader(string csvFilePath, bool hasHeaders)
-            : this(csvFilePath, hasHeaders, Encoding.GetEncoding(1252), new CultureInfo("en-US"))
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the CsvReader class with optional headers
-        /// </summary>
-        /// <param name="csvFilePath">The full path of the CSV file to read</param>
-        /// <param name="hasHeaders">Indication if the file has headers</param>
-        /// <param name="encoding">Specific file encoding format</param>
-        /// <param name="culture">Culture for detecting integers, double, dates etc.</param>
-        public CsvReader(string csvFilePath, bool hasHeaders, Encoding encoding, CultureInfo culture)
-        {
-            Culture = culture;
-            Splitter = ',';
-            HasHeaders = hasHeaders;
-            Encoding = encoding;
-            CsvFile = new FileInfo(csvFilePath);
-            Reset();
-
-            if (!CsvFile.Exists)
-            {
-                throw new ArgumentException("CSV file path not found (" + csvFilePath + ")");
-            }
-
-            if (CsvFile.Length == 0)
-            {
-                throw new ArgumentException("CSV file empty (" + csvFilePath + ")");
-            }
-
-            Lines = File.ReadAllLines(CsvFile.FullName, Encoding);
-
-            if (hasHeaders)
-            {
-                Columns = Split(Lines[0]);
-            }
-        }
-
-        /// <summary>
         /// Splits a string into an array based on the splitter char
         /// </summary>
         /// <param name="input">A full line with quotes and splitter chars</param>
@@ -128,6 +134,7 @@ namespace TimeLog.ApiConsoleApp
             bool hasQuote = false;
             var cells = new List<string>();
             var currentCell = string.Empty;
+            int counter = 1;
 
             foreach (char character in input)
             {
@@ -135,7 +142,7 @@ namespace TimeLog.ApiConsoleApp
                 {
                     hasQuote = !hasQuote;
                 }
-                else if (character == Splitter)
+                else if (character == this.Splitter)
                 {
                     if (hasQuote)
                     {
@@ -145,11 +152,18 @@ namespace TimeLog.ApiConsoleApp
 
                     cells.Add(currentCell);
                     currentCell = string.Empty;
+
+                    if (counter == input.Length)
+                    {
+                        cells.Add(currentCell);
+                    }
                 }
                 else
                 {
                     currentCell += character;
                 }
+
+                counter++;
             }
 
             if (!string.IsNullOrEmpty(currentCell))
@@ -166,13 +180,13 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>A boolean object</returns>
         public bool Read()
         {
-            if (LineIndex >= Lines.Length)
+            if (this.LineIndex >= this.Lines.Length)
             {
                 return false;
             }
 
-            CurrentLine = Split(Lines[LineIndex]);
-            LineIndex++;
+            this.CurrentLine = this.Split(this.Lines[this.LineIndex]);
+            this.LineIndex++;
             return true;
         }
 
@@ -183,12 +197,12 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>An string object</returns>
         public string GetString(int columnIndex)
         {
-            if (columnIndex > Columns.Length)
+            if (columnIndex > this.Columns.Length)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
             }
 
-            return CurrentLine[columnIndex];
+            return this.CurrentLine[columnIndex] ?? string.Empty;
         }
 
         /// <summary>
@@ -198,7 +212,7 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>An string object</returns>
         public string GetString(string columnName)
         {
-            return GetString(GetColumnIndex(columnName));
+            return this.GetString(this.GetColumnIndex(columnName));
         }
 
         /// <summary>
@@ -208,12 +222,12 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>An integer object</returns>
         public int GetInteger(int columnIndex)
         {
-            if (columnIndex > Columns.Length)
+            if (columnIndex > this.Columns.Length)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
             }
 
-            return int.Parse(CurrentLine[columnIndex], Culture);
+            return int.Parse(this.CurrentLine[columnIndex], this.Culture);
         }
 
         /// <summary>
@@ -223,7 +237,7 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>An integer object</returns>
         public int GetInteger(string columnName)
         {
-            return GetInteger(GetColumnIndex(columnName));
+            return this.GetInteger(this.GetColumnIndex(columnName));
         }
 
         /// <summary>
@@ -233,12 +247,12 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>An double object</returns>
         public double GetDouble(int columnIndex)
         {
-            if (columnIndex > Columns.Length)
+            if (columnIndex > this.Columns.Length)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
             }
 
-            return double.Parse(CurrentLine[columnIndex], Culture);
+            return double.Parse(this.CurrentLine[columnIndex], this.Culture);
         }
 
         /// <summary>
@@ -248,7 +262,7 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>An double object</returns>
         public double GetDouble(string columnName)
         {
-            return GetDouble(GetColumnIndex(columnName));
+            return this.GetDouble(this.GetColumnIndex(columnName));
         }
 
         /// <summary>
@@ -258,28 +272,28 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>A boolean object</returns>
         public bool GetBoolean(int columnIndex)
         {
-            if (columnIndex > Columns.Length)
+            if (columnIndex > this.Columns.Length)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
             }
 
             bool result;
-            if (bool.TryParse(CurrentLine[columnIndex], out result))
+            if (bool.TryParse(this.CurrentLine[columnIndex], out result))
             {
                 return result;
             }
 
-            if (CurrentLine[columnIndex] == "1")
+            if (this.CurrentLine[columnIndex] == "1")
             {
                 return true;
             }
             
-            if (CurrentLine[columnIndex] == "0")
+            if (this.CurrentLine[columnIndex] == "0")
             {
                 return false;
             }
 
-            throw new Exception("String format cannot be converted to boolean (" + CurrentLine[columnIndex] + ")");
+            throw new Exception("String format cannot be converted to boolean (" + this.CurrentLine[columnIndex] + ")");
         }
 
         /// <summary>
@@ -289,7 +303,7 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>A boolean object</returns>
         public bool GetBoolean(string columnName)
         {
-            return GetBoolean(GetColumnIndex(columnName));
+            return this.GetBoolean(this.GetColumnIndex(columnName));
         }
 
         /// <summary>
@@ -299,12 +313,12 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>A guid object</returns>
         public Guid GetGuid(int columnIndex)
         {
-            if (columnIndex > Columns.Length)
+            if (columnIndex > this.Columns.Length)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
             }
 
-            return Guid.Parse(CurrentLine[columnIndex]);
+            return Guid.Parse(this.CurrentLine[columnIndex]);
         }
 
         /// <summary>
@@ -314,7 +328,7 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>A guid object</returns>
         public Guid GetGuid(string columnName)
         {
-            return GetGuid(GetColumnIndex(columnName));
+            return this.GetGuid(this.GetColumnIndex(columnName));
         }
 
         /// <summary>
@@ -324,12 +338,12 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>A DateTime object</returns>
         public DateTime GetDateTime(int columnIndex)
         {
-            if (columnIndex > Columns.Length)
+            if (columnIndex > this.Columns.Length)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
             }
 
-            return DateTime.Parse(CurrentLine[columnIndex], Culture);
+            return DateTime.Parse(this.CurrentLine[columnIndex], this.Culture);
         }
 
         /// <summary>
@@ -339,25 +353,24 @@ namespace TimeLog.ApiConsoleApp
         /// <returns>A DateTime object</returns>
         public DateTime GetDateTime(string columnName)
         {
-            return GetDateTime(GetColumnIndex(columnName));
+            return this.GetDateTime(this.GetColumnIndex(columnName));
         }
-
 
         /// <summary>
         /// Gets the column index for a given column name (requires HasHeaders = true)
         /// </summary>
-        /// <param name="columnName"></param>
-        /// <returns></returns>
+        /// <param name="columnName">Name of a column</param>
+        /// <returns>The column index</returns>
         public int GetColumnIndex(string columnName)
         {
-            if (!HasHeaders)
+            if (!this.HasHeaders)
             {
                 throw new FormatException("HasHeaders needs to be true to use this method");
             }
 
-            for (int i = 0; i < Columns.Length; i++)
+            for (int i = 0; i < this.Columns.Length; i++)
             {
-                if (Columns[i].ToUpper() == columnName.ToUpper())
+                if (this.Columns[i].ToUpper() == columnName.ToUpper())
                 {
                     return i;
                 }
@@ -371,7 +384,7 @@ namespace TimeLog.ApiConsoleApp
         /// </summary>
         public void Reset()
         {
-            LineIndex = HasHeaders ? 1 : 0;
+            this.LineIndex = this.HasHeaders ? 1 : 0;
         }
     }
 }
