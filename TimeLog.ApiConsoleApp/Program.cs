@@ -1,11 +1,12 @@
-﻿using System;
-using System.IO;
-using System.Reflection;
-using log4net;
-using log4net.Config;
-
-namespace TimeLog.ApiConsoleApp
+﻿namespace TimeLog.ApiConsoleApp
 {
+    using System;
+    using System.IO;
+    using System.Reflection;
+
+    using log4net;
+    using log4net.Config;
+
     public class Program
     {
         private static readonly ILog Logger = LogManager.GetLogger(typeof(Program));
@@ -25,9 +26,10 @@ namespace TimeLog.ApiConsoleApp
                 }
 
                 // Run example classes
-                ConsumeReportingApi.Consume();
-                ConsumeTransactionalApi.Consume();
-                ConsumeCsvFile.Consume();
+                // ConsumeReportingApi.Consume();
+                // ConsumeTransactionalApi.Consume();
+                // ConsumeCsvFile.Consume();
+                // CreateProjectTransactionalApi.Consume();
             }
             catch (Exception ex)
             {

@@ -4,6 +4,11 @@
         <name>TimeLog.TransactionalApi.SDK</name>
     </assembly>
     <members>
+        <member name="T:TimeLog.TransactionalApi.SDK.CrmHandler">
+            <summary>
+            Handler of functionality related to the CRM service
+            </summary>
+        </member>
         <member name="M:TimeLog.TransactionalApi.SDK.CrmHandler.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.CrmHandler"/> class from being created.
@@ -22,6 +27,21 @@
         <member name="P:TimeLog.TransactionalApi.SDK.CrmHandler.Token">
             <summary>
             Gets the CRM token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.CrmHandler.CollectRawRequestResponse">
+            <summary>
+            Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.CrmHandler.CrmClient">
+            <summary>
+            Gets the active CRM client
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.ProjectManagementHandler">
+            <summary>
+            Handler of functionality related to the project management service
             </summary>
         </member>
         <member name="M:TimeLog.TransactionalApi.SDK.ProjectManagementHandler.#ctor">
@@ -44,6 +64,210 @@
             Gets the project management token for use in other methods. Makes use of SecurityHandler.Instance.Token.
             </summary>
         </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ProjectManagementHandler.CollectRawRequestResponse">
+            <summary>
+            Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ProjectManagementHandler.ProjectManagementClient">
+            <summary>
+            Gets the active project management client
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory">
+            <summary>
+            The raw message encoder factory.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.encoder">
+            <summary>
+            The encoder.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.#ctor(System.ServiceModel.Channels.MessageEncoderFactory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory"/> class.
+            </summary>
+            <param name="messageEncoderFactory">The message encoder factory.</param>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.Encoder">
+            <summary>
+            Gets the encoder.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.MessageVersion">
+            <summary>
+            Gets the message version.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder">
+            <summary>
+            The raw message encoder.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.innerEncoder">
+            <summary>
+            The inner encoder.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.#ctor(System.ServiceModel.Channels.MessageEncoder)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder"/> class.
+            </summary>
+            <param name="messageEncoder">The message encoder</param>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.ReadMessage(System.IO.Stream,System.Int32,System.String)">
+            <summary>
+            The read message.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="maxSizeOfHeaders">The max size of headers.</param>
+            <param name="contentType">The content type.</param>
+            <returns>The <see cref="T:System.ServiceModel.Channels.Message"/>.</returns>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.ReadMessage(System.ArraySegment{System.Byte},System.ServiceModel.Channels.BufferManager,System.String)">
+            <summary>
+            The read message.
+            </summary>
+            <param name="buffer">The buffer</param>
+            <param name="bufferManager">The buffer manager</param>
+            <param name="contentType">The content type.</param>
+            <returns>The <see cref="T:System.ServiceModel.Channels.Message"/>.</returns>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.WriteMessage(System.ServiceModel.Channels.Message,System.IO.Stream)">
+            <summary>
+            The write message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="stream">The stream.</param>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.WriteMessage(System.ServiceModel.Channels.Message,System.Int32,System.ServiceModel.Channels.BufferManager,System.Int32)">
+            <summary>
+            The write message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="maxMessageSize">The max message size.</param>
+            <param name="bufferManager">The buffer manager.</param>
+            <param name="messageOffset">The message offset.</param>
+            <returns>The ArraySegment</returns>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.ContentType">
+            <summary>
+            Gets the content type.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.MessageVersion">
+            <summary>
+            Gets the message version.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingBindingElement">
+            <summary>
+            This is the binding element that, when plugged into a custom binding, will enable the Raw encoder
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingBindingElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingBindingElement"/> class. 
+            By default, use the default text encoder as the inner encoder
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingBindingElement.#ctor(System.ServiceModel.Channels.MessageEncodingBindingElement)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingBindingElement"/> class. 
+            </summary>
+            <param name="messageEncoderBindingElement">The binding element</param>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingBindingElement.InnerMessageEncodingBindingElement">
+            <summary>
+            Gets or sets the binding element
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingBindingElementImporter">
+            <summary>
+            The raw message encoding binding element importer.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingBindingElementImporter.System#ServiceModel#Description#IPolicyImportExtension#ImportPolicy(System.ServiceModel.Description.MetadataImporter,System.ServiceModel.Description.PolicyConversionContext)">
+            <summary>
+            The import policy.
+            </summary>
+            <param name="importer">The importer.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingElement">
+            <summary>
+            This class is necessary to be able to plug in the Raw encoder binding element through a configuration file
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingElement.InnerMessageEncoding">
+            <summary>
+            Gets or sets the only property we need to configure for our binding element is the type of inner encoder to use. Here, we support text and binary.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingPolicyConstants">
+            <summary>
+            This is constants for Raw message encoding policy.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingPolicyConstants.RawEncodingName">
+            <summary>
+            Gets the encoding name
+            </summary>
+        </member>
+        <member name="F:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingPolicyConstants.RawEncodingNamespace">
+            <summary>
+            Gets the encoding namespace
+            </summary>
+        </member>
+        <member name="F:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingPolicyConstants.RawEncodingPrefix">
+            <summary>
+            Gets the prefix
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper">
+            <summary>
+            The raw message helper.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.AddRequest(System.ServiceModel.Channels.Message)">
+            <summary>
+            Adds a request to memory
+            </summary>
+            <param name="message">The raw SOAP message</param>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.AddResponse(System.ServiceModel.Channels.Message)">
+            <summary>
+            Adds a response to memory
+            </summary>
+            <param name="message">The raw SOAP message</param>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.SaveRecentRequestResponsePair(System.String)">
+            <summary>
+            Saves the request and response from the latest interaction to a text file
+            </summary>
+            <param name="path">File to place the file</param>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.Instance">
+            <summary>
+            Gets the current instance of the helper
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.Request">
+            <summary>
+            Gets the latest raw request
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.Response">
+            <summary>
+            Gets the latest raw response
+            </summary>
+        </member>
         <member name="T:TimeLog.TransactionalApi.SDK.SecurityHandler">
             <summary>
             Security handler class for transactional API calls
@@ -60,11 +284,9 @@
             TimeLogProjectTransactionalUsername and TimeLogProjectTransactionalPassword. If successful the token is
             set to the Token property.
             </summary>
-            <remarks>
-            Make sure to set the application setting TimeLogProjectUri.
-            </remarks>
+            <remarks>Make sure to set the application setting TimeLogProjectUri</remarks>
             <param name="messages">Outputs the messages returned from the API</param>
-            <returns>A value indicating whether the authentication is succesful</returns>
+            <returns>A value indicating whether the authentication is successful</returns>
         </member>
         <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.TryAuthenticate(System.String,System.String,System.Collections.Generic.IEnumerable{System.String}@)">
             <summary>
@@ -102,6 +324,16 @@
             before trying to access this property.
             </summary>
         </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SecurityHandler.CollectRawRequestResponse">
+            <summary>
+            Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.SettingsHandler">
+            <summary>
+            Handler for settings in the API connection
+            </summary>
+        </member>
         <member name="M:TimeLog.TransactionalApi.SDK.SettingsHandler.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.SettingsHandler"/> class from being created.
@@ -122,6 +354,16 @@
             <summary>
             Gets the default max received message size for all calls to the TimeLog Project API.
             Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.StandardHttpTransportBindingElement">
+            <summary>
+            Gets a standard http binding
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.StandardHttpsTransportBindingElement">
+            <summary>
+            Gets a standard https binding
             </summary>
         </member>
     </members>

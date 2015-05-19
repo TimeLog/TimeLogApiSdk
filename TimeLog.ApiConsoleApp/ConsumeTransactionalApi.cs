@@ -1,18 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using log4net;
-using TimeLog.TransactionalApi.SDK;
-using TimeLog.TransactionalApi.SDK.ProjectManagementService;
-
-namespace TimeLog.ApiConsoleApp
+﻿namespace TimeLog.ApiConsoleApp
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using log4net;
+
+    using TimeLog.TransactionalApi.SDK;
+    using TimeLog.TransactionalApi.SDK.ProjectManagementService;
+    using TimeLog.TransactionalApi.SDK.RawHelper;
+
     /// <summary>
     /// Template class for consuming the transactional API
     /// </summary>
     public class ConsumeTransactionalApi
     {
         private static readonly ILog Logger = LogManager.GetLogger(typeof(ConsumeTransactionalApi));
+        
         public static void Consume()
         {
             IEnumerable<string> messages;

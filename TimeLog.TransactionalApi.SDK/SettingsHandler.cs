@@ -1,9 +1,14 @@
-﻿using System;
-
-namespace TimeLog.TransactionalApi.SDK
+﻿namespace TimeLog.TransactionalApi.SDK
 {
+    using System;
     using System.Configuration;
+    using System.Net;
+    using System.ServiceModel;
+    using System.ServiceModel.Channels;
 
+    /// <summary>
+    /// Handler for settings in the API connection
+    /// </summary>
     public class SettingsHandler : IDisposable
     {
         private static SettingsHandler instance;
@@ -70,6 +75,50 @@ namespace TimeLog.TransactionalApi.SDK
                 }
 
                 return 1024000;
+            }
+        }
+
+        /// <summary>
+        /// Gets a standard http binding
+        /// </summary>
+        public HttpTransportBindingElement StandardHttpTransportBindingElement
+        {
+            get
+            {
+                return new HttpTransportBindingElement
+                {
+                    AllowCookies = false,
+                    HostNameComparisonMode = HostNameComparisonMode.StrongWildcard,
+                    BypassProxyOnLocal = false,
+                    MaxBufferSize = (int)this.MaxReceivedMessageSize,
+                    MaxBufferPoolSize = this.MaxReceivedMessageSize,
+                    MaxReceivedMessageSize = this.MaxReceivedMessageSize,
+                    TransferMode = TransferMode.Buffered,
+                    UseDefaultWebProxy = true,
+                    AuthenticationScheme = AuthenticationSchemes.Anonymous
+                };
+            }
+        }
+
+        /// <summary>
+        /// Gets a standard https binding
+        /// </summary>
+        public HttpsTransportBindingElement StandardHttpsTransportBindingElement
+        {
+            get
+            {
+                return new HttpsTransportBindingElement
+                {
+                    AllowCookies = false,
+                    HostNameComparisonMode = HostNameComparisonMode.StrongWildcard,
+                    BypassProxyOnLocal = false,
+                    MaxBufferSize = (int)this.MaxReceivedMessageSize,
+                    MaxBufferPoolSize = this.MaxReceivedMessageSize,
+                    MaxReceivedMessageSize = this.MaxReceivedMessageSize,
+                    TransferMode = TransferMode.Buffered,
+                    UseDefaultWebProxy = true,
+                    AuthenticationScheme = AuthenticationSchemes.Anonymous
+                };
             }
         }
 

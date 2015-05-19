@@ -2,19 +2,27 @@
 {
     using System;
     using System.ServiceModel;
+    using System.ServiceModel.Channels;
 
     using TimeLog.TransactionalApi.SDK.CrmService;
+    using TimeLog.TransactionalApi.SDK.RawHelper;
 
+    /// <summary>
+    /// Handler of functionality related to the CRM service
+    /// </summary>
     public class CrmHandler : IDisposable
     {
         private static CrmHandler instance;
         private CRMServiceClient crmClient;
+
+        private bool collectRawRequestResponse;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="CrmHandler"/> class from being created.
         /// </summary>
         private CrmHandler()
         {
+            this.collectRawRequestResponse = false;
         }
 
         /// <summary>
@@ -60,21 +68,52 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+        /// </summary>
+        public bool CollectRawRequestResponse
+        {
+            get
+            {
+                return this.collectRawRequestResponse;
+            }
+
+            set
+            {
+                this.collectRawRequestResponse = value;
+                this.crmClient = null;
+            }
+        }
+
+        /// <summary>
+        /// Gets the active CRM client
+        /// </summary>
         public CRMServiceClient CrmClient
         {
             get
             {
                 if (this.crmClient == null)
                 {
-                    var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
-                    var endpoint = new EndpointAddress(CrmServiceUrl);
+                    var endpoint = new EndpointAddress(this.CrmServiceUrl);
 
-                    if (CrmServiceUrl.Contains("https"))
+                    if (this.CollectRawRequestResponse)
                     {
-                        binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        var binding = new CustomBinding();
+                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        binding.Elements.Add(encoding);
+                        binding.Elements.Add(this.CrmServiceUrl.Contains("https") ? SettingsHandler.Instance.StandardHttpsTransportBindingElement : SettingsHandler.Instance.StandardHttpTransportBindingElement);
+                        this.crmClient = new CRMServiceClient(binding, endpoint);
                     }
+                    else
+                    {
+                        var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
+                        if (this.CrmServiceUrl.Contains("https"))
+                        {
+                            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        }
 
-                    this.crmClient = new CRMServiceClient(binding, endpoint);
+                        this.crmClient = new CRMServiceClient(binding, endpoint);
+                    }
                 }
 
                 return this.crmClient;

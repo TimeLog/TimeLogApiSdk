@@ -2,19 +2,27 @@
 {
     using System;
     using System.ServiceModel;
+    using System.ServiceModel.Channels;
 
     using TimeLog.TransactionalApi.SDK.ProjectManagementService;
+    using TimeLog.TransactionalApi.SDK.RawHelper;
 
+    /// <summary>
+    /// Handler of functionality related to the project management service
+    /// </summary>
     public class ProjectManagementHandler : IDisposable
     {
         private static ProjectManagementHandler instance;
         private ProjectManagementServiceClient projectManagementClient;
+
+        private bool collectRawRequestResponse;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="ProjectManagementHandler"/> class from being created.
         /// </summary>
         private ProjectManagementHandler()
         {
+            this.collectRawRequestResponse = false;
         }
 
         /// <summary>
@@ -60,21 +68,52 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+        /// </summary>
+        public bool CollectRawRequestResponse
+        {
+            get
+            {
+                return this.collectRawRequestResponse;
+            }
+
+            set
+            {
+                this.collectRawRequestResponse = value;
+                this.projectManagementClient = null;
+            }
+        }
+
+        /// <summary>
+        /// Gets the active project management client
+        /// </summary>
         public ProjectManagementServiceClient ProjectManagementClient
         {
             get
             {
                 if (this.projectManagementClient == null)
                 {
-                    var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
-                    var endpoint = new EndpointAddress(ProjectManagementServiceUrl);
+                    var endpoint = new EndpointAddress(this.ProjectManagementServiceUrl);
 
-                    if (ProjectManagementServiceUrl.Contains("https"))
+                    if (this.CollectRawRequestResponse)
                     {
-                        binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        var binding = new CustomBinding();
+                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        binding.Elements.Add(encoding);
+                        binding.Elements.Add(this.ProjectManagementServiceUrl.Contains("https") ? SettingsHandler.Instance.StandardHttpsTransportBindingElement : SettingsHandler.Instance.StandardHttpTransportBindingElement);
+                        this.projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
                     }
+                    else
+                    {
+                        var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
+                        if (this.ProjectManagementServiceUrl.Contains("https"))
+                        {
+                            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        }
 
-                    this.projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
+                        this.projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
+                    }
                 }
 
                 return this.projectManagementClient;

@@ -1,31 +1,33 @@
-﻿using System;
-
-namespace TimeLog.TransactionalApi.SDK
+﻿namespace TimeLog.TransactionalApi.SDK
 {
+    using System;
     using System.Collections.Generic;
     using System.Configuration;
     using System.Linq;
     using System.ServiceModel;
+    using System.ServiceModel.Channels;
+
+    using TimeLog.TransactionalApi.SDK.RawHelper;
 
     /// <summary>
     /// Security handler class for transactional API calls
     /// </summary>
     public class SecurityHandler : IDisposable
     {
-        private static SecurityHandler _instance;
-        
-        private SecurityService.SecurityServiceClient _securityClient;
+        private static SecurityHandler instance;
+        private readonly Dictionary<string, SecurityService.SecurityToken> cachedTokens;
+        private SecurityService.SecurityServiceClient securityClient;
+        private SecurityService.SecurityToken token;
 
-        private SecurityService.SecurityToken _token;
-
-        private readonly Dictionary<string, SecurityService.SecurityToken> _cachedTokens;
+        private bool collectRawRequestResponse;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="SecurityHandler"/> class from being created.
         /// </summary>
         private SecurityHandler()
         {
-            _cachedTokens = new Dictionary<string, SecurityService.SecurityToken>();
+            this.cachedTokens = new Dictionary<string, SecurityService.SecurityToken>();
+            this.CollectRawRequestResponse = false;
         }
 
         /// <summary>
@@ -35,7 +37,7 @@ namespace TimeLog.TransactionalApi.SDK
         {
             get
             {
-                return _instance ?? (_instance = new SecurityHandler());
+                return instance ?? (instance = new SecurityHandler());
             }
         }
 
@@ -62,20 +64,31 @@ namespace TimeLog.TransactionalApi.SDK
         {
             get
             {
-                if (_securityClient == null)
+                if (this.securityClient == null)
                 {
-                    var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
-                    var endpoint = new EndpointAddress(SecurityServiceUrl);
+                    var endpoint = new EndpointAddress(this.SecurityServiceUrl);
 
-                    if (SecurityServiceUrl.Contains("https"))
+                    if (this.CollectRawRequestResponse)
                     {
-                        binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        var binding = new CustomBinding();
+                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        binding.Elements.Add(encoding);
+                        binding.Elements.Add(this.SecurityServiceUrl.Contains("https") ? SettingsHandler.Instance.StandardHttpsTransportBindingElement : SettingsHandler.Instance.StandardHttpTransportBindingElement);
+                        this.securityClient = new SecurityService.SecurityServiceClient(binding, endpoint);
                     }
+                    else
+                    {
+                        var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
+                        if (this.SecurityServiceUrl.Contains("https"))
+                        {
+                            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        }
 
-                    _securityClient = new SecurityService.SecurityServiceClient(binding, endpoint);
+                        this.securityClient = new SecurityService.SecurityServiceClient(binding, endpoint);                        
+                    }
                 }
 
-                return _securityClient;
+                return this.securityClient;
             }
         }
 
@@ -87,12 +100,30 @@ namespace TimeLog.TransactionalApi.SDK
         {
             get
             {
-                if (_token == null)
+                if (this.token == null)
                 {
                     throw new Exception("Please authenticate using the \"SecurityHandler.Instance.TryAuthenticate\" method before use");
                 }
 
-                return _token;
+                return this.token;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+        /// </summary>
+        public bool CollectRawRequestResponse
+        {
+            get
+            {
+                return this.collectRawRequestResponse;
+            }
+
+            set
+            {
+                this.collectRawRequestResponse = value;
+                this.securityClient = null;
+                this.token = null;
             }
         }
 
@@ -101,11 +132,9 @@ namespace TimeLog.TransactionalApi.SDK
         /// TimeLogProjectTransactionalUsername and TimeLogProjectTransactionalPassword. If successful the token is
         /// set to the Token property.
         /// </summary>
-        /// <remarks>
-        /// Make sure to set the application setting TimeLogProjectUri.
-        /// </remarks>
+        /// <remarks>Make sure to set the application setting TimeLogProjectUri</remarks>
         /// <param name="messages">Outputs the messages returned from the API</param>
-        /// <returns>A value indicating whether the authentication is succesful</returns>
+        /// <returns>A value indicating whether the authentication is successful</returns>
         public bool TryAuthenticate(out IEnumerable<string> messages)
         {
             string username = ConfigurationManager.AppSettings["TimeLogProjectTransactionalUsername"];
@@ -121,7 +150,7 @@ namespace TimeLog.TransactionalApi.SDK
                 throw new ArgumentException("The AppSetting \"TimeLogProjectTransactionalPassword\" is missing");
             }
 
-            return TryAuthenticate(username, password, out messages);
+            return this.TryAuthenticate(username, password, out messages);
         }
 
         /// <summary>
@@ -135,27 +164,27 @@ namespace TimeLog.TransactionalApi.SDK
         public bool TryAuthenticate(string username, string password, out IEnumerable<string> messages)
         {
             // Reuse the token if we already have it in the cache
-            if (_cachedTokens.ContainsKey(username))
+            if (this.cachedTokens.ContainsKey(username))
             {
-                _token = _cachedTokens[username];
+                this.token = this.cachedTokens[username];
 
                 // Check if the token has expired - leave a minute to other code to run
-                if (_token.Expires > DateTime.Now.AddMinutes(1))
+                if (this.token.Expires > DateTime.Now.AddMinutes(1))
                 {
                     messages = new List<string>();
                     return true;
                 }
                 
-                _cachedTokens.Remove(username);
+                this.cachedTokens.Remove(username);
             }
 
-            var tokenResponse = SecurityClient.GetToken(username, password);
+            var tokenResponse = this.SecurityClient.GetToken(username, password);
             if (tokenResponse.ResponseState == SecurityService.ExecutionStatus.Success &&
                 tokenResponse.Return.Any())
             {
-                _token = tokenResponse.Return[0];
+                this.token = tokenResponse.Return[0];
 
-                _cachedTokens.Add(username, _token);
+                this.cachedTokens.Add(username, this.token);
 
                 messages = new List<string>();
                 return true;
@@ -170,9 +199,9 @@ namespace TimeLog.TransactionalApi.SDK
         /// </summary>
         public void Dispose()
         {
-            _securityClient = null;
-            _token = null;
-            _instance = null;
+            this.securityClient = null;
+            this.token = null;
+            instance = null;
         }
     }
 }
