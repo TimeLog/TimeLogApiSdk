@@ -3,11 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.Configuration;
+    using System.Globalization;
     using System.Linq;
     using System.ServiceModel;
     using System.ServiceModel.Channels;
 
     using TimeLog.TransactionalApi.SDK.RawHelper;
+    using TimeLog.TransactionalApi.SDK.SecurityService;
 
     /// <summary>
     /// Security handler class for transactional API calls
@@ -163,6 +165,19 @@
         /// <returns>A value indicating whether the authentication is successful</returns>
         public bool TryAuthenticate(string username, string password, out IEnumerable<string> messages)
         {
+            if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["TimeLogProjectRawTokenHash"]))
+            {
+                this.token = new SecurityToken
+                                 {
+                                     Expires = DateTime.ParseExact(ConfigurationManager.AppSettings["TimeLogProjectRawTokenExpires"], "yyyyMMddHHmmssK", new CultureInfo("da-DK")),
+                                     Hash = ConfigurationManager.AppSettings["TimeLogProjectRawTokenHash"],
+                                     Initials = ConfigurationManager.AppSettings["TimeLogProjectRawTokenInitials"]
+                                 };
+
+                messages = new List<string>();
+                return true;
+            }
+
             // Reuse the token if we already have it in the cache
             if (this.cachedTokens.ContainsKey(username))
             {
