@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://www.timelog.com/api/tlp/v1_1" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" />
+  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd4" namespace="http://www.timelog.com/api/tlp/v1" />
+  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
+  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
+  <xs:complexType name="SecurityToken">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q1:APIBase">
+        <xs:sequence>
+          <xs:element name="Initials" nillable="true" type="xs:string" />
+          <xs:element name="Expires" type="xs:dateTime" />
+          <xs:element name="Hash" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecurityToken" nillable="true" type="tns:SecurityToken" />
+  <xs:element name="IsAlive">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAliveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsAliveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseOfInvoice">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOf{0}" Namespace="http://www.timelog.com/api/tlp/v1_1" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Invoice" Namespace="http://www.timelog.com/api/tlp/v1" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q2:APIBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="Return" nillable="true" type="q3:ArrayOfInvoice" />
+          <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q4:ExecutionStatus" />
+          <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseOfInvoice" nillable="true" type="tns:ResponseOfInvoice" />
+  <xs:complexType name="Address">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q5:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="ProjectHeader">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q6:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="No" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGeneralProject" type="xs:boolean" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjectHeader" nillable="true" type="tns:ProjectHeader" />
+  <xs:complexType name="EmployeeHeader">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q7:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Initials" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeHeader" nillable="true" type="tns:EmployeeHeader" />
+  <xs:complexType name="Currency">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q8:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Abbreviation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rate" type="xs:double" />
+          <xs:element minOccurs="0" name="RateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DescriptiveName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Currency" nillable="true" type="tns:Currency" />
+  <xs:complexType name="CustomerHeader">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q9:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="No" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomerHeader" nillable="true" type="tns:CustomerHeader" />
+  <xs:complexType name="ContactHeader">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q10:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContactHeader" nillable="true" type="tns:ContactHeader" />
+  <xs:complexType name="Request">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q11:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfRequestParameter" />
+          <xs:element minOccurs="0" name="ServiceClass" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Request" nillable="true" type="tns:Request" />
+  <xs:complexType name="ArrayOfRequestParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RequestParameter" nillable="true" type="tns:RequestParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRequestParameter" nillable="true" type="tns:ArrayOfRequestParameter" />
+  <xs:complexType name="RequestParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestParameter" nillable="true" type="tns:RequestParameter" />
+  <xs:complexType name="ArrayOfAPIMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="APIMessage" nillable="true" type="tns:APIMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAPIMessage" nillable="true" type="tns:ArrayOfAPIMessage" />
+  <xs:complexType name="APIMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" minOccurs="0" name="Severity" type="q12:APIMessageSeverity" />
+      <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="APIMessage" nillable="true" type="tns:APIMessage" />
+  <xs:complexType name="ResponseOfCreditNote">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOf{0}" Namespace="http://www.timelog.com/api/tlp/v1_1" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CreditNote" Namespace="http://www.timelog.com/api/tlp/v1" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q13:APIBase">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="Return" nillable="true" type="q14:ArrayOfCreditNote" />
+          <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q15:ExecutionStatus" />
+          <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseOfCreditNote" nillable="true" type="tns:ResponseOfCreditNote" />
+  <xs:complexType name="ExternalSystemContext">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q16:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SystemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExternalID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExternalSystemContext" nillable="true" type="tns:ExternalSystemContext" />
+  <xs:complexType name="ResponseOfInvoiceWithExternalKey">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOf{0}" Namespace="http://www.timelog.com/api/tlp/v1_1" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="InvoiceWithExternalKey" Namespace="http://www.timelog.com/api/tlp/v1" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q17:APIBase">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="Return" nillable="true" type="q18:ArrayOfInvoiceWithExternalKey" />
+          <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q19:ExecutionStatus" />
+          <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseOfInvoiceWithExternalKey" nillable="true" type="tns:ResponseOfInvoiceWithExternalKey" />
+  <xs:complexType name="ArrayOfExternalSystemContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExternalSystemContext" nillable="true" type="tns:ExternalSystemContext" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExternalSystemContext" nillable="true" type="tns:ArrayOfExternalSystemContext" />
+  <xs:complexType name="ResponseOfCreditNoteWithExternalKey">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ResponseOf{0}" Namespace="http://www.timelog.com/api/tlp/v1_1" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CreditNoteWithExternalKey" Namespace="http://www.timelog.com/api/tlp/v1" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q20:APIBase">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="Return" nillable="true" type="q21:ArrayOfCreditNoteWithExternalKey" />
+          <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+          <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q22:ExecutionStatus" />
+          <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResponseOfCreditNoteWithExternalKey" nillable="true" type="tns:ResponseOfCreditNoteWithExternalKey" />
+</xs:schema>
