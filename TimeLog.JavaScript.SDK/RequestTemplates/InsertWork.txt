@@ -1,0 +1,86 @@
+<!--------------- REQUEST ------------------->
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <VsDebuggerCausalityData xmlns="http://schemas.microsoft.com/vstudio/diagnostics/servicemodelsink">uIDPo105Z9CnCnRPprNmS/K7WEkAAAAAdSN9ZY4PqUyjQIghdc45nbBy/Sq6ZTJOruQZTqJLxfYACQAA</VsDebuggerCausalityData>
+  </s:Header>
+  <s:Body>
+    <InsertWork xmlns="http://www.timelog.com/api/tlp/v1_6">
+      <work xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <WorkUnit>
+          <GUID>00000000-0000-0000-0000-000000000000</GUID>
+          <AllocationGUID>00000000-0000-0000-0000-000000000000</AllocationGUID>
+          <TaskID>0</TaskID>
+          <EmployeeInitials i:nil="true" />
+          <Duration>PT0S</Duration>
+          <StartDateTime>2015-06-07T22:03:25.5246778+02:00</StartDateTime>
+          <EndDateTime>0001-01-01T00:00:00</EndDateTime>
+          <Description i:nil="true" />
+          <TimeStamp i:nil="true" />
+          <IsEditable>false</IsEditable>
+          <AdditionalText i:nil="true" />
+          <Details i:nil="true" />
+        </WorkUnit>
+      </work>
+      <source>99</source>
+      <token xmlns:d4p1="http://www.timelog.com/api/tlp/v1_3" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <d4p1:Initials>sox</d4p1:Initials>
+        <d4p1:Expires>2015-06-08T10:04:20.4712942+02:00</d4p1:Expires>
+        <d4p1:Hash>T1dzbiTLGGvoKQPTxqQe7GS6PVRuD/Qa4lxT+CG3co/G/MPp4105BVN5Mhxt6srYJIzVuDtaX7E5eWM1NeiNHw==</d4p1:Hash>
+      </token>
+    </InsertWork>
+  </s:Body>
+</s:Envelope>
+
+<!--------------- RESPONSE ------------------->
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <InsertWorkResponse xmlns="http://www.timelog.com/api/tlp/v1_6">
+      <InsertWorkResult xmlns:a="http://www.timelog.com/api/tlp/v1_2" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <Return xmlns="http://api.timelog.com" />
+        <ReturnTypeDescription xmlns="http://api.timelog.com">BatchContainer&lt;WorkUnit&gt;</ReturnTypeDescription>
+        <Request xmlns="http://api.timelog.com">
+          <Parameters>
+            <RequestParameter>
+              <Name>WorkUnit</Name>
+              <Value>GUID=00000000-0000-0000-0000-000000000000 | AllocationGUID=00000000-0000-0000-0000-000000000000 | TaskID=0 | EmployeeInitials= | StartDateTime=07-06-2015 22:03:25 | EndDateTime=01-01-0001 00:00:00 | Description= | AdditionalText= | </Value>
+            </RequestParameter>
+            <RequestParameter>
+              <Name>source</Name>
+              <Value>99</Value>
+            </RequestParameter>
+            <RequestParameter>
+              <Name>SecurityToken</Name>
+              <Value>Initials=[{0}], Expires=[{1}], Hash=[{2}]</Value>
+            </RequestParameter>
+          </Parameters>
+          <ServiceClass>ProjectManagementService</ServiceClass>
+          <MethodName>InsertWork</MethodName>
+        </Request>
+        <ResponseState xmlns="http://api.timelog.com">Invalid</ResponseState>
+        <Messages xmlns="http://api.timelog.com">
+          <APIMessage>
+            <Message>Initials, was null or empty</Message>
+            <Severity>Invalid</Severity>
+            <ErrorCode>10002</ErrorCode>
+          </APIMessage>
+          <APIMessage>
+            <Message>Successfully called TimeLog.API, ProjectManagementService :: BatchContainer&lt;WorkUnit&gt; InsertWork</Message>
+            <Severity>Message</Severity>
+            <ErrorCode>0</ErrorCode>
+          </APIMessage>
+          <APIMessage>
+            <Message>Duration of call was 0,1062337 sec.</Message>
+            <Severity>Message</Severity>
+            <ErrorCode>0</ErrorCode>
+          </APIMessage>
+        </Messages>
+        <ErrorCode xmlns="http://api.timelog.com">10002</ErrorCode>
+        <IsReturnPaged xmlns="http://api.timelog.com">false</IsReturnPaged>
+        <TotalPageCount xmlns="http://api.timelog.com">1</TotalPageCount>
+      </InsertWorkResult>
+    </InsertWorkResponse>
+  </s:Body>
+</s:Envelope>

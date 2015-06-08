@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>New Tab</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="newtab.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<a href="https://login.timelog.com" class="logo" title="Go to TimeLog Project"></a>
+	<div class="userview">
+		<span id="userview-notloggedin"><a id="userview-toggle">Sign in to TimeLog Project</a></span>
+		<span id="userview-loggedin">You are signed in! <a id="userview-signout">Sign out</a></span>
+		<div id="userview-logindialog">
+			<input type="text" id="userview-url" placeholder="https://appX.timelog.com/company" /><br />
+			<input type="text" id="userview-username" placeholder="Username" /><br />
+			<input type="password" id="userview-password" placeholder="Password" /><br />
+			<button id="userview-submit">Sign in</button>
+			<div id="userview-loginstatus">...</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="clock">4:49 PM</div>
+		<div class="calendar">Wednesday, May 3rd, 2015</div>
+
+		<div class="trackingView" style="display:none;">
+			<h1>Working hard, eh?</h1>
+			<h2 id="trackedTime">1h23m</h2>
+			<h3>_TIM - Administration &raquo; 50. Mailsortering</h3>
+			<p><a href="#">Done?</a></p>
+		</div>
+		<div class="taskView" style="display:none;">
+			<h1>What are you working on?</h1>
+			<input id="taskSearch" type="text" placeholder="Add your task name" />
+			<ul id="taskSearchList" style="display:none;">
+				<li>_TIM - Administration &raquo; 50. Mailsortering</li>
+				<li>_TIM - Help Desk 2014 &raquo; Supportsags håndtering</li>
+				<li>_TIM - Hosted Patching 2015 &raquo; Server platform administration</li>
+				<li>_TIM - Internal IT services 2015 &raquo; Infrastruktur assistance (must have comment)</li>
+				<li>_TIM - Internal meetings &raquo; 20. Department meetings</li>
+				<li>_TIM - Party in TimeLog &raquo; Julefrokost/sommerfest</li>
+				<li>_TIM - Sales (New Bizz) &raquo; Teknisk salgsassistance</li>
+				<li>ACC - Project Contract Module &raquo; General tasks &raquo; Review</li>
+				<li>ACC - Project Contract Module &raquo; Deployment and maintenance</li>
+				<li>INS - Implemenation (KK) &raquo; Data tasks (Time & Material) &raquo; Data import from e-conimic</li>
+			</ul>
+		</div>
+		<div class="workUnitView" style="display:none;">
+			<h1>All your work today</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>Project</th>
+						<th>Task</th>
+						<th>Time</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>_TIM - Administration</td>
+						<td>50. Mailsortering</td>
+						<td>3h02m</td>
+						<td><a href="#">slet</a></td>
+					</tr>
+					<tr>
+						<td>_TIM - Administration</td>
+						<td>50. Mailsortering</td>
+						<td>3h02m</td>
+						<td><a href="#">slet</a></td>
+					</tr>
+					<tr>
+						<td>_TIM - Administration</td>
+						<td>50. Mailsortering</td>
+						<td>3h02m</td>
+						<td><a href="#">slet</a></td>
+					</tr>
+					<tr>
+						<td>_TIM - Administration</td>
+						<td>50. Mailsortering</td>
+						<td>3h02m</td>
+						<td><a href="#">slet</a></td>
+					</tr>
+					<tr>
+						<td>_TIM - Administration</td>
+						<td>50. Mailsortering</td>
+						<td>3h02m</td>
+						<td><a href="#">slet</a></td>
+					</tr>
+					<tr>
+						<td>_TIM - Administration</td>
+						<td>50. Mailsortering</td>
+						<td>3h02m</td>
+						<td><a href="#">slet</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<a id="workunitview-back">Do some more work</a>
+		</div>
+	</div>
+	<div class="debug">
+		<a id="debug-taskview">Task View</a> | <a id="debug-trackingview">Tracking View</a> | <a id="debug-workunitview">Work Unit View</a>
+	</div>
+	<script src="vendorscripts/jquery-2.1.4.min.js"></script>
+	<script src="vendorscripts/xml2json.min.js"></script>
+	<script src="vendorscripts/aes.min.js"></script>
+    <script src="timelog.sdk.js"></script>
+	<script src="newtab.js"></script>
+</body>
+</html>
