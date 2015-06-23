@@ -4,7 +4,9 @@
   "name": "TimeLog Project New Tab Extension - ALPHA version",
   "description": "This extension takes over the new tab action in Chrome",
   "version": "1.0",
-
+  "chrome_url_overrides" : {
+    "pageToOverride": "newtab.html"
+  }
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"

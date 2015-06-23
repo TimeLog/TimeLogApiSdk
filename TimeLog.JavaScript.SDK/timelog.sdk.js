@@ -38,45 +38,89 @@ Attribution 4.0 International (CC BY 4.0)
         '</InsertWork>' +
         '</s:Body></s:Envelope>';
 
-    // Store base information
+    /* BASE INFORMATION
+    ********************************************************/
+    var _localStorageUrlKey = 'TimeLogUrl';
+    var _localStorageUsernameKey = 'TimeLogUsername';
+    var _localStoragePasswordKey = 'TimeLogPassword';
+    var _localStorageTokenKey = 'TimeLogToken';
     var _url = '';
+    var _username = '';
+
     timelog.url = function () {
 
         if (timelog.enableLocalStorageCache) {
-            _url = localStorage.getItem(localStorageUrlKey);
+            _url = localStorage.getItem(_localStorageUrlKey);
         }
 
         return _url;
 
     };
 
-    var _username = '';
     timelog.username = function () {
 
         if (timelog.enableLocalStorageCache) {
-            _username = localStorage.getItem(localStorageUsernameKey);
+            _username = localStorage.getItem(_localStorageUsernameKey);
         }
 
         return _username;
 
     };
 
-    // Store token
+    /* SETTINGS
+    ********************************************************/
+
+    // Disable to only use private variables for url, username and token.
+    timelog.enableLocalStorageCache = true;
+
+    // Automatically obtain token. Requires enableLocalStorageCache = true
+    timelog.enableAutoLogin = true;
+
+
+    /* PRIVATE HELPERS
+    ********************************************************/
+    function getSecurityServiceUrl() {
+        var urlSecurityService = '{0}/WebServices/Security/V1_2/SecurityServiceSecure.svc';
+
+        if ((_url == undefined || _url.length == 0) && timeog.enableLocalStorageCache) {
+            _url = localStorage.getItem('TimeLogUrl');
+        }
+
+        _url = _url.replace('http://', 'https://');
+        return urlSecurityService.replace('{0}', _url);
+    }
+
+    function getProjectManagementServiceUrl() {
+        var urlProjectManagementService = '{0}/WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc';
+
+        if ((_url == undefined || _url.length == 0) && timeog.enableLocalStorageCache) {
+            _url = localStorage.getItem('TimeLogUrl');
+        }
+
+        _url = _url.replace('http://', 'https://');
+        return urlProjectManagementService.replace('{0}', _url);
+    }
+
+    /* TOKEN AND AUTHENTICATION HANDLING
+    ********************************************************/
     var tokenInitials = '';
-    var tokenExpires = '';
+    var tokenExpires = new Date('2001-01-01 01:01:01');
     var tokenHash = '';
     timelog.getToken = function () {
 
-        if (timelog.debug) { console.log('[timelog.getToken] Executing'); }
-
-        var token = { Initials: tokenInitials, Expires: new Date('2001-01-01 01:01:01'), Hash: tokenHash };
+        var token = { Initials: tokenInitials, Expires: tokenExpires, Hash: tokenHash };
 
         if (tokenInitials.length == 0 && timelog.enableLocalStorageCache) {
-            var rawToken = x2js.xml_str2json(localStorage.getItem(localStorageTokenKey));
+            if (timelog.debug) { console.log('[timelog.getToken] Restoring from localStorage'); }
+            var rawToken = x2js.xml_str2json(localStorage.getItem(_localStorageTokenKey));
 
             if (rawToken != undefined) {
                 token = rawToken.SecurityToken;
             }
+
+            tokenInitials = token.Initials;
+            tokenExpires = token.Expires;
+            tokenHash = token.Hash;
         }
 
         if (timelog.enableAutoLogin && timelog.enableLocalStorageCache && new Date(token.Expires) < new Date()) {
@@ -88,61 +132,68 @@ Attribution 4.0 International (CC BY 4.0)
 
     };
 
-    // Disable to only use private variables for url, username and token.
-    timelog.enableLocalStorageCache = true;
-
-    // Automatically obtain token. Requires enableLocalStorageCache = true
-    timelog.enableAutoLogin = true;
-
-    // Private variables
-    var localStorageUrlKey = 'TimeLogUrl';
-    var localStorageUsernameKey = 'TimeLogUsername';
-    var localStoragePasswordKey = 'TimeLogPassword';
-    var localStorageTokenKey = 'TimeLogToken';
-
     // Tries to authenticate and get a token.
-    timelog.tryAuthenticateSuccessCallback = undefined;
-    timelog.tryAuthenticateFailureCallback = undefined;
+    timelog.authenticateSuccessCallback = undefined;
+    timelog.authenticateFailureCallback = undefined;
     timelog.tryAuthenticate = function(url, username, password) {
 
         if (timelog.debug) { console.log('[timelog.tryAuthenticate] Executing (url: ' + url + ', username: ' + username + ', password: ' + password + ')'); }
         if (timelog.enableLocalStorageCache) {
 
             if (url.length == 0) {
-                url = localStorage.getItem(localStorageUrlKey);
+                url = localStorage.getItem(_localStorageUrlKey);
             } else {
-                localStorage.setItem(localStorageUrlKey, url);
+                localStorage.setItem(_localStorageUrlKey, url);
             }
 
             if (username.length == 0) {
-                username = localStorage.getItem(localStorageUsernameKey);
+                username = localStorage.getItem(_localStorageUsernameKey);
             } else {
-                localStorage.setItem(localStorageUsernameKey, username);
+                localStorage.setItem(_localStorageUsernameKey, username);
             }
 
-            if (password.length == 0 && localStorage.getItem(localStoragePasswordKey) != undefined) {
-                password = CryptoJS.AES.decrypt(localStorage.getItem(localStoragePasswordKey), '0B1EC554C85C').toString(CryptoJS.enc.Utf8);
-            } else {
-
-                localStorage.setItem(localStoragePasswordKey, CryptoJS.AES.encrypt(password, '0B1EC554C85C'));
+            if (password.length == 0 && localStorage.getItem(_localStoragePasswordKey) != undefined) {
+                password = CryptoJS.AES.decrypt(localStorage.getItem(_localStoragePasswordKey), '0B1EC554C85C').toString(CryptoJS.enc.Utf8);
+            } else if (password.length > 0) {
+                localStorage.setItem(_localStoragePasswordKey, CryptoJS.AES.encrypt(password, '0B1EC554C85C'));
             }
 
             if (timelog.debug) { console.log('[timelog.tryAuthenticate] After localStorage fetch (url: ' + url + ', username: ' + username + ', password: ' + password + ')'); }
         }
 
-        $.ajax({
-            type: "POST",
-            url: getSecurityServiceUrl(url),
-            headers: { "SOAPAction": "GetTokenRequest", "Content-Type": "text/xml" },
-            data: templateGetToken.replace('{0}', username).replace('{1}', password),
-            success: tryAuthenticateSuccess,
-            error: tryAuthenticateFailure,
-        });
+        _url = url;
+        _username = username;
+
+        if (_url != undefined && _username != undefined && _url.length > 0 && _username.length > 0 && password.length > 0) {
+            $.ajax({
+                type: "POST",
+                url: getSecurityServiceUrl(),
+                headers: { "SOAPAction": "GetTokenRequest", "Content-Type": "text/xml" },
+                data: templateGetToken.replace('{0}', username).replace('{1}', password),
+                success: tryAuthenticateSuccess,
+                error: tryAuthenticateFailure,
+            });
+        }
 
     };
 
     timelog.isTokenValid = function() {
         return new Date(timelog.getToken().Expires) > new Date();
+    }
+
+    timelog.signOut = function () {
+
+        if (timelog.debug) { console.log('[timelog.signOut] Executing'); }
+
+        tokenInitials = '';
+        tokenTimestamp = '';
+        tokenHash = '';
+
+        if (timelog.enableLocalStorageCache) {
+            localStorage.removeItem(_localStoragePasswordKey);
+            localStorage.removeItem(_localStorageTokenKey);
+        }
+
     }
 
     function tryAuthenticateSuccess(data) {
@@ -151,12 +202,16 @@ Attribution 4.0 International (CC BY 4.0)
 
             if (timelog.debug) { console.log('[timelog.tryAuthenticateSuccess] Token obtained'); }
 
+            tokenInitials = result.Return.SecurityToken.Initials;
+            tokenExpires = result.Return.SecurityToken.Expires;
+            tokenHash = result.Return.SecurityToken.Hash;
+
             if (timelog.enableLocalStorageCache) {
-                localStorage.setItem(localStorageTokenKey, x2js.json2xml_str(result.Return));
+                localStorage.setItem(_localStorageTokenKey, x2js.json2xml_str(result.Return));
             }
 
-            if (timelog.tryAuthenticateSuccessCallback != undefined) {
-                timelog.tryAuthenticateSuccessCallback();
+            if (timelog.authenticateSuccessCallback != undefined) {
+                timelog.authenticateSuccessCallback();
             }
 
         } else {
@@ -165,12 +220,12 @@ Attribution 4.0 International (CC BY 4.0)
             if (timelog.debug) { console.log('[timelog.tryAuthenticateSuccess] Token failed (' + errorMsg + ')'); }
 
             if (timelog.enableLocalStorageCache) {
-                localStorage.removeItem(localStoragePasswordKey);
-                localStorage.removeItem(localStorageTokenKey);
+                localStorage.removeItem(_localStoragePasswordKey);
+                localStorage.removeItem(_localStorageTokenKey);
             }
 
-            if (timelog.tryAuthenticateFailureCallback != undefined) {
-                timelog.tryAuthenticateFailureCallback(errorMsg);
+            if (timelog.authenticateFailureCallback != undefined) {
+                timelog.authenticateFailureCallback(errorMsg);
             }
 
         }
@@ -180,13 +235,13 @@ Attribution 4.0 International (CC BY 4.0)
 
         if (timelog.debug) { console.log('[timelog.tryAuthenticateFailure] Token failed (' + textStatus + ')'); }
 
-        timelog.tokenInitials = '';
-        timelog.tokenTimestamp = '';
-        timelog.tokenHash = '';
+        tokenInitials = '';
+        tokenTimestamp = '';
+        tokenHash = '';
 
         if (timelog.enableLocalStorageCache) {
-            localStorage.removeItem(localStoragePasswordKey);
-            localStorage.removeItem(localStorageTokenKey);
+            localStorage.removeItem(_localStoragePasswordKey);
+            localStorage.removeItem(_localStorageTokenKey);
         }
 
         if (tryAuthenticateFailureCallback != undefined) {
@@ -196,16 +251,86 @@ Attribution 4.0 International (CC BY 4.0)
 
     }
 
-    function getSecurityServiceUrl(url) {
-        var urlSecurityService = '{0}/WebServices/Security/V1_2/SecurityServiceSecure.svc';
+    /* TASKS
+    ********************************************************/
+    var taskList = undefined;
+    var getTasksAllocatedToEmployeeRunning = false;
 
-        if (url.length == 0 && timeog.enableLocalStorageCache) {
-            url = localStorage.getItem('TimeLogUrl');
-        }
+    timelog.getTasksAllocatedToEmployeeSuccessCallback = undefined;
+    timelog.getTasksAllocatedToEmployeeFailureCallback = undefined;
+    timelog.getTasksAllocatedToEmployee = function() {
 
-        url = url.replace('http://', 'https://');
-        return urlSecurityService.replace('{0}', url);
+		if (taskList != undefined) {
+			getTasksAllocatedToEmployeeSuccess('');
+			return;
+		}
+
+		if (getTasksAllocatedToEmployeeRunning) {
+            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployee] Already running skipping...')}
+		    return;
+		}
+
+		getTasksAllocatedToEmployeeRunning = true;
+
+        if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployee] Executing'); }
+
+        $.ajax({
+            type: "POST",
+            url: getProjectManagementServiceUrl(),
+            headers: { "SOAPAction": "GetTasksAllocatedToEmployeeRequest", "Content-Type": "text/xml" },
+            data: templateGetTasksAllocated.replace('{0}', timelog.getToken().Initials).
+                                            replace('{1}', timelog.getToken().Initials).
+                                            replace('{2}', timelog.getToken().Expires).
+                                            replace('{3}', timelog.getToken().Hash),
+            success: getTasksAllocatedToEmployeeSuccess,
+            error: getTasksAllocatedToEmployeeFailure,
+        });
+
     }
 
+    function getTasksAllocatedToEmployeeSuccess(data) {
+
+        getTasksAllocatedToEmployeeRunning = false;
+
+		if (data == '') {
+			if (timelog.getTasksAllocatedToEmployeeSuccessCallback != undefined) {
+				// if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Data returned from cache'); }
+				timelog.getTasksAllocatedToEmployeeSuccessCallback(taskList);
+				return;
+            }
+		}
+
+		var result = x2js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.GetTasksAllocatedToEmployeeResponse.GetTasksAllocatedToEmployeeResult;
+        if (result.ResponseState.__text == "Success") {
+            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Data downloaded'); }
+            if (timelog.enableLocalStorageCache) {
+                //localStorage.setItem(_localStorageTokenKey, x2js.json2xml_str(result.Return));
+            }
+
+			taskList = result.Return.Task;
+            if (timelog.getTasksAllocatedToEmployeeSuccessCallback != undefined) {
+                timelog.getTasksAllocatedToEmployeeSuccessCallback(result.Return.Task);
+            }
+        } else {
+            var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
+            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Failed (' + errorMsg + ')'); }
+            if (timelog.enableLocalStorageCache) {
+                //localStorage.removeItem(_localStoragePasswordKey);
+                //localStorage.removeItem(_localStorageTokenKey);
+            }
+
+            if (timelog.getTasksAllocatedToEmployeeFailureCallback != undefined) {
+                timelog.getTasksAllocatedToEmployeeFailureCallback(errorMsg);
+			}
+        }
+    }
+
+    function getTasksAllocatedToEmployeeFailure(jqhxr, textstatus, errrorthrown) {
+
+        getTasksAllocatedToEmployeeRunning = false;
+
+        if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeFailure] Failed (' + textStatus + ')'); }
+
+    }
 
 }(window.timelog = window.timelog || {}, jQuery));

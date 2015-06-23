@@ -176,7 +176,7 @@ a {
 ********************************************************/
 .debug { 
 	display:none;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 300px;
@@ -186,15 +186,15 @@ a {
 
 /* TASK VIEW
 ********************************************************/
-.taskView {
+.taskview {
 	margin: 20px auto;
 	width: 700px;
 	text-align: center;
 }
-.taskView input#taskSearch {
-    	background: 0;
+#taskview-search {
+	background: 0;
 	border: 0;
-    	border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #fff;
 	color: #fff;
 	outline: none;
 	text-align: center;
@@ -204,54 +204,57 @@ a {
 	font-size: 1.2em;
 	line-height: 1.4em;
 }
-.taskView input#taskSearch::-webkit-input-placeholder {
+#taskview-search::-webkit-input-placeholder {
 	color: #fff;
 	opacity: 0.5;
 }
-.taskView ul { 
+.taskview ul { 
 	margin-top: 20px;
 	padding: 5px 0;
 	background-color: rgba(0,0,0,0.3);
 }
-.taskView li { 
-	margin: 4px 0;
+.taskview li { 
+	padding: 4px 0;
+}
+.taskview .task-active {
+	background-color: rgba(0,0,0,0.5);
 }
 
 /* WORK UNIT VIEW
 ********************************************************/
-.workUnitView {
+.workunitview {
 	margin: 20px auto;
 	width: 700px;
 	text-align: center;
 }
-.workUnitView table { 
+.workunitview table { 
 	width: 100%;
 	color: rgba(0,0,0,0.8);
 	table-layout: fixed;
 	margin-bottom: 20px;
 }
-.workUnitView th { 
+.workunitview th { 
 	font-weight: bold;
 	background-color: rgba(255,255,255,0.6);
 }
-.workUnitView td, .workUnitView th {
+.workunitview td, .workunitview th {
 	text-align: left;
 	padding: 6px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.workUnitView td:nth-child(1), .workUnitView th:nth-child(1) { width: 170px; }
-.workUnitView td:nth-child(2), .workUnitView th:nth-child(2) { }
-.workUnitView td:nth-child(3), .workUnitView th:nth-child(3) { width: 70px; }
-.workUnitView td:nth-child(4), .workUnitView th:nth-child(4) { width: 40px; }
-.workUnitView tr {
+.workunitview td:nth-child(1), .workunitview th:nth-child(1) { width: 170px; }
+.workunitview td:nth-child(2), .workunitview th:nth-child(2) { }
+.workunitview td:nth-child(3), .workunitview th:nth-child(3) { width: 70px; }
+.workunitview td:nth-child(4), .workunitview th:nth-child(4) { width: 40px; }
+.workunitview tr {
 	background-color: rgba(255,255,255,0.5);
 }
-.workUnitView tr:nth-child(2n) {
+.workunitview tr:nth-child(2n) {
 	background-color: rgba(255,255,255,0.6);
 }
-.workUnitView > a { 
+.workunitview > a { 
 	font-size: 2em;
 	cursor: pointer;
 }
