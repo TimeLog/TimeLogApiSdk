@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CrmHandler.cs" />
+    <Compile Include="InvoicingHandler.cs" />
     <Compile Include="ProjectManagementHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawHelper\RawMessageEncoderFactory.cs" />
@@ -53,6 +54,11 @@
     <Compile Include="RawHelper\RawMessageEncodingPolicyConstants.cs" />
     <Compile Include="RawHelper\RawMessageHelper.cs" />
     <Compile Include="Service References\CrmService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\InvoicingService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -87,6 +93,40 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CrmService\TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure.wsdl" />
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.IsAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfCreditNote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfCreditNoteWithExternalKey.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceWithExternalKey.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.wsdl" />
@@ -143,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CrmService\" />
+    <WCFMetadataStorage Include="Service References\InvoicingService\" />
     <WCFMetadataStorage Include="Service References\ProjectManagementService\" />
     <WCFMetadataStorage Include="Service References\SecurityService\" />
   </ItemGroup>
@@ -187,6 +228,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CrmService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InvoicingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InvoicingService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InvoicingService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
