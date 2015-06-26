@@ -74,10 +74,47 @@ h3 {
 	margin-bottom: 10px;
 	opacity: 0.7;
 }
+h4 {
+    margin-top: 60px;
+	margin-bottom: 10px;
+	opacity: 0.7;
+    font-size: 1.2em;
+}
+h4 a { font-size: 0.7em; }
+table { 
+	width: 100%;
+    font-size: 0.8em;
+	color: rgba(0,0,0,0.8);
+	table-layout: fixed;
+	margin-bottom: 20px;
+}
+th { 
+	font-weight: bold;
+	background-color: rgba(255,255,255,0.6);
+}
+td, th {
+	text-align: left;
+	padding: 6px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+td:nth-child(1), th:nth-child(1) { width: 130px; }
+td:nth-child(2), th:nth-child(2) { width: 130px; }
+td:nth-child(3), th:nth-child(3) { }
+td:nth-child(4), th:nth-child(4) { width: 50px; }
+td:nth-child(5), th:nth-child(5) { width: 30px; }
+tr {
+	background-color: rgba(255,255,255,0.5);
+}
+tr:nth-child(2n) {
+	background-color: rgba(255,255,255,0.6);
+}
 a {
 	color: #FFF;
 	text-decoration: none;
 	border-bottom: 1px dashed #FFF;
+    cursor: pointer;
 }
 .logo { 
 	background-image:url('Content/logo.png'); 
@@ -184,6 +221,53 @@ a {
 	padding: 5px;
 }
 
+/* TRACKING VIEW
+********************************************************/
+#trackingview-time {
+    background: 0;
+	border: 0;
+    border-bottom: none;
+	color: #fff;
+	outline: none;
+	text-align: center;
+	width: 400px;
+	font-weight: bold;
+	line-height: 1.2em;
+    font-size: 6em;
+	margin-bottom: 8px;
+    padding-bottom: 2px;
+}
+
+#trackingview-time:focus {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 0;
+}
+
+#trackingview-comment {
+    background: 0;
+	border: 0;
+	color: #fff;
+	outline: none;
+	text-align: center;
+	width: 400px;
+	font-weight: bold;
+	line-height: 1.2em;
+    font-size: 2em;
+	margin-bottom: 16px;
+    padding-bottom: 2px;
+}
+
+#trackingview-comment:focus {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 0;
+}
+
+#trackingview-comment::-webkit-input-placeholder {
+	color: #fff;
+	opacity: 0.5;
+}
+
+
 /* TASK VIEW
 ********************************************************/
 .taskview {
@@ -220,39 +304,20 @@ a {
 	background-color: rgba(0,0,0,0.5);
 }
 
+#taskview-workunits {
+    text-align: center;
+    width: 500px;
+    margin-left: -250px;
+    left: 50%;
+    position: relative;
+}
+
 /* WORK UNIT VIEW
 ********************************************************/
 .workunitview {
 	margin: 20px auto;
 	width: 700px;
 	text-align: center;
-}
-.workunitview table { 
-	width: 100%;
-	color: rgba(0,0,0,0.8);
-	table-layout: fixed;
-	margin-bottom: 20px;
-}
-.workunitview th { 
-	font-weight: bold;
-	background-color: rgba(255,255,255,0.6);
-}
-.workunitview td, .workunitview th {
-	text-align: left;
-	padding: 6px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-.workunitview td:nth-child(1), .workunitview th:nth-child(1) { width: 170px; }
-.workunitview td:nth-child(2), .workunitview th:nth-child(2) { }
-.workunitview td:nth-child(3), .workunitview th:nth-child(3) { width: 70px; }
-.workunitview td:nth-child(4), .workunitview th:nth-child(4) { width: 40px; }
-.workunitview tr {
-	background-color: rgba(255,255,255,0.5);
-}
-.workunitview tr:nth-child(2n) {
-	background-color: rgba(255,255,255,0.6);
 }
 .workunitview > a { 
 	font-size: 2em;

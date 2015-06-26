@@ -8,8 +8,19 @@ $(document).ready(function() {
     timelog.authenticateSuccessCallback = userviewGetTokenSuccess;
     timelog.authenticateFailureCallback = userviewGetTokenError;
 
+    timelog.getEmployeeWorkSuccessCallback = taskviewGetEmployeeWorkSuccess;
+    timelog.getEmployeeWorkFailureCallback = taskviewGetEmployeeWorkFailure;
+
+    // General
+    $('input[class*="pauseTrigger"]').focus(function () {
+        pauseUpdates();
+    });
+
+    $('input[class*="pauseTrigger"]').blur(function () {
+        startUpdates();
+    });
+
 	// User View
-	$('#userview-toggle').click(userviewToggleClick);
 	$('#userview-signout').click(signOut);
 	$('#userview-submit').click(userviewSubmitClick);
 	$('#userview-username').keyup(userviewKeyUp);
@@ -18,88 +29,183 @@ $(document).ready(function() {
 	$('#userview-username').val(timelog.username);
 
 	// Work Unit View
-	$('#workunitview-back').click(showTrackingView);
+	// $('#workunitview-back').click(showTrackingView);
 
 	// Task View
 	$("#taskview-search").keyup(taskviewSearchKeyUp);
 	$("#taskview-search").keydown(taskviewSearchKeyDown);
+	$('#taskview-reloadworkunits').click(taskviewReloadWorkunitsClick);
 
     // Tracking View
-	setInterval(trackingviewTrackTime, 1000);
+	$('#trackingview-time').focus(trackingviewTimeFocus);
+	$('#trackingview-time').keyup(trackingviewTimeKeyUp);
+	$('#trackingview-time').blur(trackingviewTimeBlur);
+	$('#trackingview-comment').focus(trackingviewTimeFocus);
+	$('#trackingview-comment').keyup(trackingviewTimeKeyUp);
+	$('#trackingview-comment').blur(trackingviewTimeBlur);
+	$('#trackingview-cancel').click(trackingviewCancelClick);
+	$('#trackingview-done').click(trackingviewDoneClick);
 
 	// Debug
 	if (debug) {
 	    timelog.debug = true;
 		$('.debug').show();
-		$('#debug-taskview').click(showTaskView);
-		$('#debug-trackingview').click(showTrackingView);
-		$('#debug-workunitview').click(showWorkUnitView);
+		$('#debug-taskview').click(function () { localStorage.setItem(localStorageView, 'taskview') });
+		$('#debug-trackingview').click(function () { localStorage.setItem(localStorageView, 'trackingview') });
+		$('#debug-workunitview').click(function () { localStorage.setItem(localStorageView, 'workunitview') });
 	}
-
-	// General
-	adjustClock();
-	setInterval(adjustClock, 1000);
 
 	if (timelog.isTokenValid()) {
 
-	    showSignedInView();
+	    localStorage.setItem(localStorageSignedIn, true);
+	    localStorage.setItem(localStorageView, viewTask);
+
 	    if (localStorage.getItem(localStorageTaskID) != undefined) {
-	        showTrackingView();
+	        localStorage.setItem(localStorageView, viewTracking);
 	    }
 
-	} else {
-		userviewToggleClick();
 	}
+
+    // General
+	mainloop();
+	setInterval(mainloop, 1000);
 
 });
 
-/* HELPERS
+/* LOCAL STORAGE HANDLING
 ********************************************************/
+var localStorageTaskID = 'TimelogTaskID';
+var localStorageTaskStart = 'TimelogTaskStart';
+var localStorageTaskName = 'TimelogTaskName';
+var localStorageTaskComment = 'TimelogTaskComment';
+var localStorageView = 'TimelogView';
+var localStorageSignedIn = 'TimelogSignedIn';
+var localStoragePaused = 'false';
 
+/* VIEWS
+********************************************************/
+var viewTask = 'taskView';
+var viewTracking = 'trackingView';
+var viewWorkUnit = 'workunitView';
+var viewEmpty = 'empty';
+
+function setView(viewName) {
+    localStorage.setItem(localStorageView, viewName);
+    mainloop();
+}
+
+/* MAIN LOOP... Keeps multiple tabs in sync
+********************************************************/
+function pauseUpdates() {
+    localStorage.setItem(localStoragePaused, 'true');
+}
+
+function startUpdates() {
+    localStorage.setItem(localStoragePaused, 'false');
+}
+
+function isPaused() {
+    return localStorage.getItem(localStoragePaused) == 'true';
+}
+
+function mainloop() {
+
+    adjustClock();
+
+    $('.taskview').hide();
+    $('.trackingview').hide();
+    $('.workunitview').hide();
+
+    $('#userview-notloggedin').show();
+    $('#userview-loggedin').hide();
+    $('#userview-logindialog').show();
+
+    if (localStorage.getItem(localStorageSignedIn) === "true") {
+        $('#userview-notloggedin').hide();
+        $('#userview-loggedin').show();
+        $('#userview-logindialog').hide();
+
+        switch (localStorage.getItem(localStorageView)) {
+
+            case viewTask: {
+                $('.taskview').show();
+
+                if (!isPaused()) {
+                    var now = new Date();
+                    var startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7, 0, 0, 0);
+                    var endDate = new Date(startDate.getTime() + (8 * 24 * 60 * 60 * 1000));
+                    timelog.getEmployeeWork(startDate, endDate);
+                }
+
+                break;
+            }
+            case viewTracking: {
+                $('.trackingview').show();
+                $('#taskview-search').focus();
+
+                var taskid = localStorage.getItem(localStorageTaskID);
+                var start = Date.parse(localStorage.getItem(localStorageTaskStart));
+                var name = localStorage.getItem(localStorageTaskName);
+                var comment = localStorage.getItem(localStorageTaskComment);
+
+                if (taskid == undefined || taskid <= 0) {
+                    localStorage.removeItem(localStorageTaskID);
+                    localStorage.removeItem(localStorageTaskStart);
+                    localStorage.removeItem(localStorageTaskName);
+                    localStorage.removeItem(localStorageTaskComment);
+                    setView(viewTask);
+                }
+
+                if (!isPaused()) {
+                    var diffMiliseconds = Math.abs(new Date() - start); // in miliseconds
+                    var diffSeconds = diffMiliseconds / 1000;
+                    var diffMinutes = diffSeconds / 60;
+                    var diffHours = diffMinutes / 60;
+
+                    var calcMinutes = diffMinutes - (Math.floor(diffHours) * 60);
+                    var spacer = new Date().getSeconds() % 2 ? 'rgba(0,0,0,0.06)' : 'rgba(0,0,0,0.04)';
+                    var diffString = Math.floor(diffHours) + 'h' + (Math.floor(calcMinutes) > 9 ? '' : '0') + Math.floor(calcMinutes) + 'm';
+
+                    $('#trackingview-name').html(name);
+                    $('#trackingview-time').val(diffString);
+                    $('#trackingview-comment').val(comment);
+                    $('#trackingview-time').css('background-color', spacer);
+                }
+
+                break;
+            }
+            default: {
+
+            }
+        } 
+    } else {
+        // Not signed in
+
+        if (!isPaused()) {
+            if ($('#userview-url').val().length === 0) {
+                $('#userview-url').focus();
+            } else if ($('#userview-username').val().length === 0) {
+                $('#userview-username').focus();
+            } else if ($('#userview-password').val().length === 0) {
+                $('#userview-password').focus();
+            }
+        }
+    }
+}
 
 /* GENERAL
 ********************************************************/
-function showTaskView() {
-	$('.taskview').show();
-	$('.trackingview').hide();
-	$('.workunitview').hide();
-
-	$('#taskview-search').focus();
-}
-
-function showTrackingView() {
-	$('.taskview').hide();
-	$('.trackingview').show();
-	$('.workunitview').hide();
-
-	trackingviewTrackTime();
-}
-
-function showWorkUnitView() {
-	$('.taskview').hide();
-	$('.trackingview').hide();
-	$('.workunitview').show();
-}
-function showEmptyView() {
-	$('.taskview').hide();
-	$('.trackingview').hide();
-	$('.workunitview').hide();
-}
 
 function signOut() {
-
     timelog.signOut();
-	showEmptyView();
-	$('#userview-notloggedin').show();
-	$('#userview-loggedin').hide();
-	userviewShowLoginDialog();
-}
+	
+    localStorage.removeItem(localStorageTaskComment);
+    localStorage.removeItem(localStorageTaskID);
+    localStorage.removeItem(localStorageTaskName);
+    localStorage.removeItem(localStorageTaskStart);
 
-function showSignedInView() {
-	$('#userview-notloggedin').hide();
-	$('#userview-loggedin').show();
-	$('#userview-logindialog').hide();
-	showTaskView();
+    localStorage.setItem(localStorageSignedIn, false);
+    setView(viewEmpty);
 }
 
 function adjustClock() {
@@ -121,28 +227,6 @@ function formatClock(number) {
 
 /* USER VIEW
 ********************************************************/
-function userviewToggleClick() {
-	var dialog = $('#userview-logindialog');
-
-	if (dialog.is(":visible")) {
-		dialog.hide();
-	} else {
-		userviewShowLoginDialog();
-	}
-}
-
-function userviewShowLoginDialog() {
-	var dialog = $('#userview-logindialog');
-	dialog.show();
-	$('#userview-loginstatus').hide();
-
-	if ($('#userview-username').val().length == 0) {
-		$('#userview-username').focus();
-	} else {
-		$('#userview-password').focus();
-	}
-}
-
 function userviewSubmitClick() {
 	$('#userview-loginstatus').hide();
 	$('#userview-loginstatus').html('');
@@ -160,7 +244,8 @@ function userviewSubmitClick() {
 }
 
 function userviewGetTokenSuccess() {
-	showSignedInView();
+    localStorage.setItem(localStorageSignedIn, true);
+    setView(viewTask);
 }
 
 function userviewSetLoginStatus(msg) {
@@ -175,7 +260,6 @@ function userviewGetTokenError(errorMsg) {
 
 function userviewKeyUp(event) {
 	$('#userview-loginstatus').hide();
-
 	if (event.which == 13) { // Enter key
 		userviewSubmitClick();
 	}
@@ -186,59 +270,88 @@ function userviewKeyUp(event) {
 
 /* TRACKING VIEW
 ********************************************************/
-var localStorageTaskID = 'timelog-taskid';
-var localStorageStart = 'timelog-taskstart';
-var localStorageName = 'timelog-taskname';
-
-function trackingviewStart(taskID, taskName) {
-    localStorage.setItem(localStorageTaskID, taskID);
-    localStorage.setItem(localStorageStart, new Date());
-    localStorage.setItem(localStorageName, taskName);
-    showTrackingView();
-}
-
-function trackingviewEnd() {
+function trackingviewCancelClick() {
     localStorage.removeItem(localStorageTaskID);
-    localStorage.removeItem(localStorageStart);
-    localStorage.removeItem(localStorageName);
-    showTaskView();
+    localStorage.removeItem(localStorageTaskStart);
+    localStorage.removeItem(localStorageTaskName);
+    localStorage.removeItem(localStorageTaskComment);
+    setView(viewTask);
 }
 
-function trackingviewTrackTime() {
+function trackingviewDoneClick() {
 
-    if ($('.trackingview').is(':visible')) {
+    var taskID = localStorage.getItem(localStorageTaskID);
+    var start = localStorage.getItem(localStorageTaskStart);
+    var end = new Date();
+    var comment = $('#trackingview-comment').val();
+    trackingviewPaused = true;
 
-        var taskid = localStorage.getItem(localStorageTaskID);
-        var start = Date.parse(localStorage.getItem(localStorageStart));
-        var name = localStorage.getItem(localStorageName);
+    timelog.insertWorkSuccessCallback = trackingviewInsertWorkSuccess;
+    timelog.insertWorkFailureCallback = trackingviewInsertWorkFailure;
+    timelog.insertWork(taskID, start, end, comment);
 
-        if (taskid == undefined || taskid <= 0) {
-            trackingviewEnd();
-        }
+}
 
-        $('#trackingview-name').html(name);
+function trackingviewInsertWorkSuccess() {
+    localStorage.removeItem(localStorageTaskID);
+    localStorage.removeItem(localStorageTaskStart);
+    localStorage.removeItem(localStorageTaskName);
+    localStorage.removeItem(localStorageTaskComment);
+    timelog.invalidateGetEmployeeWork();
+    setView(viewTask);
+}
 
-        var diffMiliseconds = Math.abs(new Date() - start); // in miliseconds
-        var diffSeconds = diffMiliseconds / 1000;
-        var diffMinutes = diffSeconds / 60;
-        var diffHours = diffMinutes / 60;
+function trackingviewInsertWorkFailure(msg) {
+    trackingviewPaused = false;
+    console.log('buhu');
+}
 
-        var calcMinutes = diffMinutes - (Math.round(diffHours) * 60);
+function trackingviewTimeFocus() {
+    trackingviewPaused = true;
+}
 
-        var diffString = Math.round(diffHours) + 'h' + (Math.round(calcMinutes) > 9 ? '' : '0') + Math.round(calcMinutes) + 'm';
+function trackingviewTimeBlur() {
+    trackingviewSaveTime();
+    trackingviewPaused = false;
+}
 
-        $('#trackingview-time').html(diffString);
-
-    } else {
-
-        $('#trackingview-name').html('...');
-        $('#trackingview-time').html('0h00m');
-
+function trackingviewTimeKeyUp(event) {
+    if (event.keyCode == 13) {
+        trackingviewSaveTime();
+        $('#trackingview-time').blur();
+        $('#trackingview-comment').blur();
     }
 }
 
+function trackingviewSaveTime() {
+    var newValue = $('#trackingview-time').val().toString().toLowerCase();
+
+    var indexH = newValue.indexOf('h');
+    var indexM = newValue.indexOf('m');
+
+    if (indexH > 0 && indexM > 0) {
+
+        var hours = parseInt(newValue.substring(0, indexH));
+        var minutes = parseInt(newValue.substring(indexH + 1, indexM));
+
+        // Convert to miliseconds
+        var milliseconds = (hours * 60 * 60 * 1000) + (minutes * 60 * 1000);
+
+        var newStartDate = new Date();
+        newStartDate.setTime(new Date().getTime() - milliseconds);
+
+        localStorage.setItem(localStorageTaskStart, newStartDate);
+    }
+
+    localStorage.setItem(localStorageTaskComment, $('#trackingview-comment').val());
+
+    setView(viewTracking);
+}
+
+
 /* TASK VIEW
 ********************************************************/
+var taskviewCompleteListCache;
 var taskviewListCache;
 var taskviewIndex = 0;
 var taskviewResults = 0;
@@ -250,8 +363,16 @@ function taskviewSearchKeyUp(event) {
 
     if (event.keyCode == 13) {
         if (timelog.debug) { console.log('Task selected: ' + taskviewListCache[taskviewIndex].TaskID); }
-        selectedItem = $($('#taskview-list')[taskviewIndex]);
-        trackingviewStart(selectedItem.data('id'), selectedItem.text());
+
+        localStorage.setItem(localStorageTaskID, taskviewListCache[taskviewIndex].TaskID);
+        localStorage.setItem(localStorageTaskStart, new Date());
+        localStorage.setItem(localStorageTaskName, taskviewListCache[taskviewIndex].Details.ProjectHeader.Name + ' &raquo; ' + taskviewListCache[taskviewIndex].FullName);
+        localStorage.setItem(localStorageTaskComment, '');
+
+        $('#taskview-search').val('');
+        $('#taskview-list').hide();
+
+        setView(viewTracking);
     }
 
     if ($('#taskview-search').val().length > 0) {
@@ -272,19 +393,26 @@ function taskviewSearchKeyDown(event) {
     if (event.which == 40 || event.which == 38 || event.which == 13) { event.preventDefault(); }
 }
 
+function taskviewReloadWorkunitsClick() {
+    timelog.invalidateGetEmployeeWork();
+}
+
 function taskviewGetAllocationsSuccess(data) {
     $('#taskview-list').show();
     $('#taskview-list').html('');
 
-    taskviewListCache = data;
+    taskviewCompleteListCache = data;
     taskviewResults = 0;
+    taskviewListCache = [];
+
     for (index in data) {
 
-        var fullName = data[index].Details.ProjectHeader.Name + ' &raquo; ' + data[index].Name;
+        var fullName = data[index].Details.ProjectHeader.Name + ' &raquo; ' + data[index].FullName;
 
-		if (fullName.indexOf($('#taskview-search').val()) > -1) {
+		if (data[index].Details.IsParent != "true" && fullName.indexOf($('#taskview-search').val()) > -1) {
 		    $('#taskview-list').append('<li data-id="' + data[index].TaskID + '">' + fullName + '</li>');
 		    taskviewResults = taskviewResults + 1;
+		    taskviewListCache.push(data[index]);
 		}
     }
 
@@ -302,6 +430,31 @@ function taskviewGetAllocationsSuccess(data) {
 function taskviewGetAllocationsFailure(error) {
     $('#taskview-list').show();
     $('#taskview-list').html('<li>' + error + '</li>');
+}
+
+function taskviewGetEmployeeWorkSuccess(data) {
+    $('#taskview-workunits').show();
+
+    var list = $('#taskview-workunits table tbody');
+    list.html('');
+
+    for (index in data) {
+        var element = Array.isArray(data) ? data[index] : data;
+        list.append('<tr>' +
+            '<td title="' + element.Details.ProjectHeader.Name + '">' + element.Details.ProjectHeader.Name + '</td>' +
+            '<td title="' + element.Details.TaskHeader.FullName + '">' + element.Details.TaskHeader.FullName + '</td>' +
+            '<td title="' + element.Description + '">' + element.Description + '</td>' +
+            '<td>' + element.Duration + '</td><td></td></tr>');
+    }
+
+    if (list.html().length == 0) {
+        list.html('<tr><td></td><td>Nothing yet</td><td></td><td></td><td></td></tr>');
+    }
+}
+
+function taskviewGetEmployeeWorkFailure(error) {
+    $('#taskview-workunits').show();
+    $('#taskview-workunits table tbody').html('<tr><td></td><td>' + error + '</td><td></td><td></td><td></td></tr>');
 }
 
 function taskviewAdjustIndex() {

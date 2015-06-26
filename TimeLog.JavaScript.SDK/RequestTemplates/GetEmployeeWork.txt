@@ -1,0 +1,189 @@
+<!--------------- REQUEST ------------------->
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <VsDebuggerCausalityData xmlns="http://schemas.microsoft.com/vstudio/diagnostics/servicemodelsink">uIDPozsbriejlFNBuICw3DSszH0AAAAAZU4nOuyrKEezYjm9oQ9XWYnBRwN/VrlNt+LxirGM+U4ACQAA</VsDebuggerCausalityData>
+  </s:Header>
+  <s:Body>
+    <GetEmployeeWork xmlns="http://www.timelog.com/api/tlp/v1_6">
+      <initials>sox</initials>
+      <startDate>2015-06-22T00:00:00</startDate>
+      <endDate>2015-06-26T00:00:00</endDate>
+      <token xmlns:d4p1="http://www.timelog.com/api/tlp/v1_3" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <d4p1:Initials>sox</d4p1:Initials>
+        <d4p1:Expires>2015-06-27T02:04:16.671835+02:00</d4p1:Expires>
+        <d4p1:Hash>0tbZOwix+R1tW6+7ifAW5oV1GeeptaoPWYKBFw7V12c+TgsO3MWxYqHQkNB6WkYQP3s4WlINVITL9h9cOinqMw==</d4p1:Hash>
+      </token>
+    </GetEmployeeWork>
+  </s:Body>
+</s:Envelope>
+
+<!--------------- RESPONSE ------------------->
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header />
+  <s:Body>
+    <GetEmployeeWorkResponse xmlns="http://www.timelog.com/api/tlp/v1_6">
+      <GetEmployeeWorkResult xmlns:a="http://api.timelog.com" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:Return>
+          <WorkUnit>
+            <GUID>c7868037-b43a-4b50-ab4f-13f8aa3310d6</GUID>
+            <AllocationGUID>367594c4-a004-4f71-a389-e93c2559caae</AllocationGUID>
+            <TaskID>56</TaskID>
+            <EmployeeInitials>sox</EmployeeInitials>
+            <Duration>PT2H7M</Duration>
+            <StartDateTime>2015-06-24T09:39:00</StartDateTime>
+            <EndDateTime>2015-06-24T11:46:00</EndDateTime>
+            <Description>Not implemented</Description>
+            <TimeStamp>AAAAAAAB7DU=</TimeStamp>
+            <IsEditable>true</IsEditable>
+            <AdditionalText i:nil="true" />
+            <Details>
+              <TaskHeader>
+                <ID>56</ID>
+                <Name>Telefonsupport</Name>
+                <No />
+                <IsActive>true</IsActive>
+                <WBS>1</WBS>
+                <FullName>Telefonsupport</FullName>
+              </TaskHeader>
+              <ProjectHeader>
+                <ID>29</ID>
+                <ProjectGUID>f50e843b-911f-4438-a7a8-4cd6f18857da</ProjectGUID>
+                <Name>General coin support</Name>
+                <No>0029</No>
+                <IsActive>true</IsActive>
+                <IsGeneralProject>true</IsGeneralProject>
+                <StartDate>2014-03-14T00:00:00</StartDate>
+                <EndDate>2014-06-14T00:00:00</EndDate>
+              </ProjectHeader>
+              <CustomerHeader xmlns:b="http://api.timelog.com/services/crm/1_2">
+                <b:ID>667</b:ID>
+                <b:Name>TimeLog Project A/S</b:Name>
+                <b:No>2003-0002</b:No>
+                <b:GUID>6848da3f-1f62-e111-a1cd-00187177245a</b:GUID>
+              </CustomerHeader>
+            </Details>
+          </WorkUnit>
+          <WorkUnit>
+            <GUID>35e6d033-b358-440f-8c36-4a479adfda96</GUID>
+            <AllocationGUID>51a99b5b-5f71-4f49-b734-e7920cab3db2</AllocationGUID>
+            <TaskID>58</TaskID>
+            <EmployeeInitials>sox</EmployeeInitials>
+            <Duration>PT3M</Duration>
+            <StartDateTime>2015-06-24T11:52:00</StartDateTime>
+            <EndDateTime>2015-06-24T11:55:00</EndDateTime>
+            <Description>Not implemented</Description>
+            <TimeStamp>AAAAAAAB7DY=</TimeStamp>
+            <IsEditable>true</IsEditable>
+            <AdditionalText i:nil="true" />
+            <Details>
+              <TaskHeader>
+                <ID>58</ID>
+                <Name>Paper research</Name>
+                <No />
+                <IsActive>true</IsActive>
+                <WBS>1</WBS>
+                <FullName>Paper research</FullName>
+              </TaskHeader>
+              <ProjectHeader>
+                <ID>35</ID>
+                <ProjectGUID>e32af6d8-2d2e-47e8-b8cb-97c5e5859c28</ProjectGUID>
+                <Name>Test3</Name>
+                <No>0035</No>
+                <IsActive>true</IsActive>
+                <IsGeneralProject>false</IsGeneralProject>
+                <StartDate>2015-02-02T00:00:00</StartDate>
+                <EndDate>2015-05-05T00:00:00</EndDate>
+              </ProjectHeader>
+              <CustomerHeader xmlns:b="http://api.timelog.com/services/crm/1_2">
+                <b:ID>722</b:ID>
+                <b:Name>Grossisten HB</b:Name>
+                <b:No>102</b:No>
+                <b:GUID>f22b57ca-f292-48a4-a1e5-2f50bcb17f84</b:GUID>
+              </CustomerHeader>
+            </Details>
+          </WorkUnit>
+          <WorkUnit>
+            <GUID>19cc87d7-e32e-4c9e-826c-02177400350a</GUID>
+            <AllocationGUID>51a99b5b-5f71-4f49-b734-e7920cab3db2</AllocationGUID>
+            <TaskID>58</TaskID>
+            <EmployeeInitials>sox</EmployeeInitials>
+            <Duration>PT29M</Duration>
+            <StartDateTime>2015-06-26T11:16:00</StartDateTime>
+            <EndDateTime>2015-06-26T11:45:00</EndDateTime>
+            <Description>comment 2</Description>
+            <TimeStamp>AAAAAAACC3E=</TimeStamp>
+            <IsEditable>true</IsEditable>
+            <AdditionalText i:nil="true" />
+            <Details>
+              <TaskHeader>
+                <ID>58</ID>
+                <Name>Paper research</Name>
+                <No />
+                <IsActive>true</IsActive>
+                <WBS>1</WBS>
+                <FullName>Paper research</FullName>
+              </TaskHeader>
+              <ProjectHeader>
+                <ID>35</ID>
+                <ProjectGUID>e32af6d8-2d2e-47e8-b8cb-97c5e5859c28</ProjectGUID>
+                <Name>Test3</Name>
+                <No>0035</No>
+                <IsActive>true</IsActive>
+                <IsGeneralProject>false</IsGeneralProject>
+                <StartDate>2015-02-02T00:00:00</StartDate>
+                <EndDate>2015-05-05T00:00:00</EndDate>
+              </ProjectHeader>
+              <CustomerHeader xmlns:b="http://api.timelog.com/services/crm/1_2">
+                <b:ID>722</b:ID>
+                <b:Name>Grossisten HB</b:Name>
+                <b:No>102</b:No>
+                <b:GUID>f22b57ca-f292-48a4-a1e5-2f50bcb17f84</b:GUID>
+              </CustomerHeader>
+            </Details>
+          </WorkUnit>
+        </a:Return>
+        <a:ReturnTypeDescription>WorkUnit</a:ReturnTypeDescription>
+        <a:Request>
+          <a:Parameters>
+            <a:RequestParameter>
+              <a:Name>initials</a:Name>
+              <a:Value>sox</a:Value>
+            </a:RequestParameter>
+            <a:RequestParameter>
+              <a:Name>startDate</a:Name>
+              <a:Value>22-06-2015 00:00:00</a:Value>
+            </a:RequestParameter>
+            <a:RequestParameter>
+              <a:Name>endDate</a:Name>
+              <a:Value>26-06-2015 00:00:00</a:Value>
+            </a:RequestParameter>
+            <a:RequestParameter>
+              <a:Name>SecurityToken</a:Name>
+              <a:Value>Initials=[{0}], Expires=[{1}], Hash=[{2}]</a:Value>
+            </a:RequestParameter>
+          </a:Parameters>
+          <a:ServiceClass>ProjectManagementService</a:ServiceClass>
+          <a:MethodName>GetEmployeeWork</a:MethodName>
+        </a:Request>
+        <a:ResponseState>Success</a:ResponseState>
+        <a:Messages>
+          <a:APIMessage>
+            <a:Message>Successfully called TimeLog.API, ProjectManagementService :: WorkUnit GetEmployeeWork</a:Message>
+            <a:Severity>Message</a:Severity>
+            <a:ErrorCode>0</a:ErrorCode>
+          </a:APIMessage>
+          <a:APIMessage>
+            <a:Message>Duration of call was 0,2805211 sec.</a:Message>
+            <a:Severity>Message</a:Severity>
+            <a:ErrorCode>0</a:ErrorCode>
+          </a:APIMessage>
+        </a:Messages>
+        <a:ErrorCode>0</a:ErrorCode>
+        <a:IsReturnPaged>false</a:IsReturnPaged>
+        <a:TotalPageCount>1</a:TotalPageCount>
+      </GetEmployeeWorkResult>
+    </GetEmployeeWorkResponse>
+  </s:Body>
+</s:Envelope>
