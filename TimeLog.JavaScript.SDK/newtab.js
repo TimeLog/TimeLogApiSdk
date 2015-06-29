@@ -1,6 +1,7 @@
 /// <reference path="timelog.js" />
 
 var debug = localStorage.getItem('TimeLogDebug') || false;
+var regexDuration = /P((([0-9]*\.?[0-9]*)Y)?(([0-9]*\.?[0-9]*)M)?(([0-9]*\.?[0-9]*)W)?(([0-9]*\.?[0-9]*)D)?)?(T(([0-9]*\.?[0-9]*)H)?(([0-9]*\.?[0-9]*)M)?(([0-9]*\.?[0-9]*)S)?)?/
 
 $(document).ready(function() {
 
@@ -35,6 +36,7 @@ $(document).ready(function() {
 	$("#taskview-search").keyup(taskviewSearchKeyUp);
 	$("#taskview-search").keydown(taskviewSearchKeyDown);
 	$('#taskview-reloadworkunits').click(taskviewReloadWorkunitsClick);
+	$('#taskview-gototimelog').attr('href', timelog.url);
 
     // Tracking View
 	$('#trackingview-time').focus(trackingviewTimeFocus);
@@ -132,8 +134,8 @@ function mainloop() {
 
                 if (!isPaused()) {
                     var now = new Date();
-                    var startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7, 0, 0, 0);
-                    var endDate = new Date(startDate.getTime() + (8 * 24 * 60 * 60 * 1000));
+                    var startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+                    var endDate = new Date(startDate.getTime() + (1 * 24 * 60 * 60 * 1000));
                     timelog.getEmployeeWork(startDate, endDate);
                 }
 
@@ -409,11 +411,12 @@ function taskviewGetAllocationsSuccess(data) {
 
         var fullName = data[index].Details.ProjectHeader.Name + ' &raquo; ' + data[index].FullName;
 
-		if (data[index].Details.IsParent != "true" && fullName.indexOf($('#taskview-search').val()) > -1) {
+		if (taskviewResults < 50 && data[index].Details.IsParent != "true" && fullName.toLowerCase().indexOf($('#taskview-search').val().toLowerCase()) > -1) {
 		    $('#taskview-list').append('<li data-id="' + data[index].TaskID + '">' + fullName + '</li>');
 		    taskviewResults = taskviewResults + 1;
 		    taskviewListCache.push(data[index]);
 		}
+
     }
 
     if (taskviewIndex >= taskviewResults) {
@@ -438,17 +441,26 @@ function taskviewGetEmployeeWorkSuccess(data) {
     var list = $('#taskview-workunits table tbody');
     list.html('');
 
+    var total = moment.duration(0);
+
     for (index in data) {
-        var element = Array.isArray(data) ? data[index] : data;
+
+        var duration = moment.duration.fromIsoduration(data[index].Duration);
+
         list.append('<tr>' +
-            '<td title="' + element.Details.ProjectHeader.Name + '">' + element.Details.ProjectHeader.Name + '</td>' +
-            '<td title="' + element.Details.TaskHeader.FullName + '">' + element.Details.TaskHeader.FullName + '</td>' +
-            '<td title="' + element.Description + '">' + element.Description + '</td>' +
-            '<td>' + element.Duration + '</td><td></td></tr>');
+            '<td title="' + data[index].Details.ProjectHeader.Name + '">' + data[index].Details.ProjectHeader.Name + '</td>' +
+            '<td title="' + data[index].Details.TaskHeader.FullName + '">' + data[index].Details.TaskHeader.FullName + '</td>' +
+            '<td title="' + data[index].Description + '">' + data[index].Description + '</td>' +
+            '<td>' + duration.hours() + ':' + duration.minutes() + '</td><td></td></tr>');
+
+        total = total.add(duration);
+
     }
 
     if (list.html().length == 0) {
         list.html('<tr><td></td><td>Nothing yet</td><td></td><td></td><td></td></tr>');
+    } else {
+        list.append('<tr style="font-weight: bold;"><td></td><td></td><td style="text-align:right;">Total:</td><td>' + total.hours() + ':' + total.minutes() + '</td><td></td></tr>');
     }
 }
 

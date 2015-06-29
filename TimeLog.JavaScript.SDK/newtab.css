@@ -221,6 +221,17 @@ a {
 	padding: 5px;
 }
 
+.version {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 300px;
+	text-align: right;
+	padding: 5px;
+    opacity: 0.5;
+    font-size: 0.8em;
+}
+
 /* TRACKING VIEW
 ********************************************************/
 #trackingview-time {

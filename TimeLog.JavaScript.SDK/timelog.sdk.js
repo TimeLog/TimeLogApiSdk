@@ -57,6 +57,7 @@ Attribution 4.0 International (CC BY 4.0)
     var _localStorageUsernameKey = 'TimeLogUsername';
     var _localStoragePasswordKey = 'TimeLogPassword';
     var _localStorageTokenKey = 'TimeLogToken';
+    var _localStorageTasksAllocatedKey = 'TimeLogTasksAllocated';
     var _localStorageEmployeeWorkKey = 'TimeLogEmployeeWork';
     var _url = '';
     var _username = '';
@@ -284,13 +285,21 @@ Attribution 4.0 International (CC BY 4.0)
 
     timelog.invalidateGetTasksAllocatedToEmployee = function () {
         getTasksAllocatedToEmployeeList = undefined;
+
+        if (timelog.enableLocalStorageCache) {
+            localStorage.removeItem(_localStorageTasksAllocatedKey);
+        }
     }
 
     timelog.getTasksAllocatedToEmployeeSuccessCallback = undefined;
     timelog.getTasksAllocatedToEmployeeFailureCallback = undefined;
     timelog.getTasksAllocatedToEmployee = function() {
 
-		if (getTasksAllocatedToEmployeeList != undefined) {
+        if (getTasksAllocatedToEmployeeList = undefined && timelog.enableLocalStorageCache && localStorage.getItem(_localStorageTasksAllocatedKey) != undefined) {
+            getTasksAllocatedToEmployeeList = JSON.parse(localStorage.getItem(_localStorageTasksAllocatedKey));
+        }
+
+        if (getTasksAllocatedToEmployeeList != undefined) {
 			getTasksAllocatedToEmployeeSuccess('');
 			return;
 		}
@@ -332,20 +341,23 @@ Attribution 4.0 International (CC BY 4.0)
 		var result = x2js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.GetTasksAllocatedToEmployeeResponse.GetTasksAllocatedToEmployeeResult;
         if (result.ResponseState.__text == "Success") {
             if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Data downloaded'); }
+
+            getTasksAllocatedToEmployeeList = Array.isArray(result.Return.Task) ? result.Return.Task : [result.Return.Task];
+
             if (timelog.enableLocalStorageCache) {
-                //localStorage.setItem(_localStorageTokenKey, x2js.json2xml_str(result.Return));
+                localStorage.setItem(_localStorageTasksAllocatedKey, JSON.stringify(getTasksAllocatedToEmployeeList));
             }
 
-			getTasksAllocatedToEmployeeList = result.Return.Task;
             if (timelog.getTasksAllocatedToEmployeeSuccessCallback != undefined) {
-                timelog.getTasksAllocatedToEmployeeSuccessCallback(result.Return.Task);
+                timelog.getTasksAllocatedToEmployeeSuccessCallback(getTasksAllocatedToEmployeeList);
             }
+
         } else {
             var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
             if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Failed in API (' + errorMsg + ')'); }
+
             if (timelog.enableLocalStorageCache) {
-                //localStorage.removeItem(_localStoragePasswordKey);
-                //localStorage.removeItem(_localStorageTokenKey);
+                localStorage.removeItem(_localStorageTasksAllocatedKey);
             }
 
             if (timelog.getTasksAllocatedToEmployeeFailureCallback != undefined) {
@@ -359,6 +371,11 @@ Attribution 4.0 International (CC BY 4.0)
         getTasksAllocatedToEmployeeRunning = false;
 
         if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeFailure] Failed (' + textStatus + ')'); }
+
+        if (timelog.enableLocalStorageCache) {
+            localStorage.removeItem(_localStorageTasksAllocatedKey);
+        }
+
         if (timelog.getTasksAllocatedToEmployeeFailureCallback != undefined) {
             timelog.getTasksAllocatedToEmployeeFailureCallback(textStatus);
         }
@@ -461,7 +478,7 @@ Attribution 4.0 International (CC BY 4.0)
     timelog.getEmployeeWorkFailureCallback = undefined;
     timelog.getEmployeeWork = function (start, end) {
 
-        if (timelog.enableLocalStorageCache) {
+        if (getEmployeeWorkList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(_localStorageEmployeeWorkKey) != undefined) {
             getEmployeeWorkList = JSON.parse(localStorage.getItem(_localStorageEmployeeWorkKey));
         }
 
@@ -513,16 +530,23 @@ Attribution 4.0 International (CC BY 4.0)
         if (result.ResponseState.__text == "Success") {
             if (timelog.debug) { console.log('[timelog.getEmployeeWork] Data downloaded'); }
 
+            getEmployeeWorkList = Array.isArray(result.Return.WorkUnit) ? result.Return.WorkUnit : [result.Return.WorkUnit];
+
             if (timelog.enableLocalStorageCache) {
-                getEmployeeWorkList = localStorage.setItem(_localStorageEmployeeWorkKey, JSON.stringify(result.Return.WorkUnit));
+                localStorage.setItem(_localStorageEmployeeWorkKey, JSON.stringify(getEmployeeWorkList));
             }
 
             if (timelog.getEmployeeWorkSuccessCallback != undefined) {
-                timelog.getEmployeeWorkSuccessCallback(result.Return.WorkUnit);
+                timelog.getEmployeeWorkSuccessCallback(getEmployeeWorkList);
             }
+
         } else {
             var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
             if (timelog.debug) { console.log('[timelog.getEmployeeWork] Failed in API (' + errorMsg + ')'); }
+
+            if (timelog.enableLocalStorageCache) {
+                localStorage.removeItem(_localStorageEmployeeWorkKey);
+            }
 
             if (timelog.getEmployeeWorkFailureCallback != undefined) {
                 timelog.getEmployeeWorkFailureCallback(errorMsg);
@@ -536,6 +560,11 @@ Attribution 4.0 International (CC BY 4.0)
         getEmployeeWorkRunning = false;
 
         if (timelog.debug) { console.log('[timelog.getEmployeeWork] Failed (' + textStatus + ')'); }
+
+        if (timelog.enableLocalStorageCache) {
+            localStorage.removeItem(_localStorageEmployeeWorkKey);
+        }
+
         if (timelog.getEmployeeWorkFailureCallback != undefined) {
             timelog.getEmployeeWorkFailureCallback(textStatus);
         }
