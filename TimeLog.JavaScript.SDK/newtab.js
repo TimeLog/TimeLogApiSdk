@@ -3,6 +3,12 @@
 var debug = localStorage.getItem('TimeLogDebug') || false;
 var regexDuration = /P((([0-9]*\.?[0-9]*)Y)?(([0-9]*\.?[0-9]*)M)?(([0-9]*\.?[0-9]*)W)?(([0-9]*\.?[0-9]*)D)?)?(T(([0-9]*\.?[0-9]*)H)?(([0-9]*\.?[0-9]*)M)?(([0-9]*\.?[0-9]*)S)?)?/
 
+Number.prototype.pad = function (size) {
+    var s = String(this);
+    while (s.length < (size || 2)) { s = "0" + s; }
+    return s;
+}
+
 $(document).ready(function() {
 
     // timelog setup
@@ -82,7 +88,8 @@ var localStorageTaskName = 'TimelogTaskName';
 var localStorageTaskComment = 'TimelogTaskComment';
 var localStorageView = 'TimelogView';
 var localStorageSignedIn = 'TimelogSignedIn';
-var localStoragePaused = 'false';
+var localStoragePaused = 'TimelogPaused';
+var localStorageCacheExpire = 'TimelogCacheExpire';
 
 /* VIEWS
 ********************************************************/
@@ -205,6 +212,10 @@ function signOut() {
     localStorage.removeItem(localStorageTaskID);
     localStorage.removeItem(localStorageTaskName);
     localStorage.removeItem(localStorageTaskStart);
+    localStorage.removeItem(localStoragePaused);
+    localStorage.removeItem(localStorageView);
+    localStorage.removeItem(localStorageSignedIn);
+    localStorage.removeItem(localStorageCacheExpire);
 
     localStorage.setItem(localStorageSignedIn, false);
     setView(viewEmpty);
@@ -305,7 +316,7 @@ function trackingviewInsertWorkSuccess() {
 
 function trackingviewInsertWorkFailure(msg) {
     trackingviewPaused = false;
-    console.log('buhu');
+    alert(msg);
 }
 
 function trackingviewTimeFocus() {
@@ -377,6 +388,7 @@ function taskviewSearchKeyUp(event) {
         setView(viewTracking);
     }
 
+    if (event.keyCode != 46 && event.keyCode != 8 && event.keyCode < 48) { return; } // DELETE + BACKSPACE exception
     if ($('#taskview-search').val().length > 0) {
 
         timelog.getTasksAllocatedToEmployeeSuccessCallback = taskviewGetAllocationsSuccess;
@@ -451,7 +463,7 @@ function taskviewGetEmployeeWorkSuccess(data) {
             '<td title="' + data[index].Details.ProjectHeader.Name + '">' + data[index].Details.ProjectHeader.Name + '</td>' +
             '<td title="' + data[index].Details.TaskHeader.FullName + '">' + data[index].Details.TaskHeader.FullName + '</td>' +
             '<td title="' + data[index].Description + '">' + data[index].Description + '</td>' +
-            '<td>' + duration.hours() + ':' + duration.minutes() + '</td><td></td></tr>');
+            '<td>' + duration.hours() + ':' + duration.minutes().pad() + '</td><td></td></tr>');
 
         total = total.add(duration);
 
@@ -460,7 +472,7 @@ function taskviewGetEmployeeWorkSuccess(data) {
     if (list.html().length == 0) {
         list.html('<tr><td></td><td>Nothing yet</td><td></td><td></td><td></td></tr>');
     } else {
-        list.append('<tr style="font-weight: bold;"><td></td><td></td><td style="text-align:right;">Total:</td><td>' + total.hours() + ':' + total.minutes() + '</td><td></td></tr>');
+        list.append('<tr style="font-weight: bold;"><td></td><td></td><td style="text-align:right;">Total</td><td>' + total.hours() + ':' + total.minutes().pad() + '</td><td></td></tr>');
     }
 }
 

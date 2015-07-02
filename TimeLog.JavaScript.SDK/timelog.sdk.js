@@ -58,7 +58,9 @@ Attribution 4.0 International (CC BY 4.0)
     var _localStoragePasswordKey = 'TimeLogPassword';
     var _localStorageTokenKey = 'TimeLogToken';
     var _localStorageTasksAllocatedKey = 'TimeLogTasksAllocated';
+    var _localStorageTasksAllocatedCacheExpireKey = 'TimeLogTasksAllocatedCacheExpire';
     var _localStorageEmployeeWorkKey = 'TimeLogEmployeeWork';
+    var _localStorageEmployeeWorkCacheExpireKey = 'TimeLogEmployeeWorkCacheExpire';
     var _url = '';
     var _username = '';
 
@@ -219,6 +221,11 @@ Attribution 4.0 International (CC BY 4.0)
         if (timelog.enableLocalStorageCache) {
             localStorage.removeItem(_localStoragePasswordKey);
             localStorage.removeItem(_localStorageTokenKey);
+
+            localStorage.removeItem(_localStorageEmployeeWorkCacheExpireKey);
+            localStorage.removeItem(_localStorageEmployeeWorkKey);
+            localStorage.removeItem(_localStorageTasksAllocatedCacheExpireKey);
+            localStorage.removeItem(_localStorageTasksAllocatedKey);
         }
 
     }
@@ -284,6 +291,9 @@ Attribution 4.0 International (CC BY 4.0)
     var getTasksAllocatedToEmployeeRunning = false;
 
     timelog.invalidateGetTasksAllocatedToEmployee = function () {
+
+        if (timelog.debug) { console.log('[timelog.invalidateGetTasksAllocatedToEmployee] Executed'); }
+
         getTasksAllocatedToEmployeeList = undefined;
 
         if (timelog.enableLocalStorageCache) {
@@ -295,8 +305,13 @@ Attribution 4.0 International (CC BY 4.0)
     timelog.getTasksAllocatedToEmployeeFailureCallback = undefined;
     timelog.getTasksAllocatedToEmployee = function() {
 
-        if (getTasksAllocatedToEmployeeList = undefined && timelog.enableLocalStorageCache && localStorage.getItem(_localStorageTasksAllocatedKey) != undefined) {
+        if (getTasksAllocatedToEmployeeList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(_localStorageTasksAllocatedKey) != undefined) {
             getTasksAllocatedToEmployeeList = JSON.parse(localStorage.getItem(_localStorageTasksAllocatedKey));
+        }
+
+        if (timelog.enableLocalStorageCache && new Date(parseInt(localStorage.getItem(_localStorageTasksAllocatedCacheExpireKey))) < new Date()) {
+            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployee] Cache expired redownloading'); }
+            timelog.invalidateGetTasksAllocatedToEmployee();
         }
 
         if (getTasksAllocatedToEmployeeList != undefined) {
@@ -342,10 +357,17 @@ Attribution 4.0 International (CC BY 4.0)
         if (result.ResponseState.__text == "Success") {
             if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Data downloaded'); }
 
-            getTasksAllocatedToEmployeeList = Array.isArray(result.Return.Task) ? result.Return.Task : [result.Return.Task];
+            if (result.Return.Task == undefined) {
+                getTasksAllocatedToEmployeeList = [];
+            } else {
+                getTasksAllocatedToEmployeeList = Array.isArray(result.Return.Task) ? result.Return.Task : [result.Return.Task];
+            }
 
             if (timelog.enableLocalStorageCache) {
                 localStorage.setItem(_localStorageTasksAllocatedKey, JSON.stringify(getTasksAllocatedToEmployeeList));
+                var expireDate = new Date();
+                expireDate = expireDate.setTime(expireDate.getTime() + 4 * 60 * 60 * 1000); // 4 hours
+                localStorage.setItem(_localStorageTasksAllocatedCacheExpireKey, JSON.stringify(expireDate));
             }
 
             if (timelog.getTasksAllocatedToEmployeeSuccessCallback != undefined) {
@@ -442,7 +464,11 @@ Attribution 4.0 International (CC BY 4.0)
                 timelog.insertWorkSuccessCallback();
             }
         } else {
-            var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
+            var errorMsg = result.Return.BatchContainerOfWorkUnit.Message;
+            if (errorMsg == undefined) {
+                errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
+            }
+
             if (timelog.debug) { console.log('[timelog.insertWork] Failed in API (' + errorMsg + ')'); }
 
             if (timelog.insertWorkFailureCallback != undefined) {
@@ -480,6 +506,11 @@ Attribution 4.0 International (CC BY 4.0)
 
         if (getEmployeeWorkList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(_localStorageEmployeeWorkKey) != undefined) {
             getEmployeeWorkList = JSON.parse(localStorage.getItem(_localStorageEmployeeWorkKey));
+        }
+
+        if (timelog.enableLocalStorageCache && new Date(parseInt(localStorage.getItem(_localStorageEmployeeWorkCacheExpireKey))) < new Date()) {
+            if (timelog.debug) { console.log('[timelog.getEmployeeWork] Cache expired redownloading'); }
+            timelog.invalidateGetEmployeeWork();
         }
 
         if (getEmployeeWorkList != undefined) {
@@ -530,10 +561,17 @@ Attribution 4.0 International (CC BY 4.0)
         if (result.ResponseState.__text == "Success") {
             if (timelog.debug) { console.log('[timelog.getEmployeeWork] Data downloaded'); }
 
-            getEmployeeWorkList = Array.isArray(result.Return.WorkUnit) ? result.Return.WorkUnit : [result.Return.WorkUnit];
+            if (result.Return.WorkUnit == undefined) {
+                getEmployeeWorkList = [];
+            } else {
+                getEmployeeWorkList = Array.isArray(result.Return.WorkUnit) ? result.Return.WorkUnit : [result.Return.WorkUnit];
+            }
 
             if (timelog.enableLocalStorageCache) {
                 localStorage.setItem(_localStorageEmployeeWorkKey, JSON.stringify(getEmployeeWorkList));
+                var expireDate = new Date();
+                expireDate = expireDate.setTime(expireDate.getTime() + 4 * 60 * 60 * 1000); // 4 hours
+                localStorage.setItem(_localStorageEmployeeWorkCacheExpireKey, JSON.stringify(expireDate));
             }
 
             if (timelog.getEmployeeWorkSuccessCallback != undefined) {
