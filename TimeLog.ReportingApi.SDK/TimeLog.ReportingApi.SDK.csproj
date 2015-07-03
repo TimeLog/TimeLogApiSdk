@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contact.cs" />
     <Compile Include="AccountManager.cs" />
     <Compile Include="Allocation.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="Task.cs" />

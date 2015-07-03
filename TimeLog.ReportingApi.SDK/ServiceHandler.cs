@@ -16,6 +16,9 @@
         /// </summary>
         private ServiceHandler()
         {
+            SiteCode = ConfigurationManager.AppSettings["TimeLogProjectReportingSiteCode"];
+            ApiId = ConfigurationManager.AppSettings["TimeLogProjectReportingApiId"];
+            ApiPassword = ConfigurationManager.AppSettings["TimeLogProjectReportingApiPassword"];
         }
 
         /// <summary>
@@ -89,26 +92,22 @@
         /// <returns>A value indicating whether the authentication is successful</returns>
         public bool TryAuthenticate()
         {
-            string siteCode = ConfigurationManager.AppSettings["TimeLogProjectReportingSiteCode"];
-            string user = ConfigurationManager.AppSettings["TimeLogProjectReportingApiId"];
-            string password = ConfigurationManager.AppSettings["TimeLogProjectReportingApiPassword"];
-
-            if (string.IsNullOrWhiteSpace(siteCode))
+            if (string.IsNullOrWhiteSpace(SiteCode))
             {
                 throw new ArgumentException("The AppSetting \"TimeLogProjectReportingSiteCode\" is missing");
             }
 
-            if (string.IsNullOrWhiteSpace(user))
+            if (string.IsNullOrWhiteSpace(ApiId))
             {
                 throw new ArgumentException("The AppSetting \"TimeLogProjectReportingApiId\" is missing");
             }
 
-            if (string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(ApiPassword))
             {
                 throw new ArgumentException("The AppSetting \"TimeLogProjectReportingApiPassword\" is missing");
             }
 
-            return TryAuthenticate(siteCode, user, password);
+            return TryAuthenticate(SiteCode, ApiId, ApiPassword);
         }
 
         /// <summary>
@@ -123,14 +122,14 @@
             if (this.Client.ValidateCredentials(siteCode, user, password))
             {
                 SiteCode = siteCode;
-                this.ApiId = user;
-                this.ApiPassword = password;
+                ApiId = user;
+                ApiPassword = password;
                 return true;
             }
 
             SiteCode = string.Empty;
-            this.ApiId = string.Empty;
-            this.ApiPassword = string.Empty;
+            ApiId = string.Empty;
+            ApiPassword = string.Empty;
             return false;
         }
 
