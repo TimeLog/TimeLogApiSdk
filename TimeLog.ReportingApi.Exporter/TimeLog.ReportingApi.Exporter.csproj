@@ -47,6 +47,12 @@
     <Compile Include="IConfig.cs" />
     <Compile Include="IMethod.cs" />
     <Compile Include="MethodTemplates\GetContactsRaw.cs" />
+    <Compile Include="MethodTemplates\GetContactsShortList.cs" />
+    <Compile Include="MethodTemplates\GetCountriesShortList.cs" />
+    <Compile Include="MethodTemplates\GetTasksShortList.cs" />
+    <Compile Include="MethodTemplates\GetTasksRaw.cs" />
+    <Compile Include="MethodTemplates\GetProjectsShortList.cs" />
+    <Compile Include="MethodTemplates\GetProjectsRaw.cs" />
     <Compile Include="MethodTemplates\GetCustomersShortList.cs" />
     <Compile Include="MethodTemplates\GetCustomersRaw.cs" />
     <Compile Include="OutputConfiguration.cs" />

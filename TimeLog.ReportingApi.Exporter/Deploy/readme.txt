@@ -6,7 +6,11 @@ TimeLog.ReportingApi.Exporter.exe /e methodName outputFile
 /g      Generates a default configuration for a given methodName
 /e      Exports data from the methodName to the outputFile
 /m      Lists all the available methods
+/h		Shows this message
 
 ExportFormats supported: Csv, Xml
 
-Usage: TimeLog.ReportingApi.Exporter.exe /e GetCustomersRaw.config CustomersRaw.csv
+Usage:
+Step 1: Setup connection details in the associated .config file
+Step 2: Generate a method configuration file using the /g parameter
+Step 3: Execute an export command using the /e parameter

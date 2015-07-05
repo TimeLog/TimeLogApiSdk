@@ -48,7 +48,11 @@
     <Compile Include="Allocation.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Department.cs" />
+    <Compile Include="ProjectManager.cs" />
+    <Compile Include="ProjectStatus.cs" />
     <Compile Include="Project.cs" />
+    <Compile Include="TaskStatus.cs" />
+    <Compile Include="TaskType.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="WorkUnit.cs" />

@@ -166,8 +166,13 @@ namespace TimeLog.ReportingApi.Exporter
                             Console.WriteLine("/g\tGenerates a default configuration for a given methodName");
                             Console.WriteLine("/e\tExports data from the methodName to the outputFile");
                             Console.WriteLine("/m\tLists all the available methods");
+                            Console.WriteLine("/h\tShows this message");
                             Console.WriteLine(string.Empty);
                             Console.WriteLine("ExportFormats supported: Csv, Xml");
+                            Console.WriteLine(string.Empty);
+                            Console.WriteLine("Step 1: Setup connection details in the associated .config file");
+                            Console.WriteLine("Step 2: Generate a method configuration file using the /g parameter");
+                            Console.WriteLine("Step 3: Execute an export command using the /e parameter");
                             break;
                         }
                 }
