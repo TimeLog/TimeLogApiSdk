@@ -39,6 +39,30 @@
             Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/> class from being created.
             </summary>
         </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate">
+            <summary>
+            Executes an authentication request to the API using the application settings
+            TimeLogProjectReportingSiteCode, TimeLogProjectReportingUser and TimeLogProjectReportingPassword.
+            </summary>
+            <remarks>
+            Make sure to set the application setting TimeLogProjectUri.
+            </remarks>
+            <returns>A value indicating whether the authentication is successful</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate(System.String,System.String,System.String)">
+            <summary>
+            Executes an authentication request to the API using the parameters.
+            </summary>
+            <param name="siteCode">Site code part of the credentials to authenticate with</param>
+            <param name="user">Username part of the credentials to authenticate with</param>
+            <param name="password">ApiPassword part of the credentials to authenticate with</param>
+            <returns>A value indicating whether the authentication is successful</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.Dispose">
+            <summary>
+            Disposes the handler.
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Instance">
             <summary>
             Gets the singleton instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/>.
@@ -67,30 +91,6 @@
         <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Client">
             <summary>
             Gets the client associated with the reporting service
-            </summary>
-        </member>
-        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate">
-            <summary>
-            Executes an authentication request to the API using the application settings
-            TimeLogProjectReportingSiteCode, TimeLogProjectReportingUser and TimeLogProjectReportingPassword.
-            </summary>
-            <remarks>
-            Make sure to set the application setting TimeLogProjectUri.
-            </remarks>
-            <returns>A value indicating whether the authentication is successful</returns>
-        </member>
-        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate(System.String,System.String,System.String)">
-            <summary>
-            Executes an authentication request to the API using the parameters.
-            </summary>
-            <param name="siteCode">Site code part of the credentials to authenticate with</param>
-            <param name="user">Username part of the credentials to authenticate with</param>
-            <param name="password">ApiPassword part of the credentials to authenticate with</param>
-            <returns>A value indicating whether the authentication is successful</returns>
-        </member>
-        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.Dispose">
-            <summary>
-            Disposes the handler.
             </summary>
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.SettingsHandler.#ctor">

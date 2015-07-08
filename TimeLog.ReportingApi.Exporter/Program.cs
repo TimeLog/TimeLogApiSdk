@@ -230,7 +230,7 @@ namespace TimeLog.ReportingApi.Exporter
 
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(format), format, null);
+                    throw new ArgumentOutOfRangeException(format.ToString(), format, null);
             }
 
             Console.WriteLine(string.Empty);
