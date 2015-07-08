@@ -8,7 +8,8 @@ Attribution 4.0 International (CC BY 4.0)
 
     timelog.debug = false;
 
-    var x2js = new X2JS();
+    // ReSharper disable once InconsistentNaming
+    var x2Js = new X2JS();
 
     var templateGetToken =
         '<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Body>' +
@@ -53,34 +54,34 @@ Attribution 4.0 International (CC BY 4.0)
 
     /* BASE INFORMATION
     ********************************************************/
-    var _localStorageUrlKey = 'TimeLogUrl';
-    var _localStorageUsernameKey = 'TimeLogUsername';
-    var _localStoragePasswordKey = 'TimeLogPassword';
-    var _localStorageTokenKey = 'TimeLogToken';
-    var _localStorageTasksAllocatedKey = 'TimeLogTasksAllocated';
-    var _localStorageTasksAllocatedCacheExpireKey = 'TimeLogTasksAllocatedCacheExpire';
-    var _localStorageEmployeeWorkKey = 'TimeLogEmployeeWork';
-    var _localStorageEmployeeWorkCacheExpireKey = 'TimeLogEmployeeWorkCacheExpire';
-    var _url = '';
-    var _username = '';
+    var localStorageUrlKey = 'TimeLogUrl';
+    var localStorageUsernameKey = 'TimeLogUsername';
+    var localStoragePasswordKey = 'TimeLogPassword';
+    var localStorageTokenKey = 'TimeLogToken';
+    var localStorageTasksAllocatedKey = 'TimeLogTasksAllocated';
+    var localStorageTasksAllocatedCacheExpireKey = 'TimeLogTasksAllocatedCacheExpire';
+    var localStorageEmployeeWorkKey = 'TimeLogEmployeeWork';
+    var localStorageEmployeeWorkCacheExpireKey = 'TimeLogEmployeeWorkCacheExpire';
+    var url = '';
+    var username = '';
 
     timelog.url = function () {
 
         if (timelog.enableLocalStorageCache) {
-            _url = localStorage.getItem(_localStorageUrlKey);
+            url = localStorage.getItem(localStorageUrlKey);
         }
 
-        return _url;
+        return url;
 
     };
 
     timelog.username = function () {
 
         if (timelog.enableLocalStorageCache) {
-            _username = localStorage.getItem(_localStorageUsernameKey);
+            username = localStorage.getItem(localStorageUsernameKey);
         }
 
-        return _username;
+        return username;
 
     };
 
@@ -99,23 +100,23 @@ Attribution 4.0 International (CC BY 4.0)
     function getSecurityServiceUrl() {
         var urlSecurityService = '{0}/WebServices/Security/V1_2/SecurityServiceSecure.svc';
 
-        if ((_url == undefined || _url.length == 0) && timeog.enableLocalStorageCache) {
-            _url = localStorage.getItem('TimeLogUrl');
+        if ((url == undefined || url.length === 0) && timelog.enableLocalStorageCache) {
+            url = localStorage.getItem('TimeLogUrl');
         }
 
-        _url = _url.replace('http://', 'https://');
-        return urlSecurityService.replace('{0}', _url);
+        url = url.replace('http://', 'https://');
+        return urlSecurityService.replace('{0}', url);
     }
 
     function getProjectManagementServiceUrl() {
         var urlProjectManagementService = '{0}/WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc';
 
-        if ((_url == undefined || _url.length == 0) && timeog.enableLocalStorageCache) {
-            _url = localStorage.getItem('TimeLogUrl');
+        if ((url == undefined || url.length === 0) && timelog.enableLocalStorageCache) {
+            url = localStorage.getItem('TimeLogUrl');
         }
 
-        _url = _url.replace('http://', 'https://');
-        return urlProjectManagementService.replace('{0}', _url);
+        url = url.replace('http://', 'https://');
+        return urlProjectManagementService.replace('{0}', url);
     }
 
     // cc by-sa 3.0 license
@@ -125,7 +126,7 @@ Attribution 4.0 International (CC BY 4.0)
         var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             var r = (d + Math.random() * 16) % 16 | 0;
             d = Math.floor(d / 16);
-            return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
         });
         return uuid;
     };
@@ -135,13 +136,14 @@ Attribution 4.0 International (CC BY 4.0)
     var tokenInitials = '';
     var tokenExpires = new Date('2001-01-01 01:01:01');
     var tokenHash = '';
+
     timelog.getToken = function () {
 
         var token = { Initials: tokenInitials, Expires: tokenExpires, Hash: tokenHash };
 
-        if (tokenInitials.length == 0 && timelog.enableLocalStorageCache) {
+        if (tokenInitials.length === 0 && timelog.enableLocalStorageCache) {
             if (timelog.debug) { console.log('[timelog.getToken] Restoring from localStorage'); }
-            var rawToken = x2js.xml_str2json(localStorage.getItem(_localStorageTokenKey));
+            var rawToken = x2Js.xml_str2json(localStorage.getItem(localStorageTokenKey));
 
             if (rawToken != undefined) {
                 token = rawToken.SecurityToken;
@@ -152,7 +154,7 @@ Attribution 4.0 International (CC BY 4.0)
             tokenHash = token.Hash;
         }
 
-        if (timelog.enableAutoLogin && timelog.enableLocalStorageCache && new Date(token.Expires) < new Date() && localStorage.getItem(_localStoragePasswordKey) != undefined) {
+        if (timelog.enableAutoLogin && timelog.enableLocalStorageCache && new Date(token.Expires) < new Date() && localStorage.getItem(localStoragePasswordKey) != undefined) {
             if (timelog.debug) { console.log('[timelog.getToken] AutoLogin enabled and token expired'); }
             timelog.tryAuthenticate('', '', '');
         }
@@ -164,43 +166,96 @@ Attribution 4.0 International (CC BY 4.0)
     // Tries to authenticate and get a token.
     timelog.authenticateSuccessCallback = undefined;
     timelog.authenticateFailureCallback = undefined;
+
+    function tryAuthenticateSuccess(data) {
+        var result = x2Js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.GetTokenResponse.GetTokenResult;
+        if (result.ResponseState.__text === "Success") {
+
+            if (timelog.debug) { console.log('[timelog.tryAuthenticateSuccess] Token obtained'); }
+
+            tokenInitials = result.Return.SecurityToken.Initials;
+            tokenExpires = result.Return.SecurityToken.Expires;
+            tokenHash = result.Return.SecurityToken.Hash;
+
+            if (timelog.enableLocalStorageCache) {
+                localStorage.setItem(localStorageTokenKey, x2Js.json2xml_str(result.Return));
+            }
+
+            if (timelog.authenticateSuccessCallback != undefined) {
+                timelog.authenticateSuccessCallback();
+            }
+
+        } else {
+
+            var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
+            if (timelog.debug) { console.log('[timelog.tryAuthenticateSuccess] Token failed (' + errorMsg + ')'); }
+
+            if (timelog.enableLocalStorageCache) {
+                localStorage.removeItem(localStoragePasswordKey);
+                localStorage.removeItem(localStorageTokenKey);
+            }
+
+            if (timelog.authenticateFailureCallback != undefined) {
+                timelog.authenticateFailureCallback(errorMsg);
+            }
+
+        }
+    }
+
+    function tryAuthenticateFailure(jqhxr, textstatus) {
+
+        if (timelog.debug) { console.log('[timelog.tryAuthenticateFailure] Token failed (' + textstatus + ')'); }
+
+        tokenInitials = '';
+        tokenExpires = new Date('2001-01-01 01:01:01');
+        tokenHash = '';
+
+        if (timelog.enableLocalStorageCache) {
+            localStorage.removeItem(localStoragePasswordKey);
+            localStorage.removeItem(localStorageTokenKey);
+        }
+
+        if (timelog.tryAuthenticateFailureCallback != undefined) {
+            var errorMsg = textstatus;
+            timelog.tryAuthenticateFailureCallback(errorMsg);
+        }
+
+    }
+
     timelog.tryAuthenticate = function(url, username, password) {
 
         if (timelog.debug) { console.log('[timelog.tryAuthenticate] Executing (url: ' + url + ', username: ' + username + ', password: ' + password + ')'); }
         if (timelog.enableLocalStorageCache) {
 
-            if (url.length == 0) {
-                url = localStorage.getItem(_localStorageUrlKey);
+            if (url.length === 0) {
+                url = localStorage.getItem(localStorageUrlKey);
             } else {
-                localStorage.setItem(_localStorageUrlKey, url);
+                localStorage.setItem(localStorageUrlKey, url);
             }
 
-            if (username.length == 0) {
-                username = localStorage.getItem(_localStorageUsernameKey);
+            if (username.length === 0) {
+                username = localStorage.getItem(localStorageUsernameKey);
             } else {
-                localStorage.setItem(_localStorageUsernameKey, username);
+                localStorage.setItem(localStorageUsernameKey, username);
             }
 
-            if (password.length == 0 && localStorage.getItem(_localStoragePasswordKey) != undefined) {
-                password = CryptoJS.AES.decrypt(localStorage.getItem(_localStoragePasswordKey), '0B1EC554C85C').toString(CryptoJS.enc.Utf8);
+            if (password.length === 0 && localStorage.getItem(localStoragePasswordKey) != undefined) {
+                password = CryptoJS.AES.decrypt(localStorage.getItem(localStoragePasswordKey), '0B1EC554C85C').toString(CryptoJS.enc.Utf8);
             } else if (password.length > 0) {
-                localStorage.setItem(_localStoragePasswordKey, CryptoJS.AES.encrypt(password, '0B1EC554C85C'));
+                localStorage.setItem(localStoragePasswordKey, CryptoJS.AES.encrypt(password, '0B1EC554C85C'));
             }
 
             if (timelog.debug) { console.log('[timelog.tryAuthenticate] After localStorage fetch (url: ' + url + ', username: ' + username + ', password: ' + password + ')'); }
         }
 
-        _url = url;
-        _username = username;
-
-        if (_url != undefined && _username != undefined && _url.length > 0 && _username.length > 0 && password.length > 0) {
+        if (url != undefined && username != undefined && url.length > 0 && username.length > 0 && password.length > 0) {
             $.ajax({
                 type: "POST",
                 url: getSecurityServiceUrl(),
                 headers: { "SOAPAction": "GetTokenRequest", "Content-Type": "text/xml" },
                 data: templateGetToken.replace('{0}', username).replace('{1}', password),
                 success: tryAuthenticateSuccess,
-                error: tryAuthenticateFailure,
+                error: tryAuthenticateFailure
             });
         }
 
@@ -215,72 +270,17 @@ Attribution 4.0 International (CC BY 4.0)
         if (timelog.debug) { console.log('[timelog.signOut] Executing'); }
 
         tokenInitials = '';
-        tokenTimestamp = '';
+        tokenExpires = new Date('2001-01-01 01:01:01');
         tokenHash = '';
 
         if (timelog.enableLocalStorageCache) {
-            localStorage.removeItem(_localStoragePasswordKey);
-            localStorage.removeItem(_localStorageTokenKey);
+            localStorage.removeItem(localStoragePasswordKey);
+            localStorage.removeItem(localStorageTokenKey);
 
-            localStorage.removeItem(_localStorageEmployeeWorkCacheExpireKey);
-            localStorage.removeItem(_localStorageEmployeeWorkKey);
-            localStorage.removeItem(_localStorageTasksAllocatedCacheExpireKey);
-            localStorage.removeItem(_localStorageTasksAllocatedKey);
-        }
-
-    }
-
-    function tryAuthenticateSuccess(data) {
-        var result = x2js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.GetTokenResponse.GetTokenResult;
-        if (result.ResponseState.__text == "Success") {
-
-            if (timelog.debug) { console.log('[timelog.tryAuthenticateSuccess] Token obtained'); }
-
-            tokenInitials = result.Return.SecurityToken.Initials;
-            tokenExpires = result.Return.SecurityToken.Expires;
-            tokenHash = result.Return.SecurityToken.Hash;
-
-            if (timelog.enableLocalStorageCache) {
-                localStorage.setItem(_localStorageTokenKey, x2js.json2xml_str(result.Return));
-            }
-
-            if (timelog.authenticateSuccessCallback != undefined) {
-                timelog.authenticateSuccessCallback();
-            }
-
-        } else {
-
-            var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
-            if (timelog.debug) { console.log('[timelog.tryAuthenticateSuccess] Token failed (' + errorMsg + ')'); }
-
-            if (timelog.enableLocalStorageCache) {
-                localStorage.removeItem(_localStoragePasswordKey);
-                localStorage.removeItem(_localStorageTokenKey);
-            }
-
-            if (timelog.authenticateFailureCallback != undefined) {
-                timelog.authenticateFailureCallback(errorMsg);
-            }
-
-        }
-    }
-
-    function tryAuthenticateFailure(jqhxr, textstatus, errrorthrown) {
-
-        if (timelog.debug) { console.log('[timelog.tryAuthenticateFailure] Token failed (' + textStatus + ')'); }
-
-        tokenInitials = '';
-        tokenTimestamp = '';
-        tokenHash = '';
-
-        if (timelog.enableLocalStorageCache) {
-            localStorage.removeItem(_localStoragePasswordKey);
-            localStorage.removeItem(_localStorageTokenKey);
-        }
-
-        if (tryAuthenticateFailureCallback != undefined) {
-            var errorMsg = textstatus;
-            tryAuthenticateFailureCallback(errorMsg);
+            localStorage.removeItem(localStorageEmployeeWorkCacheExpireKey);
+            localStorage.removeItem(localStorageEmployeeWorkKey);
+            localStorage.removeItem(localStorageTasksAllocatedCacheExpireKey);
+            localStorage.removeItem(localStorageTasksAllocatedKey);
         }
 
     }
@@ -297,19 +297,93 @@ Attribution 4.0 International (CC BY 4.0)
         getTasksAllocatedToEmployeeList = undefined;
 
         if (timelog.enableLocalStorageCache) {
-            localStorage.removeItem(_localStorageTasksAllocatedKey);
+            localStorage.removeItem(localStorageTasksAllocatedKey);
         }
     }
 
     timelog.getTasksAllocatedToEmployeeSuccessCallback = undefined;
     timelog.getTasksAllocatedToEmployeeFailureCallback = undefined;
-    timelog.getTasksAllocatedToEmployee = function() {
 
-        if (getTasksAllocatedToEmployeeList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(_localStorageTasksAllocatedKey) != undefined) {
-            getTasksAllocatedToEmployeeList = JSON.parse(localStorage.getItem(_localStorageTasksAllocatedKey));
+    function getTasksAllocatedToEmployeeSuccess(data) {
+
+        getTasksAllocatedToEmployeeRunning = false;
+
+        if (data === '') {
+            if (timelog.getTasksAllocatedToEmployeeSuccessCallback != undefined) {
+                timelog.getTasksAllocatedToEmployeeSuccessCallback(getTasksAllocatedToEmployeeList);
+                return;
+            }
         }
 
-        if (timelog.enableLocalStorageCache && new Date(parseInt(localStorage.getItem(_localStorageTasksAllocatedCacheExpireKey))) < new Date()) {
+        var result = x2Js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.GetTasksAllocatedToEmployeeResponse.GetTasksAllocatedToEmployeeResult;
+        if (result.ResponseState.__text === "Success") {
+            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Data downloaded'); }
+
+            if (result.Return.Task == undefined) {
+                getTasksAllocatedToEmployeeList = [];
+            } else {
+                getTasksAllocatedToEmployeeList = Array.isArray(result.Return.Task) ? result.Return.Task : [result.Return.Task];
+            }
+
+            if (timelog.enableLocalStorageCache) {
+                localStorage.setItem(localStorageTasksAllocatedKey, JSON.stringify(getTasksAllocatedToEmployeeList));
+                var expireDate = new Date();
+                expireDate = expireDate.setTime(expireDate.getTime() + 4 * 60 * 60 * 1000); // 4 hours
+                localStorage.setItem(localStorageTasksAllocatedCacheExpireKey, JSON.stringify(expireDate));
+            }
+
+            if (timelog.getTasksAllocatedToEmployeeSuccessCallback != undefined) {
+                timelog.getTasksAllocatedToEmployeeSuccessCallback(getTasksAllocatedToEmployeeList);
+            }
+
+        } else {
+            var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
+            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Failed in API (' + errorMsg + ')'); }
+
+            if (errorMsg.toLowerCase().indexOf('expired') > 0) {
+                timelog.signOut();
+            }
+
+            if (timelog.enableLocalStorageCache) {
+                localStorage.removeItem(localStorageTasksAllocatedKey);
+            }
+
+            if (timelog.getTasksAllocatedToEmployeeFailureCallback != undefined) {
+                timelog.getTasksAllocatedToEmployeeFailureCallback(errorMsg);
+            }
+        }
+    }
+
+    function getTasksAllocatedToEmployeeFailure(jqhxr, textstatus) {
+
+        getTasksAllocatedToEmployeeRunning = false;
+
+        if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeFailure] Failed (' + textstatus + ')'); }
+
+        if (timelog.enableLocalStorageCache) {
+            localStorage.removeItem(localStorageTasksAllocatedKey);
+        }
+
+        if (timelog.getTasksAllocatedToEmployeeFailureCallback != undefined) {
+            timelog.getTasksAllocatedToEmployeeFailureCallback(textstatus);
+        }
+
+    }
+
+    timelog.getTasksAllocatedToEmployee = function() {
+
+        if (getTasksAllocatedToEmployeeRunning) {
+            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployee] Already running skipping...') }
+            return;
+        }
+
+        getTasksAllocatedToEmployeeRunning = true;
+
+        if (getTasksAllocatedToEmployeeList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(localStorageTasksAllocatedKey) != undefined) {
+            getTasksAllocatedToEmployeeList = JSON.parse(localStorage.getItem(localStorageTasksAllocatedKey));
+        }
+
+        if (timelog.enableLocalStorageCache && new Date(parseInt(localStorage.getItem(localStorageTasksAllocatedCacheExpireKey))) < new Date()) {
             if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployee] Cache expired redownloading'); }
             timelog.invalidateGetTasksAllocatedToEmployee();
         }
@@ -318,13 +392,6 @@ Attribution 4.0 International (CC BY 4.0)
 			getTasksAllocatedToEmployeeSuccess('');
 			return;
 		}
-
-		if (getTasksAllocatedToEmployeeRunning) {
-            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployee] Already running skipping...')}
-		    return;
-		}
-
-		getTasksAllocatedToEmployeeRunning = true;
 
         if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployee] Executing'); }
 
@@ -337,70 +404,8 @@ Attribution 4.0 International (CC BY 4.0)
                                             replace('{2}', timelog.getToken().Expires).
                                             replace('{3}', timelog.getToken().Hash),
             success: getTasksAllocatedToEmployeeSuccess,
-            error: getTasksAllocatedToEmployeeFailure,
+            error: getTasksAllocatedToEmployeeFailure
         });
-
-    }
-
-    function getTasksAllocatedToEmployeeSuccess(data) {
-
-        getTasksAllocatedToEmployeeRunning = false;
-
-		if (data == '') {
-			if (timelog.getTasksAllocatedToEmployeeSuccessCallback != undefined) {
-				timelog.getTasksAllocatedToEmployeeSuccessCallback(getTasksAllocatedToEmployeeList);
-				return;
-            }
-		}
-
-		var result = x2js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.GetTasksAllocatedToEmployeeResponse.GetTasksAllocatedToEmployeeResult;
-        if (result.ResponseState.__text == "Success") {
-            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Data downloaded'); }
-
-            if (result.Return.Task == undefined) {
-                getTasksAllocatedToEmployeeList = [];
-            } else {
-                getTasksAllocatedToEmployeeList = Array.isArray(result.Return.Task) ? result.Return.Task : [result.Return.Task];
-            }
-
-            if (timelog.enableLocalStorageCache) {
-                localStorage.setItem(_localStorageTasksAllocatedKey, JSON.stringify(getTasksAllocatedToEmployeeList));
-                var expireDate = new Date();
-                expireDate = expireDate.setTime(expireDate.getTime() + 4 * 60 * 60 * 1000); // 4 hours
-                localStorage.setItem(_localStorageTasksAllocatedCacheExpireKey, JSON.stringify(expireDate));
-            }
-
-            if (timelog.getTasksAllocatedToEmployeeSuccessCallback != undefined) {
-                timelog.getTasksAllocatedToEmployeeSuccessCallback(getTasksAllocatedToEmployeeList);
-            }
-
-        } else {
-            var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
-            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeSuccess] Failed in API (' + errorMsg + ')'); }
-
-            if (timelog.enableLocalStorageCache) {
-                localStorage.removeItem(_localStorageTasksAllocatedKey);
-            }
-
-            if (timelog.getTasksAllocatedToEmployeeFailureCallback != undefined) {
-                timelog.getTasksAllocatedToEmployeeFailureCallback(errorMsg);
-			}
-        }
-    }
-
-    function getTasksAllocatedToEmployeeFailure(jqhxr, textstatus, errrorthrown) {
-
-        getTasksAllocatedToEmployeeRunning = false;
-
-        if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployeeFailure] Failed (' + textStatus + ')'); }
-
-        if (timelog.enableLocalStorageCache) {
-            localStorage.removeItem(_localStorageTasksAllocatedKey);
-        }
-
-        if (timelog.getTasksAllocatedToEmployeeFailureCallback != undefined) {
-            timelog.getTasksAllocatedToEmployeeFailureCallback(textStatus);
-        }
 
     }
 
@@ -408,12 +413,50 @@ Attribution 4.0 International (CC BY 4.0)
     ********************************************************/
     timelog.insertWorkSuccessCallback = undefined;
     timelog.insertWorkFailureCallback = undefined;
-    timelog.insertWork = function (taskID, start, end, comment) {
+
+    function insertWorkSuccess(data) {
+
+        var result = x2Js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.InsertWorkResponse.InsertWorkResult;
+        if (result.ResponseState.__text === "Success") {
+            if (timelog.debug) { console.log('[timelog.insertWork] Work unit inserted'); }
+
+            if (timelog.insertWorkSuccessCallback != undefined) {
+                timelog.insertWorkSuccessCallback();
+            }
+        } else {
+            var errorMsg = result.Return.BatchContainerOfWorkUnit.Message;
+            if (errorMsg == undefined) {
+                errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
+            }
+
+            if (timelog.debug) { console.log('[timelog.insertWork] Failed in API (' + errorMsg + ')'); }
+
+            if (errorMsg != undefined && errorMsg.toLowerCase().indexOf('expired') > 0) {
+                timelog.signOut();
+            }
+
+            if (timelog.insertWorkFailureCallback != undefined) {
+                timelog.insertWorkFailureCallback(errorMsg);
+            }
+        }
+
+    }
+
+    function insertWorkFailure(jqhxr, textstatus) {
+
+        if (timelog.debug) { console.log('[timelog.insertWork] Failed (' + textstatus + ')'); }
+        if (timelog.insertWorkFailureCallback != undefined) {
+            timelog.insertWorkFailureCallback(textstatus);
+        }
+
+    }
+
+    timelog.insertWork = function (taskId, start, end, comment) {
 
         var startDate = new Date(Date.parse(start));
         var endDate = new Date(Date.parse(end));
 
-        if (timelog.debug) { console.log('[timelog.insertWork] Executing (taskID: ' + taskID + ', startDate: ' + startDate + ', endDate: ' + endDate + ', comment: ' + comment + ')'); }
+        if (timelog.debug) { console.log('[timelog.insertWork] Executing (taskID: ' + taskId + ', startDate: ' + startDate + ', endDate: ' + endDate + ', comment: ' + comment + ')'); }
 
         // Calculate duration
         var diffMiliseconds = Math.abs(endDate - startDate);
@@ -439,7 +482,7 @@ Attribution 4.0 International (CC BY 4.0)
             headers: { "SOAPAction": "InsertWorkRequest", "Content-Type": "text/xml" },
             data: templateInsertWork.replace('{0}', timelog.generateUUID()).
                                             replace('{1}', '00000000-0000-0000-0000-000000000000'). // AllocationGuid
-                                            replace('{2}', taskID). // Task ID
+                                            replace('{2}', taskId). // Task ID
                                             replace('{3}', timelog.getToken().Initials). // Employee initials
                                             replace('{4}', duration). // Duration
                                             replace('{5}', startDate.toISOString()). // Start Date Time
@@ -449,41 +492,8 @@ Attribution 4.0 International (CC BY 4.0)
                                             replace('{9}', timelog.getToken().Expires).
                                             replace('{10}', timelog.getToken().Hash),
             success: insertWorkSuccess,
-            error: insertWorkFailure,
+            error: insertWorkFailure
         });
-
-    }
-
-    function insertWorkSuccess(data) {
-
-        var result = x2js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.InsertWorkResponse.InsertWorkResult;
-        if (result.ResponseState.__text == "Success") {
-            if (timelog.debug) { console.log('[timelog.insertWork] Work unit inserted'); }
-
-            if (timelog.insertWorkSuccessCallback != undefined) {
-                timelog.insertWorkSuccessCallback();
-            }
-        } else {
-            var errorMsg = result.Return.BatchContainerOfWorkUnit.Message;
-            if (errorMsg == undefined) {
-                errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
-            }
-
-            if (timelog.debug) { console.log('[timelog.insertWork] Failed in API (' + errorMsg + ')'); }
-
-            if (timelog.insertWorkFailureCallback != undefined) {
-                timelog.insertWorkFailureCallback(errorMsg);
-            }
-        }
-
-    }
-
-    function insertWorkFailure(jqhxr, textstatus, errrorthrown) {
-
-        if (timelog.debug) { console.log('[timelog.insertWork] Failed (' + textStatus + ')'); }
-        if (timelog.insertWorkFailureCallback != undefined) {
-            timelog.insertWorkFailureCallback(textStatus);
-        }
 
     }
 
@@ -496,19 +506,94 @@ Attribution 4.0 International (CC BY 4.0)
         getEmployeeWorkList = undefined;
 
         if (timelog.enableLocalStorageCache) {
-            localStorage.removeItem(_localStorageEmployeeWorkKey);
+            localStorage.removeItem(localStorageEmployeeWorkKey);
         }
     }
 
     timelog.getEmployeeWorkSuccessCallback = undefined;
     timelog.getEmployeeWorkFailureCallback = undefined;
-    timelog.getEmployeeWork = function (start, end) {
 
-        if (getEmployeeWorkList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(_localStorageEmployeeWorkKey) != undefined) {
-            getEmployeeWorkList = JSON.parse(localStorage.getItem(_localStorageEmployeeWorkKey));
+    function getEmployeeWorkSuccess(data) {
+
+        getEmployeeWorkRunning = false;
+
+        if (data === '') {
+            if (timelog.getEmployeeWorkSuccessCallback != undefined) {
+                timelog.getEmployeeWorkSuccessCallback(getEmployeeWorkList);
+                return;
+            }
         }
 
-        if (timelog.enableLocalStorageCache && new Date(parseInt(localStorage.getItem(_localStorageEmployeeWorkCacheExpireKey))) < new Date()) {
+        var result = x2Js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.GetEmployeeWorkResponse.GetEmployeeWorkResult;
+        if (result.ResponseState.__text === "Success") {
+            if (timelog.debug) { console.log('[timelog.getEmployeeWork] Data downloaded'); }
+
+            if (result.Return.WorkUnit == undefined) {
+                getEmployeeWorkList = [];
+            } else {
+                getEmployeeWorkList = Array.isArray(result.Return.WorkUnit) ? result.Return.WorkUnit : [result.Return.WorkUnit];
+            }
+
+            if (timelog.enableLocalStorageCache) {
+                localStorage.setItem(localStorageEmployeeWorkKey, JSON.stringify(getEmployeeWorkList));
+                var expireDate = new Date();
+                expireDate = expireDate.setTime(expireDate.getTime() + 4 * 60 * 60 * 1000); // 4 hours
+                localStorage.setItem(localStorageEmployeeWorkCacheExpireKey, JSON.stringify(expireDate));
+            }
+
+            if (timelog.getEmployeeWorkSuccessCallback != undefined) {
+                timelog.getEmployeeWorkSuccessCallback(getEmployeeWorkList);
+            }
+
+        } else {
+            var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
+            if (timelog.debug) { console.log('[timelog.getEmployeeWork] Failed in API (' + errorMsg + ')'); }
+
+            if (errorMsg.toLowerCase().indexOf('expired') > 0) {
+                timelog.signOut();
+            }
+
+            if (timelog.enableLocalStorageCache) {
+                localStorage.removeItem(localStorageEmployeeWorkKey);
+            }
+
+            if (timelog.getEmployeeWorkFailureCallback != undefined) {
+                timelog.getEmployeeWorkFailureCallback(errorMsg);
+            }
+        }
+
+    }
+
+    function getEmployeeWorkFailure(jqhxr, textstatus) {
+
+        getEmployeeWorkRunning = false;
+
+        if (timelog.debug) { console.log('[timelog.getEmployeeWork] Failed (' + textstatus + ')'); }
+
+        if (timelog.enableLocalStorageCache) {
+            localStorage.removeItem(localStorageEmployeeWorkKey);
+        }
+
+        if (timelog.getEmployeeWorkFailureCallback != undefined) {
+            timelog.getEmployeeWorkFailureCallback(textstatus);
+        }
+
+    }
+
+    timelog.getEmployeeWork = function (start, end) {
+
+        if (getEmployeeWorkRunning) {
+            if (timelog.debug) { console.log('[timelog.getEmployeeWorkRunning] Already running skipping...') }
+            return;
+        }
+
+        getEmployeeWorkRunning = true;
+
+        if (getEmployeeWorkList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(localStorageEmployeeWorkKey) != undefined) {
+            getEmployeeWorkList = JSON.parse(localStorage.getItem(localStorageEmployeeWorkKey));
+        }
+
+        if (timelog.enableLocalStorageCache && new Date(parseInt(localStorage.getItem(localStorageEmployeeWorkCacheExpireKey))) < new Date()) {
             if (timelog.debug) { console.log('[timelog.getEmployeeWork] Cache expired redownloading'); }
             timelog.invalidateGetEmployeeWork();
         }
@@ -517,13 +602,6 @@ Attribution 4.0 International (CC BY 4.0)
             getEmployeeWorkSuccess('');
             return;
         }
-
-        if (getEmployeeWorkRunning) {
-            if (timelog.debug) { console.log('[timelog.getEmployeeWorkRunning] Already running skipping...') }
-            return;
-        }
-
-        getEmployeeWorkRunning = true;
 
         var startDate = new Date(Date.parse(start));
         var endDate = new Date(Date.parse(end));
@@ -541,71 +619,8 @@ Attribution 4.0 International (CC BY 4.0)
                                             replace('{4}', timelog.getToken().Expires).
                                             replace('{5}', timelog.getToken().Hash),
             success: getEmployeeWorkSuccess,
-            error: getEmployeeWorkFailure,
+            error: getEmployeeWorkFailure
         });
-
-    }
-
-    function getEmployeeWorkSuccess(data) {
-
-        getEmployeeWorkRunning = false;
-
-        if (data == '') {
-            if (timelog.getEmployeeWorkSuccessCallback != undefined) {
-                timelog.getEmployeeWorkSuccessCallback(getEmployeeWorkList);
-                return;
-            }
-        }
-
-        var result = x2js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.GetEmployeeWorkResponse.GetEmployeeWorkResult;
-        if (result.ResponseState.__text == "Success") {
-            if (timelog.debug) { console.log('[timelog.getEmployeeWork] Data downloaded'); }
-
-            if (result.Return.WorkUnit == undefined) {
-                getEmployeeWorkList = [];
-            } else {
-                getEmployeeWorkList = Array.isArray(result.Return.WorkUnit) ? result.Return.WorkUnit : [result.Return.WorkUnit];
-            }
-
-            if (timelog.enableLocalStorageCache) {
-                localStorage.setItem(_localStorageEmployeeWorkKey, JSON.stringify(getEmployeeWorkList));
-                var expireDate = new Date();
-                expireDate = expireDate.setTime(expireDate.getTime() + 4 * 60 * 60 * 1000); // 4 hours
-                localStorage.setItem(_localStorageEmployeeWorkCacheExpireKey, JSON.stringify(expireDate));
-            }
-
-            if (timelog.getEmployeeWorkSuccessCallback != undefined) {
-                timelog.getEmployeeWorkSuccessCallback(getEmployeeWorkList);
-            }
-
-        } else {
-            var errorMsg = result.Messages.APIMessage[0].Message.toString().substring(result.Messages.APIMessage[0].Message.toString().indexOf('\''));
-            if (timelog.debug) { console.log('[timelog.getEmployeeWork] Failed in API (' + errorMsg + ')'); }
-
-            if (timelog.enableLocalStorageCache) {
-                localStorage.removeItem(_localStorageEmployeeWorkKey);
-            }
-
-            if (timelog.getEmployeeWorkFailureCallback != undefined) {
-                timelog.getEmployeeWorkFailureCallback(errorMsg);
-            }
-        }
-
-    }
-
-    function getEmployeeWorkFailure(jqhxr, textstatus, errrorthrown) {
-
-        getEmployeeWorkRunning = false;
-
-        if (timelog.debug) { console.log('[timelog.getEmployeeWork] Failed (' + textStatus + ')'); }
-
-        if (timelog.enableLocalStorageCache) {
-            localStorage.removeItem(_localStorageEmployeeWorkKey);
-        }
-
-        if (timelog.getEmployeeWorkFailureCallback != undefined) {
-            timelog.getEmployeeWorkFailureCallback(textStatus);
-        }
 
     }
 

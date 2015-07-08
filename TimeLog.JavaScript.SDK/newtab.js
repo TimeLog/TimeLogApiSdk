@@ -1,8 +1,13 @@
-/// <reference path="timelog.js" />
+var timelog;
+if (typeof require !== 'undefined') {
+    timelog = require('timelog');
+}
+
 
 var debug = localStorage.getItem('TimeLogDebug') || false;
-var regexDuration = /P((([0-9]*\.?[0-9]*)Y)?(([0-9]*\.?[0-9]*)M)?(([0-9]*\.?[0-9]*)W)?(([0-9]*\.?[0-9]*)D)?)?(T(([0-9]*\.?[0-9]*)H)?(([0-9]*\.?[0-9]*)M)?(([0-9]*\.?[0-9]*)S)?)?/
+var regexDuration = /P((([0-9]*\.?[0-9]*)Y)?(([0-9]*\.?[0-9]*)M)?(([0-9]*\.?[0-9]*)W)?(([0-9]*\.?[0-9]*)D)?)?(T(([0-9]*\.?[0-9]*)H)?(([0-9]*\.?[0-9]*)M)?(([0-9]*\.?[0-9]*)S)?)?/;
 
+// ReSharper disable once NativeTypePrototypeExtending
 Number.prototype.pad = function (size) {
     var s = String(this);
     while (s.length < (size || 2)) { s = "0" + s; }
@@ -114,7 +119,7 @@ function startUpdates() {
 }
 
 function isPaused() {
-    return localStorage.getItem(localStoragePaused) == 'true';
+    return localStorage.getItem(localStoragePaused) === 'true';
 }
 
 function mainloop() {
@@ -226,7 +231,7 @@ function adjustClock() {
 
 	var spacer = date.getSeconds() % 2 ? ' ' : ':';
 	var ampm = date.getHours() >= 12 ? 'PM' : 'AM';
-	var hours = date.getHours() % 12 != 0 ? (date.getHours() > 12 ? date.getHours() - 12 : date.getHours()) : 12;
+	var hours = date.getHours() % 12 !== 0 ? (date.getHours() > 12 ? date.getHours() - 12 : date.getHours()) : 12;
 	var clock = hours + spacer + formatClock(date.getMinutes()) + ' ' + ampm; // US format
 	//var clock = date.toLocaleTimeString(); // local machine - reg ex: ([\d]+:[\d]+):[\d]+ (AM|PM)
 
@@ -248,7 +253,7 @@ function userviewSubmitClick() {
 	var user = $('#userview-username').val();
 	var pw = $('#userview-password').val();
 
-	if (user.length == 0 || pw.length == 0 || url.length == 0) {
+	if (user.length === 0 || pw.length === 0 || url.length === 0) {
 		userviewSetLoginStatus('All fields are required');
 		return;
 	}
@@ -259,6 +264,7 @@ function userviewSubmitClick() {
 function userviewGetTokenSuccess() {
     localStorage.setItem(localStorageSignedIn, true);
     setView(viewTask);
+    startUpdates();
 }
 
 function userviewSetLoginStatus(msg) {
@@ -269,11 +275,16 @@ function userviewSetLoginStatus(msg) {
 
 function userviewGetTokenError(errorMsg) {
     userviewSetLoginStatus('Ups! ' + errorMsg);
+
+    if (localStorage.getItem(localStorageView) !== viewEmpty) {
+        pauseUpdates();
+        signOut();
+    }
 }
 
 function userviewKeyUp(event) {
 	$('#userview-loginstatus').hide();
-	if (event.which == 13) { // Enter key
+	if (event.which === 13) { // Enter key
 		userviewSubmitClick();
 	}
 }
@@ -293,15 +304,15 @@ function trackingviewCancelClick() {
 
 function trackingviewDoneClick() {
 
-    var taskID = localStorage.getItem(localStorageTaskID);
+    var taskId = localStorage.getItem(localStorageTaskID);
     var start = localStorage.getItem(localStorageTaskStart);
     var end = new Date();
     var comment = $('#trackingview-comment').val();
-    trackingviewPaused = true;
+    pauseUpdates();
 
     timelog.insertWorkSuccessCallback = trackingviewInsertWorkSuccess;
     timelog.insertWorkFailureCallback = trackingviewInsertWorkFailure;
-    timelog.insertWork(taskID, start, end, comment);
+    timelog.insertWork(taskId, start, end, comment);
 
 }
 
@@ -315,21 +326,21 @@ function trackingviewInsertWorkSuccess() {
 }
 
 function trackingviewInsertWorkFailure(msg) {
-    trackingviewPaused = false;
+    startUpdates();
     alert(msg);
 }
 
 function trackingviewTimeFocus() {
-    trackingviewPaused = true;
+    pauseUpdates();
 }
 
 function trackingviewTimeBlur() {
     trackingviewSaveTime();
-    trackingviewPaused = false;
+    startUpdates();
 }
 
 function trackingviewTimeKeyUp(event) {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
         trackingviewSaveTime();
         $('#trackingview-time').blur();
         $('#trackingview-comment').blur();
@@ -371,10 +382,10 @@ var taskviewResults = 0;
 
 function taskviewSearchKeyUp(event) {
 
-    if (event.keyCode == 40 && taskviewIndex < taskviewResults - 1) { taskviewIndex = taskviewIndex + 1; taskviewAdjustIndex(); }
-    if (event.keyCode == 38 && taskviewIndex > 0) { taskviewIndex = taskviewIndex - 1; taskviewAdjustIndex(); }
+    if (event.keyCode === 40 && taskviewIndex < taskviewResults - 1) { taskviewIndex = taskviewIndex + 1; taskviewAdjustIndex(); }
+    if (event.keyCode === 38 && taskviewIndex > 0) { taskviewIndex = taskviewIndex - 1; taskviewAdjustIndex(); }
 
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
         if (timelog.debug) { console.log('Task selected: ' + taskviewListCache[taskviewIndex].TaskID); }
 
         localStorage.setItem(localStorageTaskID, taskviewListCache[taskviewIndex].TaskID);
@@ -388,7 +399,7 @@ function taskviewSearchKeyUp(event) {
         setView(viewTracking);
     }
 
-    if (event.keyCode != 46 && event.keyCode != 8 && event.keyCode < 48) { return; } // DELETE + BACKSPACE exception
+    if (event.keyCode !== 46 && event.keyCode !== 8 && event.keyCode < 48) { return; } // DELETE + BACKSPACE exception
     if ($('#taskview-search').val().length > 0) {
 
         timelog.getTasksAllocatedToEmployeeSuccessCallback = taskviewGetAllocationsSuccess;
@@ -404,7 +415,7 @@ function taskviewSearchKeyUp(event) {
 }
 
 function taskviewSearchKeyDown(event) {
-    if (event.which == 40 || event.which == 38 || event.which == 13) { event.preventDefault(); }
+    if (event.which === 40 || event.which === 38 || event.which === 13) { event.preventDefault(); }
 }
 
 function taskviewReloadWorkunitsClick() {
@@ -420,22 +431,24 @@ function taskviewGetAllocationsSuccess(data) {
     taskviewListCache = [];
 
     for (index in data) {
+        if (data.hasOwnProperty(index)) {
 
-        var fullName = data[index].Details.ProjectHeader.Name + ' &raquo; ' + data[index].FullName;
+            var fullName = data[index].Details.ProjectHeader.Name + ' &raquo; ' + data[index].FullName;
 
-		if (taskviewResults < 50 && data[index].Details.IsParent != "true" && fullName.toLowerCase().indexOf($('#taskview-search').val().toLowerCase()) > -1) {
-		    $('#taskview-list').append('<li data-id="' + data[index].TaskID + '">' + fullName + '</li>');
-		    taskviewResults = taskviewResults + 1;
-		    taskviewListCache.push(data[index]);
-		}
+            if (taskviewResults < 50 && data[index].Details.IsParent !== "true" && fullName.toLowerCase().indexOf($('#taskview-search').val().toLowerCase()) > -1) {
+                $('#taskview-list').append('<li data-id="' + data[index].TaskID + '">' + fullName + '</li>');
+                taskviewResults = taskviewResults + 1;
+                taskviewListCache.push(data[index]);
+            }
 
+        }
     }
 
     if (taskviewIndex >= taskviewResults) {
         taskviewIndex = 0;
     }
 
-    if ($('#taskview-list').html().length == 0) {
+    if ($('#taskview-list').html().length === 0) {
         $('#taskview-list').html('No tasks found :(');
     }
 
@@ -456,20 +469,22 @@ function taskviewGetEmployeeWorkSuccess(data) {
     var total = moment.duration(0);
 
     for (index in data) {
+        if (data.hasOwnProperty(index)) {
 
-        var duration = moment.duration.fromIsoduration(data[index].Duration);
+            var duration = moment.duration.fromIsoduration(data[index].Duration);
 
-        list.append('<tr>' +
-            '<td title="' + data[index].Details.ProjectHeader.Name + '">' + data[index].Details.ProjectHeader.Name + '</td>' +
-            '<td title="' + data[index].Details.TaskHeader.FullName + '">' + data[index].Details.TaskHeader.FullName + '</td>' +
-            '<td title="' + data[index].Description + '">' + data[index].Description + '</td>' +
-            '<td>' + duration.hours() + ':' + duration.minutes().pad() + '</td><td></td></tr>');
+            list.append('<tr>' +
+                '<td title="' + data[index].Details.ProjectHeader.Name + '">' + data[index].Details.ProjectHeader.Name + '</td>' +
+                '<td title="' + data[index].Details.TaskHeader.FullName + '">' + data[index].Details.TaskHeader.FullName + '</td>' +
+                '<td title="' + data[index].Description + '">' + data[index].Description + '</td>' +
+                '<td>' + duration.hours() + ':' + duration.minutes().pad() + '</td><td></td></tr>');
 
-        total = total.add(duration);
+            total = total.add(duration);
 
+        }
     }
 
-    if (list.html().length == 0) {
+    if (list.html().length === 0) {
         list.html('<tr><td></td><td>Nothing yet</td><td></td><td></td><td></td></tr>');
     } else {
         list.append('<tr style="font-weight: bold;"><td></td><td></td><td style="text-align:right;">Total</td><td>' + total.hours() + ':' + total.minutes().pad() + '</td><td></td></tr>');

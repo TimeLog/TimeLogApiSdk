@@ -49,15 +49,16 @@ table {
 
 /* BASE DESIGN
 ********************************************************/
-body { 
-	background-image: url('Content/background.jpg');
-	background-size: cover;
+body {
+    background: url('Content/background.jpg') no-repeat center center fixed;
+    background-size: cover;
 	color: #FFF;
 	text-align: center;
 	font-size: 0.8em;
 	background-repeat: no-repeat;
 	font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 .wrapper {
 	margin-top: 40px;
 	width: 100%;
