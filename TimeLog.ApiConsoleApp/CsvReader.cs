@@ -25,7 +25,7 @@
         /// <remarks>Default: Headers, European file encoding (1252) and comma as splitter</remarks>
         /// <param name="csvFilePath">The full path of the CSV file to read</param>
         public CsvReader(string csvFilePath)
-            : this(csvFilePath, true)
+            : this(csvFilePath, ',')
         {
         }
 
@@ -33,9 +33,20 @@
         /// Initializes a new instance of the CsvReader class with optional headers
         /// </summary>
         /// <param name="csvFilePath">The full path of the CSV file to read</param>
+        /// <param name="splitter">The splitter character</param>
+        public CsvReader(string csvFilePath, char splitter)
+            : this(csvFilePath, splitter, true, Encoding.GetEncoding(1252), new CultureInfo("en-US"))
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the CsvReader class with optional headers
+        /// </summary>
+        /// <param name="csvFilePath">The full path of the CSV file to read</param>
+        /// <param name="splitter">The splitter character</param>
         /// <param name="hasHeaders">Indication if the file has headers</param>
-        public CsvReader(string csvFilePath, bool hasHeaders)
-            : this(csvFilePath, hasHeaders, Encoding.GetEncoding(1252), new CultureInfo("en-US"))
+        public CsvReader(string csvFilePath, char splitter, bool hasHeaders)
+            : this(csvFilePath, splitter, hasHeaders, Encoding.GetEncoding(1252), new CultureInfo("en-US"))
         {
         }
 
@@ -43,19 +54,14 @@
         /// Initializes a new instance of the CsvReader class with optional headers
         /// </summary>
         /// <param name="csvFilePath">The full path of the CSV file to read</param>
-        /// <param name="hasHeaders">
-        /// Indication if the file has headers
-        /// </param>
-        /// <param name="encoding">
-        /// Specific file encoding format
-        /// </param>
-        /// <param name="culture">
-        /// Culture for detecting integers, double, dates etc.
-        /// </param>
-        public CsvReader(string csvFilePath, bool hasHeaders, Encoding encoding, CultureInfo culture)
+        /// <param name="splitter">The splitter character</param>
+        /// <param name="hasHeaders">Indication if the file has headers</param>
+        /// <param name="encoding">Specific file encoding format</param>
+        /// <param name="culture">Culture for detecting integers, double, dates etc.</param>
+        public CsvReader(string csvFilePath, char splitter, bool hasHeaders, Encoding encoding, CultureInfo culture)
         {
             this.Culture = culture;
-            this.Splitter = ',';
+            this.Splitter = splitter;
             this.HasHeaders = hasHeaders;
             this.Encoding = encoding;
             this.CsvFile = new FileInfo(csvFilePath);
