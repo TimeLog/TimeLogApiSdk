@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrganisationHandler.cs" />
+    <Compile Include="ExpenseHandler.cs" />
+    <Compile Include="SalaryHandler.cs" />
     <Compile Include="CrmHandler.cs" />
     <Compile Include="InvoicingHandler.cs" />
     <Compile Include="ProjectManagementHandler.cs" />
@@ -58,12 +61,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ExpenseService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\InvoicingService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\OrganisationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ProjectManagementService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SalaryService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -93,6 +111,44 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CrmService\TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure.wsdl" />
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure1.wsdl" />
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpenseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfPaymentMethod.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\InvoicingService\InvoicingServiceSecure.wsdl" />
@@ -127,6 +183,22 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceWithExternalKey.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrganisationService\OrganisationServiceSecure.wsdl" />
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.IsAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfstring.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.wsdl" />
@@ -170,6 +242,53 @@
     <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfWorkUnitFlatExternal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure.wsdl" />
+    <None Include="Service References\SalaryService\SalaryServiceSecure.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure1.wsdl" />
+    <None Include="Service References\SalaryService\SalaryServiceSecure1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.IsAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfAllowance.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfHolidayCalendar.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkweek.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfSalary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SecurityService\SecurityServiceSecure.wsdl" />
     <None Include="Service References\SecurityService\TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfSecurityToken.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -183,8 +302,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CrmService\" />
+    <WCFMetadataStorage Include="Service References\ExpenseService\" />
     <WCFMetadataStorage Include="Service References\InvoicingService\" />
+    <WCFMetadataStorage Include="Service References\OrganisationService\" />
     <WCFMetadataStorage Include="Service References\ProjectManagementService\" />
+    <WCFMetadataStorage Include="Service References\SalaryService\" />
     <WCFMetadataStorage Include="Service References\SecurityService\" />
   </ItemGroup>
   <ItemGroup>
@@ -233,6 +355,36 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\SalaryService\SalaryServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalaryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalaryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SalaryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExpenseService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExpenseService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExpenseService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\InvoicingService\InvoicingServiceSecure.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -243,6 +395,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\InvoicingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganisationService\OrganisationServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganisationService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganisationService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganisationService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

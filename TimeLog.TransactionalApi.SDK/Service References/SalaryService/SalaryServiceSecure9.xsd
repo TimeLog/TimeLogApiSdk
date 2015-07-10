@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_0" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:complexType name="ArrayOfNormalWorkweek">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NormalWorkweek" nillable="true" type="tns:NormalWorkweek" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNormalWorkweek" nillable="true" type="tns:ArrayOfNormalWorkweek" />
+  <xs:complexType name="NormalWorkweek">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.timelog.com/api/tlp/v1_2" base="q1:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NormHours" nillable="true" type="q2:ArrayOfKeyValueOfintdouble" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NormalWorkweek" nillable="true" type="tns:NormalWorkweek" />
+  <xs:complexType name="ArrayOfHolidayCalendar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HolidayCalendar" nillable="true" type="tns:HolidayCalendar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHolidayCalendar" nillable="true" type="tns:ArrayOfHolidayCalendar" />
+  <xs:complexType name="HolidayCalendar">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://www.timelog.com/api/tlp/v1_2" base="q3:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HolidayCalendar" nillable="true" type="tns:HolidayCalendar" />
+  <xs:complexType name="ArrayOfAllowance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Allowance" nillable="true" type="tns:Allowance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAllowance" nillable="true" type="tns:ArrayOfAllowance" />
+  <xs:complexType name="Allowance">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://www.timelog.com/api/tlp/v1_2" base="q4:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Allowance" nillable="true" type="tns:Allowance" />
+</xs:schema>

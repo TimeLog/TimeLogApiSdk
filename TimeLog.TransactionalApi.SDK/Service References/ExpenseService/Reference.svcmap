@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc8af7be-8868-4a19-b572-6db254126adb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExpensesServiceSecure.xsd" MetadataType="Schema" ID="353e8116-78f9-4f40-a3d5-e1bd9b5e5464" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExpensesServiceSecure1.xsd" MetadataType="Schema" ID="e53e1111-5b39-4a64-a6db-0c35241b5614" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExpensesServiceSecure2.xsd" MetadataType="Schema" ID="7c11bb92-19e9-4fdf-8769-e62f5253ef89" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExpensesServiceSecure3.xsd" MetadataType="Schema" ID="d180bf50-cf0c-4d0a-8ba3-743005bfcab8" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd3" />
+    <MetadataFile FileName="ExpensesServiceSecure.disco" MetadataType="Disco" ID="b3f30226-dcf5-4443-bde0-124fd4f3a1b3" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?disco" />
+    <MetadataFile FileName="ExpensesServiceSecure.wsdl" MetadataType="Wsdl" ID="774f5e8d-af3e-4639-b222-a7f2688865ed" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="ExpensesServiceSecure4.xsd" MetadataType="Schema" ID="f19a1be2-0776-4ad5-af30-c96d20b6cc14" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd4" />
+    <MetadataFile FileName="ExpensesServiceSecure5.xsd" MetadataType="Schema" ID="e580731b-1f8e-43bb-8b97-2906eae473fb" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd5" />
+    <MetadataFile FileName="ExpensesServiceSecure6.xsd" MetadataType="Schema" ID="3a50ee4c-7ac1-4886-b120-f3a28a1a905b" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd6" />
+    <MetadataFile FileName="ExpensesServiceSecure1.wsdl" MetadataType="Wsdl" ID="7e606872-6b2c-4be9-a32f-f37d1a750868" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ExpensesServiceSecure7.xsd" MetadataType="Schema" ID="1722867f-b225-46a9-9b88-b448caa7b9d4" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd7" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

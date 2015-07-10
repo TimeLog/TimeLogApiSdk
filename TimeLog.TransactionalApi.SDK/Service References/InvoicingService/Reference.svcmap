@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="490f843c-5f22-4f5f-8a69-cdba4b26257f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3908d856-4b18-4307-9c01-07ea2025faef" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,14 +22,14 @@
     <MetadataSource Address="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="InvoicingServiceSecure.xsd" MetadataType="Schema" ID="5c247bd3-a3b1-4d70-9d87-89e669c2270e" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd0" />
-    <MetadataFile FileName="InvoicingServiceSecure1.xsd" MetadataType="Schema" ID="ef90578f-383d-4c3d-bcd7-233a1be6394e" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd4" />
-    <MetadataFile FileName="InvoicingServiceSecure2.xsd" MetadataType="Schema" ID="bc7cd778-ad43-4f60-9937-f7e15f1618ee" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd3" />
-    <MetadataFile FileName="InvoicingServiceSecure.wsdl" MetadataType="Wsdl" ID="c7add26c-7078-4c71-991c-f0c758cd4be5" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?wsdl" />
-    <MetadataFile FileName="InvoicingServiceSecure3.xsd" MetadataType="Schema" ID="981c2430-f1cf-4520-8654-b8c4f053fc7d" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd1" />
-    <MetadataFile FileName="InvoicingServiceSecure4.xsd" MetadataType="Schema" ID="bc7c851f-b9c0-4584-8ce9-5298233fd44f" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd2" />
-    <MetadataFile FileName="InvoicingServiceSecure.disco" MetadataType="Disco" ID="7dc6a12f-128d-447e-b587-01419b1133a0" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?disco" />
-    <MetadataFile FileName="InvoicingServiceSecure5.xsd" MetadataType="Schema" ID="057d988c-a263-449e-967c-c54c185c01e1" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd5" />
+    <MetadataFile FileName="InvoicingServiceSecure.xsd" MetadataType="Schema" ID="c7bae72f-9730-4b58-9428-896f5a5fe3f2" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd0" />
+    <MetadataFile FileName="InvoicingServiceSecure1.xsd" MetadataType="Schema" ID="f489ed7e-537d-4384-9065-9c39bc788c3c" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd4" />
+    <MetadataFile FileName="InvoicingServiceSecure2.xsd" MetadataType="Schema" ID="00b29816-bade-43d8-92f0-a73d392a4623" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd3" />
+    <MetadataFile FileName="InvoicingServiceSecure.wsdl" MetadataType="Wsdl" ID="46dd60ba-b237-46ce-b7f8-5648b2635c9e" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="InvoicingServiceSecure3.xsd" MetadataType="Schema" ID="13bfe0ca-bade-459e-965f-1ca8c1f0f53a" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd1" />
+    <MetadataFile FileName="InvoicingServiceSecure4.xsd" MetadataType="Schema" ID="2526e558-1790-45b9-af61-1b32ab6d4327" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd2" />
+    <MetadataFile FileName="InvoicingServiceSecure.disco" MetadataType="Disco" ID="452afece-d2af-449a-8abd-652eaea2bbb2" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?disco" />
+    <MetadataFile FileName="InvoicingServiceSecure5.xsd" MetadataType="Schema" ID="a2c94fe3-c091-4e95-9734-a4eefae121ed" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd5" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -53,7 +53,6 @@
           <xs:element minOccurs="0" name="InvoiceCurrencyRate" type="xs:double" />
           <xs:element minOccurs="0" name="GUID" type="ser:guid" />
           <xs:element minOccurs="0" name="InvoicingAttention" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="InvoicingCustomerName" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="InvoiceNoExternal" nillable="true" type="xs:string" />
           <xs:element xmlns:q8="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="Details" nillable="true" type="q8:InvoiceDetails" />
         </xs:sequence>
@@ -191,7 +190,6 @@
           <xs:element minOccurs="0" name="CurrencyRate" type="xs:double" />
           <xs:element minOccurs="0" name="GUID" type="ser:guid" />
           <xs:element minOccurs="0" name="EAN" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="InvoicingCustomerName" nillable="true" type="xs:string" />
           <xs:element xmlns:q38="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="Details" nillable="true" type="q38:CreditNoteDetails" />
         </xs:sequence>
       </xs:extension>
@@ -206,22 +204,21 @@
       <xs:element xmlns:q43="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="Currency" nillable="true" type="q43:Currency" />
       <xs:element xmlns:q44="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="CustomerHeader" nillable="true" type="q44:CustomerHeader" />
       <xs:element xmlns:q45="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="ContactHeader" nillable="true" type="q45:ContactHeader" />
-      <xs:element xmlns:q46="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="ProjectHeader" nillable="true" type="q46:ProjectHeader" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element xmlns:q47="http://www.timelog.com/api/tlp/v1" name="CreditNoteDetails" nillable="true" type="q47:CreditNoteDetails" />
+  <xs:element xmlns:q46="http://www.timelog.com/api/tlp/v1" name="CreditNoteDetails" nillable="true" type="q46:CreditNoteDetails" />
   <xs:element name="GetCreditNoteByGUID">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="guid" type="ser:guid" />
-        <xs:element xmlns:q48="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q48:SecurityToken" />
+        <xs:element xmlns:q47="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q47:SecurityToken" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetCreditNoteByGUIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q49="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="GetCreditNoteByGUIDResult" nillable="true" type="q49:ResponseOfCreditNote" />
+        <xs:element xmlns:q48="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="GetCreditNoteByGUIDResult" nillable="true" type="q48:ResponseOfCreditNote" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -229,14 +226,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="guid" type="ser:guid" />
-        <xs:element xmlns:q50="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q50:SecurityToken" />
+        <xs:element xmlns:q49="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q49:SecurityToken" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="MarkInvoiceAsCheckedResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q51="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="MarkInvoiceAsCheckedResult" nillable="true" type="q51:ResponseOfInvoice" />
+        <xs:element xmlns:q50="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="MarkInvoiceAsCheckedResult" nillable="true" type="q50:ResponseOfInvoice" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -245,15 +242,15 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="guid" type="ser:guid" />
         <xs:element minOccurs="0" name="externalInvoiceNumber" nillable="true" type="xs:string" />
-        <xs:element xmlns:q52="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="externalInvoiceStatus" nillable="true" type="q52:InvoiceState" />
-        <xs:element xmlns:q53="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q53:SecurityToken" />
+        <xs:element xmlns:q51="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="externalInvoiceStatus" nillable="true" type="q51:InvoiceState" />
+        <xs:element xmlns:q52="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q52:SecurityToken" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateExternalDataResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q54="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="UpdateExternalDataResult" nillable="true" type="q54:ResponseOfInvoice" />
+        <xs:element xmlns:q53="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="UpdateExternalDataResult" nillable="true" type="q53:ResponseOfInvoice" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -262,14 +259,14 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="externalKey" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="systemName" nillable="true" type="xs:string" />
-        <xs:element xmlns:q55="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q55:SecurityToken" />
+        <xs:element xmlns:q54="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q54:SecurityToken" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetInvoiceByExternalKeyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q56="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="GetInvoiceByExternalKeyResult" nillable="true" type="q56:ResponseOfInvoice" />
+        <xs:element xmlns:q55="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="GetInvoiceByExternalKeyResult" nillable="true" type="q55:ResponseOfInvoice" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -277,68 +274,68 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="invoiceGuid" type="ser:guid" />
-        <xs:element xmlns:q57="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="externalSystemContext" nillable="true" type="q57:ExternalSystemContext" />
+        <xs:element xmlns:q56="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="externalSystemContext" nillable="true" type="q56:ExternalSystemContext" />
         <xs:element minOccurs="0" name="source" type="xs:int" />
-        <xs:element xmlns:q58="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q58:SecurityToken" />
+        <xs:element xmlns:q57="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q57:SecurityToken" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateInvoiceExternalMappingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="CreateInvoiceExternalMappingResult" nillable="true" type="q59:ResponseOfInvoiceWithExternalKey" />
+        <xs:element xmlns:q58="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="CreateInvoiceExternalMappingResult" nillable="true" type="q58:ResponseOfInvoiceWithExternalKey" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="ArrayOfInvoiceWithExternalKey">
     <xs:sequence>
-      <xs:element xmlns:q60="http://www.timelog.com/api/tlp/v1" minOccurs="0" maxOccurs="unbounded" name="InvoiceWithExternalKey" nillable="true" type="q60:InvoiceWithExternalKey" />
+      <xs:element xmlns:q59="http://www.timelog.com/api/tlp/v1" minOccurs="0" maxOccurs="unbounded" name="InvoiceWithExternalKey" nillable="true" type="q59:InvoiceWithExternalKey" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element xmlns:q61="http://www.timelog.com/api/tlp/v1" name="ArrayOfInvoiceWithExternalKey" nillable="true" type="q61:ArrayOfInvoiceWithExternalKey" />
+  <xs:element xmlns:q60="http://www.timelog.com/api/tlp/v1" name="ArrayOfInvoiceWithExternalKey" nillable="true" type="q60:ArrayOfInvoiceWithExternalKey" />
   <xs:complexType name="InvoiceWithExternalKey">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q62="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q62:APIBase">
+      <xs:extension xmlns:q61="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q61:APIBase">
         <xs:sequence>
-          <xs:element xmlns:q63="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="Invoice" nillable="true" type="q63:Invoice" />
-          <xs:element xmlns:q64="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="ExternalSystemContexts" nillable="true" type="q64:ArrayOfExternalSystemContext" />
+          <xs:element xmlns:q62="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="Invoice" nillable="true" type="q62:Invoice" />
+          <xs:element xmlns:q63="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="ExternalSystemContexts" nillable="true" type="q63:ArrayOfExternalSystemContext" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element xmlns:q65="http://www.timelog.com/api/tlp/v1" name="InvoiceWithExternalKey" nillable="true" type="q65:InvoiceWithExternalKey" />
+  <xs:element xmlns:q64="http://www.timelog.com/api/tlp/v1" name="InvoiceWithExternalKey" nillable="true" type="q64:InvoiceWithExternalKey" />
   <xs:element name="CreateCreditNoteExternalMapping">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="creditNoteGuid" type="ser:guid" />
-        <xs:element xmlns:q66="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="externalSystemContext" nillable="true" type="q66:ExternalSystemContext" />
+        <xs:element xmlns:q65="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="externalSystemContext" nillable="true" type="q65:ExternalSystemContext" />
         <xs:element minOccurs="0" name="source" type="xs:int" />
-        <xs:element xmlns:q67="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q67:SecurityToken" />
+        <xs:element xmlns:q66="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="token" nillable="true" type="q66:SecurityToken" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateCreditNoteExternalMappingResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q68="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="CreateCreditNoteExternalMappingResult" nillable="true" type="q68:ResponseOfCreditNoteWithExternalKey" />
+        <xs:element xmlns:q67="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="CreateCreditNoteExternalMappingResult" nillable="true" type="q67:ResponseOfCreditNoteWithExternalKey" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:complexType name="ArrayOfCreditNoteWithExternalKey">
     <xs:sequence>
-      <xs:element xmlns:q69="http://www.timelog.com/api/tlp/v1" minOccurs="0" maxOccurs="unbounded" name="CreditNoteWithExternalKey" nillable="true" type="q69:CreditNoteWithExternalKey" />
+      <xs:element xmlns:q68="http://www.timelog.com/api/tlp/v1" minOccurs="0" maxOccurs="unbounded" name="CreditNoteWithExternalKey" nillable="true" type="q68:CreditNoteWithExternalKey" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element xmlns:q70="http://www.timelog.com/api/tlp/v1" name="ArrayOfCreditNoteWithExternalKey" nillable="true" type="q70:ArrayOfCreditNoteWithExternalKey" />
+  <xs:element xmlns:q69="http://www.timelog.com/api/tlp/v1" name="ArrayOfCreditNoteWithExternalKey" nillable="true" type="q69:ArrayOfCreditNoteWithExternalKey" />
   <xs:complexType name="CreditNoteWithExternalKey">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q71="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q71:APIBase">
+      <xs:extension xmlns:q70="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q70:APIBase">
         <xs:sequence>
-          <xs:element xmlns:q72="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="CreditNote" nillable="true" type="q72:CreditNote" />
-          <xs:element xmlns:q73="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="ExternalSystemContexts" nillable="true" type="q73:ArrayOfExternalSystemContext" />
+          <xs:element xmlns:q71="http://www.timelog.com/api/tlp/v1" minOccurs="0" name="CreditNote" nillable="true" type="q71:CreditNote" />
+          <xs:element xmlns:q72="http://www.timelog.com/api/tlp/v1_1" minOccurs="0" name="ExternalSystemContexts" nillable="true" type="q72:ArrayOfExternalSystemContext" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element xmlns:q74="http://www.timelog.com/api/tlp/v1" name="CreditNoteWithExternalKey" nillable="true" type="q74:CreditNoteWithExternalKey" />
+  <xs:element xmlns:q73="http://www.timelog.com/api/tlp/v1" name="CreditNoteWithExternalKey" nillable="true" type="q73:CreditNoteWithExternalKey" />
 </xs:schema>

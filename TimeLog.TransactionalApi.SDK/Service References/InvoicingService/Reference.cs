@@ -144,9 +144,6 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         private string InvoicingAttentionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InvoicingCustomerNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string InvoiceNoExternalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -478,19 +475,6 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
-        public string InvoicingCustomerName {
-            get {
-                return this.InvoicingCustomerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InvoicingCustomerNameField, value) != true)) {
-                    this.InvoicingCustomerNameField = value;
-                    this.RaisePropertyChanged("InvoicingCustomerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
         public string InvoiceNoExternal {
             get {
                 return this.InvoiceNoExternalField;
@@ -503,7 +487,7 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
         public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceDetails Details {
             get {
                 return this.DetailsField;
@@ -1376,9 +1360,6 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         private string EANField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InvoicingCustomerNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.InvoicingService.CreditNoteDetails DetailsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -1681,19 +1662,6 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
-        public string InvoicingCustomerName {
-            get {
-                return this.InvoicingCustomerNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InvoicingCustomerNameField, value) != true)) {
-                    this.InvoicingCustomerNameField = value;
-                    this.RaisePropertyChanged("InvoicingCustomerName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
         public TimeLog.TransactionalApi.SDK.InvoicingService.CreditNoteDetails Details {
             get {
                 return this.DetailsField;
@@ -2556,9 +2524,6 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader ContactHeaderField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeaderField;
-        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -2643,19 +2608,6 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
                 if ((object.ReferenceEquals(this.ContactHeaderField, value) != true)) {
                     this.ContactHeaderField = value;
                     this.RaisePropertyChanged("ContactHeader");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeader {
-            get {
-                return this.ProjectHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProjectHeaderField, value) != true)) {
-                    this.ProjectHeaderField = value;
-                    this.RaisePropertyChanged("ProjectHeader");
                 }
             }
         }
