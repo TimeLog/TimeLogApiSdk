@@ -129,6 +129,25 @@ a {
 	text-decoration: none;
 	border: none;
 }
+#loading-status {
+	position: absolute;
+	top: 27px;
+	left: 95px;
+	display: none;
+	letter-spacing: -0.03em;
+	font-size: 2em;
+	font-weight: lighter;
+	-webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.0
+}
+
+@-webkit-keyframes pulsate {
+    0% {opacity: 0.2;}
+    50% {opacity: 0.7;}
+    100% {opacity: 0.2;}
+}
+
 .small {
     opacity: 0.6;
     font-size: 0.9em;
@@ -237,6 +256,25 @@ a {
     opacity: 0.5;
     font-size: 0.8em;
 }
+
+.versions {
+    display: none;
+    width: 250px;
+    background-color: #FFF;
+    opacity: 1;
+    color: #000;
+    padding: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+    line-height: 1.4em;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.versions strong { font-weight: bold; }
+.versions em { font-weight: bold;padding-right: 10px; }
+#version-text { cursor: pointer; }
 
 /* TRACKING VIEW
 ********************************************************/

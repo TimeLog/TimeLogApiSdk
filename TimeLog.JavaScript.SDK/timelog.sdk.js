@@ -58,6 +58,7 @@ Attribution 4.0 International (CC BY 4.0)
     var localStorageUsernameKey = 'TimeLogUsername';
     var localStoragePasswordKey = 'TimeLogPassword';
     var localStorageTokenKey = 'TimeLogToken';
+    var localStorageTokenCacheExpireKey = 'TimeLogTokenCacheExpire';
     var localStorageTasksAllocatedKey = 'TimeLogTasksAllocated';
     var localStorageTasksAllocatedCacheExpireKey = 'TimeLogTasksAllocatedCacheExpire';
     var localStorageEmployeeWorkKey = 'TimeLogEmployeeWork';
@@ -133,56 +134,51 @@ Attribution 4.0 International (CC BY 4.0)
 
     /* TOKEN AND AUTHENTICATION HANDLING
     ********************************************************/
-    var tokenInitials = '';
-    var tokenExpires = new Date('2001-01-01 01:01:01');
-    var tokenHash = '';
+    var tryAuthenticateList = undefined;
+    var tryAuthenticateRunning = false;
 
-    timelog.getToken = function () {
+    timelog.invalidateTryAuthenticate = function () {
 
-        var token = { Initials: tokenInitials, Expires: tokenExpires, Hash: tokenHash };
+        if (timelog.debug) { console.log('[timelog.invalidateTryAuthenticate] Executed'); }
 
-        if (tokenInitials.length === 0 && timelog.enableLocalStorageCache) {
-            if (timelog.debug) { console.log('[timelog.getToken] Restoring from localStorage'); }
-            var rawToken = x2Js.xml_str2json(localStorage.getItem(localStorageTokenKey));
+        tryAuthenticateList = undefined;
 
-            if (rawToken != undefined) {
-                token = rawToken.SecurityToken;
-            }
-
-            tokenInitials = token.Initials;
-            tokenExpires = token.Expires;
-            tokenHash = token.Hash;
+        if (timelog.enableLocalStorageCache) {
+            localStorage.removeItem(localStorageTokenKey);
+            localStorage.removeItem(localStorageTokenCacheExpireKey);
         }
+    }
 
-        if (timelog.enableAutoLogin && timelog.enableLocalStorageCache && new Date(token.Expires) < new Date() && localStorage.getItem(localStoragePasswordKey) != undefined) {
-            if (timelog.debug) { console.log('[timelog.getToken] AutoLogin enabled and token expired'); }
-            timelog.tryAuthenticate('', '', '');
-        }
-
-        return token;
-
-    };
-
-    // Tries to authenticate and get a token.
     timelog.authenticateSuccessCallback = undefined;
     timelog.authenticateFailureCallback = undefined;
 
     function tryAuthenticateSuccess(data) {
+
+        tryAuthenticateRunning = false;
+
+        if (data === '') {
+            if (timelog.authenticateSuccessCallback != undefined) {
+                timelog.authenticateSuccessCallback(tryAuthenticateList);
+                return;
+            }
+        }
+
         var result = x2Js.xml_str2json(new XMLSerializer().serializeToString(data)).Envelope.Body.GetTokenResponse.GetTokenResult;
         if (result.ResponseState.__text === "Success") {
 
             if (timelog.debug) { console.log('[timelog.tryAuthenticateSuccess] Token obtained'); }
 
-            tokenInitials = result.Return.SecurityToken.Initials;
-            tokenExpires = result.Return.SecurityToken.Expires;
-            tokenHash = result.Return.SecurityToken.Hash;
+            tryAuthenticateList = result.Return.SecurityToken;
 
             if (timelog.enableLocalStorageCache) {
-                localStorage.setItem(localStorageTokenKey, x2Js.json2xml_str(result.Return));
+                localStorage.setItem(localStorageTokenKey, JSON.stringify(tryAuthenticateList));
+                var expireDate = new Date();
+                expireDate = expireDate.setTime(expireDate.getTime() + 4 * 60 * 60 * 1000); // 4 hours
+                localStorage.setItem(localStorageTokenCacheExpireKey, JSON.stringify(expireDate));
             }
 
             if (timelog.authenticateSuccessCallback != undefined) {
-                timelog.authenticateSuccessCallback();
+                timelog.authenticateSuccessCallback(tryAuthenticateList);
             }
 
         } else {
@@ -192,6 +188,7 @@ Attribution 4.0 International (CC BY 4.0)
 
             if (timelog.enableLocalStorageCache) {
                 localStorage.removeItem(localStoragePasswordKey);
+                localStorage.removeItem(localStorageTokenCacheExpireKey);
                 localStorage.removeItem(localStorageTokenKey);
             }
 
@@ -206,25 +203,51 @@ Attribution 4.0 International (CC BY 4.0)
 
         if (timelog.debug) { console.log('[timelog.tryAuthenticateFailure] Token failed (' + textstatus + ')'); }
 
-        tokenInitials = '';
-        tokenExpires = new Date('2001-01-01 01:01:01');
-        tokenHash = '';
-
         if (timelog.enableLocalStorageCache) {
             localStorage.removeItem(localStoragePasswordKey);
             localStorage.removeItem(localStorageTokenKey);
+            localStorage.removeItem(localStorageTokenCacheExpireKey);
         }
 
         if (timelog.tryAuthenticateFailureCallback != undefined) {
-            var errorMsg = textstatus;
-            timelog.tryAuthenticateFailureCallback(errorMsg);
+            timelog.tryAuthenticateFailureCallback(textstatus);
         }
 
     }
 
     timelog.tryAuthenticate = function(url, username, password) {
 
+        if (tryAuthenticateRunning) {
+            if (timelog.debug) { console.log('[timelog.tryAuthenticate] Already running skipping...') }
+            return;
+        }
+
+        tryAuthenticateRunning = true;
+
+        if (tryAuthenticateList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(localStorageTokenKey) != undefined) {
+            tryAuthenticateList = JSON.parse(localStorage.getItem(localStorageTokenKey));
+        }
+
+        if (timelog.enableLocalStorageCache && new Date(parseInt(localStorage.getItem(localStorageTokenCacheExpireKey))) < new Date()) {
+            if (timelog.debug) { console.log('[timelog.tryAuthenticate] Cache expired redownloading'); }
+            timelog.invalidateTryAuthenticate();
+        }
+
+        if (timelog.enableAutoLogin && timelog.enableLocalStorageCache && (tryAuthenticateList == undefined || tryAuthenticateList.Expires < new Date()) && localStorage.getItem(localStoragePasswordKey) != undefined) {
+            if (timelog.debug) { console.log('[timelog.tryAuthenticate] AutoLogin enabled and token expired'); }
+            timelog.invalidateTryAuthenticate();
+            url = '';
+            password = '';
+            username = '';
+        }
+
+        if (tryAuthenticateList != undefined) {
+            tryAuthenticateSuccess('');
+            return;
+        }
+
         if (timelog.debug) { console.log('[timelog.tryAuthenticate] Executing (url: ' + url + ', username: ' + username + ', password: ' + password + ')'); }
+        
         if (timelog.enableLocalStorageCache) {
 
             if (url.length === 0) {
@@ -257,21 +280,25 @@ Attribution 4.0 International (CC BY 4.0)
                 success: tryAuthenticateSuccess,
                 error: tryAuthenticateFailure
             });
+        } else {
+            timelog.signOut();
         }
 
     };
 
     timelog.isTokenValid = function() {
-        return new Date(timelog.getToken().Expires) > new Date();
+        return tryAuthenticateList != undefined && new Date(tryAuthenticateList.Expires) > new Date();
+    }
+
+    timelog.isTokenPossible = function() {
+        return localStorage.getItem(localStorageUrlKey) != undefined && localStorage.getItem(localStorageUrlKey).length > 0
+            && localStorage.getItem(localStorageUsernameKey) != undefined && localStorage.getItem(localStorageUsernameKey).length > 0
+            && localStorage.getItem(localStoragePasswordKey) != undefined && localStorage.getItem(localStoragePasswordKey).length > 0;
     }
 
     timelog.signOut = function () {
 
         if (timelog.debug) { console.log('[timelog.signOut] Executing'); }
-
-        tokenInitials = '';
-        tokenExpires = new Date('2001-01-01 01:01:01');
-        tokenHash = '';
 
         if (timelog.enableLocalStorageCache) {
             localStorage.removeItem(localStoragePasswordKey);
@@ -298,6 +325,7 @@ Attribution 4.0 International (CC BY 4.0)
 
         if (timelog.enableLocalStorageCache) {
             localStorage.removeItem(localStorageTasksAllocatedKey);
+            localStorage.removeItem(localStorageTasksAllocatedCacheExpireKey);
         }
     }
 
@@ -379,6 +407,17 @@ Attribution 4.0 International (CC BY 4.0)
 
         getTasksAllocatedToEmployeeRunning = true;
 
+        if (!timelog.isTokenValid()) {
+            if (timelog.debug) { console.log('[timelog.getTasksAllocatedToEmployee] Token not valid. Fetch and try again') }
+
+            timelog.tryAuthenticate('', '', '');
+            setTimeout(function() {
+                getTasksAllocatedToEmployeeRunning = true;
+                timelog.getTasksAllocatedToEmployee();
+            }, 1000);
+            return;
+        }
+
         if (getTasksAllocatedToEmployeeList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(localStorageTasksAllocatedKey) != undefined) {
             getTasksAllocatedToEmployeeList = JSON.parse(localStorage.getItem(localStorageTasksAllocatedKey));
         }
@@ -399,10 +438,10 @@ Attribution 4.0 International (CC BY 4.0)
             type: "POST",
             url: getProjectManagementServiceUrl(),
             headers: { "SOAPAction": "GetTasksAllocatedToEmployeeRequest", "Content-Type": "text/xml" },
-            data: templateGetTasksAllocated.replace('{0}', timelog.getToken().Initials).
-                                            replace('{1}', timelog.getToken().Initials).
-                                            replace('{2}', timelog.getToken().Expires).
-                                            replace('{3}', timelog.getToken().Hash),
+            data: templateGetTasksAllocated.replace('{0}', tryAuthenticateList.Initials).
+                                            replace('{1}', tryAuthenticateList.Initials).
+                                            replace('{2}', tryAuthenticateList.Expires).
+                                            replace('{3}', tryAuthenticateList.Hash),
             success: getTasksAllocatedToEmployeeSuccess,
             error: getTasksAllocatedToEmployeeFailure
         });
@@ -483,14 +522,14 @@ Attribution 4.0 International (CC BY 4.0)
             data: templateInsertWork.replace('{0}', timelog.generateUUID()).
                                             replace('{1}', '00000000-0000-0000-0000-000000000000'). // AllocationGuid
                                             replace('{2}', taskId). // Task ID
-                                            replace('{3}', timelog.getToken().Initials). // Employee initials
+                                            replace('{3}', tryAuthenticateList.Initials). // Employee initials
                                             replace('{4}', duration). // Duration
                                             replace('{5}', startDate.toISOString()). // Start Date Time
                                             replace('{6}', endDate.toISOString()). // End Date Time
                                             replace('{7}', comment).
-                                            replace('{8}', timelog.getToken().Initials).
-                                            replace('{9}', timelog.getToken().Expires).
-                                            replace('{10}', timelog.getToken().Hash),
+                                            replace('{8}', tryAuthenticateList.Initials).
+                                            replace('{9}', tryAuthenticateList.Expires).
+                                            replace('{10}', tryAuthenticateList.Hash),
             success: insertWorkSuccess,
             error: insertWorkFailure
         });
@@ -507,6 +546,7 @@ Attribution 4.0 International (CC BY 4.0)
 
         if (timelog.enableLocalStorageCache) {
             localStorage.removeItem(localStorageEmployeeWorkKey);
+            localStorage.removeItem(localStorageEmployeeWorkCacheExpireKey);
         }
     }
 
@@ -582,12 +622,25 @@ Attribution 4.0 International (CC BY 4.0)
 
     timelog.getEmployeeWork = function (start, end) {
 
+        if (!timelog.isTokenPossible()) { return; }
+
         if (getEmployeeWorkRunning) {
             if (timelog.debug) { console.log('[timelog.getEmployeeWorkRunning] Already running skipping...') }
             return;
         }
 
         getEmployeeWorkRunning = true;
+
+        if (!timelog.isTokenValid()) {
+            if (timelog.debug) { console.log('[timelog.getEmployeeWorkRunning] Token not valid. Fetch and try again') }
+
+            timelog.tryAuthenticate('', '', '');
+            setTimeout(function () {
+                getEmployeeWorkRunning = true;
+                timelog.getEmployeeWork(start, end);
+            }, 1000);
+            return;
+        }
 
         if (getEmployeeWorkList == undefined && timelog.enableLocalStorageCache && localStorage.getItem(localStorageEmployeeWorkKey) != undefined) {
             getEmployeeWorkList = JSON.parse(localStorage.getItem(localStorageEmployeeWorkKey));
@@ -612,12 +665,12 @@ Attribution 4.0 International (CC BY 4.0)
             type: "POST",
             url: getProjectManagementServiceUrl(),
             headers: { "SOAPAction": "GetEmployeeWorkRequest", "Content-Type": "text/xml" },
-            data: templateGetEmployeeWork.replace('{0}', timelog.getToken().Initials).
+            data: templateGetEmployeeWork.replace('{0}', tryAuthenticateList.Initials).
                                             replace('{1}', startDate.toISOString()). // Start Date Time
                                             replace('{2}', endDate.toISOString()). // End Date Time
-                                            replace('{3}', timelog.getToken().Initials).
-                                            replace('{4}', timelog.getToken().Expires).
-                                            replace('{5}', timelog.getToken().Hash),
+                                            replace('{3}', tryAuthenticateList.Initials).
+                                            replace('{4}', tryAuthenticateList.Expires).
+                                            replace('{5}', tryAuthenticateList.Hash),
             success: getEmployeeWorkSuccess,
             error: getEmployeeWorkFailure
         });

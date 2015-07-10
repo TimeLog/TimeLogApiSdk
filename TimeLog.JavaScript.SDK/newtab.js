@@ -59,6 +59,8 @@ $(document).ready(function() {
 	$('#trackingview-cancel').click(trackingviewCancelClick);
 	$('#trackingview-done').click(trackingviewDoneClick);
 
+    $('#version-text').click(function() { $('.versions').toggle(); });
+
 	// Debug
 	if (debug) {
 	    timelog.debug = true;
@@ -68,20 +70,28 @@ $(document).ready(function() {
 		$('#debug-workunitview').click(function () { localStorage.setItem(localStorageView, 'workunitview') });
 	}
 
-	if (timelog.isTokenValid()) {
+	localStorage.setItem(localStorageView, viewEmpty);
 
-	    localStorage.setItem(localStorageSignedIn, true);
-	    localStorage.setItem(localStorageView, viewTask);
+	if (timelog.isTokenPossible()) { // timelog.isTokenValid() && 
 
-	    if (localStorage.getItem(localStorageTaskID) != undefined) {
-	        localStorage.setItem(localStorageView, viewTracking);
-	    }
+	    timelog.tryAuthenticate();
 
+	    //localStorage.setItem(localStorageSignedIn, true);
+	    //localStorage.setItem(localStorageView, viewTask);
+
+	    //if (localStorage.getItem(localStorageTaskID) != undefined) {
+	    //    localStorage.setItem(localStorageView, viewTracking);
+	    //}
+
+	} else {
+
+	    signOut();
 	}
 
     // General
-	mainloop();
+    mainloop();
 	setInterval(mainloop, 1000);
+	startUpdates();
 
 });
 
@@ -94,6 +104,7 @@ var localStorageTaskComment = 'TimelogTaskComment';
 var localStorageView = 'TimelogView';
 var localStorageSignedIn = 'TimelogSignedIn';
 var localStoragePaused = 'TimelogPaused';
+var localStorageLoading = 'TimelogLoading';
 var localStorageCacheExpire = 'TimelogCacheExpire';
 
 /* VIEWS
@@ -122,6 +133,18 @@ function isPaused() {
     return localStorage.getItem(localStoragePaused) === 'true';
 }
 
+function startLoading() {
+    localStorage.setItem(localStorageLoading, 'true');
+}
+
+function stopLoading() {
+    localStorage.setItem(localStorageLoading, 'false');
+}
+
+function isLoading() {
+    return localStorage.getItem(localStorageLoading) === 'true';
+}
+
 function mainloop() {
 
     adjustClock();
@@ -133,6 +156,12 @@ function mainloop() {
     $('#userview-notloggedin').show();
     $('#userview-loggedin').hide();
     $('#userview-logindialog').show();
+
+    if (isLoading()) {
+        $('#loading-status').show();
+    } else {              
+        $('#loading-status').hide();
+    }
 
     if (localStorage.getItem(localStorageSignedIn) === "true") {
         $('#userview-notloggedin').hide();
@@ -148,6 +177,8 @@ function mainloop() {
                     var now = new Date();
                     var startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
                     var endDate = new Date(startDate.getTime() + (1 * 24 * 60 * 60 * 1000));
+
+                    startLoading();
                     timelog.getEmployeeWork(startDate, endDate);
                 }
 
@@ -312,22 +343,30 @@ function trackingviewDoneClick() {
 
     timelog.insertWorkSuccessCallback = trackingviewInsertWorkSuccess;
     timelog.insertWorkFailureCallback = trackingviewInsertWorkFailure;
+
+    startLoading();
     timelog.insertWork(taskId, start, end, comment);
 
 }
 
 function trackingviewInsertWorkSuccess() {
+
     localStorage.removeItem(localStorageTaskID);
     localStorage.removeItem(localStorageTaskStart);
     localStorage.removeItem(localStorageTaskName);
     localStorage.removeItem(localStorageTaskComment);
     timelog.invalidateGetEmployeeWork();
+    startUpdates();
     setView(viewTask);
+    stopLoading();
 }
 
 function trackingviewInsertWorkFailure(msg) {
+
     startUpdates();
+    stopLoading();
     alert(msg);
+
 }
 
 function trackingviewTimeFocus() {
@@ -404,6 +443,8 @@ function taskviewSearchKeyUp(event) {
 
         timelog.getTasksAllocatedToEmployeeSuccessCallback = taskviewGetAllocationsSuccess;
         timelog.getTasksAllocatedToEmployeeFailureCallback = taskviewGetAllocationsFailure;
+
+        startLoading();
         timelog.getTasksAllocatedToEmployee();
 
     } else {
@@ -420,6 +461,7 @@ function taskviewSearchKeyDown(event) {
 
 function taskviewReloadWorkunitsClick() {
     timelog.invalidateGetEmployeeWork();
+    startUpdates();
 }
 
 function taskviewGetAllocationsSuccess(data) {
@@ -453,11 +495,13 @@ function taskviewGetAllocationsSuccess(data) {
     }
 
     taskviewAdjustIndex();
+    stopLoading();
 }
 
 function taskviewGetAllocationsFailure(error) {
     $('#taskview-list').show();
     $('#taskview-list').html('<li>' + error + '</li>');
+    stopLoading();
 }
 
 function taskviewGetEmployeeWorkSuccess(data) {
@@ -489,11 +533,15 @@ function taskviewGetEmployeeWorkSuccess(data) {
     } else {
         list.append('<tr style="font-weight: bold;"><td></td><td></td><td style="text-align:right;">Total</td><td>' + total.hours() + ':' + total.minutes().pad() + '</td><td></td></tr>');
     }
+
+    stopLoading();
 }
 
 function taskviewGetEmployeeWorkFailure(error) {
+    pauseUpdates();
     $('#taskview-workunits').show();
     $('#taskview-workunits table tbody').html('<tr><td></td><td>' + error + '</td><td></td><td></td><td></td></tr>');
+    stopLoading();
 }
 
 function taskviewAdjustIndex() {
