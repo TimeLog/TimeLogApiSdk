@@ -70,8 +70,6 @@ $(document).ready(function() {
 		$('#debug-workunitview').click(function () { localStorage.setItem(localStorageView, 'workunitview') });
 	}
 
-	localStorage.setItem(localStorageView, viewEmpty);
-
 	if (timelog.isTokenPossible()) { // timelog.isTokenValid() && 
 
 	    timelog.tryAuthenticate();
@@ -86,12 +84,21 @@ $(document).ready(function() {
 	} else {
 
 	    signOut();
+
 	}
 
     // General
     mainloop();
 	setInterval(mainloop, 1000);
 	startUpdates();
+    
+    // Get the recent work units on every tab open
+	var now = new Date();
+	var startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+	var endDate = new Date(startDate.getTime() + (1 * 24 * 60 * 60 * 1000));
+
+	startLoading();
+	timelog.getEmployeeWork(startDate, endDate);
 
 });
 
@@ -172,16 +179,6 @@ function mainloop() {
 
             case viewTask: {
                 $('.taskview').show();
-
-                if (!isPaused()) {
-                    var now = new Date();
-                    var startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
-                    var endDate = new Date(startDate.getTime() + (1 * 24 * 60 * 60 * 1000));
-
-                    startLoading();
-                    timelog.getEmployeeWork(startDate, endDate);
-                }
-
                 break;
             }
             case viewTracking: {
@@ -294,7 +291,13 @@ function userviewSubmitClick() {
 
 function userviewGetTokenSuccess() {
     localStorage.setItem(localStorageSignedIn, true);
-    setView(viewTask);
+
+    if (localStorage.getItem(localStorageTaskID) != undefined) {
+        setView(viewTracking);
+    } else {
+        setView(viewTask);
+    }
+
     startUpdates();
 }
 
@@ -351,14 +354,15 @@ function trackingviewDoneClick() {
 
 function trackingviewInsertWorkSuccess() {
 
+    stopLoading();
     localStorage.removeItem(localStorageTaskID);
     localStorage.removeItem(localStorageTaskStart);
     localStorage.removeItem(localStorageTaskName);
     localStorage.removeItem(localStorageTaskComment);
-    timelog.invalidateGetEmployeeWork();
-    startUpdates();
+
+    taskviewReloadWorkunitsClick();
     setView(viewTask);
-    stopLoading();
+
 }
 
 function trackingviewInsertWorkFailure(msg) {
@@ -461,7 +465,14 @@ function taskviewSearchKeyDown(event) {
 
 function taskviewReloadWorkunitsClick() {
     timelog.invalidateGetEmployeeWork();
+
+    var now = new Date();
+    var startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0);
+    var endDate = new Date(startDate.getTime() + (1 * 24 * 60 * 60 * 1000));
+
     startUpdates();
+    startLoading();
+    timelog.getEmployeeWork(startDate, endDate);
 }
 
 function taskviewGetAllocationsSuccess(data) {
