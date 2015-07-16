@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1.0">
+    <meta name="description" content="@ViewBag.Description">
+    <meta name="author" content="TimeLog A/S">
+    <title>@ViewBag.Title - TimeLog Project API Documentation</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+    <header class="header" style="top: 0px;">
+        <div class="header-top">
+            <div class="max-width-wrapper">
+                <div class="logo">
+                    <a href="/">TimeLog</a>
+                </div>
+                <div class="logo-text">
+
+                    <a href="/">
+                        TimeLog <em>Value Your Time</em>
+                    </a>
+                </div>
+                <nav class="site-links">
+                </nav>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="max-width-wrapper">
+                <nav id="site-nav" class="main-nav">
+                    <span class="small-screen-menu">
+                        <a href="#site-nav" class="small-screen-menu__link" data-opentext="Menu" data-closetext="Close" title="Open/close menu"><span class="close-stripes">Menu</span><span class="small-screen-menu__text">Menu</span></a>
+                    </span>
+                    <ul id="nav-items" class="top-level">
+
+                        <li class="top-level__item has-subnav">
+                            <a class="top-level__link current" href="#">
+                                TimeLog Project
+                                <span class="mobile-nav-expand">expand/contract</span>
+                            </a>
+                            <ul class="sub-level">
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Welcome</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Restrictions</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Data Models</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-level__item has-subnav">
+                            <a class="top-level__link" href="#">
+                                Transactional API
+                                <span class="mobile-nav-expand">expand/contract</span>
+                            </a>
+                            <ul class="sub-level">
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Introduction</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Getting Started</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Security</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Services</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Error Codes</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-level__item has-subnav">
+                            <a class="top-level__link" href="#">
+                                Reporting API
+                                <span class="mobile-nav-expand">expand/contract</span>
+                            </a>
+                            <ul class="sub-level">
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Introduction</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Getting Started</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Security</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Methods</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Enumerable Types</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-level__item has-subnav">
+                            <a class="top-level__link" href="#">
+                                File Services API
+                                <span class="mobile-nav-expand">expand/contract</span>
+                            </a>
+                            <ul class="sub-level">
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Introduction</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Getting Started</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Security</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="/">Methods</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-level__item">
+                            <a class="top-level__link" href="/">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="section">
+        <div class="max-width-wrapper">
+            <div class="layout two-one">
+                <div class="layout__item">
+                    <div class="content">
+                        <article class="article">
+                            @RenderBody()
+                            <p>&nbsp;</p>
+                        </article>
+                    </div>
+                </div>
+                <div class="layout__item">
+                    @RenderSection("sidebar", required: false)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="banner">
+            <div class="max-width-wrapper">
+                <div class="banner__left">© 2001-@DateTime.Now.Year TimeLog A/S. All rights reserved.</div>
+            </div>
+            <div class="banner__right">
+                Value your time...
+                <svg viewBox="0 0 368 398" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                    <path d="M182.9,76.8 C107,76.8 45.4,138.4 45.4,214.3 C45.4,290.2 107,351.8 182.9,351.8 C258.8,351.8 320.4,290.2 320.4,214.3 C320.4,138.3 258.9,76.8 182.9,76.8 L182.9,76.8 Z" id="Shape" fill="#E4E4E3"></path>
+                    <path d="M327.8,101.9 L350.4,79.3 L318,46.8 L295.4,69.4 C270,49.7 239.4,36.5 205.9,32.3 L205.9,0.3 L160,0.3 L160,32.3 C69.6,43.6 -0.4,120.7 -0.4,214.2 C-0.4,315.4 81.7,397.5 182.9,397.5 C284.1,397.5 366.2,315.4 366.2,214.2 C366.3,171.9 351.9,132.9 327.8,101.9 L327.8,101.9 Z M182.9,351.8 C107,351.8 45.4,290.2 45.4,214.3 C45.4,138.4 107,76.8 182.9,76.8 C258.8,76.8 320.4,138.4 320.4,214.3 C320.4,290.2 258.9,351.8 182.9,351.8 L182.9,351.8 Z" id="Shape" fill="#757575"></path>
+                    <path d="M226.2,228.7 L226.2,228.7 L185.8,269.1 L145.4,228.7 C134.2,217.5 134.2,199.4 145.4,188.3 C156.6,177.1 174.7,177.1 185.8,188.3 C197,177.1 215.1,177.1 226.2,188.3 C237.4,199.4 237.4,217.5 226.2,228.7 L226.2,228.7 Z" id="Shape" fill="#E94A97" sketch:type="MSShapeGroup"></path>
+                </svg>
+            </div>
+        </div>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

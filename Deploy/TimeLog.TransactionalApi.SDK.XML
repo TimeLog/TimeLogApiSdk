@@ -4,6 +4,66 @@
         <name>TimeLog.TransactionalApi.SDK</name>
     </assembly>
     <members>
+        <member name="M:TimeLog.TransactionalApi.SDK.OrganisationHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.OrganisationHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.OrganisationHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.TransactionalApi.SDK.OrganisationHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.OrganisationHandler.OrganisationServiceUrl">
+            <summary>
+            Gets the uri associated with the organisation service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.OrganisationHandler.Token">
+            <summary>
+            Gets the organisation token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.ExpenseHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.ExpenseHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ExpenseHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.TransactionalApi.SDK.ExpenseHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ExpenseHandler.ExpenseServiceUrl">
+            <summary>
+            Gets the uri associated with the expense service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ExpenseHandler.Token">
+            <summary>
+            Gets the expense token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.SalaryHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.SalaryHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SalaryHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.TransactionalApi.SDK.SalaryHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SalaryHandler.SalaryServiceUrl">
+            <summary>
+            Gets the uri associated with the salary service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SalaryHandler.Token">
+            <summary>
+            Gets the salary token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
         <member name="T:TimeLog.TransactionalApi.SDK.CrmHandler">
             <summary>
             Handler of functionality related to the CRM service
@@ -151,6 +211,21 @@
             </summary>
             <param name="messageEncoder">The message encoder</param>
         </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.ContentType">
+            <summary>
+            Gets the content type.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.MessageVersion">
+            <summary>
+            Gets the message version.
+            </summary>
+        </member>
         <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.ReadMessage(System.IO.Stream,System.Int32,System.String)">
             <summary>
             The read message.
@@ -185,21 +260,6 @@
             <param name="bufferManager">The buffer manager.</param>
             <param name="messageOffset">The message offset.</param>
             <returns>The ArraySegment</returns>
-        </member>
-        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.ContentType">
-            <summary>
-            Gets the content type.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.MediaType">
-            <summary>
-            Gets the media type.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncoderFactory.RawMessageEncoder.MessageVersion">
-            <summary>
-            Gets the message version.
-            </summary>
         </member>
         <member name="T:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageEncodingBindingElement">
             <summary>
@@ -270,6 +330,21 @@
             The raw message helper.
             </summary>
         </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.Instance">
+            <summary>
+            Gets the current instance of the helper
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.Request">
+            <summary>
+            Gets the latest raw request
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.Response">
+            <summary>
+            Gets the latest raw response
+            </summary>
+        </member>
         <member name="M:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.AddRequest(System.ServiceModel.Channels.Message)">
             <summary>
             Adds a request to memory
@@ -288,21 +363,6 @@
             </summary>
             <param name="path">File to place the file</param>
         </member>
-        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.Instance">
-            <summary>
-            Gets the current instance of the helper
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.Request">
-            <summary>
-            Gets the latest raw request
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalApi.SDK.RawHelper.RawMessageHelper.Response">
-            <summary>
-            Gets the latest raw response
-            </summary>
-        </member>
         <member name="T:TimeLog.TransactionalApi.SDK.SecurityHandler">
             <summary>
             Security handler class for transactional API calls
@@ -311,31 +371,6 @@
         <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.SecurityHandler"/> class from being created.
-            </summary>
-        </member>
-        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.TryAuthenticate(System.Collections.Generic.IEnumerable{System.String}@)">
-            <summary>
-            Executes an authentication request to the API using the application settings
-            TimeLogProjectTransactionalUsername and TimeLogProjectTransactionalPassword. If successful the token is
-            set to the Token property.
-            </summary>
-            <remarks>Make sure to set the application setting TimeLogProjectUri</remarks>
-            <param name="messages">Outputs the messages returned from the API</param>
-            <returns>A value indicating whether the authentication is successful</returns>
-        </member>
-        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.TryAuthenticate(System.String,System.String,System.Collections.Generic.IEnumerable{System.String}@)">
-            <summary>
-            Executes an authentication request to the API using the parameters. If successful
-            the token is set to the Token property.
-            </summary>
-            <param name="username">Username part of the credentials to authenticate with</param>
-            <param name="password">Password part of the credentials to authenticate with</param>
-            <param name="messages">Outputs the messages returned from the API</param>
-            <returns>A value indicating whether the authentication is successful</returns>
-        </member>
-        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.Dispose">
-            <summary>
-            Disposes the handler.
             </summary>
         </member>
         <member name="P:TimeLog.TransactionalApi.SDK.SecurityHandler.Instance">
@@ -362,6 +397,31 @@
         <member name="P:TimeLog.TransactionalApi.SDK.SecurityHandler.CollectRawRequestResponse">
             <summary>
             Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.TryAuthenticate(System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary>
+            Executes an authentication request to the API using the application settings
+            TimeLogProjectTransactionalUsername and TimeLogProjectTransactionalPassword. If successful the token is
+            set to the Token property.
+            </summary>
+            <remarks>Make sure to set the application setting TimeLogProjectUri</remarks>
+            <param name="messages">Outputs the messages returned from the API</param>
+            <returns>A value indicating whether the authentication is successful</returns>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.TryAuthenticate(System.String,System.String,System.Collections.Generic.IEnumerable{System.String}@)">
+            <summary>
+            Executes an authentication request to the API using the parameters. If successful
+            the token is set to the Token property.
+            </summary>
+            <param name="username">Username part of the credentials to authenticate with</param>
+            <param name="password">Password part of the credentials to authenticate with</param>
+            <param name="messages">Outputs the messages returned from the API</param>
+            <returns>A value indicating whether the authentication is successful</returns>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.SecurityHandler.Dispose">
+            <summary>
+            Disposes the handler.
             </summary>
         </member>
         <member name="T:TimeLog.TransactionalApi.SDK.SettingsHandler">

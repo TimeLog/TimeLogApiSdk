@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "Introduction";
+}
+
+<h1>Welcome!</h1>
+<h2>
+    Together with TimeLog Project you get several possibilities of accesing your data via APIs.
+    This website will introduce each of them and let you know how to get started.
+</h2>
+<p>
+    TimeLog A/S provides programmatic access to your organization’s TimeLog Project (TLP) installation
+    through a simple, powerful, and secure API (application programming interface). The API is programmed
+    with the target of integration and development of extensions of TLP with external add-ons. It focuses
+    on providing access to the core objects of TLP. This website will explain how to access and use the
+    API and what data you can access, insert and modify through the current version. To use this API,
+    you should have a basic familiarity with software development, Web services, and the TLP user interface.
+</p>
+
+@section sidebar
+{
+    <div class="box theme turquoise">
+        <h4 class="box__header theme-background primary">
+            Ressources
+        </h4>
+        <ul class="ui-list has-icons theme-list primary">
+            <li class="icon-download p medium">
+                <a href="https://www.github.com/timelog/timelogapisdk" target="">
+                    <h5>Get the TimeLog Project SDK</h5>
+                    <p>Get started quickly with the TimeLog Project SDK and sample applications.</p>
+                    <small>
+                        Source Code
+                    </small>
+                </a>
+            </li>
+            <li class="icon-download p medium">
+                <a href="https://www.github.com/timelog/timelogapisdk" target="">
+                    <h5>View the domain model</h5>
+                    <p>Download this diagram of the TimeLog Project data model to get going with the API.</p>
+                    <small>
+                        PDF
+                    </small>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="box theme gray">
+        <h4 class="box__header theme-background primary gray">
+            <blockquote>You can maximize the value you get from TimeLog Project by automating processes, reporting and connecting it to other business systems using the available APIs.</blockquote>
+        </h4>
+        <img class="" src="@Url.Content("~/Content/Images/sox.png")" alt="Søren Øxenhave" title="Søren Øxenhave">
+        <div class="box__content ">
+            <h5>Søren Øxenhave</h5>
+            <h6>
+                Solution Architect,
+                <a href="http://www.timelog.com">
+                    TimeLog A/S
+                </a>
+            </h6>
+            <ul class="list-squashed">
+                <li class="icon-envelope">
+                    <a href="mailto:sox@timelog.dk">
+                        sox@timelog.dk
+                    </a>
+                </li>
+                <li class="icon-envelope">
+                    <a href="mailto:support@timelog.dk">
+                        support@timelog.dk
+                    </a>
+                </li>
+            </ul>
+
+            <div class="multipurpose-content theme-list primary">
+                <p>For API specific questions please get in touch with Søren directly or using our primary support channel.</p>
+            </div>
+        </div>
+    </div>
+}
