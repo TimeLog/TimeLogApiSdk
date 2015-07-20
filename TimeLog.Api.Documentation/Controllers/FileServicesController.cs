@@ -6,24 +6,25 @@ using System.Web.Mvc;
 
 namespace TimeLog.Api.Documentation.Controllers
 {
-    public class HomeController : Controller
+    public class FileServicesController : Controller
     {
+        // GET: FileServices
         public ActionResult Index()
         {
             return this.View();
         }
 
-        public ActionResult Contact()
+        public ActionResult GettingStarted()
         {
             return this.View();
         }
 
-        public ActionResult Restrictions()
+        public ActionResult Security()
         {
             return this.View();
         }
 
-        public ActionResult DataModels()
+        public ActionResult Methods()
         {
             return this.View();
         }

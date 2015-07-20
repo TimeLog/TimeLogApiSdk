@@ -8,13 +8,33 @@
     This website will introduce each of them and let you know how to get started.
 </h2>
 <p>
-    TimeLog A/S provides programmatic access to your organization’s TimeLog Project (TLP) installation
-    through a simple, powerful, and secure API (application programming interface). The API is programmed
+    TimeLog A/S provides programmatic access to your organization’s TimeLog Project (TLP) site
+    through a simple and secure API (application programming interface). The API is programmed
     with the target of integration and development of extensions of TLP with external add-ons. It focuses
     on providing access to the core objects of TLP. This website will explain how to access and use the
-    API and what data you can access, insert and modify through the current version. To use this API,
-    you should have a basic familiarity with software development, Web services, and the TLP user interface.
+    API and what data you can access, insert and modify through the current versions. To use this API,
+    you should have a basic familiarity with software development, web services, and the TLP user interface.
 </p>
+<h2>3 Flavors of Access</h2>
+<p>
+    Due to varying requirements of working with your data, TimeLog Project currently have three
+    difference API interfaces:
+</p>
+<ul>
+    <li>
+        <strong>Transaction API</strong> - Use the transactional API for transferring data to
+        and from TimeLog Project to keep other systems in sync or automatically push updates to
+        TimeLog Project. @Html.ActionLink("Read more", "Index", "Transaction")
+    </li>
+    <li>
+        <strong>Reporting API</strong> - Use the reporting API to fetch big data sets from TimeLog
+        Project for use in third party reporting systems. @Html.ActionLink("Read more", "Index", "Reporting")
+    </li>
+    <li>
+        <strong>File Services API</strong> - Use the file services API to fetch files automatically
+        that normally only are available for users inside TimeLog Project. @Html.ActionLink("Read more", "Index", "FileServices")
+    </li>
+</ul>
 
 @section sidebar
 {

@@ -7,6 +7,7 @@
     <meta name="author" content="TimeLog A/S">
     <title>@ViewBag.Title - TimeLog Project API Documentation</title>
     @Styles.Render("~/Content/css")
+    <link rel="shortcut icon" type="image/ico" href="@Url.Content("~/favicon.ico")" />
 </head>
 <body>
 
@@ -40,22 +41,22 @@
                                 <span class="mobile-nav-expand">expand/contract</span>
                             </a>
                             <ul class="sub-level">
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Welcome</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Restrictions</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Data Models</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Index", "Home")">Welcome</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Restrictions", "Home")">Restrictions</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("DataModels", "Home")">Data Models</a></li>
                             </ul>
                         </li>
                         <li class="top-level__item has-subnav">
                             <a class="top-level__link" href="#">
-                                Transactional API
+                                Transaction API
                                 <span class="mobile-nav-expand">expand/contract</span>
                             </a>
                             <ul class="sub-level">
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Introduction</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Getting Started</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Security</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Services</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Error Codes</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Index", "Transaction")">Introduction</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("GettingStarted", "Transaction")">Getting Started</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Security", "Transaction")">Security</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Services", "Transaction")">Services</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("ErrorCodes", "Transaction")">Error Codes</a></li>
                             </ul>
                         </li>
                         <li class="top-level__item has-subnav">
@@ -64,11 +65,11 @@
                                 <span class="mobile-nav-expand">expand/contract</span>
                             </a>
                             <ul class="sub-level">
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Introduction</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Getting Started</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Security</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Methods</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Enumerable Types</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Index", "Reporting")">Introduction</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("GettingStarted", "Reporting")">Getting Started</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Security", "Reporting")">Security</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Methods", "Reporting")">Methods</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("EnumerableTypes", "Reporting")">Enumerable Types</a></li>
                             </ul>
                         </li>
                         <li class="top-level__item has-subnav">
@@ -77,14 +78,14 @@
                                 <span class="mobile-nav-expand">expand/contract</span>
                             </a>
                             <ul class="sub-level">
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Introduction</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Getting Started</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Security</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="/">Methods</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Index", "FileServices")">Introduction</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("GettingStarted", "FileServices")">Getting Started</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Security", "FileServices")">Security</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Methods", "FileServices")">Methods</a></li>
                             </ul>
                         </li>
                         <li class="top-level__item">
-                            <a class="top-level__link" href="/">
+                            <a class="top-level__link" href="@Url.Action("Contact", "Home")">
                                 Contact
                             </a>
                         </li>
@@ -128,6 +129,7 @@
         </div>
     </footer>
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/js")
     @RenderSection("scripts", required: false)
 </body>
 </html>
