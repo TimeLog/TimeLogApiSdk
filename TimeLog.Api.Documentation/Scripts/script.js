@@ -77,15 +77,16 @@ function mobileNav($) {
 		e.preventDefault();
 	});
 
-	$('li[class*=has-subnav]').click(function (e) {
-		if( $(this).hasClass('sub-menu-toggled') ) {
-			$(this).removeClass('sub-menu-toggled');
-			$('li[class*=has-subnav]').removeClass('sub-menu-toggled');
-		} else {
-			$('li[class*=has-subnav]').removeClass('sub-menu-toggled');
-			$(this).addClass('sub-menu-toggled');
-		}
-		e.preventDefault();
+	$('li[class*=has-subnav] > a').click(function (e) {
+	    var li = $(this).parent();
+	    if ($(li).hasClass('sub-menu-toggled')) {
+	        $(li).removeClass('sub-menu-toggled');
+	        $('li[class*=has-subnav]').removeClass('sub-menu-toggled');
+	    } else {
+	        $('li[class*=has-subnav]').removeClass('sub-menu-toggled');
+	        $(li).addClass('sub-menu-toggled');
+	    }
+	    e.preventDefault();
 	});
 
 	$('.pseudo-overlay').click(function() {
