@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace TimeLog.Api.Documentation.Controllers
 {
+    using TimeLog.Api.Documentation.Models;
+
     public class ReportingController : Controller
     {
         // GET: Reporting
@@ -25,7 +27,7 @@ namespace TimeLog.Api.Documentation.Controllers
 
         public ActionResult Methods()
         {
-            return View();
+            return View(ReportingManager.Instance.GetMethods());
         }
 
         public ActionResult EnumerableTypes()

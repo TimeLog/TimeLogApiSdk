@@ -1,0 +1,20 @@
+﻿@model IEnumerable<TimeLog.Api.Documentation.Models.TypeDoc>
+@{
+    ViewBag.Title = "Services";
+}
+
+<article class="article">
+    <h1>@ViewBag.Title</h1>
+    <h2 class="">This page specifies all the available services</h2>
+    <p>
+        Each of the services is versions and we promise only to add stuff (and fix bugs) on existing version, if something
+        is going away or a name is changed, we will publish a new version. We promise to keep any of our service service
+        alive for at least three years from release.
+    </p>
+    <ul>
+        @foreach (var doc in Model)
+        {
+            <li class="icon-arrow_in_circle"><a href="@Url.Action("Service", "Transactional", new { id = doc.FullName.UrlEncode() })">@doc.Name</a> <span class="text-selection">Version @doc.Version()</span> @doc.Summary</li>
+        }
+    </ul>
+</article>

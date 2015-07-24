@@ -1,0 +1,388 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TimeLog.TLP.WebAppCode
+</name>
+</assembly>
+<members>
+<member name="M:TimeLog.TLP.WebAppCode.clsGenral_Functions.DateAspToWeb(System.DateTime)">
+	<summary>
+ Returns a date formated after the applicationsetting "PageLCID"
+ </summary>
+	<param name="DateToFormat">The date to format</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.clsGenral_Functions.DateAspToWeb(System.DateTime,System.Boolean)">
+	<summary>
+ ''' Returns a date and optional a with time formated after the applicationsetting "PageLCID"
+ </summary>
+	<param name="DateToFormat">The date to format</param>
+	<param name="ShowTime">Marks if time is to be printed as well</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.clsGenral_Functions.ConvertStringToNullableDate(System.String)">
+	<summary>
+ This function will return nullable type Date or nothing
+ (InvalidCast will result in nothing)
+ </summary>
+	<param name="stringToCast"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.clsGenral_Functions.NumberAspToWebNoZero(System.Double,System.Int32)">
+	<summary>
+ returns a displayable double. Compared to NumberAspToWeb, it return empty string if the double is zero
+ </summary>
+	<param name="ldblNumber">The double value to display</param>
+	<param name="lintDecimals">The number of decimals</param>
+</member><member name="M:TimeLog.TLP.WebAppCode.clsGenral_Functions.NumberWebToAsp(System.String)">
+	<summary>
+ Convert String to Double
+ </summary>
+	<param name="lstrNumber">Input string</param>
+	<returns>Double</returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.clsGenral_Functions.ShowSelected(System.Double,System.Double,System.Byte,System.String,System.String)">
+	<summary>
+	</summary>
+	<param name="Key"></param>
+	<param name="Condition"></param>
+	<param name="lbteCompareType"></param>
+	<param name="TrueReturnString"></param>
+	<param name="FalseReturnString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.clsGenral_Functions.AutonumberActiveCheck(TimeLog.tlp.Enums.AutoNumberType,System.Int32)">
+	<summary>
+ Function to check if autonumber is active for a specified department and autonumbertype
+ </summary>
+	<param name="AutonumberType">The autonumbertype you want to check</param>
+	<param name="DepartmentID">The departments database ID</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.clsGenral_Functions.AutonumberActiveCheck(TimeLog.tlp.Enums.AutoNumberType)">
+	<summary>
+ Function to check if autonumber is active for the current users department
+ </summary>
+	<param name="AutonumberType">The autonumbertype you want to check</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:TimeLog.TLP.WebAppCode.clsGenral_Functions.Url">
+	<summary>
+ Url helper associate to current request
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetCustomerCommentsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+	<summary>
+ Get list of comments associated to a particular customer with specified <paramref name="customerID"/>
+	</summary>
+	<param name="siteCode">Timelog API site code</param>
+	<param name="apiID">API user ID</param>
+	<param name="apiPassword">API user password</param>
+	<param name="customerID">Customer ID of customer to list all associated comments or pass 0 to query from all customer</param>
+	<param name="customerStatusID">Customer statusID, or 0 to list accross all customer status</param>
+	<param name="accountManagerID">Account manager ID, or 0 to list accross all account managers</param>
+	<param name="fromDate">Starting date to search comments from, or default Date value to list all comments without from constraint</param>
+	<param name="toDate">Starting date to search comments to, or default Date value to list all comments without to constraint</param>
+	<returns>XML documents listing out all comments as per specified parameter</returns>
+	<remarks>
+ The result comment is sort by customer name, then by newest comment first to oldest comment last.
+ </remarks>
+</member><member name="T:TimeLog.TLP.WebAppCode.Service">
+	<summary>
+ Reporting API Service class
+ </summary>
+	<remarks></remarks>
+</member><member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:TimeLog.TLP.WebAppCode.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.pageTable">
+	<summary>
+ Returns a TimeLog Project Result Table
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.pageTable(System.String)">
+	<summary>
+ Returns a TimeLog Project Result Table with parsed caption
+ </summary>
+	<param name="Caption">The caption of the returned table</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultTable">
+	<summary>
+ Returns a TimeLog Project Result Table
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultTable(System.String)">
+	<summary>
+ Returns a TimeLog Project Result Table with parsed caption
+ </summary>
+	<param name="Caption">The caption of the returned table</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.FullTable">
+	<summary>
+ Returns a TimeLog Project Full Table
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.FullTable(System.String)">
+	<summary>
+ Returns a TimeLog Project Full Table with parsed caption
+ </summary>
+	<param name="Caption">The caption of the returned table</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultRow(System.Web.UI.WebControls.TableRowSection)">
+	<summary>
+ Returns a System.Web.UI.WebControls.TableRow with TableSection property set to the choosen TableRowSection Type
+ </summary>
+	<param name="Section">The section of the table the row should be attached to as System.Web.UI.WebControls.TableRowSection</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultRow(System.Web.UI.WebControls.TableRowSection,System.String)">
+	<summary>
+ Returns a System.Web.UI.WebControls.TableRow with TableSection property set to the choosen TableRowSection Type
+ and with the parsed CssClass
+ </summary>
+	<param name="Section">The section of the table the row should be attached to as System.Web.UI.WebControls.TableRowSection</param>
+	<param name="CssClass">The Cascading Style Sheet class to be rendered</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultRow(System.Web.UI.WebControls.TableRowSection,System.Web.UI.WebControls.TableCell[])">
+	<summary>
+ Returns a TableRow with TableSection property set Section type 
+ and with the Cells added to the TableCells collection
+ </summary>
+	<param name="Section">The section of the table the row should be attached to as System.Web.UI.WebControls.TableRowSection</param>
+	<param name="Cells">The Array of System.Web.UI.WebControls.TableCell to add to the TableRows Tablecell collection</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultRow(System.Web.UI.WebControls.TableRowSection,System.String,System.Web.UI.WebControls.TableCell[])">
+	<summary>
+ Returns a TableRow with TableSection property set Section type 
+ and with the Cells added to the TableCells collection
+ and with the parsed CssClass
+ </summary>
+	<param name="Section">The section of the table the row should be attached to as System.Web.UI.WebControls.TableRowSection</param>
+	<param name="CssClass">The Cascading Style Sheet class to be rendered</param>
+	<param name="Cells">The Array of System.Web.UI.WebControls.TableCell to add to the TableRows Tablecell collection</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.FirstColumn">
+	<summary>
+ The first column in any TimeLog Project Tablerow
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.FirstColumn(System.String)">
+	<summary>
+ The first column in any expandable TimeLog Project Tablerow 
+ </summary>
+	<param name="MenuString">The returnstring from newMenu call</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ThColumn(System.String)">
+	<summary>
+ Returns a Tabelheadercell - Left aligned (names, text, Ids, dates, phone, etc.)
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell </param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ThColumn(System.Web.UI.Control)">
+	<summary>
+ Returns a TableHeadercell that display the parsed control with resultStatus as CssClass
+ </summary>
+	<param name="NewControl">Control to be displayed in the tablecolumn</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ThColumn(System.Web.UI.Control,System.String)">
+	<summary>
+ Returns a TableHeadercell that display the parsed control with resultStatus as CssClass
+ </summary>
+	<param name="NewControl">Control to be displayed in the tablecolumn</param>
+	<param name="CssClass">The Cascading Style Sheet class to be rendered</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ThColumn(System.String,System.Int32)">
+	<summary>
+ Returns a Tabelheadercell that spans the parsed number of columns
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="Span">The number of columns the cell should span</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ThColumn(System.String,System.String)">
+	<summary>
+ Returns a Tabelheadercell with parsed css style
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="CssClass">The Cascading Style Sheet class to be rendered</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ThColumn(System.String,System.Int32,System.String)">
+	<summary>
+ Returns a Tabelheadercell that spans the parsed number of columns and with parsed css style
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="Span">The number of columns the cell should span</param>
+	<param name="CssClass">The Cascading Style Sheet class to be rendered</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.TdColumn(System.String)">
+	<summary>
+ Returns a Tabelcell - Right aligned (Currency, hours price etc)
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell </param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.TdColumn(System.String,System.Int32)">
+	<summary>
+ Returns a Tabelcell that spans the parsed number of columns
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="ColSpan">The number of columns the cell should span</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.TdColumn(System.String,System.String)">
+	<summary>
+ Returns a Tabelcell with parsed css style
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="CssClass">The Cascading Style Sheet class to be rendered</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.TdColumn(System.String,System.Int32,System.String)">
+	<summary>
+ Returns a Tabelcell that spans the parsed number of columns and with parsed css style
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="Span">The number of columns the cell should span</param>
+	<param name="CssClass">The Cascading Style Sheet class to be rendered</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultAction(System.String)">
+	<summary>
+ Returns a Tablecell with resultAction as CssClass
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultAction(System.String,System.Int32)">
+	<summary>
+ Returns a Tablecell with resultAction as CssClass that spans the parsed number of columns
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="Span">The number of columns the cell should span</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultSumTd(System.String)">
+	<summary>
+ Returns a Tablecell with resultSum as CssClass
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultSum(System.String,System.Int32)">
+	<summary>
+ Returns a Tablecell with resultSum as CssClass that spans the parsed number of columns
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="Span">The number of columns the cell should span</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.resultStatus(System.String)">
+	<summary>
+ Returns a Tablecell with resultStatus as CssClass
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.resultStatus(System.Web.UI.Control)">
+	<summary>
+ Returns a Tablecell that display the parsed control with resultStatus as CssClass
+ </summary>
+	<param name="NewControl">Control to be displayed in the tablecolumn</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.resultStatus(System.Web.UI.Control[])">
+	<summary>
+ Returns a Tablecell that display the parsed control with resultStatus as CssClass
+ </summary>
+	<param name="NewControls">An array of Controls to be displayed in the tablecolumn</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultComment(System.String)">
+	<summary>
+ Returns a Tableheadercell that display the parsed control with resultComment as CssClass
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.thWritemax(System.String,System.Int32)">
+	<summary>
+ Returns a Tableheadercell. The length of text in the Tablecell is limited to MaxLength specification.
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="MaxLength">The maximum length of the text to be displayed in the Tablecell</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.thWritemax(System.String,System.Int32,System.String)">
+	<summary>
+ Returns a Tableheadercell with parsed css style. The length of text in the Tablecell is limited to MaxLength specification.
+ </summary>
+	<param name="Text">The text to be displayed in the Tablecell</param>
+	<param name="Maxlength">The maximum length of the text to be displayed in the Tablecell</param>
+	<param name="CssClass">The Cascading Style Sheet class to be rendered</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:TimeLog.TLP.WebAppCode.Standard_Tables">
+	<summary>
+ This Class contains all standard functions to build TimeLog Project Dynamic Tables
+ </summary>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.clsUtilities.Create_Currency_List(System.Int32)">
+	<summary>
+ Returns a list of all active Currency's. If CurrencyPeriodId is specified, this currency is also returned
+ </summary>
+	<param name="CurrencyPeriodID">Specifies an ID of a currency period that should be returned in the list even if is inactive</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.ServiceBase.ValidateRetreivalAttempt(System.String,System.String,System.String)">
+	<summary>
+ Private method which returns true if the retrieveal of data is requested by a legit user
+ </summary>
+	<param name="siteCode"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.ServiceBase.ValidateLoginCredentials(System.String,System.String)">
+	<summary>
+ Returns true if the login is successful
+ </summary>
+	<param name="ApiID"></param>
+	<param name="ApiPassword"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.ServiceBase.ExecuteLoginSuccessOrFailure(System.String,System.Boolean)">
+	<summary>
+	</summary>
+	<param name="ApiID"></param>
+	<param name="loginSuccess"></param>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

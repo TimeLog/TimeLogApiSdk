@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Transactional API - Introduction";
+}
+
+<article class="article">
+    <h1>Introduction to the Transactional API</h1>
+    <p>
+        TimeLog Project API is built on Microsoft Windows Communication Foundation or WCF. It exposes a set of web services that can be access through the SOAP protocol. The API is exposed through a number of Namespace specific web services. Each web service is responsible for servicing methods to interact with the object model within the namespace. E.g. the Security web Service will expose methods needed to authenticate API users.
+    </p>
+    <p>
+        The API is grouped into modules that will activate the methods needed to support a given area of work. E.g. the time registration module will activate a number of methods in the ProjectManagement web services but not necessarily all of them. This will allow you to limit the access to the API to a minimum and thereby limiting the data exposed through the API.
+    </p>
+</article>

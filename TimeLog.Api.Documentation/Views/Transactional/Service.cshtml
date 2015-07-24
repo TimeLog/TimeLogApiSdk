@@ -1,0 +1,17 @@
+﻿@model TimeLog.Api.Documentation.Models.TypeDoc
+@{
+    ViewBag.Title = Model.Name + " v" + Model.Version() + " - Service Details";
+}
+
+<article class="article">
+    <h2>Service Details for @Model.Name</h2>
+    <p><span class="text-selection">Version @Model.Version()</span> @Model.Summary</p>
+
+    <ul>
+        @foreach (var method in Model.Methods.Where(m => !m.IsConstructor))
+        {
+            <li class="icon-arrow_in_circle"><a href="@Url.Action("Method", "Transactional", new { id = method.FullyQuantifiedName.UrlEncode() })">@method.Name</a> - @method.Summary</li>
+        }
+    </ul>
+
+</article>

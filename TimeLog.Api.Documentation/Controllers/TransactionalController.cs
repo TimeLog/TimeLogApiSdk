@@ -6,7 +6,9 @@ using System.Web.Mvc;
 
 namespace TimeLog.Api.Documentation.Controllers
 {
-    public class TransactionController : Controller
+    using TimeLog.Api.Documentation.Models;
+
+    public class TransactionalController : Controller
     {
         // GET: Transaction
         public ActionResult Index()
@@ -25,7 +27,12 @@ namespace TimeLog.Api.Documentation.Controllers
 
         public ActionResult Services()
         {
-            return View();
+            return View(TransactionalManager.Instance.GetServices());
+        }
+
+        public ActionResult Service(string id)
+        {
+            return View(TransactionalManager.Instance.GetService(id));
         }
 
         public ActionResult ErrorCodes()

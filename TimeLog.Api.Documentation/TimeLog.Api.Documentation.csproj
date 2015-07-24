@@ -114,11 +114,21 @@
     <Compile Include="Controllers\FileServicesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportingController.cs" />
-    <Compile Include="Controllers\TransactionController.cs" />
+    <Compile Include="Controllers\TransactionalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DocumentationHelper.cs" />
+    <Compile Include="Models\FieldDoc.cs" />
+    <Compile Include="Models\MethodDoc.cs" />
+    <Compile Include="Models\MethodException.cs" />
+    <Compile Include="Models\MethodParam.cs" />
+    <Compile Include="Models\ReportingManager.cs" />
+    <Compile Include="Models\ServiceVersion.cs" />
+    <Compile Include="Models\TransactionalManager.cs" />
+    <Compile Include="Models\TypeDoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DocExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Fonts\icomoon.svg" />
@@ -136,6 +146,9 @@
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Source\TimeLog.TLP.API.Proxy.xml" />
+    <Content Include="Source\TimeLog.TLP.API.XML" />
+    <Content Include="Source\TimeLog.TLP.WebAppCode.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -148,13 +161,15 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Transaction\Index.cshtml" />
+    <Content Include="Views\Transactional\Index.cshtml" />
+    <Content Include="Views\Reporting\Index.cshtml" />
+    <Content Include="Views\Transactional\Services.cshtml" />
+    <Content Include="Views\Transactional\Service.cshtml" />
+    <Content Include="Views\Reporting\Methods.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\FileServices\" />
-    <Folder Include="Views\Reporting\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

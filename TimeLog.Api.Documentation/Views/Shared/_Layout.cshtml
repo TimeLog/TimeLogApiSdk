@@ -15,7 +15,7 @@
         <div class="header-top">
             <div class="max-width-wrapper">
                 <div class="logo">
-                    <a href="/">TimeLog</a>
+                    <a href="@Url.Content("~/")">TimeLog</a>
                 </div>
                 <div class="logo-text">
 
@@ -48,15 +48,15 @@
                         </li>
                         <li class="top-level__item has-subnav">
                             <a class="top-level__link" href="#">
-                                Transaction API
+                                Transactional API
                                 <span class="mobile-nav-expand">expand/contract</span>
                             </a>
                             <ul class="sub-level">
-                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Index", "Transaction")">Introduction</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("GettingStarted", "Transaction")">Getting Started</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Security", "Transaction")">Security</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Services", "Transaction")">Services</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("ErrorCodes", "Transaction")">Error Codes</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Index", "Transactional")">Introduction</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("GettingStarted", "Transactional")">Getting Started</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Security", "Transactional")">Security</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Services", "Transactional")">Services</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("ErrorCodes", "Transactional")">Error Codes</a></li>
                             </ul>
                         </li>
                         <li class="top-level__item has-subnav">
@@ -100,13 +100,36 @@
             <div class="layout two-one">
                 <div class="layout__item">
                     <div class="content">
-                        <article class="article">
-                            @RenderBody()
-                            <p>&nbsp;</p>
-                        </article>
+                        @RenderBody()
+                        <p>&nbsp;</p>
                     </div>
                 </div>
                 <div class="layout__item">
+                    <div class="box theme turquoise">
+                        <h4 class="box__header theme-background primary">
+                            Ressources
+                        </h4>
+                        <ul class="ui-list has-icons theme-list primary">
+                            <li class="icon-download p medium">
+                                <a href="https://www.github.com/timelog/timelogapisdk" target="">
+                                    <h5>Get the TimeLog Project SDK</h5>
+                                    <p>Get started quickly with the TimeLog Project SDK and sample applications.</p>
+                                    <small>
+                                        Source Code
+                                    </small>
+                                </a>
+                            </li>
+                            <li class="icon-download p medium">
+                                <a href="https://www.github.com/timelog/timelogapisdk" target="">
+                                    <h5>View the domain model</h5>
+                                    <p>Download this diagram of the TimeLog Project data model to get going with the API.</p>
+                                    <small>
+                                        PDF
+                                    </small>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     @RenderSection("sidebar", required: false)
                 </div>
             </div>
