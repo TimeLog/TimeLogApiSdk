@@ -4,11 +4,21 @@ Use this SDK for interacting with the TimeLog Project APIs.
 
 This source can also work as templates for your own projects. 
 
-See http://api.timelog.dk for more documentation about the APIs.
-
-## Available APIs
+See http://api.timelog.com for more documentation about the APIs.
 
 Please be aware that TimeLog Project has multiple APIs available and the authentication differs.
+
+## What's available
+
+The list below is a quick rundown of the directories in this repository.
+
+- Deploy - Download precompiled DLLs of the SDKs
+- TimeLog.Api.Documentation - The documentation website
+- TimeLog.ApiConsoleApp - A sample application for consuming the SDKs
+- TimeLog.JavaScript.SDK - A time registration only SDK for JavaScript and a Chrome Extension sample
+- TimeLog.ReportingApi.Exporter - A console application to export XML or CSV from the reporting API
+- TimeLog.ReportingApi.SDK - The reporting API SDK source code
+- TimeLog.TransactionalApi.SDK - The transactional API SDK source code
 
 ### TimeLog Project Reporting API
 
