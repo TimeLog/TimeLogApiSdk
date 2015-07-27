@@ -166,6 +166,7 @@
     <Content Include="Views\Transactional\Services.cshtml" />
     <Content Include="Views\Transactional\Service.cshtml" />
     <Content Include="Views\Reporting\Methods.cshtml" />
+    <Content Include="Views\Transactional\GettingStarted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

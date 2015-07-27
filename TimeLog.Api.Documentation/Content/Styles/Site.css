@@ -4791,3 +4791,4 @@ tr.hover-trigger:hover th span {
 
 /******************* SOX *****************/
 .search-result { margin-left: 26px;margin-right: 26px; }
+pre { font-size: 0.75em; border-left: 10px solid #dedede;padding-left: 10px; }

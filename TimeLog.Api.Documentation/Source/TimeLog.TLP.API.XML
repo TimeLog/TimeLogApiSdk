@@ -2123,6 +2123,11 @@
             Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.4 - 2012</strong>)
             </summary>
         </member>
+        <member name="T:TimeLog.TLP.API.Security.V1_2.SecurityService">
+            <summary>
+            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.4 - 2012</strong>)
+            </summary>
+        </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_3.ProjectManagementService.GetTasksAllocatedToEmployee(System.String,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
             <summary>
             Gets a list of tasks allocated to a specific employee
