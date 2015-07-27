@@ -11,10 +11,14 @@
         is going away or a name is changed, we will publish a new version. We promise to keep any of our service service
         alive for at least three years from release.
     </p>
-    <ul>
-        @foreach (var doc in Model)
+        @foreach (var doc in Model.GroupBy(s => s.Name))
         {
-            <li class="icon-arrow_in_circle"><a href="@Url.Action("Service", "Transactional", new { id = doc.FullName.UrlEncode() })">@doc.Name</a> <span class="text-selection">Version @doc.Version()</span> @doc.Summary</li>
+            <h3>@doc.Key</h3>
+            <ul>
+                @foreach (var service in doc.OrderByDescending(s => s.FullName).Take(3))
+                {
+                <li class="icon-arrow_in_circle"><a href="@Url.Action("Service", "Transactional", new { id = service.FullName.UrlEncode() })">@service.Name</a> <span class="text-selection">Version @service.Version()</span> @service.Summary</li>
+                }
+            </ul>
         }
-    </ul>
 </article>
