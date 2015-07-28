@@ -1,5 +1,6 @@
 ﻿namespace TimeLog.Api.Documentation.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text.RegularExpressions;
@@ -7,8 +8,6 @@
 
     public class MethodDoc
     {
-        private static readonly Regex NameRegex = new Regex("M:TimeLog\\.TLP\\.API\\.([^\\.]+)\\.([^\\.]+)\\.([^\\.]+)Service\\.([\\w]+)");
-
         public MethodDoc()
         {
             this.Name = string.Empty;
@@ -21,9 +20,10 @@
             this.SeeAlso = new List<TypeDoc>();
         }
 
-        public MethodDoc(XElement element)
+        public MethodDoc(TypeDoc parent, XElement element)
             : this()
         {
+            this.Parent = parent;
 
             var attribute = element.Attribute("name");
             this.FullName = attribute.Value.Replace("M:", string.Empty);
@@ -64,13 +64,22 @@
             //    }
             //}
 
+            firstParentesis = this.FullName.IndexOf('(');
+            var parameterTypeList = firstParentesis > 0 ? this.FullName.Substring(
+                firstParentesis + 1, 
+                this.FullName.LastIndexOf(")", StringComparison.Ordinal) - firstParentesis - 1).Split(',')
+                : new string[] {};
+            var parameterIndex = 0;
+
             foreach (var param in element.Descendants("param"))
             {
                 var nameAttribute = param.Attribute("name");
                 if (nameAttribute != null)
                 {
-                    this.Params.Add(new MethodParam(nameAttribute.Value, param.Value));
+                    this.Params.Add(new MethodParam(nameAttribute.Value, param.Value, parameterTypeList[parameterIndex]));
                 }
+
+                parameterIndex++;
             }
 
             foreach (var exc in element.Descendants("exception"))
@@ -100,6 +109,8 @@
         public string Remarks { get; set; }
 
         public bool IsConstructor { get; set; }
+
+        public TypeDoc Parent { get; set; }
 
         public IList<TypeDoc> SeeAlso { get; set; }
 

@@ -27,7 +27,11 @@
 
                 if (name != null && name.StartsWith("T:"))
                 {
-                    typeDocs.Add(new TypeDoc(element));
+                    var newType = new TypeDoc(element);
+                    typeDocs.Add(newType);
+
+                    methodDocs.AddRange(newType.Methods);
+                    fieldDocs.AddRange(newType.Fields);
                 }
             }
 

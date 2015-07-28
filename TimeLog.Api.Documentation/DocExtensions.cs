@@ -25,5 +25,35 @@ namespace TimeLog.Api.Documentation
         {
             return HttpUtility.UrlEncode(str)?.Replace(".", "");
         }
+
+        public static string SplitOnUppercase(this string str)
+        {
+            string result = string.Empty;
+            var characters = string.Concat(str, " ").ToCharArray();
+            bool isPreparedForNewWord = false;
+            char buffer = '\0';
+
+            foreach (char t in characters)
+            {
+                if (buffer != '\0')
+                {
+                    if (isPreparedForNewWord && t.ToString() == t.ToString().ToLower())
+                    {
+                        result += " ";
+                        isPreparedForNewWord = false;
+                    }
+                    else if (t.ToString() == t.ToString().ToUpper())
+                    {
+                        isPreparedForNewWord = true;
+                    }
+
+                    result += buffer;
+                }
+
+                buffer = t;
+            }
+
+            return result;
+        }
     }
 }

@@ -35,6 +35,11 @@ namespace TimeLog.Api.Documentation.Controllers
             return View(TransactionalManager.Instance.GetService(id));
         }
 
+        public ActionResult Method(string id)
+        {
+            return View(TransactionalManager.Instance.GetMethod(id));
+        }
+
         public ActionResult ErrorCodes()
         {
             return View();

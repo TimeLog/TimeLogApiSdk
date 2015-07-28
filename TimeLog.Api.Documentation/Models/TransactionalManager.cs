@@ -40,5 +40,10 @@
         {
             return this.helper.Types.FirstOrDefault(t => t.FullName.UrlEncode() == typeFullName);
         }
+
+        public MethodDoc GetMethod(string methodFullName)
+        {
+            return this.helper.Methods.FirstOrDefault(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
+        }
     }
 }

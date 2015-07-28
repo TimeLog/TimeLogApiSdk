@@ -30,7 +30,7 @@
                     var name = member.Attribute("name")?.Value;
                     if (name?.StartsWith("M:" + this.FullName + ".") == true)
                     {
-                        methods.Add(new MethodDoc(member));
+                        methods.Add(new MethodDoc(this, member));
                     }
                     else if (name?.StartsWith("F:" + this.FullName + ".") == true)
                     {
