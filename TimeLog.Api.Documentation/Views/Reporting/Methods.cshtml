@@ -13,7 +13,7 @@
     <ul>
         @foreach (var method in Model.Where(m => !m.IsConstructor))
         {
-            <li class="icon-arrow_in_circle"><a href="@Url.Action("Method", "Transactional", new { id = method.FullyQuantifiedName.UrlEncode() })">@method.Name</a> - @method.Summary</li>
+            <li class="icon-arrow_in_circle"><a href="@Url.Action("Method", "Reporting", new { id = method.FullyQuantifiedName.UrlEncode() })">@method.Name</a> - @method.Summary</li>
         }
     </ul>
 

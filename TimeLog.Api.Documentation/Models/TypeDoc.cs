@@ -21,18 +21,18 @@
             this.FullName = attribute.Value.Replace("T:", string.Empty);
             this.Name = attribute.Value.Substring(attribute.Value.LastIndexOf('.') + 1, attribute.Value.Length - attribute.Value.LastIndexOf('.') - 1);
 
-            this.Summary = element.Element("summary")?.Value;
+            this.Summary = element.Element("summary") != null ? element.Element("summary").Value : string.Empty;
 
             if (element.Document != null)
             {
                 foreach (XElement member in element.Document.Descendants("member"))
                 {
-                    var name = member.Attribute("name")?.Value;
-                    if (name?.StartsWith("M:" + this.FullName + ".") == true)
+                    var name = member.Attribute("name") != null ? member.Attribute("name").Value : string.Empty;
+                    if (name.StartsWith("M:" + this.FullName + "."))
                     {
                         methods.Add(new MethodDoc(this, member));
                     }
-                    else if (name?.StartsWith("F:" + this.FullName + ".") == true)
+                    else if (name.StartsWith("F:" + this.FullName + "."))
                     {
                         fields.Add(new FieldDoc(member));
                     }
@@ -46,7 +46,7 @@
 
         public string Name { get; private set; }
 
-        public string FullName { get; }
+        public string FullName { get; private set; }
 
         public string Summary { get; private set; }
 

@@ -23,7 +23,13 @@ namespace TimeLog.Api.Documentation
 
         public static string UrlEncode(this string str)
         {
-            return HttpUtility.UrlEncode(str)?.Replace(".", "");
+            var urlEncode = HttpUtility.UrlEncode(str);
+            if (urlEncode != null)
+            {
+                return urlEncode.Replace(".", string.Empty);
+            }
+
+            return string.Empty;
         }
 
         public static string SplitOnUppercase(this string str)

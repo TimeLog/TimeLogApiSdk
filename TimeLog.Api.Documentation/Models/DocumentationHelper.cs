@@ -16,16 +16,16 @@
 
         public DocumentationHelper(string path)
         {
-            var xDocumentation = XDocument.Load(path);
+            var documentation = XDocument.Load(path);
             var typeDocs = new List<TypeDoc>();
             var methodDocs = new List<MethodDoc>();
             var fieldDocs = new List<FieldDoc>();
 
-            foreach (XElement element in xDocumentation.Descendants("member"))
+            foreach (XElement element in documentation.Descendants("member"))
             {
-                var name = element.Attribute("name")?.Value;
+                var name = element.Attribute("name") != null ? element.Attribute("name").Value : string.Empty;
 
-                if (name != null && name.StartsWith("T:"))
+                if (name.StartsWith("T:"))
                 {
                     var newType = new TypeDoc(element);
                     typeDocs.Add(newType);
@@ -40,8 +40,10 @@
             this.Fields = fieldDocs;
         }
 
-        public IEnumerable<TypeDoc> Types { get; }
+        public IEnumerable<TypeDoc> Types { get; private set; }
+        
         public IEnumerable<MethodDoc> Methods { get; private set; }
+        
         public IEnumerable<FieldDoc> Fields { get; private set; }
 
         public IEnumerable<TypeDoc> GetTypes(string nameRegexSearchPattern)

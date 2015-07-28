@@ -74,22 +74,150 @@ TimeLog.TLP.WebAppCode
 	<value></value>
 	<returns></returns>
 	<remarks></remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetWorkUnitsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+	<summary>
+ Gets a list of work units.
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<param name="workUnitID">ID of specific work unit. Set to 0 to get work units</param>
+	<param name="employeeID">ID of specific employee. Set to 0 to get all work units</param>
+	<param name="allocationID">ID of specific allocation. Set to 0 to get all work units</param>
+	<param name="taskID">ID of specific task. Set to 0 to get all work units</param>
+	<param name="projectID">ID of specific project. Set to 0 to get work units</param>
+	<param name="departmentID">ID of specific department. Set to 0 to get work units</param>
+	<param name="startDate">Limits result to all work units registred on or later than this date</param>
+	<param name="endDate">Limits result to all work units registred on or prior to this date</param>
+	<returns>A list of work unit objects in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetAllocationsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Gets a list of allocations
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<param name="allocationID">ID of specific allocation. Set to 0 to get all allocations</param>
+	<param name="taskID">taskID of specific task. Set to 0 to get all allocations</param>
+	<param name="employeeID">ID of specific employee. Set to 0 to get all allocations</param>
+	<param name="projectID">ID of specific project. Set to 0 to get all allocations</param>
+	<returns>A list of allocation objects in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetEmployeesShortList(System.String,System.String,System.String,System.Int32,System.Int32)">
+	<summary>
+ Gets a list of employees with key information only
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<param name="departmentID">ID of specific department. Set to 0 to get all employees</param>
+	<param name="status">Set to 0 for inactive employees; 1 for active employees; -1 to get all employees</param>
+	<returns>A list of employee objects in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetEmployeesRaw(System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32)">
+	<summary>
+ Gets a list of employees
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<param name="employeeID">ID of specific employee. Set to 0 to get all employees</param>
+	<param name="initials">Initials of specific employee. Set to empty string to get all employees</param>
+	<param name="departmentID">ID of specific department. Set to 0 to get all employees</param>
+	<param name="status">Set to 0 for inactive employees; 1 for active employees; -1 to get all employees</param>
+	<returns>A list of employee objects in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetTimeOffRegistrationsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+	<summary>
+ Gets a list of time off registrations. Work units related to salary codes.
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<param name="employeeID">ID of specific employee. Set to 0 to get all allocations</param>
+	<param name="departmentID">ID of specific department. Set to 0 to get all allocations</param>
+	<param name="fromDate">Start date to get the registrations from</param>
+	<param name="toDate">End date to get the registrations to</param>
+	<returns>A list of work unit objects in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetCustomersShortList(System.String,System.String,System.String,System.Int32,System.Int32)">
+	<summary>
+ Gets a list of customers with key information only
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<param name="customerStatusID">ID of specific Customer Status. Set to -1 to get all customers</param>
+	<param name="accountManagerID">ID of an Employee. Set to 0 to get all customers</param>
+	<returns>A list of customer objects in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetCustomersRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Gets a list of customers
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<param name="customerID">ID of specific customer. Set to 0 to get all customers</param>
+	<param name="customerStatusID">ID of specific Customer Status. Set to -1 to get all customers</param>
+	<param name="accountManagerID">ID of an Employee. Set to 0 to get all customers</param>
+	<returns>A list of customer objects in XML</returns>
 </member><member name="M:TimeLog.TLP.WebAppCode.Service.GetCustomerCommentsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
 	<summary>
- Get list of comments associated to a particular customer with specified <paramref name="customerID"/>
-	</summary>
-	<param name="siteCode">Timelog API site code</param>
-	<param name="apiID">API user ID</param>
-	<param name="apiPassword">API user password</param>
+ Gets a list of comments associated to a particular customer
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
 	<param name="customerID">Customer ID of customer to list all associated comments or pass 0 to query from all customer</param>
 	<param name="customerStatusID">Customer statusID, or 0 to list accross all customer status</param>
 	<param name="accountManagerID">Account manager ID, or 0 to list accross all account managers</param>
 	<param name="fromDate">Starting date to search comments from, or default Date value to list all comments without from constraint</param>
 	<param name="toDate">Starting date to search comments to, or default Date value to list all comments without to constraint</param>
-	<returns>XML documents listing out all comments as per specified parameter</returns>
-	<remarks>
- The result comment is sort by customer name, then by newest comment first to oldest comment last.
- </remarks>
+	<returns>A list of customer comment objects in XML</returns>
+	<remarks>The result comment is sort by customer name, then by newest comment first to oldest comment last</remarks>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetCustomerStatusShortList(System.String,System.String,System.String)">
+	<summary>
+ Gets a list of customer statuses
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<returns>A list of customer status object in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetProjectsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Gets a list of projects
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<param name="projectID">ID of specific project. Set to 0 to get all projects</param>
+	<param name="status">0 for inactive projects; 1 for active projects; -2 for all projects</param>
+	<param name="customerID">ID of specific customer. Set to 0 to get all projects</param>
+	<param name="projectManagerID">ID of specific employee. Set to 0 to get all projects</param>
+	<returns>A list of project objects in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetProjectsShortList(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Gets a list of projects with key information only
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<param name="status">0 for inactive projects; 1 for active projects; -2 for all projects</param>
+	<param name="customerID">ID of specific customer. Set to 0 to get all projects</param>
+	<param name="projectManagerID">ID of specific employee. Set to 0 to get all projects</param>
+	<returns>A list of project objects in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetProjectTypesShortList(System.String,System.String,System.String)">
+	<summary>
+ Gets a list of project types
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<returns>A list of project type objects in XML format</returns>
+</member><member name="M:TimeLog.TLP.WebAppCode.Service.GetProjectCategoriesShortList(System.String,System.String,System.String)">
+	<summary>
+ Gets a list of project categories
+ </summary>
+	<param name="siteCode">Unique identification for your TimeLog Project account</param>
+	<param name="apiID">The API ID</param>
+	<param name="apiPassword">The API password</param>
+	<returns>A list of project category objects in XML format</returns>
 </member><member name="T:TimeLog.TLP.WebAppCode.Service">
 	<summary>
  Reporting API Service class

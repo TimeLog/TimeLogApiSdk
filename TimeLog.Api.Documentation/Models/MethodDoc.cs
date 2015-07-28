@@ -40,11 +40,35 @@
 
             this.IsConstructor = this.Name.StartsWith("#");
 
-            this.Summary = element.Descendants("summary").FirstOrDefault()?.Value;
-            this.Remarks = element.Descendants("remarks").FirstOrDefault()?.Value;
-            this.Example = element.Descendants("example").FirstOrDefault()?.Value;
-            this.Permission = element.Descendants("permission").FirstOrDefault()?.Value;
-            this.Returns = element.Descendants("returns").FirstOrDefault()?.Value;
+            var xmlSummary = element.Descendants("summary").FirstOrDefault();
+            if (xmlSummary != null)
+            {
+                this.Summary = xmlSummary.Value;
+            }
+
+            var xmlRemarks = element.Descendants("remarks").FirstOrDefault();
+            if (xmlRemarks != null)
+            {
+                this.Remarks = xmlRemarks.Value;
+            }
+
+            var xmlExample = element.Descendants("example").FirstOrDefault();
+            if (xmlExample != null)
+            {
+                this.Example = xmlExample.Value;
+            }
+
+            var xmlPermission = element.Descendants("permission").FirstOrDefault();
+            if (xmlPermission != null)
+            {
+                this.Permission = xmlPermission.Value;
+            }
+
+            var xmlReturns = element.Descendants("returns").FirstOrDefault();
+            if (xmlReturns != null)
+            {
+                this.Returns = xmlReturns.Value;
+            }
 
             //foreach (var seealso in element.Descendants("seealso"))
             //{

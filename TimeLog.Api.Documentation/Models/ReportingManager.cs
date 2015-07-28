@@ -34,7 +34,13 @@ namespace TimeLog.Api.Documentation.Models
 
         public IEnumerable<MethodDoc> GetMethods()
         {
-            return this.helper.Types.FirstOrDefault(t => t.FullName == "TimeLog.TLP.WebAppCode.Service")?.Methods;
-        } 
+            var doc = this.helper.Types.FirstOrDefault(t => t.FullName == "TimeLog.TLP.WebAppCode.Service");
+            if (doc != null)
+            {
+                return doc.Methods.OrderBy(m => m.FullName);
+            }
+
+            return new List<MethodDoc>();
+        }
     }
 }
