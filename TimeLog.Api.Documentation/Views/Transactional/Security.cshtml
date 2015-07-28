@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Security";
+}
+
+<article class="article">
+    <h1>Security</h1>
+    <h2>
+        Familialize yourself with the security meassures in the Transactional API in order to
+        not hit any security boundaries
+    </h2>
+    <p>
+        All access to the Transactional API require a security token that is a information bearer
+        for the authenticated user. Credentials from all normal TimeLog Project users can be used to
+        obtain a security token. Currently, no special API credentials are available.
+    </p>
+    <p>
+        The Security Service gives access to the GetToken-method for obtaining a security token.
+        The token should be treated as an immutable object, none of the data should be changed
+        in any way. Any change would render the token invalid and require a new one to be obtained.
+    </p>
+    <p>
+        The token is in most cases valid for 12 hour, but use the token property "Expires" to ensure
+        that you reuse the token as long as possible before renewing.
+    </p>
+    <p>
+        If you are not using the SDK, then you need to take care about the namespace of the token.
+        You might need to copy the contents of the token from one namespace to another. This namespace
+        mapping is already a part of the SDK. Accessing for example ProjectManagementHelper.Instance.Token
+        will automatically map SecurityService.Instance.Token (ensure that you have a successful result
+        from the TryAuthenticate-method first).
+    </p>
+</article>
+
+

@@ -13,16 +13,16 @@ namespace TimeLog.Api.Documentation.Controllers
         // GET: Transaction
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
         public ActionResult GettingStarted()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult Security()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult Services()

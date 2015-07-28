@@ -168,6 +168,8 @@
     <Content Include="Views\Reporting\Methods.cshtml" />
     <Content Include="Views\Transactional\GettingStarted.cshtml" />
     <Content Include="Views\Transactional\Method.cshtml" />
+    <Content Include="Views\Transactional\Security.cshtml" />
+    <Content Include="Views\Home\Restrictions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
