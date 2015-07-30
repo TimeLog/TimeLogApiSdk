@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:InvoiceLineDetails
+	xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/InvoiceLineDetailsRaw.xsd">
+  <tlp:InvoiceLineDetail ID="3062">
+    <tlp:InvoiceLineID>2590</tlp:InvoiceLineID>
+    <tlp:InvoiceID>474</tlp:InvoiceID>
+    <tlp:RegistrationDate>2005-12-07T00:00:00</tlp:RegistrationDate>
+    <tlp:Text>Automated invoicing walk-through</tlp:Text>
+    <tlp:Units>2.5000</tlp:Units>
+    <tlp:Rate>1000.0000</tlp:Rate>
+    <tlp:Amount>2500.0000</tlp:Amount>
+    <tlp:OriginalUnits>2.5000</tlp:OriginalUnits>
+    <tlp:OriginalRate>1000.0000</tlp:OriginalRate>
+    <tlp:OriginalAmount>2500.0000</tlp:OriginalAmount>
+    <tlp:RegistrationType>2</tlp:RegistrationType>
+    <tlp:OriginalType>2</tlp:OriginalType>
+    <tlp:EmployeeInitials>JDO</tlp:EmployeeInitials>
+    <tlp:TaskID>2547</tlp:TaskID>
+    <tlp:TaskName>Invoicing tutorial</tlp:TaskName>
+  </tlp:InvoiceLineDetail>
+  <tlp:InvoiceLineDetail ID="3063">
+    <tlp:InvoiceLineID>2591</tlp:InvoiceLineID>
+    <tlp:InvoiceID>474</tlp:InvoiceID>
+    <tlp:RegistrationDate>2005-12-08T00:00:00</tlp:RegistrationDate>
+    <tlp:Text>Deleting invoices</tlp:Text>
+    <tlp:Units>1.5000</tlp:Units>
+    <tlp:Rate>1000.0000</tlp:Rate>
+    <tlp:Amount>1500.0000</tlp:Amount>
+    <tlp:OriginalUnits>1.0000</tlp:OriginalUnits>
+    <tlp:OriginalRate>1000.0000</tlp:OriginalRate>
+    <tlp:OriginalAmount>1000.0000</tlp:OriginalAmount>
+    <tlp:RegistrationType>2</tlp:RegistrationType>
+    <tlp:OriginalType>2</tlp:OriginalType>
+    <tlp:EmployeeInitials>JDO</tlp:EmployeeInitials>
+    <tlp:TaskID>2547</tlp:TaskID>
+    <tlp:TaskName>Invoicing tutorial</tlp:TaskName>
+  </tlp:InvoiceLineDetail>
+</tlp:InvoiceLineDetails>

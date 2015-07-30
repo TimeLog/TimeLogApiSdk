@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="InvoiceLineDetails">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="InvoiceLineDetail" type="tlp:InvoiceLineDetailRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="InvoiceLineDetail_Key">
+      <xsd:selector xpath=".//tlp:InvoiceLineDetail" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="InvoiceLineDetailRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="InvoiceLineID" type="xsd:positiveInteger" />
+      <xsd:element name="InvoiceID" type="xsd:positiveInteger" />
+      <xsd:element name="RegistrationDate" type="xsd:dateTime" />
+      <xsd:element name="Text" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Units" type="xsd:decimal" />
+      <xsd:element name="Rate" type="xsd:decimal" />
+      <xsd:element name="Amount" type="xsd:decimal" />
+      <xsd:element name="OriginalUnits" type="xsd:decimal" />
+      <xsd:element name="OriginalRate" type="xsd:decimal" />
+      <xsd:element name="OriginalAmount" type="xsd:decimal" />
+      <xsd:element name="RegistrationType" type="xsd:unsignedByte" />
+      <xsd:element name="OriginalType" type="xsd:unsignedByte" />
+      <xsd:element name="EmployeeInitials" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="TaskID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="TaskName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
+  </xsd:complexType>
+
+</xsd:schema>

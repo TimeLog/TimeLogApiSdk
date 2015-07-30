@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+	<xsd:element name="Employees" >
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Employee" type="tlp:EmployeeShort_Type" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+		<xsd:key name="Employee_Key">
+			<xsd:selector xpath=".//tlp:Employee" />
+			<xsd:field xpath="@ID" />
+		</xsd:key>
+	</xsd:element>
+
+
+	<xsd:complexType name="EmployeeShort_Type">
+		<xsd:sequence>
+			<xsd:element name="FirstName" type="xsd:string" />
+			<xsd:element name="LastName" type="xsd:string" />
+			<xsd:element name="FullName" type="xsd:string" />
+			<xsd:element name="Initials" type="xsd:string" />
+		</xsd:sequence>
+		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+	</xsd:complexType>
+
+</xsd:schema>

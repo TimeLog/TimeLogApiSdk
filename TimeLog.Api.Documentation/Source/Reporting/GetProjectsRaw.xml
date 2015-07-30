@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Projects  
+	xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/ProjectsRaw.xsd" >
+  <tlp:Project ID="740">
+    <tlp:Name>Webinar</tlp:Name>
+    <tlp:No>P07.0080</tlp:No>
+    <tlp:Status>1</tlp:Status>
+    <tlp:CustomerID>1</tlp:CustomerID>
+    <tlp:CustomerName>TimeLog ApS</tlp:CustomerName>
+    <tlp:CustomerNo>02.0000</tlp:CustomerNo>
+    <tlp:PMID>20</tlp:PMID>
+    <tlp:PMInitials>PWP</tlp:PMInitials>
+    <tlp:PMFullName>Peder Wuth Pedersen</tlp:PMFullName>
+    <tlp:ProjectTypeID>16</tlp:ProjectTypeID>
+    <tlp:ProjectTypeName>Internal - Support</tlp:ProjectTypeName>
+    <tlp:ProjectCategoryID>2</tlp:ProjectCategoryID>
+    <tlp:ProjectCategoryName>Project</tlp:ProjectCategoryName>
+    <tlp:BudgetAmountFixedPriceTasks>12000</tlp:BudgetAmountFixedPriceTasks>
+    <tlp:BudgetAmountFixedPriceProject>250000</tlp:BudgetAmountFixedPriceProject>
+    <tlp:BudgetAmountTimeAndMaterial>0</tlp:BudgetAmountTimeAndMaterial>
+    <tlp:BudgetAmountExpenses>5000</tlp:BudgetAmountExpenses>
+    <tlp:BudgetAmountTravel>2750</tlp:BudgetAmountTravel>
+    <tlp:BudgetHoursFixedPriceTasks>12</tlp:BudgetHoursFixedPriceTasks>
+    <tlp:BudgetHoursFixedPriceProject>300</tlp:BudgetHoursFixedPriceProject>
+    <tlp:BudgetHoursTimeAndMaterial>0</tlp:BudgetHoursTimeAndMaterial>
+    <tlp:CreatedAt>2015-03-18T14:22:40.103</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>1</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>AL</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2015-03-26T10:35:59.647</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>1</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>AL</tlp:LastModifiedBy>
+  </tlp:Project>
+</tlp:Projects>

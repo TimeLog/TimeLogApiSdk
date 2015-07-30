@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:WorkUnits xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/WorkUnitsRaw.xsd">
+  <tlp:WorkUnit ID="130">
+    <tlp:EmployeeID>3</tlp:EmployeeID>
+    <tlp:EmployeeInitials>JDO</tlp:EmployeeInitials>
+    <tlp:EmployeeFirstName>John</tlp:EmployeeFirstName>
+    <tlp:EmployeeLastName>Doe</tlp:EmployeeLastName>
+    <tlp:AllocationID>114</tlp:AllocationID>
+    <tlp:TaskID>239</tlp:TaskID>
+    <tlp:ProjectID>26</tlp:ProjectID>
+    <tlp:Date>2002-02-21T00:00:00</tlp:Date>
+    <tlp:Note>Task specification</tlp:Note>
+    <tlp:DepartmentID>1</tlp:DepartmentID>
+    <tlp:AdditionalTextField>3226</tlp:AdditionalTextField>
+    <tlp:RegHours>1.0000</tlp:RegHours>
+    <tlp:RegAmount>800.0000</tlp:RegAmount>
+    <tlp:EstimatedHours>1.0000</tlp:EstimatedHours>
+    <tlp:EstimatedAmount>800.0000</tlp:EstimatedAmount>
+    <tlp:InvHours>1.0000</tlp:InvHours>
+    <tlp:InvAmount>800.0000</tlp:InvAmount>
+    <tlp:CostAmount>320.0000</tlp:CostAmount>
+    <tlp:IsBillable>1</tlp:IsBillable>
+    <tlp:ApprovedStatus>0</tlp:ApprovedStatus>
+    <tlp:CreatedAt>2015-03-18T14:22:40.103</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>1</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>AL</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2015-03-26T10:35:59.647</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>1</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>AL</tlp:LastModifiedBy>
+  </tlp:WorkUnit>
+  <tlp:WorkUnit ID="131">
+    <tlp:EmployeeID>3</tlp:EmployeeID>
+    <tlp:EmployeeInitials>JDO</tlp:EmployeeInitials>
+    <tlp:EmployeeFirstName>John</tlp:EmployeeFirstName>
+    <tlp:EmployeeLastName>Doe</tlp:EmployeeLastName>
+    <tlp:AllocationID>152</tlp:AllocationID>
+    <tlp:TaskID>260</tlp:TaskID>
+    <tlp:ProjectID>26</tlp:ProjectID>
+    <tlp:Date>2002-02-21T00:00:00</tlp:Date>
+    <tlp:Note>Road tour programming </tlp:Note>
+    <tlp:DepartmentID>1</tlp:DepartmentID>
+    <tlp:AdditionalTextField></tlp:AdditionalTextField>
+    <tlp:RegHours>1.0000</tlp:RegHours>
+    <tlp:RegAmount>800.0000</tlp:RegAmount>
+    <tlp:EstimatedHours>1.0000</tlp:EstimatedHours>
+    <tlp:EstimatedAmount>800.0000</tlp:EstimatedAmount>
+    <tlp:InvHours>1.0000</tlp:InvHours>
+    <tlp:InvAmount>800.0000</tlp:InvAmount>
+    <tlp:CostAmount>320.0000</tlp:CostAmount>
+    <tlp:IsBillable>0</tlp:IsBillable>
+    <tlp:ApprovedStatus>10</tlp:ApprovedStatus>
+    <tlp:CreatedAt>2015-03-18T14:22:40.103</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>1</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>AL</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2015-03-26T10:35:59.647</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>1</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>AL</tlp:LastModifiedBy>
+  </tlp:WorkUnit>
+  <tlp:WorkUnit ID="37">
+    <tlp:EmployeeID>3</tlp:EmployeeID>
+    <tlp:EmployeeInitials>JDO</tlp:EmployeeInitials>
+    <tlp:EmployeeFirstName>John</tlp:EmployeeFirstName>
+    <tlp:EmployeeLastName>Doe</tlp:EmployeeLastName>
+    <tlp:AllocationID>93</tlp:AllocationID>
+    <tlp:TaskID>232</tlp:TaskID>
+    <tlp:ProjectID>25</tlp:ProjectID>
+    <tlp:Date>2002-03-07T00:00:00</tlp:Date>
+    <tlp:DepartmentID>1</tlp:DepartmentID>
+    <tlp:AdditionalTextField></tlp:AdditionalTextField>
+    <tlp:RegHours>1.0000</tlp:RegHours>
+    <tlp:RegAmount>0.0000</tlp:RegAmount>
+    <tlp:EstimatedHours>1.0000</tlp:EstimatedHours>
+    <tlp:EstimatedAmount>0.0000</tlp:EstimatedAmount>
+    <tlp:InvHours>1.0000</tlp:InvHours>
+    <tlp:InvAmount>0.0000</tlp:InvAmount>
+    <tlp:CostAmount>320.0000</tlp:CostAmount>
+    <tlp:Billable>1</tlp:Billable>
+    <tlp:ApprovedStatus>10</tlp:ApprovedStatus>
+    <tlp:CreatedAt>2015-03-18T14:22:40.103</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>1</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>AL</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2015-03-26T10:35:59.647</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>1</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>AL</tlp:LastModifiedBy>
+  </tlp:WorkUnit>
+</tlp:WorkUnits>

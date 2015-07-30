@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+	<xsd:element name="Employees" >
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Employee" type="tlp:EmployeeRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+		<xsd:key name="Employee_Key">
+			<xsd:selector xpath=".//tlp:Employee" />
+			<xsd:field xpath="@ID" />
+		</xsd:key>
+	</xsd:element>
+
+
+	<xsd:complexType name="EmployeeRaw_Type">
+		<xsd:sequence>
+			<xsd:element name="FirstName" type="xsd:string" />
+			<xsd:element name="LastName" type="xsd:string" />
+			<xsd:element name="FullName" type="xsd:string" />
+			<xsd:element name="Initials" type="xsd:string" />
+			<xsd:element name="Title" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Email" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Phone" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Mobile" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="PrivatePhone" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Address" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="ZipCode" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="City" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Status" type="xsd:unsignedByte"/>
+			<xsd:element name="DepartmentNameID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="DepartmentName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+	</xsd:complexType>
+
+</xsd:schema>

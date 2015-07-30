@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="Customers" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Customer" type="tlp:CustomerRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="Customer_Key">
+      <xsd:selector xpath=".//tlp:Customer" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+
+  <xsd:complexType name="CustomerRaw_Type">
+    <xsd:sequence>
+		<xsd:element name="Name" type="xsd:string" />
+		<xsd:element name="No" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="CustomerStatusID" type="xsd:integer" />
+		<xsd:element name="CustomerStatus" type="xsd:string" />
+		<xsd:element name="Address1" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="Address2" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="Address3" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="ZipCode" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="City" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="State" type="xsd:string" minOccurs="0" maxOccurs="1" />
+    <xsd:element name="CountryID" type="xsd:integer" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="Country" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="Phone" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="Fax" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="Email" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="WebPage" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="VATNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="Comment" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		<xsd:element name="AccountManagerID" type="xsd:integer" minOccurs="0" maxOccurs="1"  />
+		<xsd:element name="AccountManagerFullName" type="xsd:string" minOccurs="0" maxOccurs="1"  />
+		<xsd:element name="IndustryID" type="xsd:integer" minOccurs="0" maxOccurs="1"  />
+		<xsd:element name="IndustryName" type="xsd:string" minOccurs="0" maxOccurs="1"  />		
+	</xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+  </xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="SupportContracts" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="SupportContract" type="tlp:SupportContractRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="SupportCase_Key">
+      <xsd:selector xpath=".//tlp:SupportContract" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="SupportContractRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="No" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Header" type="xsd:string" />
+      <xsd:element name="Comment" type="xsd:string" />
+      <xsd:element name="Active" type="xsd:byte" />
+      <xsd:element name="ContractTypeID" type="xsd:positiveInteger" />
+      <xsd:element name="ContractTypeName" type="xsd:string" />
+      <xsd:element name="TimeMaterialHourlyRate" type="xsd:decimal" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="TimeMaterialMinimumMinutes" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="MultipleCaseNumberOfCases" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="MultipleCaseRegAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="MultipleCaseInvAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="MultipleCaseInvDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="SubscriptionStartDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="SubscriptionBillingPeriodID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="SubscriptionBillingPeriodName" type="xsd:string" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="SubscriptionRegAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="SubscriptionInvAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="SubscriptionInvDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="EmployeeID" type="xsd:positiveInteger" />
+      <xsd:element name="EmployeeInitials" type="xsd:string" />
+      <xsd:element name="EmployeeFullName" type="xsd:string" />
+      <xsd:element name="CustomerID" type="xsd:positiveInteger" />
+      <xsd:element name="CustomerName" type="xsd:string" />
+      <xsd:element name="CustomerNo" type="xsd:string" minOccurs="0" maxOccurs="1"  />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+  </xsd:complexType>
+</xsd:schema>

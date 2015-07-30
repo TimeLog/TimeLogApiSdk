@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:TimeOffRegistrations xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4">
+  <tlp:TimeOffRegistration ID="60">
+    <tlp:EmployeeID>17</tlp:EmployeeID>
+    <tlp:EmployeeInitials>JDO</tlp:EmployeeInitials>
+    <tlp:EmployeeFirstName>John</tlp:EmployeeFirstName>
+    <tlp:EmployeeLastName>Doe</tlp:EmployeeLastName>
+    <tlp:TimeOffCode>70</tlp:TimeOffCode>
+    <tlp:TimeOffName>Afspadsering</tlp:TimeOffName>
+    <tlp:Date>2013-02-11T00:00:00</tlp:Date>
+    <tlp:RegHours>3.000000000000000e+000</tlp:RegHours>
+  </tlp:TimeOffRegistration>
+</tlp:TimeOffRegistrations>

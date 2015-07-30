@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+	<xsd:element name="Invoices">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Invoice" type="tlp:InvoiceRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+    <xsd:key name="Invoice_Key">
+      <xsd:selector xpath=".//tlp:Invoice" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+	<xsd:complexType name="InvoiceRaw_Type">
+		<xsd:sequence>
+			<xsd:element name="InvoiceNumber" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Header" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Text" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="InvoiceDate" type="xsd:dateTime" />
+      <xsd:element name="DueDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Amount" type="xsd:decimal" />
+      <xsd:element name="Status" type="xsd:unsignedByte" />
+      <xsd:element name="Type" type="xsd:unsignedByte" />
+      <xsd:element name="CustomerID" type="xsd:positiveInteger" />
+      <xsd:element name="CustomerName" type="xsd:string" />
+      <xsd:element name="CustomerNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerAddress1" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerAddress2" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerAddress3" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerZipCode" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerCity" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerState" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerCountry" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PaymentTermID" type="xsd:positiveInteger" />
+      <xsd:element name="PaymentTermText" type="xsd:string" />
+      <xsd:element name="CurrencyAbb" type="xsd:string" />
+      <xsd:element name="CurrencyRate" type="xsd:decimal" />
+      <xsd:element name="VAT" type="xsd:decimal" />
+      <xsd:element name="AddVAT" type="xsd:boolean" />      
+		</xsd:sequence>
+		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
+	</xsd:complexType>
+  
+</xsd:schema>
