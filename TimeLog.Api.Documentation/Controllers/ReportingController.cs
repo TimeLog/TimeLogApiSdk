@@ -27,7 +27,12 @@ namespace TimeLog.Api.Documentation.Controllers
 
         public ActionResult Methods()
         {
-            return View(ReportingManager.Instance.GetMethods());
+            return this.View(ReportingManager.Instance.GetMethods());
+        }
+
+        public ActionResult Method(string id)
+        {
+            return this.View(ReportingManager.Instance.GetMethod(id));
         }
 
         public ActionResult EnumerableTypes()

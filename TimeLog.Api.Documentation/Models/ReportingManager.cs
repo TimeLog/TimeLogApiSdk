@@ -42,5 +42,10 @@ namespace TimeLog.Api.Documentation.Models
 
             return new List<MethodDoc>();
         }
+
+        public MethodDoc GetMethod(string methodFullName)
+        {
+            return this.helper.Methods.FirstOrDefault(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
+        }
     }
 }

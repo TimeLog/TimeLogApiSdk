@@ -2,6 +2,7 @@
 
 namespace TimeLog.Api.Documentation
 {
+    using System.IO;
     using System.Text.RegularExpressions;
 
     using TimeLog.Api.Documentation.Models;
@@ -19,6 +20,18 @@ namespace TimeLog.Api.Documentation
             }
 
             return string.Empty;
+        }
+
+        public static string GetReportingExample(this MethodDoc doc)
+        {
+            FileInfo fi = new FileInfo(HttpContext.Current.Server.MapPath("~/Source/Reporting/" + doc.Name + ".xml"));
+            return fi.Exists ? File.ReadAllText(HttpContext.Current.Server.MapPath("~/Source/Reporting/" + doc.Name + ".xml")) : string.Empty;
+        }
+
+        public static string GetReportingSchema(this MethodDoc doc)
+        {
+            FileInfo fi = new FileInfo(HttpContext.Current.Server.MapPath("~/Source/Reporting/" + doc.Name + ".xsd"));
+            return fi.Exists ? File.ReadAllText(HttpContext.Current.Server.MapPath("~/Source/Reporting/" + doc.Name + ".xsd")) : string.Empty;
         }
 
         public static string UrlEncode(this string str)
