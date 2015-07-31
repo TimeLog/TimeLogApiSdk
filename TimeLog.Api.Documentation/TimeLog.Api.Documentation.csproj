@@ -279,10 +279,16 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Reporting\Method.cshtml" />
+    <Content Include="Views\Reporting\GettingStarted.cshtml" />
+    <Content Include="Views\Reporting\Security.cshtml" />
+    <Content Include="Views\Reporting\EnumerableTypes.cshtml" />
+    <Content Include="Views\FileServices\GettingStarted.cshtml" />
+    <Content Include="Views\FileServices\Index.cshtml" />
+    <Content Include="Views\FileServices\Security.cshtml" />
+    <Content Include="Views\FileServices\Methods.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\FileServices\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

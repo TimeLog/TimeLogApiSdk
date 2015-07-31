@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace TimeLog.Api.Documentation.Controllers
+﻿namespace TimeLog.Api.Documentation.Controllers
 {
+    using System.Web.Mvc;
+
     public class FileServicesController : Controller
     {
         // GET: FileServices
