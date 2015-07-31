@@ -4798,7 +4798,7 @@ tr.hover-trigger:hover th span {
 pre {
     font-size: 0.75em;
     border-left: 10px solid #dedede;
-    padding-left: 10px;
+    padding: 5px 10px;
     max-height: 300px;
     overflow: auto;
     overflow-x: hidden;
