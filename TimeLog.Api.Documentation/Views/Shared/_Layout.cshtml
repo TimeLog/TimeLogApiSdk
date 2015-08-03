@@ -56,7 +56,8 @@
                                 <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("GettingStarted", "Transactional")">Getting Started</a></li>
                                 <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Security", "Transactional")">Security</a></li>
                                 <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Services", "Transactional")">Services</a></li>
-                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("ErrorCodes", "Transactional")">Error Codes</a></li>
+                                <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("ExternalSystems", "Transactional")">External Systems</a></li>
+                                @*<li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("ErrorCodes", "Transactional")">Error Codes</a></li>*@
                             </ul>
                         </li>
                         <li class="top-level__item has-subnav">
@@ -105,32 +106,35 @@
                     </div>
                 </div>
                 <div class="layout__item">
-                    <div class="box theme turquoise">
-                        <h4 class="box__header theme-background primary">
-                            Ressources
-                        </h4>
-                        <ul class="ui-list has-icons theme-list primary">
-                            <li class="icon-download p medium">
-                                <a href="https://www.github.com/timelog/timelogapisdk" target="">
-                                    <h5>Get the TimeLog Project SDK</h5>
-                                    <p>Get started quickly with the TimeLog Project SDK and sample applications.</p>
-                                    <small>
-                                        Source Code
-                                    </small>
-                                </a>
-                            </li>
-                            <li class="icon-download p medium">
-                                <a href="https://www.github.com/timelog/timelogapisdk" target="">
-                                    <h5>View the domain model</h5>
-                                    <p>Download this diagram of the TimeLog Project data model to get going with the API.</p>
-                                    <small>
-                                        PDF
-                                    </small>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                     @RenderSection("sidebar", required: false)
+                    @if (!IsSectionDefined("sidebar"))
+                    {
+                        <div class="box theme turquoise">
+                            <h4 class="box__header theme-background primary">
+                                Ressources
+                            </h4>
+                            <ul class="ui-list has-icons theme-list primary">
+                                <li class="icon-download p medium">
+                                    <a href="https://www.github.com/timelog/timelogapisdk" target="">
+                                        <h5>Get the TimeLog Project SDK</h5>
+                                        <p>Get started quickly with the TimeLog Project SDK and sample applications.</p>
+                                        <small>
+                                            Source Code
+                                        </small>
+                                    </a>
+                                </li>
+                                <li class="icon-download p medium">
+                                    <a href="https://www.github.com/timelog/timelogapisdk" target="">
+                                        <h5>View the domain model</h5>
+                                        <p>Download this diagram of the TimeLog Project data model to get going with the API.</p>
+                                        <small>
+                                            PDF
+                                        </small>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

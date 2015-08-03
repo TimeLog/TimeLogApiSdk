@@ -20,6 +20,11 @@ namespace TimeLog.Api.Documentation.Controllers
             return this.View();
         }
 
+        public ActionResult ExternalSystems()
+        {
+            return this.View();
+        }   
+
         public ActionResult Security()
         {
             return this.View();

@@ -286,6 +286,8 @@
     <Content Include="Views\FileServices\Index.cshtml" />
     <Content Include="Views\FileServices\Security.cshtml" />
     <Content Include="Views\FileServices\Methods.cshtml" />
+    <Content Include="Views\Transactional\ErrorCodes.cshtml" />
+    <Content Include="Views\Transactional\ExternalSystems.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

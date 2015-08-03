@@ -10,6 +10,9 @@
         The Reporting API is not versioned. New methods and additional fields might be added over time.
         However, method and fields is to a large extend not be removed or modified.
     </p>
+    <h3>Endpoint</h3>
+    <pre>https://app[x].timelog.com/[account name]/service.asmx</pre>
+    <h3>Methods</h3>
     <ul>
         @foreach (var method in Model.Where(m => !m.IsConstructor))
         {
