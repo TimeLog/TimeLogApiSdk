@@ -23,7 +23,7 @@ namespace TimeLog.Api.Documentation.Controllers
             return this.View();
         }
 
-        public ActionResult DataModels()
+        public ActionResult DataModel()
         {
             return this.View();
         }
