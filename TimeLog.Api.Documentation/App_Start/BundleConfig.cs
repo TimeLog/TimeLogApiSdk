@@ -13,7 +13,7 @@ namespace TimeLog.Api.Documentation
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
             "~/Scripts/plugins.js").Include("~/Scripts/script.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/Styles/Compiled").Include(
                       "~/Content/Styles/*.css"));
         }
     }

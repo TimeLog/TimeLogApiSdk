@@ -133,7 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Fonts\icomoon.svg" />
+    <Content Include="Content\Images\chl.png" />
+    <Content Include="Content\Images\close.png" />
+    <Content Include="Content\Images\loading.gif" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\next.png" />
+    <Content Include="Content\Images\previous.png" />
     <Content Include="Content\Images\sox.png" />
     <Content Include="Content\TimeLog Data Model.svg" />
     <Content Include="favicon.ico" />
@@ -141,6 +146,7 @@
     <Content Include="Content\Styles\Site.css" />
     <Content Include="Content\Fonts\icomoon.ttf" />
     <Content Include="Content\Fonts\icomoon.woff" />
+    <None Include="Properties\PublishProfiles\WebPublish.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
