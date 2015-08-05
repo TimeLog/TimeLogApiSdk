@@ -134,6 +134,7 @@
     <Content Include="Content\Fonts\icomoon.svg" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\sox.png" />
+    <Content Include="Content\TimeLog Data Model.svg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Styles\Site.css" />
@@ -282,13 +283,13 @@
     <Content Include="Views\Reporting\GettingStarted.cshtml" />
     <Content Include="Views\Reporting\Security.cshtml" />
     <Content Include="Views\Reporting\EnumerableTypes.cshtml" />
-    <Content Include="Views\FileServices\GettingStarted.cshtml" />
     <Content Include="Views\FileServices\Index.cshtml" />
     <Content Include="Views\FileServices\Security.cshtml" />
     <Content Include="Views\FileServices\Methods.cshtml" />
     <Content Include="Views\Transactional\ErrorCodes.cshtml" />
     <Content Include="Views\Transactional\ExternalSystems.cshtml" />
     <Content Include="Views\Home\DataModel.cshtml" />
+    <Content Include="Views\FileServices\InvoiceLineExport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

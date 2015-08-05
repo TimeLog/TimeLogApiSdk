@@ -10,17 +10,17 @@
             return this.View();
         }
 
-        public ActionResult GettingStarted()
-        {
-            return this.View();
-        }
-
         public ActionResult Security()
         {
             return this.View();
         }
 
         public ActionResult Methods()
+        {
+            return this.View();
+        }
+
+        public ActionResult InvoiceLineExport()
         {
             return this.View();
         }
