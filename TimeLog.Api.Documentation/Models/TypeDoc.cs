@@ -22,6 +22,7 @@
             this.Name = attribute.Value.Substring(attribute.Value.LastIndexOf('.') + 1, attribute.Value.Length - attribute.Value.LastIndexOf('.') - 1);
 
             this.Summary = element.Element("summary") != null ? element.Element("summary").Value : string.Empty;
+            this.Remarks = element.Element("remarks") != null ? element.Element("remarks").Value : string.Empty;
 
             if (element.Document != null)
             {
@@ -49,6 +50,8 @@
         public string FullName { get; private set; }
 
         public string Summary { get; private set; }
+
+        public string Remarks { get; private set; }
 
         public IEnumerable<FieldDoc> Fields { get; private set; }
 

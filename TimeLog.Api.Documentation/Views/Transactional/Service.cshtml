@@ -6,8 +6,14 @@
 <article class="article">
     <p><a href="@Url.Action("Services")">Back to services</a></p>
     <h2>Service Details for @Model.Name</h2>
-    <p><span class="text-selection">Version @Model.Version()</span> @Model.Summary</p>
-
+    <p><span class="text-selection">Version @Model.Version()</span></p>
+    <p>@Model.Summary</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Remarks))
+    {
+        <h3>Endpoints</h3>
+        <pre>@string.Join("\n", Model.Remarks.Split(new[] { "\n", ": " }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()))</pre>
+    }
+    <h3>Methods</h3>
     <ul>
         @foreach (var method in Model.Methods.Where(m => !m.IsConstructor))
         {

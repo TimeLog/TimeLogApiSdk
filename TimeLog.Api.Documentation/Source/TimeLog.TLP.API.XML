@@ -545,8 +545,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.CRM.V1_3.CRMService">
             <summary>
-            Service for handling CRM requests in TimeLog Project (<strong>released December 2014</strong>)
+            Service for handling CRM requests in TimeLog Project (released December 2014)
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.CRMService.#ctor(System.Boolean)">
             <summary>
@@ -727,6 +731,15 @@
             Service for handling CRM requests in TimeLog Project
             </summary>
         </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_1.CRMService">
+            <summary>
+            OBSOLETE Service for handling CRM requests in TimeLog Project
+            </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_1/CRMService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_1/CRMServiceSecure.svc
+            </remarks>
+        </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_1.CRMService.GetCustomerByID(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
             <summary>
             Gets a customer based on the ID
@@ -862,8 +875,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.CRM.V1_2.CRMService">
             <summary>
-            Service for handling CRM requests in TimeLog Project (<strong>released with 5.6.031 - March 1st, 2013</strong>)
+            Service for handling CRM requests in TimeLog Project (released March 2013)
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_2/CRMService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_2/CRMServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_2.CRMService.#ctor(System.Boolean)">
             <summary>
@@ -1042,8 +1059,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.CustomField.V1_0.CustomFieldService">
             <summary>
-            Service for handling custom fields in TimeLog Project
+            Service for handling custom fields in TimeLog Project (beta as of July 2014)
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.CustomField.V1_0.CustomFieldService.#ctor(System.Boolean)">
             <summary>
@@ -1084,8 +1105,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.Expenses.V1_0.ExpensesService">
             <summary>
-            Service for handling expense requests in TimeLog Project (<strong>released with 5.7.030 - July 1st, 2013</strong>)
+            Service for handling expense requests in TimeLog Project (released July 2013)
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Expenses/V1_0/ExpensesService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Expenses.V1_0.ExpensesService.#ctor(System.Boolean)">
             <summary>
@@ -1135,7 +1160,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.Expenses.V1_0.ExpensesServiceSecure">
             <summary>
-            Service for handling expense requests in TimeLog Project (<strong>released with 5.7.030 - July 1st, 2013</strong>)
+            Service for handling expense requests in TimeLog Project (released July 2013)
             </summary>
         </member>
         <member name="M:TimeLog.TLP.API.FileServices.EnumHelper.GetAttributeOfType``1(System.Enum)">
@@ -1170,8 +1195,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_0.FinancialService">
             <summary>
-            Financial service for pricelists, currencies and services (<strong>released with 5.9.015 - February 2014</strong>) 
+            Financial service for price lists, currencies and services (beta as of February 2014) 
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Financial/V1_0/FinancialService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/Financial/V1_0/FinancialServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.#ctor(System.Boolean)">
             <summary>
@@ -1249,8 +1278,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService">
             <summary>
-            Service for handling Help Desk (Support cases) in TimeLog Project (<strong>released with 5.9.012 - May 2014</strong>)
+            Service for handling help desk actions in TimeLog Project (released May 2014)
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/HelpDesk/V1_6/HelpDeskService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/HelpDesk/V1_0/HelpDeskServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.#ctor(System.Boolean)">
             <summary>
@@ -1269,7 +1302,7 @@
             <param name="loadExternalKeys">Falg to load external system keys for the Tickets (int)</param>
             <param name="page">The page number</param>
             <param name="pageSize">The number of items returned per page</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns></returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.GetTicketByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1278,7 +1311,7 @@
             </summary>
             <param name="key">The key of the Ticket in the other system</param>
             <param name="systemName">The system name as specified in TimeLog Project API setup interface</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns></returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.GetTicketByID(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1286,7 +1319,7 @@
             Returns the Ticket with spedified ID
             </summary>
             <param name="ID"></param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns></returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.CreateTicket(TimeLog.TLP.API.Proxy.HelpDesk.V1_6.Ticket,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1294,7 +1327,7 @@
             Creates a new Ticket in TimeLog Project
             </summary>
             <param name="ticket">The Ticket to be created</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns>The ticket in the state after it has been saved</returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.UpdateTicket(TimeLog.TLP.API.Proxy.HelpDesk.V1_6.Ticket,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1302,7 +1335,7 @@
             Updates the properties of a Ticket
             </summary>
             <param name="ticket">The Ticket to save</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns>The Tixket in the state after it has been saved</returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.ChangeStatusOnTicket(System.Guid,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1311,7 +1344,7 @@
             </summary>
             <param name="ticket">The ticket</param>
             <param name="targetStatus"></param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns></returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.ChangeBillableStatusOnTicket(System.Guid,System.Boolean,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1321,7 +1354,7 @@
             <param name="ticket">The Ticket for which the billable status is set</param>
             <param name="ticketIsBillable">The billable status the Ticket should have</param>
             <param name="ChangeExistingPosts">Change existing post to reflect the status of Ticket or keep their current billable status</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns></returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.ChangePriorityOnTicket(System.Guid,System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1331,7 +1364,7 @@
             <param name="ticket">The Ticket to set the priority on</param>
             <param name="targetPriority">The priority the Ticket is updated to have</param>
             <param name="calculateDueDate">Control if the due date on the Ticket is re-calculated based on the Help Desk settings in TimeLog Project or kept as is</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns></returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.GetPostsForTicket(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1339,7 +1372,7 @@
             Lists all posts on the specified Ticket
             </summary>
             <param name="TicketID">The TicketID for which all Post should be retrieved</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns>All Posts on the Ticket</returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.CreatePost(TimeLog.TLP.API.Proxy.HelpDesk.V1_6.Post,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1348,7 +1381,7 @@
             </summary>
             <param name="post">The Post to create</param>
             <param name="TicketID">The TicketID of the Ticket on which the Post is to be added</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns>The Post in the state after it has been saved to the database</returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.UpdatePost(TimeLog.TLP.API.Proxy.HelpDesk.V1_6.Post,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1356,7 +1389,7 @@
             Saves the specified Post to the database
             </summary>
             <param name="post">The Post to be updated</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns>The Post in the state after it has been saved</returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.DeletePostByID(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1364,15 +1397,15 @@
             Deletes Post with the specified ID
             </summary>
             <param name="ID">The ID is the post to delete</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns>The Post in the state it had in the Datatbase before it was deleted</returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.GetSupportTypes(System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
-            Lists support types
+            Gets a list of support types
             </summary>
-            <param name="IncludeInactiveSupportTypes {bool}">If false only active support types is in the response. If true also in-active support types will be included</param>
-            <param name="token"></param>
+            <param name="includeInactiveSupportTypes">If false only active support types is in the response. If true also in-active support types will be included</param>
+            <param name="token">Security token associated with the request</param>
             <returns></returns>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.GetServiceContractsForCustomer(System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -1381,12 +1414,12 @@
             </summary>
             <param name="CustomerID">The CustomerID of the Customer for which all service contracts should be listed</param>
             <param name="ActiveState">Limits the list of Service Contract based on the Active state. -1 = No filter, 0 = Inactive only, 1 = Active only</param>
-            <param name="token"></param>
+            <param name="token">Security token associated with the request</param>
             <returns>A list of Service Contracts</returns>
         </member>
         <member name="T:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskServiceSecure">
             <summary>
-            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.9.011 - January 2014</strong>)
+            Service for handling projects and time registrations in TimeLog Project (released January 2014)
             </summary>
         </member>
         <member name="M:TimeLog.TLP.API.Customization.HempelService.TimeLog#TLP#API#Proxy#Customization#IHempelService#CreateFreeExternalResource(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
@@ -1441,8 +1474,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.Invoicing.V1_0.InvoicingService">
             <summary>
-            Service for handling invoicing in TimeLog Project (<strong>released with 5.8.000 - August 2013</strong>) 
+            Service for handling invoicing in TimeLog Project (released August 2013) 
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Invoicing/V1_0/InvoicingService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Invoicing.V1_0.InvoicingService.#ctor(System.Boolean)">
             <summary>
@@ -1516,8 +1553,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.Organisation.V1_6.OrganisationService">
             <summary>
-            Exposes methods needed to handle organizational data through the API (<strong>for 6.0 version</strong>) 
+            Exposes methods needed to handle organizational data through the API (released March 2015) 
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Organisation/V1_6/OrganisationService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_6/OrganisationServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.#ctor(System.Boolean)">
             <summary>
@@ -1806,7 +1847,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.Organisation.V1_3.OrganisationService">
             <summary>
-            Exposes methods needed to handle organizational data through the API. (<strong>released with 5.8.000 - August 2013</strong>) 
+            OBSOLETE Exposes methods needed to handle organizational data through the API. (released August 2013) 
             </summary>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_3.OrganisationService.GetDepartmentByNo(System.String,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
@@ -1860,7 +1901,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.Organisation.V1_4.OrganisationService">
             <summary>
-            Exposes methods needed to handle organizational data through the API (<strong>released with 5.8.013 - Oct 31st, 2013</strong>)
+            OBSOLETE Exposes methods needed to handle organizational data through the API (released October 2013)
             </summary>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_4.OrganisationService.#ctor(System.Boolean)">
@@ -1923,8 +1964,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.Organisation.V1_5.OrganisationService">
             <summary>
-            Exposes methods needed to handle organizational data through the API (<strong>released with 5.9.015 - February 2014</strong>) 
+            Exposes methods needed to handle organizational data through the API (released February 2014) 
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Organisation/V1_5/OrganisationService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_5/OrganisationServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.#ctor(System.Boolean)">
             <summary>
@@ -2120,12 +2165,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_3.ProjectManagementService">
             <summary>
-            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.4 - 2012</strong>)
-            </summary>
-        </member>
-        <member name="T:TimeLog.TLP.API.Security.V1_2.SecurityService">
-            <summary>
-            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.4 - 2012</strong>)
+            Service for handling projects and time registrations in TimeLog Project (released July 2012)
             </summary>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_3.ProjectManagementService.GetTasksAllocatedToEmployee(System.String,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
@@ -2346,8 +2386,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_4.ProjectManagementService">
             <summary>
-            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.7 - April 2013</strong>)
+            Service for handling projects and time registrations in TimeLog Project (released April 2013)
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_4/ProjectManagementService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_4/ProjectManagementServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_4.ProjectManagementService.#ctor(System.Boolean)">
             <summary>
@@ -2513,14 +2557,18 @@
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_4.ProjectManagementServiceSecure">
             <summary>
-            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.7 - April 2013</strong>)
+            Service for handling projects and time registrations in TimeLog Project (released April 2013)
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "M:TimeLog.TLP.API.ProjectManagement.V1_4.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)" -->
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_5.ProjectManagementService">
             <summary>
-            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.9.012 - January 2014</strong>)
+            Service for handling projects and time registrations in TimeLog Project (released January 2014)
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_5/ProjectManagementService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_5/ProjectManagementServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_5.ProjectManagementService.#ctor(System.Boolean)">
             <summary>
@@ -2717,14 +2765,18 @@
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_5.ProjectManagementServiceSecure">
             <summary>
-            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.9.011 - January 2014</strong>)
+            Service for handling projects and time registrations in TimeLog Project (released January 2014)
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "M:TimeLog.TLP.API.ProjectManagement.V1_5.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)" -->
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService">
             <summary>
-            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.9.012 - January 2014</strong>)
+            Service for handling projects and time registrations in TimeLog Project (released May 2014)
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_6/ProjectManagementService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.#ctor(System.Boolean)">
             <summary>
@@ -3091,7 +3143,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementServiceSecure">
             <summary>
-            Service for handling projects and time registrations in TimeLog Project (<strong>released with 5.9.011 - January 2014</strong>)
+            Service for handling projects and time registrations in TimeLog Project (released January 2014)
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)" -->
@@ -3107,8 +3159,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.Salary.V1_0.SalaryService">
             <summary>
-            Service for handling salary requests in TimeLog Project (<strong>released with 5.9.015 - January 2014</strong>) 
+            Service for handling salary requests in TimeLog Project (released January 2014) 
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Salary/V1_0/SalaryService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/Salary/V1_0/SalaryServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Salary.V1_0.SalaryService.#ctor(System.Boolean)">
             <summary>
@@ -3160,6 +3216,15 @@
             <param name="token"></param>
             <param name="securityContext"></param>
             <param name="errorMessage"></param>
+        </member>
+        <member name="T:TimeLog.TLP.API.Security.V1_2.SecurityService">
+            <summary>
+            Service for authentication in TimeLog Project (released September 2013) 
+            </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Security/V1_2/SecurityService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/Security/V1_2/SecurityServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Security.V1_2.SecurityService.GetToken(System.String,System.String)">
             <summary>
@@ -3269,8 +3334,12 @@
         </member>
         <member name="T:TimeLog.TLP.API.Transaction.V1_0.TransactionService">
             <summary>
-            Exposes methods needed to handle transaction logging through the API (<strong>released with 5.7.012 - June 2013</strong>)
+            Exposes methods needed to handle transaction logging through the API (released June 2013)
             </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Transaction/V1_0/TransactionService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/Transaction/V1_0/TransactionServiceSecure.svc
+            </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Transaction.V1_0.TransactionService.#ctor(System.Boolean)">
             <summary>
@@ -3307,7 +3376,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.Transaction.V1_0.TransactionServiceSecure">
             <summary>
-            Exposes methods needed to handle transaction logging through the API (<strong>released with 5.7.012 - June 2013</strong>)
+            Exposes methods needed to handle transaction logging through the API (released June 2013)
             </summary>
         </member>
     </members>

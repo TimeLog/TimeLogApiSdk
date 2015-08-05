@@ -15,7 +15,7 @@
         {
             <h3>@doc.Key.SplitOnUppercase()</h3>
             <ul>
-                @foreach (var service in doc.OrderByDescending(s => s.FullName).Take(3))
+                @foreach (var service in doc.Where(s => !s.Summary.Contains("OBSOLETE")).OrderByDescending(s => s.FullName).Take(3))
                 {
                 <li class="icon-arrow_in_circle"><a href="@Url.Action("Service", "Transactional", new { id = service.FullName.UrlEncode() })">@service.Name.SplitOnUppercase()</a> <span class="text-selection">Version @service.Version()</span> @service.Summary</li>
                 }
