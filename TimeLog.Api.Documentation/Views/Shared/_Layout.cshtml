@@ -34,9 +34,8 @@
                         <a href="#site-nav" class="small-screen-menu__link" data-opentext="Menu" data-closetext="Close" title="Open/close menu"><span class="close-stripes">Menu</span><span class="small-screen-menu__text">Menu</span></a>
                     </span>
                     <ul id="nav-items" class="top-level">
-
                         <li class="top-level__item has-subnav">
-                            <a class="top-level__link current" href="#">
+                            <a class="top-level__link @Html.DetectActiveMenu("Home", true)" href="#">
                                 TimeLog Project
                                 <span class="mobile-nav-expand">expand/contract</span>
                             </a>
@@ -47,7 +46,7 @@
                             </ul>
                         </li>
                         <li class="top-level__item has-subnav">
-                            <a class="top-level__link" href="#">
+                            <a class="top-level__link @Html.DetectActiveMenu("Transactional")" href="#">
                                 Transactional API
                                 <span class="mobile-nav-expand">expand/contract</span>
                             </a>
@@ -61,7 +60,7 @@
                             </ul>
                         </li>
                         <li class="top-level__item has-subnav">
-                            <a class="top-level__link" href="#">
+                            <a class="top-level__link @Html.DetectActiveMenu("Reporting")" href="#">
                                 Reporting API
                                 <span class="mobile-nav-expand">expand/contract</span>
                             </a>
@@ -74,7 +73,7 @@
                             </ul>
                         </li>
                         <li class="top-level__item has-subnav">
-                            <a class="top-level__link" href="#">
+                            <a class="top-level__link @Html.DetectActiveMenu("FileServices")" href="#">
                                 File Services API
                                 <span class="mobile-nav-expand">expand/contract</span>
                             </a>

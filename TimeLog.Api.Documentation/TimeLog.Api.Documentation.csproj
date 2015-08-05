@@ -118,6 +118,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelperExtensions.cs" />
     <Compile Include="Models\DocumentationHelper.cs" />
     <Compile Include="Models\FieldDoc.cs" />
     <Compile Include="Models\MethodDoc.cs" />
