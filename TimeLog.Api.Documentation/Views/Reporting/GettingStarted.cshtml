@@ -6,13 +6,13 @@
 <article class="article">
 
     <h1>@ViewBag.Title</h1>
-    <h2>Use these steps to get started with fetching data from TimeLog Project</h2>
+    <h2>Use these steps to get started with fetching data from TimeLog Project.</h2>
     <p>
         Accessing the Reporting API requires a special set of Reporting API credentials and a SiteCode
         both available in the System Administration in TimeLog Project. 
     </p>
     <p>
-        This guide is using the TimeLog Project SDK and all example is written in C#. However, the API 
+        This guide is using the TimeLog Project SDK and all example are written in C#. However, the API 
         does not require .NET for interaction, but the SDK is (as of writing) only available for .NET. 
     </p>
     <h3>1. Get URL</h3>
@@ -25,9 +25,9 @@
     </p>
     <h3>2. Activate the API and get credentials</h3>
     <p>
-        Using a user with the standard system administrator role or similar, active the API endpoint through 
-        the system administration. Click the personal menu (top right corner), choose "System Administration", 
-        then "Integrations and API" then "API settings (SOAP)". 
+        Using a user with the standard system administrator role or similar, activate the API endpoint through
+        the system administration. Click the personal menu (top right corner), choose <strong>System Administration</strong>,
+        then <strong>Integrations and API</strong> then <strong>API settings (SOAP)</strong>. 
     </p>
     <p>
         Request the Reporting API SiteCode and store it. Enter the special Reporting API credentials to use
@@ -51,7 +51,7 @@
         Add the DLLs as references in your project.
     </p>
     <p>
-        Add the following keys to the appSettings-section in web.config or app.config. And fill them with appropriate values as step 2.
+        Add the following keys to the appSettings-section in web.config or app.config. And fill them with appropriate values as in step 2.
     </p>
     <pre>
 &lt;add key="TimeLogProjectUri" value="" /&gt;
@@ -112,7 +112,7 @@ else
     Console.WriteLine("Failed to authenticate to reporting API");
 }</pre>
     <p>
-        Note that the Reporting API SDK provides strongly types classes for default parameters. In the
+        Note that the Reporting API SDK provides strongly typed classes for default parameters. In the
         example above notice CustomerStatus.All and AccountManager.All which provides the appropriate
         default value for getting all (in this case) customers back.
     </p>

@@ -1355,7 +1355,7 @@ ul {
 
     .top-level__link:hover,
     .top-level__link.current {
-        background-color: #757575;
+        background-color: #6f6f6f;
     }
 
 .sub-level {
@@ -1374,7 +1374,7 @@ ul {
 .sub-level__link {
     padding: 11px 13px 10px;
     white-space: nowrap;
-    background-color: #c2c2c2;
+    background-color: #949494;
     color: white;
 }
 
