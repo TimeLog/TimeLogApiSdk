@@ -65,6 +65,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="SettingsHandler.cs" />
+    <Compile Include="XmlNodeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -9,9 +9,131 @@
             Placeholder for contact related constants
             </summary>
         </member>
+        <member name="M:TimeLog.ReportingApi.SDK.Contact.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact" /> class.
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.Contact.#ctor(System.Xml.XmlNode,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact" /> class.
+            </summary>
+            <param name="node">The XML node to initialize from</param>
+            <param name="namespaceManager">The namespace manager</param>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.Contact.All">
             <summary>
-            Gets the default parameter value for filtereing for all contacts
+            Gets the default parameter value for filtering for all contacts
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Id">
+            <summary>
+            Gets or sets contact ID
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.FirstName">
+            <summary>
+            Gets or sets first name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.LastName">
+            <summary>
+            Gets or sets last name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.FullName">
+            <summary>
+            Gets or sets full name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.CustomerID">
+            <summary>
+            Gets or sets customer ID
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.CustomerName">
+            <summary>
+            Gets or sets customer name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.CustomerNo">
+            <summary>
+            Gets or sets customer number
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Title">
+            <summary>
+            Gets or sets title
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Phone">
+            <summary>
+            Gets or sets phone number
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Mobile">
+            <summary>
+            Gets or set mobile phone number
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.PrivatePhone">
+            <summary>
+            Gets or sets private phone number
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Email">
+            <summary>
+            Gets or sets email
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Address1">
+            <summary>
+            Gets or sets address 1
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Address2">
+            <summary>
+            Gets or sets address 2
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.ZipCode">
+            <summary>
+            Gets or sets zip code
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.City">
+            <summary>
+            Gets or sets city
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.State">
+            <summary>
+            Gets or sets state
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Birthday">
+            <summary>
+            Gets or sets birthday
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Country">
+            <summary>
+            Gets or sets country
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.Comment">
+            <summary>
+            Gets or sets comment
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.AccountManagerID">
+            <summary>
+            Gets or sets account manager ID
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Contact.AccountManagerFullName">
+            <summary>
+            Gets or sets account manager name
             </summary>
         </member>
         <member name="T:TimeLog.ReportingApi.SDK.AccountManager">
@@ -26,12 +148,129 @@
         </member>
         <member name="T:TimeLog.ReportingApi.SDK.Customer">
             <summary>
-            Placeholder for customer related constants
+                Placeholder for customer related constants
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Customer.All">
             <summary>
-            Gets the default parameter value for filtereing for all customers
+            Gets the default parameter value for filtering for all customers
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.Customer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Customer"/> class.
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.Customer.#ctor(System.Xml.XmlNode,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Customer"/> class.
+            </summary>
+            <param name="node">The XML node to initialize from</param>
+            <param name="namespaceManager">The namespace manager</param>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.NickName">
+            <summary>
+            Gets or sets the nick name.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.No">
+            <summary>
+            Gets or sets the no.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.CustomerStatusID">
+            <summary>
+            Gets or sets the customer status id.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.CustomerStatus">
+            <summary>
+            Gets or sets the customer status.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Address1">
+            <summary>
+            Gets or sets the address 1.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Address2">
+            <summary>
+            Gets or sets the address 2.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Address3">
+            <summary>
+            Gets or sets the address 3.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.ZipCode">
+            <summary>
+            Gets or sets the zip code.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Fax">
+            <summary>
+            Gets or sets the fax.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.WebPage">
+            <summary>
+            Gets or sets the web page.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.VATNo">
+            <summary>
+            Gets or sets the vat no.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.AccountManagerID">
+            <summary>
+            Gets or sets the account manager id.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.AccountManagerFullName">
+            <summary>
+            Gets or sets the account manager full name.
+            </summary>
+        </member>
+        <member name="T:TimeLog.ReportingApi.SDK.ServiceHandler">
+            <summary>
+            Handling security and connectivity for the reporting API
             </summary>
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.#ctor">
@@ -51,7 +290,7 @@
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.SiteCode">
             <summary>
-            Gets the sitecode associated with the reporting service
+            Gets the site code associated with the reporting service
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ApiId">
@@ -69,6 +308,12 @@
             Gets the client associated with the reporting service
             </summary>
         </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.OverwriteServiceUrl(System.String)">
+            <summary>
+            Overwrites the service URL from the app.config
+            </summary>
+            <param name="url">TimeLog Project URL (e.g. https://app3.timelog.com/soxdemo )</param>
+        </member>
         <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate">
             <summary>
             Executes an authentication request to the API using the application settings
@@ -84,7 +329,7 @@
             Executes an authentication request to the API using the parameters.
             </summary>
             <param name="siteCode">Site code part of the credentials to authenticate with</param>
-            <param name="user">Username part of the credentials to authenticate with</param>
+            <param name="user">User name part of the credentials to authenticate with</param>
             <param name="password">ApiPassword part of the credentials to authenticate with</param>
             <returns>A value indicating whether the authentication is successful</returns>
         </member>
@@ -114,6 +359,29 @@
             Gets the default max received message size for all calls to the TimeLog Project API.
             Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
             </summary>
+        </member>
+        <member name="T:TimeLog.ReportingApi.SDK.XmlNodeExtensions">
+            <summary>
+            XmlNode extensions for reporting API
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.XmlNodeExtensions.GetStringSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Gets a strongly types string value from a given XPath. Returns empty string if parsing fails.
+            </summary>
+            <param name="node">The XML node</param>
+            <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
+            <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+            <returns>A string value (empty string if parsing fails)</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.XmlNodeExtensions.GetIntSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Gets a strongly typed int value from a given XPath. Returns 0 if parsing fails.
+            </summary>
+            <param name="node">The XML node</param>
+            <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
+            <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+            <returns>An int value (0 if parsing fails)</returns>
         </member>
     </members>
 </doc>
