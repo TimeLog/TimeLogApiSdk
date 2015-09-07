@@ -6,6 +6,8 @@
 
     using log4net;
 
+    using TimeLog.Library.Data;
+
     /// <summary>
     /// Template class for consuming a csv file
     /// </summary>

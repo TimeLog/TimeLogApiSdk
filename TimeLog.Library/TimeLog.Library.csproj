@@ -1,19 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{07666C53-3FDF-400C-B337-FA7F9DE1EA49}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{0ABB99CF-54EC-4415-9675-25096E7FC01E}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TimeLog.ApiConsoleApp</RootNamespace>
-    <AssemblyName>TimeLog.ApiConsoleApp</AssemblyName>
+    <RootNamespace>TimeLog.Library</RootNamespace>
+    <AssemblyName>TimeLog.Library</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,53 +30,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsumeCsvFile.cs" />
-    <Compile Include="ConsumeReportingApi.cs" />
-    <Compile Include="CreateProjectTransactionalApi.cs" />
-    <Compile Include="ConsumeTransactionalApi.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Configuration\AppSetting.cs" />
+    <Compile Include="Configuration\PersonalConfigurationManager.cs" />
+    <Compile Include="Data\CsvReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="log4net.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
-    <None Include="test.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TimeLog.Library\TimeLog.Library.csproj">
-      <Project>{0abb99cf-54ec-4415-9675-25096e7fc01e}</Project>
-      <Name>TimeLog.Library</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TimeLog.ReportingApi.SDK\TimeLog.ReportingApi.SDK.csproj">
-      <Project>{bb65da9a-999b-4eeb-b236-3cb45140c7b7}</Project>
-      <Name>TimeLog.ReportingApi.SDK</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TimeLog.TransactionalApi.SDK\TimeLog.TransactionalApi.SDK.csproj">
-      <Project>{a1d54caf-4bcb-43fb-917c-4f392c76a0e4}</Project>
-      <Name>TimeLog.TransactionalApi.SDK</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

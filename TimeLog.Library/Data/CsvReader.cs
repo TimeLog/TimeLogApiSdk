@@ -1,4 +1,4 @@
-﻿namespace TimeLog.ApiConsoleApp
+﻿namespace TimeLog.Library.Data
 {
     using System;
     using System.Collections.Generic;

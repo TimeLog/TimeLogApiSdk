@@ -1,0 +1,22 @@
+﻿@model TimeLog.MicrosoftBiSync.Models.PowerBi.Table[]
+@{
+    ViewBag.Title = "Tables";
+}
+
+<div class="container" style="max-width: 600px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li>@item.Name</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
