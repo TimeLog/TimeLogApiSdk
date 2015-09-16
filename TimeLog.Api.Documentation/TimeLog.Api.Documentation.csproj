@@ -205,87 +205,87 @@
     <Content Include="Views\Transactional\Method.cshtml" />
     <Content Include="Views\Transactional\Security.cshtml" />
     <Content Include="Views\Home\Restrictions.cshtml" />
-    <None Include="Source\Reporting\GetAllocationsRaw.xsd">
+    <Content Include="Source\Reporting\GetAllocationsRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetContactsRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetContactsRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetContactsShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetContactsShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetCountriesShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetCountriesShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetCustomersRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetCustomersRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetCustomersShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetCustomersShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetCustomerStatusesShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetCustomerStatusesShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetDepartmentsShortlist.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetDepartmentsShortlist.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetEmployeesRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetEmployeesRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetEmployeesShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetEmployeesShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetIndustriesShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetIndustriesShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetInvoiceLineDetailsRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetInvoiceLineDetailsRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetInvoiceLinesRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetInvoiceLinesRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetInvoicesRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetInvoicesRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetProjectCategoriesShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetProjectCategoriesShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetProjectsRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetProjectsRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetProjectsShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetProjectsShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetProjectTypesShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetProjectTypesShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetSupportCaseRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetSupportCaseRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetSupportContractRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetSupportContractRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetSupportJournalRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetSupportJournalRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetSupportTypesShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetSupportTypesShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetTasksRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetTasksRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetTasksShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetTasksShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetTaskTypesShortList.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetTaskTypesShortList.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetTimeOffRegistrationsRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetTimeOffRegistrationsRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetWorkUnitsRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetWorkUnitsRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
+    </Content>
     <Content Include="Views\Reporting\Method.cshtml" />
     <Content Include="Views\Reporting\GettingStarted.cshtml" />
     <Content Include="Views\Reporting\Security.cshtml" />

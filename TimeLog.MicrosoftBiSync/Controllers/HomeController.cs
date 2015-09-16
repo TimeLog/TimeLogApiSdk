@@ -190,6 +190,62 @@
             return this.Json("Failed", JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult TransferWorkUnits()
+        {
+            var credentials = AzureAuthenticationHelper.GetReportingCredentials();
+
+            if (ServiceHandler.Instance.TryAuthenticate(
+                credentials.SiteCode,
+                credentials.ApiId,
+                credentials.ApiPassword))
+            {
+                var helper = new PowerBiHelper(AzureAuthenticationHelper.GetSession());
+                var workUnitsRaw = ServiceHandler.Instance.Client.GetWorkUnitsRaw(
+                    credentials.SiteCode,
+                    credentials.ApiId,
+                    credentials.ApiPassword,
+                    WorkUnit.All,
+                    Employee.All,
+                    Allocation.All,
+                    Task.All,
+                    Project.All,
+                    Department.All,
+                    DateTime.Now.AddMonths(-6),
+                    DateTime.Now);
+
+                if (workUnitsRaw.OwnerDocument != null)
+                {
+                    var namespaceManager = new XmlNamespaceManager(workUnitsRaw.OwnerDocument.NameTable);
+                    namespaceManager.AddNamespace("tlp", "http://www.timelog.com/XML/Schema/tlp/v4_4");
+                    var workUnits = workUnitsRaw.SelectNodes("tlp:WorkUnit", namespaceManager);
+
+                    if (workUnits != null)
+                    {
+                        var tableConstructed = false;
+                        var rowsList = new List<string>();
+                        foreach (XmlNode workUnit in workUnits)
+                        {
+                            if (!tableConstructed)
+                            {
+                                helper.DeleteRows(helper.GetDefaultDatasetId(), "WorkUnits");
+                                var tableSchemaJson = helper.BuildTableSchemaJson("WorkUnits", typeof(WorkUnit));
+                                helper.UpdateTableSchema(helper.GetDefaultDatasetId(), "WorkUnits", tableSchemaJson);
+                                tableConstructed = true;
+                            }
+
+                            rowsList.Add(helper.BuildTableRowJson(new WorkUnit(workUnit, namespaceManager)));
+                        }
+
+                        helper.AddRows(helper.GetDefaultDatasetId(), "WorkUnits", rowsList, 10);
+                    }
+                }
+
+                return this.Json("Yay", JsonRequestBehavior.AllowGet);
+            }
+
+            return this.Json("Failed", JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult Tables(string datasetId)
         {
             if (AzureAuthenticationHelper.IsAuthenticated())

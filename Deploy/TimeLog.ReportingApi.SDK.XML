@@ -268,6 +268,183 @@
             Gets or sets the account manager full name.
             </summary>
         </member>
+        <member name="T:TimeLog.ReportingApi.SDK.WorkUnit">
+            <summary>
+                Placeholder for work unit related constants
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.WorkUnit.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Customer" /> class.
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.WorkUnit.#ctor(System.Xml.XmlNode,System.Xml.XmlNamespaceManager)">
+            <summary>
+                Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.WorkUnit" /> class.
+            </summary>
+            <param name="node">The XML node to initialize from</param>
+            <param name="namespaceManager">The namespace manager</param>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.All">
+            <summary>
+                Gets the default parameter value for filtering for all work units
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.Id">
+            <summary>
+            Gets or sets the identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EmployeeID">
+            <summary>
+            Gets or sets the employee identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EmployeeInitials">
+            <summary>
+            Gets or sets the employee initials
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EmployeeFirstName">
+            <summary>
+            Gets or sets the employee first name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EmployeeLastName">
+            <summary>
+            Gets or sets the employee last name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.AllocationID">
+            <summary>
+            Gets or sets the allocation identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.TaskID">
+            <summary>
+            Gets or sets the task identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.TaskName">
+            <summary>
+            Gets or sets the task name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.ProjectID">
+            <summary>
+            Gets or sets the project identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.ProjectName">
+            <summary>
+            Gets or sets the project name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.CustomerID">
+            <summary>
+            Gets or sets the customer identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.CustomerName">
+            <summary>
+            Gets or sets the customer name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.Date">
+            <summary>
+            Gets or sets the registration date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.Note">
+            <summary>
+            Gets or sets the registration note
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.DepartmentID">
+            <summary>
+            Gets or sets the employee department identifier based on the registration creation date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.DepartmentName">
+            <summary>
+            Gets or sets the employee department name based on the registration creation date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.AdditionalTextField">
+            <summary>
+            Gets or sets the additional text field
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.RegHours">
+            <summary>
+            Gets or sets the registered hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.RegAmount">
+            <summary>
+            Gets or sets the registered amount
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EstimatedHours">
+            <summary>
+            Gets or sets the estimated hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EstimatedAmount">
+            <summary>
+            Gets or sets the estimated amount
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvHours">
+            <summary>
+            Gets or sets the invoiced hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvAmount">
+            <summary>
+            Gets or sets the invoiced amount
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.IsBillable">
+            <summary>
+            Gets or sets a value indicating whether the registration is billable
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.ApprovedStatus">
+            <summary>
+            Gets or sets the approval state (0 = time sheet open, 10 = time sheet closed, 20 = project manager approved, 30 = department manager approved)
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.Created">
+            <summary>
+            Gets or sets the creation date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.CreatedByEmployeeID">
+            <summary>
+            Gets or sets the creation employee identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.CreatedBy">
+            <summary>
+            Gets or sets the creation employee name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.LastModifiedAt">
+            <summary>
+            Gets or sets the last modified date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.LastModifiedByEmployeeID">
+            <summary>
+            Gets or sets the last modified employee identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.LastModifiedBy">
+            <summary>
+            Gets or sets the last modified employee name
+            </summary>
+        </member>
         <member name="T:TimeLog.ReportingApi.SDK.ServiceHandler">
             <summary>
             Handling security and connectivity for the reporting API
@@ -382,6 +559,33 @@
             <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
             <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
             <returns>An int value (0 if parsing fails)</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.XmlNodeExtensions.GetDoubleSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Gets a strongly typed double value from a given XPath. Returns 0 if parsing fails.
+            </summary>
+            <param name="node">The XML node</param>
+            <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
+            <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+            <returns>An double value (0 if parsing fails)</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.XmlNodeExtensions.GetDateTimeSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Gets a strongly typed DateTime value from a given XPath. Returns DateTime.MinValue if parsing fails.
+            </summary>
+            <param name="node">The XML node</param>
+            <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
+            <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+            <returns>An DateTime value (DateTime.MinValue if parsing fails)</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.XmlNodeExtensions.GetBoolTimeSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Gets a strongly typed boolean value from a given XPath. Returns false if parsing fails.
+            </summary>
+            <param name="node">The XML node</param>
+            <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
+            <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+            <returns>An boolean value (false if parsing fails)</returns>
         </member>
     </members>
 </doc>
