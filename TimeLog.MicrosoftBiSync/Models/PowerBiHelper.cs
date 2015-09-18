@@ -2,9 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Reflection;
+    using System.Web;
     using System.Web.Script.Serialization;
 
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
@@ -89,6 +91,8 @@
 
         public void CreateDefaultDataset()
         {
+            HttpContext.Current.Session["GetDataSets"] = null; 
+
             if (this.IsDefaultDatasetAvailable())
             {
                 return;
@@ -129,6 +133,16 @@
                                                     new { name = "ContactId", dataType = "Int64" },
                                                     new { name = "Name", dataType = "string" }
                                                 }
+                                            },
+                                    new
+                                            {
+                                                name = "WorkUnits",
+                                                columns =
+                                            new[]
+                                                {
+                                                    new { name = "WorkUnitId", dataType = "Int64" },
+                                                    new { name = "Name", dataType = "string" }
+                                                }
                                             }
                                     }
                     };
@@ -154,6 +168,12 @@
 
         public Tables GetTables(string datasetId)
         {
+            var result = (Tables)HttpContext.Current.Session["GetTables"];
+            if (result != null)
+            {
+                return result;
+            }
+
             // Configure datasets request
             System.Net.WebRequest request = System.Net.WebRequest.Create(string.Format(this.tablesUri, datasetId)) as System.Net.HttpWebRequest;
             if (request != null)
@@ -174,7 +194,10 @@
                             // Deserialize JSON string
                             // JavaScriptSerializer class is in System.Web.Script.Serialization
                             JavaScriptSerializer json = new JavaScriptSerializer();
-                            return (Tables)json.Deserialize(responseContent, typeof(Tables));
+                            result = (Tables)json.Deserialize(responseContent, typeof(Tables));
+                            HttpContext.Current.Session["GetTables"] = result;
+
+                            return result;
                         }
                     }
                 }
@@ -185,6 +208,12 @@
 
         public Datasets GetDataSets()
         {
+            var result = (Datasets)HttpContext.Current.Session["GetDataSets"];
+            if (result != null)
+            {
+                return result;
+            }
+
             // Configure datasets request
             System.Net.WebRequest request = System.Net.WebRequest.Create(this.datasetsUri) as System.Net.HttpWebRequest;
             if (request != null)
@@ -205,7 +234,10 @@
                             // Deserialize JSON string
                             // JavaScriptSerializer class is in System.Web.Script.Serialization
                             JavaScriptSerializer json = new JavaScriptSerializer();
-                            return (Datasets)json.Deserialize(responseContent, typeof(Datasets));
+                            result = (Datasets)json.Deserialize(responseContent, typeof(Datasets));
+
+                            HttpContext.Current.Session["GetDataSets"] = result;
+                            return result;
                         }
                     }
                 }
@@ -280,6 +312,10 @@
                 {
                     type = ColumnDataType.Int64;
                 }
+                else if (prop.PropertyType == typeof(double))
+                {
+                    type = ColumnDataType.Double;
+                }
                 else if (prop.PropertyType == typeof(DateTime))
                 {
                     type = ColumnDataType.DateTime;
@@ -310,9 +346,13 @@
                 {
                     jsonColumns.Add(string.Format(rowColumnTemplate, prop.Name, prop.GetValue(data)));
                 }
+                else if (prop.PropertyType == typeof(double))
+                {
+                    jsonColumns.Add(string.Format(rowColumnTemplate, prop.Name, "\"" + double.Parse(prop.GetValue(data).ToString()).ToString("0.00", new CultureInfo("en-US")) + "\""));
+                }
                 else
                 {
-                    jsonColumns.Add(string.Format(rowColumnTemplate, prop.Name, "\"" + prop.GetValue(data) + "\""));
+                    jsonColumns.Add(string.Format(rowColumnTemplate, prop.Name, "\"" + prop.GetValue(data).ToString().Replace("\"", "") + "\""));
                 }
             }
 

@@ -77,7 +77,7 @@
             this.LastModifiedAt = node.GetDateTimeSafe("tlp:LastModifiedAt", namespaceManager);
             this.LastModifiedBy = node.GetStringSafe("tlp:LastModifiedBy", namespaceManager);
             this.LastModifiedByEmployeeID = node.GetIntSafe("tlp:LastModifiedByEmployeeID", namespaceManager);
-            this.Note = node.GetStringSafe("tlp:Note", namespaceManager);
+            this.Note = node.GetStringSafe("tlp:Note", namespaceManager).Trim('\r', '\n');
             this.ProjectID = node.GetIntSafe("tlp:ProjectID", namespaceManager);
             this.ProjectName = node.GetStringSafe("tlp:ProjectName", namespaceManager);
             this.RegAmount = node.GetDoubleSafe("tlp:RegAmount", namespaceManager);

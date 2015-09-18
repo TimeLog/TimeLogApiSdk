@@ -90,6 +90,7 @@
 
         public ActionResult TransferCustomers()
         {
+                //return this.Json("Yay", JsonRequestBehavior.AllowGet);
             var credentials = AzureAuthenticationHelper.GetReportingCredentials();
 
             if (ServiceHandler.Instance.TryAuthenticate(
@@ -103,7 +104,7 @@
                     credentials.ApiId,
                     credentials.ApiPassword,
                     Customer.All,
-                    CustomerStatus.All,
+                    1,
                     AccountManager.All,
                     string.Empty);
 
@@ -130,7 +131,7 @@
                             rowsList.Add(helper.BuildTableRowJson(new Customer(customer, namespaceManager)));
                         }
 
-                        helper.AddRows(helper.GetDefaultDatasetId(), "Customers", rowsList, 10);
+                        helper.AddRows(helper.GetDefaultDatasetId(), "Customers", rowsList, 100);
                     }
                 }
 
@@ -142,6 +143,7 @@
 
         public ActionResult TransferContacts()
         {
+                return this.Json("Yay", JsonRequestBehavior.AllowGet);
             var credentials = AzureAuthenticationHelper.GetReportingCredentials();
 
             if (ServiceHandler.Instance.TryAuthenticate(
@@ -192,6 +194,7 @@
 
         public ActionResult TransferWorkUnits()
         {
+                return this.Json("Yay", JsonRequestBehavior.AllowGet);
             var credentials = AzureAuthenticationHelper.GetReportingCredentials();
 
             if (ServiceHandler.Instance.TryAuthenticate(
@@ -227,7 +230,16 @@
                         {
                             if (!tableConstructed)
                             {
-                                helper.DeleteRows(helper.GetDefaultDatasetId(), "WorkUnits");
+                                try
+                                {
+                                    helper.DeleteRows(helper.GetDefaultDatasetId(), "WorkUnits");
+                                }
+                                catch (Exception)
+                                {  
+                                    // Ignore. Probably first request
+                                    throw new Exception("PowerBI table definition out of sync. Please delete entire dataset and try transferring again.");
+                                }
+
                                 var tableSchemaJson = helper.BuildTableSchemaJson("WorkUnits", typeof(WorkUnit));
                                 helper.UpdateTableSchema(helper.GetDefaultDatasetId(), "WorkUnits", tableSchemaJson);
                                 tableConstructed = true;
@@ -236,7 +248,7 @@
                             rowsList.Add(helper.BuildTableRowJson(new WorkUnit(workUnit, namespaceManager)));
                         }
 
-                        helper.AddRows(helper.GetDefaultDatasetId(), "WorkUnits", rowsList, 10);
+                        helper.AddRows(helper.GetDefaultDatasetId(), "WorkUnits", rowsList, 100);
                     }
                 }
 

@@ -1,0 +1,380 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* BASE DESIGN
+********************************************************/
+body {
+    background: url('Content/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+	color: #FFF;
+	text-align: center;
+	font-size: 0.8em;
+	background-repeat: no-repeat;
+	font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+	margin-top: 40px;
+	width: 100%;
+}
+h1 {
+	font-size: 3em;
+	margin-bottom: 20px;
+}
+h2 {
+	font-size: 6em;
+	margin-bottom: 0px;
+}
+h3 {
+	margin-bottom: 10px;
+	opacity: 0.7;
+}
+h4 {
+    margin-top: 60px;
+	margin-bottom: 10px;
+	opacity: 0.7;
+    font-size: 1.2em;
+}
+h4 a { font-size: 0.7em; }
+table { 
+	width: 100%;
+    font-size: 0.8em;
+	color: rgba(0,0,0,0.8);
+	table-layout: fixed;
+	margin-bottom: 20px;
+}
+th { 
+	font-weight: bold;
+	background-color: rgba(255,255,255,0.6);
+}
+td, th {
+	text-align: left;
+	padding: 6px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+td:nth-child(1), th:nth-child(1) { width: 130px; }
+td:nth-child(2), th:nth-child(2) { width: 130px; }
+td:nth-child(3), th:nth-child(3) { }
+td:nth-child(4), th:nth-child(4) { width: 50px; }
+td:nth-child(5), th:nth-child(5) { width: 30px; }
+tr {
+	background-color: rgba(255,255,255,0.5);
+}
+tr:nth-child(2n) {
+	background-color: rgba(255,255,255,0.6);
+}
+a {
+	color: #FFF;
+	text-decoration: none;
+	border-bottom: 1px dashed #FFF;
+    cursor: pointer;
+}
+.logo { 
+	background-image:url('Content/logo.png'); 
+	background-repeat:no-repeat; 
+	width: 80px; 
+	height: 80px; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	text-decoration: none;
+	border: none;
+}
+#loading-status {
+	position: absolute;
+	top: 27px;
+	left: 95px;
+	display: none;
+	letter-spacing: -0.03em;
+	font-size: 2em;
+	font-weight: lighter;
+	-webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.0
+}
+
+@-webkit-keyframes pulsate {
+    0% {opacity: 0.2;}
+    50% {opacity: 0.7;}
+    100% {opacity: 0.2;}
+}
+
+.small {
+    opacity: 0.6;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* CLOCK
+********************************************************/
+.clock {
+	text-align: center;
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+	letter-spacing: -0.08em;
+	font-size: 3.5em;
+	font-weight: lighter;
+	opacity: 0.5;
+}
+.calendar {
+	text-align: center;
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+	letter-spacing: -0.01em;
+	font-size: 0.8em;
+	font-weight: lighter;
+	opacity: 0.5;
+	margin-bottom: 30px;
+}
+
+/* USER STATUS
+********************************************************/
+.userview {
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 5px;
+	text-align: right;
+	z-index: 1000;
+}
+.userview a { cursor: pointer; }
+#userview-loggedin { display:none; }
+#userview-logindialog {
+	margin-top: 10px;
+	padding: 10px;
+	width: 21em;
+	background-color: rgba(0,0,0,0.3);
+	display:none;
+}
+.userview input {
+	padding: 4px;
+	margin: 5px 0;
+	background: 0;
+	border: 0;
+	border-bottom: 1px solid #fff;
+	color: #fff;
+	outline: none;
+	width: 20em;
+}
+.userview button {
+	margin-top: 10px;
+	width: 20em;
+	color: rgba(0,0,0,0.6);
+	background-color: rgba(255,255,255,0.9);
+	border: 0;
+	outline: none;
+	height: 2.2em;
+	cursor: pointer;
+}
+.userview input::-webkit-input-placeholder {
+	color: #fff;
+	opacity: 0.5;
+}
+.userview #userview-loginstatus {
+	margin: 10px 0 0 0;
+	padding: 8px;
+	display:block;
+	font-weight: bold;
+	color: #a94442;
+	background-color: #f2dede;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display:none;
+}
+
+/* DEBUG
+********************************************************/
+.debug { 
+	display:none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 300px;
+	text-align: left;
+	padding: 5px;
+}
+
+.version {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 300px;
+	text-align: right;
+	padding: 5px;
+    opacity: 0.5;
+    font-size: 0.8em;
+}
+
+.versions {
+    display: none;
+    width: 250px;
+    background-color: #FFF;
+    opacity: 1;
+    color: #000;
+    padding: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+    line-height: 1.4em;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.versions strong { font-weight: bold; }
+.versions em { font-weight: bold;padding-right: 10px; }
+#version-text { cursor: pointer; }
+
+/* TRACKING VIEW
+********************************************************/
+#trackingview-time {
+    background: 0;
+	border: 0;
+    border-bottom: none;
+	color: #fff;
+	outline: none;
+	text-align: center;
+	width: 400px;
+	font-weight: bold;
+	line-height: 1.2em;
+    font-size: 6em;
+	margin-bottom: 8px;
+    padding-bottom: 2px;
+}
+
+#trackingview-time:focus {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 0;
+}
+
+#trackingview-comment {
+    background: 0;
+	border: 0;
+	color: #fff;
+	outline: none;
+	text-align: center;
+	width: 400px;
+	font-weight: bold;
+	line-height: 1.2em;
+    font-size: 2em;
+	margin-bottom: 16px;
+    padding-bottom: 2px;
+}
+
+#trackingview-comment:focus {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 0;
+}
+
+#trackingview-comment::-webkit-input-placeholder {
+	color: #fff;
+	opacity: 0.5;
+}
+
+
+/* TASK VIEW
+********************************************************/
+.taskview {
+	margin: 20px auto;
+	width: 700px;
+	text-align: center;
+}
+#taskview-search {
+	background: 0;
+	border: 0;
+    border-bottom: 3px solid #fff;
+	color: #fff;
+	outline: none;
+	text-align: center;
+	width: 17em;
+	border-bottom-width: 2px;
+	font-weight: bold;
+	font-size: 1.2em;
+	line-height: 1.4em;
+}
+#taskview-search::-webkit-input-placeholder {
+	color: #fff;
+	opacity: 0.5;
+}
+.taskview ul { 
+	margin-top: 20px;
+	padding: 5px 0;
+	background-color: rgba(0,0,0,0.3);
+}
+.taskview li { 
+	padding: 4px 0;
+}
+.taskview .task-active {
+	background-color: rgba(0,0,0,0.5);
+}
+
+#taskview-workunits {
+    text-align: center;
+    width: 500px;
+    margin-left: -250px;
+    left: 50%;
+    position: relative;
+}
+
+/* WORK UNIT VIEW
+********************************************************/
+.workunitview {
+	margin: 20px auto;
+	width: 700px;
+	text-align: center;
+}
+.workunitview > a { 
+	font-size: 2em;
+	cursor: pointer;
+}

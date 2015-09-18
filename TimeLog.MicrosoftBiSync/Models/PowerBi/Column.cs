@@ -6,6 +6,8 @@
         
         Int64,
 
+        Double,
+
         @bool,
 
         @DateTime
