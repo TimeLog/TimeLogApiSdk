@@ -543,6 +543,154 @@
             Is the HttpsContext done via SSL
             </summary>
         </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.ContactAdapter">
+            <summary>
+            The contact adapter.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.IContactAdapter">
+            <summary>
+            The ContactAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.IContactAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Contact,TimeLog.TLP.Common.IViolation@)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.IContact"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.IContactAdapter.CombineEventAndContact(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.IContact})">
+            <summary>
+            The combine event and contact.
+            </summary>
+            <param name="events">
+            The events.
+            </param>
+            <param name="customers">
+            The customers.
+            </param>
+            <returns>
+            The <see cref="!:Dictionary"/>.
+            </returns>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.ContactAdapter._customerHeaderAdapter">
+            <summary>
+            The _customer header adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.ContactAdapter._addressAdapter">
+            <summary>
+            The _address adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.ContactAdapter._employeeAdapter">
+            <summary>
+            The _employee adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.ContactAdapter._stringNotEmpty">
+            <summary>
+            The _string not empty.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.ContactAdapter._validateAndReturnCountry">
+            <summary>
+            The _validate and return country.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.ContactAdapter._validateCustomerGuid">
+            <summary>
+            The _validate customer guid.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.ContactAdapter._customFieldAdapter">
+            <summary>
+            The _custom field adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ContactAdapter.#ctor(TimeLog.TLP.API.CRM.V1_3.ICustomerHeaderAdapter,TimeLog.TLP.API.Common.V1_2.IAddressAdapter,TimeLog.TLP.API.Common.V1_2.IEmployeeHeaderAdapter,TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.ICountry},TimeLog.TLP.Common.IBusinessRule{System.Guid,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.CRM.V1_3.ContactAdapter"/> class.
+            </summary>
+            <param name="customerHeaderAdapter">
+            The customer header adapter.
+            </param>
+            <param name="addressAdapter">
+            The address adapter.
+            </param>
+            <param name="employeeAdapter">
+            The employee adapter.
+            </param>
+            <param name="validateAndReturnCountry">
+            The validate and return country.
+            </param>
+            <param name="validateGUID">
+            The validate guid.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ContactAdapter.DomainToApi(TimeLog.TLP.CRM.IContact)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.Contact"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ContactAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Contact,TimeLog.TLP.Common.IViolation@)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.IContact"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ContactAdapter.CombineEventAndContact(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.IContact})">
+            <summary>
+            The combine event and contact.
+            </summary>
+            <param name="events">
+            The events.
+            </param>
+            <param name="contacts">
+            The contacts.
+            </param>
+            <returns>
+            The <see cref="!:Dictionary"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.ContactHeaderAdapter">
+            <summary>
+            The contact header adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ContactHeaderAdapter.DomainToApi(TimeLog.TLP.CRM.IContact)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.ContactHeader"/>.
+            </returns>
+        </member>
         <member name="T:TimeLog.TLP.API.CRM.V1_3.CRMService">
             <summary>
             Service for handling CRM requests in TimeLog Project (released December 2014)
@@ -730,6 +878,342 @@
             <summary>
             Service for handling CRM requests in TimeLog Project
             </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CRMServiceSecure.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.CRM.V1_3.CRMServiceSecure"/> class from being created.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter">
+            <summary>
+            The customer adapter.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerAdapter">
+            <summary>
+            The CustomerAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Customer,TimeLog.TLP.Common.IViolation@)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomer"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerAdapter.CombineEventAndCustomer(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.ICustomer})">
+            <summary>
+            The combine event and customer.
+            </summary>
+            <param name="events">
+            The events.
+            </param>
+            <param name="customers">
+            The customers.
+            </param>
+            <returns>
+            The <see cref="!:Dictionary"/>.
+            </returns>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._contactHeaderAdapter">
+            <summary>
+            The _contact header adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._addressAdapter">
+            <summary>
+            The _address adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._stringNotEmpty">
+            <summary>
+            The _string not empty.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._employeeAdapter">
+            <summary>
+            The _employee adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._customerStatusAdapter">
+            <summary>
+            The _customer status adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._industryAdapter">
+            <summary>
+            The _industry adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._currencyAdapter">
+            <summary>
+            The _currency adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._validateAndReturnCountry">
+            <summary>
+            The _validate and return country.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._customerStatusExists">
+            <summary>
+            The _customer status exists.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._employeeExists">
+            <summary>
+            The _employee exists.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._industryExists">
+            <summary>
+            The _industry exists.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._currencyIsValid">
+            <summary>
+            The _currency is valid.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._customFieldAdapter">
+            <summary>
+            The _custom field adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.CRM.IContact,TimeLog.TLP.API.Proxy.CRM.V1_3.ContactHeader},TimeLog.TLP.API.Common.V1_2.IAddressAdapter,TimeLog.TLP.API.Common.V1_2.IEmployeeHeaderAdapter,TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter,TimeLog.TLP.API.CRM.V1_3.IIndustryAdapter,TimeLog.TLP.API.Common.V1_2.ICurrencyAdapter,TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.ICountry},TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.CRM.ICustomerStatus},TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.IEmployee},TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.CRM.IIndustry},TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.ICurrency})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter"/> class.
+            </summary>
+            <param name="contactHeaderAdapter">
+            The contact header adapter.
+            </param>
+            <param name="addressAdapter">
+            The address adapter.
+            </param>
+            <param name="employeeAdapter">
+            The employee adapter.
+            </param>
+            <param name="customerStatusAdapter">
+            The customer status adapter.
+            </param>
+            <param name="industryAdapter">
+            The industry adapter.
+            </param>
+            <param name="currencyAdapter">
+            The currency adapter.
+            </param>
+            <param name="validateAndReturnCountry">
+            The validate and return country.
+            </param>
+            <param name="customerStatusExists">
+            The customer status exists.
+            </param>
+            <param name="employeeIdentifierExists">
+            The employee identifier exists.
+            </param>
+            <param name="industryExists">
+            The industry exists.
+            </param>
+            <param name="currencyIsValid">
+            The currency is valid.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter.DomainToApi(TimeLog.TLP.CRM.ICustomer)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.Customer"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Customer,TimeLog.TLP.Common.IViolation@)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomer"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter.CombineEventAndCustomer(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.ICustomer})">
+            <summary>
+            The combine event and customer.
+            </summary>
+            <param name="events">
+            The events.
+            </param>
+            <param name="customers">
+            The customers.
+            </param>
+            <returns>
+            The <see cref="!:Dictionary"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.CustomerHeaderAdapter">
+            <summary>
+            The customer header adapter.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerHeaderAdapter">
+            <summary>
+            The CustomerHeaderAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerHeaderAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerHeader"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerHeaderAdapter.DomainToApi(TimeLog.TLP.CRM.ICustomerHeader)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerHeader"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerHeaderAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerHeader"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.CustomerStatusAdapter">
+            <summary>
+            The customer status adapter.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter">
+            <summary>
+            The CustomerStatusAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="customerStatus">
+            The customer status.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerStatusAdapter.DomainToApi(TimeLog.TLP.CRM.ICustomerStatus)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerStatusAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.IIndustryAdapter">
+            <summary>
+            The IndustryAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.IIndustryAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Industry)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="industry">
+            The industry.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.IIndustry"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.IndustryAdapter">
+            <summary>
+            The industry adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.IndustryAdapter.DomainToApi(TimeLog.TLP.CRM.IIndustry)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.Industry"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.IndustryAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Industry)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.IIndustry"/>.
+            </returns>
         </member>
         <member name="T:TimeLog.TLP.API.CRM.V1_1.CRMService">
             <summary>
@@ -1171,6 +1655,246 @@
             <param name="enumVal">The enum value</param>
             <returns>The attribute of type T that exists on the enum value</returns>
         </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.ContractAdapter">
+            <summary>
+            Contractadapter for API
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.IContractAdapter">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.IContractAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ProjectSubContracts.IProjectSubContract{TimeLog.TLP.ProjectManagement.ContractModels.IContractModel})">
+            <summary>
+            Converts a domain object to an API object
+            </summary>
+            <param name="domain">The domain object</param>
+            <returns>API object</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.PaymentAdapter">
+            <summary>
+            Paymentadapter for API
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.IPaymentAdapter">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.IPaymentAdapter.DomainToApi(TimeLog.TLP.Invoicing.Invoiceable.IInvoiceableInstallment)">
+            <summary>
+            Converts a domain object to an API object
+            </summary>
+            <param name="domain">The domain object</param>
+            <returns>API object</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.FinancialService">
+            <summary>
+            Financial service for pricelists, currencies and services (<strong>released August 2015</strong>) 
+            </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialServiceSecure.svc
+            </remarks>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.Financial.V1_1.FinancialService"/> class.
+            </summary>
+            <param name="isSecure">Select to use SSL or not</param>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.Financial.V1_1.FinancialService"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.GetPriceLists(TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets the price lists available
+            </summary>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>An array of PriceList objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.GetPriceListsByCurrency(System.String,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets price lists based on the currencies they hold
+            </summary>
+            <param name="currencyABB">Currency abbreviation e.g. DKK (string)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>An array of PriceList objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.GetPriceListByDepartment(System.String,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets a price list based on the department number
+            </summary>
+            <param name="departmentNo">Department number</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>An array of PriceList objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.GetPriceListByName(System.String,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets price lists based on the name, commonly only one price list is returned.
+            </summary>
+            <param name="name">Name of the price list (string)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>An array of PriceList objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.GetPriceGroups(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets price groups associated with a price list
+            </summary>
+            <param name="priceListID">Price list identifier (guid)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>An array of PriceGroup objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.GetHourlyRates(TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets a simple list of available hourly rates. NOT IMPLEMENTED.
+            </summary>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A list of strings</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.GetCostPrices(TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets a simple list of available cost prices. NOT IMPLEMENTED.
+            </summary>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A list of strings</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.GetContractList(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets the contracts avaialable on a project
+            </summary>
+            <param name="projectID">Identifier for the project on which contracts are required (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>An array of Contract objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.GetPaymentList(System.Int32,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets the payments on a contract in a period
+            </summary>
+            <param name="contractID">Identifier for the contract on which payments are required (int)</param>
+            <param name="startDate">startDate for the period (DateTime)</param>
+            <param name="endDate">endDate for the period (DateTime)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>An array of Contract objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.UpdatePaymentQuantity(TimeLog.TLP.API.Proxy.Financial.V1_1.Payment,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Saves the changes made to the payment object
+            </summary>
+            <param name="payment">Payment details (Payment)--></param>
+            <param name="source">Interface source number, in most cases use 0 (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns></returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.FinancialServiceSecure">
+            <summary>
+            Financial service for pricelists, currencies and services
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialServiceSecure.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.Financial.V1_1.FinancialServiceSecure"/> class from being created.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.IPriceGroupAdapter">
+            <summary>
+            Adapter interface for translating price groups
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.IPriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.ICurrencyList)">
+            <summary>
+            Converts a domain object to an API object
+            </summary>
+            <param name="domain">
+            The domain object
+            </param>
+            <returns>
+            API object
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.IPriceListAdapter">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.IPriceListAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceList)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceList"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.IServiceAdapter">
+            <summary>
+            The ServiceAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.IServiceAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IService)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_1.Service"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.PriceGroupAdapter">
+            <summary>
+            Price group adapter for API
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.PriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.ICurrencyList)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceGroup"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.PriceListAdapter">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.PriceListAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceList)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceList"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.ServiceAdapter">
+            <summary>
+            The service adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.ServiceAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IService)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_1.Service"/>.
+            </returns>
+        </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_0.PriceGroupAdapter">
             <summary>
             Price group adapter for API
@@ -1195,7 +1919,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_0.FinancialService">
             <summary>
-            Financial service for price lists, currencies and services (beta as of February 2014) 
+            Financial service for price lists, currencies and services (released February 2014) 
             </summary>
             <remarks>
             Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Financial/V1_0/FinancialService.svc
@@ -1265,6 +1989,76 @@
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of strings</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.GetAllAccountingPeriod(TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets all accounting period.
+            </summary>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>
+            A list of accounting periods
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.GetAccountingPeriodByYear(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets the accounting period by year.
+            </summary>
+            <param name="year">The year.</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.GetAccountingPeriodByID(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Gets the accounting period by identifier.
+            </summary>
+            <param name="GUID">The unique identifier.</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.InsertAccountingPeriod(TimeLog.TLP.API.Proxy.Invoicing.V1_0.AccountingPeriod,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Inserts the accounting period.
+            </summary>
+            <param name="accountingPeriod">The accounting period.</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.UpdateAccountingPeriod(TimeLog.TLP.API.Proxy.Invoicing.V1_0.AccountingPeriod,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Updates the accounting period.
+            </summary>
+            <param name="accountingPeriod">The accounting period.</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.DeleteAccountingPeriod(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Deletes the accounting period.
+            </summary>
+            <param name="GUID">The unique identifier.</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.ChangeStatusAccountingPeriod(TimeLog.TLP.API.Proxy.Invoicing.V1_0.AccountingPeriod,TimeLog.TLP.Invoicing.AccountingPeriodStatus,TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken)">
+            <summary>
+            Changes the status accounting period.
+            </summary>
+            <param name="accountingPeriod">The accounting period.</param>
+            <param name="status">The status.</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.ExecuteMethodApi``2(TimeLog.TLP.API.Proxy.Security.V1_2.SecurityToken,System.Func{System.Collections.Generic.IEnumerable{``1}},System.Func{``1,``0},System.String)">
+            <summary>
+            Executes the method API.
+            </summary>
+            <typeparam name="TReturnType">The type of the return type.</typeparam>
+            <typeparam name="TMethodReturnType">The type of the method return type.</typeparam>
+            <param name="token">The token.</param>
+            <param name="apiMethodFunc">The API method function.</param>
+            <param name="mappingFunc">The mapping function.</param>
+            <param name="methodName">Name of the method.</param>
+            <returns></returns>
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_0.FinancialServiceSecure">
             <summary>
@@ -2769,6 +3563,297 @@
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "M:TimeLog.TLP.API.ProjectManagement.V1_5.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)" -->
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter">
+            <summary>
+            The allocation adapter.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.IAllocationAdapter">
+            <summary>
+            The AllocationAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.IAllocationAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.ProjectManagement.IAllocation"/>.
+            </returns>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter._AllocationManager">
+            <summary>
+            The _ allocation manager.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter._ValidateInitials">
+            <summary>
+            The _ validate initials.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter"/> class.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter.#ctor(TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.IEmployee})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter"/> class.
+            </summary>
+            <param name="validateEmployeeInitials">
+            The validate employee initials.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#ProjectManagement#IAllocation@TimeLog#TLP#API#Proxy#ProjectManagement#V1_6#Allocation}#DomainToApi(TimeLog.TLP.ProjectManagement.IAllocation)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Allocation"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter.TimeLog#TLP#API#ProjectManagement#V1_6#IAllocationAdapter#ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.ProjectManagement.IAllocation"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.IProjectAdapter">
+            <summary>
+            The ProjectAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.IProjectAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Project,TimeLog.TLP.ProjectManagement.IProject)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="existingProject">
+            The existing project.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.IProjectAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProject)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Project"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ITaskAdapter">
+            <summary>
+            The TaskAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ITaskAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Task,TimeLog.TLP.ProjectManagement.ITask)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="existingTask">
+            The existing task.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.ProjectManagement.ITask"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ITaskAdapter.DataRowToApi(System.Data.DataRow)">
+            <summary>
+            The data row to api.
+            </summary>
+            <param name="row">
+            The row.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.ProjectTaskFlat"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.IWorkUnitAdapter">
+            <summary>
+            The WorkUnitAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.IWorkUnitAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnit,TimeLog.TLP.Common.IViolation@)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.ProjectManagement.IWorkUnit"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.IWorkUnitAdapter.ApiToDomain(System.Guid)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.ProjectManagement.IWorkUnit"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.IWorkUnitAdapter.DataRowToApi(System.Data.DataRow)">
+            <summary>
+            The data row to api.
+            </summary>
+            <param name="row">
+            The row.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnitFlat"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.IWorkUnitAdapter.DataRowExternalToApi(System.Data.DataRow)">
+            <summary>
+            The data row external to api.
+            </summary>
+            <param name="row">
+            The row.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnitFlatExternal"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter">
+            <summary>
+            The project adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter._taskAdapter">
+            <summary>
+            The _task adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter._customerAdapter">
+            <summary>
+            The _customer adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.ProjectManagement.ITaskHeader,TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.TaskHeader},TimeLog.TLP.API.CRM.V1_2.ICustomerHeaderAdapter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter"/> class.
+            </summary>
+            <param name="taskAdapter">
+            The task adapter.
+            </param>
+            <param name="customerAdapter">
+            The customer adapter.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProject)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Project"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Project,TimeLog.TLP.ProjectManagement.IProject)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="existingProject">
+            The existing project.
+            </param>
+            <exception cref="T:System.NullReferenceException">
+            </exception>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter.AddTypeNameToApi(TimeLog.TLP.ProjectManagement.IProject,TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Project)">
+            <summary>
+            The add type name to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <param name="project">
+            The project.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter.AddCategoryNameToApi(TimeLog.TLP.ProjectManagement.IProject,TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Project)">
+            <summary>
+            The add category name to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <param name="project">
+            The project.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter.GetProjectStageByIDFromName(System.String)">
+            <summary>
+            The get project stage by id from name.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter.EscapeLikeValue(System.String)">
+            <summary>
+            The escape like value.
+            </summary>
+            <param name="value">
+            The value.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectHeaderAdapter">
+            <summary>
+            The project header adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectHeaderAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProjectHeader)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.ProjectHeader"/>.
+            </returns>
+        </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService">
             <summary>
             Service for handling projects and time registrations in TimeLog Project (released May 2014)
@@ -2813,10 +3898,20 @@
             <summary>
             Returns a list of project headers.
             </summary>
-            <param name="CustomerID">Limits projects to customers with the specified ID. Parse 0 to get all projects (int)</param>
-            <param name="ProjectManagerID">Limits the result to projects where the Project manager has the parsed ID. The value must be a valid employeeID. Parse 0 to get all projects (int)</param>
-            <param name="IncludeInactiveProjects">If false only aktiv projects is returned. If true also inactive projects is included in the result (bool)</param>
-            <param name="StatusID">Limits the result to projects with the specific Status. Values: {-1 = all, 0 = Quote, 1 = Approved, 2 = In Progress, 3 = On Hold, 4 = Completed, 5 = Archieved, 6 = Cancelled} (int)</param>
+            <param name="customerID">Limits projects to customers with the specified ID. Parse 0 to get all projects (int)</param>
+            <param name="projectManagerID">Limits the result to projects where the Project manager has the parsed ID. The value must be a valid employeeID. Parse 0 to get all projects (int)</param>
+            <param name="includeInactiveProjects">If false only aktiv projects is returned. If true also inactive projects is included in the result (bool)</param>
+            <param name="statusID">Limits the result to projects with the specific Status. Values: {-1 = all, 0 = Quote, 1 = Approved, 2 = In Progress, 3 = On Hold, 4 = Completed, 5 = Archieved, 6 = Cancelled} (int)</param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.GetProjectsByCustomer(System.Guid,System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Returns a list of project headers.
+            </summary>
+            <param name="customerGuid">Limits projects to customers with the specified Guid. (Guid)</param>
+            <param name="projectStatusID">Limits the result to projects with the specific Status. Values: {-1 = all, 0 = Quote, 1 = Approved, 2 = In Progress, 3 = On Hold, 4 = Completed, 5 = Archieved, 6 = Cancelled} (int)</param>
+            <param name="includeInactiveProjects">If false only aktiv projects is returned. If true also inactive projects is included in the result (bool)</param>
             <param name="token"></param>
             <returns></returns>
         </member>
@@ -2824,7 +3919,7 @@
             <summary>
             Deletes the specified Project
             </summary>
-            <param name="projectGUID">The ID of the Project to be deleted</param>
+            <param name="projectGuid">The ID of the Project to be deleted</param>
             <param name="token"></param>
             <returns>The specified Project in the state before it is deleted</returns>
         </member>
@@ -2832,7 +3927,7 @@
             <summary>
             Changes the Status of the specified Project
             </summary>
-            <param name="projectGUID">The ID of the Project to change Status on</param>
+            <param name="projectGuid">The ID of the Project to change Status on</param>
             <param name="targetStatus">The interger value of the Status the specified Project should be changed to</param>
             <param name="token"></param>
             <returns>The specified Project in the state after the Status is changed</returns>
@@ -2861,6 +3956,7 @@
             Updates the data properties of the specified Task. 
             </summary>
             <param name="task">The task to update</param>
+            <param name="projectID"></param>
             <param name="token"></param>
             <returns>The task in the state after update</returns>
         </member>
@@ -2868,7 +3964,7 @@
             <summary>
             Deletes the specified Task
             </summary>
-            <param name="TaskGUID">The ID of the Task to be deleted</param>
+            <param name="taskGuid">The ID of the Task to be deleted</param>
             <param name="token"></param>
             <returns>The specified Task in the state before it is deleted</returns>
         </member>
@@ -2885,7 +3981,7 @@
             <summary>
             Changes the Status of the specified Task
             </summary>
-            <param name="taskGUID">The ID of the Task to change Status on</param>
+            <param name="taskGuid">The ID of the Task to change Status on</param>
             <param name="targetStatus">The interger value of the Status the specified Task should be changed to</param>
             <param name="token"></param>
             <returns>The specified Task in the state after the Status is changed</returns>
@@ -2999,7 +4095,7 @@
             <summary>
             Deletes an allocation
             </summary>
-            <param name="allocationGUID">The ID of the allocation to be deleted</param>
+            <param name="allocationGuid">The ID of the allocation to be deleted</param>
             <param name="token"></param>
             <returns>The deleted allocation in it's state before deletion</returns>
         </member>
@@ -3007,8 +4103,8 @@
             <summary>
             Sets an allocation to completed or not completed
             </summary>
-            <param name="IsComplete">Set IsComplete to true to mark the allocations as completed or false to mark the allocation to not completed</param>
-            <param name="AllocationGUID">The ID of the allocation to set the status of</param>
+            <param name="isComplete">Set IsComplete to true to mark the allocations as completed or false to mark the allocation to not completed</param>
+            <param name="allocationGuid">The ID of the allocation to set the status of</param>
             <param name="token"></param>
             <returns>The allocation changed in the current state after update</returns>
         </member>
@@ -3146,7 +4242,245 @@
             Service for handling projects and time registrations in TimeLog Project (released January 2014)
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)" -->
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementServiceSecure.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementServiceSecure"/> class from being created.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter">
+            <summary>
+            The task adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter._projectAdapter">
+            <summary>
+            The _project adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter._customerAdapter">
+            <summary>
+            The _customer adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.ProjectManagement.IProjectHeader,TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.ProjectHeader},TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.CRM.ICustomerHeader,TimeLog.TLP.API.Proxy.CRM.V1_2.CustomerHeader})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter"/> class.
+            </summary>
+            <param name="projectAdapter">
+            The project adapter.
+            </param>
+            <param name="customerAdapter">
+            The customer adapter.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ITask)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Task"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Task,TimeLog.TLP.ProjectManagement.ITask)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="existingTask">
+            The existing task.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.ProjectManagement.ITask"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter.DataRowToApi(System.Data.DataRow)">
+            <summary>
+            The data row to api.
+            </summary>
+            <param name="row">
+            The row.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.ProjectTaskFlat"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)">
+            <summary>
+            The get custom field xml.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:System.Xml.XmlElement"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter.AddElement(System.String,System.String,System.Xml.XmlNode)">
+            <summary>
+            The add element.
+            </summary>
+            <param name="tagName">
+            The tag name.
+            </param>
+            <param name="textContent">
+            The text content.
+            </param>
+            <param name="parent">
+            The parent.
+            </param>
+            <returns>
+            The <see cref="T:System.Xml.XmlNode"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.TaskHeaderAdapter">
+            <summary>
+            The task header adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskHeaderAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ITaskHeader)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.TaskHeader"/>.
+            </returns>
+            <exception cref="T:System.Exception">
+            </exception>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter">
+            <summary>
+            The work unit adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter._taskManager">
+            <summary>
+            The _task manager.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter._employeeManager">
+            <summary>
+            The _employee manager.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter._workUnitManager">
+            <summary>
+            The _work unit manager.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter._validateInitials">
+            <summary>
+            The _validate initials.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter._taskHeaderAdapter">
+            <summary>
+            The _task header adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter._projectHeaderAdapter">
+            <summary>
+            The _project header adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter._customerHeaderAdapter">
+            <summary>
+            The _customer header adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter"/> class.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.#ctor(TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.IEmployee})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter"/> class.
+            </summary>
+            <param name="validationInitials">
+            The validation initials.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#ProjectManagement#IWorkUnit@TimeLog#TLP#API#Proxy#ProjectManagement#V1_6#WorkUnit}#DomainToApi(TimeLog.TLP.ProjectManagement.IWorkUnit)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnit"/>.
+            </returns>
+            <exception cref="T:System.Exception">
+            </exception>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.ApiToDomain(System.Guid)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="guid">
+            The guid.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.ProjectManagement.IWorkUnit"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnit,TimeLog.TLP.Common.IViolation@)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.ProjectManagement.IWorkUnit"/>.
+            </returns>
+            <exception cref="T:System.Exception">
+            </exception>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.GetInitials(System.Int32)">
+            <summary>
+            The get initials.
+            </summary>
+            <param name="employeeID">
+            The employee id.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.DataRowToApi(System.Data.DataRow)">
+            <summary>
+            The data row to api.
+            </summary>
+            <param name="row">
+            The row.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnitFlat"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.DataRowExternalToApi(System.Data.DataRow)">
+            <summary>
+            The data row external to api.
+            </summary>
+            <param name="row">
+            The row.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnitFlatExternal"/>.
+            </returns>
+        </member>
         <member name="T:TimeLog.TLP.API.Salary.V1_0.ISalaryAdapter">
             <summary>
             Maps between TLP salary management domain objects and the API equivalent

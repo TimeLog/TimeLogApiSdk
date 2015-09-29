@@ -11,12 +11,12 @@
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.Contact.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact" /> class.
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact"/> class.
             </summary>
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.Contact.#ctor(System.Xml.XmlNode,System.Xml.XmlNamespaceManager)">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact" /> class.
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact"/> class.
             </summary>
             <param name="node">The XML node to initialize from</param>
             <param name="namespaceManager">The namespace manager</param>
@@ -151,11 +151,6 @@
                 Placeholder for customer related constants
             </summary>
         </member>
-        <member name="P:TimeLog.ReportingApi.SDK.Customer.All">
-            <summary>
-            Gets the default parameter value for filtering for all customers
-            </summary>
-        </member>
         <member name="M:TimeLog.ReportingApi.SDK.Customer.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Customer"/> class.
@@ -167,6 +162,11 @@
             </summary>
             <param name="node">The XML node to initialize from</param>
             <param name="namespaceManager">The namespace manager</param>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.All">
+            <summary>
+            Gets the default parameter value for filtering for all customers
+            </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Customer.Id">
             <summary>
@@ -455,36 +455,6 @@
             Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/> class from being created.
             </summary>
         </member>
-        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Instance">
-            <summary>
-            Gets the singleton instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/>.
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ServiceUrl">
-            <summary>
-            Gets the uri associated with the reporting service.
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.SiteCode">
-            <summary>
-            Gets the site code associated with the reporting service
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ApiId">
-            <summary>
-            Gets the user associated with the reporting service
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ApiPassword">
-            <summary>
-            Gets the password associated with the reporting service
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Client">
-            <summary>
-            Gets the client associated with the reporting service
-            </summary>
-        </member>
         <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.OverwriteServiceUrl(System.String)">
             <summary>
             Overwrites the service URL from the app.config
@@ -513,6 +483,36 @@
         <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.Dispose">
             <summary>
             Disposes the handler.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ServiceUrl">
+            <summary>
+            Gets the uri associated with the reporting service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.SiteCode">
+            <summary>
+            Gets the site code associated with the reporting service
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ApiId">
+            <summary>
+            Gets the user associated with the reporting service
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ApiPassword">
+            <summary>
+            Gets the password associated with the reporting service
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Client">
+            <summary>
+            Gets the client associated with the reporting service
             </summary>
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.SettingsHandler.#ctor">

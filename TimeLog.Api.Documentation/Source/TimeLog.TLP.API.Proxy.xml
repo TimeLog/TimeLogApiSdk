@@ -165,6 +165,93 @@
             Gets or sets key account manager initials, full Employeeheader is located in Details
             </summary>
         </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Contract.ContractID">
+            <summary>
+            Gets or sets the identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Contract.Name">
+            <summary>
+            Gets or sets the name
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Contract.ContractType">
+            <summary>
+            Gets or sets the contracttype
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Payment.PaymentID">
+            <summary>
+            Get or sets the identifier for the payment
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Payment.ProjectID">
+            <summary>
+            Gets or sets the identifier for the project
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Payment.Name">
+            <summary>
+            Gets or sets the name of the payment 
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Payment.InvoiceDate">
+            <summary>
+            Gets or sets the invoicedate of the payment
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Payment.Quantity">
+            <summary>
+            Gets or sets the quantity
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Payment.Amount">
+            <summary>
+            Gets or sets the amount 
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.Payment.ProjectSubContractID">
+            <summary>
+            Gets or sets the identifier for the project subcontract
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceGroup.ID">
+            <summary>
+            Gets or sets the identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceGroup.ISO">
+            <summary>
+            Gets or sets the ISO name of the currency associated with this price group
+            </summary>
+            <remarks>This is alias of <see cref="P:TimeLog.TLP.Common.ICurrency.ABB"/></remarks>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceGroup.CurrencyName">
+            <summary>
+            Gets or sets the name of the currency associated with this price group
+            </summary>
+            <remarks>This is alias of <see cref="P:TimeLog.TLP.Common.ICurrency.DescriptiveName"/></remarks>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceGroup.Name">
+            <summary>
+            Gets or sets the price group name
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceGroup.PriceListID">
+            <summary>
+            Gets or sets the id of price list of which this group belong to
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceGroup.IsActive">
+            <summary>
+            Gets or sets a value indicating whether the group is active
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_1.PriceGroup.IsDefault">
+            <summary>
+            Gets or sets a value indicating whether this price group is default in the price list
+            </summary>
+        </member>
         <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_0.PriceGroup.ID">
             <summary>
             Gets or sets the identifier

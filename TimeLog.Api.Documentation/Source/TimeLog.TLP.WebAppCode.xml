@@ -74,6 +74,19 @@ TimeLog.TLP.WebAppCode
 	<value></value>
 	<returns></returns>
 	<remarks></remarks>
+</member><member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:TimeLog.TLP.WebAppCode.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
 </member><member name="M:TimeLog.TLP.WebAppCode.Service.GetWorkUnitsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
 	<summary>
  Gets a list of work units.
@@ -394,19 +407,6 @@ TimeLog.TLP.WebAppCode
  Reporting API Service class
  </summary>
 	<remarks></remarks>
-</member><member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:TimeLog.TLP.WebAppCode.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
 </member><member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.pageTable">
 	<summary>
  Returns a TimeLog Project Result Table
