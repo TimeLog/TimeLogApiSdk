@@ -82,6 +82,11 @@
             if (hasHeaders)
             {
                 this.Columns = this.Split(this.Lines[0]);
+                this.ColumnsLength = this.Columns.Length;
+            }
+            else
+            {
+                this.ColumnsLength = this.Lines[0].Length;
             }
         }
 
@@ -125,6 +130,10 @@
         /// </summary>
         public string[] Columns { get; private set; }
 
+        /// <summary>
+        /// Gets the number of columns (whether the file has header or not
+        /// </summary>
+        public int ColumnsLength { get; private set; }
         /// <summary>
         /// Gets or sets the splitter character, default is comma (',')
         /// </summary>
@@ -174,7 +183,7 @@
 
             if (!string.IsNullOrEmpty(currentCell))
             {
-                cells.Add(currentCell);                
+                cells.Add(currentCell);
             }
 
             return cells.ToArray();
@@ -203,9 +212,9 @@
         /// <returns>An string object</returns>
         public string GetString(int columnIndex)
         {
-            if (columnIndex > this.Columns.Length)
+            if (columnIndex > ColumnsLength)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
             return this.CurrentLine[columnIndex] ?? string.Empty;
@@ -228,12 +237,33 @@
         /// <returns>An integer object</returns>
         public int GetInteger(int columnIndex)
         {
-            if (columnIndex > this.Columns.Length)
+            if (columnIndex > ColumnsLength)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
             return int.Parse(this.CurrentLine[columnIndex], this.Culture);
+        }
+
+        /// <summary>
+        /// Returns a TimeSpan object from the value of a given column index
+        /// </summary>
+        /// <param name="columnIndex">Index of the column to get data from</param>
+        /// <returns>A TimeSpan object</returns>
+        public TimeSpan GetTimeSpan(int columnIndex)
+        {
+            if (columnIndex > ColumnsLength)
+            {
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
+            }
+
+            TimeSpan _span;
+            if (TimeSpan.TryParse(this.CurrentLine[columnIndex], out _span))
+            {
+                return _span;
+            }
+
+            return new TimeSpan();
         }
 
         /// <summary>
@@ -253,9 +283,9 @@
         /// <returns>An double object</returns>
         public double GetDouble(int columnIndex)
         {
-            if (columnIndex > this.Columns.Length)
+            if (columnIndex > ColumnsLength)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
             return double.Parse(this.CurrentLine[columnIndex], this.Culture);
@@ -278,9 +308,9 @@
         /// <returns>A boolean object</returns>
         public bool GetBoolean(int columnIndex)
         {
-            if (columnIndex > this.Columns.Length)
+            if (columnIndex > ColumnsLength)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
             bool result;
@@ -293,7 +323,7 @@
             {
                 return true;
             }
-            
+
             if (this.CurrentLine[columnIndex] == "0")
             {
                 return false;
@@ -319,9 +349,9 @@
         /// <returns>A guid object</returns>
         public Guid GetGuid(int columnIndex)
         {
-            if (columnIndex > this.Columns.Length)
+            if (columnIndex > ColumnsLength)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
             return Guid.Parse(this.CurrentLine[columnIndex]);
@@ -344,9 +374,9 @@
         /// <returns>A DateTime object</returns>
         public DateTime GetDateTime(int columnIndex)
         {
-            if (columnIndex > this.Columns.Length)
+            if (columnIndex > ColumnsLength)
             {
-                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + this.Columns.Length);
+                throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
             return DateTime.Parse(this.CurrentLine[columnIndex], this.Culture);
