@@ -162,6 +162,7 @@
     <Content Include="Source\Reporting\GetCustomersShortList.xml" />
     <Content Include="Source\Reporting\GetCustomerStatusesShortList.xml" />
     <Content Include="Source\Reporting\GetDepartmentsShortlist.xml" />
+    <Content Include="Source\Reporting\GetMileageRaw.xml" />
     <Content Include="Source\Reporting\GetEmployeesRaw.xml" />
     <Content Include="Source\Reporting\GetEmployeesShortList.xml" />
     <Content Include="Source\Reporting\GetIndustriesShortList.xml" />
@@ -297,6 +298,9 @@
     <Content Include="Views\Transactional\ExternalSystems.cshtml" />
     <Content Include="Views\Home\DataModel.cshtml" />
     <Content Include="Views\FileServices\InvoiceLineExport.cshtml" />
+    <None Include="Source\Reporting\GetMileageRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
