@@ -3,66 +3,48 @@
   xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/TasksRaw.xsd">
-  <tlp:Task ID="3983">
-    <tlp:Name>Analyse</tlp:Name>
-    <tlp:ProjectID>754</tlp:ProjectID>
-    <tlp:Status>0</tlp:Status>
-    <tlp:StatusDetailed>1</tlp:StatusDetailed>
-    <tlp:ParentID>3984</tlp:ParentID>
-    <tlp:IsParent>0</tlp:IsParent>
-    <tlp:BudgetHours>10.0000</tlp:BudgetHours>
-    <tlp:BudgetAmount>8000.0000</tlp:BudgetAmount>
-    <tlp:IsFixedPrice>0</tlp:IsFixedPrice>
-    <tlp:StartDate>2007-05-07T00:00:00</tlp:StartDate>
-    <tlp:EndDate>2007-05-14T00:00:00</tlp:EndDate>
-    <tlp:InvoicingType>TimeAndMaterial</tlp:InvoicingType>
-    <tlp:CreatedAt>2015-03-18T14:22:40.103</tlp:CreatedAt>
-    <tlp:CreatedByEmployeeId>1</tlp:CreatedByEmployeeId>
-    <tlp:CreatedBy>AL</tlp:CreatedBy>
-    <tlp:LastModifiedAt>2015-03-26T10:35:59.647</tlp:LastModifiedAt>
-    <tlp:LastModifiedByEmployeeId>1</tlp:LastModifiedByEmployeeId>
-    <tlp:LastModifiedBy>AL</tlp:LastModifiedBy>
-  </tlp:Task>
-  <tlp:Task ID="3984">
-    <tlp:Name>Implementering</tlp:Name>
-    <tlp:ProjectID>754</tlp:ProjectID>
-    <tlp:Status>0</tlp:Status>
-    <tlp:StatusDetailed>3</tlp:StatusDetailed>
-    <tlp:ParentID>0</tlp:ParentID>
-    <tlp:IsParent>1</tlp:IsParent>
-    <tlp:BudgetHours>0.0000</tlp:BudgetHours>
-    <tlp:BudgetAmount>0.0000</tlp:BudgetAmount>
-    <tlp:IsFixedPrice>0</tlp:IsFixedPrice>
-    <tlp:StartDate>2007-05-21T00:00:00</tlp:StartDate>
-    <tlp:EndDate>2007-05-28T00:00:00</tlp:EndDate>
-    <tlp:InvoicingType>FixedPriceTask</tlp:InvoicingType>
-    <tlp:CreatedAt>2015-03-18T14:22:40.103</tlp:CreatedAt>
-    <tlp:CreatedByEmployeeId>1</tlp:CreatedByEmployeeId>
-    <tlp:CreatedBy>AL</tlp:CreatedBy>
-    <tlp:LastModifiedAt>2015-03-26T10:35:59.647</tlp:LastModifiedAt>
-    <tlp:LastModifiedByEmployeeId>1</tlp:LastModifiedByEmployeeId>
-    <tlp:LastModifiedBy>AL</tlp:LastModifiedBy>
-  </tlp:Task>
-  <tlp:Task ID="3990">
-    <tlp:Name>Analyse</tlp:Name>
-    <tlp:ProjectID>757</tlp:ProjectID>
+  <tlp:Task ID="9">
+    <tlp:Name>Stabilisering/Fejlretning</tlp:Name>
+    <tlp:ProjectID>1</tlp:ProjectID>
     <tlp:Status>1</tlp:Status>
     <tlp:StatusDetailed>1</tlp:StatusDetailed>
     <tlp:ParentID>0</tlp:ParentID>
-    <tlp:IsParent>1</tlp:IsParent>
-    <tlp:TaskTypeID>9</tlp:TaskTypeID>
-    <tlp:TaskType>Bugfixing</tlp:TaskType>
+    <tlp:IsParent>0</tlp:IsParent>
+    <tlp:TaskTypeID>328</tlp:TaskTypeID>
+    <tlp:TaskType>500. Test</tlp:TaskType>
     <tlp:BudgetHours>0.0000</tlp:BudgetHours>
     <tlp:BudgetAmount>0.0000</tlp:BudgetAmount>
-    <tlp:IsFixedPrice>1</tlp:IsFixedPrice>
-    <tlp:StartDate>2007-05-15T00:00:00</tlp:StartDate>
-    <tlp:EndDate>2007-05-22T00:00:00</tlp:EndDate>
+    <tlp:IsFixedPrice>0</tlp:IsFixedPrice>
+    <tlp:StartDate>2015-05-29T00:00:00</tlp:StartDate>
+    <tlp:EndDate>2015-06-08T00:00:00</tlp:EndDate>
     <tlp:InvoicingType>TimeAndMaterial</tlp:InvoicingType>
-    <tlp:CreatedAt>2015-03-18T14:22:40.103</tlp:CreatedAt>
-    <tlp:CreatedByEmployeeId>1</tlp:CreatedByEmployeeId>
-    <tlp:CreatedBy>AL</tlp:CreatedBy>
-    <tlp:LastModifiedAt>2015-03-26T10:35:59.647</tlp:LastModifiedAt>
-    <tlp:LastModifiedByEmployeeId>1</tlp:LastModifiedByEmployeeId>
-    <tlp:LastModifiedBy>AL</tlp:LastModifiedBy>
+    <tlp:CreatedAt>2015-06-03T13:52:25.940</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>24</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>MH</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2015-06-03T13:52:25.940</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>24</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>MH</tlp:LastModifiedBy>
+  </tlp:Task>
+  <tlp:Task ID="4">
+    <tlp:Name>Drift &amp; Support</tlp:Name>
+    <tlp:ProjectID>1</tlp:ProjectID>
+    <tlp:Status>1</tlp:Status>
+    <tlp:StatusDetailed>1</tlp:StatusDetailed>
+    <tlp:ParentID>0</tlp:ParentID>
+    <tlp:IsParent>0</tlp:IsParent>
+    <tlp:TaskTypeID>352</tlp:TaskTypeID>
+    <tlp:TaskType>999. Operations &amp; Support</tlp:TaskType>
+    <tlp:BudgetHours>0.0000</tlp:BudgetHours>
+    <tlp:BudgetAmount>0.0000</tlp:BudgetAmount>
+    <tlp:IsFixedPrice>0</tlp:IsFixedPrice>
+    <tlp:StartDate>2015-03-06T00:00:00</tlp:StartDate>
+    <tlp:EndDate>2015-06-08T00:00:00</tlp:EndDate>
+    <tlp:InvoicingType>TimeAndMaterial</tlp:InvoicingType>
+    <tlp:CreatedAt>2015-06-03T13:52:25.940</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>24</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>MH</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2015-06-03T13:52:25.940</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>24</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>MH</tlp:LastModifiedBy>
   </tlp:Task>
 </tlp:Tasks>

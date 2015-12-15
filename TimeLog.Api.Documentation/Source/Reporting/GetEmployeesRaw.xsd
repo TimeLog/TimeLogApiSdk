@@ -32,8 +32,11 @@
 			<xsd:element name="ZipCode" type="xsd:string" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="City" type="xsd:string" minOccurs="0" maxOccurs="1" />
 			<xsd:element name="Status" type="xsd:unsignedByte"/>
-			<xsd:element name="DepartmentNameID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
-			<xsd:element name="DepartmentName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="HiredDate" type="xsd:dateTime" />
+      <xsd:element name="TerminatedDate" type="xsd:dateTime" />
+      <xsd:element name="DepartmentNameID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="DepartmentName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="WorkWeek" type="xsd:string" minOccurs="0" maxOccurs="1" />
 		</xsd:sequence>
 		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
 	</xsd:complexType>

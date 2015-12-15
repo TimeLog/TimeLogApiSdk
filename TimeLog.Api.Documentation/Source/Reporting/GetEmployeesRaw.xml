@@ -15,8 +15,11 @@
     <tlp:Address>New street 110</tlp:Address>
     <tlp:ZipCode>99 999</tlp:ZipCode>
     <tlp:City>Malmö</tlp:City>
-		<tlp:Status>1</tlp:Status>
+    <tlp:Status>1</tlp:Status>
+    <tlp:HiredDate>2011-01-18T00:00:00.000</tlp:HiredDate>
+    <tlp:TerminatedDate>2015-03-18T00:00:00.000</tlp:TerminatedDate>
 		<tlp:DepartmentNameID>25</tlp:DepartmentNameID>
 		<tlp:DepartmentName>Research and Development</tlp:DepartmentName>
+		<tlp:WorkWeek>Full time - 37 hours</tlp:WorkWeek>
 	</tlp:Employee>
 </tlp:Employees>
