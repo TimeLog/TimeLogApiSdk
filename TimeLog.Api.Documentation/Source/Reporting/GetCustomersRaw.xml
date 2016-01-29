@@ -4,10 +4,13 @@
                xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/CustomersRaw.xsd">
   <tlp:Customer ID="1933">
     <tlp:Name>Microsoft</tlp:Name>
+    <tlp:NickName>Microsoft</tlp:NickName>
     <tlp:No>05.1309</tlp:No>
     <tlp:CustomerStatusID>12</tlp:CustomerStatusID>
     <tlp:CustomerStatus>New lead</tlp:CustomerStatus>
     <tlp:Address1>One Microsoft Way</tlp:Address1>
+    <tlp:Address2></tlp:Address2>
+    <tlp:Address3></tlp:Address3>
     <tlp:ZipCode>WA 98052-6399</tlp:ZipCode>
     <tlp:City>Redmond</tlp:City>
     <tlp:State>Washington</tlp:State>
@@ -15,6 +18,7 @@
     <tlp:Country>USA</tlp:Country>
     <tlp:Phone>+1 999 9999 9999</tlp:Phone>
     <tlp:Fax>+1 999 9999 9999</tlp:Fax>
+    <tlp:Email>info@microsoft.com</tlp:Email>
     <tlp:WebPage>www.microsoft.com</tlp:WebPage>
     <tlp:VATNo>812780570</tlp:VATNo>
     <tlp:Comment>Contacts need data</tlp:Comment>

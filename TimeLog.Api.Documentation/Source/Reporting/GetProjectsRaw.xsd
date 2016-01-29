@@ -36,15 +36,16 @@
       <xsd:element name="ProjectTypeName" type="xsd:string" />
       <xsd:element name="ProjectCategoryID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ProjectCategoryName" type="xsd:string" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="BudgetAmountFixedPriceTasks" type="xsd:decimal" />
-      <xsd:element name="BudgetAmountFixedPriceProject" type="xsd:decimal" />
-      <xsd:element name="BudgetAmountFixedPriceTasks" type="xsd:decimal" />
-      <xsd:element name="BudgetAmountTimeAndMaterial" type="xsd:decimal" />
+      <xsd:element name="BudgetAmountFixedPriceTasks" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetAmountFixedPriceProject" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetAmountTimeAndMaterial" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
       <xsd:element name="BudgetAmountExpenses" type="xsd:decimal" />
       <xsd:element name="BudgetAmountTravel" type="xsd:decimal" />
-      <xsd:element name="BudgetHoursFixedPriceTasks" type="xsd:decimal" />
-      <xsd:element name="BudgetHoursFixedPriceProject" type="xsd:decimal" />
-      <xsd:element name="BudgetHoursTimeAndMaterial" type="xsd:decimal" />
+      <xsd:element name="BudgetHoursFixedPriceTasks" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetHoursFixedPriceProject" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetHoursTimeAndMaterial" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetAmount" type="xsd:decimal" />
+      <xsd:element name="BudgetHours" type="xsd:decimal" />
       <xsd:element name="CreatedAt" type="xsd:dateTime" />
       <xsd:element name="CreatedByEmployeeId" type="xsd:positiveInteger" />
       <xsd:element name="CreatedBy" type="xsd:string" />

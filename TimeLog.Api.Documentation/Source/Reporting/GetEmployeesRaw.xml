@@ -20,6 +20,8 @@
     <tlp:TerminatedDate>2015-03-18T00:00:00.000</tlp:TerminatedDate>
 		<tlp:DepartmentNameID>25</tlp:DepartmentNameID>
 		<tlp:DepartmentName>Research and Development</tlp:DepartmentName>
-		<tlp:WorkWeek>Full time - 37 hours</tlp:WorkWeek>
+    <tlp:WorkWeek>Full time - 37 hours</tlp:WorkWeek>
+    <tlp:EmployeeTypeId>2</tlp:EmployeeTypeId>
+    <tlp:EmployeeTypeName>Consultant</tlp:EmployeeTypeName>
 	</tlp:Employee>
 </tlp:Employees>
