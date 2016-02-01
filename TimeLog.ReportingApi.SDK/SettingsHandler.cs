@@ -2,6 +2,7 @@
 {
     using System;
     using System.Configuration;
+    using System.Globalization;
 
     public class SettingsHandler : IDisposable
     {
@@ -69,6 +70,17 @@
                 }
 
                 return 4096000;
+            }
+        }
+
+        /// <summary>
+        /// Gets the correct culture for converting data from the reporting API
+        /// </summary>
+        public CultureInfo DataCulture
+        {
+            get
+            {
+                return new CultureInfo("en-US");
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿namespace TimeLog.ReportingApi.SDK
 {
     using System;
+    using System.Globalization;
     using System.Xml;
 
     /// <summary>
@@ -56,14 +57,20 @@
         /// <param name="node">The XML node</param>
         /// <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
         /// <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+        /// <param name="culture">Optional culture for conversion</param>
         /// <returns>An double value (0 if parsing fails)</returns>
-        public static double GetDoubleSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager)
+        public static double GetDoubleSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager, CultureInfo culture = null)
         {
             var element = node.SelectSingleNode(xpath, namespaceManager);
             if (element != null)
             {
+                if (culture == null)
+                {
+                    culture = SettingsHandler.Instance.DataCulture;
+                }
+
                 double result;
-                if (double.TryParse(element.InnerText, out result))
+                if (double.TryParse(element.InnerText, NumberStyles.Any, culture, out result))
                 {
                     return result;
                 }

@@ -11,12 +11,12 @@
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.Contact.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact" /> class.
             </summary>
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.Contact.#ctor(System.Xml.XmlNode,System.Xml.XmlNamespaceManager)">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Contact" /> class.
             </summary>
             <param name="node">The XML node to initialize from</param>
             <param name="namespaceManager">The namespace manager</param>
@@ -151,6 +151,11 @@
                 Placeholder for customer related constants
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.All">
+            <summary>
+            Gets the default parameter value for filtering for all customers
+            </summary>
+        </member>
         <member name="M:TimeLog.ReportingApi.SDK.Customer.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Customer"/> class.
@@ -162,11 +167,6 @@
             </summary>
             <param name="node">The XML node to initialize from</param>
             <param name="namespaceManager">The namespace manager</param>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.Customer.All">
-            <summary>
-            Gets the default parameter value for filtering for all customers
-            </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Customer.Id">
             <summary>
@@ -455,36 +455,6 @@
             Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/> class from being created.
             </summary>
         </member>
-        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.OverwriteServiceUrl(System.String)">
-            <summary>
-            Overwrites the service URL from the app.config
-            </summary>
-            <param name="url">TimeLog Project URL (e.g. https://app3.timelog.com/soxdemo )</param>
-        </member>
-        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate">
-            <summary>
-            Executes an authentication request to the API using the application settings
-            TimeLogProjectReportingSiteCode, TimeLogProjectReportingUser and TimeLogProjectReportingPassword.
-            </summary>
-            <remarks>
-            Make sure to set the application setting TimeLogProjectUri.
-            </remarks>
-            <returns>A value indicating whether the authentication is successful</returns>
-        </member>
-        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate(System.String,System.String,System.String)">
-            <summary>
-            Executes an authentication request to the API using the parameters.
-            </summary>
-            <param name="siteCode">Site code part of the credentials to authenticate with</param>
-            <param name="user">User name part of the credentials to authenticate with</param>
-            <param name="password">ApiPassword part of the credentials to authenticate with</param>
-            <returns>A value indicating whether the authentication is successful</returns>
-        </member>
-        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.Dispose">
-            <summary>
-            Disposes the handler.
-            </summary>
-        </member>
         <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Instance">
             <summary>
             Gets the singleton instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/>.
@@ -515,6 +485,36 @@
             Gets the client associated with the reporting service
             </summary>
         </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.OverwriteServiceUrl(System.String)">
+            <summary>
+            Overwrites the service URL from the app.config
+            </summary>
+            <param name="url">TimeLog Project URL (e.g. https://app3.timelog.com/soxdemo )</param>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate">
+            <summary>
+            Executes an authentication request to the API using the application settings
+            TimeLogProjectReportingSiteCode, TimeLogProjectReportingUser and TimeLogProjectReportingPassword.
+            </summary>
+            <remarks>
+            Make sure to set the application setting TimeLogProjectUri.
+            </remarks>
+            <returns>A value indicating whether the authentication is successful</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate(System.String,System.String,System.String)">
+            <summary>
+            Executes an authentication request to the API using the parameters.
+            </summary>
+            <param name="siteCode">Site code part of the credentials to authenticate with</param>
+            <param name="user">User name part of the credentials to authenticate with</param>
+            <param name="password">ApiPassword part of the credentials to authenticate with</param>
+            <returns>A value indicating whether the authentication is successful</returns>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.Dispose">
+            <summary>
+            Disposes the handler.
+            </summary>
+        </member>
         <member name="M:TimeLog.ReportingApi.SDK.SettingsHandler.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.SettingsHandler"/> class from being created.
@@ -535,6 +535,11 @@
             <summary>
             Gets the default max received message size for all calls to the TimeLog Project API.
             Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.DataCulture">
+            <summary>
+            Gets the correct culture for converting data from the reporting API
             </summary>
         </member>
         <member name="T:TimeLog.ReportingApi.SDK.XmlNodeExtensions">
@@ -560,13 +565,14 @@
             <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
             <returns>An int value (0 if parsing fails)</returns>
         </member>
-        <member name="M:TimeLog.ReportingApi.SDK.XmlNodeExtensions.GetDoubleSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager)">
+        <member name="M:TimeLog.ReportingApi.SDK.XmlNodeExtensions.GetDoubleSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager,System.Globalization.CultureInfo)">
             <summary>
             Gets a strongly typed double value from a given XPath. Returns 0 if parsing fails.
             </summary>
             <param name="node">The XML node</param>
             <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
             <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+            <param name="culture">Optional culture for conversion</param>
             <returns>An double value (0 if parsing fails)</returns>
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.XmlNodeExtensions.GetDateTimeSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager)">

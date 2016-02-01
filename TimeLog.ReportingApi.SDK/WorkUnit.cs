@@ -1,6 +1,7 @@
 ﻿namespace TimeLog.ReportingApi.SDK
 {
     using System;
+    using System.Globalization;
     using System.Xml;
 
     /// <summary>
@@ -59,7 +60,7 @@
             this.Created = node.GetDateTimeSafe("tlp:Created", namespaceManager);
             this.CreatedBy = node.GetStringSafe("tlp:CreatedBy", namespaceManager);
             this.CreatedByEmployeeID = node.GetIntSafe("tlp:CreatedByEmployeeID", namespaceManager);
-            this.CustomerID = node.GetIntSafe("tlp:CustomerID", namespaceManager);
+            this.CustomerID = node.GetIntSafe("tlp:CustomerId", namespaceManager);
             this.CustomerName = node.GetStringSafe("tlp:CustomerName", namespaceManager);
             this.Date = node.GetDateTimeSafe("tlp:Date", namespaceManager);
             this.DepartmentID = node.GetIntSafe("tlp:DepartmentID", namespaceManager);
@@ -68,11 +69,11 @@
             this.EmployeeID = node.GetIntSafe("tlp:EmployeeID", namespaceManager);
             this.EmployeeInitials = node.GetStringSafe("tlp:EmployeeInitials", namespaceManager);
             this.EmployeeLastName = node.GetStringSafe("tlp:EmployeeLastName", namespaceManager);
-            this.EstimatedAmount = node.GetDoubleSafe("tlp:EstimatedAmount", namespaceManager);
-            this.EstimatedHours = node.GetDoubleSafe("tlp:EstimatedHours", namespaceManager);
+            this.EstimatedAmount = node.GetDoubleSafe("tlp:EstimatedAmount", namespaceManager, SettingsHandler.Instance.DataCulture);
+            this.EstimatedHours = node.GetDoubleSafe("tlp:EstimatedHours", namespaceManager, SettingsHandler.Instance.DataCulture);
             this.Id = int.Parse(node.Attributes["ID"].InnerText);
-            this.InvAmount = node.GetDoubleSafe("tlp:InvAmount", namespaceManager);
-            this.InvHours = node.GetDoubleSafe("tlp:InvHours", namespaceManager);
+            this.InvAmount = node.GetDoubleSafe("tlp:InvAmount", namespaceManager, SettingsHandler.Instance.DataCulture);
+            this.InvHours = node.GetDoubleSafe("tlp:InvHours", namespaceManager, SettingsHandler.Instance.DataCulture);
             this.IsBillable = node.GetBoolTimeSafe("tlp:IsBillable", namespaceManager);
             this.LastModifiedAt = node.GetDateTimeSafe("tlp:LastModifiedAt", namespaceManager);
             this.LastModifiedBy = node.GetStringSafe("tlp:LastModifiedBy", namespaceManager);
@@ -80,8 +81,8 @@
             this.Note = node.GetStringSafe("tlp:Note", namespaceManager).Trim('\r', '\n');
             this.ProjectID = node.GetIntSafe("tlp:ProjectID", namespaceManager);
             this.ProjectName = node.GetStringSafe("tlp:ProjectName", namespaceManager);
-            this.RegAmount = node.GetDoubleSafe("tlp:RegAmount", namespaceManager);
-            this.RegHours = node.GetDoubleSafe("tlp:RegHours", namespaceManager);
+            this.RegAmount = node.GetDoubleSafe("tlp:RegAmount", namespaceManager, SettingsHandler.Instance.DataCulture);
+            this.RegHours = node.GetDoubleSafe("tlp:RegHours", namespaceManager, SettingsHandler.Instance.DataCulture);
             this.TaskID = node.GetIntSafe("tlp:TaskID", namespaceManager);
             this.TaskName = node.GetStringSafe("tlp:TaskName", namespaceManager);
         }
