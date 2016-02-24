@@ -52,6 +52,8 @@
     <Compile Include="CreateProjectsForAllCustomers.cs" />
     <Compile Include="CreateProjectTransactionalApi.cs" />
     <Compile Include="ConsumeTransactionalApi.cs" />
+    <Compile Include="CreateProjectTransactionalApi2.cs" />
+    <Compile Include="InsertCustomerTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +82,9 @@
       <Project>{a1d54caf-4bcb-43fb-917c-4f392c76a0e4}</Project>
       <Name>TimeLog.TransactionalApi.SDK</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
