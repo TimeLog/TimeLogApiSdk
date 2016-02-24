@@ -30,8 +30,8 @@
                 // ConsumeTransactionalApi.Consume();
                 // ConsumeCsvFile.Consume();
                 // CreateProjectTransactionalApi.Consume();
-                CreateProjectTransactionalApi2.Consume();
-                //InsertCustomerTest.Consume();
+                // CreateProjectTransactionalApi2.Consume();
+                // InsertCustomerTest.Consume();
             }
             catch (Exception ex)
             {
