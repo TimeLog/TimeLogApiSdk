@@ -1307,14 +1307,12 @@ ul {
 }
 
 .main-nav {
-    margin-left: 40px;
     margin-right: 178px;
     font-size: 13px;
 }
 
 @media only screen and (min-width: 984px) {
     .main-nav {
-        margin-left: 80px;
         -webkit-transition: margin-left 0.2s ease;
         transition: margin-left 0.2s ease;
     }

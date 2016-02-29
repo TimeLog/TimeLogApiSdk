@@ -112,6 +112,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FileServicesController.cs" />
+    <Compile Include="Controllers\FinancialIntegrationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportingController.cs" />
     <Compile Include="Controllers\TransactionalController.cs" />
@@ -301,6 +302,7 @@
     <None Include="Source\Reporting\GetMileageRaw.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\FinancialIntegration\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
