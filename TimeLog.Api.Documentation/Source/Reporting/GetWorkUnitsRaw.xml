@@ -9,7 +9,11 @@
     <tlp:EmployeeLastName>Doe</tlp:EmployeeLastName>
     <tlp:AllocationID>114</tlp:AllocationID>
     <tlp:TaskID>239</tlp:TaskID>
+    <tlp:TaskName>Research</tlp:TaskName>
     <tlp:ProjectID>26</tlp:ProjectID>
+    <tlp:ProjectName>LIK Template</tlp:ProjectName>
+    <tlp:CustomerId>343</tlp:CustomerId>
+    <tlp:CustomerName>Lekt Corp Inc.</tlp:CustomerName>
     <tlp:Date>2002-02-21T00:00:00</tlp:Date>
     <tlp:Note>Task specification</tlp:Note>
     <tlp:DepartmentID>1</tlp:DepartmentID>
@@ -37,7 +41,11 @@
     <tlp:EmployeeLastName>Doe</tlp:EmployeeLastName>
     <tlp:AllocationID>152</tlp:AllocationID>
     <tlp:TaskID>260</tlp:TaskID>
+    <tlp:TaskName>Development</tlp:TaskName>
     <tlp:ProjectID>26</tlp:ProjectID>
+    <tlp:ProjectName>LIK Template</tlp:ProjectName>
+    <tlp:CustomerId>343</tlp:CustomerId>
+    <tlp:CustomerName>Lekt Corp Inc.</tlp:CustomerName>
     <tlp:Date>2002-02-21T00:00:00</tlp:Date>
     <tlp:Note>Road tour programming </tlp:Note>
     <tlp:DepartmentID>1</tlp:DepartmentID>
@@ -65,7 +73,11 @@
     <tlp:EmployeeLastName>Doe</tlp:EmployeeLastName>
     <tlp:AllocationID>93</tlp:AllocationID>
     <tlp:TaskID>232</tlp:TaskID>
+    <tlp:TaskName>Research</tlp:TaskName>
     <tlp:ProjectID>25</tlp:ProjectID>
+    <tlp:ProjectName>KUTL Management</tlp:ProjectName>
+    <tlp:CustomerId>343</tlp:CustomerId>
+    <tlp:CustomerName>Lekt Corp Inc.</tlp:CustomerName>
     <tlp:Date>2002-03-07T00:00:00</tlp:Date>
     <tlp:DepartmentID>1</tlp:DepartmentID>
     <tlp:AdditionalTextField></tlp:AdditionalTextField>
