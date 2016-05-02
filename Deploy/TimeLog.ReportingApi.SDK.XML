@@ -146,9 +146,59 @@
             Gets the default parameter value for filtereing for all account managers
             </summary>
         </member>
+        <member name="T:TimeLog.ReportingApi.SDK.Allocation">
+            <summary>
+            Placeholder for allocation related constants and properties
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Allocation.All">
+            <summary>
+            Gets the default parameter value for filtering for all allocations
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Allocation.Id">
+            <summary>
+            Gets or sets the identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Allocation.ProjectId">
+            <summary>
+            Gets or sets the project identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Allocation.TaskId">
+            <summary>
+            Gets or sets the task identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Allocation.EmployeeId">
+            <summary>
+            Gets or sets the employee identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Allocation.AllocatedHours">
+            <summary>
+            Gets or sets the hours allocated
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Allocation.HourlyRate">
+            <summary>
+            Gets or sets the hourly rate
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Allocation.TaskIsFixedPrice">
+            <summary>
+            Gets or sets a value indicating whether the associated task is fixed price
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Allocation.IsActive">
+            <summary>
+            Gets or sets a value indicating whether the allocation is active
+            </summary>
+        </member>
         <member name="T:TimeLog.ReportingApi.SDK.Customer">
             <summary>
-                Placeholder for customer related constants
+            Placeholder for customer related constants and properties
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Customer.All">
@@ -228,6 +278,11 @@
             Gets or sets the state.
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.CountryId">
+            <summary>
+            Gets or sets the country identifier
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.Customer.Country">
             <summary>
             Gets or sets the country.
@@ -258,6 +313,11 @@
             Gets or sets the vat no.
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.Comment">
+            <summary>
+            Gets or sets the customer comment
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.Customer.AccountManagerID">
             <summary>
             Gets or sets the account manager id.
@@ -266,6 +326,311 @@
         <member name="P:TimeLog.ReportingApi.SDK.Customer.AccountManagerFullName">
             <summary>
             Gets or sets the account manager full name.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.IndustryID">
+            <summary>
+            Gets or sets the industry id.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.IndustryName">
+            <summary>
+            Gets or sets the industry name.
+            </summary>
+        </member>
+        <member name="T:TimeLog.ReportingApi.SDK.Project">
+            <summary>
+            Placeholder for project related constants and properties
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.All">
+            <summary>
+            Gets the default parameter value for filtering for all projects
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.Id">
+            <summary>
+            Gets or sets the project identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.Name">
+            <summary>
+            Gets or set the name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.Status">
+            <summary>
+            Gets or set the status of the project. 1 = Active, 0 = Inactive
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.OrderedByDepartment">
+            <summary>
+            Gets or sets the identifier of the department ordering the project
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectStartDate">
+            <summary>
+            Gets or sets the project start date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectEndDate">
+            <summary>
+            Gets or sets the project end date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.Link">
+            <summary>
+            Gets or sets the link
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.Description">
+            <summary>
+            Gets or sets the description
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.CustomerId">
+            <summary>
+            Gets or sets the customer identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.CustomerName">
+            <summary>
+            Gets or sets the customer name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.CustomerNo">
+            <summary>
+            Gets or sets the customer number
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.PMId">
+            <summary>
+            Gets or sets the project manager identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.PMInitials">
+            <summary>
+            Gets or sets the project manager initials
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.PMFullname">
+            <summary>
+            Gets or sets the project manager name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectTypeId">
+            <summary>
+            Gets or sets the project type identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectTypeName">
+            <summary>
+            Gets or sets the project type name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectCategoryId">
+            <summary>
+            Gets or sets the project category identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectCategoryName">
+            <summary>
+            Gets or sets the project category name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.BudgetAmountExpenses">
+            <summary>
+            Gets or sets the budgetted amount of expenses
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.BudgetAmountTravel">
+            <summary>
+            Gets or sets the budgetted amount of travel
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.BudgetAmount">
+            <summary>
+            Gets or sets the budgetted amout in currency
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.BudgetHours">
+            <summary>
+            Gets or sets the budgetted amount in hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.CreatedAt">
+            <summary>
+            Gets or sets the created date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.CreatedByEmployeeId">
+            <summary>
+            Gets or sets the identifier of the creator
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.CreatedBy">
+            <summary>
+            Gets or sets the name of the creator
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.LastModifiedAt">
+            <summary>
+            Gets or sets the last modified date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.LastModifiedByEmployeeId">
+            <summary>
+            Gets or sets the identifier of the last modifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.LastModifiedBy">
+            <summary>
+            Gets or sets the name of the last modifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectStatusName">
+            <summary>
+            Gets or sets the project order status name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ContactFullName">
+            <summary>
+            Gets or sets the full name of the customer contact
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ContactEmail">
+            <summary>
+            Gets or sets the email of the customer contact
+            </summary>
+        </member>
+        <member name="T:TimeLog.ReportingApi.SDK.Task">
+            <summary>
+            Placeholder for task related constants and properties
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.All">
+            <summary>
+            Gets the default parameter value for filtering for all tasks
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.Id">
+            <summary>
+            Gets or sets the identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.Name">
+            <summary>
+            Gets or sets the name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.Wbs">
+            <summary>
+            Gets or sets the WBS
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.ProjectId">
+            <summary>
+            Gets or sets the project id
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.Status">
+            <summary>
+            Gets or sets the status. 1 = active, 0 = inactive
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.StatusDetailed">
+            <summary>
+            Gets or sets the detailed status information.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.ParentId">
+            <summary>
+            Gets or sets the parent task id, if any
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.IsParent">
+            <summary>
+            Gets or sets a value whether the task is parent
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.TaskTypeId">
+            <summary>
+            Gets or sets the task type identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.TaskType">
+            <summary>
+            Gets or sets the task type
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.TaskCategoryId">
+            <summary>
+            Gets or sets the task identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.TaskCategory">
+            <summary>
+            Gets or sets the task category
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.BudgetHours">
+            <summary>
+            Gets or sets the budgetted amount in hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.BudgetAmount">
+            <summary>
+            Gets or sets the budgetted amount in currency
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.IsFixedPrice">
+            <summary>
+            Gets or sets whether the task is fixed price
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.StartDate">
+            <summary>
+            Gets or sets the start date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.EndDate">
+            <summary>
+            Gets or sets the end date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.InvoicingType">
+            <summary>
+            Gets or sets the invoicing type
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.CreatedAt">
+            <summary>
+            Gets or sets the created date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.CreatedByEmployeeId">
+            <summary>
+            Gets or sets the identifier of the creator
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.CreatedBy">
+            <summary>
+            Gets or sets the name of the creator
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.LastModifiedAt">
+            <summary>
+            Gets or sets the last modified date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.LastModifiedByEmployeeId">
+            <summary>
+            Gets or sets the identifier of the last modifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.LastModifiedBy">
+            <summary>
+            Gets or sets the name of the last modifier
             </summary>
         </member>
         <member name="T:TimeLog.ReportingApi.SDK.WorkUnit">

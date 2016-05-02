@@ -1,4 +1,6 @@
-﻿namespace TimeLog.ReportingApi.SDK
+﻿using System.Xml.Serialization;
+
+namespace TimeLog.ReportingApi.SDK
 {
     using System;
     using System.Globalization;
@@ -90,6 +92,7 @@
         /// <summary>
         ///     Gets the default parameter value for filtering for all work units
         /// </summary>
+        [XmlIgnore]
         public static int All
         {
             get

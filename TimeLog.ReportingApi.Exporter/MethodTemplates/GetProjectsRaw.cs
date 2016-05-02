@@ -9,7 +9,11 @@
     {
         public OutputConfiguration GetConfiguration(ExportFormat format)
         {
-            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name) { ExportFormat = format };
+            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name)
+            {
+                ExportFormat = format,
+                ListElementType = typeof(Project).FullName
+            };
 
             result.InternalParameters.Add("ProjectId", Project.All);
             result.InternalParameters.Add("CustomerId", Customer.All);

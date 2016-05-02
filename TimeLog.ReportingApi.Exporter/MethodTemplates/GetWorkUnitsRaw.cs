@@ -10,7 +10,11 @@
     {
         public OutputConfiguration GetConfiguration(ExportFormat format)
         {
-            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name) { ExportFormat = format };
+            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name)
+            {
+                ExportFormat = format,
+                ListElementType = typeof(WorkUnit).FullName
+            };
 
             result.InternalParameters.Add("WorkUnitId", WorkUnit.All);
             result.InternalParameters.Add("EmployeeId", Employee.All);

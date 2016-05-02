@@ -1,15 +1,18 @@
-﻿namespace TimeLog.ReportingApi.SDK
+﻿using System.Xml.Serialization;
+
+namespace TimeLog.ReportingApi.SDK
 {
     using System.Xml;
 
     /// <summary>
-    ///     Placeholder for customer related constants
+    /// Placeholder for customer related constants and properties
     /// </summary>
     public class Customer
     {
         /// <summary>
         /// Gets the default parameter value for filtering for all customers
         /// </summary>
+        [XmlIgnore]
         public static int All
         {
             get
@@ -30,11 +33,15 @@
             this.Address3 = string.Empty;
             this.City = string.Empty;
             this.Country = string.Empty;
+            this.CountryId = -1;
+            this.Comment = string.Empty;
             this.CustomerStatus = string.Empty;
             this.CustomerStatusID = -1;
             this.Email = string.Empty;
             this.Fax = string.Empty;
             this.Id = -1;
+            this.IndustryID = -1;
+            this.IndustryName = string.Empty;
             this.Name = string.Empty;
             this.NickName = string.Empty;
             this.No = string.Empty;
@@ -58,12 +65,16 @@
             this.Address2 = node.GetStringSafe("tlp:Address2", namespaceManager);
             this.Address3 = node.GetStringSafe("tlp:Address3", namespaceManager);
             this.City = node.GetStringSafe("tlp:City", namespaceManager);
+            this.Comment = node.GetStringSafe("tlp:Comment", namespaceManager);
             this.Country = node.GetStringSafe("tlp:Country", namespaceManager);
+            this.CountryId = node.GetIntSafe("tlp:CountryID", namespaceManager);
             this.CustomerStatus = node.GetStringSafe("tlp:CustomerStatus", namespaceManager);
             this.CustomerStatusID = node.GetIntSafe("tlp:CustomerStatusID", namespaceManager);
             this.Email = node.GetStringSafe("tlp:Email", namespaceManager);
             this.Fax = node.GetStringSafe("tlp:Fax", namespaceManager);
             this.Id = int.Parse(node.Attributes["ID"].InnerText);
+            this.IndustryID = node.GetIntSafe("tlp:IndustryID", namespaceManager);
+            this.IndustryName = node.GetStringSafe("tlp:IndustryName", namespaceManager);
             this.Name = node.GetStringSafe("tlp:Name", namespaceManager);
             this.NickName = node.GetStringSafe("tlp:NickName", namespaceManager);
             this.No = node.GetStringSafe("tlp:No", namespaceManager);
@@ -135,6 +146,11 @@
         public string State { get; set; }
 
         /// <summary>
+        /// Gets or sets the country identifier
+        /// </summary>
+        public int CountryId { get; set; }
+
+        /// <summary>
         /// Gets or sets the country.
         /// </summary>
         public string Country { get; set; }
@@ -165,6 +181,11 @@
         public string VATNo { get; set; }
 
         /// <summary>
+        /// Gets or sets the customer comment
+        /// </summary>
+        public string Comment { get; set; }
+
+        /// <summary>
         /// Gets or sets the account manager id.
         /// </summary>
         public int AccountManagerID { get; set; }
@@ -173,5 +194,15 @@
         /// Gets or sets the account manager full name.
         /// </summary>
         public string AccountManagerFullName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the industry id.
+        /// </summary>
+        public int IndustryID { get; set; }
+
+        /// <summary>
+        /// Gets or sets the industry name.
+        /// </summary>
+        public string IndustryName { get; set; }
     }
 }

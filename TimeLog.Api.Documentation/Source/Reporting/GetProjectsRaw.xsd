@@ -53,6 +53,8 @@
       <xsd:element name="LastModifiedByEmployeeId" type="xsd:positiveInteger" />
       <xsd:element name="LastModifiedBy" type="xsd:string" />
       <xsd:element name="ProjectStatusName" type="xsd:string" />
+      <xsd:element name="ContactFullName" type="xsd:string" />
+      <xsd:element name="ContactEmail" type="xsd:string" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
   </xsd:complexType>

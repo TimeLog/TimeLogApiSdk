@@ -137,7 +137,7 @@ namespace TimeLog.ReportingApi.Exporter
                             try
                             {
                                 outputFilePath = new FileInfo(args[2]);
-                                if (!outputFilePath.Directory.Exists)
+                                if (outputFilePath.Directory == null || !outputFilePath.Directory.Exists)
                                 {
                                     Console.WriteLine("Invalid output file path");
                                     return;
@@ -148,6 +148,7 @@ namespace TimeLog.ReportingApi.Exporter
                                 Console.WriteLine("Invalid output file path");
                                 return;
                             }
+
 
                             try
                             {
@@ -163,7 +164,18 @@ namespace TimeLog.ReportingApi.Exporter
                                 {
                                     IMethod method = (IMethod)Activator.CreateInstance(methodType);
                                     var outputNode = method.GetData(configuration);
-                                    SaveOutput(configuration.ExportFormat, outputNode, outputFilePath);
+
+                                    // Allow other namespaces
+                                    var listElementTypeName = configuration.ListElementType.Contains(",")
+                                        ? configuration.ListElementType
+                                        : configuration.ListElementType + ",TimeLog.ReportingApi.SDK";
+                                    var listElementType = Type.GetType(listElementTypeName);
+                                    if (listElementType == null)
+                                    {
+                                        throw new ArgumentException(string.Format("ListElementType is not recognized. Searching for \"{0}\"", listElementTypeName));
+                                    }
+
+                                    SaveOutput(listElementType, configuration.ExportFormat, outputNode, outputFilePath);
                                 }
                                 else
                                 {
@@ -202,7 +214,10 @@ namespace TimeLog.ReportingApi.Exporter
             {
                 Console.WriteLine("The application failed with the following error:");
                 Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
             }
+
+            //// Console.ReadKey();
         }
 
         private static T GetMethodClass<T>(FileInfo configFilePath)
@@ -219,7 +234,7 @@ namespace TimeLog.ReportingApi.Exporter
             return (T)methodClass;
         }
 
-        private static void SaveOutput(ExportFormat format, XmlNode rawData, FileInfo outputFile)
+        private static void SaveOutput(Type listElementType, ExportFormat format, XmlNode rawData, FileInfo outputFile)
         {
             switch (format)
             {
@@ -236,15 +251,41 @@ namespace TimeLog.ReportingApi.Exporter
                     {
                         if (mainElement != null)
                         {
+                            // Find the properties that aren't ignored
+                            var headers = listElementType.GetProperties().Where(p => !p.CustomAttributes.Any(a => a.AttributeType.Name.Contains("Ignore"))).ToList();
+
+                            // Print them to the file as CSV headers
+                            writer.WriteLine(string.Join(
+                                System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator, 
+                                headers.Select(a => string.Format("\"{0}\"", a.Name))));
+
+                            // Loop each XML element
                             foreach (XElement childElement in mainElement.Elements())
                             {
-                                if (firstLine)
+                                // Loop through each property in the header reference list
+                                var cells = new List<string>();
+                                foreach (var propertyInfo in headers)
                                 {
-                                    writer.WriteLine(string.Join(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator, childElement.Attributes().Select(a => string.Format("\"{0}\"", a.Name.LocalName)).Concat(childElement.Elements().Select(e => string.Format("\"{0}\"", e.Name.LocalName)))));
-                                    firstLine = false;
+                                    var elementvalue = childElement.Elements().FirstOrDefault(e => e.Name.LocalName.ToLower() == propertyInfo.Name.ToLower());
+                                    var attributevalue = childElement.Attributes().FirstOrDefault(e => e.Name.LocalName.ToLower() == propertyInfo.Name.ToLower());
+
+                                    // Did any element or attribute fit?
+                                    if (elementvalue != null)
+                                    {
+                                        cells.Add(elementvalue.Value);
+                                    }
+                                    else if (attributevalue != null)
+                                    {
+                                        cells.Add(attributevalue.Value);
+                                    }
+                                    else
+                                    {
+                                        // Empty is also fine
+                                        cells.Add(string.Empty);
+                                    }
                                 }
 
-                                writer.WriteLine(string.Join(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator, childElement.Attributes().Select(a => string.Format("\"{0}\"", a.Value)).Concat(childElement.Elements().Select(e => string.Format("\"{0}\"", e.Value)))));
+                                writer.WriteLine(string.Join(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator, cells.Select(a => string.Format("\"{0}\"", a))));
                             }
                         }
                     }

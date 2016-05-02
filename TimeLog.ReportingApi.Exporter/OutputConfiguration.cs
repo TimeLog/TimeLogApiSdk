@@ -14,6 +14,7 @@ namespace TimeLog.ReportingApi.Exporter
             this.Name = "OutputConfiguration";
             this.ExportFormat = ExportFormat.Xml;
             this.InternalParameters = new Dictionary<string, object>();
+            this.ListElementType = null;
         }
 
         public OutputConfiguration(string name)
@@ -21,6 +22,7 @@ namespace TimeLog.ReportingApi.Exporter
             this.Name = name;
             this.ExportFormat = ExportFormat.Xml;
             this.InternalParameters = new Dictionary<string, object>();
+            this.ListElementType = null;
         }
 
         public string Name { get; set; }
@@ -45,6 +47,8 @@ namespace TimeLog.ReportingApi.Exporter
 
         [XmlIgnore]
         public Dictionary<string, object> InternalParameters { get; set; }
+
+        public string ListElementType { get; set; }
 
         public int GetIntegerSafe(string key)
         {

@@ -9,7 +9,11 @@
     {
         public OutputConfiguration GetConfiguration(ExportFormat format)
         {
-            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name) { ExportFormat = format };
+            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name)
+            {
+                ExportFormat = format,
+                ListElementType = typeof(Allocation).FullName
+            };
 
             result.InternalParameters.Add("AllocationId", Allocation.All);
             result.InternalParameters.Add("TaskId", Task.All);
