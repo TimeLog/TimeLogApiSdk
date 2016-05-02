@@ -3,13 +3,13 @@
     using System.Reflection;
     using System.Xml;
 
-    using TimeLog.ReportingApi.SDK;
+    using SDK;
 
     public class GetCustomersRaw : IMethod
     {
-        public OutputConfiguration GetConfiguration()
+        public OutputConfiguration GetConfiguration(ExportFormat format)
         {
-            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name);
+            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name) { ExportFormat = format };
 
             result.InternalParameters.Add("CustomerId", Customer.All);
             result.InternalParameters.Add("CustomerStatusId", CustomerStatus.All);

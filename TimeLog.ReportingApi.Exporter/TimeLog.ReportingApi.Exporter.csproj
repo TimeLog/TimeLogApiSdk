@@ -47,9 +47,11 @@
   <ItemGroup>
     <Compile Include="IConfig.cs" />
     <Compile Include="IMethod.cs" />
+    <Compile Include="MethodTemplates\GetWorkUnitsRaw.cs" />
     <Compile Include="MethodTemplates\GetContactsRaw.cs" />
     <Compile Include="MethodTemplates\GetContactsShortList.cs" />
     <Compile Include="MethodTemplates\GetCountriesShortList.cs" />
+    <Compile Include="MethodTemplates\GetAllocationsRaw.cs" />
     <Compile Include="MethodTemplates\GetTasksShortList.cs" />
     <Compile Include="MethodTemplates\GetTasksRaw.cs" />
     <Compile Include="MethodTemplates\GetProjectsShortList.cs" />
@@ -70,6 +72,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="generate-default-configs.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="download-main-object-chain.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="readme.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

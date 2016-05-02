@@ -3,13 +3,13 @@
     using System.Reflection;
     using System.Xml;
 
-    using TimeLog.ReportingApi.SDK;
+    using SDK;
 
     public class GetTasksShortList : IMethod
     {
-        public OutputConfiguration GetConfiguration()
+        public OutputConfiguration GetConfiguration(ExportFormat format)
         {
-            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name);
+            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name) { ExportFormat = format };
 
             result.InternalParameters.Add("ProjectId", Project.All);
             result.InternalParameters.Add("Status", TaskStatus.Active);
@@ -26,8 +26,7 @@
                 ServiceHandler.Instance.ApiPassword,
                 configuration.GetIntegerSafe("ProjectId"),
                 configuration.GetIntegerSafe("Status"),
-                configuration.GetIntegerSafe("TaskTypeId")
-                );
+                configuration.GetIntegerSafe("TaskTypeId"));
         }
     }
 }

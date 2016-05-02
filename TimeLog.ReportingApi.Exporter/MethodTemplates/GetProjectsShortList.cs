@@ -3,13 +3,13 @@
     using System.Reflection;
     using System.Xml;
 
-    using TimeLog.ReportingApi.SDK;
+    using SDK;
 
     public class GetProjectsShortList : IMethod
     {
-        public OutputConfiguration GetConfiguration()
+        public OutputConfiguration GetConfiguration(ExportFormat format)
         {
-            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name);
+            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name) { ExportFormat = format };
 
             result.InternalParameters.Add("CustomerId", Customer.All);
             result.InternalParameters.Add("Status", ProjectStatus.Active);
@@ -26,8 +26,7 @@
                 ServiceHandler.Instance.ApiPassword,
                 configuration.GetIntegerSafe("Status"),
                 configuration.GetIntegerSafe("CustomerId"),
-                configuration.GetIntegerSafe("ProjectManagerId")
-                );
+                configuration.GetIntegerSafe("ProjectManagerId"));
         }
     }
 }

@@ -4,7 +4,7 @@
 
     public interface IMethod
     {
-        OutputConfiguration GetConfiguration();
+        OutputConfiguration GetConfiguration(ExportFormat format);
 
         XmlNode GetData(OutputConfiguration configuration);
     }

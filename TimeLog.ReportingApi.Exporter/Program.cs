@@ -25,7 +25,6 @@ namespace TimeLog.ReportingApi.Exporter
                 if (args.Length == 0)
                 {
                     args = new[] { "/?" };
-                    args = new[] { "/e", "output.txt", "save.csv" };
                 }
 
                 var command = args[0].Trim('/');
@@ -60,17 +59,33 @@ namespace TimeLog.ReportingApi.Exporter
                     case "g":
                     case "generate":
                         {
-                            if (args.Length != 2)
+                            if (args.Length != 3)
                             {
                                 Console.WriteLine("Parameters invalid");
                                 Console.WriteLine(string.Empty);
-                                Console.WriteLine("Example usage: TimeLog.ReportingApi.Exporter /g [methodName]");
-                                Console.WriteLine("Example usage: TimeLog.ReportingApi.Exporter /g GetCustomersRaw");
+                                Console.WriteLine("Example usage: TimeLog.ReportingApi.Exporter /g [methodName] [format]");
+                                Console.WriteLine("Example usage: TimeLog.ReportingApi.Exporter /g GetCustomersRaw csv");
+                                Console.WriteLine(string.Empty);
+                                Console.WriteLine("Formats available: Csv, xml");
                                 return;
                             }
 
                             var methodName = args[1];
                             FileInfo outputFilePath = new FileInfo(methodName + ".config");
+
+                            ExportFormat format;
+                            switch (args[2].ToLowerInvariant())
+                            {
+                                case "csv":
+                                    format = ExportFormat.Csv;
+                                    break;
+                                case "xml":
+                                    format = ExportFormat.Xml;
+                                    break;
+                                default:
+                                    Console.WriteLine("Format not recognized.");
+                                    return;
+                            }
 
                             var methodType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.ToLower() == methodName.ToLower());
 
@@ -80,7 +95,7 @@ namespace TimeLog.ReportingApi.Exporter
                                 using (TextWriter writer = new StreamWriter(outputFilePath.FullName, false, Encoding.UTF8))
                                 {
                                     var serializer = new XmlSerializer(typeof(OutputConfiguration));
-                                    serializer.Serialize(writer, method.GetConfiguration());
+                                    serializer.Serialize(writer, method.GetConfiguration(format));
                                     Console.WriteLine("Default configuration for \"" + methodName + "\" saved to " + outputFilePath.Name);
                                 }
                             }
@@ -105,6 +120,12 @@ namespace TimeLog.ReportingApi.Exporter
                             }
 
                             FileInfo configImport = new FileInfo(args[1]);
+
+                            if (!configImport.FullName.Contains(".config"))
+                            {
+                                configImport = new FileInfo(args[1] + ".config");
+                            }
+
                             FileInfo outputFilePath;
 
                             if (!configImport.Exists)

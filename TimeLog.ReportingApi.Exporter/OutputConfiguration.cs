@@ -58,6 +58,18 @@ namespace TimeLog.ReportingApi.Exporter
             }
         }
 
+        public DateTime GetDateTimeSafe(string key)
+        {
+            try
+            {
+                return DateTime.Parse(this.InternalParameters[key].ToString());
+            }
+            catch (Exception)
+            {
+                return DateTime.Now;
+            }
+        }
+
         public string GetStringSafe(string key)
         {
             try
