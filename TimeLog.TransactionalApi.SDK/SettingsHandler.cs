@@ -79,6 +79,24 @@
         }
 
         /// <summary>
+        /// Gets the default operation timeout for all calls to the TimeLog Project API.
+        /// Default is 60 seconds, but can be overwritten from application setting TimeLogProjectOperationTimeoutSeconds.
+        /// </summary>
+        public TimeSpan OperationTimeout
+        {
+            get
+            {
+                int result;
+                if (int.TryParse(ConfigurationManager.AppSettings["TimeLogProjectOperationTimeoutSeconds"], out result))
+                {
+                    return TimeSpan.FromSeconds(result);
+                }
+
+                return TimeSpan.FromSeconds(60);
+            }
+        }
+
+        /// <summary>
         /// Gets a standard http binding
         /// </summary>
         public HttpTransportBindingElement StandardHttpTransportBindingElement

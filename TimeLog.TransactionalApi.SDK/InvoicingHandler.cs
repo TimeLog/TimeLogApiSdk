@@ -4,25 +4,25 @@
     using System.ServiceModel;
     using System.ServiceModel.Channels;
 
-    using TimeLog.TransactionalApi.SDK.InvoicingService;
-    using TimeLog.TransactionalApi.SDK.RawHelper;
+    using InvoicingService;
+    using RawHelper;
 
     /// <summary>
     /// Handler of functionality related to the invoicing service
     /// </summary>
     public class InvoicingHandler : IDisposable
     {
-        private static InvoicingHandler instance;
-        private InvoicingServiceClient invoicingClient;
+        private static InvoicingHandler _instance;
+        private InvoicingServiceClient _invoicingClient;
 
-        private bool collectRawRequestResponse;
+        private bool _collectRawRequestResponse;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="InvoicingHandler"/> class from being created.
         /// </summary>
         private InvoicingHandler()
         {
-            this.collectRawRequestResponse = false;
+            this._collectRawRequestResponse = false;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@
         {
             get
             {
-                return instance ?? (instance = new InvoicingHandler());
+                return _instance ?? (_instance = new InvoicingHandler());
             }
         }
 
@@ -75,13 +75,13 @@
         {
             get
             {
-                return this.collectRawRequestResponse;
+                return this._collectRawRequestResponse;
             }
 
             set
             {
-                this.collectRawRequestResponse = value;
-                this.invoicingClient = null;
+                this._collectRawRequestResponse = value;
+                this._invoicingClient = null;
             }
         }
 
@@ -92,38 +92,45 @@
         {
             get
             {
-                if (this.invoicingClient == null)
+                if (this._invoicingClient == null)
                 {
                     var endpoint = new EndpointAddress(this.InvoicingServiceUrl);
 
                     if (this.CollectRawRequestResponse)
                     {
                         var binding = new CustomBinding();
-                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        var encoding = new RawMessageEncodingBindingElement {MessageVersion = MessageVersion.Soap11};
                         binding.Elements.Add(encoding);
-                        binding.Elements.Add(this.InvoicingServiceUrl.Contains("https") ? SettingsHandler.Instance.StandardHttpsTransportBindingElement : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                        this.invoicingClient = new InvoicingServiceClient(binding, endpoint);
+                        binding.Elements.Add(this.InvoicingServiceUrl.Contains("https")
+                            ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
+                            : SettingsHandler.Instance.StandardHttpTransportBindingElement);
+                        this._invoicingClient = new InvoicingServiceClient(binding, endpoint);
                     }
                     else
                     {
-                        var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
+                        var binding = new BasicHttpBinding
+                        {
+                            MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize
+                        };
+
                         if (this.InvoicingServiceUrl.Contains("https"))
                         {
                             binding.Security.Mode = BasicHttpSecurityMode.Transport;
                         }
 
-                        this.invoicingClient = new InvoicingServiceClient(binding, endpoint);
+                        this._invoicingClient = new InvoicingServiceClient(binding, endpoint);
                     }
                 }
 
-                return this.invoicingClient;
+                this._invoicingClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                return this._invoicingClient;
             }
         }
 
         public void Dispose()
         {
-            this.invoicingClient = null;
-            instance = null;
+            this._invoicingClient = null;
+            _instance = null;
         }
     }
 }

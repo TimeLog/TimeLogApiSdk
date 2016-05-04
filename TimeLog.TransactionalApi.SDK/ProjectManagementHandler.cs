@@ -4,25 +4,25 @@
     using System.ServiceModel;
     using System.ServiceModel.Channels;
 
-    using TimeLog.TransactionalApi.SDK.ProjectManagementService;
-    using TimeLog.TransactionalApi.SDK.RawHelper;
+    using ProjectManagementService;
+    using RawHelper;
 
     /// <summary>
     /// Handler of functionality related to the project management service
     /// </summary>
     public class ProjectManagementHandler : IDisposable
     {
-        private static ProjectManagementHandler instance;
-        private ProjectManagementServiceClient projectManagementClient;
+        private static ProjectManagementHandler _instance;
+        private ProjectManagementServiceClient _projectManagementClient;
 
-        private bool collectRawRequestResponse;
+        private bool _collectRawRequestResponse;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="ProjectManagementHandler"/> class from being created.
         /// </summary>
         private ProjectManagementHandler()
         {
-            this.collectRawRequestResponse = false;
+            this._collectRawRequestResponse = false;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@
         {
             get
             {
-                return instance ?? (instance = new ProjectManagementHandler());
+                return _instance ?? (_instance = new ProjectManagementHandler());
             }
         }
 
@@ -75,13 +75,13 @@
         {
             get
             {
-                return this.collectRawRequestResponse;
+                return this._collectRawRequestResponse;
             }
 
             set
             {
-                this.collectRawRequestResponse = value;
-                this.projectManagementClient = null;
+                this._collectRawRequestResponse = value;
+                this._projectManagementClient = null;
             }
         }
 
@@ -92,7 +92,7 @@
         {
             get
             {
-                if (this.projectManagementClient == null)
+                if (this._projectManagementClient == null)
                 {
                     var endpoint = new EndpointAddress(this.ProjectManagementServiceUrl);
 
@@ -102,7 +102,7 @@
                         var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
                         binding.Elements.Add(encoding);
                         binding.Elements.Add(this.ProjectManagementServiceUrl.Contains("https") ? SettingsHandler.Instance.StandardHttpsTransportBindingElement : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                        this.projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
+                        this._projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
                     }
                     else
                     {
@@ -112,18 +112,20 @@
                             binding.Security.Mode = BasicHttpSecurityMode.Transport;
                         }
 
-                        this.projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
+                        this._projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
                     }
+
+                    this._projectManagementClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
                 }
 
-                return this.projectManagementClient;
+                return this._projectManagementClient;
             }
         }
 
-        public void Dispose()
+        void IDisposable.Dispose()
         {
-            this.projectManagementClient = null;
-            instance = null;
+            this._projectManagementClient = null;
+            _instance = null;
         }
     }
 }

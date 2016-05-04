@@ -2,19 +2,27 @@
 {
     using System;
     using System.ServiceModel;
+    using System.ServiceModel.Channels;
 
-    using TimeLog.TransactionalApi.SDK.SalaryService;
+    using SalaryService;
+    using RawHelper;
 
+    /// <summary>
+    /// Handler of functionality related to the salary service
+    /// </summary>
     public class SalaryHandler : IDisposable
     {
-        private static SalaryHandler instance;
-        private SalaryServiceClient salaryClient;
+        private static SalaryHandler _instance;
+        private SalaryServiceClient _salaryClient;
+
+        private bool _collectRawRequestResponse;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="SalaryHandler"/> class from being created.
         /// </summary>
         private SalaryHandler()
         {
+            this._collectRawRequestResponse = false;
         }
 
         /// <summary>
@@ -24,7 +32,7 @@
         {
             get
             {
-                return instance ?? (instance = new SalaryHandler());
+                return _instance ?? (_instance = new SalaryHandler());
             }
         }
 
@@ -60,31 +68,69 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+        /// </summary>
+        public bool CollectRawRequestResponse
+        {
+            get
+            {
+                return this._collectRawRequestResponse;
+            }
+
+            set
+            {
+                this._collectRawRequestResponse = value;
+                this._salaryClient = null;
+            }
+        }
+
+        /// <summary>
+        /// Gets the active salary client
+        /// </summary>
         public SalaryServiceClient SalaryClient
         {
             get
             {
-                if (this.salaryClient == null)
+                if (this._salaryClient == null)
                 {
-                    var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
                     var endpoint = new EndpointAddress(SalaryServiceUrl);
-
-                    if (SalaryServiceUrl.Contains("https"))
+                    if (this.CollectRawRequestResponse)
                     {
-                        binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        var binding = new CustomBinding();
+                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        binding.Elements.Add(encoding);
+                        binding.Elements.Add(this.SalaryServiceUrl.Contains("https")
+                            ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
+                            : SettingsHandler.Instance.StandardHttpTransportBindingElement);
+                        this._salaryClient = new SalaryServiceClient(binding, endpoint);
+                    }
+                    else
+                    {
+                        var binding = new BasicHttpBinding
+                        {
+                            MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize
+                        };
+
+                        if (this.SalaryServiceUrl.Contains("https"))
+                        {
+                            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        }
+
+                        this._salaryClient = new SalaryServiceClient(binding, endpoint);
                     }
 
-                    this.salaryClient = new SalaryServiceClient(binding, endpoint);
+                    this._salaryClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
                 }
 
-                return this.salaryClient;
+                return this._salaryClient;
             }
         }
 
-        public void Dispose()
+        void IDisposable.Dispose()
         {
-            this.salaryClient = null;
-            instance = null;
+            this._salaryClient = null;
+            _instance = null;
         }
     }
 }

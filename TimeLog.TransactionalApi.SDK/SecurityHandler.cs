@@ -8,27 +8,27 @@
     using System.ServiceModel;
     using System.ServiceModel.Channels;
 
-    using TimeLog.TransactionalApi.SDK.RawHelper;
-    using TimeLog.TransactionalApi.SDK.SecurityService;
+    using RawHelper;
+    using SecurityService;
 
     /// <summary>
     /// Security handler class for transactional API calls
     /// </summary>
     public class SecurityHandler : IDisposable
     {
-        private static SecurityHandler instance;
-        private readonly Dictionary<string, SecurityService.SecurityToken> cachedTokens;
-        private SecurityService.SecurityServiceClient securityClient;
-        private SecurityService.SecurityToken token;
+        private static SecurityHandler _instance;
+        private readonly Dictionary<string, SecurityToken> _cachedTokens;
+        private SecurityServiceClient _securityClient;
+        private SecurityToken _token;
 
-        private bool collectRawRequestResponse;
+        private bool _collectRawRequestResponse;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="SecurityHandler"/> class from being created.
         /// </summary>
         private SecurityHandler()
         {
-            this.cachedTokens = new Dictionary<string, SecurityService.SecurityToken>();
+            this._cachedTokens = new Dictionary<string, SecurityToken>();
             this.CollectRawRequestResponse = false;
         }
 
@@ -39,7 +39,7 @@
         {
             get
             {
-                return instance ?? (instance = new SecurityHandler());
+                return _instance ?? (_instance = new SecurityHandler());
             }
         }
 
@@ -62,35 +62,43 @@
         /// <summary>
         /// Gets the client associated with the security service
         /// </summary>
-        public SecurityService.SecurityServiceClient SecurityClient
+        public SecurityServiceClient SecurityClient
         {
             get
             {
-                if (this.securityClient == null)
+                if (this._securityClient == null)
                 {
                     var endpoint = new EndpointAddress(this.SecurityServiceUrl);
 
                     if (this.CollectRawRequestResponse)
                     {
                         var binding = new CustomBinding();
-                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        var encoding = new RawMessageEncodingBindingElement {MessageVersion = MessageVersion.Soap11};
                         binding.Elements.Add(encoding);
-                        binding.Elements.Add(this.SecurityServiceUrl.Contains("https") ? SettingsHandler.Instance.StandardHttpsTransportBindingElement : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                        this.securityClient = new SecurityService.SecurityServiceClient(binding, endpoint);
+                        binding.Elements.Add(this.SecurityServiceUrl.Contains("https")
+                            ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
+                            : SettingsHandler.Instance.StandardHttpTransportBindingElement);
+                        this._securityClient = new SecurityServiceClient(binding, endpoint);
                     }
                     else
                     {
-                        var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
+                        var binding = new BasicHttpBinding
+                        {
+                            MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize
+                        };
+
                         if (this.SecurityServiceUrl.Contains("https"))
                         {
                             binding.Security.Mode = BasicHttpSecurityMode.Transport;
                         }
 
-                        this.securityClient = new SecurityService.SecurityServiceClient(binding, endpoint);                        
+                        this._securityClient = new SecurityServiceClient(binding, endpoint);
                     }
+
+                    this._securityClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
                 }
 
-                return this.securityClient;
+                return this._securityClient;
             }
         }
 
@@ -98,16 +106,16 @@
         /// Gets the security token for use in other methods. Make sure to call TryAuthenticate 
         /// before trying to access this property.
         /// </summary>
-        public SecurityService.SecurityToken Token
+        public SecurityToken Token
         {
             get
             {
-                if (this.token == null)
+                if (this._token == null)
                 {
                     throw new Exception("Please authenticate using the \"SecurityHandler.Instance.TryAuthenticate\" method before use");
                 }
 
-                return this.token;
+                return this._token;
             }
         }
 
@@ -118,14 +126,14 @@
         {
             get
             {
-                return this.collectRawRequestResponse;
+                return this._collectRawRequestResponse;
             }
 
             set
             {
-                this.collectRawRequestResponse = value;
-                this.securityClient = null;
-                this.token = null;
+                this._collectRawRequestResponse = value;
+                this._securityClient = null;
+                this._token = null;
             }
         }
 
@@ -167,7 +175,7 @@
         {
             if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["TimeLogProjectRawTokenHash"]))
             {
-                this.token = new SecurityToken
+                this._token = new SecurityToken
                                  {
                                      Expires = DateTime.ParseExact(ConfigurationManager.AppSettings["TimeLogProjectRawTokenExpires"], "yyyyMMddHHmmssK", new CultureInfo("da-DK")),
                                      Hash = ConfigurationManager.AppSettings["TimeLogProjectRawTokenHash"],
@@ -179,27 +187,27 @@
             }
 
             // Reuse the token if we already have it in the cache
-            if (this.cachedTokens.ContainsKey(username))
+            if (this._cachedTokens.ContainsKey(username))
             {
-                this.token = this.cachedTokens[username];
+                this._token = this._cachedTokens[username];
 
                 // Check if the token has expired - leave a minute to other code to run
-                if (this.token.Expires > DateTime.Now.AddMinutes(1))
+                if (this._token.Expires > DateTime.Now.AddMinutes(1))
                 {
                     messages = new List<string>();
                     return true;
                 }
                 
-                this.cachedTokens.Remove(username);
+                this._cachedTokens.Remove(username);
             }
 
             var tokenResponse = this.SecurityClient.GetToken(username, password);
-            if (tokenResponse.ResponseState == SecurityService.ExecutionStatus.Success &&
+            if (tokenResponse.ResponseState == ExecutionStatus.Success &&
                 tokenResponse.Return.Any())
             {
-                this.token = tokenResponse.Return[0];
+                this._token = tokenResponse.Return[0];
 
-                this.cachedTokens.Add(username, this.token);
+                this._cachedTokens.Add(username, this._token);
 
                 messages = new List<string>();
                 return true;
@@ -214,9 +222,9 @@
         /// </summary>
         public void Dispose()
         {
-            this.securityClient = null;
-            this.token = null;
-            instance = null;
+            this._securityClient = null;
+            this._token = null;
+            _instance = null;
         }
     }
 }

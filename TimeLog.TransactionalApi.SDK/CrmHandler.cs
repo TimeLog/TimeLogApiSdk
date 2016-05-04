@@ -4,25 +4,25 @@
     using System.ServiceModel;
     using System.ServiceModel.Channels;
 
-    using TimeLog.TransactionalApi.SDK.CrmService;
-    using TimeLog.TransactionalApi.SDK.RawHelper;
+    using CrmService;
+    using RawHelper;
 
     /// <summary>
     /// Handler of functionality related to the CRM service
     /// </summary>
     public class CrmHandler : IDisposable
     {
-        private static CrmHandler instance;
-        private CRMServiceClient crmClient;
+        private static CrmHandler _instance;
+        private CRMServiceClient _crmClient;
 
-        private bool collectRawRequestResponse;
+        private bool _collectRawRequestResponse;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="CrmHandler"/> class from being created.
         /// </summary>
         private CrmHandler()
         {
-            this.collectRawRequestResponse = false;
+            this._collectRawRequestResponse = false;
         }
 
         /// <summary>
@@ -32,7 +32,7 @@
         {
             get
             {
-                return instance ?? (instance = new CrmHandler());
+                return _instance ?? (_instance = new CrmHandler());
             }
         }
 
@@ -75,13 +75,13 @@
         {
             get
             {
-                return this.collectRawRequestResponse;
+                return this._collectRawRequestResponse;
             }
 
             set
             {
-                this.collectRawRequestResponse = value;
-                this.crmClient = null;
+                this._collectRawRequestResponse = value;
+                this._crmClient = null;
             }
         }
 
@@ -92,38 +92,45 @@
         {
             get
             {
-                if (this.crmClient == null)
+                if (this._crmClient == null)
                 {
                     var endpoint = new EndpointAddress(this.CrmServiceUrl);
-
                     if (this.CollectRawRequestResponse)
                     {
                         var binding = new CustomBinding();
-                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        var encoding = new RawMessageEncodingBindingElement {MessageVersion = MessageVersion.Soap11};
                         binding.Elements.Add(encoding);
-                        binding.Elements.Add(this.CrmServiceUrl.Contains("https") ? SettingsHandler.Instance.StandardHttpsTransportBindingElement : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                        this.crmClient = new CRMServiceClient(binding, endpoint);
+                        binding.Elements.Add(this.CrmServiceUrl.Contains("https")
+                            ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
+                            : SettingsHandler.Instance.StandardHttpTransportBindingElement);
+                        this._crmClient = new CRMServiceClient(binding, endpoint);
                     }
                     else
                     {
-                        var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
+                        var binding = new BasicHttpBinding
+                        {
+                            MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize
+                        };
+
                         if (this.CrmServiceUrl.Contains("https"))
                         {
                             binding.Security.Mode = BasicHttpSecurityMode.Transport;
                         }
 
-                        this.crmClient = new CRMServiceClient(binding, endpoint);
+                        this._crmClient = new CRMServiceClient(binding, endpoint);
                     }
+
+                    this._crmClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
                 }
 
-                return this.crmClient;
+                return this._crmClient;
             }
         }
 
         public void Dispose()
         {
-            this.crmClient = null;
-            instance = null;
+            this._crmClient = null;
+            _instance = null;
         }
     }
 }

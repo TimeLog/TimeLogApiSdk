@@ -6,15 +6,15 @@
 
     using log4net;
 
-    using TimeLog.ReportingApi.SDK;
-    using TimeLog.TransactionalApi.SDK;
-    using TimeLog.TransactionalApi.SDK.ProjectManagementService;
+    using ReportingApi.SDK;
+    using TransactionalApi.SDK;
+    using TransactionalApi.SDK.ProjectManagementService;
 
     public class CreateProjectsForAllCustomers
     {
         private static readonly ILog Logger = LogManager.GetLogger(typeof(CreateProjectsForAllCustomers));
 
-        public static void Create()
+        public static void Comsume()
         {
             if (ServiceHandler.Instance.TryAuthenticate())
             {

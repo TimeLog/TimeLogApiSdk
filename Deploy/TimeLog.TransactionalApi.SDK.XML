@@ -4,6 +4,11 @@
         <name>TimeLog.TransactionalApi.SDK</name>
     </assembly>
     <members>
+        <member name="T:TimeLog.TransactionalApi.SDK.OrganisationHandler">
+            <summary>
+            Handler of functionality related to the organisation service
+            </summary>
+        </member>
         <member name="M:TimeLog.TransactionalApi.SDK.OrganisationHandler.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.OrganisationHandler"/> class from being created.
@@ -22,6 +27,21 @@
         <member name="P:TimeLog.TransactionalApi.SDK.OrganisationHandler.Token">
             <summary>
             Gets the organisation token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.OrganisationHandler.CollectRawRequestResponse">
+            <summary>
+            Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.OrganisationHandler.OrganisationClient">
+            <summary>
+            Gets the active organisation client
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.ExpenseHandler">
+            <summary>
+            Handler of functionality related to the expense service
             </summary>
         </member>
         <member name="M:TimeLog.TransactionalApi.SDK.ExpenseHandler.#ctor">
@@ -44,6 +64,21 @@
             Gets the expense token for use in other methods. Makes use of SecurityHandler.Instance.Token.
             </summary>
         </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ExpenseHandler.CollectRawRequestResponse">
+            <summary>
+            Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.ExpenseHandler.ExpenseClient">
+            <summary>
+            Gets the active expense client
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.SalaryHandler">
+            <summary>
+            Handler of functionality related to the salary service
+            </summary>
+        </member>
         <member name="M:TimeLog.TransactionalApi.SDK.SalaryHandler.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.SalaryHandler"/> class from being created.
@@ -62,6 +97,16 @@
         <member name="P:TimeLog.TransactionalApi.SDK.SalaryHandler.Token">
             <summary>
             Gets the salary token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SalaryHandler.CollectRawRequestResponse">
+            <summary>
+            Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SalaryHandler.SalaryClient">
+            <summary>
+            Gets the active salary client
             </summary>
         </member>
         <member name="T:TimeLog.TransactionalApi.SDK.CrmHandler">
@@ -449,6 +494,12 @@
             <summary>
             Gets the default max received message size for all calls to the TimeLog Project API.
             Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.OperationTimeout">
+            <summary>
+            Gets the default operation timeout for all calls to the TimeLog Project API.
+            Default is 60 seconds, but can be overwritten from application setting TimeLogProjectOperationTimeoutSeconds.
             </summary>
         </member>
         <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.StandardHttpTransportBindingElement">

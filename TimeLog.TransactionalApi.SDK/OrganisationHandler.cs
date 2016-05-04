@@ -2,19 +2,27 @@
 {
     using System;
     using System.ServiceModel;
+    using System.ServiceModel.Channels;
 
-    using TimeLog.TransactionalApi.SDK.OrganisationService;
+    using OrganisationService;
+    using RawHelper;
 
+    /// <summary>
+    /// Handler of functionality related to the organisation service
+    /// </summary>
     public class OrganisationHandler : IDisposable
     {
-        private static OrganisationHandler instance;
-        private OrganisationServiceClient organisationClient;
+        private static OrganisationHandler _instance;
+        private OrganisationServiceClient _organisationClient;
+
+        private bool _collectRawRequestResponse;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="OrganisationHandler"/> class from being created.
         /// </summary>
         private OrganisationHandler()
         {
+            this._collectRawRequestResponse = false;
         }
 
         /// <summary>
@@ -24,7 +32,7 @@
         {
             get
             {
-                return instance ?? (instance = new OrganisationHandler());
+                return _instance ?? (_instance = new OrganisationHandler());
             }
         }
 
@@ -60,31 +68,69 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+        /// </summary>
+        public bool CollectRawRequestResponse
+        {
+            get
+            {
+                return this._collectRawRequestResponse;
+            }
+
+            set
+            {
+                this._collectRawRequestResponse = value;
+                this._organisationClient = null;
+            }
+        }
+
+        /// <summary>
+        /// Gets the active organisation client
+        /// </summary>
         public OrganisationServiceClient OrganisationClient
         {
             get
             {
-                if (this.organisationClient == null)
+                if (this._organisationClient == null)
                 {
-                    var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
                     var endpoint = new EndpointAddress(OrganisationServiceUrl);
-
-                    if (OrganisationServiceUrl.Contains("https"))
+                    if (this.CollectRawRequestResponse)
                     {
-                        binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        var binding = new CustomBinding();
+                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        binding.Elements.Add(encoding);
+                        binding.Elements.Add(this.OrganisationServiceUrl.Contains("https")
+                            ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
+                            : SettingsHandler.Instance.StandardHttpTransportBindingElement);
+                        this._organisationClient = new OrganisationServiceClient(binding, endpoint);
+                    }
+                    else
+                    {
+                        var binding = new BasicHttpBinding
+                        {
+                            MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize
+                        };
+
+                        if (this.OrganisationServiceUrl.Contains("https"))
+                        {
+                            binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        }
+
+                        this._organisationClient = new OrganisationServiceClient(binding, endpoint);
                     }
 
-                    this.organisationClient = new OrganisationServiceClient(binding, endpoint);
+                    this._organisationClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
                 }
 
-                return this.organisationClient;
+                return this._organisationClient;
             }
         }
 
-        public void Dispose()
+        void IDisposable.Dispose()
         {
-            this.organisationClient = null;
-            instance = null;
+            this._organisationClient = null;
+            _instance = null;
         }
     }
 }
