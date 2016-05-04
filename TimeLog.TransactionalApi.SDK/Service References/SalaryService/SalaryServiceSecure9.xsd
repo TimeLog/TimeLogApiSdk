@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_0" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
   <xs:complexType name="ArrayOfNormalWorkweek">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="NormalWorkweek" nillable="true" type="tns:NormalWorkweek" />

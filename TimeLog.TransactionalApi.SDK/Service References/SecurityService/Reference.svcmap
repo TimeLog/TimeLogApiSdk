@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app3.timelog.com/soxdemo/WebServices/Security/V1_2/SecurityServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app4.timelog.com/soxdemo4/WebServices/Security/V1_2/SecurityServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SecurityServiceSecure.disco" MetadataType="Disco" ID="235f6fd4-8677-4e07-a7a6-c2f2cf12bfe8" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Security/V1_2/SecurityServiceSecure.svc?disco" />
-    <MetadataFile FileName="SecurityServiceSecure.wsdl" MetadataType="Wsdl" ID="4316ff88-342d-4f07-9da1-7bae4deaa808" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Security/V1_2/SecurityServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="SecurityServiceSecure.disco" MetadataType="Disco" ID="235f6fd4-8677-4e07-a7a6-c2f2cf12bfe8" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Security/V1_2/SecurityServiceSecure.svc?disco" />
+    <MetadataFile FileName="SecurityServiceSecure.wsdl" MetadataType="Wsdl" ID="4316ff88-342d-4f07-9da1-7bae4deaa808" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Security/V1_2/SecurityServiceSecure.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

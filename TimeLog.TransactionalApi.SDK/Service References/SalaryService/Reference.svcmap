@@ -19,22 +19,22 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SalaryServiceSecure.xsd" MetadataType="Schema" ID="1a5f4dc0-e184-4c5a-8b3d-2cad55b015ef" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd9" />
-    <MetadataFile FileName="SalaryServiceSecure.disco" MetadataType="Disco" ID="51ee143b-00a3-45f0-a552-1b7cc16752af" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?disco" />
-    <MetadataFile FileName="SalaryServiceSecure1.xsd" MetadataType="Schema" ID="9a433cc9-163a-4661-8a6c-f29a2148203a" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd7" />
-    <MetadataFile FileName="SalaryServiceSecure2.xsd" MetadataType="Schema" ID="60e3bf35-8e32-4cea-95a1-966953adfa13" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd6" />
-    <MetadataFile FileName="SalaryServiceSecure3.xsd" MetadataType="Schema" ID="5d611d9f-b06a-47c5-a57d-1beaef2ae08a" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd5" />
-    <MetadataFile FileName="SalaryServiceSecure4.xsd" MetadataType="Schema" ID="b712cd8a-cd84-4a34-9279-7ea7e21728c6" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd4" />
-    <MetadataFile FileName="SalaryServiceSecure5.xsd" MetadataType="Schema" ID="8492934c-93fa-4cb5-8835-35bdb511d1b8" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd3" />
-    <MetadataFile FileName="SalaryServiceSecure6.xsd" MetadataType="Schema" ID="dcd84732-7639-475e-831e-2f8edc6ccb69" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd2" />
-    <MetadataFile FileName="SalaryServiceSecure.wsdl" MetadataType="Wsdl" ID="0163ddb6-1949-4809-98f2-60ef1cc6c05b" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="SalaryServiceSecure7.xsd" MetadataType="Schema" ID="18a72c11-aa3a-4a2b-a0db-5ecdfd2dad39" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd0" />
-    <MetadataFile FileName="SalaryServiceSecure1.wsdl" MetadataType="Wsdl" ID="b0fc722f-da2f-4c45-b267-3f08a4a9509e" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?wsdl" />
-    <MetadataFile FileName="SalaryServiceSecure8.xsd" MetadataType="Schema" ID="9045e2cc-605c-4e80-82e7-05dec38f0383" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd1" />
-    <MetadataFile FileName="SalaryServiceSecure9.xsd" MetadataType="Schema" ID="5f35985a-e061-46d3-9d9f-9ed0a6ed9d36" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd8" />
+    <MetadataFile FileName="SalaryServiceSecure.xsd" MetadataType="Schema" ID="1a5f4dc0-e184-4c5a-8b3d-2cad55b015ef" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd9" />
+    <MetadataFile FileName="SalaryServiceSecure.disco" MetadataType="Disco" ID="51ee143b-00a3-45f0-a552-1b7cc16752af" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?disco" />
+    <MetadataFile FileName="SalaryServiceSecure1.xsd" MetadataType="Schema" ID="9a433cc9-163a-4661-8a6c-f29a2148203a" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd7" />
+    <MetadataFile FileName="SalaryServiceSecure2.xsd" MetadataType="Schema" ID="60e3bf35-8e32-4cea-95a1-966953adfa13" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd6" />
+    <MetadataFile FileName="SalaryServiceSecure3.xsd" MetadataType="Schema" ID="5d611d9f-b06a-47c5-a57d-1beaef2ae08a" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd5" />
+    <MetadataFile FileName="SalaryServiceSecure4.xsd" MetadataType="Schema" ID="b712cd8a-cd84-4a34-9279-7ea7e21728c6" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd4" />
+    <MetadataFile FileName="SalaryServiceSecure5.xsd" MetadataType="Schema" ID="8492934c-93fa-4cb5-8835-35bdb511d1b8" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd3" />
+    <MetadataFile FileName="SalaryServiceSecure6.xsd" MetadataType="Schema" ID="dcd84732-7639-475e-831e-2f8edc6ccb69" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd2" />
+    <MetadataFile FileName="SalaryServiceSecure.wsdl" MetadataType="Wsdl" ID="0163ddb6-1949-4809-98f2-60ef1cc6c05b" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SalaryServiceSecure7.xsd" MetadataType="Schema" ID="18a72c11-aa3a-4a2b-a0db-5ecdfd2dad39" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd0" />
+    <MetadataFile FileName="SalaryServiceSecure1.wsdl" MetadataType="Wsdl" ID="b0fc722f-da2f-4c45-b267-3f08a4a9509e" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="SalaryServiceSecure8.xsd" MetadataType="Schema" ID="9045e2cc-605c-4e80-82e7-05dec38f0383" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd1" />
+    <MetadataFile FileName="SalaryServiceSecure9.xsd" MetadataType="Schema" ID="5f35985a-e061-46d3-9d9f-9ed0a6ed9d36" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?xsd=xsd8" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

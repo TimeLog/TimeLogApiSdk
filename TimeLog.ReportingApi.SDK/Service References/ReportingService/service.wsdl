@@ -4001,16 +4001,16 @@
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
-      <soap:address location="https://app3.timelog.com/soxdemo/service.asmx" />
+      <soap:address location="https://app4.timelog.com/soxdemo4/service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
-      <soap12:address location="https://app3.timelog.com/soxdemo/service.asmx" />
+      <soap12:address location="https://app4.timelog.com/soxdemo4/service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
-      <http:address location="https://app3.timelog.com/soxdemo/service.asmx" />
+      <http:address location="https://app4.timelog.com/soxdemo4/service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
-      <http:address location="https://app3.timelog.com/soxdemo/service.asmx" />
+      <http:address location="https://app4.timelog.com/soxdemo4/service.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

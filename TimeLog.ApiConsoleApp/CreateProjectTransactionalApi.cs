@@ -58,9 +58,10 @@
                                 Logger.Info("Project created");
                             }
 
-                            var projectId = projectResult.Return.FirstOrDefault().Item.ProjectID;
-                            var task = new Task() { ID = taskGuid, Name = "First task" };
-                            var taskResult = ProjectManagementHandler.Instance.ProjectManagementClient.CreateTask(task, projectId, ProjectManagementHandler.Instance.Token);
+                            project = projectResult.Return.FirstOrDefault().Item;
+                            var task = new Task() {ID = taskGuid, Name = "First task"};
+                            var taskResult = ProjectManagementHandler.Instance.ProjectManagementClient.CreateTask(task,
+                                project.ProjectID, ProjectManagementHandler.Instance.Token);
                             RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\CreateTask.txt");
                             if (taskResult.ResponseState == ExecutionStatus.Success)
                             {
@@ -68,14 +69,32 @@
                                 {
                                     Logger.Info("Task created");
                                 }
-                            }
-                            else
-                            {
-                                foreach (var apiMessage in taskResult.Messages)
+
+                                task = taskResult.Return.FirstOrDefault().Item;
+                                var subtask = new Task()
                                 {
-                                    if (Logger.IsErrorEnabled)
+                                    ID = Guid.NewGuid(),
+                                    Name = "First sub-task",
+                                    ProjectSubContractID = project.MainContractID
+                                };
+                                taskResult = ProjectManagementHandler.Instance.ProjectManagementClient.CreateSubTask(
+                                    subtask, task.TaskID, project.ProjectID, ProjectManagementHandler.Instance.Token);
+                                RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\CreateSubTask.txt");
+                                if (taskResult.ResponseState == ExecutionStatus.Success)
+                                {
+                                    if (Logger.IsInfoEnabled)
                                     {
-                                        Logger.Error(apiMessage.Message);
+                                        Logger.Info("Sub-Task created");
+                                    }
+                                }
+                                else
+                                {
+                                    foreach (var apiMessage in taskResult.Messages)
+                                    {
+                                        if (Logger.IsErrorEnabled)
+                                        {
+                                            Logger.Error(apiMessage.Message);
+                                        }
                                     }
                                 }
                             }

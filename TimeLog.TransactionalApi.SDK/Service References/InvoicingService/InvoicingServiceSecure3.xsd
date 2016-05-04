@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://www.timelog.com/api/tlp/v1_1" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd4" namespace="http://www.timelog.com/api/tlp/v1" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd4" namespace="http://www.timelog.com/api/tlp/v1" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
   <xs:complexType name="SecurityToken">
     <xs:complexContent mixed="false">
       <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q1:APIBase">

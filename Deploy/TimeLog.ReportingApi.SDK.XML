@@ -854,7 +854,7 @@
             <summary>
             Overwrites the service URL from the app.config
             </summary>
-            <param name="url">TimeLog Project URL (e.g. https://app3.timelog.com/soxdemo )</param>
+            <param name="url">TimeLog Project URL (e.g. https://app4.timelog.com/soxdemo4 )</param>
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate">
             <summary>

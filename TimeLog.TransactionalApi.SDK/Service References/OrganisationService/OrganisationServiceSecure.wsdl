@@ -937,7 +937,7 @@
   </wsdl:binding>
   <wsdl:service name="OrganisationServiceSecure">
     <wsdl:port name="BasicHttpBinding_OrganisationService" binding="tns:BasicHttpBinding_OrganisationService">
-      <soap:address location="https://app3.timelog.com/soxdemo/WebServices/Organisation/V1_5/OrganisationServiceSecure.svc" />
+      <soap:address location="https://app4.timelog.com/soxdemo4/WebServices/Organisation/V1_5/OrganisationServiceSecure.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

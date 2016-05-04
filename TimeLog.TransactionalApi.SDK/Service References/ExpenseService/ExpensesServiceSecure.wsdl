@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.timelog.com/api/tlp/v1_0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.timelog.com/api/tlp/v1" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ExpensesServiceSecure" targetNamespace="http://www.timelog.com/api/tlp/v1_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:import namespace="http://www.timelog.com/api/tlp/v1" location="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="http://www.timelog.com/api/tlp/v1" location="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl=wsdl0" />
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.timelog.com/api/tlp/v1_0/Imports">
-      <xsd:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_3" />
-      <xsd:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
-      <xsd:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
-      <xsd:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd4" namespace="http://www.timelog.com/api/tlp/v1_0" />
-      <xsd:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd5" namespace="http://api.timelog.com" />
-      <xsd:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd6" namespace="http://api.timelog.com/services/expense/1_0" />
-      <xsd:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
+      <xsd:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_3" />
+      <xsd:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+      <xsd:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
+      <xsd:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd4" namespace="http://www.timelog.com/api/tlp/v1_0" />
+      <xsd:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd5" namespace="http://api.timelog.com" />
+      <xsd:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd6" namespace="http://api.timelog.com/services/expense/1_0" />
+      <xsd:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ExpenseService_IsAlive_InputMessage">
@@ -77,7 +77,7 @@
   </wsdl:portType>
   <wsdl:service name="ExpensesServiceSecure">
     <wsdl:port name="BasicHttpBinding_ExpenseService" binding="i0:BasicHttpBinding_ExpenseService">
-      <soap:address location="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc" />
+      <soap:address location="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

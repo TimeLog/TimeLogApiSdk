@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_0" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_3" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd5" namespace="http://api.timelog.com" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd6" namespace="http://api.timelog.com/services/expense/1_0" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_3" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd5" namespace="http://api.timelog.com" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd6" namespace="http://api.timelog.com/services/expense/1_0" />
   <xs:element name="GetExpensesByEmployee">
     <xs:complexType>
       <xs:sequence>

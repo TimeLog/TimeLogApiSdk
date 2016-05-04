@@ -25,7 +25,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="http://www.timelog.com/api/tlp/v1_0" location="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc?wsdl" />
+  <wsdl:import namespace="http://www.timelog.com/api/tlp/v1_0" location="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc?wsdl" />
   <wsdl:types />
   <wsdl:binding name="BasicHttpBinding_SalaryService" type="i0:SalaryService">
     <wsp:PolicyReference URI="#BasicHttpBinding_SalaryService_policy" />

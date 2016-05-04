@@ -582,7 +582,7 @@
   </wsdl:binding>
   <wsdl:service name="SecurityServiceSecure">
     <wsdl:port name="BasicHttpBinding_SecurityService" binding="tns:BasicHttpBinding_SecurityService">
-      <soap:address location="https://app3.timelog.com/soxdemo/WebServices/Security/V1_2/SecurityServiceSecure.svc" />
+      <soap:address location="https://app4.timelog.com/soxdemo4/WebServices/Security/V1_2/SecurityServiceSecure.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

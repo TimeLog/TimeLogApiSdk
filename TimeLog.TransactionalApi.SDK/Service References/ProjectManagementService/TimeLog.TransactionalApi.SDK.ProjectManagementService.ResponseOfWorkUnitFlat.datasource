@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="ResponseOfWorkUnitFlat" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfWorkUnitFlat, Service References.ProjectManagementService.Reference.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfWorkUnitFlat, Service References.ProjectManagementService.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

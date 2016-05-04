@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://api.timelog.com" elementFormDefault="qualified" targetNamespace="http://api.timelog.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd6" namespace="http://api.timelog.com/services/expense/1_0" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd6" namespace="http://api.timelog.com/services/expense/1_0" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
   <xs:complexType name="ResponseOfExpense">
     <xs:annotation>
       <xs:appinfo>

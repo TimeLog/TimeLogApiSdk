@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_InvoicingService" contract="InvoicingService.InvoicingService" bindingType="basicHttpBinding" address="https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc" bindingConfiguration="BasicHttpBinding_InvoicingService">
+    <endpoint name="BasicHttpBinding_InvoicingService" contract="InvoicingService.InvoicingService" bindingType="basicHttpBinding" address="https://app4.timelog.com/soxdemo4/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc" bindingConfiguration="BasicHttpBinding_InvoicingService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://app3.timelog.com/soxdemo/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc</serializedValue>
+          <serializedValue>https://app4.timelog.com/soxdemo4/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

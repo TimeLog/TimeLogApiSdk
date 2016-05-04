@@ -375,10 +375,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiceSoap" contract="ReportingService.ServiceSoap" bindingType="basicHttpBinding" address="https://app3.timelog.com/soxdemo/service.asmx" bindingConfiguration="ServiceSoap">
+    <endpoint name="ServiceSoap" contract="ReportingService.ServiceSoap" bindingType="basicHttpBinding" address="https://app4.timelog.com/soxdemo4/service.asmx" bindingConfiguration="ServiceSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://app3.timelog.com/soxdemo/service.asmx</serializedValue>
+          <serializedValue>https://app4.timelog.com/soxdemo4/service.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -460,10 +460,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="ServiceSoap12" contract="ReportingService.ServiceSoap" bindingType="customBinding" address="https://app3.timelog.com/soxdemo/service.asmx" bindingConfiguration="ServiceSoap12">
+    <endpoint name="ServiceSoap12" contract="ReportingService.ServiceSoap" bindingType="customBinding" address="https://app4.timelog.com/soxdemo4/service.asmx" bindingConfiguration="ServiceSoap12">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://app3.timelog.com/soxdemo/service.asmx</serializedValue>
+          <serializedValue>https://app4.timelog.com/soxdemo4/service.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

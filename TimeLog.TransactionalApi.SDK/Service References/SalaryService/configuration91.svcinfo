@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_SalaryService" contract="SalaryService.SalaryService" bindingType="basicHttpBinding" address="https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc" bindingConfiguration="BasicHttpBinding_SalaryService">
+    <endpoint name="BasicHttpBinding_SalaryService" contract="SalaryService.SalaryService" bindingType="basicHttpBinding" address="https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc" bindingConfiguration="BasicHttpBinding_SalaryService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://app3.timelog.com/soxdemo/WebServices/Salary/V1_0/SalaryServiceSecure.svc</serializedValue>
+          <serializedValue>https://app4.timelog.com/soxdemo4/WebServices/Salary/V1_0/SalaryServiceSecure.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

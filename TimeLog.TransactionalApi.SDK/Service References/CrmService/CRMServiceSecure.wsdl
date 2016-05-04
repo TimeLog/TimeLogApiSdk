@@ -25,7 +25,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="http://api.timelog.com/services/crm/1_2" location="https://app3.timelog.com/soxdemo/WebServices/CRM/V1_2/CRMServiceSecure.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="http://api.timelog.com/services/crm/1_2" location="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_2/CRMServiceSecure.svc?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="BasicHttpBinding_ICRMService" type="i0:ICRMService">
     <wsp:PolicyReference URI="#BasicHttpBinding_ICRMService_policy" />
@@ -168,7 +168,7 @@
   </wsdl:binding>
   <wsdl:service name="CRMServiceSecure">
     <wsdl:port name="BasicHttpBinding_ICRMService" binding="tns:BasicHttpBinding_ICRMService">
-      <soap:address location="https://app3.timelog.com/soxdemo/WebServices/CRM/V1_2/CRMServiceSecure.svc" />
+      <soap:address location="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_2/CRMServiceSecure.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

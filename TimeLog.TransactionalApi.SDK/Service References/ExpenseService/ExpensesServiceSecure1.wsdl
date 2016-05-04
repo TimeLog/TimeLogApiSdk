@@ -25,7 +25,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="http://www.timelog.com/api/tlp/v1_0" location="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl" />
+  <wsdl:import namespace="http://www.timelog.com/api/tlp/v1_0" location="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl" />
   <wsdl:types />
   <wsdl:binding name="BasicHttpBinding_ExpenseService" type="i0:ExpenseService">
     <wsp:PolicyReference URI="#BasicHttpBinding_ExpenseService_policy" />

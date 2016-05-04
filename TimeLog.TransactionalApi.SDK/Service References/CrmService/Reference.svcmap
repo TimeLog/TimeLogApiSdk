@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app3.timelog.com/soxdemo/WebServices/CRM/V1_2/CRMServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_2/CRMServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CRMServiceSecure.wsdl" MetadataType="Wsdl" ID="37065e7c-ea7d-438e-b86e-684b6c72b2a8" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/CRM/V1_2/CRMServiceSecure.svc?wsdl" />
-    <MetadataFile FileName="CRMServiceSecure1.wsdl" MetadataType="Wsdl" ID="2ad31ebb-6046-4596-8219-f90363f8c74e" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/CRM/V1_2/CRMServiceSecure.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="CRMServiceSecure.disco" MetadataType="Disco" ID="8cd185c4-5d73-41c2-bd72-b47fe8ecf785" SourceId="1" SourceUrl="https://app3.timelog.com/soxdemo/WebServices/CRM/V1_2/CRMServiceSecure.svc?disco" />
+    <MetadataFile FileName="CRMServiceSecure.wsdl" MetadataType="Wsdl" ID="37065e7c-ea7d-438e-b86e-684b6c72b2a8" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_2/CRMServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="CRMServiceSecure1.wsdl" MetadataType="Wsdl" ID="2ad31ebb-6046-4596-8219-f90363f8c74e" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_2/CRMServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CRMServiceSecure.disco" MetadataType="Disco" ID="8cd185c4-5d73-41c2-bd72-b47fe8ecf785" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_2/CRMServiceSecure.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

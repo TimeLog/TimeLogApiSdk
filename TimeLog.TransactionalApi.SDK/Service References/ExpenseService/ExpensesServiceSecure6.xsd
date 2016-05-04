@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://api.timelog.com/services/expense/1_0" elementFormDefault="qualified" targetNamespace="http://api.timelog.com/services/expense/1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="https://app3.timelog.com/soxdemo/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app4.timelog.com/soxdemo4/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
   <xs:complexType name="ArrayOfExpense">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Expense" nillable="true" type="tns:Expense" />
