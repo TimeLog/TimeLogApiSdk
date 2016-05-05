@@ -37,7 +37,7 @@
                 }
 
                 // Get a customer
-                var customersResult = CrmHandler.Instance.CrmClient.GetCustomersByNamePaged("Timelog Kunde", false, false, 1, 10, CrmHandler.Instance.Token);
+                var customersResult = CrmHandler.Instance.CrmClient.GetCustomersByNamePaged("Timelog", false, false, 1, 10, CrmHandler.Instance.Token);
                 RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\GetCustomersByNamePaged.txt");
                 if (customersResult.ResponseState == TransactionalApi.SDK.CrmService.ExecutionStatus.Success)
                 {
@@ -48,7 +48,7 @@
                         var projectGuid = Guid.NewGuid();
                         var taskGuid = Guid.NewGuid();
 
-                        var project = new Project { ID = projectGuid, Name = "My API Test Project", CustomerID = customerId };
+                        var project = new Project { ID = projectGuid, Name = "My API Test Project", CustomerID = customerId, TypeID = 1, MainContractID = 1};
                         var projectResult = ProjectManagementHandler.Instance.ProjectManagementClient.CreateProject(project, ProjectManagementHandler.Instance.Token);
                         RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\CreateProject.txt");
                         if (projectResult.ResponseState == ExecutionStatus.Success)
@@ -57,7 +57,7 @@
                             {
                                 Logger.Info("Project created");
                             }
-
+                            
                             project = projectResult.Return.FirstOrDefault().Item;
                             var task = new Task() {ID = taskGuid, Name = "First task"};
                             var taskResult = ProjectManagementHandler.Instance.ProjectManagementClient.CreateTask(task,
