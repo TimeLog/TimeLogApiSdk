@@ -862,6 +862,9 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime EndDateField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MainContractIDField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ID {
             get {
@@ -962,6 +965,19 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
                 if ((this.EndDateField.Equals(value) != true)) {
                     this.EndDateField = value;
                     this.RaisePropertyChanged("EndDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public int MainContractID {
+            get {
+                return this.MainContractIDField;
+            }
+            set {
+                if ((this.MainContractIDField.Equals(value) != true)) {
+                    this.MainContractIDField = value;
+                    this.RaisePropertyChanged("MainContractID");
                 }
             }
         }
@@ -6684,10 +6700,13 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         CustomerRelationer = 142,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MilestoneType = 143,
+        UnitType = 143,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ProjectSubContractStatus = 144,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MilestoneType = 145,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,

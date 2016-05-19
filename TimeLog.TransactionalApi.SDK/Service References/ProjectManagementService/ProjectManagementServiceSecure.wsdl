@@ -661,6 +661,7 @@
               <xs:element minOccurs="0" name="IsGeneralProject" type="xs:boolean" />
               <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
               <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="MainContractID" type="xs:int" />
             </xs:sequence>
           </xs:extension>
         </xs:complexContent>
@@ -2568,7 +2569,7 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:enumeration>
-          <xs:enumeration value="MilestoneType">
+          <xs:enumeration value="UnitType">
             <xs:annotation>
               <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">143</EnumerationValue>
@@ -2579,6 +2580,13 @@
             <xs:annotation>
               <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">144</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="MilestoneType">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">145</EnumerationValue>
               </xs:appinfo>
             </xs:annotation>
           </xs:enumeration>
