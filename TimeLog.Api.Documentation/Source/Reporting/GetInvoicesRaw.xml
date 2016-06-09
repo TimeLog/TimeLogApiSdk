@@ -24,7 +24,16 @@
     <tlp:PaymentTermText>Terms: NET 14 days</tlp:PaymentTermText>
     <tlp:CurrencyAbb>USD</tlp:CurrencyAbb>
     <tlp:CurrencyRate>100.0000</tlp:CurrencyRate>
-    <tlp:VAT>25.0000</tlp:VAT>
+    <tlp:DefaultVAT>25.0000</tlp:DefaultVAT>
     <tlp:AddVAT>1</tlp:AddVAT>
+    <tlp:NetAmount>3200.0000</tlp:NetAmount>
+    <tlp:NetAmountSystemCurrency>3200.0000</tlp:NetAmountSystemCurrency>
+    <tlp:VATIncluded>0.0000</tlp:VATIncluded>
+    <tlp:VATIncludedSystemCurrency>0.0000</tlp:VATIncludedSystemCurrency>
+    <tlp:ProjectNo>P34</tlp:ProjectNo>
+    <tlp:PurchaseNo>134-2016</tlp:PurchaseNo>
+    <tlp:ContactFullName>Peter Olsen</tlp:ContactFullName>
+    <tlp:DepartmentID>34</tlp:DepartmentID>
+    <tlp:DepartmentTree>TimeLog A/S » Consultancy</tlp:DepartmentTree>
   </tlp:Invoice>
 </tlp:Invoices>

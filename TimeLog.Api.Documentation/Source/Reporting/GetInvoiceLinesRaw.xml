@@ -8,23 +8,33 @@
     <tlp:InvoiceNo>2003-0067</tlp:InvoiceNo>
     <tlp:Date>2003-08-28T00:00:00</tlp:Date>
     <tlp:Text>Direct mail</tlp:Text>
-    <tlp:Units>1.0000</tlp:Units>
+    <tlp:Quantity>1.0000</tlp:Quantity>
     <tlp:Rate>350.0000</tlp:Rate>
+    <tlp:RateSystemCurrency>350.0000</tlp:RateSystemCurrency>
     <tlp:Amount>350.0000</tlp:Amount>
+    <tlp:AmountSystemCurrency>350.0000</tlp:AmountSystemCurrency>
     <tlp:ProjectID>77</tlp:ProjectID>
     <tlp:ProjectName>2003-0008 PPMcentral 1.0</tlp:ProjectName>
     <tlp:ProjectNo>2003-0008</tlp:ProjectNo>
+    <tlp:VAT>18.0000</tlp:VAT>
+    <tlp:Discount>0.0000</tlp:Discount>
+    <tlp:UnitType>6</tlp:UnitType>
+    <tlp:ProductNo></tlp:ProductNo>
   </tlp:InvoiceLine>
   <tlp:InvoiceLine ID="1096">
     <tlp:InvoiceID>131</tlp:InvoiceID>
     <tlp:InvoiceNo>2003-0067</tlp:InvoiceNo>
     <tlp:Date>2003-08-28T00:00:00</tlp:Date>
     <tlp:Text>Brochure</tlp:Text>
-    <tlp:Units>3.5000</tlp:Units>
+    <tlp:Quantity>3.5000</tlp:Quantity>
     <tlp:Rate>350.0000</tlp:Rate>
     <tlp:Amount>1225.0000</tlp:Amount>
     <tlp:ProjectID>77</tlp:ProjectID>
     <tlp:ProjectName>2003-0008 PPMcentral 1.0</tlp:ProjectName>
     <tlp:ProjectNo>2003-0008</tlp:ProjectNo>
+    <tlp:VAT>18.0000</tlp:VAT>
+    <tlp:Discount>0.0000</tlp:Discount>
+    <tlp:UnitType>6</tlp:UnitType>
+    <tlp:ProductNo></tlp:ProductNo>
   </tlp:InvoiceLine>
 </tlp:InvoiceLines>

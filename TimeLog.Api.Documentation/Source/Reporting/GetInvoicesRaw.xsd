@@ -40,9 +40,18 @@
       <xsd:element name="PaymentTermText" type="xsd:string" />
       <xsd:element name="CurrencyAbb" type="xsd:string" />
       <xsd:element name="CurrencyRate" type="xsd:decimal" />
-      <xsd:element name="VAT" type="xsd:decimal" />
-      <xsd:element name="AddVAT" type="xsd:boolean" />      
-		</xsd:sequence>
+      <xsd:element name="DefaultVAT" type="xsd:decimal" />
+      <xsd:element name="AddVAT" type="xsd:boolean" />
+      <xsd:element name="NetAmount" type="xsd:decimal" />
+      <xsd:element name="NetAmountSystemCurrency" type="xsd:decimal" />
+      <xsd:element name="VATIncluded" type="xsd:decimal" />
+      <xsd:element name="VATIncludedSystemCurrency" type="xsd:decimal" />
+      <xsd:element name="ProjectNo" type="xsd:string" />
+      <xsd:element name="PurchaseNo" type="xsd:string" />
+      <xsd:element name="ContactFullName" type="xsd:string" />
+      <xsd:element name="DepartmentID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="DepartmentTree" type="xsd:string" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
 		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
 	</xsd:complexType>
   
