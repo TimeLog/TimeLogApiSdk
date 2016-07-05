@@ -29,6 +29,7 @@
                 // ConsumeReportingApi.Consume();
                 // ConsumeTransactionalApi.Consume();
                 // ConsumeCsvFile.Consume();
+                // GetEmployeesTransactionalApi.Consume();
                 // CreateProjectTransactionalApi.Consume();
                 // CreateProjectTransactionalApi2.Consume();
                 // InsertCustomerTest.Consume();

@@ -54,6 +54,7 @@
     <Compile Include="CreateProjectTransactionalApi.cs" />
     <Compile Include="ConsumeTransactionalApi.cs" />
     <Compile Include="CreateProjectTransactionalApi2.cs" />
+    <Compile Include="GetEmployeesTransactionalApi.cs" />
     <Compile Include="InsertCustomerTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
