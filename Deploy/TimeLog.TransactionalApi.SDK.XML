@@ -4,6 +4,41 @@
         <name>TimeLog.TransactionalApi.SDK</name>
     </assembly>
     <members>
+        <member name="T:TimeLog.TransactionalApi.SDK.HelpDeskHandler">
+            <summary>
+            Handler of functionality related to the HelpDesk service
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.HelpDeskHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.HelpDeskHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.HelpDeskHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.TransactionalApi.SDK.HelpDeskHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.HelpDeskHandler.HelpDeskServiceUrl">
+            <summary>
+            Gets the uri associated with the HelpDesk service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.HelpDeskHandler.Token">
+            <summary>
+            Gets the HelpDesk token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.HelpDeskHandler.CollectRawRequestResponse">
+            <summary>
+            Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.HelpDeskHandler.HelpDeskClient">
+            <summary>
+            Gets the active HelpDesk client
+            </summary>
+        </member>
         <member name="T:TimeLog.TransactionalApi.SDK.OrganisationHandler">
             <summary>
             Handler of functionality related to the organisation service

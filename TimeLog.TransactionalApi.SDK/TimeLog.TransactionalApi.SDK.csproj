@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HelpDeskHandler.cs" />
     <Compile Include="OrganisationHandler.cs" />
     <Compile Include="ExpenseHandler.cs" />
     <Compile Include="SalaryHandler.cs" />
@@ -92,6 +93,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="SecurityHandler.cs" />
+    <Compile Include="Service References\HelpDeskService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="SettingsHandler.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +155,21 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfPaymentMethod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfServiceContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfSupportType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\InvoicingService\InvoicingServiceSecure.wsdl" />
@@ -301,6 +322,8 @@
     <None Include="Service References\SecurityService\TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\HelpDeskService\HelpDeskServiceSecure.wsdl" />
+    <None Include="Service References\HelpDeskService\HelpDeskServiceSecure1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CrmService\" />
@@ -310,6 +333,7 @@
     <WCFMetadataStorage Include="Service References\ProjectManagementService\" />
     <WCFMetadataStorage Include="Service References\SalaryService\" />
     <WCFMetadataStorage Include="Service References\SecurityService\" />
+    <WCFMetadataStorage Include="Service References\HelpDeskService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SecurityService\SecurityServiceSecure.disco" />
@@ -418,6 +442,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HelpDeskService\HelpDeskServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HelpDeskService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HelpDeskService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HelpDeskService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
