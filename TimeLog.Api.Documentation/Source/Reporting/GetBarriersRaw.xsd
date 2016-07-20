@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+	<xsd:element name="Barriers" >
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Barrier" type="tlp:BarriersRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+		<xsd:key name="Barrier_Key">
+			<xsd:selector xpath=".//tlp:Barrier" />
+			<xsd:field xpath="@ID" />
+		</xsd:key>
+	</xsd:element>
+
+	<xsd:complexType name="BarriersRaw_Type">
+		<xsd:sequence>
+	    <xsd:element name="BarrierGUID" type="xsd:string" />
+			<xsd:element name="BarrierName" type="xsd:string" />
+      <xsd:element name="IsActive" type="xsd:boolean" />
+      </xsd:sequence>
+		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+	</xsd:complexType>
+
+</xsd:schema>

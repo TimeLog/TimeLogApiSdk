@@ -404,7 +404,7 @@ TimeLog.TLP.WebAppCode
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetMileageRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Int32,System.Int32)">
  <summary>
- 
+ Gets a list of mileage
  </summary>
  <param name="siteCode">Unique identification for your TimeLog Project account</param>
  <param name="apiID">The API ID</param>
@@ -420,6 +420,44 @@ TimeLog.TLP.WebAppCode
  <param name="transportRateID">ID of specific transport rate. Set to 0 to get all.</param>
  <returns>A list of mileage objects in XML format</returns>
  <remarks></remarks>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunitiesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+ <summary>
+ Gets a list of opportunities
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="opportunityID">ID of specific opportunity. Set to 0 to get all opportunitys</param>
+ <param name="customerID">ID of specific customer. Set to 0 to get all opportunities</param>
+ <param name="ownerID">ID of the employee in charge of opportunity. Set to 0 to get all opportunities</param>
+ <param name="opportunityTypeID">ID of specific opportuni type. Set to 0 to get all opportunities</param>
+ <param name="barrierID">ID of specific barrier. Set to 0 to get all opportunities</param>    
+ <param name="startDate">Limits result to invoices with opportunities date equal to or later than specified date</param>
+ <param name="endDate">Limits result to invoices with opportunities date equal to or earlier than specified date</param>
+ <returns>A list of opportunitys objects in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunityTypesRaw(System.String,System.String,System.String,System.Int32,System.Int32)">
+ <summary>
+ Gets a list of opportunityTypes
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="opportunityTypeID">ID of specific OpportunityType. Set to 0 to get all opportunityTypes</param>
+ <param name="status">0 for uncompleted opportunities; 1 for completed opportunities; -1 for all opportunities</param>
+ <returns>A list of opportunities objects in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetBarriersRaw(System.String,System.String,System.String,System.Int32,System.Int32)">
+ <summary>
+ Gets a list of barriers
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="barrierID">ID of specific Barrier. Set to 0 to get all barriers</param>
+ <param name="status">0 for uncompleted barriers; 1 for completed barriers; -1 for all barriers</param>
+ <returns>A list of barriers objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetIndustriesShortList(System.String,System.String,System.String)">
  <summary>

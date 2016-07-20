@@ -73,7 +73,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
-    <None Include="Service References\ReportingService\service.wsdl" />
+    <None Include="Service References\ReportingService\service1.wsdl" />
     <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -83,15 +83,18 @@
     <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ReportingService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ReportingService\service.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ReportingService\configuration91.svcinfo" />
@@ -104,6 +107,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingService\service1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

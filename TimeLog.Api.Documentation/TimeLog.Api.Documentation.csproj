@@ -161,8 +161,11 @@
     <Content Include="Source\Reporting\GetCountriesShortList.xml" />
     <Content Include="Source\Reporting\GetCustomersRaw.xml" />
     <Content Include="Source\Reporting\GetCustomersShortList.xml" />
-    <Content Include="Source\Reporting\GetCustomerStatusesShortList.xml" />
+    <Content Include="Source\Reporting\GetCustomerStatusShortList.xml" />
     <Content Include="Source\Reporting\GetDepartmentsShortlist.xml" />
+    <Content Include="Source\Reporting\GetBarriersRaw.xml" />
+    <Content Include="Source\Reporting\GetOpportunitiesRaw.xml" />
+    <Content Include="Source\Reporting\GetOpportunityTypesRaw.xml" />
     <Content Include="Source\Reporting\GetMilestoneTypesRaw.xml" />
     <Content Include="Source\Reporting\GetMilestonesRaw.xml" />
     <Content Include="Source\Reporting\GetMileageRaw.xml" />
@@ -227,7 +230,7 @@
     <Content Include="Source\Reporting\GetCustomersShortList.xsd">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Source\Reporting\GetCustomerStatusesShortList.xsd">
+    <Content Include="Source\Reporting\GetCustomerStatusShortList.xsd">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Source\Reporting\GetDepartmentsShortlist.xsd">
@@ -301,6 +304,15 @@
     <Content Include="Views\Transactional\ExternalSystems.cshtml" />
     <Content Include="Views\Home\DataModel.cshtml" />
     <Content Include="Views\FileServices\InvoiceLineExport.cshtml" />
+    <None Include="Source\Reporting\GetBarriersRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetOpportunitiesRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetOpportunityTypesRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Source\Reporting\GetMilestoneTypesRaw.xsd">
       <SubType>Designer</SubType>
     </None>

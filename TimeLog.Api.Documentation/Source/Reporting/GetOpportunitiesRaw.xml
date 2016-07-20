@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Opportunities xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/OpportunitiesRaw.xsd">
+  <tlp:Opportunity ID="1499">
+    <CustomerID>13</CustomerID>
+    <ContactID>102</ContactID>
+    <Subject>test</Subject>
+    <OpportunityTypeID>2</OpportunityTypeID>
+     <OwnerID>312</OwnerID>
+     <BarrierID>10</BarrierID>
+     <Status>Lead</Status>
+     <Potential>450000</Potential>
+     <ForecastRate>50</ForecastRate>
+     <Description>Opportunity no. 1</Description>
+     <Created>2016-07-01 00:00:00.000</Created>
+     <Createdby>312</Createdby>
+     <LastModified>2016-07-01 00:00:00.000</LastModified>
+     <LastModifiedBy>312</LastModifiedBy>
+     <QuotationSent>2016-07-11 00:00:00.000</QuotationSent>
+     <Quotation>40000</Quotation>
+     <CurrencyID>33</CurrencyID>
+  </tlp:Opportunity>
+</tlp:Opportunities>
