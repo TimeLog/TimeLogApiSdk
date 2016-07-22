@@ -22,7 +22,7 @@
 
         public ActionResult ExactOnline()
         {
-            return View("Index");
+            return View("ExactOnline");
         }
 
         public ActionResult VismaAdministration()

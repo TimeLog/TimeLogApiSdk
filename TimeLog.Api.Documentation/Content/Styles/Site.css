@@ -4801,3 +4801,11 @@ pre {
     overflow: auto;
     overflow-x: hidden;
 }
+
+
+.mapping_table {
+}
+
+    .mapping_table td, .mapping_table th {
+        border-bottom: 1px solid #e5e5e5;
+    }
