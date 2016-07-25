@@ -164,9 +164,14 @@
     <Content Include="Source\Reporting\GetCustomersShortList.xml" />
     <Content Include="Source\Reporting\GetCustomerStatusShortList.xml" />
     <Content Include="Source\Reporting\GetDepartmentsShortlist.xml" />
-    <Content Include="Source\Reporting\GetBarriersRaw.xml" />
+    <Content Include="Source\Reporting\GetBarriersShortlist.xml" />
+    <Content Include="Source\Reporting\GetEventsRaw.xml" />
+    <Content Include="Source\Reporting\GetOpportunityStatusShortlist.xml" />
+    <Content Include="Source\Reporting\GetWorkingHoursRaw.xml" />
+    <Content Include="Source\Reporting\GetEmployeeNormalWorkingHoursRaw.xml" />
     <Content Include="Source\Reporting\GetOpportunitiesRaw.xml" />
-    <Content Include="Source\Reporting\GetOpportunityTypesRaw.xml" />
+    <Content Include="Source\Reporting\GetEventTypesRaw.xml" />
+    <Content Include="Source\Reporting\GetOpportunityTypesShortlist.xml" />
     <Content Include="Source\Reporting\GetMilestoneTypesRaw.xml" />
     <Content Include="Source\Reporting\GetMilestonesRaw.xml" />
     <Content Include="Source\Reporting\GetMileageRaw.xml" />
@@ -305,13 +310,28 @@
     <Content Include="Views\Transactional\ExternalSystems.cshtml" />
     <Content Include="Views\Home\DataModel.cshtml" />
     <Content Include="Views\FileServices\InvoiceLineExport.cshtml" />
-    <None Include="Source\Reporting\GetBarriersRaw.xsd">
+    <None Include="Source\Reporting\GetBarriersShortlist.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetEventsRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetOpportunityStatusShortlist.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetWorkingHoursRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetEmployeeNormalWorkingHoursRaw.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Source\Reporting\GetOpportunitiesRaw.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Source\Reporting\GetOpportunityTypesRaw.xsd">
+    <None Include="Source\Reporting\GetEventTypesRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetOpportunityTypesShortlist.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Source\Reporting\GetMilestoneTypesRaw.xsd">

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:EmployeeNormHours xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/EmployeeNormalWorkingHoursRaw.xsd">
+  <tlp:EmployeeNormHour>
+    <tlp:NormHourSchemaID>1</tlp:NormHourSchemaID>
+    <tlp:Weekday>1</tlp:Weekday>
+    <tlp:NormHourSchemaName>Normal</tlp:NormHourSchemaName>
+    <tlp:NormHour>7.4</tlp:NormHour>
+    <tlp:EmployeeID>128</tlp:EmployeeID>
+    <tlp:EmployeeFirstName>Christian</tlp:EmployeeFirstName>
+    <tlp:EmployeeLastName>Olsen</tlp:EmployeeLastName>
+  </tlp:EmployeeNormHour>
+</tlp:EmployeeNormHours>

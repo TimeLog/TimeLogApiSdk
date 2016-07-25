@@ -428,36 +428,43 @@ TimeLog.TLP.WebAppCode
  <param name="siteCode">Unique identification for your TimeLog Project account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
- <param name="opportunityID">ID of specific opportunity. Set to 0 to get all opportunitys</param>
+ <param name="opportunityID">ID of specific opportunity. Set to 0 to get all opportunities</param>
  <param name="customerID">ID of specific customer. Set to 0 to get all opportunities</param>
  <param name="ownerID">ID of the employee in charge of opportunity. Set to 0 to get all opportunities</param>
- <param name="opportunityTypeID">ID of specific opportuni type. Set to 0 to get all opportunities</param>
+ <param name="opportunityTypeID">ID of specific opportunityType. Set to 0 to get all opportunities</param>
  <param name="barrierID">ID of specific barrier. Set to 0 to get all opportunities</param>    
- <param name="startDate">Limits result to invoices with opportunities date equal to or later than specified date</param>
- <param name="endDate">Limits result to invoices with opportunities date equal to or earlier than specified date</param>
- <returns>A list of opportunitys objects in XML format</returns>
+ <param name="startDate">Limits result to opportunities with opportunities date equal to or later than specified date</param>
+ <param name="endDate">Limits result to opportunities with opportunities date equal to or earlier than specified date</param>
+ <returns>A list of opportunity objects in XML format</returns>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunityTypesRaw(System.String,System.String,System.String,System.Int32,System.Int32)">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunityTypesShortlist(System.String,System.String,System.String,System.Int32)">
  <summary>
  Gets a list of opportunityTypes
  </summary>
  <param name="siteCode">Unique identification for your TimeLog Project account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
- <param name="opportunityTypeID">ID of specific OpportunityType. Set to 0 to get all opportunityTypes</param>
- <param name="status">0 for uncompleted opportunities; 1 for completed opportunities; -1 for all opportunities</param>
- <returns>A list of opportunities objects in XML format</returns>
+ <param name="status">0 for inactive opportunityTypes; 1 for active opportunityTypes; -1 for all opportunityTypes</param>
+ <returns>A list of opportunityType objects in XML format</returns>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetBarriersRaw(System.String,System.String,System.String,System.Int32,System.Int32)">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunityStatusShortlist(System.String,System.String,System.String)">
+ <summary>
+ Gets a list of opportunity status
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <returns>A list of opportunity status objects in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetBarriersShortlist(System.String,System.String,System.String,System.Int32)">
  <summary>
  Gets a list of barriers
  </summary>
  <param name="siteCode">Unique identification for your TimeLog Project account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
- <param name="barrierID">ID of specific Barrier. Set to 0 to get all barriers</param>
- <param name="status">0 for uncompleted barriers; 1 for completed barriers; -1 for all barriers</param>
- <returns>A list of barriers objects in XML format</returns>
+ <param name="status">0 for inactive barriers; 1 for active barriers; -1 for all barriers</param>
+ <returns>A list of barrier objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetIndustriesShortList(System.String,System.String,System.String)">
  <summary>
@@ -528,6 +535,58 @@ TimeLog.TLP.WebAppCode
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of countrie objects in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetEventsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+ <summary>
+ Gets a list of events
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="eventID">ID of specific event. Set to 0 to get all events</param>
+ <param name="eventTypeID">ID of specific eventType. Set to 0 to get all events</param>
+ <param name="customerID">ID of specific customer. Set to 0 to get all events</param>
+ <param name="employeeID">ID of the employee in charge of the event. Set to 0 to get all events</param>
+ <param name="status">ID of the event status. Set to 0 to get all. Planned = 1, Postponed = 2, Finished = 3, Cancelled = 4,</param>
+ <param name="startDate">Limits result to events with date equal to or later than specified date</param>
+ <param name="endDate">Limits result to events with date equal to or earlier than specified date</param>
+ <returns>A list of events objects in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetEventTypesShortlist(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Gets a list of eventTypes
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="status">0 for inactive eventTypes; 1 for active eventTypes; -1 for all eventTypes</param>
+ <returns>A list of eventtype objects in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetWorkingHoursRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+ <summary>
+ Gets a list of working hours
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="employeeID">ID of specific employee. Set to 0 to get all employees</param>
+ <param name="departmentID">ID of specific department. Set to 0 to get all employees</param>
+ <param name="status">Set to 0 for inactive employees; 1 for active employees; -1 to get all employees</param>
+ <param name="startDate">Limits result to working hours with date equal to or later than specified date</param>
+ <param name="endDate">Limits result to working hours with date equal to or earlier than specified date</param>
+ <returns>A list of working hour objects in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetEmployeeNormalWorkingHoursRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Gets a list of employee normal working hours
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="employeeID">ID of specific employee. Set to 0 to get all employees</param>
+ <param name="departmentID">ID of specific department. Set to 0 to get all employees</param>
+ <param name="status">Set to 0 for inactive employees; 1 for active employees; -1 to get all employees</param>
+ <returns>A list of employee normal working hour objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.ValidateCredentials(System.String,System.String,System.String)">
  <summary>
