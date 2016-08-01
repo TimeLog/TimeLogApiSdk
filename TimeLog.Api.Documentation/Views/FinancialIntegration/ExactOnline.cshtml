@@ -69,122 +69,169 @@
 
         <table style="width: 100%" class="mapping_table">
             <colgroup>
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                <col style="width: 33%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
             </colgroup>
             <thead>
             <tr>
-                <th>TLP</th>
-                <th>Exact Online</th>
+                <th colspan="2">Field name</th>
+                <th colspan="2">Technical name</th>
+
+            </tr>
+                <tr>
+                    <th>TLP</th>
+                    <th>Exact Online</th>
+                    <th>TLP</th>
+                    <th>Exact Online</th>
                 <th>Remarks</th>
             </tr>
             </thead>
             <tbody>
-                        <tr>
-                            <td>Address2</td>
-                            <td>AddressLine2</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Address3</td>
-                            <td>AddressLine3</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>City</td>
-                            <td>City</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>CountryISO</td>
-                            <td>Country</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Currency</td>
-                            <td>Currency</td>
-                            <td>Currency abbreviation (eg. USD)</td>
-                        </tr>
-                        <tr>
-                            <td>CustomerNo</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>CustomerStatus</td>
-                            <td>-</td>
-                            <td>Is always set to C. Equals customer in Exact Online</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>Email</td>
-                            <td></td>
-                        </tr>
-                        <tr class="info">
-                            <td>ExternalKey</td>
-                            <td>Code</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Fax</td>
-                            <td>Fax</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>GUID</td>
-                            <td>-</td>
-                            <td>Always a new guid</td>
-                        </tr>
-                        <tr>
-                        <tr>
-                            <td>Name</td>
-                            <td>Name</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Phone</td>
-                            <td>Phone</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>State</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>VatNo</td>
-                            <td></td>
-                            <td>Is not transferred. Exact Online connects to the Chamber of Commerce and VAT no are retrieved/validated from there.</td>
-                        </tr>
-                        <tr>
-                            <td>VATPercent</td>
-                            <td>-</td>
-                            <td>Is not transferred. Is applied customer in Exact Online based on setting there.</td>
-                        </tr>
-                        <tr>
-                            <td>Website</td>
-                            <td>Website</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>ZipCode</td>
-                            <td>Postcode</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
+                <tr>
+                    <td>Address</td>
+                    <td>Address</td>
+                    <td>Address.Address</td>
+                    <td>AddressLine1</td>
+                    <td></td>
+                </tr>
+            <tr>
+                <td>Address 2</td>
+                <td>-</td>
+                <td>Address.Address2</td>
+                <td>AddressLine2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Address 3</td>
+                <td>-</td>
+                <td>Address.Address3</td>
+                <td>AddressLine3</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>City</td>
+                <td>Address.City</td>
+                <td>City</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>Country</td>
+                <td>Country.ISO</td>
+                <td>Country</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td>Currency</td>
+                <td>Currency.ABB</td>
+                <td>SalesCurrency</td>
+                <td>Currency abbreviation (eg. USD)</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Type</td>
+                <td>-</td>
+                <td>Status</td>
+                <td>Is always set to C. Equals customer in Exact Online</td>
+            </tr>
+            <tr>
+                <td>E-mail</td>
+                <td>E-mail</td>
+                <td>Email</td>
+                <td>Email</td>
+                <td></td>
+            </tr>
+            <tr class="info">
+                <td>-</td>
+                <td>Code</td>
+                <td>ExternalKey</td>
+                <td>Code</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Fax</td>
+                <td>-</td>
+                <td>Fax</td>
+                <td>Fax</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>ID</td>
+                <td>Always a new guid when transfered to Exact Online</td>
+            </tr>
+            <tr>
+            <tr>
+                <td>Company name</td>
+                <td>Name</td>
+                <td>Name</td>
+                <td>Name</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>Phone</td>
+                <td>Phone</td>
+                <td>Phone</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>VAT no</td>
+                <td>VAT number</td>
+                <td>VatNo</td>
+                <td>VATNumber</td>
+                <td>Exact Online connects to the Chamber of Commerce and VAT no. are validated through there. Customer transfer fail if VAT no. validatioin fails.</td>
+            </tr>
+            <tr>
+                <td>VAT %</td>
+                <td>-</td>
+                <td>VATPercent</td>
+                <td></td>
+                <td>Is not transferred. Is applied customer in Exact Online based on setting there.</td>
+            </tr>
+            <tr>
+                <td>Website</td>
+                <td>Website</td>
+                <td>Website</td>
+                <td>Website</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Postal code</td>
+                <td>Postcode</td>
+                <td>Address.ZipCode</td>
+                <td>Postcode</td>
+                <td></td>
+            </tr>
+            </tbody>
                 </table>
     </div>
     <h3 id="mapping-contacts">Contact</h3>
     <div class="bs-example">
         <table style="width: 100%" class="mapping_table">
             <colgroup>
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                <col style="width: 33%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
             </colgroup>
             <thead>
                 <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TLP</th>
+                    <th>Exact Online</th>
                     <th>TLP</th>
                     <th>Exact Online</th>
                     <th>Remarks</th>
@@ -192,51 +239,63 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>Your comment</td>
+                    <td>Remarks</td>
                     <td>Comments</td>
                     <td>Notes</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>CustomerKey</td>
+                    <td>Customer</td>
                     <td>Account</td>
-                    <td></td>
+                    <td>ExternalID</td>
+                    <td>Account.ID</td>
+                    <td>The account ID from Exact Online is retrieved basen on the externalKey mapping in TLP. </td>
                 </tr>
                 <tr>
+                    <td>Email</td>
+                    <td>E-mail</td>
                     <td>Email</td>
                     <td>Email</td>
                     <td></td>
                 </tr>
                 <tr class="info">
-                    <td>ExternalKey</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>ExternalID</td>
                     <td>ID</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Firstname</td>
+                    <td>First name</td>
+                    <td>First name</td>
+                    <td>FirstName</td>
                     <td>FirstName</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>GUID</td>
                     <td>-</td>
-                    <td>Always a new guid</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>ID</td>
+                    <td>Always a new guid when transfered to Exact Online</td>
                 </tr>
                 <tr>
-                    <td>Lastname</td>
+                    <td>Last name</td>
+                    <td>Last name</td>
+                    <td>LastName</td>
                     <td>LastName</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Phone</td>
                     <td>Phone</td>
+                    <td>Phone</td>
+                    <td>Phone</td>
                     <td></td>
                 </tr>
 
-                <tr>
-                    <td>Title</td>
-                    <td></td>
-                    <td>Not transferred</td>
-                </tr>
+              
             </tbody>
         </table>
     </div>
@@ -244,12 +303,21 @@
     <div class="bs-example">
         <table style="width: 100%" class="mapping_table">
             <colgroup>
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                <col style="width: 33%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
             </colgroup>
             <thead>
                 <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TLP</th>
+                    <th>Exact Online</th>
                     <th>TLP</th>
                     <th>Exact Online</th>
                     <th>Remarks</th>
@@ -259,9 +327,13 @@
                 <tr>
                     <td>Name</td>
                     <td>Description</td>
+                    <td>Name</td>
+                    <td>Description</td>
                     <td></td>
                 </tr>
                 <tr>
+                    <td>No.</td>
+                    <td>Code</td>
                     <td>ProductNo</td>
                     <td>Code</td>
                     <td></td>
@@ -274,12 +346,21 @@
     <div class="bs-example">
         <table style="width: 100%" class="mapping_table">
             <colgroup>
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                <col style="width: 33%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
             </colgroup>
             <thead>
                 <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TLP</th>
+                    <th>Exact Online</th>
                     <th>TLP</th>
                     <th>Exact Online</th>
                     <th>Remarks</th>
@@ -288,20 +369,28 @@
             <tbody>
                 <tr>
                     <td>Email</td>
+                    <td>E-mail</td>
+                    <td>Email</td>
                     <td>Email</td>
                     <td></td>
                 </tr>
                 <tr class="info">
+                    <td>-</td>
+                    <td>ID</td>
                     <td>ExternalKey</td>
                     <td>UserID</td>
                     <td></td>
                 </tr>
                 <tr>
+                    <td>First name</td>
+                    <td>First name</td>
                     <td>Firstname</td>
                     <td>Firstname</td>
                     <td></td>
                 </tr>
                 <tr>
+                    <td>Last name</td>
+                    <td>Last name</td>
                     <td>Lastname</td>
                     <td>Lastname</td>
                     <td></td>
@@ -314,12 +403,21 @@
 
         <table style="width: 100%" class="mapping_table">
             <colgroup>
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                <col style="width: 33%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
             </colgroup>
             <thead>
                 <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TLP</th>
+                    <th>Exact Online</th>
                     <th>TLP</th>
                     <th>Exact Online</th>
                     <th>Remarks</th>
@@ -328,31 +426,36 @@
             <tbody>
 
                 <tr class="info">
+                    <td>-</td>
+                    <td>Order number</td>
                     <td>ExternalKey</td>
                     <td>InvoiceID</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>InternalReference</td>
+                    <td>Internal reference</td>
+                    <td>Sales person</td>
+                    <td>-</td>
                     <td>Salesperson</td>
-                    <td>Employee GUID</td>
+                    <td>Employee GUID from Exact Online. Is retreived from Exact Online based on the InternalReference employee attached on invoice in TLP.</td>
                 </tr>
                 <tr>
+                    <td>Heading</td>
+                    <td>Description</td>
                     <td>Header</td>
                     <td>Description</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>InvoiceDate</td>
-                    <td>Created</td>
-                    <td></td>
-                </tr>
-                <tr>
                     <td>Currency</td>
+                    <td>Exchange rate</td>
+                    <td>Details.Currency.Abbreviation</td>
                     <td>Currency</td>
                     <td>Abbreviation of the currency from the invoice in TLP.</td>
                 </tr>
                 <tr>
+                    <td>Invoice date</td>
+                    <td>Order date</td>
                     <td>InvoiceDate</td>
                     <td>OrderDate</td>
                     <td></td>
@@ -360,30 +463,42 @@
                 <tr>
                     <td>-</td>
                     <td>Journal</td>
+                    <td></td>
+                    <td>Journal</td>
                     <td>Sales journal in Exact Online. Is set in TLP during the configuration of the integration. </td>
                 </tr>
                 <tr>
                     <td>Customer</td>
+                    <td>Ordered by</td>
+                    <td>ExternalKey</td>
                     <td>OrderedBy</td>
-                    <td></td>
+                    <td>Account GUID is retrieved from Exact Online based on the customer externalKey</td>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td>Payment condition</td>
                     <td></td>
                     <td>PaymentCondition</td>
-                    <td>Customers paymentcondition from Exact Online. Is retrieved from Exact Online.</td>
+                    <td>Account paymentConditionSales is retrieved from Exact Online based on the customer externalKey.</td>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td>Type</td>
                     <td></td>
                     <td>Type</td>
                     <td>Exact value to indicate if it is an invoice or creditnote. 8020 = invoice, 8021 = credit note</td>
                 </tr>
                 <tr>
+                    <td>Invoice no.</td>
+                    <td>Remarks</td>
                     <td>InvoiceNo</td>
                     <td>Remarks</td>
                     <td>TLP invoice no. is saved under remarks in Exact Online</td>
                 </tr>
                 <tr>
-                    <td>Project manager name</td>
+                    <td>-</td>
+                    <td>Your ref.</td>
+                    <td>ProjectManager.Fullname</td>
                     <td>YourRef</td>
                     <td>If a project is attached to the invoice in TLP the project manager is set as yourRef in Exact Online</td>
                 </tr>
@@ -396,12 +511,21 @@
 
         <table style="width: 100%" class="mapping_table">
             <colgroup>
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                <col style="width: 33%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
             </colgroup>
             <thead>
                 <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TLP</th>
+                    <th>Exact Online</th>
                     <th>TLP</th>
                     <th>Exact Online</th>
                     <th>Remarks</th>
@@ -410,35 +534,42 @@
             <tbody>
                 <tr>
                     <td>Amount</td>
+                    <td>Net price</td>
+                    <td>Amount</td>
                     <td>AmountFC</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Product</td>
+                    <td>Product no.</td>
                     <td>Item</td>
-                    <td></td>
+                    <td>ProductNo</td>
+                    <td>Item.ID</td>
+                    <td>Item is retrieved from Exact Online basen on the productNo</td>
                 </tr>
                 <tr>
                     <td>Quantity</td>
                     <td>Quantity</td>
+                    <td>Quantity</td>
+                    <td>Quantity</td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td>Text</td>
-                    <td>Description</td>
-                    <td></td>
-                </tr>
-                <tr>
+               <tr>
+                    <td>Rate</td>
+                    <td>Unit price</td>
                     <td>Rate</td>
                     <td>UnitPrice</td>
                     <td></td>
                 </tr>
                 <tr>
+                    <td>%</td>
+                    <td>Discount (%)</td>
                     <td>Discount</td>
                     <td>Discount</td>
                     <td>Discount in TLP must be divided by 100 to fit Exact Online Format</td>
                 </tr>
                 <tr>
+                    <td>Comment</td>
+                    <td>Notes</td>
                     <td>Comment</td>
                     <td>Notes</td>
                     <td></td>
@@ -452,19 +583,30 @@
 
         <table style="width: 100%" class="mapping_table">
             <colgroup>
-                <col style="width: 33%" />
-                <col style="width: 33%" />
-                <col style="width: 33%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
             </colgroup>
             <thead>
                 <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TLP</th>
+                    <th>Exact Online</th>
                     <th>TLP</th>
                     <th>Exact Online</th>
                     <th>Remarks</th>
                 </tr>
             </thead>
             <tbody>
-               <tr class="info">
+                <tr class="info">
+                    <td>-</td>
+                    <td></td>
                     <td>ExternalKey</td>
                     <td>EntryID</td>
                     <td></td>
@@ -472,64 +614,83 @@
                 <tr>
                     <td>Customer</td>
                     <td>Supplier</td>
-                    <td></td>
+                    <td>CustomerID</td>
+                    <td>SupplierName</td>
+                    <td>If a customer can be found in TLP based on the supplierName on the purchaseEntry this customer will be applied as supplier.</td>
                 </tr>
                 <tr>
                     <td>Comment</td>
                     <td>Description</td>
+                    <td>Comment</td>
+                    <td>Description</td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td>Created</td>
-                    <td>Created</td>
-                    <td></td>
-                </tr>
-                <tr>
+               <tr>
+                    <td>Currency</td>
+                    <td>Exchange rate</td>
                     <td>CurrencyID</td>
                     <td>Currency</td>
-                    <td></td>
+                    <td>Currency on purchaseEntry is ABB. Currency in TLP is found from ABB and currency.ID is used on expense.</td>
                 </tr>
                 <tr>
+                    <td>(Currency)</td>
+                    <td>Exchange rate</td>
                     <td>ExchangeRate</td>
-                    <td>Rate</td>
                     <td></td>
+                    <td>ExchangeRate is retrived from the currency in TLP</td>
                 </tr>
                 <tr>
+                    <td>No.</td>
+                    <td>Entry number</td>
                     <td>DisbursementNo</td>
                     <td>EntryNumber</td>
                     <td></td>
                 </tr>
                 <tr>
+                    <td>-</td>
+                    <td>Entry number</td>
                     <td>ExternalID</td>
                     <td>EntryNumber</td>
                     <td></td>
                 </tr>
                 <tr>
+                    <td>-</td>
+                    <td>Payment reference</td>
                     <td>InvoiceNo</td>
                     <td>InvoiceNumber</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>PaymentMethod</td>
+                    <td>Payment method</td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td>Default paymentmethod for import of expenses is set in TLP</td>
                 </tr>
                 <tr>
+                    <td>Date</td>
+                    <td>Invoice date</td>
                     <td>PurchaseDate</td>
                     <td>EntryDate</td>
                     <td></td>
                 </tr>
                 <tr>
+                    <td>Project</td>
+                    <td>Project</td>
                     <td>ProjectID</td>
                     <td>Project</td>
                     <td>A project can be added to the purchaseEntryLines in Exact Online. IF TLP can match the project no to a project in TLP the project will be applied to the expense.</td>
                 </tr>
                 <tr>
+                    <td>Amount incl. VAT</td>
+                    <td>Amount</td>
                     <td>PurchasedAmount</td>
                     <td>AmountFC</td>
                     <td>Amount for expense is negativ in TLP</td>
                 </tr>
                 <tr>
+                    <td>VAT</td>
+                    <td>VAT amount</td>
                     <td>VATIncluded</td>
                     <td>VATAmountFC</td>
                     <td>Amount for expense is negativ in TLP</td>

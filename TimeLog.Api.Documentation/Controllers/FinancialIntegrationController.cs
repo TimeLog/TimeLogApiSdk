@@ -32,7 +32,7 @@
 
         public ActionResult Economic()
         {
-            return View("Index");
+            return View("e-conomic");
         }
 
         public ActionResult Flows()

@@ -1,0 +1,786 @@
+﻿
+@{
+    ViewBag.Title = "e-conomic";
+    Layout = "../Shared/_Layout_Single_Column.cshtml";
+    
+}
+
+<article class="article">
+    <h1>@ViewBag.Title</h1>
+    <h2>Introduction</h2>
+    <p>
+        The integration between TimeLog Project and e-conomic consists of partial integrations that provide seamless cooperation between the two systems.
+        The integration consists of the following features:
+        <ul>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog Project to e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of contacts from TimeLog Project to e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic update of customer and contact information in e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Synchronisation of product numbers between TimeLog Project and e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of invoices from TimeLog Project to e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog Project and e-conomic</li>
+
+        </ul>
+    </p>
+    <br />
+    <h2>Features</h2>
+    <p>This section includes a list of features and limitations to each transfer area of the integration.</p>
+    <h3>Currencies</h3>
+    <p>TimeLog Project does not create the currency in e-conomic if it does not exist. Therefore, make sure that all the currencies used in TimeLog Project are created in e-conomic.</p>
+    <h3>Customers</h3>
+    <p>
+        Customers can be transferred to AND from TimeLog Project and e-conomic.<br />
+        When customers are created in e-conomic, a string of values need to be filled out in e-conomic. In the current integration implementation, it is not possible to set all values for each customer so,
+        for the moment, the following four values are set in TimeLog Project centrally:
+        <ol>
+            <li style="list-style-type:disc">Debtor group</li>
+            <li style="list-style-type:disc">VAT code (VAT zone)</li>
+            <li style="list-style-type:disc">Terms of payment</li>
+            <li style="list-style-type:disc">Template collection</li>
+        </ol>
+        <br />Subsequently, these values can be adjusted in e-conomic and will not be overwritten when customer data are updated automatically in TimeLog Project.
+        <br />Please note that the values in the employee group drop-down menu are retrieved from e-conomic. To edit these values, go to e-conomic.
+    </p>
+    <h3>Contact</h3>
+    <p>
+        Contacts can be transferred to AND from TimeLog Project and e-conomic.
+    </p>
+    <h3>Product numbers</h3>
+    <p>
+        Product numbers can only be transferred from e-conomic to TimeLog Project. Note that they are not transferred automatically.
+        An system administrator will have to go to the system administration > integrations and choose to import them manually.
+        The product number setup is carried out in TimeLog Project and consists of 3 steps:
+        <ol>
+            <li>Importing product numbers from e-conomic</li>
+            <li>Configuring a product number principle for various TimeLog Project data types</li>
+            <li>Configuring default product numbers for various TimeLog Project data types</li>
+        </ol>
+    </p>
+    <h3>Employees</h3>
+    <p>
+        When transferring an invoice to e-conomic with an internal reference, TimeLog Project checks whether the employee has already been created.
+        If not, an employee is created from the e-conomic employee directory.
+        However, employees in e-conomic must be assigned to an employee group.
+        The default group used for creating employees is selected in the Default values for transferring employees section on the integration confuguration page.
+        You can change the employee group in e-conomic for employees created in TimeLog Project. Later updates will not overwrite this group.
+    </p>
+    <h3>Invoices</h3>
+    <p>Only booked invoices can be transferred from TimeLog Project to e-conomic. Invoices are transferred as drafts. Changes in invoice drafts inside e-conomic will not be reflected in TimeLog Project.</p>
+    <h3>Invoice lines</h3>
+    <p>Invoice lines are transferred along with the invoice. Invoice lines can be modified in e-conomic and addition line can be added. Changes will not be reflected in TimeLog Project.</p>
+    <h3>Expenses</h3>
+    <p>Expenses can only be transferred from e-conomic to TimeLog Project. </p>
+    <h3>Projects</h3>
+    <p>
+        Projects can be transferred from TimeLog Project to e-conomic. The functionality can only be used if you have activated the Projects module in e-conomic.
+        Projects transferred must have an Project group attached. The default project group are set up on the integration configuration page when transfer of projects are activated.
+        Projects created in TimeLog Project wil automatiaclly be transferred to e-conomic when they are created.
+    </p>
+    <h3>Tasks</h3>
+    <p>Not part of the integration.</p>
+    <h3>Allocations</h3>
+    <p>Not part of the integration.</p>
+    <h3>Registrations</h3>
+    <p>Not part of the integration.</p>
+
+    <br />
+    <h2>Mapping</h2>
+    <p>This section contains the explicit mapping of fields between TimeLog Project and e-conomic.</p>
+
+    <h3 id="mapping-customers">Customers</h3>
+    <div class="bs-example">
+
+        <table style="width: 100%" class="mapping_table">
+            <colgroup>
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Company name</td>
+                <td>Name</td>
+                <td>Name</td>
+                <td>Name</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>Telephone/Fax</td>
+                <td>Phone</td>
+                <td>TelephoneAndFaxNumber</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>VAT no</td>
+                <td>-</td>
+                <td>VatNo</td>
+                <td>CINumber</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>VAT no</td>
+                <td>-</td>
+                <td>VatNo</td>
+                <td>VATNumber</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>EAN no.</td>
+                <td>EAN no.</td>
+                <td>EAN</td>
+                <td>Ean</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>Address</td>
+                <td>Address.Address</td>
+                <td>Address</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Address 2</td>
+                <td>-</td>
+                <td>Address.Address2</td>
+                <td>Address</td>
+                <td>Concatenated with address</td>
+            </tr>
+            <tr>
+                <td>Address 3</td>
+                <td>-</td>
+                <td>Address.Address3</td>
+                <td>Address</td>
+                <td>Concatenated with address</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>Town/City</td>
+                <td>Address.City</td>
+                <td>City</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>Country</td>
+                <td>Address.Country</td>
+                <td>Country</td>
+                <td>e-conomic country is retrieved from customer country</td>
+            </tr>
+                <tr>
+                    <td>Postal code</td>
+                    <td>Postcode</td>
+                    <td>Address.ZipCode</td>
+                    <td>Postcode</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Website</td>
+                    <td>Website</td>
+                    <td>Website</td>
+                    <td>Website</td>
+                    <td></td>
+                </tr>
+            <tr>
+                <td>E-mail</td>
+                <td>Invoice e-mail</td>
+                <td>Email</td>
+                <td>Email</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td>Currency</td>
+                <td>Currency</td>
+                <td>Currency</td>
+                <td>e-conomic currency is retrieved by customer currency code.</td>
+            </tr>
+            <tr class="info">
+                <td>-</td>
+                <td>No.</td>
+                <td>ExternalKey</td>
+                <td>Number</td>
+                <td></td>
+            </tr>
+                <tr>
+                    <td></td>
+                    <td>Payment terms</td>
+                    <td>-</td>
+                    <td>TermOfPayment</td>
+                    <td>Retrieved from default setting in integration configuration in TimeLog Project</td>
+                </tr>
+            <tr>
+                <td></td>
+                <td>Layout</td>
+                <td>-</td>
+                <td>Layout</td>
+                <td>Retrieved from default setting in integration configuration in TimeLog Project</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>VAT zone</td>
+                <td>-</td>
+                <td>VatZone</td>
+                <td>Retrieved from default setting in integration configuration in TimeLog Project</td>
+            </tr>
+                <tr>
+                    <td></td>
+                    <td>Group</td>
+                    <td>-</td>
+                    <td>DebtorGroup</td>
+                    <td>Retrieved from default setting in integration configuration in TimeLog Project</td>
+                </tr>
+         
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-contacts">Contact</h3>
+    <div class="bs-example">
+        <table style="width: 100%" class="mapping_table">
+            <colgroup>
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>First name</td>
+                    <td>Name</td>
+                    <td>FirstName</td>
+                    <td>Name</td>
+                    <td>Concatenated in name</td>
+                </tr>
+               <tr>
+                    <td>Last name</td>
+                    <td>Name</td>
+                    <td>LastName</td>
+                    <td>Name</td>
+                    <td>Concatenated in name</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>Telephone</td>
+                    <td>Phone</td>
+                    <td>TelephoneNumber</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>E-mail</td>
+                    <td>Email</td>
+                    <td>Email</td>
+                    <td></td>
+                </tr>
+
+
+            <tr>
+                <td>Your comment</td>
+                <td>Comments</td>
+                <td>Comment</td>
+                <td>Comments</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Customer</td>
+                <td>-</td>
+                <td>ExternalID</td>
+                <td>Debtor</td>
+                <td>The debtor from e-conomic is retrieved basen on the externalKey mapping in TimeLog Project. </td>
+            </tr>
+            
+            <tr class="info">
+                <td>-</td>
+                <td>-</td>
+                <td>ExternalID</td>
+                <td>Name</td>
+                <td></td>
+            </tr>
+            
+           
+
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-productnumbers">Product numbers</h3>
+    <div class="bs-example">
+        <table style="width: 100%" class="mapping_table">
+            <colgroup>
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>No.</td>
+                    <td>No.</td>
+                    <td>ProductNo</td>
+                    <td>Number</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-employees">Employees</h3>
+    <div class="bs-example">
+        <table style="width: 100%" class="mapping_table">
+            <colgroup>
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="info">
+                    <td>-</td>
+                    <td>No.</td>
+                    <td>ExternalKey</td>
+                    <td>Number</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>First name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name is full name in e-conomic.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Group</td>
+                    <td>-</td>
+                    <td>Group</td>
+                    <td>Default employee group from integration configuration setting. </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-invoices">Invoices</h3>
+    <div class="bs-example">
+
+        <table style="width: 100%" class="mapping_table">
+            <colgroup>
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Customer</td>
+                <td>Customer</td>
+                <td>InvoicingCustomerName</td>
+                <td>DebtorName</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Heading</td>
+                <td>Heading</td>
+                <td>Header</td>
+                <td>Heading</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Invoice date</td>
+                <td>Date</td>
+                <td>InvoiceDate</td>
+                <td>Date</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Payment terms</td>
+                <td>Payment terms</td>
+                <td>-</td>
+                <td>TermOfPayment</td>
+                <td>Term of payment is retrieved from the e-conomic debtor</td>
+            </tr>
+
+            <tr class="info">
+                <td>-</td>
+                <td>Invoice no.</td>
+                <td>ExternalID</td>
+                <td>EntryNumber</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td>-</td>
+                <td>Details.Currency.Abbreviation</td>
+                <td>Currency</td>
+                <td>Abbreviation of the currency from the invoice in TimeLog Project.</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Layout</td>
+                <td>Layout is retrieved from the debtor in e-conomic</td>
+            </tr>
+            
+            <tr>
+                <td>Customer's Ref.</td>
+                <td>Your ref.</td>
+                <td>CustomerReferenceID</td>
+                <td>YourReference</td>
+                <td>Contact is retrieved from e-conomic based on the CustomerReferenceID</td>
+            </tr>
+
+
+            <tr>
+                <td>Due date</td>
+                <td>Due date</td>
+                <td>DueDate</td>
+                <td>DueDate</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Calculate VAT</td>
+                <td>-</td>
+                <td>CalculateVAT</td>
+                <td>IsVatIncluded</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Other ref.</td>
+                <td>ID</td>
+                <td>OtherReference</td>
+                <td>TimeLog Project invoiceID is noted in other reference i e-conomic.</td>
+            </tr>
+            <tr>
+                <td>Invoice no.</td>
+                <td>Our ref.</td>
+                <td>Details.InternalReference</td>
+                <td>OurReference</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Contact</td>
+                <td>Attention</td>
+                <td>Details.ContactHeader</td>
+                <td>Attention</td>
+                <td></td>
+            </tr>
+                <tr>
+                    <td>Message + P.O. no.</td>
+                    <td>Text 1</td>
+                    <td>Message + RequisitionNo</td>
+                    <td>TextLine1</td>
+                    <td>Message and requisitionNo is concatenated into TextLine1 in e-conomic.</td>
+                </tr>
+            <tr>
+                <td>Exchange rate (DKK):</td>
+                <td>-</td>
+                <td>InvoiceCurrencyRate</td>
+                <td>ExchangeRate</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Invoice address:</td>
+                <td>Town/City</td>
+                <td>InvoicingAddress.City</td>
+                <td>DebtorCity</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Invoice address:</td>
+                <td>Country</td>
+                <td>InvoicingAddress.Country</td>
+                <td>DebtorCountry</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Project no.</td>
+                <td>Project no.</td>
+                <td>Details.ProjectHeader.No</td>
+                <td>Project</td>
+                <td></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-invoicelines">Invoice lines</h3>
+    <div class="bs-example">
+
+        <table style="width: 100%" class="mapping_table">
+            <colgroup>
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product no.</td>
+                    <td>Product no.</td>
+                    <td>ProductNo</td>
+                    <td>Product</td>
+                    <td>Item is retrieved from e-conomic basen on the productNo</td>
+                </tr>
+            <tr>
+                <td>Unit</td>
+                <td>Unit</td>
+                <td>-</td>
+                <td>Unit</td>
+                <td>Unit attached to product retrieved from e-conomic. /td>
+            </tr>
+
+            <tr>
+                <td>Description</td>
+                <td></td>
+                <td>Text</td>
+                <td>Description</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td>Quantity</td>
+                <td>Quantity</td>
+                <td>Quantity</td>
+                <td>Economic doesn't allow a quantity of 0. If so the rate will be set to 0 instead.</td>
+            </tr>
+            <tr>
+                <td>Rate</td>
+                <td>Price</td>
+                <td>Rate</td>
+                <td>UnitNetPrice</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Discount (%)</td>
+                <td>Discount</td>
+                <td>DiscountAsPercent</td>
+                <td></td>
+            </tr>
+           
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-expenses">Expenses</h3>
+    <div class="bs-example">
+
+        <table style="width: 100%" class="mapping_table">
+            <colgroup>
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+                <col style="width: 20%" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="info">
+                    <td>-</td>
+                    <td></td>
+                    <td>ExternalID</td>
+                    <td>EntryNumber</td>
+                    <td></td>
+                </tr>
+
+            <tr>
+                <td>Date</td>
+                <td>Date</td>
+                <td>Created</td>
+                <td>Date</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td>Currency</td>
+                <td>CurrencyID</td>
+                <td>Currency</td>
+                <td>The currencyID in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+                <td>-</td>
+                <td>ExchangeRate</td>
+                <td>Currency</td>
+                <td>The currency rate in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>DisbursementNo</td>
+                <td>-</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>InvoiceNo</td>
+                <td>-</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Payment method</td>
+                <td></td>
+                <td>PaymentMethod</td>
+                <td>-</td>
+                <td>Default paymentmethod for import. Set up in TimeLog Project.</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Date</td>
+                <td>PurchaseDate</td>
+                <td>Date</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Project</td>
+                <td></td>
+                <td>ProjectID</td>
+                <td>-</td>
+                <td>Is always set to 0</td>
+            </tr>
+            <tr>
+                <td>Amount incl. VAT</td>
+                <td>Amount (Curr)</td>
+                <td>PurchasedAmount</td>
+                <td>Amount</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>VAT</td>
+                <td></td>
+                <td>VATIncluded</td>
+                <td>-</td>
+                <td>Always set to 0. Expenses will exclude VAT amounts.</td>
+            </tr>
+            <tr>
+                <td>Comment</td>
+                <td></td>
+                <td>Comment</td>
+                <td>entry.Account.AccountNumber</td>
+                <td>Used as placeholder for account no. from e-conomic.</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Entry</td>
+                <td>InvoiceNo</td>
+                <td>VoucherNumber</td>
+                <td></td>
+            </tr>
+
+               
+             
+
+            </tbody>
+        </table>
+    </div>
+
+</article>

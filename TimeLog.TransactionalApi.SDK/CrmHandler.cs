@@ -45,10 +45,10 @@
             {
                 if (SettingsHandler.Instance.Url.Contains("https"))
                 {
-                    return SettingsHandler.Instance.Url + "WebServices/CRM/V1_2/CRMServiceSecure.svc";
+                    return SettingsHandler.Instance.Url + "WebServices/CRM/V1_3/CRMServiceSecure.svc";
                 }
 
-                return SettingsHandler.Instance.Url + "WebServices/CRM/V1_2/CRMService.svc";
+                return SettingsHandler.Instance.Url + "WebServices/CRM/V1_3/CRMService.svc";
             }
         }
 
