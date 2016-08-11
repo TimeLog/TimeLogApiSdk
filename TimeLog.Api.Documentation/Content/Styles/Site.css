@@ -4804,8 +4804,67 @@ pre {
 
 
 .mapping_table {
+    font-size: 0.8em;
+    border-collapse: collapse;
 }
 
     .mapping_table td, .mapping_table th {
         border-bottom: 1px solid #e5e5e5;
+        text-align: left;
+    }
+
+    .mapping_table .wrapcomment {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
+        display: block;
+    }
+
+    .mapping_table tr th {
+        border-bottom: none;
+    }
+
+    .mapping_table tr td:nth-child(0) {
+        width: 17%;
+    }
+
+    .mapping_table tr td:nth-child(1) {
+        width: 17%;
+    }
+
+    .mapping_table tr td:nth-child(2) {
+        width: 17%;
+    }
+
+    .mapping_table tr td:nth-child(3) {
+        width: 17%;
+    }
+
+    .mapping_table tr td:nth-child(4) {
+        width: 200px;
+    }
+
+    .mapping_table tr:nth-child(2) th {
+        border-bottom: 1px solid #000;
+    }
+
+    .mapping_table tr:hover .wrapcomment {
+        position: relative;
+        z-index: 1;
+        display: block;
+        text-overflow: '';
+        white-space: normal;
+    }
+
+    @media print {
+        .mapping_table .wrapcomment {
+        display: block;
+        text-overflow: '';
+        white-space: normal;
+        }   
+
+        nav {
+            display: none;
+        }
     }
