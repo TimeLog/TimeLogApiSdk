@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://api.timelog.com/services/crm/1_2" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://api.timelog.com/services/crm/1_2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://api.timelog.com/services/crm/1_3" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://api.timelog.com/services/crm/1_3" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xs:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_3" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:complexType name="SecurityToken">
@@ -909,6 +909,181 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:enumeration>
+          <xs:enumeration value="InvoiceGroupingRuleTemplate">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">122</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="InvoiceGroupingRule">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">123</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="InvoiceLineGroupingRule">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">124</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="InvoiceLineGroupingRuleDetail">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">125</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="AutoInvoiceDetailLog">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">126</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="AutoInvoiceDetail">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">127</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="AutoInvoiceMaster">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="InvoiceSettings">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">129</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ContractModel">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">130</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProjectSubContract">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">131</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProjectSubContractHeader">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">132</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Recurrence">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">133</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="DataImportTemplate">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">134</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CRMGroup">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">135</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CRMGroupRelationDetails">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">136</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="PageFilter">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">137</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Product">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">138</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="IntegrationHandler">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">139</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="TimeTrackingItem">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">140</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="TimeTrackingGroup">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">141</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CustomerRelationer">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">142</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="UnitType">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">143</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProjectSubContractStatus">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">144</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="MilestoneType">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">145</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="EmployeeHeader">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">146</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
           <xs:enumeration value="NotSpecified">
             <xs:annotation>
               <xs:appinfo>
@@ -920,7 +1095,7 @@
       </xs:simpleType>
       <xs:element name="DomainType" nillable="true" type="tns:DomainType" />
     </xs:schema>
-    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://api.timelog.com/services/crm/1_2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://api.timelog.com/services/crm/1_3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="GetCustomerByID">
         <xs:complexType>
           <xs:sequence>
@@ -1214,6 +1389,9 @@
               <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
               <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
               <xs:element minOccurs="0" name="CustomerGUID" type="ser:guid" />
+              <xs:element minOccurs="0" name="ContactID" type="xs:int" />
+              <xs:element minOccurs="0" name="DefaultInvoiceSettingContactID" type="xs:int" />
+              <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
               <xs:element minOccurs="0" name="Details" nillable="true" type="tns:ContactDetails" />
             </xs:sequence>
           </xs:extension>
@@ -1319,14 +1497,14 @@
         <xs:annotation>
           <xs:appinfo>
             <GenericType Name="ResponseOf{0}" Namespace="http://api.timelog.com" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-              <GenericParameter Name="Customer" Namespace="http://api.timelog.com/services/crm/1_2" />
+              <GenericParameter Name="Customer" Namespace="http://api.timelog.com/services/crm/1_3" />
             </GenericType>
           </xs:appinfo>
         </xs:annotation>
         <xs:complexContent mixed="false">
           <xs:extension xmlns:q40="http://www.timelog.com/api/tlp/v1_2" base="q40:APIBase">
             <xs:sequence>
-              <xs:element xmlns:q41="http://api.timelog.com/services/crm/1_2" minOccurs="0" name="Return" nillable="true" type="q41:ArrayOfCustomer" />
+              <xs:element xmlns:q41="http://api.timelog.com/services/crm/1_3" minOccurs="0" name="Return" nillable="true" type="q41:ArrayOfCustomer" />
               <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
               <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
               <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q42:ExecutionStatus" />
@@ -1455,14 +1633,14 @@
         <xs:annotation>
           <xs:appinfo>
             <GenericType Name="ResponseOf{0}" Namespace="http://api.timelog.com" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-              <GenericParameter Name="CustomerStatus" Namespace="http://api.timelog.com/services/crm/1_2" />
+              <GenericParameter Name="CustomerStatus" Namespace="http://api.timelog.com/services/crm/1_3" />
             </GenericType>
           </xs:appinfo>
         </xs:annotation>
         <xs:complexContent mixed="false">
           <xs:extension xmlns:q52="http://www.timelog.com/api/tlp/v1_2" base="q52:APIBase">
             <xs:sequence>
-              <xs:element xmlns:q53="http://api.timelog.com/services/crm/1_2" minOccurs="0" name="Return" nillable="true" type="q53:ArrayOfCustomerStatus" />
+              <xs:element xmlns:q53="http://api.timelog.com/services/crm/1_3" minOccurs="0" name="Return" nillable="true" type="q53:ArrayOfCustomerStatus" />
               <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
               <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
               <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q54:ExecutionStatus" />
@@ -1479,14 +1657,14 @@
         <xs:annotation>
           <xs:appinfo>
             <GenericType Name="ResponseOf{0}" Namespace="http://api.timelog.com" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-              <GenericParameter Name="Contact" Namespace="http://api.timelog.com/services/crm/1_2" />
+              <GenericParameter Name="Contact" Namespace="http://api.timelog.com/services/crm/1_3" />
             </GenericType>
           </xs:appinfo>
         </xs:annotation>
         <xs:complexContent mixed="false">
           <xs:extension xmlns:q55="http://www.timelog.com/api/tlp/v1_2" base="q55:APIBase">
             <xs:sequence>
-              <xs:element xmlns:q56="http://api.timelog.com/services/crm/1_2" minOccurs="0" name="Return" nillable="true" type="q56:ArrayOfContact" />
+              <xs:element xmlns:q56="http://api.timelog.com/services/crm/1_3" minOccurs="0" name="Return" nillable="true" type="q56:ArrayOfContact" />
               <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
               <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
               <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q57:ExecutionStatus" />
@@ -1749,60 +1927,60 @@
       <wsdl:output wsaw:Action="IsAliveReponse" message="tns:ICRMService_IsAlive_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomerByID">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomerByID" message="tns:ICRMService_GetCustomerByID_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomerByIDResponse" message="tns:ICRMService_GetCustomerByID_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByID" message="tns:ICRMService_GetCustomerByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByIDResponse" message="tns:ICRMService_GetCustomerByID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomerByGUID">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomerByGUID" message="tns:ICRMService_GetCustomerByGUID_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomerByGUIDResponse" message="tns:ICRMService_GetCustomerByGUID_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByGUID" message="tns:ICRMService_GetCustomerByGUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByGUIDResponse" message="tns:ICRMService_GetCustomerByGUID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomerByExternalKey">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomerByExternalKey" message="tns:ICRMService_GetCustomerByExternalKey_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomerByExternalKeyResponse" message="tns:ICRMService_GetCustomerByExternalKey_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByExternalKey" message="tns:ICRMService_GetCustomerByExternalKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByExternalKeyResponse" message="tns:ICRMService_GetCustomerByExternalKey_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomersByFieldsPaged">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomersByFieldsPaged" message="tns:ICRMService_GetCustomersByFieldsPaged_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomersByFieldsPagedResponse" message="tns:ICRMService_GetCustomersByFieldsPaged_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByFieldsPaged" message="tns:ICRMService_GetCustomersByFieldsPaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByFieldsPagedResponse" message="tns:ICRMService_GetCustomersByFieldsPaged_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomersModifiedSincePaged">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomersModifiedSincePaged" message="tns:ICRMService_GetCustomersModifiedSincePaged_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomersModifiedSincePagedResponse" message="tns:ICRMService_GetCustomersModifiedSincePaged_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersModifiedSincePaged" message="tns:ICRMService_GetCustomersModifiedSincePaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersModifiedSincePagedResponse" message="tns:ICRMService_GetCustomersModifiedSincePaged_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomersByNamePaged">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomersByNamePaged" message="tns:ICRMService_GetCustomersByNamePaged_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomersByNamePagedResponse" message="tns:ICRMService_GetCustomersByNamePaged_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByNamePaged" message="tns:ICRMService_GetCustomersByNamePaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByNamePagedResponse" message="tns:ICRMService_GetCustomersByNamePaged_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertCustomer">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/InsertCustomer" message="tns:ICRMService_InsertCustomer_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/InsertCustomerResponse" message="tns:ICRMService_InsertCustomer_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/InsertCustomer" message="tns:ICRMService_InsertCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/InsertCustomerResponse" message="tns:ICRMService_InsertCustomer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateCustomer">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/UpdateCustomer" message="tns:ICRMService_UpdateCustomer_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/UpdateCustomerResponse" message="tns:ICRMService_UpdateCustomer_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateCustomer" message="tns:ICRMService_UpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateCustomerResponse" message="tns:ICRMService_UpdateCustomer_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomerStatuses">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomerStatuses" message="tns:ICRMService_GetCustomerStatuses_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetCustomerStatusesResponse" message="tns:ICRMService_GetCustomerStatuses_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerStatuses" message="tns:ICRMService_GetCustomerStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerStatusesResponse" message="tns:ICRMService_GetCustomerStatuses_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetContactByGUID">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetContactByGUID" message="tns:ICRMService_GetContactByGUID_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetContactByGUIDResponse" message="tns:ICRMService_GetContactByGUID_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactByGUID" message="tns:ICRMService_GetContactByGUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactByGUIDResponse" message="tns:ICRMService_GetContactByGUID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetContactsByCustomerPaged">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetContactsByCustomerPaged" message="tns:ICRMService_GetContactsByCustomerPaged_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetContactsByCustomerPagedResponse" message="tns:ICRMService_GetContactsByCustomerPaged_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsByCustomerPaged" message="tns:ICRMService_GetContactsByCustomerPaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsByCustomerPagedResponse" message="tns:ICRMService_GetContactsByCustomerPaged_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetContactsModifiedSincePaged">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetContactsModifiedSincePaged" message="tns:ICRMService_GetContactsModifiedSincePaged_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/GetContactsModifiedSincePagedResponse" message="tns:ICRMService_GetContactsModifiedSincePaged_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsModifiedSincePaged" message="tns:ICRMService_GetContactsModifiedSincePaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsModifiedSincePagedResponse" message="tns:ICRMService_GetContactsModifiedSincePaged_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertContact">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/InsertContact" message="tns:ICRMService_InsertContact_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/InsertContactResponse" message="tns:ICRMService_InsertContact_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/InsertContact" message="tns:ICRMService_InsertContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/InsertContactResponse" message="tns:ICRMService_InsertContact_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateContact">
-      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/UpdateContact" message="tns:ICRMService_UpdateContact_InputMessage" />
-      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_2/ICRMService/UpdateContactResponse" message="tns:ICRMService_UpdateContact_OutputMessage" />
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateContact" message="tns:ICRMService_UpdateContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateContactResponse" message="tns:ICRMService_UpdateContact_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

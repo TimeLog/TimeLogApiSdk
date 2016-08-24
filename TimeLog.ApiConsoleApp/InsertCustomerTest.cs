@@ -54,7 +54,7 @@
                     CreditorID = string.Empty,
                     Currency = "DKK",
                     DefaultDiscountPercent = 2,
-                    Status = "50. Kunde 123456",
+                    Status = "Customer",
                     ID = 11078
                 };
 
