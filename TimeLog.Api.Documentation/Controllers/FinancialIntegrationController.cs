@@ -7,47 +7,47 @@
         // GET: FinancialIntegration
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult DynamicsNav()
         {
-            return View("Index");
+            return this.View("DynamicsNav");
         }
 
         public ActionResult DynamicsAx()
         {
-            return View("Index");
+            return this.View("Index");
         }
 
         public ActionResult ExactOnline()
         {
-            return View("ExactOnline");
+            return this.View("ExactOnline");
         }
 
         public ActionResult VismaAdministration()
         {
-            return View("Index");
+            return this.View("Index");
         }
 
         public ActionResult Economic()
         {
-            return View("e-conomic");
+            return this.View("e-conomic");
         }
 
         public ActionResult Flows()
         {
-            return View("Index");
+            return this.View("Index");
         }
 
         public ActionResult Tests()
         {
-            return View("Index");
+            return this.View("Index");
         }
 
         public ActionResult Install()
         {
-            return View("Index");
+            return this.View("Index");
         }
     }
 }

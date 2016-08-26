@@ -1,0 +1,1176 @@
+﻿
+@{
+    ViewBag.Title = "Microsoft Dynamics NAV";
+    Layout = "../Shared/_Layout_Single_Column.cshtml";
+}
+
+<article class="article">
+    <h1>@ViewBag.Title</h1>
+    <h2>Introduction</h2>
+
+    <p>
+        The Microsoft Dynamics NAV implementation of the TimeLog Project generic financial integration supports the full set of features for a complete integration with TLP.
+        The NAV integration supports the following features of the generic financial integration:
+    </p>
+    <p><strong>Invoicing version:</strong></p>
+    <p>
+        <ul>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Two-way synchronization of customers and contacts</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import of product numbers from NAV to TLP</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Transfer of booked invoices from TLP to NAV</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic tracking of NAV invoice number and status from inside TLP</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">TLP Audit interface matching the individual invoice totals from NAV and TLP</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import expenses from NAV to TLP</li>
+
+        </ul>
+    </p>
+    <p><strong>Project version:</strong></p>
+<p>
+    <ul>
+        <li style="text-indent: 20px;" class="icon-arrow_in_circle">Two-way synchronization of customers and contacts</li>
+        <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import of project, tasks and allocation from NAV to TLP</li>
+        <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import of open registrations and time off from TLP to NAV</li>
+        <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import of approved registrations and time off from TLP to NAV</li>
+    </ul>
+</p>
+<p><strong>Quick intro</strong></p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/mDX_6Ns-Ldo" frameborder="0" allowfullscreen></iframe>
+    <br />
+    <br />
+    <h2>Features</h2>
+    <p>This section includes a list of features and limitations to each transfer area of the integration.</p>
+    <h3>Currencies</h3>
+    <p>TimeLog Project does not create the currency in NAV if it does not exist. Therefore, make sure that all the currencies used in TimeLog Project are created in NAV.</p>
+    <h3>Customers</h3>
+    <p>None</p>
+    <h3>Contact</h3>
+    <p>
+        In the integration settings inside NAV, you find the checkbox for turning on/off extended contact handling ("Brug udvidet kontakt mgr").
+    </p>
+    <ul>
+        <li>If it is turned on, then the integration uses the NAV contact relationship ("kontakt relationsstyring"). One-to-many relation.</li>
+        <li>If it is turned off, then the integration uses the field "kontakt" on the debtor view. One-to-one relation.</li>
+    </ul>
+    <p>
+        <strong>Without contact relationship</strong>
+    </p>
+    <p>
+        When a contact is created or updated in TLP and transferred to NAV, then the field "kontakt" on the debtor updated with the latest transfer.
+        Any previous transfers are overwritten. When updating the field "kontakt" in NAV, this will NOT create a new contact in TLP.
+    </p>
+    <h3>Product numbers</h3>
+    <p>
+        Product numbers in NAV can not be added/modified/deleted from TLP. TLP can import NAV product numbers.
+    </p>
+    <h3>Employees</h3>
+    <p>
+        If employees are pushed from TLP to NAV, then an employee template is used to map fields that does not exist in TLP.
+        The template can be chosen in the NAV-TLP settings dialog. Employees can not be transferred from NAV to TLP.
+    </p>
+    <p>
+        If automatic transfer of employees is turned off then they have to be created manually in "Personale" > "Medarbejdere" using the exact same initials in the "Nummer"-field
+    </p>
+    <h3>Invoices</h3>
+    <p>Only booked invoices can be transferred from TLP to NAV. Invoices are transferred as drafts. Changes in invoice drafts inside NAV will not be reflected in TLP.</p>
+    <h3>Invoice lines</h3>
+    <p>
+        The TLP field "Unit of meassure" is NOT transferred to NAV on invoice lines. In NAV, the field "Enhedskoden" defaults to one specified in the item setup ("Vareopsætningen").
+    </p>
+    <h3>Expenses</h3>
+    <p>Expenses can only be transferred from NAV to TLP. TLP notifies NAV if an expense is taken or deleted from the pool.</p>
+    <h3>Projects</h3>
+    <p>
+        Projects can be transferred from NAV to TLP in the project version. In the invoicing version, an optional transfer of project details to either NAV global dimension 1 or 2 is possible.
+    </p>
+    <h3>Tasks</h3>
+    <p>Tasks can only be transferred from NAV to TLP. If tasks are deleted or moved in NAV then this will not be reflected in TLP.</p>
+    <h3>Allocations</h3>
+    <p>Allocations can only be transferred from NAV to TLP.</p>
+    <h3>Registrations</h3>
+    <p>Missing section.</p>
+
+    <br />
+    <h2>Mapping</h2>
+    <p>This section contains the explicit mapping of fields between TLP and NAV.</p>
+
+    <h3 id="mapping-customers">Customers</h3>
+    <div class="bs-example">
+
+        <table style="width: 100%; display:none;" class="mapping_table">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                    <th></th>
+                </tr>
+                <tr class="underline">
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Company name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>Telephone/Fax</td>
+                    <td>Phone</td>
+                    <td>TelephoneAndFaxNumber</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>VAT no</td>
+                    <td>-</td>
+                    <td>VatNo</td>
+                    <td>CINumber</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>VAT no</td>
+                    <td>-</td>
+                    <td>VatNo</td>
+                    <td>VATNumber</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>EAN no.</td>
+                    <td>EAN no.</td>
+                    <td>EAN</td>
+                    <td>Ean</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>Address</td>
+                    <td>Address.Address</td>
+                    <td>Address</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Address 2</td>
+                    <td>-</td>
+                    <td>Address.Address2</td>
+                    <td>Address</td>
+                    <td><span class="wrapcomment">Concatenated with address</span></td>
+                </tr>
+                <tr>
+                    <td>Address 3</td>
+                    <td>-</td>
+                    <td>Address.Address3</td>
+                    <td>Address</td>
+                    <td><span class="wrapcomment">Concatenated with address</span></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>Town/City</td>
+                    <td>Address.City</td>
+                    <td>City</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>Country</td>
+                    <td>Address.Country</td>
+                    <td>Country</td>
+                    <td><span class="wrapcomment">e-conomic country is retrieved from customer country</span></td>
+                </tr>
+                <tr>
+                    <td>Postal code</td>
+                    <td>Postcode</td>
+                    <td>Address.ZipCode</td>
+                    <td>Postcode</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Website</td>
+                    <td>Website</td>
+                    <td>Website</td>
+                    <td>Website</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td>Invoice e-mail</td>
+                    <td>Email</td>
+                    <td>Email</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Currency</td>
+                    <td>Currency</td>
+                    <td>Currency</td>
+                    <td>Currency</td>
+                    <td><span class="wrapcomment">e-conomic currency is retrieved by customer currency code.</span></td>
+                </tr>
+                <tr class="info">
+                    <td>-</td>
+                    <td>No.</td>
+                    <td>ExternalKey</td>
+                    <td>Number</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Payment terms</td>
+                    <td>-</td>
+                    <td>TermOfPayment</td>
+                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog Project</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Layout</td>
+                    <td>-</td>
+                    <td>Layout</td>
+                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog Project</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>VAT zone</td>
+                    <td>-</td>
+                    <td>VatZone</td>
+                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog Project</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Group</td>
+                    <td>-</td>
+                    <td>DebtorGroup</td>
+                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog Project</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-contacts">Contact</h3>
+    <div class="bs-example">
+        <table style="width: 100%; display:none;" class="mapping_table">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>First name</td>
+                    <td>Name</td>
+                    <td>FirstName</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment">Concatenated in name</span></td>
+                </tr>
+                <tr>
+                    <td>Last name</td>
+                    <td>Name</td>
+                    <td>LastName</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment">Concatenated in name</span></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>Telephone</td>
+                    <td>Phone</td>
+                    <td>TelephoneNumber</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>E-mail</td>
+                    <td>Email</td>
+                    <td>Email</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Your comment</td>
+                    <td>Comments</td>
+                    <td>Comment</td>
+                    <td>Comments</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Customer</td>
+                    <td>-</td>
+                    <td>ExternalID</td>
+                    <td>Debtor</td>
+                    <td><span class="wrapcomment">The debtor from e-conomic is retrieved basen on the externalKey mapping in TimeLog Project.</span></td>
+                </tr>
+                <tr class="info">
+                    <td>-</td>
+                    <td>-</td>
+                    <td>ExternalID</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-productnumbers">Product numbers</h3>
+    <div class="bs-example">
+        <table style="width: 100%; display:none;" class="mapping_table">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>No.</td>
+                    <td>No.</td>
+                    <td>ProductNo</td>
+                    <td>Number</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-employees">Employees</h3>
+    <div class="bs-example">
+        <table style="width: 100%; display:none;" class="mapping_table">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="info">
+                    <td>-</td>
+                    <td>No.</td>
+                    <td>ExternalKey</td>
+                    <td>Number</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>First name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment">Name is full name in e-conomic</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Group</td>
+                    <td>-</td>
+                    <td>Group</td>
+                    <td><span class="wrapcomment">Default employee group from integration configuration setting</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-invoices">Invoices</h3>
+    <div class="bs-example">
+
+        <table style="width: 100%; display:none;" class="mapping_table">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Customer</td>
+                    <td>Customer</td>
+                    <td>InvoicingCustomerName</td>
+                    <td>DebtorName</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Heading</td>
+                    <td>Heading</td>
+                    <td>Header</td>
+                    <td>Heading</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Invoice date</td>
+                    <td>Date</td>
+                    <td>InvoiceDate</td>
+                    <td>Date</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Payment terms</td>
+                    <td>Payment terms</td>
+                    <td>-</td>
+                    <td>TermOfPayment</td>
+                    <td><span class="wrapcomment">Term of payment is retrieved from the e-conomic debtor</span></td>
+                </tr>
+
+                <tr class="info">
+                    <td>-</td>
+                    <td>Invoice no.</td>
+                    <td>ExternalID</td>
+                    <td>EntryNumber</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Currency</td>
+                    <td>-</td>
+                    <td>Details.Currency.Abbreviation</td>
+                    <td>Currency</td>
+                    <td><span class="wrapcomment">Abbreviation of the currency from the invoice in TimeLog Project</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Layout</td>
+                    <td><span class="wrapcomment">Layout is retrieved from the debtor in e-conomic</span></td>
+                </tr>
+                <tr>
+                    <td>Customer's Ref.</td>
+                    <td>Your ref.</td>
+                    <td>CustomerReferenceID</td>
+                    <td>YourReference</td>
+                    <td><span class="wrapcomment">Contact is retrieved from e-conomic based on the CustomerReferenceID</span></td>
+                </tr>
+                <tr>
+                    <td>Due date</td>
+                    <td>Due date</td>
+                    <td>DueDate</td>
+                    <td>DueDate</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Calculate VAT</td>
+                    <td>-</td>
+                    <td>CalculateVAT</td>
+                    <td>IsVatIncluded</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Other ref.</td>
+                    <td>ID</td>
+                    <td>OtherReference</td>
+                    <td><span class="wrapcomment">TimeLog Project invoiceID is noted in other reference i e-conomic</span></td>
+                </tr>
+                <tr>
+                    <td>Invoice no.</td>
+                    <td>Our ref.</td>
+                    <td>Details.InternalReference</td>
+                    <td>OurReference</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td>Attention</td>
+                    <td>Details.ContactHeader</td>
+                    <td>Attention</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Message + P.O. no.</td>
+                    <td>Text 1</td>
+                    <td>Message + RequisitionNo</td>
+                    <td>TextLine1</td>
+                    <td><span class="wrapcomment">Message and requisitionNo is concatenated into TextLine1 in e-conomic</span></td>
+                </tr>
+                <tr>
+                    <td>Exchange rate (DKK):</td>
+                    <td>-</td>
+                    <td>InvoiceCurrencyRate</td>
+                    <td>ExchangeRate</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Invoice address:</td>
+                    <td>Town/City</td>
+                    <td>InvoicingAddress.City</td>
+                    <td>DebtorCity</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Invoice address:</td>
+                    <td>Country</td>
+                    <td>InvoicingAddress.Country</td>
+                    <td>DebtorCountry</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Project no.</td>
+                    <td>Project no.</td>
+                    <td>Details.ProjectHeader.No</td>
+                    <td>Project</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-invoicelines">Invoice lines</h3>
+    <div class="bs-example">
+
+        <table style="width: 100%; display:none;" class="mapping_table">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product no.</td>
+                    <td>Product no.</td>
+                    <td>ProductNo</td>
+                    <td>Product</td>
+                    <td><span class="wrapcomment">Item is retrieved from e-conomic basen on the productNo</span></td>
+                </tr>
+                <tr>
+                    <td>Unit</td>
+                    <td>Unit</td>
+                    <td>-</td>
+                    <td>Unit</td>
+                    <td><span class="wrapcomment">Unit attached to product retrieved from e-conomic</span></td>
+                </tr>
+
+                <tr>
+                    <td>Description</td>
+                    <td></td>
+                    <td>Text</td>
+                    <td>Description</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td>Quantity</td>
+                    <td>Quantity</td>
+                    <td>Quantity</td>
+                    <td><span class="wrapcomment">Economic doesn't allow a quantity of 0. If so the rate will be set to 0 instead</span></td>
+                </tr>
+                <tr>
+                    <td>Rate</td>
+                    <td>Price</td>
+                    <td>Rate</td>
+                    <td>UnitNetPrice</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>%</td>
+                    <td>Discount (%)</td>
+                    <td>Discount</td>
+                    <td>DiscountAsPercent</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-expenses">Expenses</h3>
+    <div class="bs-example">
+
+        <table style="width: 100%; display: none;" class="mapping_table">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="info">
+                    <td>-</td>
+                    <td></td>
+                    <td>ExternalID</td>
+                    <td>EntryNumber</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Date</td>
+                    <td>Date</td>
+                    <td>Created</td>
+                    <td>Date</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Currency</td>
+                    <td>Currency</td>
+                    <td>CurrencyID</td>
+                    <td>Currency</td>
+                    <td><span class="wrapcomment">The currencyID in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                </tr>
+                <tr>
+                    <td>Currency</td>
+                    <td>-</td>
+                    <td>ExchangeRate</td>
+                    <td>Currency</td>
+                    <td><span class="wrapcomment">The currency rate in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>DisbursementNo</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>InvoiceNo</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Payment method</td>
+                    <td></td>
+                    <td>PaymentMethod</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Default paymentmethod for import. Set up in TimeLog Project</span></td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>Date</td>
+                    <td>PurchaseDate</td>
+                    <td>Date</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Project</td>
+                    <td></td>
+                    <td>ProjectID</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Is always set to 0</span></td>
+                </tr>
+                <tr>
+                    <td>Amount incl. VAT</td>
+                    <td>Amount (Curr)</td>
+                    <td>PurchasedAmount</td>
+                    <td>Amount</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>VAT</td>
+                    <td></td>
+                    <td>VATIncluded</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Always set to 0. Expenses will exclude VAT amounts</span></td>
+                </tr>
+                <tr>
+                    <td>Comment</td>
+                    <td></td>
+                    <td>Comment</td>
+                    <td>entry.Account.AccountNumber</td>
+                    <td><span class="wrapcomment">Used as placeholder for account no. from e-conomic</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Entry</td>
+                    <td>InvoiceNo</td>
+                    <td>VoucherNumber</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <br />
+        <h2>Technical details</h2>
+        <p>This section will outline the technical needs from Dynamics NAV in order to make this integration work.</p>
+        <h3>NAV licenses</h3>
+        <p>NAV licenses must be cut according to the list of object numbers below</p>
+        <h3>NAV object numbers</h3>
+        <div class="bs-example">
+            <table style="width: 100%;" class="setting_table">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th class="col-2">Type</th>
+                        <th class="col-2">ID</th>
+                        <th>Name</th>
+                        <th class="col-2 text-center">
+                            Invoicing
+                            <br>
+                            version
+                        </th>
+                        <th class="col-2 text-center">
+                            Project<br>
+                            version
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Table</td>
+                        <td>50500</td>
+                        <td>TimeLog Setup</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Table</td>
+                        <td>50501</td>
+                        <td>TimeLog Change Log</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Table</td>
+                        <td>50510</td>
+                        <td>TimeLog Expense List</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Table</td>
+                        <td>50511</td>
+                        <td>TimeLog Expense Entry</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Form</td>
+                        <td>50500</td>
+                        <td>TimeLog Setup</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Codeunit</td>
+                        <td>50500</td>
+                        <td>Tlp Functions WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Codeunit</td>
+                        <td>50501</td>
+                        <td>Tlp Change Handler</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Codeunit</td>
+                        <td>50502</td>
+                        <td>Tlp Change Management</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Codeunit</td>
+                        <td>50503</td>
+                        <td>Tlp Expense Management</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50500</td>
+                        <td>TlpProductNumber WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50501</td>
+                        <td>TlpContact WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50502</td>
+                        <td>TlpCustomer WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr style="text-decoration: line-through;">
+                        <td>Page</td>
+                        <td>50503</td>
+                        <td>TlpEmployee WS (depricated)</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50504</td>
+                        <td>TlpExpense WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50505</td>
+                        <td>TlpInvoiceHeader WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50506</td>
+                        <td>TlpInvoiceLine WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50507</td>
+                        <td>TlpPostedInvoiceHeader WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50508</td>
+                        <td>TlpPostedInvoiceLine WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50509</td>
+                        <td>TlpPostedCrMemoHeader WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50510</td>
+                        <td>TlpPostedCrMemoLine WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50511</td>
+                        <td>TlpCustomerContact WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50512</td>
+                        <td>TlpSalesPerson WS</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50513</td>
+                        <td>TlpJobTask WS</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50514</td>
+                        <td>TlpJobPlanningLine WS</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50515</td>
+                        <td>TlpSetup</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50516</td>
+                        <td>TlpChangeLog</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>Page</td>
+                        <td>50517</td>
+                        <td>TlpJob WS</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>NAV table numbers</h3>
+        <div class="bs-example">
+            <table style="width: 100%;" class="setting_table">
+                <thead>
+                    <tr>
+                        <th class="col-1">Table No</th>
+                        <th class="col-3">Object type</th>
+                        <th class="col-2 text-center">
+                            Invoicing<br>
+                            version<br>
+                            Read
+                        </th>
+                        <th class="col-2 text-center">
+                            Invoicing<br>
+                            version<br>
+                            Write
+                        </th>
+                        <th class="col-2 text-center">
+                            Project<br>
+                            version<br>
+                            Read
+                        </th>
+                        <th class="col-2 text-center">
+                            Project<br>
+                            version<br>
+                            Write
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9</td>
+                        <td>Country/Region</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Salesperson/Purchaser</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>G/L Entry</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Customer</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Vendor Ledger Entry</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>Item</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>Sales Header</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>Sales Line</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>98</td>
+                        <td>General Ledger Setup</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>156</td>
+                        <td>Resource</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>167</td>
+                        <td>Job (Project)</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>169</td>
+                        <td>Job Ledger Entry</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>210</td>
+                        <td>Job Journal Line</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>225</td>
+                        <td>Post Code</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>1001</td>
+                        <td>Job Task (Task)</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>1003</td>
+                        <td>Job Planning Line (Allocation)</td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>5050</td>
+                        <td>Contact</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>5200</td>
+                        <td>Employee</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                    </tr>
+                    <tr>
+                        <td>5600</td>
+                        <td>Fixed Asset</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                    <tr>
+                        <td>5800</td>
+                        <td>Item Charge</td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"><i class="icon-check"></i></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Custom settings</h3>
+        <p>Some settings can be changed in the settings file (TimeLog.Financial.Host.Settings.xml) that is part of the financial host. These settings should only be changed after consulting TimeLog.</p>
+        <div class="bs-example">
+
+            <table style="width: 100%;" class="setting_table">
+                <thead>
+                    <tr>
+                        <th class="col-3">Key</th>
+                        <th class="col-3">Values</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NavProjectDimensionNumber</td>
+                        <td>1,2</td>
+                        <td>Indicate the global dimension assigned to carry the projects as part of dimensions associated with invoices.</td>
+                    </tr>
+                    <tr>
+                        <td>SpecialContactHandling</td>
+                        <td>0,1</td>
+                        <td>Used for NAV2009 when no contacts are being created in NAV and all contact information should be part of the customer instead.</td>
+                    </tr>
+                    <tr>
+                        <td>InvoiceLineType</td>
+                        <td>0,1,2,3</td>
+                        <td>
+                            Used for NAV2013 to define the default NAV line type for invoice lines. Possible options: Text (0), G/L Account (1), Item (2), Resource (3). Default is 2.
+                            Note that if G/L Account is chosen, then TLP product numbers will be used as "Finanskontonumre".
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</article>

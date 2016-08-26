@@ -4802,6 +4802,35 @@ pre {
     overflow-x: hidden;
 }
 
+.setting_table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.setting_table th.col-1 { width: 8.333333333333333%;}
+.setting_table th.col-2 { width: 16.66666666666667%;}
+.setting_table th.col-3 { width: 25%;}
+.setting_table th.col-4 { width: 33.33333333333333%;}
+.setting_table th.col-5 { width: 41.66666666666667%;}
+.setting_table th.col-6 { width: 50%;}
+
+    .setting_table td {
+        border-bottom: 1px solid #e5e5e5;
+        text-align: left;
+        vertical-align: top;
+        padding: 4px 0;
+    }
+
+    .setting_table th {
+        border-bottom: 1px solid #e5e5e5;
+        text-align: left;
+        vertical-align: bottom;
+        padding: 4px 0;
+    }
+
+    .setting_table .text-center {
+        text-align: center;
+    }
 
 .mapping_table {
     font-size: 0.8em;
@@ -4811,14 +4840,6 @@ pre {
     .mapping_table td, .mapping_table th {
         border-bottom: 1px solid #e5e5e5;
         text-align: left;
-    }
-
-    .mapping_table .wrapcomment {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 200px;
-        display: block;
     }
 
     .mapping_table tr th {
@@ -4849,7 +4870,15 @@ pre {
         border-bottom: 1px solid #000;
     }
 
-    .mapping_table tr:hover .wrapcomment {
+    .wrapcomment {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
+        display: block;
+    }
+
+    tr:hover .wrapcomment, tr:hover .wrapcomment {
         position: relative;
         z-index: 1;
         display: block;
@@ -4858,7 +4887,7 @@ pre {
     }
 
     @media print {
-        .mapping_table .wrapcomment {
+        .wrapcomment {
         display: block;
         text-overflow: '';
         white-space: normal;

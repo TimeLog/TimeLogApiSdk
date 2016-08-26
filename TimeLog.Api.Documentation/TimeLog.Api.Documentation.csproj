@@ -347,6 +347,7 @@
     <Content Include="Views\FinancialIntegration\ExactOnline.cshtml" />
     <Content Include="Views\Shared\_Layout_Single_Column.cshtml" />
     <Content Include="Views\FinancialIntegration\e-conomic.cshtml" />
+    <Content Include="Views\FinancialIntegration\DynamicsNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
