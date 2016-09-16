@@ -484,7 +484,7 @@
                     <td><span class="wrapcomment">TimeLog Project invoiceID is noted in other reference i e-conomic</span></td>
                 </tr>
                 <tr>
-                    <td>Invoice no.</td>
+                    <td>Internal reference</td>
                     <td>Our ref.</td>
                     <td>Details.InternalReference</td>
                     <td>OurReference</td>
@@ -558,7 +558,7 @@
                     <td>Product no.</td>
                     <td>ProductNo</td>
                     <td>Product</td>
-                    <td><span class="wrapcomment">Item is retrieved from e-conomic basen on the productNo</span></td>
+                    <td><span class="wrapcomment">Item is retrieved from e-conomic based on the productNo</span></td>
                 </tr>
                 <tr>
                     <td>Unit</td>
@@ -714,4 +714,55 @@
         </table>
     </div>
 
+    <h3 id="mapping-expenses">Projects</h3>
+    <div class="bs-example">
+
+        <table style="width: 100%" class="mapping_table">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>TimeLog Project</th>
+                    <th>e-conomic</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="info">
+                    <td>-</td>
+                    <td></td>
+                    <td>ExternalID</td>
+                    <td>ProjectNo</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>Description</td>
+                    <td>Description</td>
+                    <td>Description</td>
+                    <td><span class="wrapcomment">The currencyID in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>ProjectGroup</td>
+                    <td></td>
+                    <td>ProjectGroup</td>
+                    <td><span class="wrapcomment">Default project group from integration configuration setting</span></td>
+                </tr>
+              
+            </tbody>
+        </table>
+    </div>
 </article>
