@@ -31,8 +31,7 @@
                 ServiceHandler.Instance.ApiPassword,
                 configuration.GetIntegerSafe("CustomerId"),
                 configuration.GetIntegerSafe("CustomerStatusId"),
-                configuration.GetIntegerSafe("AccountManagerId"),
-                configuration.GetStringSafe("ForeignId"));
+                configuration.GetIntegerSafe("AccountManagerId"));
         }
     }
 }

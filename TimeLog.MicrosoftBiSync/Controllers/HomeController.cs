@@ -105,8 +105,7 @@
                     credentials.ApiPassword,
                     Customer.All,
                     1,
-                    AccountManager.All,
-                    string.Empty);
+                    AccountManager.All);
 
                 if (customersRaw.OwnerDocument != null)
                 {

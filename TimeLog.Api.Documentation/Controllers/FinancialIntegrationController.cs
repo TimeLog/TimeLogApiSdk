@@ -30,6 +30,11 @@
             return this.View("Index");
         }
 
+        public ActionResult Fortnox()
+        {
+            return this.View("Fortnox");
+        }
+
         public ActionResult Economic()
         {
             return this.View("e-conomic");
