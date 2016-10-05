@@ -423,7 +423,7 @@ TimeLog.TLP.WebAppCode
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunitiesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
  <summary>
- Gets a list of opportunities
+ Gets a list of opportunities. 
  </summary>
  <param name="siteCode">Unique identification for your TimeLog Project account</param>
  <param name="apiID">The API ID</param>
@@ -437,6 +437,16 @@ TimeLog.TLP.WebAppCode
  <param name="endDate">Limits result to opportunities with opportunities date equal to or earlier than specified date</param>
  <returns>A list of opportunity objects in XML format</returns>
 </member>
+  <member name="M:TimeLog.TLP.WebAppCode.Service.GetSubOpportunitiesRaw(System.String,System.String,System.String,System.Int32)">
+    <summary>
+     Gets a list of sub-opportinities
+    </summary>
+    <param name="siteCode">Unique identification for your TimeLog Project account</param>
+    <param name="apiID">The API ID</param>
+    <param name="apiPassword">The API password</param>
+    <Param name="opportunityID">ID of opportunity that contain sub-opportunities. Set to 0 to get all sub-opportunities</Param>
+    <returns>A list of sub-opportunity objects in XML format</returns>
+  </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunityTypesShortlist(System.String,System.String,System.String,System.Int32)">
  <summary>
  Gets a list of opportunityTypes

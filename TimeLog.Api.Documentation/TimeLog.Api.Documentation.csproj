@@ -166,6 +166,7 @@
     <Content Include="Source\Reporting\GetDepartmentsShortlist.xml" />
     <Content Include="Source\Reporting\GetBarriersShortlist.xml" />
     <Content Include="Source\Reporting\GetEventsRaw.xml" />
+    <Content Include="Source\Reporting\GetSubOpportunitiesRaw.xml" />
     <Content Include="Source\Reporting\GetOpportunityStatusShortlist.xml" />
     <Content Include="Source\Reporting\GetWorkingHoursRaw.xml" />
     <Content Include="Source\Reporting\GetEmployeeNormalWorkingHoursRaw.xml" />
@@ -314,6 +315,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Source\Reporting\GetEventsRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetSubOpportunitiesRaw.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Source\Reporting\GetOpportunityStatusShortlist.xsd">

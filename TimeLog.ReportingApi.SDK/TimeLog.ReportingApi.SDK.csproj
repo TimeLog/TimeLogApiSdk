@@ -75,6 +75,9 @@
     <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
     <None Include="Service References\ReportingService\service1.wsdl" />
     <None Include="Service References\ReportingService\service11.wsdl" />
+    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -87,10 +90,10 @@
     <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawResponse.datasource">
+    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse.datasource">
+    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawResponse.datasource">

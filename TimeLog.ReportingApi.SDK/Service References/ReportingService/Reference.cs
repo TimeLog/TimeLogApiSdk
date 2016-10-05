@@ -210,19 +210,33 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetOpportunitiesRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse> GetOpportunitiesRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityTypesRaw", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSubOpportunitiesRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Xml.XmlNode GetOpportunityTypesRaw(string siteCode, string apiID, string apiPassword, int opportunityTypeID, int status);
+        System.Xml.XmlNode GetSubOpportunitiesRaw(string siteCode, string apiID, string apiPassword, int opportunityID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityTypesRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Xml.XmlNode> GetOpportunityTypesRawAsync(string siteCode, string apiID, string apiPassword, int opportunityTypeID, int status);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSubOpportunitiesRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetSubOpportunitiesRawAsync(string siteCode, string apiID, string apiPassword, int opportunityID);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetBarriersRaw", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityTypesShortlist", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Xml.XmlNode GetBarriersRaw(string siteCode, string apiID, string apiPassword, int barrierID, int status);
+        System.Xml.XmlNode GetOpportunityTypesShortlist(string siteCode, string apiID, string apiPassword, int status);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetBarriersRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Xml.XmlNode> GetBarriersRawAsync(string siteCode, string apiID, string apiPassword, int barrierID, int status);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityTypesShortlist", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetOpportunityTypesShortlistAsync(string siteCode, string apiID, string apiPassword, int status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityStatusShortlist", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetOpportunityStatusShortlist(string siteCode, string apiID, string apiPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityStatusShortlist", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetOpportunityStatusShortlistAsync(string siteCode, string apiID, string apiPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetBarriersShortlist", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetBarriersShortlist(string siteCode, string apiID, string apiPassword, int status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetBarriersShortlist", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetBarriersShortlistAsync(string siteCode, string apiID, string apiPassword, int status);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetIndustriesShortList", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -267,19 +281,34 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetCountriesShortListAsync(string siteCode, string apiID, string apiPassword);
         
         // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetNormHoursRaw", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEventsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawResponse GetNormHoursRaw(TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawRequest request);
+        TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse GetEventsRaw(TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetNormHoursRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawResponse> GetNormHoursRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEventsRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse> GetEventsRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormHoursRaw", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEventTypesShortlist", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Xml.XmlNode GetEmployeeNormHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID);
+        System.Xml.XmlNode GetEventTypesShortlist(string siteCode, string apiID, string apiPassword, int status);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormHoursRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Xml.XmlNode> GetEmployeeNormHoursRawAsync(string siteCode, string apiID, string apiPassword, int employeeID);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEventTypesShortlist", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetEventTypesShortlistAsync(string siteCode, string apiID, string apiPassword, int status);
+        
+        // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkingHoursRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse GetWorkingHoursRaw(TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkingHoursRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse> GetWorkingHoursRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormalWorkingHoursRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetEmployeeNormalWorkingHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormalWorkingHoursRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetEmployeeNormalWorkingHoursRawAsync(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/ValidateCredentials", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -721,8 +750,80 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetNormHoursRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetNormHoursRawRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEventsRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
+    public partial class GetEventsRawRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
+        public string siteCode;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=1)]
+        public string apiID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=2)]
+        public string apiPassword;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=3)]
+        public int eventID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=4)]
+        public int eventTypeID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
+        public int customerID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=6)]
+        public int employeeID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
+        public int status;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> startDate;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> endDate;
+        
+        public GetEventsRawRequest() {
+        }
+        
+        public GetEventsRawRequest(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
+            this.siteCode = siteCode;
+            this.apiID = apiID;
+            this.apiPassword = apiPassword;
+            this.eventID = eventID;
+            this.eventTypeID = eventTypeID;
+            this.customerID = customerID;
+            this.employeeID = employeeID;
+            this.status = status;
+            this.startDate = startDate;
+            this.endDate = endDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEventsRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
+    public partial class GetEventsRawResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
+        public System.Xml.XmlNode GetEventsRawResult;
+        
+        public GetEventsRawResponse() {
+        }
+        
+        public GetEventsRawResponse(System.Xml.XmlNode GetEventsRawResult) {
+            this.GetEventsRawResult = GetEventsRawResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWorkingHoursRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
+    public partial class GetWorkingHoursRawRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
         public string siteCode;
@@ -737,21 +838,29 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         public int employeeID;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=4)]
+        public int departmentID;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
+        public int status;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=6)]
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<System.DateTime> startDate;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public System.Nullable<System.DateTime> endDate;
         
-        public GetNormHoursRawRequest() {
+        public GetWorkingHoursRawRequest() {
         }
         
-        public GetNormHoursRawRequest(string siteCode, string apiID, string apiPassword, int employeeID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
+        public GetWorkingHoursRawRequest(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
             this.siteCode = siteCode;
             this.apiID = apiID;
             this.apiPassword = apiPassword;
             this.employeeID = employeeID;
+            this.departmentID = departmentID;
+            this.status = status;
             this.startDate = startDate;
             this.endDate = endDate;
         }
@@ -760,17 +869,17 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetNormHoursRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetNormHoursRawResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWorkingHoursRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
+    public partial class GetWorkingHoursRawResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public System.Xml.XmlNode GetNormHoursRawResult;
+        public System.Xml.XmlNode GetWorkingHoursRawResult;
         
-        public GetNormHoursRawResponse() {
+        public GetWorkingHoursRawResponse() {
         }
         
-        public GetNormHoursRawResponse(System.Xml.XmlNode GetNormHoursRawResult) {
-            this.GetNormHoursRawResult = GetNormHoursRawResult;
+        public GetWorkingHoursRawResponse(System.Xml.XmlNode GetWorkingHoursRawResult) {
+            this.GetWorkingHoursRawResult = GetWorkingHoursRawResult;
         }
     }
     
@@ -1213,20 +1322,36 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
             return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetOpportunitiesRawAsync(inValue);
         }
         
-        public System.Xml.XmlNode GetOpportunityTypesRaw(string siteCode, string apiID, string apiPassword, int opportunityTypeID, int status) {
-            return base.Channel.GetOpportunityTypesRaw(siteCode, apiID, apiPassword, opportunityTypeID, status);
+        public System.Xml.XmlNode GetSubOpportunitiesRaw(string siteCode, string apiID, string apiPassword, int opportunityID) {
+            return base.Channel.GetSubOpportunitiesRaw(siteCode, apiID, apiPassword, opportunityID);
         }
         
-        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetOpportunityTypesRawAsync(string siteCode, string apiID, string apiPassword, int opportunityTypeID, int status) {
-            return base.Channel.GetOpportunityTypesRawAsync(siteCode, apiID, apiPassword, opportunityTypeID, status);
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetSubOpportunitiesRawAsync(string siteCode, string apiID, string apiPassword, int opportunityID) {
+            return base.Channel.GetSubOpportunitiesRawAsync(siteCode, apiID, apiPassword, opportunityID);
         }
         
-        public System.Xml.XmlNode GetBarriersRaw(string siteCode, string apiID, string apiPassword, int barrierID, int status) {
-            return base.Channel.GetBarriersRaw(siteCode, apiID, apiPassword, barrierID, status);
+        public System.Xml.XmlNode GetOpportunityTypesShortlist(string siteCode, string apiID, string apiPassword, int status) {
+            return base.Channel.GetOpportunityTypesShortlist(siteCode, apiID, apiPassword, status);
         }
         
-        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetBarriersRawAsync(string siteCode, string apiID, string apiPassword, int barrierID, int status) {
-            return base.Channel.GetBarriersRawAsync(siteCode, apiID, apiPassword, barrierID, status);
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetOpportunityTypesShortlistAsync(string siteCode, string apiID, string apiPassword, int status) {
+            return base.Channel.GetOpportunityTypesShortlistAsync(siteCode, apiID, apiPassword, status);
+        }
+        
+        public System.Xml.XmlNode GetOpportunityStatusShortlist(string siteCode, string apiID, string apiPassword) {
+            return base.Channel.GetOpportunityStatusShortlist(siteCode, apiID, apiPassword);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetOpportunityStatusShortlistAsync(string siteCode, string apiID, string apiPassword) {
+            return base.Channel.GetOpportunityStatusShortlistAsync(siteCode, apiID, apiPassword);
+        }
+        
+        public System.Xml.XmlNode GetBarriersShortlist(string siteCode, string apiID, string apiPassword, int status) {
+            return base.Channel.GetBarriersShortlist(siteCode, apiID, apiPassword, status);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetBarriersShortlistAsync(string siteCode, string apiID, string apiPassword, int status) {
+            return base.Channel.GetBarriersShortlistAsync(siteCode, apiID, apiPassword, status);
         }
         
         public System.Xml.XmlNode GetIndustriesShortList(string siteCode, string apiID, string apiPassword) {
@@ -1278,44 +1403,97 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetNormHoursRaw(TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawRequest request) {
-            return base.Channel.GetNormHoursRaw(request);
+        TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetEventsRaw(TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest request) {
+            return base.Channel.GetEventsRaw(request);
         }
         
-        public System.Xml.XmlNode GetNormHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawRequest();
+        public System.Xml.XmlNode GetEventsRaw(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
+            TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest();
             inValue.siteCode = siteCode;
             inValue.apiID = apiID;
             inValue.apiPassword = apiPassword;
+            inValue.eventID = eventID;
+            inValue.eventTypeID = eventTypeID;
+            inValue.customerID = customerID;
             inValue.employeeID = employeeID;
+            inValue.status = status;
             inValue.startDate = startDate;
             inValue.endDate = endDate;
-            TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetNormHoursRaw(inValue);
-            return retVal.GetNormHoursRawResult;
+            TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetEventsRaw(inValue);
+            return retVal.GetEventsRawResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetNormHoursRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawRequest request) {
-            return base.Channel.GetNormHoursRawAsync(request);
+        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetEventsRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest request) {
+            return base.Channel.GetEventsRawAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawResponse> GetNormHoursRawAsync(string siteCode, string apiID, string apiPassword, int employeeID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetNormHoursRawRequest();
+        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse> GetEventsRawAsync(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
+            TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest();
+            inValue.siteCode = siteCode;
+            inValue.apiID = apiID;
+            inValue.apiPassword = apiPassword;
+            inValue.eventID = eventID;
+            inValue.eventTypeID = eventTypeID;
+            inValue.customerID = customerID;
+            inValue.employeeID = employeeID;
+            inValue.status = status;
+            inValue.startDate = startDate;
+            inValue.endDate = endDate;
+            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetEventsRawAsync(inValue);
+        }
+        
+        public System.Xml.XmlNode GetEventTypesShortlist(string siteCode, string apiID, string apiPassword, int status) {
+            return base.Channel.GetEventTypesShortlist(siteCode, apiID, apiPassword, status);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetEventTypesShortlistAsync(string siteCode, string apiID, string apiPassword, int status) {
+            return base.Channel.GetEventTypesShortlistAsync(siteCode, apiID, apiPassword, status);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetWorkingHoursRaw(TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest request) {
+            return base.Channel.GetWorkingHoursRaw(request);
+        }
+        
+        public System.Xml.XmlNode GetWorkingHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
+            TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest();
             inValue.siteCode = siteCode;
             inValue.apiID = apiID;
             inValue.apiPassword = apiPassword;
             inValue.employeeID = employeeID;
+            inValue.departmentID = departmentID;
+            inValue.status = status;
             inValue.startDate = startDate;
             inValue.endDate = endDate;
-            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetNormHoursRawAsync(inValue);
+            TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetWorkingHoursRaw(inValue);
+            return retVal.GetWorkingHoursRawResult;
         }
         
-        public System.Xml.XmlNode GetEmployeeNormHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID) {
-            return base.Channel.GetEmployeeNormHoursRaw(siteCode, apiID, apiPassword, employeeID);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetWorkingHoursRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest request) {
+            return base.Channel.GetWorkingHoursRawAsync(request);
         }
         
-        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetEmployeeNormHoursRawAsync(string siteCode, string apiID, string apiPassword, int employeeID) {
-            return base.Channel.GetEmployeeNormHoursRawAsync(siteCode, apiID, apiPassword, employeeID);
+        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse> GetWorkingHoursRawAsync(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
+            TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest();
+            inValue.siteCode = siteCode;
+            inValue.apiID = apiID;
+            inValue.apiPassword = apiPassword;
+            inValue.employeeID = employeeID;
+            inValue.departmentID = departmentID;
+            inValue.status = status;
+            inValue.startDate = startDate;
+            inValue.endDate = endDate;
+            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetWorkingHoursRawAsync(inValue);
+        }
+        
+        public System.Xml.XmlNode GetEmployeeNormalWorkingHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status) {
+            return base.Channel.GetEmployeeNormalWorkingHoursRaw(siteCode, apiID, apiPassword, employeeID, departmentID, status);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetEmployeeNormalWorkingHoursRawAsync(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status) {
+            return base.Channel.GetEmployeeNormalWorkingHoursRawAsync(siteCode, apiID, apiPassword, employeeID, departmentID, status);
         }
         
         public bool ValidateCredentials(string siteCode, string apiID, string apiPassword) {

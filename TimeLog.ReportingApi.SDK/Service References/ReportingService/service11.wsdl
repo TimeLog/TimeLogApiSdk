@@ -686,21 +686,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetOpportunityTypesRaw">
+      <s:element name="GetSubOpportunitiesRaw">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="opportunityTypeID" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="opportunityID" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetOpportunityTypesRawResponse">
+      <s:element name="GetSubOpportunitiesRawResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetOpportunityTypesRawResult">
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubOpportunitiesRawResult">
               <s:complexType mixed="true">
                 <s:sequence>
                   <s:any />
@@ -710,21 +709,65 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetBarriersRaw">
+      <s:element name="GetOpportunityTypesShortlist">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="barrierID" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetBarriersRawResponse">
+      <s:element name="GetOpportunityTypesShortlistResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetBarriersRawResult">
+            <s:element minOccurs="0" maxOccurs="1" name="GetOpportunityTypesShortlistResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOpportunityStatusShortlist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOpportunityStatusShortlistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOpportunityStatusShortlistResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBarriersShortlist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBarriersShortlistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBarriersShortlistResult">
               <s:complexType mixed="true">
                 <s:sequence>
                   <s:any />
@@ -882,22 +925,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetNormHoursRaw">
+      <s:element name="GetEventsRaw">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eventTypeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="customerID" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="employeeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="startDate" nillable="true" type="s:dateTime" />
             <s:element minOccurs="1" maxOccurs="1" name="endDate" nillable="true" type="s:dateTime" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetNormHoursRawResponse">
+      <s:element name="GetEventsRawResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetNormHoursRawResult">
+            <s:element minOccurs="0" maxOccurs="1" name="GetEventsRawResult">
               <s:complexType mixed="true">
                 <s:sequence>
                   <s:any />
@@ -907,20 +954,72 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetEmployeeNormHoursRaw">
+      <s:element name="GetEventTypesShortlist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEventTypesShortlistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEventTypesShortlistResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkingHoursRaw">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="employeeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="departmentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" nillable="true" type="s:dateTime" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetEmployeeNormHoursRawResponse">
+      <s:element name="GetWorkingHoursRawResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeNormHoursRawResult">
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkingHoursRawResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeNormalWorkingHoursRaw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="employeeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="departmentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeNormalWorkingHoursRawResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeNormalWorkingHoursRawResult">
               <s:complexType mixed="true">
                 <s:sequence>
                   <s:any />
@@ -1111,17 +1210,29 @@
   <wsdl:message name="GetOpportunitiesRawSoapOut">
     <wsdl:part name="parameters" element="tns:GetOpportunitiesRawResponse" />
   </wsdl:message>
-  <wsdl:message name="GetOpportunityTypesRawSoapIn">
-    <wsdl:part name="parameters" element="tns:GetOpportunityTypesRaw" />
+  <wsdl:message name="GetSubOpportunitiesRawSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubOpportunitiesRaw" />
   </wsdl:message>
-  <wsdl:message name="GetOpportunityTypesRawSoapOut">
-    <wsdl:part name="parameters" element="tns:GetOpportunityTypesRawResponse" />
+  <wsdl:message name="GetSubOpportunitiesRawSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubOpportunitiesRawResponse" />
   </wsdl:message>
-  <wsdl:message name="GetBarriersRawSoapIn">
-    <wsdl:part name="parameters" element="tns:GetBarriersRaw" />
+  <wsdl:message name="GetOpportunityTypesShortlistSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOpportunityTypesShortlist" />
   </wsdl:message>
-  <wsdl:message name="GetBarriersRawSoapOut">
-    <wsdl:part name="parameters" element="tns:GetBarriersRawResponse" />
+  <wsdl:message name="GetOpportunityTypesShortlistSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOpportunityTypesShortlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOpportunityStatusShortlistSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOpportunityStatusShortlist" />
+  </wsdl:message>
+  <wsdl:message name="GetOpportunityStatusShortlistSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOpportunityStatusShortlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBarriersShortlistSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBarriersShortlist" />
+  </wsdl:message>
+  <wsdl:message name="GetBarriersShortlistSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBarriersShortlistResponse" />
   </wsdl:message>
   <wsdl:message name="GetIndustriesShortListSoapIn">
     <wsdl:part name="parameters" element="tns:GetIndustriesShortList" />
@@ -1159,17 +1270,29 @@
   <wsdl:message name="GetCountriesShortListSoapOut">
     <wsdl:part name="parameters" element="tns:GetCountriesShortListResponse" />
   </wsdl:message>
-  <wsdl:message name="GetNormHoursRawSoapIn">
-    <wsdl:part name="parameters" element="tns:GetNormHoursRaw" />
+  <wsdl:message name="GetEventsRawSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEventsRaw" />
   </wsdl:message>
-  <wsdl:message name="GetNormHoursRawSoapOut">
-    <wsdl:part name="parameters" element="tns:GetNormHoursRawResponse" />
+  <wsdl:message name="GetEventsRawSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEventsRawResponse" />
   </wsdl:message>
-  <wsdl:message name="GetEmployeeNormHoursRawSoapIn">
-    <wsdl:part name="parameters" element="tns:GetEmployeeNormHoursRaw" />
+  <wsdl:message name="GetEventTypesShortlistSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEventTypesShortlist" />
   </wsdl:message>
-  <wsdl:message name="GetEmployeeNormHoursRawSoapOut">
-    <wsdl:part name="parameters" element="tns:GetEmployeeNormHoursRawResponse" />
+  <wsdl:message name="GetEventTypesShortlistSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEventTypesShortlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkingHoursRawSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkingHoursRaw" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkingHoursRawSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkingHoursRawResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingHoursRawSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNormalWorkingHoursRaw" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingHoursRawSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNormalWorkingHoursRawResponse" />
   </wsdl:message>
   <wsdl:message name="ValidateCredentialsSoapIn">
     <wsdl:part name="parameters" element="tns:ValidateCredentials" />
@@ -1394,24 +1517,39 @@
   <wsdl:message name="GetMilestoneTypesRawHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
-  <wsdl:message name="GetOpportunityTypesRawHttpGetIn">
+  <wsdl:message name="GetSubOpportunitiesRawHttpGetIn">
     <wsdl:part name="siteCode" type="s:string" />
     <wsdl:part name="apiID" type="s:string" />
     <wsdl:part name="apiPassword" type="s:string" />
-    <wsdl:part name="opportunityTypeID" type="s:string" />
-    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="opportunityID" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="GetOpportunityTypesRawHttpGetOut">
+  <wsdl:message name="GetSubOpportunitiesRawHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
-  <wsdl:message name="GetBarriersRawHttpGetIn">
+  <wsdl:message name="GetOpportunityTypesShortlistHttpGetIn">
     <wsdl:part name="siteCode" type="s:string" />
     <wsdl:part name="apiID" type="s:string" />
     <wsdl:part name="apiPassword" type="s:string" />
-    <wsdl:part name="barrierID" type="s:string" />
     <wsdl:part name="status" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="GetBarriersRawHttpGetOut">
+  <wsdl:message name="GetOpportunityTypesShortlistHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetOpportunityStatusShortlistHttpGetIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOpportunityStatusShortlistHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetBarriersShortlistHttpGetIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBarriersShortlistHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetIndustriesShortListHttpGetIn">
@@ -1478,13 +1616,24 @@
   <wsdl:message name="GetCountriesShortListHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
-  <wsdl:message name="GetEmployeeNormHoursRawHttpGetIn">
+  <wsdl:message name="GetEventTypesShortlistHttpGetIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEventTypesShortlistHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingHoursRawHttpGetIn">
     <wsdl:part name="siteCode" type="s:string" />
     <wsdl:part name="apiID" type="s:string" />
     <wsdl:part name="apiPassword" type="s:string" />
     <wsdl:part name="employeeID" type="s:string" />
+    <wsdl:part name="departmentID" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="GetEmployeeNormHoursRawHttpGetOut">
+  <wsdl:message name="GetEmployeeNormalWorkingHoursRawHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ValidateCredentialsHttpGetIn">
@@ -1712,24 +1861,39 @@
   <wsdl:message name="GetMilestoneTypesRawHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
-  <wsdl:message name="GetOpportunityTypesRawHttpPostIn">
+  <wsdl:message name="GetSubOpportunitiesRawHttpPostIn">
     <wsdl:part name="siteCode" type="s:string" />
     <wsdl:part name="apiID" type="s:string" />
     <wsdl:part name="apiPassword" type="s:string" />
-    <wsdl:part name="opportunityTypeID" type="s:string" />
-    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="opportunityID" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="GetOpportunityTypesRawHttpPostOut">
+  <wsdl:message name="GetSubOpportunitiesRawHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
-  <wsdl:message name="GetBarriersRawHttpPostIn">
+  <wsdl:message name="GetOpportunityTypesShortlistHttpPostIn">
     <wsdl:part name="siteCode" type="s:string" />
     <wsdl:part name="apiID" type="s:string" />
     <wsdl:part name="apiPassword" type="s:string" />
-    <wsdl:part name="barrierID" type="s:string" />
     <wsdl:part name="status" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="GetBarriersRawHttpPostOut">
+  <wsdl:message name="GetOpportunityTypesShortlistHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetOpportunityStatusShortlistHttpPostIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOpportunityStatusShortlistHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetBarriersShortlistHttpPostIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBarriersShortlistHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetIndustriesShortListHttpPostIn">
@@ -1796,13 +1960,24 @@
   <wsdl:message name="GetCountriesShortListHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
-  <wsdl:message name="GetEmployeeNormHoursRawHttpPostIn">
+  <wsdl:message name="GetEventTypesShortlistHttpPostIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEventTypesShortlistHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingHoursRawHttpPostIn">
     <wsdl:part name="siteCode" type="s:string" />
     <wsdl:part name="apiID" type="s:string" />
     <wsdl:part name="apiPassword" type="s:string" />
     <wsdl:part name="employeeID" type="s:string" />
+    <wsdl:part name="departmentID" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
   </wsdl:message>
-  <wsdl:message name="GetEmployeeNormHoursRawHttpPostOut">
+  <wsdl:message name="GetEmployeeNormalWorkingHoursRawHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="ValidateCredentialsHttpPostIn">
@@ -1922,13 +2097,21 @@
       <wsdl:input message="tns:GetOpportunitiesRawSoapIn" />
       <wsdl:output message="tns:GetOpportunitiesRawSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetOpportunityTypesRaw">
-      <wsdl:input message="tns:GetOpportunityTypesRawSoapIn" />
-      <wsdl:output message="tns:GetOpportunityTypesRawSoapOut" />
+    <wsdl:operation name="GetSubOpportunitiesRaw">
+      <wsdl:input message="tns:GetSubOpportunitiesRawSoapIn" />
+      <wsdl:output message="tns:GetSubOpportunitiesRawSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetBarriersRaw">
-      <wsdl:input message="tns:GetBarriersRawSoapIn" />
-      <wsdl:output message="tns:GetBarriersRawSoapOut" />
+    <wsdl:operation name="GetOpportunityTypesShortlist">
+      <wsdl:input message="tns:GetOpportunityTypesShortlistSoapIn" />
+      <wsdl:output message="tns:GetOpportunityTypesShortlistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpportunityStatusShortlist">
+      <wsdl:input message="tns:GetOpportunityStatusShortlistSoapIn" />
+      <wsdl:output message="tns:GetOpportunityStatusShortlistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBarriersShortlist">
+      <wsdl:input message="tns:GetBarriersShortlistSoapIn" />
+      <wsdl:output message="tns:GetBarriersShortlistSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetIndustriesShortList">
       <wsdl:input message="tns:GetIndustriesShortListSoapIn" />
@@ -1954,13 +2137,21 @@
       <wsdl:input message="tns:GetCountriesShortListSoapIn" />
       <wsdl:output message="tns:GetCountriesShortListSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetNormHoursRaw">
-      <wsdl:input message="tns:GetNormHoursRawSoapIn" />
-      <wsdl:output message="tns:GetNormHoursRawSoapOut" />
+    <wsdl:operation name="GetEventsRaw">
+      <wsdl:input message="tns:GetEventsRawSoapIn" />
+      <wsdl:output message="tns:GetEventsRawSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetEmployeeNormHoursRaw">
-      <wsdl:input message="tns:GetEmployeeNormHoursRawSoapIn" />
-      <wsdl:output message="tns:GetEmployeeNormHoursRawSoapOut" />
+    <wsdl:operation name="GetEventTypesShortlist">
+      <wsdl:input message="tns:GetEventTypesShortlistSoapIn" />
+      <wsdl:output message="tns:GetEventTypesShortlistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkingHoursRaw">
+      <wsdl:input message="tns:GetWorkingHoursRawSoapIn" />
+      <wsdl:output message="tns:GetWorkingHoursRawSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingHoursRaw">
+      <wsdl:input message="tns:GetEmployeeNormalWorkingHoursRawSoapIn" />
+      <wsdl:output message="tns:GetEmployeeNormalWorkingHoursRawSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ValidateCredentials">
       <wsdl:input message="tns:ValidateCredentialsSoapIn" />
@@ -2052,13 +2243,21 @@
       <wsdl:input message="tns:GetMilestoneTypesRawHttpGetIn" />
       <wsdl:output message="tns:GetMilestoneTypesRawHttpGetOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetOpportunityTypesRaw">
-      <wsdl:input message="tns:GetOpportunityTypesRawHttpGetIn" />
-      <wsdl:output message="tns:GetOpportunityTypesRawHttpGetOut" />
+    <wsdl:operation name="GetSubOpportunitiesRaw">
+      <wsdl:input message="tns:GetSubOpportunitiesRawHttpGetIn" />
+      <wsdl:output message="tns:GetSubOpportunitiesRawHttpGetOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetBarriersRaw">
-      <wsdl:input message="tns:GetBarriersRawHttpGetIn" />
-      <wsdl:output message="tns:GetBarriersRawHttpGetOut" />
+    <wsdl:operation name="GetOpportunityTypesShortlist">
+      <wsdl:input message="tns:GetOpportunityTypesShortlistHttpGetIn" />
+      <wsdl:output message="tns:GetOpportunityTypesShortlistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpportunityStatusShortlist">
+      <wsdl:input message="tns:GetOpportunityStatusShortlistHttpGetIn" />
+      <wsdl:output message="tns:GetOpportunityStatusShortlistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBarriersShortlist">
+      <wsdl:input message="tns:GetBarriersShortlistHttpGetIn" />
+      <wsdl:output message="tns:GetBarriersShortlistHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetIndustriesShortList">
       <wsdl:input message="tns:GetIndustriesShortListHttpGetIn" />
@@ -2084,9 +2283,13 @@
       <wsdl:input message="tns:GetCountriesShortListHttpGetIn" />
       <wsdl:output message="tns:GetCountriesShortListHttpGetOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetEmployeeNormHoursRaw">
-      <wsdl:input message="tns:GetEmployeeNormHoursRawHttpGetIn" />
-      <wsdl:output message="tns:GetEmployeeNormHoursRawHttpGetOut" />
+    <wsdl:operation name="GetEventTypesShortlist">
+      <wsdl:input message="tns:GetEventTypesShortlistHttpGetIn" />
+      <wsdl:output message="tns:GetEventTypesShortlistHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingHoursRaw">
+      <wsdl:input message="tns:GetEmployeeNormalWorkingHoursRawHttpGetIn" />
+      <wsdl:output message="tns:GetEmployeeNormalWorkingHoursRawHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="ValidateCredentials">
       <wsdl:input message="tns:ValidateCredentialsHttpGetIn" />
@@ -2178,13 +2381,21 @@
       <wsdl:input message="tns:GetMilestoneTypesRawHttpPostIn" />
       <wsdl:output message="tns:GetMilestoneTypesRawHttpPostOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetOpportunityTypesRaw">
-      <wsdl:input message="tns:GetOpportunityTypesRawHttpPostIn" />
-      <wsdl:output message="tns:GetOpportunityTypesRawHttpPostOut" />
+    <wsdl:operation name="GetSubOpportunitiesRaw">
+      <wsdl:input message="tns:GetSubOpportunitiesRawHttpPostIn" />
+      <wsdl:output message="tns:GetSubOpportunitiesRawHttpPostOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetBarriersRaw">
-      <wsdl:input message="tns:GetBarriersRawHttpPostIn" />
-      <wsdl:output message="tns:GetBarriersRawHttpPostOut" />
+    <wsdl:operation name="GetOpportunityTypesShortlist">
+      <wsdl:input message="tns:GetOpportunityTypesShortlistHttpPostIn" />
+      <wsdl:output message="tns:GetOpportunityTypesShortlistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpportunityStatusShortlist">
+      <wsdl:input message="tns:GetOpportunityStatusShortlistHttpPostIn" />
+      <wsdl:output message="tns:GetOpportunityStatusShortlistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBarriersShortlist">
+      <wsdl:input message="tns:GetBarriersShortlistHttpPostIn" />
+      <wsdl:output message="tns:GetBarriersShortlistHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetIndustriesShortList">
       <wsdl:input message="tns:GetIndustriesShortListHttpPostIn" />
@@ -2210,9 +2421,13 @@
       <wsdl:input message="tns:GetCountriesShortListHttpPostIn" />
       <wsdl:output message="tns:GetCountriesShortListHttpPostOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetEmployeeNormHoursRaw">
-      <wsdl:input message="tns:GetEmployeeNormHoursRawHttpPostIn" />
-      <wsdl:output message="tns:GetEmployeeNormHoursRawHttpPostOut" />
+    <wsdl:operation name="GetEventTypesShortlist">
+      <wsdl:input message="tns:GetEventTypesShortlistHttpPostIn" />
+      <wsdl:output message="tns:GetEventTypesShortlistHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingHoursRaw">
+      <wsdl:input message="tns:GetEmployeeNormalWorkingHoursRawHttpPostIn" />
+      <wsdl:output message="tns:GetEmployeeNormalWorkingHoursRawHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="ValidateCredentials">
       <wsdl:input message="tns:ValidateCredentialsHttpPostIn" />
@@ -2464,8 +2679,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetOpportunityTypesRaw">
-      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityTypesRaw" style="document" />
+    <wsdl:operation name="GetSubOpportunitiesRaw">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetSubOpportunitiesRaw" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2473,8 +2688,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetBarriersRaw">
-      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetBarriersRaw" style="document" />
+    <wsdl:operation name="GetOpportunityTypesShortlist">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityTypesShortlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpportunityStatusShortlist">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityStatusShortlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBarriersShortlist">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetBarriersShortlist" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2536,8 +2769,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNormHoursRaw">
-      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetNormHoursRaw" style="document" />
+    <wsdl:operation name="GetEventsRaw">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEventsRaw" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2545,8 +2778,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetEmployeeNormHoursRaw">
-      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormHoursRaw" style="document" />
+    <wsdl:operation name="GetEventTypesShortlist">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEventTypesShortlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkingHoursRaw">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetWorkingHoursRaw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingHoursRaw">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormalWorkingHoursRaw" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2809,8 +3060,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetOpportunityTypesRaw">
-      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityTypesRaw" style="document" />
+    <wsdl:operation name="GetSubOpportunitiesRaw">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetSubOpportunitiesRaw" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -2818,8 +3069,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetBarriersRaw">
-      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetBarriersRaw" style="document" />
+    <wsdl:operation name="GetOpportunityTypesShortlist">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityTypesShortlist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpportunityStatusShortlist">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetOpportunityStatusShortlist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBarriersShortlist">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetBarriersShortlist" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -2881,8 +3150,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetNormHoursRaw">
-      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetNormHoursRaw" style="document" />
+    <wsdl:operation name="GetEventsRaw">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEventsRaw" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -2890,8 +3159,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetEmployeeNormHoursRaw">
-      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormHoursRaw" style="document" />
+    <wsdl:operation name="GetEventTypesShortlist">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEventTypesShortlist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkingHoursRaw">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetWorkingHoursRaw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingHoursRaw">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormalWorkingHoursRaw" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -3100,8 +3387,8 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetOpportunityTypesRaw">
-      <http:operation location="/GetOpportunityTypesRaw" />
+    <wsdl:operation name="GetSubOpportunitiesRaw">
+      <http:operation location="/GetSubOpportunitiesRaw" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -3109,8 +3396,26 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetBarriersRaw">
-      <http:operation location="/GetBarriersRaw" />
+    <wsdl:operation name="GetOpportunityTypesShortlist">
+      <http:operation location="/GetOpportunityTypesShortlist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpportunityStatusShortlist">
+      <http:operation location="/GetOpportunityStatusShortlist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBarriersShortlist">
+      <http:operation location="/GetBarriersShortlist" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -3172,8 +3477,17 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetEmployeeNormHoursRaw">
-      <http:operation location="/GetEmployeeNormHoursRaw" />
+    <wsdl:operation name="GetEventTypesShortlist">
+      <http:operation location="/GetEventTypesShortlist" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingHoursRaw">
+      <http:operation location="/GetEmployeeNormalWorkingHoursRaw" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -3382,8 +3696,8 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetOpportunityTypesRaw">
-      <http:operation location="/GetOpportunityTypesRaw" />
+    <wsdl:operation name="GetSubOpportunitiesRaw">
+      <http:operation location="/GetSubOpportunitiesRaw" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
@@ -3391,8 +3705,26 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetBarriersRaw">
-      <http:operation location="/GetBarriersRaw" />
+    <wsdl:operation name="GetOpportunityTypesShortlist">
+      <http:operation location="/GetOpportunityTypesShortlist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpportunityStatusShortlist">
+      <http:operation location="/GetOpportunityStatusShortlist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBarriersShortlist">
+      <http:operation location="/GetBarriersShortlist" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
@@ -3454,8 +3786,17 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetEmployeeNormHoursRaw">
-      <http:operation location="/GetEmployeeNormHoursRaw" />
+    <wsdl:operation name="GetEventTypesShortlist">
+      <http:operation location="/GetEventTypesShortlist" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingHoursRaw">
+      <http:operation location="/GetEmployeeNormalWorkingHoursRaw" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:SubOpportunities xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/SubOpportunitiesRaw.xsd">
+  <tlp:SubOpportunity ID="3">
+     <Name>Sub-opportunity name</Name>
+     <OpportunityTypeID>2</OpportunityTypeID>
+     <OpportunityStatusID>5</OpportunityStatusID>
+     <ForecastAmount>450000</ForecastAmount>
+     <ForecastRate>50</ForecastRate>
+     <Date>2016-05-12 00:00:00.000</Date>
+     <Created>2016-07-01 00:00:00.000</Created>
+     <Createdby>312</Createdby>
+     <LastModified>2016-07-01 00:00:00.000</LastModified>
+     <LastModifiedBy>312</LastModifiedBy>
+     </tlp:SubOpportunity>
+</tlp:SubOpportunities>

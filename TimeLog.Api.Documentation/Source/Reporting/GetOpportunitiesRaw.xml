@@ -9,7 +9,8 @@
     <OpportunityTypeID>2</OpportunityTypeID>
      <OwnerID>312</OwnerID>
      <BarrierID>10</BarrierID>
-     <Status>Lead</Status>
+     <Status>Lead</Status>  Note: Status is obsolete on opportinities. 
+                            It has been moved to sub-opportunity! 
      <Potential>450000</Potential>
      <ForecastRate>50</ForecastRate>
      <Description>Opportunity no. 1</Description>
