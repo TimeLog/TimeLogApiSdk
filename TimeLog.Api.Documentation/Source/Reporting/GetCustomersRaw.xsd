@@ -41,6 +41,7 @@
       <xsd:element name="AccountManagerFullName" type="xsd:string" minOccurs="0" maxOccurs="1"  />
       <xsd:element name="IndustryID" type="xsd:integer" minOccurs="0" maxOccurs="1"  />
       <xsd:element name="IndustryName" type="xsd:string" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="CustomerSince" type="xsd:date" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
   </xsd:complexType>

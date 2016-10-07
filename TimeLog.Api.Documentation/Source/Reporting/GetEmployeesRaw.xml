@@ -23,5 +23,7 @@
     <tlp:WorkWeek>Full time - 37 hours</tlp:WorkWeek>
     <tlp:EmployeeTypeId>2</tlp:EmployeeTypeId>
     <tlp:EmployeeTypeName>Consultant</tlp:EmployeeTypeName>
+    <tlp:EmployeeNo>12345</tlp:EmployeeNo>
+    <tlp:Username>SYSTEM</tlp:Username>
 	</tlp:Employee>
 </tlp:Employees>

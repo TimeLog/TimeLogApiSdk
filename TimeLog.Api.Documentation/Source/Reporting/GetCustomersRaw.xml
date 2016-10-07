@@ -26,5 +26,6 @@
     <tlp:AccountManagerFullName>Paul M Weiss</tlp:AccountManagerFullName>
     <tlp:IndustryID>6</tlp:IndustryID>
     <tlp:IndustryName>Software Company</tlp:IndustryName>
+    <tlp:CustomerSince>2011-08-12</tlp:CustomerSince>
   </tlp:Customer>
 </tlp:Customers>
