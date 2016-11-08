@@ -105,8 +105,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\CrmService\CRMServiceSecure2.wsdl" />
-    <None Include="Service References\CrmService\CRMServiceSecure21.wsdl" />
+    <None Include="Service References\CrmService\CRMServiceSecure.wsdl" />
+    <None Include="Service References\CrmService\CRMServiceSecure1.wsdl" />
     <None Include="Service References\CrmService\TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -456,7 +456,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CrmService\CRMServiceSecure1.disco" />
+    <None Include="Service References\CrmService\CRMServiceSecure.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

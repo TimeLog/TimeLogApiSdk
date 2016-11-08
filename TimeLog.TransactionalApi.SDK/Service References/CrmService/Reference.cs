@@ -58,7 +58,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ContactHeader", Namespace="http://api.timelog.com/services/crm/1_3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ContactHeader", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
     public partial class ContactHeader : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
         
@@ -113,7 +113,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerStatus", Namespace="http://api.timelog.com/services/crm/1_3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerStatus", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
     public partial class CustomerStatus : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
         
@@ -168,7 +168,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Industry", Namespace="http://api.timelog.com/services/crm/1_3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Industry", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
     public partial class Industry : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
         
@@ -207,7 +207,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerHeader", Namespace="http://api.timelog.com/services/crm/1_3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerHeader", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
     public partial class CustomerHeader : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
         
@@ -747,7 +747,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Contact", Namespace="http://api.timelog.com/services/crm/1_3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Contact", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
     public partial class Contact : TimeLog.TransactionalApi.SDK.CrmService.APIBaseExtended {
         
@@ -994,7 +994,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://api.timelog.com/services/crm/1_3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
     public partial class Customer : TimeLog.TransactionalApi.SDK.CrmService.APIBaseExtended {
         
@@ -1066,6 +1066,18 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CurrencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentTermIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.CrmService.Address ShippingAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShippingNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool UseShippingAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails DetailsField;
@@ -1370,6 +1382,58 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+        public int PaymentTermId {
+            get {
+                return this.PaymentTermIdField;
+            }
+            set {
+                if ((this.PaymentTermIdField.Equals(value) != true)) {
+                    this.PaymentTermIdField = value;
+                    this.RaisePropertyChanged("PaymentTermId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+        public TimeLog.TransactionalApi.SDK.CrmService.Address ShippingAddress {
+            get {
+                return this.ShippingAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShippingAddressField, value) != true)) {
+                    this.ShippingAddressField = value;
+                    this.RaisePropertyChanged("ShippingAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        public string ShippingName {
+            get {
+                return this.ShippingNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShippingNameField, value) != true)) {
+                    this.ShippingNameField = value;
+                    this.RaisePropertyChanged("ShippingName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        public bool UseShippingAddress {
+            get {
+                return this.UseShippingAddressField;
+            }
+            set {
+                if ((this.UseShippingAddressField.Equals(value) != true)) {
+                    this.UseShippingAddressField = value;
+                    this.RaisePropertyChanged("UseShippingAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
         public TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails Details {
             get {
                 return this.DetailsField;
@@ -2019,7 +2083,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerDetails", Namespace="http://api.timelog.com/services/crm/1_3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerDetails", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
     public partial class CustomerDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -2547,10 +2611,25 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         ProjectSubContractStatus = 144,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MilestoneType = 145,
+        PlatformPaymentMethod = 145,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        EmployeeHeader = 146,
+        MilestoneType = 146,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeHeader = 147,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Platform = 148,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PlatformLicenceOverview = 149,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PlatformInvoiceInformation = 150,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OpportunityStatus = 151,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,
@@ -2558,7 +2637,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ContactDetails", Namespace="http://api.timelog.com/services/crm/1_3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ContactDetails", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
     public partial class ContactDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -3029,114 +3108,114 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://api.timelog.com/services/crm/1_3", ConfigurationName="CrmService.ICRMService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://api.timelog.com/services/crm/1_4", ConfigurationName="CrmService.ICRMService")]
     public interface ICRMService {
         
-        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://api.timelog.com/services/crm/1_3)
+        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://api.timelog.com/services/crm/1_4)
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse IsAlive(TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByID", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByIDResponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomerByID(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByID", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByIDResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomerByIDAsync(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByGUID", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByGUIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUIDResponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomerByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByGUID", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByGUIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUIDResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomerByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByExternalKey", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByExternalKeyRespo" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKey", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKeyRespo" +
             "nse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomerByExternalKey(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByExternalKey", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerByExternalKeyRespo" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKey", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKeyRespo" +
             "nse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomerByExternalKeyAsync(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByFieldsPaged", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByFieldsPagedResp" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPagedResp" +
             "onse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersByFieldsPaged(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByFieldsPaged", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByFieldsPagedResp" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPagedResp" +
             "onse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersByFieldsPagedAsync(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersModifiedSincePage" +
-            "d", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersModifiedSincePage" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePage" +
+            "d", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePage" +
             "dResponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersModifiedSincePage" +
-            "d", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersModifiedSincePage" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePage" +
+            "d", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePage" +
             "dResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByNamePaged", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByNamePagedRespon" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePagedRespon" +
             "se")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersByNamePaged(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByNamePaged", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomersByNamePagedRespon" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePagedRespon" +
             "se")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersByNamePagedAsync(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/InsertCustomer", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/InsertCustomerResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomer", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomerResponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer InsertCustomer(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/InsertCustomer", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/InsertCustomerResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomer", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomerResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> InsertCustomerAsync(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateCustomer", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateCustomerResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomer", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomerResponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer UpdateCustomer(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateCustomer", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateCustomerResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomer", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomerResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> UpdateCustomerAsync(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerStatuses", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerStatusesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatuses", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatusesResponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus GetCustomerStatuses(TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerStatuses", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetCustomerStatusesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatuses", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatusesResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus> GetCustomerStatusesAsync(TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactByGUID", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactByGUIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUIDResponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact GetContactByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactByGUID", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactByGUIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUIDResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> GetContactByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsByCustomerPaged", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsByCustomerPagedRes" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPagedRes" +
             "ponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact GetContactsByCustomerPaged(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsByCustomerPaged", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsByCustomerPagedRes" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPagedRes" +
             "ponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> GetContactsByCustomerPagedAsync(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsModifiedSincePaged" +
-            "", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsModifiedSincePaged" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePaged" +
+            "", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePaged" +
             "Response")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact GetContactsModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsModifiedSincePaged" +
-            "", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/GetContactsModifiedSincePaged" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePaged" +
+            "", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePaged" +
             "Response")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> GetContactsModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/InsertContact", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/InsertContactResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContact", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContactResponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact InsertContact(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/InsertContact", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/InsertContactResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContact", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContactResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> InsertContactAsync(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateContact", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateContactResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContact", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContactResponse")]
         TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact UpdateContact(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateContact", ReplyAction="http://api.timelog.com/services/crm/1_3/ICRMService/UpdateContactResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContact", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContactResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> UpdateContactAsync(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
     }
     
