@@ -1071,13 +1071,19 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private int PaymentTermIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Address ShippingAddressField;
+        private TimeLog.TransactionalApi.SDK.CrmService.Address InvoicingAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShippingNameField;
+        private string InvoicingNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool UseShippingAddressField;
+        private bool UseInvoicingAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> CustomerSinceDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NickNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails DetailsField;
@@ -1395,45 +1401,71 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
-        public TimeLog.TransactionalApi.SDK.CrmService.Address ShippingAddress {
+        public TimeLog.TransactionalApi.SDK.CrmService.Address InvoicingAddress {
             get {
-                return this.ShippingAddressField;
+                return this.InvoicingAddressField;
             }
             set {
-                if ((object.ReferenceEquals(this.ShippingAddressField, value) != true)) {
-                    this.ShippingAddressField = value;
-                    this.RaisePropertyChanged("ShippingAddress");
+                if ((object.ReferenceEquals(this.InvoicingAddressField, value) != true)) {
+                    this.InvoicingAddressField = value;
+                    this.RaisePropertyChanged("InvoicingAddress");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
-        public string ShippingName {
+        public string InvoicingName {
             get {
-                return this.ShippingNameField;
+                return this.InvoicingNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.ShippingNameField, value) != true)) {
-                    this.ShippingNameField = value;
-                    this.RaisePropertyChanged("ShippingName");
+                if ((object.ReferenceEquals(this.InvoicingNameField, value) != true)) {
+                    this.InvoicingNameField = value;
+                    this.RaisePropertyChanged("InvoicingName");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
-        public bool UseShippingAddress {
+        public bool UseInvoicingAddress {
             get {
-                return this.UseShippingAddressField;
+                return this.UseInvoicingAddressField;
             }
             set {
-                if ((this.UseShippingAddressField.Equals(value) != true)) {
-                    this.UseShippingAddressField = value;
-                    this.RaisePropertyChanged("UseShippingAddress");
+                if ((this.UseInvoicingAddressField.Equals(value) != true)) {
+                    this.UseInvoicingAddressField = value;
+                    this.RaisePropertyChanged("UseInvoicingAddress");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        public System.Nullable<System.DateTime> CustomerSinceDate {
+            get {
+                return this.CustomerSinceDateField;
+            }
+            set {
+                if ((this.CustomerSinceDateField.Equals(value) != true)) {
+                    this.CustomerSinceDateField = value;
+                    this.RaisePropertyChanged("CustomerSinceDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+        public string NickName {
+            get {
+                return this.NickNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NickNameField, value) != true)) {
+                    this.NickNameField = value;
+                    this.RaisePropertyChanged("NickName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
         public TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails Details {
             get {
                 return this.DetailsField;

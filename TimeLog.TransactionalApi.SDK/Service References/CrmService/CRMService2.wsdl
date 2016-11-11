@@ -1,0 +1,2027 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://api.timelog.com/services/crm/1_4" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://api.timelog.com/services/crm/1_4" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_3" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_3">
+      <xsd:complexType name="SecurityToken">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q1="http://www.timelog.com/api/tlp/v1_2" base="q1:APIBase">
+            <xsd:sequence>
+              <xsd:element name="Initials" nillable="true" type="xsd:string" />
+              <xsd:element name="Expires" type="xsd:dateTime" />
+              <xsd:element name="Hash" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="SecurityToken" nillable="true" type="tns:SecurityToken" />
+      <xsd:element name="IsAlive">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IsAliveResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="IsAliveResult" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_2" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_2">
+      <xsd:complexType name="APIBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="APIBase" nillable="true" type="tns:APIBase" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common">
+      <xsd:simpleType name="ExecutionStatus">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NotSet" />
+          <xsd:enumeration value="Success" />
+          <xsd:enumeration value="Invalid" />
+          <xsd:enumeration value="Error" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="ExecutionStatus" nillable="true" type="tns:ExecutionStatus" />
+      <xsd:simpleType name="DomainType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Customer">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Contact">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="DescriptionType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="BillingCode">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PrintTemplateElement">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Currency">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ExternalSystem">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="TaskCategory">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Industry">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Country">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ExtractionTemplateElement">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="WorkUnit">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HourlyRate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="IntegrationContext">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PrintTemplate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ExchangeRate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceableDisbursement">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="TaskType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Voucher">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="TaskType2">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Invoice">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">21</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="SupportTicket">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceableWorkUnit">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceableSupportContract">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CreditNote">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProductNumber">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">26</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ExtractionTemplate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">27</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CustomerStatus">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">28</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CustomerHeader">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">29</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Reminder">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ETCEmployee">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectTemplateHeader">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">32</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Event">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceableTravelExpense">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">34</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceableInstallment">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">35</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Employee">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">36</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceableRaw">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">37</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Milestone">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">38</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Disbursement">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">39</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="IntegrationEventContext">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">40</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="AccountingPeriod">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">41</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectResource">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">42</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Allocation">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">43</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceLine">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">44</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectResourceGroup">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">45</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="TaskHeader">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">46</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PaymentTerm">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">47</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceableSupportUnit">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">48</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="File">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">49</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="BillingPlan">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">50</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Project">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">51</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="TimeLogExchangeRate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">52</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">53</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectCategory">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">54</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Milleage">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">55</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Allowances">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">56</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Accomodation">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">57</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="DomainProductNoCarrier">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">58</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectHeader">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">59</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectOrderStatus">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="SupportJournalPost">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">61</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Department">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">62</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="EmployeeMachineMapping">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">63</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HostingContract">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">64</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ExpenseType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">65</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectType2">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">66</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="SupportType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">67</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="TimeOff">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">68</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="LicenseType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">69</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="LicenseTypeRange">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ContractLicense">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">71</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ContractLicenseRange">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">72</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceLineExport">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">73</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="DashboardWidget">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">74</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="DashboardItem">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">75</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Notification">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">76</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="AuditLog">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">77</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceableCurrencyDifferent">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">78</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="EmployeeType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">79</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="EmployeeCostRate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">80</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="MileageRate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">81</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PriceList">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">82</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CurrencyList">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">83</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Service">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">84</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceableRounding">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">85</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PaymentMethod">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">86</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="SalaryCode">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">87</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="SalaryCodeGroup">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">88</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Process">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">89</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="FinancialIntegration">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">94</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CustomFieldSection" />
+          <xsd:enumeration value="CustomFieldDefinition" />
+          <xsd:enumeration value="IntegrationTransaction" />
+          <xsd:enumeration value="IntegrationTransactionLog" />
+          <xsd:enumeration value="NormalWorkweek">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">95</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="AllowanceLegislation">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">96</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="HolidayCalendar">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">97</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Task">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">98</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Page">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">99</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PersonalLink">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Menu">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="UserPageFavorite">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">102</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CustomHelp">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">103</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="User">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">104</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="UserProfile">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">105</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PageSetting">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">106</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Area">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">107</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="AreaPrivilege">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">108</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="EventTypeGroup">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">109</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Role">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">110</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PageProperty">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">111</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="UserSetting">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">112</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="MainSearchResultItem">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">113</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProcessStep">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">114</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Barrier">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">115</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="OpportunityType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">116</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Car">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">117</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="AllowanceRate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">118</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="EventType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">119</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="IndustryCode">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">120</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Skills">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">121</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceGroupingRuleTemplate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">122</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceGroupingRule">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">123</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceLineGroupingRule">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">124</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceLineGroupingRuleDetail">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">125</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="AutoInvoiceDetailLog">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">126</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="AutoInvoiceDetail">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">127</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="AutoInvoiceMaster">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">128</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="InvoiceSettings">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">129</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ContractModel">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">130</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectSubContract">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">131</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectSubContractHeader">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">132</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Recurrence">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">133</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="DataImportTemplate">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">134</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CRMGroup">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">135</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CRMGroupRelationDetails">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">136</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PageFilter">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">137</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Product">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">138</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="IntegrationHandler">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">139</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="TimeTrackingItem">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">140</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="TimeTrackingGroup">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">141</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="CustomerRelationer">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">142</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="UnitType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">143</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="ProjectSubContractStatus">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">144</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PlatformPaymentMethod">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">145</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="MilestoneType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">146</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="EmployeeHeader">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">147</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Platform">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">148</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PlatformLicenceOverview">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">149</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="PlatformInvoiceInformation">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">150</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="OpportunityStatus">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">151</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="NotSpecified">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="DomainType" nillable="true" type="tns:DomainType" />
+    </xsd:schema>
+    <xsd:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://api.timelog.com/services/crm/1_4">
+      <xsd:element name="GetCustomerByID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="id" type="xsd:int" />
+            <xsd:element minOccurs="0" name="loadCustomFields" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadExternalKeys" type="xsd:boolean" />
+            <xsd:element xmlns:q2="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q2:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomerByIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q3="http://api.timelog.com" minOccurs="0" name="GetCustomerByIDResult" nillable="true" type="q3:ResponseOfCustomer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfCustomer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Customer" nillable="true" type="tns:Customer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCustomer" nillable="true" type="tns:ArrayOfCustomer" />
+      <xsd:complexType name="Customer">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q4="http://api.timelog.com" base="q4:APIBaseExtended">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ID" type="xsd:int" />
+              <xsd:element minOccurs="0" name="GUID" type="ser:guid" />
+              <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="No" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="TimeStamp" nillable="true" type="xsd:base64Binary" />
+              <xsd:element minOccurs="0" name="VAT" type="xsd:double" />
+              <xsd:element minOccurs="0" name="CalculateVAT" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="DefaultDiscountPercent" type="xsd:double" />
+              <xsd:element minOccurs="0" name="Address" nillable="true" type="q4:Address" />
+              <xsd:element minOccurs="0" name="Fax" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="WebSite" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Phone" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Email" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="KAM" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="EAN" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="IsOIOCustomer" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="CreditorID" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="AccountNo" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Contacts" nillable="true" type="tns:ArrayOfContactHeader" />
+              <xsd:element minOccurs="0" name="Industry" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Status" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="VATNo" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Currency" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="PaymentTermId" type="xsd:int" />
+              <xsd:element minOccurs="0" name="InvoicingAddress" nillable="true" type="q4:Address" />
+              <xsd:element minOccurs="0" name="InvoicingName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="UseInvoicingAddress" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="CustomerSinceDate" nillable="true" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="NickName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Details" nillable="true" type="tns:CustomerDetails" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Customer" nillable="true" type="tns:Customer" />
+      <xsd:complexType name="ArrayOfContactHeader">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ContactHeader" nillable="true" type="tns:ContactHeader" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfContactHeader" nillable="true" type="tns:ArrayOfContactHeader" />
+      <xsd:complexType name="ContactHeader">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q5="http://www.timelog.com/api/tlp/v1_2" base="q5:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="GUID" type="ser:guid" />
+              <xsd:element minOccurs="0" name="FirstName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="LastName" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ContactHeader" nillable="true" type="tns:ContactHeader" />
+      <xsd:complexType name="CustomerDetails">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Status" nillable="true" type="tns:CustomerStatus" />
+          <xsd:element minOccurs="0" name="Industry" nillable="true" type="tns:Industry" />
+          <xsd:element xmlns:q6="http://api.timelog.com" minOccurs="0" name="Currency" nillable="true" type="q6:Currency" />
+          <xsd:element xmlns:q7="http://api.timelog.com" minOccurs="0" name="KAM" nillable="true" type="q7:EmployeeHeader" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CustomerDetails" nillable="true" type="tns:CustomerDetails" />
+      <xsd:complexType name="CustomerStatus">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q8="http://www.timelog.com/api/tlp/v1_2" base="q8:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ID" type="xsd:int" />
+              <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q9="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CRM" minOccurs="0" name="Type" type="q9:CustomerStatusType" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CustomerStatus" nillable="true" type="tns:CustomerStatus" />
+      <xsd:complexType name="Industry">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q10="http://www.timelog.com/api/tlp/v1_2" base="q10:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ID" type="xsd:int" />
+              <xsd:element minOccurs="0" name="Branche" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Industry" nillable="true" type="tns:Industry" />
+      <xsd:element name="GetCustomerByGUID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="guid" type="ser:guid" />
+            <xsd:element minOccurs="0" name="loadCustomFields" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadExternalKeys" type="xsd:boolean" />
+            <xsd:element xmlns:q11="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q11:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomerByGUIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q12="http://api.timelog.com" minOccurs="0" name="GetCustomerByGUIDResult" nillable="true" type="q12:ResponseOfCustomer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomerByExternalKey">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="externalKey" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="systemName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="loadCustomFields" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadExternalKeys" type="xsd:boolean" />
+            <xsd:element xmlns:q13="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q13:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomerByExternalKeyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q14="http://api.timelog.com" minOccurs="0" name="GetCustomerByExternalKeyResult" nillable="true" type="q14:ResponseOfCustomer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomersByFieldsPaged">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="cvr" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="phone" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="loadCustomFields" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadExternalKeys" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="page" type="xsd:int" />
+            <xsd:element minOccurs="0" name="pageSize" type="xsd:int" />
+            <xsd:element xmlns:q15="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q15:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomersByFieldsPagedResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q16="http://api.timelog.com" minOccurs="0" name="GetCustomersByFieldsPagedResult" nillable="true" type="q16:ResponseOfCustomer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomersModifiedSincePaged">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="date" type="xsd:dateTime" />
+            <xsd:element minOccurs="0" name="includeCustomers" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="includeSuppliers" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="includeLeads" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadCustomFields" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadExternalKeys" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="page" type="xsd:int" />
+            <xsd:element minOccurs="0" name="pageSize" type="xsd:int" />
+            <xsd:element xmlns:q17="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q17:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomersModifiedSincePagedResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q18="http://api.timelog.com" minOccurs="0" name="GetCustomersModifiedSincePagedResult" nillable="true" type="q18:ResponseOfCustomer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomersByNamePaged">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="loadCustomFields" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadExternalKeys" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="page" type="xsd:int" />
+            <xsd:element minOccurs="0" name="pageSize" type="xsd:int" />
+            <xsd:element xmlns:q19="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q19:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomersByNamePagedResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q20="http://api.timelog.com" minOccurs="0" name="GetCustomersByNamePagedResult" nillable="true" type="q20:ResponseOfCustomer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InsertCustomer">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="customer" nillable="true" type="tns:Customer" />
+            <xsd:element minOccurs="0" name="source" type="xsd:int" />
+            <xsd:element xmlns:q21="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q21:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InsertCustomerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q22="http://api.timelog.com" minOccurs="0" name="InsertCustomerResult" nillable="true" type="q22:ResponseOfCustomer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateCustomer">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="customer" nillable="true" type="tns:Customer" />
+            <xsd:element minOccurs="0" name="source" type="xsd:int" />
+            <xsd:element xmlns:q23="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q23:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateCustomerResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q24="http://api.timelog.com" minOccurs="0" name="UpdateCustomerResult" nillable="true" type="q24:ResponseOfCustomer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomerStatuses">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q25="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q25:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCustomerStatusesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q26="http://api.timelog.com" minOccurs="0" name="GetCustomerStatusesResult" nillable="true" type="q26:ResponseOfCustomerStatus" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfCustomerStatus">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CustomerStatus" nillable="true" type="tns:CustomerStatus" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCustomerStatus" nillable="true" type="tns:ArrayOfCustomerStatus" />
+      <xsd:element name="GetContactByGUID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="guid" type="ser:guid" />
+            <xsd:element minOccurs="0" name="loadCustomFields" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadExternalKeys" type="xsd:boolean" />
+            <xsd:element xmlns:q27="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q27:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetContactByGUIDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q28="http://api.timelog.com" minOccurs="0" name="GetContactByGUIDResult" nillable="true" type="q28:ResponseOfContact" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfContact">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfContact" nillable="true" type="tns:ArrayOfContact" />
+      <xsd:complexType name="Contact">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q29="http://api.timelog.com" base="q29:APIBaseExtended">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="GUID" type="ser:guid" />
+              <xsd:element minOccurs="0" name="Firstname" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Lastname" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Email" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Mobile" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Phone" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Fax" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Address" nillable="true" type="q29:Address" />
+              <xsd:element minOccurs="0" name="Comment" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Title" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="CustomerGUID" type="ser:guid" />
+              <xsd:element minOccurs="0" name="ContactID" type="xsd:int" />
+              <xsd:element minOccurs="0" name="DefaultInvoiceSettingContactID" type="xsd:int" />
+              <xsd:element minOccurs="0" name="IsActive" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="Details" nillable="true" type="tns:ContactDetails" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Contact" nillable="true" type="tns:Contact" />
+      <xsd:complexType name="ContactDetails">
+        <xsd:sequence>
+          <xsd:element xmlns:q30="http://api.timelog.com" minOccurs="0" name="Owner" nillable="true" type="q30:EmployeeHeader" />
+          <xsd:element minOccurs="0" name="CustomerHeader" nillable="true" type="tns:CustomerHeader" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ContactDetails" nillable="true" type="tns:ContactDetails" />
+      <xsd:complexType name="CustomerHeader">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q31="http://www.timelog.com/api/tlp/v1_2" base="q31:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ID" type="xsd:int" />
+              <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="No" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="GUID" type="ser:guid" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CustomerHeader" nillable="true" type="tns:CustomerHeader" />
+      <xsd:element name="GetContactsByCustomerPaged">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="customerId" type="ser:guid" />
+            <xsd:element minOccurs="0" name="loadCustomFields" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadExternalKeys" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="page" type="xsd:int" />
+            <xsd:element minOccurs="0" name="pageSize" type="xsd:int" />
+            <xsd:element xmlns:q32="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q32:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetContactsByCustomerPagedResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q33="http://api.timelog.com" minOccurs="0" name="GetContactsByCustomerPagedResult" nillable="true" type="q33:ResponseOfContact" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetContactsModifiedSincePaged">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="date" type="xsd:dateTime" />
+            <xsd:element minOccurs="0" name="includeCustomers" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="includeSuppliers" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="includeLeads" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadCustomFields" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="loadExternalKeys" type="xsd:boolean" />
+            <xsd:element minOccurs="0" name="page" type="xsd:int" />
+            <xsd:element minOccurs="0" name="pageSize" type="xsd:int" />
+            <xsd:element xmlns:q34="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q34:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetContactsModifiedSincePagedResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q35="http://api.timelog.com" minOccurs="0" name="GetContactsModifiedSincePagedResult" nillable="true" type="q35:ResponseOfContact" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InsertContact">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="contact" nillable="true" type="tns:Contact" />
+            <xsd:element minOccurs="0" name="source" type="xsd:int" />
+            <xsd:element xmlns:q36="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q36:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InsertContactResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q37="http://api.timelog.com" minOccurs="0" name="InsertContactResult" nillable="true" type="q37:ResponseOfContact" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateContact">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="contact" nillable="true" type="tns:Contact" />
+            <xsd:element minOccurs="0" name="source" type="xsd:int" />
+            <xsd:element xmlns:q38="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q38:SecurityToken" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateContactResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q39="http://api.timelog.com" minOccurs="0" name="UpdateContactResult" nillable="true" type="q39:ResponseOfContact" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://api.timelog.com" elementFormDefault="qualified" targetNamespace="http://api.timelog.com">
+      <xsd:complexType name="ResponseOfCustomer">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <GenericType Name="ResponseOf{0}" Namespace="http://api.timelog.com" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="Customer" Namespace="http://api.timelog.com/services/crm/1_4" />
+            </GenericType>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q40="http://www.timelog.com/api/tlp/v1_2" base="q40:APIBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q41="http://api.timelog.com/services/crm/1_4" minOccurs="0" name="Return" nillable="true" type="q41:ArrayOfCustomer" />
+              <xsd:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+              <xsd:element xmlns:q42="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q42:ExecutionStatus" />
+              <xsd:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+              <xsd:element minOccurs="0" name="ErrorCode" type="xsd:int" />
+              <xsd:element minOccurs="0" name="IsReturnPaged" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="TotalPageCount" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ResponseOfCustomer" nillable="true" type="tns:ResponseOfCustomer" />
+      <xsd:complexType name="APIBaseExtended">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q43="http://www.timelog.com/api/tlp/v1_2" base="q43:APIBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q44="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Attributes" minOccurs="0" name="Action" type="q44:DataAction" />
+              <xsd:element minOccurs="0" name="IsCustomFieldsLoaded" type="xsd:boolean" />
+              <xsd:element xmlns:q45="http://api.timelog.com/services/customfield/1_0" minOccurs="0" name="CustomFields" nillable="true" type="q45:ArrayOfCustomField" />
+              <xsd:element minOccurs="0" name="IsExternalKeysLoaded" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ExternalKeys" nillable="true" type="tns:ArrayOfExternalSystemContext" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="APIBaseExtended" nillable="true" type="tns:APIBaseExtended" />
+      <xsd:complexType name="ArrayOfExternalSystemContext">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ExternalSystemContext" nillable="true" type="tns:ExternalSystemContext" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfExternalSystemContext" nillable="true" type="tns:ArrayOfExternalSystemContext" />
+      <xsd:complexType name="ExternalSystemContext">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q46="http://www.timelog.com/api/tlp/v1_2" base="q46:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="SystemName" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ExternalID" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ExternalSystemContext" nillable="true" type="tns:ExternalSystemContext" />
+      <xsd:complexType name="Address">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q47="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q47:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Address1" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Address2" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Address3" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ZipCode" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="City" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="State" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Country" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Address" nillable="true" type="tns:Address" />
+      <xsd:complexType name="Currency">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q48="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q48:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ID" type="xsd:int" />
+              <xsd:element minOccurs="0" name="Abbreviation" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Rate" type="xsd:double" />
+              <xsd:element minOccurs="0" name="RateDate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="DescriptiveName" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Currency" nillable="true" type="tns:Currency" />
+      <xsd:complexType name="EmployeeHeader">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q49="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q49:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="ID" type="xsd:int" />
+              <xsd:element minOccurs="0" name="Initials" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="FullName" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="EmployeeHeader" nillable="true" type="tns:EmployeeHeader" />
+      <xsd:complexType name="Request">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q50="http://www.timelog.com/api/tlp/v1_2" base="q50:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfRequestParameter" />
+              <xsd:element minOccurs="0" name="ServiceClass" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="MethodName" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="Request" nillable="true" type="tns:Request" />
+      <xsd:complexType name="ArrayOfRequestParameter">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="RequestParameter" nillable="true" type="tns:RequestParameter" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfRequestParameter" nillable="true" type="tns:ArrayOfRequestParameter" />
+      <xsd:complexType name="RequestParameter">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Value" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="RequestParameter" nillable="true" type="tns:RequestParameter" />
+      <xsd:complexType name="ArrayOfAPIMessage">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="APIMessage" nillable="true" type="tns:APIMessage" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfAPIMessage" nillable="true" type="tns:ArrayOfAPIMessage" />
+      <xsd:complexType name="APIMessage">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Message" nillable="true" type="xsd:string" />
+          <xsd:element xmlns:q51="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" minOccurs="0" name="Severity" type="q51:APIMessageSeverity" />
+          <xsd:element minOccurs="0" name="ErrorCode" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="APIMessage" nillable="true" type="tns:APIMessage" />
+      <xsd:complexType name="ResponseOfCustomerStatus">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <GenericType Name="ResponseOf{0}" Namespace="http://api.timelog.com" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="CustomerStatus" Namespace="http://api.timelog.com/services/crm/1_4" />
+            </GenericType>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q52="http://www.timelog.com/api/tlp/v1_2" base="q52:APIBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q53="http://api.timelog.com/services/crm/1_4" minOccurs="0" name="Return" nillable="true" type="q53:ArrayOfCustomerStatus" />
+              <xsd:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+              <xsd:element xmlns:q54="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q54:ExecutionStatus" />
+              <xsd:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+              <xsd:element minOccurs="0" name="ErrorCode" type="xsd:int" />
+              <xsd:element minOccurs="0" name="IsReturnPaged" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="TotalPageCount" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ResponseOfCustomerStatus" nillable="true" type="tns:ResponseOfCustomerStatus" />
+      <xsd:complexType name="ResponseOfContact">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <GenericType Name="ResponseOf{0}" Namespace="http://api.timelog.com" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+              <GenericParameter Name="Contact" Namespace="http://api.timelog.com/services/crm/1_4" />
+            </GenericType>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q55="http://www.timelog.com/api/tlp/v1_2" base="q55:APIBase">
+            <xsd:sequence>
+              <xsd:element xmlns:q56="http://api.timelog.com/services/crm/1_4" minOccurs="0" name="Return" nillable="true" type="q56:ArrayOfContact" />
+              <xsd:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+              <xsd:element xmlns:q57="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q57:ExecutionStatus" />
+              <xsd:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+              <xsd:element minOccurs="0" name="ErrorCode" type="xsd:int" />
+              <xsd:element minOccurs="0" name="IsReturnPaged" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="TotalPageCount" type="xsd:int" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ResponseOfContact" nillable="true" type="tns:ResponseOfContact" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Attributes" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Attributes">
+      <xsd:simpleType name="DataAction">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Original" />
+          <xsd:enumeration value="Created" />
+          <xsd:enumeration value="Updated" />
+          <xsd:enumeration value="Deleted" />
+          <xsd:enumeration value="Undefined">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">99</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="DataAction" nillable="true" type="tns:DataAction" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://api.timelog.com/services/customfield/1_0" elementFormDefault="qualified" targetNamespace="http://api.timelog.com/services/customfield/1_0">
+      <xsd:complexType name="ArrayOfCustomField">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CustomField" nillable="true" type="tns:CustomField" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfCustomField" nillable="true" type="tns:ArrayOfCustomField" />
+      <xsd:complexType name="CustomField">
+        <xsd:complexContent mixed="false">
+          <xsd:extension xmlns:q58="http://www.timelog.com/api/tlp/v1_2" base="q58:APIBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="SectionLabel" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="SectionIdent" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Label" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="Ident" nillable="true" type="xsd:string" />
+              <xsd:element xmlns:q59="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="DomainType" type="q59:DomainType" />
+              <xsd:element xmlns:q60="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" minOccurs="0" name="DataType" type="q60:DataTypeEnum" />
+              <xsd:element minOccurs="0" name="DataValues" nillable="true" type="tns:ArrayOfValueOption" />
+              <xsd:element minOccurs="0" name="Value" nillable="true" type="xsd:anyType" />
+              <xsd:element minOccurs="0" name="SortOrder" type="xsd:int" />
+              <xsd:element xmlns:q61="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" minOccurs="0" name="ValidationModel" type="q61:ValidateModelEnum" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="CustomField" nillable="true" type="tns:CustomField" />
+      <xsd:complexType name="ArrayOfValueOption">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ValueOption" nillable="true" type="tns:ValueOption" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfValueOption" nillable="true" type="tns:ArrayOfValueOption" />
+      <xsd:complexType name="ValueOption">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Label" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="SortOrder" type="xsd:int" />
+          <xsd:element minOccurs="0" name="Value" nillable="true" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ValueOption" nillable="true" type="tns:ValueOption" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields">
+      <xsd:simpleType name="DataTypeEnum">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="String" />
+          <xsd:enumeration value="Integer" />
+          <xsd:enumeration value="Float" />
+          <xsd:enumeration value="Date" />
+          <xsd:enumeration value="List" />
+          <xsd:enumeration value="CheckBox" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="DataTypeEnum" nillable="true" type="tns:DataTypeEnum" />
+      <xsd:simpleType name="ValidateModelEnum">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="None" />
+          <xsd:enumeration value="IsNotEmptyOrWhiteSpace" />
+          <xsd:enumeration value="IsPositiveNumber" />
+          <xsd:enumeration value="IsNegativeNumber" />
+          <xsd:enumeration value="IsEmail" />
+          <xsd:enumeration value="IsNotNull" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="ValidateModelEnum" nillable="true" type="tns:ValidateModelEnum" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1">
+      <xsd:complexType name="APIBase">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="APIBase" nillable="true" type="tns:APIBase" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0">
+      <xsd:simpleType name="APIMessageSeverity">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Error" />
+          <xsd:enumeration value="Invalid" />
+          <xsd:enumeration value="Message" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="APIMessageSeverity" nillable="true" type="tns:APIMessageSeverity" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CRM" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CRM">
+      <xsd:simpleType name="CustomerStatusType">
+        <xsd:list>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="None">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="IsShownInCustomers">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="IsShownInSuppliers">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="IsShownInSupport">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="IsShownInLeads">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+              <xsd:enumeration value="All">
+                <xsd:annotation>
+                  <xsd:appinfo>
+                    <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+                  </xsd:appinfo>
+                </xsd:annotation>
+              </xsd:enumeration>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:list>
+      </xsd:simpleType>
+      <xsd:element name="CustomerStatusType" nillable="true" type="tns:CustomerStatusType" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICRMService_IsAlive_InputMessage">
+    <wsdl:part xmlns:q62="http://www.timelog.com/api/tlp/v1_3" name="parameters" element="q62:IsAlive" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_IsAlive_OutputMessage">
+    <wsdl:part xmlns:q63="http://www.timelog.com/api/tlp/v1_3" name="parameters" element="q63:IsAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomerByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByID" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomerByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomerByGUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByGUID" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomerByGUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByGUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomerByExternalKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByExternalKey" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomerByExternalKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByExternalKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomersByFieldsPaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersByFieldsPaged" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomersByFieldsPaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersByFieldsPagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomersModifiedSincePaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersModifiedSincePaged" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomersModifiedSincePaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersModifiedSincePagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomersByNamePaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersByNamePaged" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomersByNamePaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersByNamePagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_InsertCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_InsertCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomerStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerStatuses" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetCustomerStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetContactByGUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactByGUID" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetContactByGUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactByGUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetContactsByCustomerPaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByCustomerPaged" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetContactsByCustomerPaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsByCustomerPagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetContactsModifiedSincePaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsModifiedSincePaged" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_GetContactsModifiedSincePaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsModifiedSincePagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_InsertContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertContact" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_InsertContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContact" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContactResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICRMService">
+    <wsdl:operation name="IsAlive">
+      <wsdl:input wsaw:Action="IsAliveRequest" message="tns:ICRMService_IsAlive_InputMessage" />
+      <wsdl:output wsaw:Action="IsAliveReponse" message="tns:ICRMService_IsAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByID">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByID" message="tns:ICRMService_GetCustomerByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByIDResponse" message="tns:ICRMService_GetCustomerByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByGUID">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUID" message="tns:ICRMService_GetCustomerByGUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUIDResponse" message="tns:ICRMService_GetCustomerByGUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerByExternalKey">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKey" message="tns:ICRMService_GetCustomerByExternalKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKeyResponse" message="tns:ICRMService_GetCustomerByExternalKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersByFieldsPaged">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPaged" message="tns:ICRMService_GetCustomersByFieldsPaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPagedResponse" message="tns:ICRMService_GetCustomersByFieldsPaged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersModifiedSincePaged">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePaged" message="tns:ICRMService_GetCustomersModifiedSincePaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePagedResponse" message="tns:ICRMService_GetCustomersModifiedSincePaged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomersByNamePaged">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePaged" message="tns:ICRMService_GetCustomersByNamePaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePagedResponse" message="tns:ICRMService_GetCustomersByNamePaged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomer">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomer" message="tns:ICRMService_InsertCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomerResponse" message="tns:ICRMService_InsertCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomer" message="tns:ICRMService_UpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomerResponse" message="tns:ICRMService_UpdateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerStatuses">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatuses" message="tns:ICRMService_GetCustomerStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatusesResponse" message="tns:ICRMService_GetCustomerStatuses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactByGUID">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUID" message="tns:ICRMService_GetContactByGUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUIDResponse" message="tns:ICRMService_GetContactByGUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsByCustomerPaged">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPaged" message="tns:ICRMService_GetContactsByCustomerPaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPagedResponse" message="tns:ICRMService_GetContactsByCustomerPaged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactsModifiedSincePaged">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePaged" message="tns:ICRMService_GetContactsModifiedSincePaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePagedResponse" message="tns:ICRMService_GetContactsModifiedSincePaged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertContact">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContact" message="tns:ICRMService_InsertContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContactResponse" message="tns:ICRMService_InsertContact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContact">
+      <wsdl:input wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContact" message="tns:ICRMService_UpdateContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContactResponse" message="tns:ICRMService_UpdateContact_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
