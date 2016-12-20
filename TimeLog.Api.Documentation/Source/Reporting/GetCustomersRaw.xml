@@ -2,7 +2,7 @@
 <tlp:Customers xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
                xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/CustomersRaw.xsd">
-  <tlp:Customer ID="1933">
+  <tlp:Customer ID="1933" GUID="b86f7c33-f6a8-41a3-a5db-05422ae34e43">
     <tlp:Name>Microsoft</tlp:Name>
     <tlp:NickName>Microsoft</tlp:NickName>
     <tlp:No>05.1309</tlp:No>

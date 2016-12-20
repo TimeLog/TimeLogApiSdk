@@ -2664,6 +2664,15 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         OpportunityStatus = 151,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkerRequest = 152,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkerItem = 153,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkerItemLog = 154,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,
     }
     

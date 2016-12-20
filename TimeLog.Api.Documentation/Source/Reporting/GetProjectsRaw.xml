@@ -3,7 +3,7 @@
 	xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/ProjectsRaw.xsd" >
-  <tlp:Project ID="740">
+  <tlp:Project ID="740" GUID="8a7e790b-deb2-4ed3-a6be-e5dca300b2c8">
     <tlp:Name>Webinar</tlp:Name>
     <tlp:No>P07.0080</tlp:No>
     <tlp:Status>1</tlp:Status>

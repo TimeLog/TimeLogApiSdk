@@ -19,13 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/timelog.tlp.web/WebServices/CRM/V1_4/CRMService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_4/CRMServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CRMService.wsdl" MetadataType="Wsdl" ID="3df832ba-beb0-42a6-9b30-10a0564981f3" SourceId="1" SourceUrl="http://localhost/TimeLog.TLP.Web/WebServices/CRM/V1_4/CRMService.svc?wsdl=wsdl1" />
-    <MetadataFile FileName="CRMService.disco" MetadataType="Disco" ID="be58dafb-2636-461c-a100-1abd0cf4f65c" SourceId="1" SourceUrl="http://localhost/TimeLog.TLP.Web/WebServices/CRM/V1_4/CRMService.svc?disco" />
-    <MetadataFile FileName="CRMService1.wsdl" MetadataType="Wsdl" ID="3141b76f-e262-4dfe-bbc0-bc9c5570c686" SourceId="1" SourceUrl="http://localhost/TimeLog.TLP.Web/WebServices/CRM/V1_4/CRMService.svc?wsdl" />
-    <MetadataFile FileName="CRMService2.wsdl" MetadataType="Wsdl" ID="036d2219-6b38-44fe-8a5b-5d1ba863a448" SourceId="1" SourceUrl="http://localhost/TimeLog.TLP.Web/WebServices/CRM/V1_4/CRMService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CRMServiceSecure.wsdl" MetadataType="Wsdl" ID="e6675c7c-1f35-4269-be6c-7386d467da90" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_4/CRMServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CRMServiceSecure1.wsdl" MetadataType="Wsdl" ID="c9857ad5-83aa-4ee3-bf16-73fe9497b083" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_4/CRMServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="CRMServiceSecure.disco" MetadataType="Disco" ID="faf91c23-3de7-4c2e-a940-9eb577a5fced" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/CRM/V1_4/CRMServiceSecure.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

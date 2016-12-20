@@ -44,6 +44,7 @@
       <xsd:element name="CustomerSince" type="xsd:date" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+    <xsd:attribute name="GUID" type="xsd:string" use="required" />
   </xsd:complexType>
 
 </xsd:schema>
