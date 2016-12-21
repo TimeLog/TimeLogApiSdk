@@ -145,6 +145,11 @@
             <param name="value">Object to get values from</param>
             <returns>A RequestParameter object</returns>
         </member>
+        <member name="P:TimeLog.TLP.API.Proxy.CRM.V1_4.Customer.KAM">
+            <summary>
+            Gets or sets key account manager initials, full Employeeheader is located in Details
+            </summary>
+        </member>
         <member name="P:TimeLog.TLP.API.Proxy.CRM.V1_3.Customer.KAM">
             <summary>
             Gets or sets key account manager initials, full Employeeheader is located in Details
@@ -289,7 +294,11 @@
             Gets or sets a value indicating whether this price group is default in the price list
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:TimeLog.TLP.API.Proxy.HelpDesk.V1_6.ServiceContract.TypeID" -->
+        <member name="P:TimeLog.TLP.API.Proxy.HelpDesk.V1_6.ServiceContract.TypeID">
+            <summary>
+            1 = Time and Material, 2 = Voucher, 3 = Subscription
+            </summary>
+        </member>
         <member name="P:TimeLog.TLP.API.Proxy.HelpDesk.V1_6.ServiceContract.RenewalRecurrence">
             <summary>
             1=yearly, 2 = Quarterly, 3 = Monthly, 4 = bi-annually
@@ -1008,6 +1017,231 @@
             Gets or sets a concatenation of FirstName and LastName
             </summary>
         </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department">
+            <summary>
+            Represents a department in TimeLog Project
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.ID">
+            <summary>
+            Gets or sets the department unique identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.Name">
+            <summary>
+            Gets or sets the department name
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.No">
+            <summary>
+            Gets or sets the department number
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.ParentDepartmentGuid">
+            <summary>
+            Gets or sets the parent department (top level is null)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.DepartmentManagerGuid">
+            <summary>
+            Gets or sets the department manager (could be null)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.DepartmentID">
+            <summary>
+            Gets or sets the departmentID
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee">
+            <summary>
+            The class is an employee representation
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.ID">
+            <summary>
+            Gets or sets the employee internal identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.EmployeeID">
+            <summary>
+            Gets or sets the employee internal identifier (int)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Initials">
+            <summary>
+            Gets or sets the initials (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.FirstName">
+            <summary>
+            Gets or sets the firstname (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.LastName">
+            <summary>
+            Gets or sets the lastname (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Fullname">
+            <summary>
+            Gets or sets the full name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.EmployeeNo">
+            <summary>
+            Gets or sets the employee number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Title">
+            <summary>
+            Gets or sets the title (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.DepartmentGuid">
+            <summary>
+            Gets or sets the department unique identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.DepartmentName">
+            <summary>
+            Gets or sets the department name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.DepartmentNo">
+            <summary>
+            Gets or sets the department number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.SecurityLevel">
+            <summary>
+            Gets or sets the security level (int)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.InterfaceLanguage">
+            <summary>
+            Gets or sets the interface langauge (int)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Telephone">
+            <summary>
+            Gets or sets the telephone number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Mobile">
+            <summary>
+            Gets or sets the mobile (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.PrivateAddress">
+            <summary>
+            Gets or sets the private address (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.PrivateZip">
+            <summary>
+            Gets or sets the private zip code (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.PrivateCity">
+            <summary>
+            Gets or sets the private city (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.PrivateTelephone">
+            <summary>
+            Gets or sets the private telephone (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.ExternalIdentifier">
+            <summary>
+            Gets or sets the external identifier (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.HiredDate">
+            <summary>
+            Gets or sets the hired date (DateTime)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.TerminationDate">
+            <summary>
+            Gets or sets the termindation date (DateTime)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.IsHired">
+            <summary>
+            Gets or sets a value indicating whether the employee is hired or not (bool)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.IsLocked">
+            <summary>
+            Gets or sets a value indicating whether the employee is locked and cannot log in (bool)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.HasCoordinatorRole">
+            <summary>
+            Gets or sets a value indicating whether the employee has the coordinator role (bool)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.CostPriceGuid">
+            <summary>
+            Gets or sets the cost price identifier for this employee (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.CostPrice">
+            <summary>
+            Gets or sets the cost price in the system currency for this employee (double)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.HourlyRateGuid">
+            <summary>
+            Gets or sets the standard hourly rate identifier for this employee (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.HourlyRate">
+            <summary>
+            Gets or sets the standard hourly rate in system currency for this employee (double)
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader">
+            <summary>
+            Represents a stripped down employee object
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.ID">
+            <summary>
+            Gets or sets the employee internal identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.EmployeeID">
+            <summary>
+            Gets or sets the employee internal identifier (int)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.Initials">
+            <summary>
+            Gets or sets the initials (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.FirstName">
+            <summary>
+            Gets or sets the firstname (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.LastName">
+            <summary>
+            Gets or sets the lastname (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.EmployeeNo">
+            <summary>
+            Gets or sets the employee number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.Fullname">
+            <summary>
+            Gets or sets a concatenation of FirstName and LastName
+            </summary>
+        </member>
         <member name="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlatExternal">
             <summary>
             The class is a flat work unit representation with external IDs
@@ -1214,6 +1448,381 @@
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlatExternal.TaskTypeName">
+            <summary>
+            Gets or sets the task type name (string)
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat">
+            <summary>
+            The class is a flat task representation
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.CustomerGuid">
+            <summary>
+            Gets or sets the customer identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.CustomerNo">
+            <summary>
+            Gets or sets the customer number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.CustomerName">
+            <summary>
+            Gets or sets the customer name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectGuid">
+            <summary>
+            Gets or sets the project identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectNo">
+            <summary>
+            Gets or sets the project number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectName">
+            <summary>
+            Gets or sets the project name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectDepartmentGuid">
+            <summary>
+            Gets or sets the project department identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectDepartmentName">
+            <summary>
+            Gets or sets the project department name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectDepartmentNo">
+            <summary>
+            Gets or sets the project department number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectCategoryName">
+            <summary>
+            Gets or sets the project category name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectTypeName">
+            <summary>
+            Gets or sets the project type name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectStatusName">
+            <summary>
+            Gets or sets the project status name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectManagerGuid">
+            <summary>
+            Gets or sets the project manager identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectManagerInitials">
+            <summary>
+            Gets or sets the project manager initials (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectManagerInternalId">
+            <summary>
+            Gets or sets the project manager internal identifier (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskGuid">
+            <summary>
+            Gets or sets the task identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskWBS">
+            <summary>
+            Gets or sets the task WBS (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskNo">
+            <summary>
+            Gets or sets the task number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskName">
+            <summary>
+            Gets or sets the task name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskStartDate">
+            <summary>
+            Gets or sets the task start date (DateTime)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskEndDate">
+            <summary>
+            Gets or sets the task end date (DateTime)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskStatus">
+            <summary>
+            Gets or sets the task status (NotStarted, InProgress, OnHold, Completed, Cancelled) (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskBudgetHours">
+            <summary>
+            Gets or sets the task budget in hours (double)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskBudgetAmount">
+            <summary>
+            Gets or sets the task budget in currency (double)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskDescription">
+            <summary>
+            Gets or sets the task description (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskLink">
+            <summary>
+            Gets or sets the task link (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskIsBillable">
+            <summary>
+            Gets or sets a value indicating whether the task is billable (bool)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskIsReadyForInvoicing">
+            <summary>
+            Gets or sets a value indicating whether the task is ready for invoicing (bool)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskInvoicingType">
+            <summary>
+            Gets or sets the task invoicing type (FixedPriceProject, FixedPriceTask, TimeAndMaterial) (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskHourlyRateName">
+            <summary>
+            Gets or sets the hourly rate name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskHourlyRateAmount">
+            <summary>
+            Gets or sets the hourly rate amount, if set to "Employees Default Hourly Rate" then 0 is returned (double)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskNoChain">
+            <summary>
+            Gets or sets the task number including parent task numbers (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskNameChain">
+            <summary>
+            Gets or sets the task name including parent tasks (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskParentGuid">
+            <summary>
+            Gets or sets the task parent identifier if any, otherwise Guid.Empty (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskTypeName">
+            <summary>
+            Gets or sets the task type name (string)
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat">
+            <summary>
+            The class is a flat work unit representation
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.WorkUnitGuid">
+            <summary>
+            Gets or sets the work unit identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.Action">
+            <summary>
+            Gets or sets the data action. Only available in change log requests (DataAction enum)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ActionDate">
+            <summary>
+            Gets or sets the action date. Only available in change log requests (DateTime)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.SalaryCode">
+            <summary>
+            Gets or sets the salary code number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.SalaryCodeGuid">
+            <summary>
+            Gets or sets the salary identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.SalaryCodeName">
+            <summary>
+            Gets or sets the salary code name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.Hours">
+            <summary>
+            Gets or sets the number of hours registrered (double)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.Date">
+            <summary>
+            Gets or sets the date of the registration (DateTime)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ApprovedStatus">
+            <summary>
+            Gets or sets the approved status of the registration. Timesheet open [0], Timesheet closed [10], Approved by project manager [20], Approved by department manager [30] (int)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeGuid">
+            <summary>
+            Gets or sets the employee identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeInitials">
+            <summary>
+            Gets or sets the employee initials (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeInternalId">
+            <summary>
+            Gets or sets the employee internal identifier (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeDepartmentGuid">
+            <summary>
+            Gets or sets the employee department identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeDepartmentName">
+            <summary>
+            Gets or sets the employee department name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeDepartmentNo">
+            <summary>
+            Gets or sets the employee department number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.CustomerGuid">
+            <summary>
+            Gets or sets the customer identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.CustomerNo">
+            <summary>
+            Gets or sets the customer number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.CustomerName">
+            <summary>
+            Gets or sets the customer name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectGuid">
+            <summary>
+            Gets or sets the project identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectNo">
+            <summary>
+            Gets or sets the project number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectName">
+            <summary>
+            Gets or sets the project name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectDepartmentGuid">
+            <summary>
+            Gets or sets the project department identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectDepartmentName">
+            <summary>
+            Gets or sets the project department name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectDepartmentNo">
+            <summary>
+            Gets or sets the project department number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectCategoryName">
+            <summary>
+            Gets or sets the project category name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectTypeName">
+            <summary>
+            Gets or sets the project type name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectStatusName">
+            <summary>
+            Gets or sets the project status name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectManagerGuid">
+            <summary>
+            Gets or sets the project manager identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectManagerInitials">
+            <summary>
+            Gets or sets the project manager initials (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectManagerInternalId">
+            <summary>
+            Gets or sets the project manager internal identifier (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskGuid">
+            <summary>
+            Gets or sets the task identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskWBS">
+            <summary>
+            Gets or sets the task WBS (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskNo">
+            <summary>
+            Gets or sets the task number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskNoChain">
+            <summary>
+            Gets or sets the task number including parent task numbers (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskName">
+            <summary>
+            Gets or sets the task name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskNameChain">
+            <summary>
+            Gets or sets the task name including parent tasks (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskParentGuid">
+            <summary>
+            Gets or sets the task parent identifier if any, otherwise Guid.Empty (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskTypeName">
             <summary>
             Gets or sets the task type name (string)
             </summary>
@@ -1787,281 +2396,6 @@
             Gets or sets the task type name (string)
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.Proxy.Salary.V1_0.Allowance">
-            <summary>
-            Represents an allowance legislation
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.Allowance.Id">
-            <summary>
-            Gets or sets the identifier (int)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.Allowance.Name">
-            <summary>
-            Gets or sets the name (string)
-            </summary>
-        </member>
-        <member name="T:TimeLog.TLP.API.Proxy.Salary.V1_0.HolidayCalendar">
-            <summary>
-            Represents a normal working time class
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.HolidayCalendar.Id">
-            <summary>
-            Gets or sets the identifier (int)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.HolidayCalendar.Name">
-            <summary>
-            Gets or sets the name (string)
-            </summary>
-        </member>
-        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department">
-            <summary>
-            Represents a department in TimeLog Project
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.ID">
-            <summary>
-            Gets or sets the department unique identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.Name">
-            <summary>
-            Gets or sets the department name
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.No">
-            <summary>
-            Gets or sets the department number
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.ParentDepartmentGuid">
-            <summary>
-            Gets or sets the parent department (top level is null)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.DepartmentManagerGuid">
-            <summary>
-            Gets or sets the department manager (could be null)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department.DepartmentID">
-            <summary>
-            Gets or sets the departmentID
-            </summary>
-        </member>
-        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee">
-            <summary>
-            The class is an employee representation
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.ID">
-            <summary>
-            Gets or sets the employee internal identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.EmployeeID">
-            <summary>
-            Gets or sets the employee internal identifier (int)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Initials">
-            <summary>
-            Gets or sets the initials (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.FirstName">
-            <summary>
-            Gets or sets the firstname (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.LastName">
-            <summary>
-            Gets or sets the lastname (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Fullname">
-            <summary>
-            Gets or sets the full name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.EmployeeNo">
-            <summary>
-            Gets or sets the employee number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Title">
-            <summary>
-            Gets or sets the title (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.DepartmentGuid">
-            <summary>
-            Gets or sets the department unique identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.DepartmentName">
-            <summary>
-            Gets or sets the department name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.DepartmentNo">
-            <summary>
-            Gets or sets the department number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.SecurityLevel">
-            <summary>
-            Gets or sets the security level (int)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.InterfaceLanguage">
-            <summary>
-            Gets or sets the interface langauge (int)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Telephone">
-            <summary>
-            Gets or sets the telephone number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.Mobile">
-            <summary>
-            Gets or sets the mobile (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.PrivateAddress">
-            <summary>
-            Gets or sets the private address (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.PrivateZip">
-            <summary>
-            Gets or sets the private zip code (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.PrivateCity">
-            <summary>
-            Gets or sets the private city (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.PrivateTelephone">
-            <summary>
-            Gets or sets the private telephone (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.ExternalIdentifier">
-            <summary>
-            Gets or sets the external identifier (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.HiredDate">
-            <summary>
-            Gets or sets the hired date (DateTime)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.TerminationDate">
-            <summary>
-            Gets or sets the termindation date (DateTime)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.IsHired">
-            <summary>
-            Gets or sets a value indicating whether the employee is hired or not (bool)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.IsLocked">
-            <summary>
-            Gets or sets a value indicating whether the employee is locked and cannot log in (bool)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.HasCoordinatorRole">
-            <summary>
-            Gets or sets a value indicating whether the employee has the coordinator role (bool)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.CostPriceGuid">
-            <summary>
-            Gets or sets the cost price identifier for this employee (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.CostPrice">
-            <summary>
-            Gets or sets the cost price in the system currency for this employee (double)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.HourlyRateGuid">
-            <summary>
-            Gets or sets the standard hourly rate identifier for this employee (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.Employee.HourlyRate">
-            <summary>
-            Gets or sets the standard hourly rate in system currency for this employee (double)
-            </summary>
-        </member>
-        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader">
-            <summary>
-            Represents a stripped down employee object
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.ID">
-            <summary>
-            Gets or sets the employee internal identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.EmployeeID">
-            <summary>
-            Gets or sets the employee internal identifier (int)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.Initials">
-            <summary>
-            Gets or sets the initials (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.FirstName">
-            <summary>
-            Gets or sets the firstname (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.LastName">
-            <summary>
-            Gets or sets the lastname (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.EmployeeNo">
-            <summary>
-            Gets or sets the employee number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader.Fullname">
-            <summary>
-            Gets or sets a concatenation of FirstName and LastName
-            </summary>
-        </member>
-        <member name="T:TimeLog.TLP.API.Proxy.Salary.V1_0.NormalWorkweek">
-            <summary>
-            Represents a normal working time class
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.NormalWorkweek.Id">
-            <summary>
-            Gets or sets the identifier (int)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.NormalWorkweek.Name">
-            <summary>
-            Gets or sets the name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.NormalWorkweek.NormHours">
-            <summary>
-            Gets or sets a list of norm hours per day of week (Dictionary)
-            </summary>
-        </member>
         <member name="M:TimeLog.TLP.API.Proxy.ProjectManagement.V1_3.IProjectManagementService.MoveAllocation(System.Int32,System.Int32,System.Int32,System.Double,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
             <summary>
             Move an allocation from an employee to another
@@ -2072,186 +2406,6 @@
             <param name="hours">number of allocation hours to move</param>
             <param name="token">security token</param>
             <returns>Associated task instance</returns>
-        </member>
-        <member name="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat">
-            <summary>
-            The class is a flat task representation
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.CustomerGuid">
-            <summary>
-            Gets or sets the customer identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.CustomerNo">
-            <summary>
-            Gets or sets the customer number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.CustomerName">
-            <summary>
-            Gets or sets the customer name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectGuid">
-            <summary>
-            Gets or sets the project identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectNo">
-            <summary>
-            Gets or sets the project number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectName">
-            <summary>
-            Gets or sets the project name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectDepartmentGuid">
-            <summary>
-            Gets or sets the project department identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectDepartmentName">
-            <summary>
-            Gets or sets the project department name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectDepartmentNo">
-            <summary>
-            Gets or sets the project department number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectCategoryName">
-            <summary>
-            Gets or sets the project category name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectTypeName">
-            <summary>
-            Gets or sets the project type name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectStatusName">
-            <summary>
-            Gets or sets the project status name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectManagerGuid">
-            <summary>
-            Gets or sets the project manager identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectManagerInitials">
-            <summary>
-            Gets or sets the project manager initials (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.ProjectManagerInternalId">
-            <summary>
-            Gets or sets the project manager internal identifier (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskGuid">
-            <summary>
-            Gets or sets the task identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskWBS">
-            <summary>
-            Gets or sets the task WBS (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskNo">
-            <summary>
-            Gets or sets the task number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskName">
-            <summary>
-            Gets or sets the task name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskStartDate">
-            <summary>
-            Gets or sets the task start date (DateTime)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskEndDate">
-            <summary>
-            Gets or sets the task end date (DateTime)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskStatus">
-            <summary>
-            Gets or sets the task status (NotStarted, InProgress, OnHold, Completed, Cancelled) (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskBudgetHours">
-            <summary>
-            Gets or sets the task budget in hours (double)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskBudgetAmount">
-            <summary>
-            Gets or sets the task budget in currency (double)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskDescription">
-            <summary>
-            Gets or sets the task description (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskLink">
-            <summary>
-            Gets or sets the task link (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskIsBillable">
-            <summary>
-            Gets or sets a value indicating whether the task is billable (bool)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskIsReadyForInvoicing">
-            <summary>
-            Gets or sets a value indicating whether the task is ready for invoicing (bool)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskInvoicingType">
-            <summary>
-            Gets or sets the task invoicing type (FixedPriceProject, FixedPriceTask, TimeAndMaterial) (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskHourlyRateName">
-            <summary>
-            Gets or sets the hourly rate name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskHourlyRateAmount">
-            <summary>
-            Gets or sets the hourly rate amount, if set to "Employees Default Hourly Rate" then 0 is returned (double)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskNoChain">
-            <summary>
-            Gets or sets the task number including parent task numbers (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskNameChain">
-            <summary>
-            Gets or sets the task name including parent tasks (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskParentGuid">
-            <summary>
-            Gets or sets the task parent identifier if any, otherwise Guid.Empty (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat.TaskTypeName">
-            <summary>
-            Gets or sets the task type name (string)
-            </summary>
         </member>
         <member name="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_4.WorkUnitFlat">
             <summary>
@@ -2428,211 +2582,60 @@
             Gets or sets the task type name (string)
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat">
+        <member name="T:TimeLog.TLP.API.Proxy.Salary.V1_0.Allowance">
             <summary>
-            The class is a flat work unit representation
+            Represents an allowance legislation
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.WorkUnitGuid">
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.Allowance.Id">
             <summary>
-            Gets or sets the work unit identifier (Guid)
+            Gets or sets the identifier (int)
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.Action">
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.Allowance.Name">
             <summary>
-            Gets or sets the data action. Only available in change log requests (DataAction enum)
+            Gets or sets the name (string)
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ActionDate">
+        <member name="T:TimeLog.TLP.API.Proxy.Salary.V1_0.HolidayCalendar">
             <summary>
-            Gets or sets the action date. Only available in change log requests (DateTime)
+            Represents a normal working time class
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.SalaryCode">
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.HolidayCalendar.Id">
             <summary>
-            Gets or sets the salary code number (string)
+            Gets or sets the identifier (int)
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.SalaryCodeGuid">
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.HolidayCalendar.Name">
             <summary>
-            Gets or sets the salary identifier (Guid)
+            Gets or sets the name (string)
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.SalaryCodeName">
+        <member name="T:TimeLog.TLP.API.Proxy.Salary.V1_0.NormalWorkweek">
             <summary>
-            Gets or sets the salary code name (string)
+            Represents a normal working time class
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.Hours">
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.NormalWorkweek.Id">
             <summary>
-            Gets or sets the number of hours registrered (double)
+            Gets or sets the identifier (int)
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.Date">
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.NormalWorkweek.Name">
             <summary>
-            Gets or sets the date of the registration (DateTime)
+            Gets or sets the name (string)
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ApprovedStatus">
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.NormalWorkweek.NormHours">
             <summary>
-            Gets or sets the approved status of the registration. Timesheet open [0], Timesheet closed [10], Approved by project manager [20], Approved by department manager [30] (int)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeGuid">
-            <summary>
-            Gets or sets the employee identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeInitials">
-            <summary>
-            Gets or sets the employee initials (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeInternalId">
-            <summary>
-            Gets or sets the employee internal identifier (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeDepartmentGuid">
-            <summary>
-            Gets or sets the employee department identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeDepartmentName">
-            <summary>
-            Gets or sets the employee department name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.EmployeeDepartmentNo">
-            <summary>
-            Gets or sets the employee department number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.CustomerGuid">
-            <summary>
-            Gets or sets the customer identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.CustomerNo">
-            <summary>
-            Gets or sets the customer number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.CustomerName">
-            <summary>
-            Gets or sets the customer name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectGuid">
-            <summary>
-            Gets or sets the project identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectNo">
-            <summary>
-            Gets or sets the project number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectName">
-            <summary>
-            Gets or sets the project name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectDepartmentGuid">
-            <summary>
-            Gets or sets the project department identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectDepartmentName">
-            <summary>
-            Gets or sets the project department name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectDepartmentNo">
-            <summary>
-            Gets or sets the project department number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectCategoryName">
-            <summary>
-            Gets or sets the project category name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectTypeName">
-            <summary>
-            Gets or sets the project type name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectStatusName">
-            <summary>
-            Gets or sets the project status name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectManagerGuid">
-            <summary>
-            Gets or sets the project manager identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectManagerInitials">
-            <summary>
-            Gets or sets the project manager initials (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.ProjectManagerInternalId">
-            <summary>
-            Gets or sets the project manager internal identifier (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskGuid">
-            <summary>
-            Gets or sets the task identifier (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskWBS">
-            <summary>
-            Gets or sets the task WBS (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskNo">
-            <summary>
-            Gets or sets the task number (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskNoChain">
-            <summary>
-            Gets or sets the task number including parent task numbers (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskName">
-            <summary>
-            Gets or sets the task name (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskNameChain">
-            <summary>
-            Gets or sets the task name including parent tasks (string)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskParentGuid">
-            <summary>
-            Gets or sets the task parent identifier if any, otherwise Guid.Empty (Guid)
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.WorkUnitFlat.TaskTypeName">
-            <summary>
-            Gets or sets the task type name (string)
+            Gets or sets a list of norm hours per day of week (Dictionary)
             </summary>
         </member>
         <member name="T:TimeLog.TLP.API.Proxy.Salary.V1_0.Salary">
             <summary>
             Represents a salary code for registrations
             </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.Proxy.Salary.V1_0.Salary.GetRequestParameters">
-            <summary>
-            Sumarizes the object
-            </summary>
-            <returns>A list of RequestParameter objects</returns>
         </member>
         <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_0.Salary.SalaryCodeNo">
             <summary>
@@ -2688,6 +2691,12 @@
             <summary>
             Gets or sets the identifier (Guid)
             </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Salary.V1_0.Salary.GetRequestParameters">
+            <summary>
+            Sumarizes the object
+            </summary>
+            <returns>A list of RequestParameter objects</returns>
         </member>
         <member name="P:TimeLog.TLP.API.Proxy.Security.V1_2.TimeRegistrationSettings.AdditionalTextFieldValidation">
              <summary>

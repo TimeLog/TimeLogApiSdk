@@ -9,18 +9,23 @@
             Is the HttpsContext done via SSL
             </summary>
         </member>
+        <member name="P:TimeLog.TLP.API.Common.V1_2.BaseService.IsSecure">
+            <summary>
+            Is the HttpsContext done via SSL
+            </summary>
+        </member>
         <member name="M:TimeLog.TLP.API.Common.V1_2.BaseService.IsAlive">
             <summary>
             Returns true 
             </summary>
             <returns></returns>
         </member>
-        <member name="P:TimeLog.TLP.API.Common.V1_2.BaseService.IsSecure">
+        <member name="F:TimeLog.TLP.API.Common.V1_0.BaseService._isSecure">
             <summary>
             Is the HttpsContext done via SSL
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.Common.V1_0.BaseService._isSecure">
+        <member name="P:TimeLog.TLP.API.Common.V1_0.BaseService.IsSecure">
             <summary>
             Is the HttpsContext done via SSL
             </summary>
@@ -30,11 +35,6 @@
             Returns true 
             </summary>
             <returns></returns>
-        </member>
-        <member name="P:TimeLog.TLP.API.Common.V1_0.BaseService.IsSecure">
-            <summary>
-            Is the HttpsContext done via SSL
-            </summary>
         </member>
         <member name="T:TimeLog.TLP.API.Common.GetAdapter">
             <summary>
@@ -346,6 +346,11 @@
             Gets customer header adapter for version 1.3
             </summary>
         </member>
+        <member name="P:TimeLog.TLP.API.Common.GetAdapter.CustomerHeaderV14">
+            <summary>
+            Gets customer header adapter for version 1.4
+            </summary>
+        </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.CustomerV10">
             <summary>
             Gets customer adapter for version 1.0
@@ -362,6 +367,11 @@
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.CustomerV13">
+            <summary>
+            Gets customer adapter for version 1.3
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Common.GetAdapter.CustomerV14">
             <summary>
             Gets customer adapter for version 1.3
             </summary>
@@ -401,6 +411,11 @@
             Gets contact header adapter for version 1.3
             </summary>
         </member>
+        <member name="P:TimeLog.TLP.API.Common.GetAdapter.ContactHeaderV14">
+            <summary>
+            Gets contact header adapter for version 1.4
+            </summary>
+        </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.ContactV10">
             <summary>
             Gets contact adapter for version 1.0
@@ -419,6 +434,11 @@
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.ContactV13">
             <summary>
             Gets contact adapter for version 1.3
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Common.GetAdapter.ContactV14">
+            <summary>
+            Gets contact adapter for version 1.4
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.CustomerStatusAdapterV10">
@@ -441,6 +461,11 @@
             Gets customer status adapter for version 1.3
             </summary>
         </member>
+        <member name="P:TimeLog.TLP.API.Common.GetAdapter.CustomerStatusAdapterV14">
+            <summary>
+            Gets customer status adapter for version 1.4
+            </summary>
+        </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.IndustryAdapterV10">
             <summary>
             Gets industry adapter for version 1.0
@@ -459,6 +484,11 @@
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.IndustryAdapterV13">
             <summary>
             Gets industry adapter for version 1.3
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Common.GetAdapter.IndustryAdapterV14">
+            <summary>
+            Gets industry adapter for version 1.4
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.ExternalContextAdapterV10">
@@ -516,18 +546,23 @@
             Is the HttpsContext done via SSL
             </summary>
         </member>
+        <member name="P:TimeLog.TLP.API.Common.V1_1.BaseService.IsSecure">
+            <summary>
+            Is the HttpsContext done via SSL
+            </summary>
+        </member>
         <member name="M:TimeLog.TLP.API.Common.V1_1.BaseService.IsAlive">
             <summary>
             Returns true 
             </summary>
             <returns></returns>
         </member>
-        <member name="P:TimeLog.TLP.API.Common.V1_1.BaseService.IsSecure">
+        <member name="F:TimeLog.TLP.API.Common.V1_3.BaseService._isSecure">
             <summary>
             Is the HttpsContext done via SSL
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.Common.V1_3.BaseService._isSecure">
+        <member name="P:TimeLog.TLP.API.Common.V1_3.BaseService.IsSecure">
             <summary>
             Is the HttpsContext done via SSL
             </summary>
@@ -538,22 +573,78 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="P:TimeLog.TLP.API.Common.V1_3.BaseService.IsSecure">
-            <summary>
-            Is the HttpsContext done via SSL
-            </summary>
-        </member>
-        <member name="T:TimeLog.TLP.API.CRM.V1_3.ContactAdapter">
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.ContactAdapter">
             <summary>
             The contact adapter.
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.CRM.V1_3.IContactAdapter">
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.ContactAdapter._customerHeaderAdapter">
             <summary>
-            The ContactAdapter interface.
+            The _customer header adapter.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.CRM.V1_3.IContactAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Contact,TimeLog.TLP.Common.IViolation@)">
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.ContactAdapter._addressAdapter">
+            <summary>
+            The _address adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.ContactAdapter._employeeAdapter">
+            <summary>
+            The _employee adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.ContactAdapter._stringNotEmpty">
+            <summary>
+            The _string not empty.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.ContactAdapter._validateAndReturnCountry">
+            <summary>
+            The _validate and return country.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.ContactAdapter._validateCustomerGuid">
+            <summary>
+            The _validate customer guid.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.ContactAdapter._customFieldAdapter">
+            <summary>
+            The _custom field adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ContactAdapter.#ctor(TimeLog.TLP.API.CRM.V1_4.ICustomerHeaderAdapter,TimeLog.TLP.API.Common.V1_2.IAddressAdapter,TimeLog.TLP.API.Common.V1_2.IEmployeeHeaderAdapter,TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.ICountry},TimeLog.TLP.Common.IBusinessRule{System.Guid,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.CRM.V1_4.ContactAdapter"/> class.
+            </summary>
+            <param name="customerHeaderAdapter">
+            The customer header adapter.
+            </param>
+            <param name="addressAdapter">
+            The address adapter.
+            </param>
+            <param name="employeeAdapter">
+            The employee adapter.
+            </param>
+            <param name="validateAndReturnCountry">
+            The validate and return country.
+            </param>
+            <param name="validateGUID">
+            The validate guid.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ContactAdapter.DomainToApi(TimeLog.TLP.CRM.IContact)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.Contact"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ContactAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.Contact,TimeLog.TLP.Common.IViolation@)">
             <summary>
             The api to domain.
             </summary>
@@ -567,7 +658,461 @@
             The <see cref="T:TimeLog.TLP.CRM.IContact"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.CRM.V1_3.IContactAdapter.CombineEventAndContact(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.IContact})">
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ContactAdapter.CombineEventAndContact(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.IContact})">
+            <summary>
+            The combine event and contact.
+            </summary>
+            <param name="events">
+            The events.
+            </param>
+            <param name="contacts">
+            The contacts.
+            </param>
+            <returns>
+            The <see cref="!:Dictionary"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.ContactHeaderAdapter">
+            <summary>
+            The contact header adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ContactHeaderAdapter.DomainToApi(TimeLog.TLP.CRM.IContact)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.ContactHeader"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.CRMService">
+            <summary>
+            Service for handling CRM requests in TimeLog Project (released December 2014)
+            </summary>
+            <remarks>
+            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMService.svc
+            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMServiceSecure.svc
+            </remarks>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.CRM.V1_4.CRMService"/> class.
+            </summary>
+            <param name="isSecure">Use HTTP or HTTPS</param>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetCustomerByID(System.Int32,System.Boolean,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a customer based on the ID
+            </summary>
+            <param name="id">ID of the customer to fetch (int)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>Customer details</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetCustomerByGUID(System.Guid,System.Boolean,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a customer based on the guid
+            </summary>
+            <param name="guid">Guid of the customer to fetch (guid)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>Customer details</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetCustomerByExternalKey(System.String,System.String,System.Boolean,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a customer based on the external system key (used in integrations)
+            </summary>
+            <param name="externalKey">External key (string)</param>
+            <param name="systemName">Name of the system your are fetching from (string)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>Customer details with external key details</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetCustomersByFieldsPaged(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of customers by CVR number, if not found then search by phone, then name
+            </summary>
+            <param name="cvr">CVR number - exact match required (string)</param>
+            <param name="name">Name of the customer (string)</param>
+            <param name="phone">Phone number of the customer (string)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="page">Page to get results from (int)</param>
+            <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A list of customers</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetCustomersModifiedSincePaged(System.DateTime,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of customer modified after specified date but only include certain customer status groups. Use a date before Jan 1, 2000 to get all customers.
+            </summary>
+            <param name="date">Date to search from (DateTime)</param>
+            <param name="includeCustomers">A value indicating whether to include customers with the customer status group "Customers" (bool)</param>
+            <param name="includeSuppliers">A value indicating whether to include customers with the customer status group "Suppliers" (bool)</param>
+            <param name="includeLeads">A value indicating whether to include customers with the customer status group "Leads" (bool)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="page">Page to get results from (int)</param>
+            <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A list of customers</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetCustomersByNamePaged(System.String,System.Boolean,System.Boolean,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a customer based on the name
+            </summary>
+            <param name="name">Name of the customer to fetch (string)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="page">Page to get results from (int)</param>
+            <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>Customer details</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.InsertCustomer(TimeLog.TLP.API.Proxy.CRM.V1_4.Customer,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Inserts a customer into TimeLog Project
+            </summary>
+            <param name="customer">Customer details to insert (Customer)</param>
+            <param name="source">Interface source number, in most cases use 0 (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <see cref="T:TimeLog.TLP.SourceInterface"/>
+            <returns>Customer details of the new customer</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.UpdateCustomer(TimeLog.TLP.API.Proxy.CRM.V1_4.Customer,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Updates a customer in TimeLog Project
+            </summary>
+            <param name="customer">Customer details to update - including IDs (Customer)</param>
+            <param name="source">Interface source number, in most cases use 0 (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <see cref="T:TimeLog.TLP.SourceInterface"/>
+            <returns>Customer details of the updated customer</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetCustomerStatuses(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of available customer statuses
+            </summary>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A list of custom statuses</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetContactByGUID(System.Guid,System.Boolean,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a contact based on the guid
+            </summary>
+            <param name="guid">Guid of the contact (Guid)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>Contact details</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetContactsByCustomerPaged(System.Guid,System.Boolean,System.Boolean,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of contact related to a customer
+            </summary>
+            <param name="customer">Customer details (Guid)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="page">Page to get results from (int)</param>
+            <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A list of contacts</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetContactsByCustomerPaged(System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of contact related to a customer
+            </summary>
+            <param name="customer">Customer details (Guid)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="includeInactiveContacts">if it should include inactive contacts or not</param>
+            <param name="page">Page to get results from (int)</param>
+            <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A list of contacts</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.GetContactsModifiedSincePaged(System.DateTime,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of contacts modified after specified date. Use a date before Jan 1, 2000 to get all customers.
+            </summary>
+            <param name="date">Date to search from (DateTime)</param>
+            <param name="includeCustomers">A value indicating whether to include customers with the customer status group "Customers" (bool)</param>
+            <param name="includeSuppliers">A value indicating whether to include customers with the customer status group "Suppliers" (bool)</param>
+            <param name="includeLeads">A value indicating whether to include customers with the customer status group "Leads" (bool)</param>
+            <param name="loadCustomFields">Load the custom fields (if any) associated (bool)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="includeInactiveContacts">if the inactive contacts should be included or not</param>
+            <param name="page">Page to get results from (int)</param>
+            <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A list of customers</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.InsertContact(TimeLog.TLP.API.Proxy.CRM.V1_4.Contact,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Inserts a contact into TimeLog Project
+            </summary>
+            <param name="contact">Contact details (Contact)</param>
+            <param name="source">Interface source number, in most cases use 0 (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>Contact details of the new contact</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.UpdateContact(TimeLog.TLP.API.Proxy.CRM.V1_4.Contact,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Updates a contact in TimeLog Project
+            </summary>
+            <param name="contact">Contact details - include IDs (Contact)</param>
+            <param name="source">Interface source number, in most cases use 0 (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>Contact details of the updated contact</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.CRMServiceSecure">
+            <summary>
+            Service for handling CRM requests in TimeLog Project
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMServiceSecure.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.CRM.V1_4.CRMServiceSecure"/> class from being created.
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter">
+            <summary>
+            The customer adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._contactHeaderAdapter">
+            <summary>
+            The _contact header adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._addressAdapter">
+            <summary>
+            The _address adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._stringNotEmpty">
+            <summary>
+            The _string not empty.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._employeeAdapter">
+            <summary>
+            The _employee adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._customerStatusAdapter">
+            <summary>
+            The _customer status adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._industryAdapter">
+            <summary>
+            The _industry adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._currencyAdapter">
+            <summary>
+            The _currency adapter.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._validateAndReturnCountry">
+            <summary>
+            The _validate and return country.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._customerStatusExists">
+            <summary>
+            The _customer status exists.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._employeeExists">
+            <summary>
+            The _employee exists.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._industryExists">
+            <summary>
+            The _industry exists.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._currencyIsValid">
+            <summary>
+            The _currency is valid.
+            </summary>
+        </member>
+        <member name="F:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter._customFieldAdapter">
+            <summary>
+            The _custom field adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.CRM.IContact,TimeLog.TLP.API.Proxy.CRM.V1_4.ContactHeader},TimeLog.TLP.API.Common.V1_2.IAddressAdapter,TimeLog.TLP.API.Common.V1_2.IEmployeeHeaderAdapter,TimeLog.TLP.API.CRM.V1_4.ICustomerStatusAdapter,TimeLog.TLP.API.CRM.V1_4.IIndustryAdapter,TimeLog.TLP.API.Common.V1_2.ICurrencyAdapter,TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.ICountry},TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.CRM.ICustomerStatus},TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.IEmployee},TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.CRM.IIndustry},TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.ICurrency})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter"/> class.
+            </summary>
+            <param name="contactHeaderAdapter">
+            The contact header adapter.
+            </param>
+            <param name="addressAdapter">
+            The address adapter.
+            </param>
+            <param name="employeeAdapter">
+            The employee adapter.
+            </param>
+            <param name="customerStatusAdapter">
+            The customer status adapter.
+            </param>
+            <param name="industryAdapter">
+            The industry adapter.
+            </param>
+            <param name="currencyAdapter">
+            The currency adapter.
+            </param>
+            <param name="validateAndReturnCountry">
+            The validate and return country.
+            </param>
+            <param name="customerStatusExists">
+            The customer status exists.
+            </param>
+            <param name="employeeIdentifierExists">
+            The employee identifier exists.
+            </param>
+            <param name="industryExists">
+            The industry exists.
+            </param>
+            <param name="currencyIsValid">
+            The currency is valid.
+            </param>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter.DomainToApi(TimeLog.TLP.CRM.ICustomer)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.Customer"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.Customer,TimeLog.TLP.Common.IViolation@,System.Boolean)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomer"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter.CombineEventAndCustomer(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.ICustomer})">
+            <summary>
+            The combine event and customer.
+            </summary>
+            <param name="events">
+            The events.
+            </param>
+            <param name="customers">
+            The customers.
+            </param>
+            <returns>
+            The <see cref="!:Dictionary"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.CustomerHeaderAdapter">
+            <summary>
+            The customer header adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerHeaderAdapter.DomainToApi(TimeLog.TLP.CRM.ICustomerHeader)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerHeader"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerHeaderAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerHeader"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.CustomerStatusAdapter">
+            <summary>
+            The customer status adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerStatusAdapter.DomainToApi(TimeLog.TLP.CRM.ICustomerStatus)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerStatusAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.IContactAdapter">
+            <summary>
+            The ContactAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.IContactAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.Contact,TimeLog.TLP.Common.IViolation@)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.IContact"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.IContactAdapter.CombineEventAndContact(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.IContact})">
             <summary>
             The combine event and contact.
             </summary>
@@ -580,6 +1125,133 @@
             <returns>
             The <see cref="!:Dictionary"/>.
             </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.ICustomerAdapter">
+            <summary>
+            The CustomerAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ICustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.Customer,TimeLog.TLP.Common.IViolation@,System.Boolean)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <param name="isNew">
+            IsNew flag to indicate it is an insert or update operation
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomer"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ICustomerAdapter.CombineEventAndCustomer(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.ICustomer})">
+            <summary>
+            The combine event and customer.
+            </summary>
+            <param name="events">
+            The events.
+            </param>
+            <param name="customers">
+            The customers.
+            </param>
+            <returns>
+            The <see cref="!:Dictionary"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.ICustomerHeaderAdapter">
+            <summary>
+            The CustomerHeaderAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ICustomerHeaderAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerHeader"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.ICustomerStatusAdapter">
+            <summary>
+            The CustomerStatusAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ICustomerStatusAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.ICustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="customerStatus">
+            The customer status.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.IIndustryAdapter">
+            <summary>
+            The IndustryAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.IIndustryAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.Industry)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="industry">
+            The industry.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.IIndustry"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_4.IndustryAdapter">
+            <summary>
+            The industry adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.IndustryAdapter.DomainToApi(TimeLog.TLP.CRM.IIndustry)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.Industry"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_4.IndustryAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.Industry)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.IIndustry"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.ContactAdapter">
+            <summary>
+            The contact adapter.
+            </summary>
         </member>
         <member name="F:TimeLog.TLP.API.CRM.V1_3.ContactAdapter._customerHeaderAdapter">
             <summary>
@@ -889,39 +1561,6 @@
             The customer adapter.
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerAdapter">
-            <summary>
-            The CustomerAdapter interface.
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Customer,TimeLog.TLP.Common.IViolation@)">
-            <summary>
-            The api to domain.
-            </summary>
-            <param name="api">
-            The api.
-            </param>
-            <param name="violation">
-            The violation.
-            </param>
-            <returns>
-            The <see cref="T:TimeLog.TLP.CRM.ICustomer"/>.
-            </returns>
-        </member>
-        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerAdapter.CombineEventAndCustomer(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.ICustomer})">
-            <summary>
-            The combine event and customer.
-            </summary>
-            <param name="events">
-            The events.
-            </param>
-            <param name="customers">
-            The customers.
-            </param>
-            <returns>
-            The <see cref="!:Dictionary"/>.
-            </returns>
-        </member>
         <member name="F:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter._contactHeaderAdapter">
             <summary>
             The _contact header adapter.
@@ -1036,7 +1675,7 @@
             The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.Customer"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Customer,TimeLog.TLP.Common.IViolation@)">
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Customer,TimeLog.TLP.Common.IViolation@,System.Boolean)">
             <summary>
             The api to domain.
             </summary>
@@ -1069,22 +1708,6 @@
             The customer header adapter.
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerHeaderAdapter">
-            <summary>
-            The CustomerHeaderAdapter interface.
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerHeaderAdapter.DomainToApi(System.Int32)">
-            <summary>
-            The domain to api.
-            </summary>
-            <param name="domainID">
-            The domain id.
-            </param>
-            <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerHeader"/>.
-            </returns>
-        </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerHeaderAdapter.DomainToApi(TimeLog.TLP.CRM.ICustomerHeader)">
             <summary>
             The domain to api.
@@ -1111,33 +1734,6 @@
             <summary>
             The customer status adapter.
             </summary>
-        </member>
-        <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter">
-            <summary>
-            The CustomerStatusAdapter interface.
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter.DomainToApi(System.Int32)">
-            <summary>
-            The domain to api.
-            </summary>
-            <param name="domainID">
-            The domain id.
-            </param>
-            <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus"/>.
-            </returns>
-        </member>
-        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus)">
-            <summary>
-            The api to domain.
-            </summary>
-            <param name="customerStatus">
-            The customer status.
-            </param>
-            <returns>
-            The <see cref="T:TimeLog.TLP.CRM.ICustomerStatus"/>.
-            </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerStatusAdapter.DomainToApi(TimeLog.TLP.CRM.ICustomerStatus)">
             <summary>
@@ -1167,6 +1763,118 @@
             </summary>
             <param name="api">
             The api.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.IContactAdapter">
+            <summary>
+            The ContactAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.IContactAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Contact,TimeLog.TLP.Common.IViolation@)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.IContact"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.IContactAdapter.CombineEventAndContact(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.IContact})">
+            <summary>
+            The combine event and contact.
+            </summary>
+            <param name="events">
+            The events.
+            </param>
+            <param name="customers">
+            The customers.
+            </param>
+            <returns>
+            The <see cref="!:Dictionary"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerAdapter">
+            <summary>
+            The CustomerAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Customer,TimeLog.TLP.Common.IViolation@,System.Boolean)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="violation">
+            The violation.
+            </param>
+            <param name="isNew">
+            IsNew flag to indicate it is an insert or update operation
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.CRM.ICustomer"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerAdapter.CombineEventAndCustomer(System.Collections.Generic.IEnumerable{TimeLog.TLP.Common.IEvent},System.Collections.Generic.IEnumerable{TimeLog.TLP.CRM.ICustomer})">
+            <summary>
+            The combine event and customer.
+            </summary>
+            <param name="events">
+            The events.
+            </param>
+            <param name="customers">
+            The customers.
+            </param>
+            <returns>
+            The <see cref="!:Dictionary"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerHeaderAdapter">
+            <summary>
+            The CustomerHeaderAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerHeaderAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerHeader"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter">
+            <summary>
+            The CustomerStatusAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter.DomainToApi(System.Int32)">
+            <summary>
+            The domain to api.
+            </summary>
+            <param name="domainID">
+            The domain id.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus"/>.
+            </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="customerStatus">
+            The customer status.
             </param>
             <returns>
             The <see cref="T:TimeLog.TLP.CRM.ICustomerStatus"/>.
@@ -1536,11 +2244,6 @@
             TODO: Update summary.
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.CustomField.V1_0.ICustomFieldAdapter">
-            <summary>
-            TODO: Update summary.
-            </summary>
-        </member>
         <member name="T:TimeLog.TLP.API.CustomField.V1_0.CustomFieldService">
             <summary>
             Service for handling custom fields in TimeLog Project (beta as of July 2014)
@@ -1585,6 +2288,11 @@
         <member name="T:TimeLog.TLP.API.CustomField.V1_0.CustomFieldServiceSecure">
             <summary>
             Service for handling custom fields in TimeLog Project
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.CustomField.V1_0.ICustomFieldAdapter">
+            <summary>
+            TODO: Update summary.
             </summary>
         </member>
         <member name="T:TimeLog.TLP.API.Expenses.V1_0.ExpensesService">
@@ -1660,18 +2368,6 @@
             Contractadapter for API
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_1.IContractAdapter">
-            <summary>
-            TODO: Update summary.
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_1.IContractAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ProjectSubContracts.IProjectSubContract{TimeLog.TLP.ProjectManagement.ContractModels.IContractModel})">
-            <summary>
-            Converts a domain object to an API object
-            </summary>
-            <param name="domain">The domain object</param>
-            <returns>API object</returns>
-        </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_1.PaymentAdapter">
             <summary>
             Paymentadapter for API
@@ -1689,9 +2385,21 @@
             <param name="domain">The domain object</param>
             <returns>API object</returns>
         </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_1.IContractAdapter">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.IContractAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ProjectSubContracts.IProjectSubContract{TimeLog.TLP.ProjectManagement.ContractModels.IContractModel})">
+            <summary>
+            Converts a domain object to an API object
+            </summary>
+            <param name="domain">The domain object</param>
+            <returns>API object</returns>
+        </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_1.FinancialService">
             <summary>
-            Financial service for pricelists, currencies and services (<strong>released August 2015</strong>) 
+            Financial service for pricelists, currencies and services (<strong>released October 2015</strong>) 
             </summary>
             <remarks>
             Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialService.svc
@@ -1744,7 +2452,7 @@
             <summary>
             Gets price groups associated with a price list
             </summary>
-            <param name="priceListID">Price list identifier (guid)</param>
+            <param name="priceListID">Unit_Price list identifier (guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An array of PriceGroup objects</returns>
         </member>
@@ -1849,7 +2557,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_1.PriceGroupAdapter">
             <summary>
-            Price group adapter for API
+            Unit_Price group adapter for API
             </summary>
         </member>
         <member name="M:TimeLog.TLP.API.Financial.V1_1.PriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.ICurrencyList)">
@@ -1897,7 +2605,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_0.PriceGroupAdapter">
             <summary>
-            Price group adapter for API
+            Unit_Price group adapter for API
             </summary>
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_0.IPriceGroupAdapter">
@@ -1972,7 +2680,7 @@
             <summary>
             Gets price groups associated with a price list
             </summary>
-            <param name="priceListID">Price list identifier (guid)</param>
+            <param name="priceListID">Unit_Price list identifier (guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An array of PriceGroup objects</returns>
         </member>
@@ -2136,7 +2844,7 @@
             <summary>
             Sets the status on the provided Ticket to the targetStatus
             </summary>
-            <param name="ticket">The ticket</param>
+            <param name="ID"></param>
             <param name="targetStatus"></param>
             <param name="token">Security token associated with the request</param>
             <returns></returns>
@@ -2145,7 +2853,7 @@
             <summary>
             Set if the Ticket is billable or not
             </summary>
-            <param name="ticket">The Ticket for which the billable status is set</param>
+            <param name="ID"></param>
             <param name="ticketIsBillable">The billable status the Ticket should have</param>
             <param name="ChangeExistingPosts">Change existing post to reflect the status of Ticket or keep their current billable status</param>
             <param name="token">Security token associated with the request</param>
@@ -2155,7 +2863,7 @@
             <summary>
             Sets the priority on the specified Ticket
             </summary>
-            <param name="ticket">The Ticket to set the priority on</param>
+            <param name="ID"></param>
             <param name="targetPriority">The priority the Ticket is updated to have</param>
             <param name="calculateDueDate">Control if the due date on the Ticket is re-calculated based on the Help Desk settings in TimeLog Project or kept as is</param>
             <param name="token">Security token associated with the request</param>
@@ -2215,32 +2923,6 @@
             <summary>
             Service for handling projects and time registrations in TimeLog Project (released January 2014)
             </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.Customization.HempelService.TimeLog#TLP#API#Proxy#Customization#IHempelService#CreateFreeExternalResource(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
-            <summary>
-            Creates an employee into TimeLog Project
-            </summary>
-            <param name="employeeGuid">Employee unique identifier. Generate a new one for each employee (Guid)</param>
-            <param name="username">The username of the new employee (string)</param>
-            <param name="initials">The initials of the new employee (string)</param>
-            <param name="firstname">Employee firstname (string)</param>
-            <param name="lastname">Employee lastname (string)</param>
-            <param name="employeeNo">Employee number (string)</param>
-            <param name="email">Employee email address (string)</param>
-            <param name="title">Employee title (string)</param>
-            <param name="telephone">Telephone number (string)</param>
-            <param name="mobile">Mobile telephone number (string)</param>
-            <param name="normalWorkingTimeName">The name of the type of working time (string)</param>
-            <param name="holidayCalendarName">The holiday calendar name (string)</param>
-            <param name="allowanceName">The allowance legislation name (DK, SE or DE) (string)</param>
-            <param name="employeeTypeName">The employee type name (string)</param>
-            <param name="hourlyRateName">Standard hourly rate name of the employee (string)</param>
-            <param name="costPriceName">Cost price name of the employee (string)</param>
-            <param name="externalIdentifier">The external identifier (string)</param>
-            <param name="departmentGuid">The department identifier (Guid)</param>
-            <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_2.EmployeeHeader"/>
-            <returns>Details of the new employee</returns>
         </member>
         <member name="T:TimeLog.TLP.API.Invoicing.V1_0.InvoiceAdapter">
             <summary>
@@ -2344,6 +3026,54 @@
             <summary>
             Service for handling invoicing in TimeLog Project
             </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Customization.HempelService.TimeLog#TLP#API#Proxy#Customization#IHempelService#CreateFreeExternalResource(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
+            <summary>
+            Creates an employee into TimeLog Project
+            </summary>
+            <param name="employeeGuid">Employee unique identifier. Generate a new one for each employee (Guid)</param>
+            <param name="username">The username of the new employee (string)</param>
+            <param name="initials">The initials of the new employee (string)</param>
+            <param name="firstname">Employee firstname (string)</param>
+            <param name="lastname">Employee lastname (string)</param>
+            <param name="employeeNo">Employee number (string)</param>
+            <param name="email">Employee email address (string)</param>
+            <param name="title">Employee title (string)</param>
+            <param name="telephone">Telephone number (string)</param>
+            <param name="mobile">Mobile telephone number (string)</param>
+            <param name="normalWorkingTimeName">The name of the type of working time (string)</param>
+            <param name="holidayCalendarName">The holiday calendar name (string)</param>
+            <param name="allowanceName">The allowance legislation name (DK, SE or DE) (string)</param>
+            <param name="employeeTypeName">The employee type name (string)</param>
+            <param name="hourlyRateName">Standard hourly rate name of the employee (string)</param>
+            <param name="costPriceName">Cost price name of the employee (string)</param>
+            <param name="externalIdentifier">The external identifier (string)</param>
+            <param name="departmentGuid">The department identifier (Guid)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_2.EmployeeHeader"/>
+            <returns>Details of the new employee</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Language.V1_0.LanguageService.GetLanguage(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of localization items related to an external system. All authenticated users
+            have access to this method.
+            </summary>
+            <param name="externalSystemName">Name of the external system</param>
+            <param name="lcid">LCID of the language to get (e.g. 1030 for Danish)</param>
+            <param name="token">Security token associated with the request</param>
+            <returns>A list of LanguageItem objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Language.V1_0.LanguageService.ExecuteMethodApi``2(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken,System.Func{System.Collections.Generic.IEnumerable{``1}},System.Func{``1,``0},System.String)">
+            <summary>
+            Executes the method API.
+            </summary>
+            <typeparam name="TReturnType">The type of the return type.</typeparam>
+            <typeparam name="TMethodReturnType">The type of the method return type.</typeparam>
+            <param name="token">The token.</param>
+            <param name="apiMethodFunc">The API method function.</param>
+            <param name="mappingFunc">The mapping function.</param>
+            <param name="methodName">Name of the method.</param>
+            <returns></returns>
         </member>
         <member name="T:TimeLog.TLP.API.Organisation.V1_6.OrganisationService">
             <summary>
@@ -2994,7 +3724,7 @@
             Inserts one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials, Duration, StartDateTime, EndDateTime and Description</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits inserted with additional information about task and project</returns>
@@ -3004,7 +3734,7 @@
             Updates one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials, Duration, StartDateTime, EndDateTime and Description</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits updated with additional information about task and project</returns>
@@ -3014,7 +3744,7 @@
             Deletes one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits succesfully deleted</returns>
@@ -3062,6 +3792,12 @@
             <param name="criteria">Criteria to search for</param>
             <param name="token">Security token of the current user</param>
             <returns>A list of tasks that matches the search criteria</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_2.ProjectManagementService.ProjectThenSortOrderComparer">
+            <summary>
+            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
+            </summary>
+            
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_2.ProjectManagementService.GetEmployeeWork(System.String,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
             <summary>
@@ -3123,33 +3859,7 @@
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <returns>The project created based on the template</returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_2.ProjectManagementService.ProjectThenSortOrderComparer">
-            <summary>
-            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
-            </summary>
-            
-        </member>
         <!-- Badly formed XML comment ignored for member "M:TimeLog.TLP.API.ProjectManagement.V1_2.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)" -->
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_0.ProjectManagementService.GetEmployeeWork(System.String,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_0.SecurityToken)">
-            <summary>
-            Return all work, on the employee in the given period
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_0.ProjectManagementService.InsertWork(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_0.WorkUnit},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_0.SecurityToken)">
-            <summary>
-            
-            </summary>
-            <param name="work"></param>
-            <param name="source">3 = Tracker</param>
-            <param name="token"></param>
-            <returns></returns>
-        </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_0.ProjectManagementService.ProjectThenSortOrderComparer">
-            <summary>
-            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
-            </summary>
-            
-        </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_1.ProjectAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_1.Project)">
             <summary>
             Maps a API project to a Domain project. 
@@ -3157,6 +3867,12 @@
             </summary>
             <param name="apiProject"></param>
             <returns></returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_1.ProjectManagementService.ProjectThenSortOrderComparer">
+            <summary>
+            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
+            </summary>
+            
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_1.ProjectManagementService.GetEmployeeWork(System.String,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
             <summary>
@@ -3172,11 +3888,25 @@
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_1.ProjectManagementService.ProjectThenSortOrderComparer">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_0.ProjectManagementService.ProjectThenSortOrderComparer">
             <summary>
             Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
             </summary>
             
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_0.ProjectManagementService.GetEmployeeWork(System.String,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_0.SecurityToken)">
+            <summary>
+            Return all work, on the employee in the given period
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_0.ProjectManagementService.InsertWork(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_0.WorkUnit},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_0.SecurityToken)">
+            <summary>
+            
+            </summary>
+            <param name="work"></param>
+            <param name="source">3 = Tracker</param>
+            <param name="token"></param>
+            <returns></returns>
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_4.ProjectManagementService">
             <summary>
@@ -3225,7 +3955,7 @@
             Inserts one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials, Duration, StartDateTime, EndDateTime and Description</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits inserted with additional information about task and project</returns>
@@ -3235,7 +3965,7 @@
             Updates one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials, Duration, StartDateTime, EndDateTime and Description</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits updated with additional information about task and project</returns>
@@ -3245,7 +3975,7 @@
             Deletes one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits succesfully deleted</returns>
@@ -3274,7 +4004,7 @@
             <param name="projectName">Name of the new project (string)</param>
             <param name="projectNo">Project number of the new project (string)</param>
             <param name="customerName">Customer name (string)</param>
-            <param name="priceListID">Price list identifier (guid)</param>
+            <param name="priceListID">Unit_Price list identifier (guid)</param>
             <param name="priceGroupID">Project group identifier (guid)</param>
             <param name="projectManagerInitials">Project manager initials (string)</param>
             <param name="accountManagerInitials">Account manager initials (string)</param>
@@ -3307,6 +4037,11 @@
             <param name="taskNo">Task number (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of Task objects</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_4.ProjectManagementService.ProjectThenSortOrderComparer">
+            <summary>
+            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
+            </summary>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_4.ProjectManagementService.GetWorkPaged(System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
             <summary>
@@ -3343,11 +4078,6 @@
             on Jan 7th, then both changes will be returned (if both are within the change-date-interval).</para></remarks>
             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_4.WorkUnitFlat"/>
             <returns>A list of work units in a flat format</returns>
-        </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_4.ProjectManagementService.ProjectThenSortOrderComparer">
-            <summary>
-            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
-            </summary>
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_4.ProjectManagementServiceSecure">
             <summary>
@@ -3402,7 +4132,7 @@
             Inserts one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials, Duration, StartDateTime, EndDateTime and Description</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits inserted with additional information about task and project</returns>
@@ -3412,7 +4142,7 @@
             Updates one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials, Duration, StartDateTime, EndDateTime and Description</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits updated with additional information about task and project</returns>
@@ -3422,7 +4152,7 @@
             Deletes one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits succesfully deleted</returns>
@@ -3451,7 +4181,7 @@
             <param name="projectName">Name of the new project (string)</param>
             <param name="projectNo">Project number of the new project (string)</param>
             <param name="customerName">Customer name (string)</param>
-            <param name="priceListID">Price list identifier (guid)</param>
+            <param name="priceListID">Unit_Price list identifier (guid)</param>
             <param name="priceGroupID">Project group identifier (guid)</param>
             <param name="projectManagerInitials">Project manager initials (string)</param>
             <param name="accountManagerInitials">Account manager initials (string)</param>
@@ -3484,6 +4214,11 @@
             <param name="taskNo">Task number (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of Task objects</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_5.ProjectManagementService.ProjectThenSortOrderComparer">
+            <summary>
+            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
+            </summary>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_5.ProjectManagementService.GetWorkPaged(System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
@@ -3552,11 +4287,6 @@
             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_5.ProjectTaskFlat"/>
             <returns>A list of tasks in a flat format</returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_5.ProjectManagementService.ProjectThenSortOrderComparer">
-            <summary>
-            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
-            </summary>
-        </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_5.ProjectManagementServiceSecure">
             <summary>
             Service for handling projects and time registrations in TimeLog Project (released January 2014)
@@ -3567,25 +4297,6 @@
             <summary>
             The allocation adapter.
             </summary>
-        </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.IAllocationAdapter">
-            <summary>
-            The AllocationAdapter interface.
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.IAllocationAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
-            <summary>
-            The api to domain.
-            </summary>
-            <param name="api">
-            The api.
-            </param>
-            <param name="domain">
-            The domain.
-            </param>
-            <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.IAllocation"/>.
-            </returns>
         </member>
         <member name="F:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter._AllocationManager">
             <summary>
@@ -3610,7 +4321,7 @@
             The validate employee initials.
             </param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#ProjectManagement#IAllocation@TimeLog#TLP#API#Proxy#ProjectManagement#V1_6#Allocation}#DomainToApi(TimeLog.TLP.ProjectManagement.IAllocation)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#ProjectManagement#IAllocation,TimeLog#TLP#API#Proxy#ProjectManagement#V1_6#Allocation}#DomainToApi(TimeLog.TLP.ProjectManagement.IAllocation)">
             <summary>
             The domain to api.
             </summary>
@@ -3622,6 +4333,25 @@
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter.TimeLog#TLP#API#ProjectManagement#V1_6#IAllocationAdapter#ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
+            <summary>
+            The api to domain.
+            </summary>
+            <param name="api">
+            The api.
+            </param>
+            <param name="domain">
+            The domain.
+            </param>
+            <returns>
+            The <see cref="T:TimeLog.TLP.ProjectManagement.IAllocation"/>.
+            </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.IAllocationAdapter">
+            <summary>
+            The AllocationAdapter interface.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.IAllocationAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
             <summary>
             The api to domain.
             </summary>
@@ -3898,10 +4628,10 @@
             <summary>
             Returns a list of project headers.
             </summary>
-            <param name="customerID">Limits projects to customers with the specified ID. Parse 0 to get all projects (int)</param>
-            <param name="projectManagerID">Limits the result to projects where the Project manager has the parsed ID. The value must be a valid employeeID. Parse 0 to get all projects (int)</param>
-            <param name="includeInactiveProjects">If false only aktiv projects is returned. If true also inactive projects is included in the result (bool)</param>
-            <param name="statusID">Limits the result to projects with the specific Status. Values: {-1 = all, 0 = Quote, 1 = Approved, 2 = In Progress, 3 = On Hold, 4 = Completed, 5 = Archieved, 6 = Cancelled} (int)</param>
+            <param name="CustomerID">Limits projects to customers with the specified ID. Parse 0 to get all projects (int)</param>
+            <param name="ProjectManagerID">Limits the result to projects where the Project manager has the parsed ID. The value must be a valid employeeID. Parse 0 to get all projects (int)</param>
+            <param name="IncludeInactiveProjects">If false only aktiv projects is returned. If true also inactive projects is included in the result (bool)</param>
+            <param name="StatusID">Limits the result to projects with the specific Status. Values: {-1 = all, 0 = Quote, 1 = Approved, 2 = In Progress, 3 = On Hold, 4 = Completed, 5 = Archieved, 6 = Cancelled} (int)</param>
             <param name="token"></param>
             <returns></returns>
         </member>
@@ -4018,7 +4748,7 @@
             Inserts one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials, Duration, StartDateTime, EndDateTime and Description</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits inserted with additional information about task and project</returns>
@@ -4028,7 +4758,7 @@
             Updates one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials, Duration, StartDateTime, EndDateTime and Description</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits updated with additional information about task and project</returns>
@@ -4038,7 +4768,7 @@
             Deletes one or more registrations based on initials and task ID
             </summary>
             <param name="work">An array of WorkUnit objects. Initialize at least GUID, TaskID, EmployeeInitials</param>
-            <param name="source">Externals should use 0</param>
+            <param name="source" >Externals should use 0</param>
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits succesfully deleted</returns>
@@ -4124,7 +4854,7 @@
             <param name="projectName">Name of the new project (string)</param>
             <param name="projectNo">Project number of the new project (string)</param>
             <param name="customerName">Customer name (string)</param>
-            <param name="priceListID">Price list identifier (guid)</param>
+            <param name="priceListID">Unit_Price list identifier (guid)</param>
             <param name="priceGroupID">Project group identifier (guid)</param>
             <param name="projectManagerInitials">Project manager initials (string)</param>
             <param name="accountManagerInitials">Account manager initials (string)</param>
@@ -4148,6 +4878,11 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of Task objects</returns>
         </member>
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.ProjectThenSortOrderComparer">
+            <summary>
+            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
+            </summary>
+        </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.GetWorkPaged(System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a paged list of work units in a flat format including all details.
@@ -4160,7 +4895,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnitFlat"/>
             <remarks>Security requirements: System administrator</remarks>
-            <returns>A list of work units in a flat format</returns>
+            <returns>A list of work units in a flat format. Note that the field TotalPageCount has been depricated.</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.GetWorkPagedWithExternalIds(System.String,System.Int32,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
@@ -4176,7 +4911,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <remarks>Security requirements: System administrator</remarks>
             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnitFlatExternal"/>
-            <returns>A list of work units in a flat format</returns>
+            <returns>A list of work units in a flat format. Note that the field TotalPageCount has been depricated.</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.GetWorkChangesPaged(System.String,System.DateTime,System.DateTime,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
@@ -4202,7 +4937,7 @@
             <para>Security requirements: System administrator</para>
             </remarks>
             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnitFlat"/>
-            <returns>A list of work units in a flat format</returns>
+            <returns>A list of work units in a flat format. Note that the field TotalPageCount has been depricated.</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.GetProjectTasksPaged(System.Guid,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
@@ -4213,7 +4948,7 @@
             <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.ProjectTaskFlat"/>
-            <returns>A list of tasks in a flat format</returns>
+            <returns>A list of tasks in a flat format. Note that the field TotalPageCount has been depricated.</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.GetWorkChangeLogPaged(System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
@@ -4230,12 +4965,7 @@
             <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnitFlat"/>
-            <returns>A list of work units in a flat format</returns>
-        </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.ProjectThenSortOrderComparer">
-            <summary>
-            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
-            </summary>
+            <returns>A list of work units in a flat format. Note that the field TotalPageCount has been depricated.</returns>
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementServiceSecure">
             <summary>
@@ -4408,7 +5138,7 @@
             The validation initials.
             </param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#ProjectManagement#IWorkUnit@TimeLog#TLP#API#Proxy#ProjectManagement#V1_6#WorkUnit}#DomainToApi(TimeLog.TLP.ProjectManagement.IWorkUnit)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.WorkUnitAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#ProjectManagement#IWorkUnit,TimeLog#TLP#API#Proxy#ProjectManagement#V1_6#WorkUnit}#DomainToApi(TimeLog.TLP.ProjectManagement.IWorkUnit)">
             <summary>
             The domain to api.
             </summary>
@@ -4480,6 +5210,68 @@
             <returns>
             The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnitFlatExternal"/>.
             </returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Registration.V1_0.TimeTrackingService.GetTimeTrackingItems(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of time tracking groups and the associated time tracking items
+            based on the user associated with the security token. 
+            </summary>
+            <param name="token">Security token associated with the request</param>
+            <returns>A list of TimeTrackingGroup objects with associated TimeTrackingItem objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Registration.V1_0.TimeTrackingService.GetTimeRegistrationByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a single time registration object based on the parameters. If no registration can be
+            matched with the external key from a given external system name then a null object is returned.
+            A user can only fetch registrations belonging to the user associated with the security token.
+            </summary>
+            <param name="externalKey">Key associated with a related object in the external system</param>
+            <param name="externalSystemName">Name of the external system</param>
+            <param name="token">Security token associated with the request</param>
+            <returns>A single TimeRegistration object</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Registration.V1_0.TimeTrackingService.SaveTimeRegistrationByExternalKey(TimeLog.TLP.API.Proxy.Registration.V1_0.TimeRegistration,System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Saves a registration detecting based on the externalKey parameter if the registration should
+            be inserted or updated. An error is returned if the registration cannot be saved due to
+            business rules (e.g. closed week). A registration will always belong to the user associated
+            with the security token.
+            </summary>
+            <param name="registration">Registration details to be saved</param>
+            <param name="externalKey">Key associated with a related object in the external system</param>
+            <param name="externalSystemName">Name of the external system</param>
+            <param name="token">Security token associated with the request</param>
+            <returns>A single TimeRegistration object</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Registration.V1_0.TimeTrackingService.DeleteTimeRegistrationByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Deletes a registration based on the externalKey parameter. An error is returned if the
+            registration cannot be deleted due to business rules (e.g. closed week). A user can only
+            delete a registration belonging to the user associated with the security token.
+            </summary>
+            <param name="externalKey">Key associated with a related object in the external system</param>
+            <param name="externalSystemName">Name of the external system</param>
+            <param name="token">Security token associated with the request</param>
+            <returns>A value indicating whether the registration was deleted</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Registration.V1_0.TimeTrackingService.GetOTTVersion(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets the current OTT version in the system
+            </summary>
+            <param name="token">Security token associated with the request</param>
+            <returns>Current OTT version in the system</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Registration.V1_0.TimeTrackingService.ExecuteMethodApi``2(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken,System.Func{System.Collections.Generic.IEnumerable{``1}},System.Func{``1,``0},System.String)">
+            <summary>
+            Executes the method API.
+            </summary>
+            <typeparam name="TReturnType">The type of the return type.</typeparam>
+            <typeparam name="TMethodReturnType">The type of the method return type.</typeparam>
+            <param name="token">The token.</param>
+            <param name="apiMethodFunc">The API method function.</param>
+            <param name="mappingFunc">The mapping function.</param>
+            <param name="methodName">Name of the method.</param>
+            <returns></returns>
         </member>
         <member name="T:TimeLog.TLP.API.Salary.V1_0.ISalaryAdapter">
             <summary>
