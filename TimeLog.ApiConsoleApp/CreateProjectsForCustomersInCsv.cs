@@ -3,6 +3,8 @@
 namespace TimeLog.ApiConsoleApp
 {
     using System.Collections.Generic;
+    using System.Linq;
+
     using log4net;
 
     using TransactionalApi.SDK;
@@ -57,7 +59,22 @@ namespace TimeLog.ApiConsoleApp
                 //// 1
                 //// 0
                 
-                var csv = new CsvReader("c:\\temp\\customers.csv", ',', false);
+                // Get list of existing projects to avoid duplicates
+                var existingProjects = ProjectManagementHandler.Instance.ProjectManagementClient.GetProjects(-1, -1, false, -1, ProjectManagementHandler.Instance.Token);
+                if (existingProjects.ResponseState != ExecutionStatus.Success)
+                {
+                    foreach (var apiMessage in existingProjects.Messages)
+                    {
+                        if (Logger.IsErrorEnabled)
+                        {
+                            Logger.Error(apiMessage.Message);
+                        }
+                    }
+
+                    return;
+                }
+
+                var csv = new CsvReader("c:\\temp\\fischer.csv", ',', true);
                 if (Logger.IsInfoEnabled)
                 {
                     Logger.InfoFormat("Fetched {0} customers", csv.Lines.Length);
@@ -70,46 +87,53 @@ namespace TimeLog.ApiConsoleApp
 
                     Logger.Info("Creating project " + projectNo + " - " + projectName);
 
-                    var result = ProjectManagementHandler.Instance.ProjectManagementClient.CreateProjectFromTemplate(
-                        csv.GetString(0),
-                        csv.GetString(1),
-                        csv.GetString(2),
-                        csv.GetString(3),
-                        csv.GetGuid(4),
-                        csv.GetGuid(5),
-                        csv.GetString(6),
-                        csv.GetString(6),
-                        csv.GetString(8),
-                        csv.GetString(8),
-                        csv.GetBoolean(10),
-                        csv.GetBoolean(11),
-                        csv.GetBoolean(12),
-                        csv.GetBoolean(13),
-                        csv.GetBoolean(14),
-                        99,
-                        ProjectManagementHandler.Instance.Token);
-                    if (result.ResponseState == ExecutionStatus.Success)
+                    if (existingProjects.Return.Any(p => p.No == projectNo))
                     {
-                        foreach (var project in result.Return)
-                        {
-                            if (Logger.IsDebugEnabled)
-                            {
-                                Logger.DebugFormat("Project created with ID {0}", project.Item.ProjectID);
-                            }
-                        }
+                        Logger.Info("Skipping. Already exists");
                     }
                     else
                     {
-                        foreach (var apiMessage in result.Messages)
+                        var result = ProjectManagementHandler.Instance.ProjectManagementClient.CreateProjectFromTemplate(
+                            csv.GetString(0),
+                            csv.GetString(1),
+                            csv.GetString(2),
+                            csv.GetString(3),
+                            csv.GetGuid(4),
+                            csv.GetGuid(5),
+                            csv.GetString(6),
+                            csv.GetString(6),
+                            csv.GetString(8),
+                            csv.GetString(8),
+                            csv.GetBoolean(10),
+                            csv.GetBoolean(11),
+                            csv.GetBoolean(12),
+                            csv.GetBoolean(13),
+                            csv.GetBoolean(14),
+                            99,
+                            ProjectManagementHandler.Instance.Token);
+                        if (result.ResponseState == ExecutionStatus.Success)
                         {
-                            if (Logger.IsErrorEnabled)
+                            foreach (var project in result.Return)
                             {
-                                Logger.Error(apiMessage.Message);
+                                if (Logger.IsDebugEnabled)
+                                {
+                                    Logger.DebugFormat("Project created with ID {0}", project.Item.ProjectID);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            foreach (var apiMessage in result.Messages)
+                            {
+                                if (Logger.IsErrorEnabled)
+                                {
+                                    Logger.Error(apiMessage.Message);
+                                }
                             }
                         }
                     }
 
-                    // break;
+                    //break;
                 }
             }
             else
