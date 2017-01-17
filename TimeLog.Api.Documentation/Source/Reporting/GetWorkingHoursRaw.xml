@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tlp:NormHours xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+<tlp:WorkingHours xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/WorkingHoursRaw.xsd">
-  <tlp:NormHour ID="447656">
-    <tlp:Workdate>2013-05-01T00:00:00</tlp:Workdate>
-    <tlp:NormHours>3</tlp:NormHours>
-    <tlp:Overtime>-3</tlp:Overtime>
-    <tlp:EmployeeID>128</tlp:EmployeeID>
-    <tlp:EmployeeFirstName>Christian</tlp:EmployeeFirstName>
-    <tlp:EmployeeLastName>Olsen</tlp:EmployeeLastName>
-  </tlp:NormHour>
-</tlp:NormHours>
+  <tlp:WorkingHour ID="447656">
+      <tlp:Date>2013-05-01T00:00:00</tlp:Workdate>
+      <tlp:Hours>3</tlp:NormHours>
+      <tlp:EmployeeID>128</tlp:EmployeeID>
+      <tlp:EmployeeFirstName>Christian</tlp:EmployeeFirstName>
+      <tlp:EmployeeLastName>Olsen</tlp:EmployeeLastName>
+  </tlp:WorkingHour>
+</tlp:WorkingHours>
