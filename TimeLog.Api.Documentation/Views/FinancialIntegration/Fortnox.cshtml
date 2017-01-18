@@ -105,32 +105,25 @@
                     <td>Name</td>
                     <td></td>
                 </tr>
+            <tr>
+                <td>Phone</td>
+                <td>Telefon</td>
+                <td>Phone</td>
+                <td>Phone1</td>
+                <td></td>
+            </tr>
                 <tr>
-                    <td>Phone</td>
-                    <td>Telefon</td>
-                    <td>Phone</td>
-                    <td>Phone1</td>
+                    <td>Fax</td>
+                    <td>Fax</td>
+                    <td>Fax</td>
+                    <td>Fax</td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td>VAT no</td>
-                    <td>Org-/Personnummer</td>
-                    <td>VatNo</td>
-                    <td>OrganisationNumber</td>
-                    <td></td>
-                </tr>
-                <tr>
+               <tr>
                     <td>VAT no</td>
                     <td>VAT nummer</td>
                     <td>VatNo</td>
                     <td>VATNumber</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>EAN no.</td>
-                    <td>-</td>
-                    <td>EAN</td>
-                    <td>-</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -203,11 +196,18 @@
                     <td>TermOfPayment</td>
                     <td></td>
                 </tr>
+            <tr>
+                <td>Discount</td>
+                <td>Fakturarabatt (%)</td>
+                <td>DefaultDiscountPercent</td>
+                <td>InvoiceDiscount</td>
+                <td></td>
+            </tr>
                 <tr>
-                    <td>Discount</td>
-                    <td>Fakturarabatt (%)</td>
-                    <td>DefaultDiscountPercent</td>
-                    <td>InvoiceDiscount</td>
+                    <td>Owner</td>
+                    <td>Vår referens</td>
+                    <td>KAM</td>
+                    <td>OurReference</td>
                     <td></td>
                 </tr>
 
@@ -269,14 +269,14 @@
             <tbody>
                 <tr>
                     <td>ID</td>
-                    <td>ExternalInvoiceReference1</td>
+                    <td></td>
                     <td>ID</td>
                     <td>ExternalInvoiceReference1</td>
                     <td><span class="wrapcomment">Used to identify the invoice when retrieved from Fortnox</span></td>
                 </tr>
                 <tr>
                     <td>Invoice no.</td>
-                    <td>ExternalInvoiceReference2</td>
+                    <td></td>
                     <td>InvoiceNo</td>
                     <td>ExternalInvoiceReference2</td>
                     <td><span class="wrapcomment">Used to identify the invoice when retrieved from Fortnox</span></td>
@@ -286,12 +286,12 @@
                     <td>Customer</td>
                     <td>InvoicingCustomerName</td>
                     <td>CustomerName</td>
-                    <td><span class="wrapcomment"></span></td>
+                    <td><span class="wrapcomment">Customer no. and name are transferred to identify customer in Fortnox</span></td>
                 </tr>
                 <tr>
                     <td>Heading</td>
                     <td>Fakturatext</td>
-                    <td>Header</td>
+                    <td>Heading</td>
                     <td>Remarks</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
@@ -319,44 +319,66 @@
                 </tr>
                 <tr>
                     <td>Due date</td>
-                    <td>Due date</td>
+                    <td>Förfallodatum</td>
                     <td>DueDate</td>
                     <td>DueDate</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
-                <tr>
-                    <td>Calculate VAT</td>
-                    <td>Förfallodatum</td>
-                    <td>CalculateVAT</td>
-                    <td>IsVatIncluded</td>
-                    <td><span class="wrapcomment">Set to false</span></td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td>Credit</td>
-                    <td>-</td>
-                    <td>Credit</td>
-                    <td><span class="wrapcomment">Set to false</span></td>
-                </tr>
-                <tr>
-                    <td>Message</td>
-                    <td>Kommentar</td>
-                    <td>Message</td>
-                    <td>Comments</td>
-                    <td></td>
-                </tr>
+            <tr>
+                <td>Message</td>
+                <td>Kommentar</td>
+                <td>Message</td>
+                <td>Comments</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>P.O. no.:</td>
+                <td>Ert ordernummer</td>
+                <td>RequisitionNo</td>
+                <td>YourOrderNumber</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Customer's Ref.:</td>
+                <td>Er referens</td>
+                <td>CustomerReference</td>
+                <td>YourReference</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Internal reference:</td>
+                <td>Vår referens</td>
+                <td>Details.InternalReference</td>
+                <td>OurReference</td>
+                <td></td>
+            </tr>
+
                 <tr>
                     <td>Invoice address:</td>
-                    <td>Leveransadress2</td>
+                    <td>Fakturaadress</td>
                     <td>InvoicingAddress.Address1</td>
                     <td>Address1</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
                     <td>Invoice address2:</td>
-                    <td>Leveransadress</td>
+                    <td>Fakturaadress 2</td>
                     <td>InvoicingAddress.Address2</td>
                     <td>Address2</td>
+                    <td><span class="wrapcomment">Invoice address 2 and invoice address 3 are concatenated into Address 2 in Fortnox</span></td>
+                </tr>
+                <tr>
+                    <td>Invoice address3:</td>
+                    <td>Fakturaadress 2</td>
+                    <td>InvoicingAddress.Address3</td>
+                    <td>Address2</td>
+                    <td><span class="wrapcomment">Invoice address 2 and invoice address 3 are concatenated into Address 2 in Fortnox</span></td>
+                </tr>
+                <tr>
+                    <td>Invoice Zipcode</td>
+                    <td>Postnr</td>
+                    <td>InvoicingAddress.ZipCode</td>
+                    <td>ZipCode</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
@@ -366,12 +388,33 @@
                     <td>City</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
+            <tr>
+                <td>Invoice country:</td>
+                <td>Land</td>
+                <td>InvoicingAddress.Country</td>
+                <td>Country</td>
+                <td><span class="wrapcomment">Has to be swedish version of a country to be valid</span></td>
+            </tr>
                 <tr>
-                    <td>Invoice country:</td>
-                    <td>Land</td>
-                    <td>InvoicingAddress.Country</td>
-                    <td>Country</td>
-                    <td><span class="wrapcomment">Has to be swedish version of a country to be valid</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>VATIncluded</td>
+                    <td><span class="wrapcomment">Always set to false</span></td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td></td>
+                    <td>-</td>
+                    <td>Credit</td>
+                    <td><span class="wrapcomment">Set to false if invoice, true if credit note</span></td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td></td>
+                    <td>-</td>
+                    <td>InvoiceType</td>
+                    <td><span class="wrapcomment">InvoiceType in Fortnox - Always set to INVOICE</span></td>
                 </tr>
             </tbody>
         </table>
