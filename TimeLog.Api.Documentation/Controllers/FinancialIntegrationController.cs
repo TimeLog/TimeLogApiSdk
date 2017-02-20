@@ -15,6 +15,11 @@
             return this.View("DynamicsNav");
         }
 
+        public ActionResult MiddlewareSecurity()
+        {
+            return this.View("MiddlewareSecurity");
+        }
+
         public ActionResult DynamicsAx()
         {
             return this.View("Index");

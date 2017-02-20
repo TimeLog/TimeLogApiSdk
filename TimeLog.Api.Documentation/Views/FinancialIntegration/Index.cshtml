@@ -6,12 +6,45 @@
 
     <h1>@ViewBag.Title</h1>
     <h2>
-        These pages are placeholders for our documentation of the usage of financial integrations
-        with TimeLog Project
+        TimeLog Project connects with business tools which you already use. Optimise your business by connecting and
+        integrating your tools. Among others we integrate to the following a bunch of ERP systems.
     </h2>
+    <p>
+        Currently, we are integrating with the following ERP solutions. Each of the integration vary a bit on which
+        functionality it supports. Please follow the links to know more.
+    </p>
+    <ul class="arrows">
+        <li>@Html.ActionLink("E-conomic", "Economic") (<a href="https://www.e-conomic.com">official website</a>) - Fully integrated</li>
+        <li>@Html.ActionLink("Exact Online", "ExactOnline") (<a href="https://www.exact.com/nl/exact-online/">official website</a>) - Fully integrated</li>
+        <li>@Html.ActionLink("Fortnox", "Fortnox") (<a href="https://www.fortnox.se">official website</a>) - Fully integrated</li>
+        <li>@Html.ActionLink("Microsoft Dynamics NAV", "DynamicsNav") (<a href="https://www.microsoft.com/en-us/dynamics365/nav-overview">official website</a>) - Fully integrated with server install</li>
+        <li>@Html.ActionLink("Visma Administration", "VismaAdministration") (<a href="https://vismaspcs.se/produkter/bokforingsprogram/administration">official website</a>) - Fully integrated with server install</li>
+        <li>Dinero (<a href="https://www.dinero.dk">official website</a>) - In development, no release date available</li>
+    </ul>
+    <h3>Architecture</h3>
+    <p>
+        Together with TimeLog Project, you get deeply integrated experiences with your ERP system. Depending on the ERP
+        system, TimeLog Project integrate with them in different ways:
+    </p>
+    <ul class="arrows">
+        <li>
+            <strong>Fully integrated</strong> - The integration is build into TimeLog Project, no additional installs
+            are required. The ERP system is fully SaaS. Depending on the integration, a few setup steps are needed.
+        </li>
+        <li>
+            <strong>Fully integrated with server install</strong> - The integration is build into TimeLog Project,
+            the ERP is most likely installed on specialized servers and require our FinancialHost middleware to work.
+        </li>
+    </ul>
+    <p>
+        For integrations that is fully integrated with server install, TimeLog has developed a middleware software
+        to provide the necessary API endpoints for the best integration experience. <strong>This middleware is called the
+        "FinancialHost"</strong>.
+    </p>
+    <p>@Html.ActionLink("Read more about how we are securing the middleware (FinancialHost)", "MiddlewareSecurity")</p>
 </article>
 
 @section sidebar
 {
-    
+
 }
