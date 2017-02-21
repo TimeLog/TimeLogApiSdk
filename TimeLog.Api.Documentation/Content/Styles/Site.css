@@ -4818,7 +4818,7 @@ pre {
         border-bottom: 1px solid #e5e5e5;
         text-align: left;
         vertical-align: top;
-        padding: 4px 0;
+        padding: 4px 10px 4px 0;
     }
 
     .setting_table th {
@@ -4830,6 +4830,11 @@ pre {
 
     .setting_table .text-center {
         text-align: center;
+    }
+
+    .setting_table .tablespacer td{
+        padding-top: 40px;
+        font-weight: bold;
     }
 
 .mapping_table {

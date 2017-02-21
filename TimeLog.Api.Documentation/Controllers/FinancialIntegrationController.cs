@@ -10,6 +10,11 @@
             return this.View();
         }
 
+        public ActionResult PreinstallDocumentForIt()
+        {
+            return this.View();
+        }
+
         public ActionResult DynamicsNav()
         {
             return this.View("DynamicsNav");

@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Financial Integrations - Preinstall document for IT";
+    Layout = "../Shared/_Layout_Single_Column.cshtml";
+}
+<article class="article">
+
+    <h1>Preinstall document for IT</h1>
+    <h2>
+        This document outlines the requirements and information necessary for the TimeLog to carry out the install
+        and configuration of the FinancialHost middleware in the best and fastest possible way.
+    </h2>
+    <p>This document should be prefilled by personal of the internal IT of the customer.</p>
+    <ul class="arrows">
+        <li><a href="#">Download this page as a Word document</a></li>
+    </ul>
+
+    <div class="bs-example">
+
+        <table style="width: 100%;" class="setting_table">
+            <colgroup>
+                <col style="width: 70%" />
+                <col />
+            </colgroup>
+            <tbody>
+                <tr class="tablespacer">
+                    <td>Remote Access</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Is VPN required to get remote access to servers?</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+                <tr>
+                    <td>- State download link for VPN client software</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>- State connection details (e.g. IP address, port)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>- State VPN user name and password</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>- Optionally, state other policies or 2FA details</td>
+                    <td></td>
+                </tr>
+                <tr class="tablespacer">
+                    <td>Firewall, DNS and security setup</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Is SSL encryption required between TimeLog Project and the middleware?</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+                <tr>
+                    <td>- If yes, install SSL certificate to the IIS</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>- If yes, state the name of the certificate</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        - If yes, map/NAT connection on port TCP 443 to server(s)<br />
+                        <i>Optionally the firewall can be locked down to only allow incoming connections from 77.66.58.9, 77.66.57.149, 77.66.57.150, 77.66.57.251, 77.66.57.252 or 217.63.101.214</i>
+                    </td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>- If yes, state public URL for accessing server(s). E.g. https://timelogintegration.contoso.com</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        - If no, map/NAT connection on port TCP 80 to server(s)<br />
+                        <i>Optionally the firewall can be locked down to only allow incoming connections from 77.66.58.9, 77.66.57.149, 77.66.57.150, 77.66.57.251, 77.66.57.252 or 217.63.101.214</i>
+                    </td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>- If no, state public URL for accessing server(s). E.g. http://timelogintegration.contoso.com</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Verify that public URL shows default IIS website splash</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr class="tablespacer">
+                    <td>User Access</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>State domain, user name and password for the TimeLog user account</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>State password requirements and renew policies</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Verify that TimeLog user account never expires</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+                <tr>
+                    <td>Is a special service account required for the middleware?</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+                <tr>
+                    <td>- State domain, user name and password for the service account</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>- Verify that TimeLog user account never expires</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+
+                <tr class="tablespacer">
+                    <td>Production Environment</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>State the IP address of the production server</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Verify RDP is enabled</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+                <tr>
+                    <td>Verify TimeLog user account has been added as local administrator</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+                <tr>
+                    <td>State policies for reboot, restore, 3rd party installs etc. </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Install standard Microsoft IIS 7.5 or later</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Install Microsoft .NET framework 4.6.2 or later</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Install <a href="http://www.7-zip.org/download.html">7-zip</a> 9.20 or later</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Install <a href="http://www.textpad.com/download/#downloads">TextPad</a> 7 or later</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr class="tablespacer">
+                    <td>Staging Environment</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Is a staging/test environment required?</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+                <tr>
+                    <td>- State which of the two types of staging environment to use<br /><i>If more financial accounts is chosen skip the sub questions, because the middleware for staging environment is install in the production environment. </i></td>
+                    <td>&#x25a2; More servers <br /> &#x25a2; More financial accounts</td>
+                </tr>
+                <tr>
+                    <td>- State the IP address of the stating server</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>- Verify RDP is enabled</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+                <tr>
+                    <td>- Verify TimeLog user account has been added as local administrator</td>
+                    <td>&#x25a2; Yes &#x25a2; No</td>
+                </tr>
+                <tr>
+                    <td>- State policies for reboot, restore, 3rd party installs etc. </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Install standard Microsoft IIS 7.5 or later</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Install Microsoft .NET framework 4.6.2 or later</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Install <a href="http://www.7-zip.org/download.html">7-zip</a> 9.20 or later</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Install <a href="http://www.textpad.com/download/#downloads">TextPad</a> 7 or later</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr class="tablespacer">
+                    <td>Other configurations</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>State SMTP server address for automated error reporting</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Optionally, state SMTP server policies for sender address, credentials etc.</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</article>

@@ -354,6 +354,7 @@
     <Content Include="Views\FinancialIntegration\DynamicsNav.cshtml" />
     <Content Include="Views\FinancialIntegration\Fortnox.cshtml" />
     <Content Include="Views\FinancialIntegration\MiddlewareSecurity.cshtml" />
+    <Content Include="Views\FinancialIntegration\PreinstallDocumentForIt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
