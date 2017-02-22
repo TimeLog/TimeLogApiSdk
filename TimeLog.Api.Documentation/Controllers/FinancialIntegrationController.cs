@@ -14,6 +14,15 @@
         {
             return this.View();
         }
+        public ActionResult PreinstallDocumentForNAVPartner()
+        {
+            return this.View();
+        }
+        public ActionResult PreinstallDocumentForCustomer()
+        {
+            return this.View();
+        }
+
 
         public ActionResult DynamicsNav()
         {
