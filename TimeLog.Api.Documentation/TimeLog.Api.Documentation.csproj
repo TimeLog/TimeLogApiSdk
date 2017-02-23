@@ -195,6 +195,8 @@
     <Content Include="Source\Reporting\GetTaskTypesShortList.xml" />
     <Content Include="Source\Reporting\GetTimeOffRegistrationsRaw.xml" />
     <Content Include="Source\Reporting\GetWorkUnitsRaw.xml" />
+    <Content Include="Source\TimeLog.Financial.Architecture.png" />
+    <Content Include="Source\TimeLog.Financial.Architecture.xml" />
     <Content Include="Source\TimeLog.TLP.API.Proxy.xml" />
     <Content Include="Source\TimeLog.TLP.API.XML" />
     <Content Include="Source\TimeLog.TLP.WebAppCode.xml" />

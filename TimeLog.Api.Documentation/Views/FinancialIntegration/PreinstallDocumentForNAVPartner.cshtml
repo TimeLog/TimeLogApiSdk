@@ -1,10 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Financial Integrations - Preinstall document for IT";
+    ViewBag.Title = "Financial Integrations - Preinstall document for the NAV partner";
     Layout = "../Shared/_Layout_Single_Column.cshtml";
 }
 <article class="article">
-
-    <h1>Preinstall document for NAV partner</h1>
+    <h1>Preinstall document for the NAV partner</h1>
     <h2>
         This document outlines the requirements and information necessary for TimeLog to carry out the install
         and configuration of the FinancialHost middleware in the best and fastest possible way.
@@ -13,9 +12,7 @@
     <ul class="arrows">
         <li><a href="#">Download this page as a Word document</a></li>
     </ul>
-
     <div class="bs-example">
-
         <table style="width: 100%;" class="setting_table">
             <colgroup>
                 <col style="width: 70%" />
@@ -23,87 +20,142 @@
             </colgroup>
             <tbody>
                 <tr class="tablespacer">
-                    <td>Navision environment</td>
+                    <td>Contact details</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Primary NAV contact during install (name, phone and email)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Primary NAV contact for maintenance (name, phone and email)</td>
+                    <td></td>
+                </tr>
+                <tr class="tablespacer">
+                    <td>Production Environment</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Install NAV Client and add desktop shortcut</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Install NAV Development Environment and add desktop shortcut</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Install NAV Administration and add desktop shortcut</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>State NAV server name</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>State NAV database name</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>State username and password for NAV database user</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Add db_owner database membership to NAV database user</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Add the TimeLog domain user as a NAV user</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>Verify all three NAV clients open and data is available</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr class="tablespacer">
+                    <td>Staging Environment</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>Is a staging/test environment required?</td>
                     <td>&#x25a2; Yes &#x25a2; No</td>
                 </tr>
-            <tr>
-                <td>- If yes, state server name for test environment</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>- If yes, state database name for test environment</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>- If yes, state username for test environment NAV-user</td>
-                <td></td>
-            </tr>
                 <tr>
-                    <td>- If yes, state password for test environment NAV-user</td>
+                    <td>- Install NAV Client and add desktop shortcut</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>- Install NAV Development Environment and add desktop shortcut</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>- Install NAV Administration and add desktop shortcut</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>- State NAV server name</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Production environment</td>
-                    <td></td>                    
-                </tr>
-                <tr>
-                    <td>- State server name for production environment</td>
+                    <td>- State NAV database name</td>
                     <td></td>
                 </tr>
-            <tr>
-                <td>- State database name for production environment</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>- State username for production environment NAV-user</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>- State password for production environment NAV-user</td>
-                <td></td>
-            </tr>
-                
+                <tr>
+                    <td>- State username and password for NAV database user</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>- Add db_owner database membership to NAV database user</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>- Add the TimeLog domain user as a NAV user</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
+                <tr>
+                    <td>- Verify all three NAV clients open and data is available</td>
+                    <td>&#x25a2; Done</td>
+                </tr>
                 <tr class="tablespacer">
                     <td>Navision details</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Navision invoiceline type</td>
-                    <td></td>
-
+                    <td>State the default invoice line type used in NAV</td>
+                    <td>&#x25a2; G/L Account<br />&#x25a2; Item</td>
                 </tr>
                 <tr>
-                    <td>- state the default invoiceline type used in NAV</td>
-                    <td></td>
-
+                    <td>State the usage for Global Dimension 1</td>
+                    <td>
+                        &#x25a2; Department<br />
+                        &#x25a2; Project<br />
+                        &#x25a2; Other:
+                    </td>
                 </tr>
                 <tr>
-                    <td>Global dimensions</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>- Navision Global Dimension 1</td>
-                    <td></td>
-                </tr>
-            <tr>
-                <td>- Navision Global Dimension 2</td>
-                <td></td>
-            </tr>
-                <tr>
-                    <td>Document sending profile</td>
-                    <td></td>
+                    <td>State the usage for Global Dimension 2</td>
+                    <td>
+                        &#x25a2; Department<br />
+                        &#x25a2; Project<br />
+                        &#x25a2; Other:
+                    </td>
                 </tr>
                 <tr>
                     <td>Is document sending profiles enabled on customers?</td>
                     <td>&#x25a2; Yes &#x25a2; No</td>
                 </tr>
-
+                <tr>
+                    <td>How many debtors exist?</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>How many contacts exist?</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>How many product numbers exist?</td>
+                    <td></td>
+                </tr>
             </tbody>
         </table>
     </div>
-
 </article>

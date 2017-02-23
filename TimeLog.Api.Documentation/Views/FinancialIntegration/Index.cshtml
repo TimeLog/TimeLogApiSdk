@@ -38,14 +38,36 @@
     </ul>
     <p>
         For integrations that is fully integrated with server install, TimeLog has developed a middleware software
-        to provide the necessary API endpoints for the best integration experience. <strong>This middleware is called the
-        "FinancialHost"</strong>.
-    </p>  
+        to provide the necessary API endpoints for the best integration experience. <strong>
+            This middleware is called the
+            "FinancialHost"
+        </strong>.
+    </p>
     <p>The technical architecture for integrations that are fully integrated with server install looks like this:</p>
     <p>
-        <img src="@Url.Content("~/Source/TimeLog.Financial.Architecture.png")"/>
-    </p>                                                               
-    <p></p>
+        <img src="@Url.Content("~/Source/TimeLog.Financial.Architecture.png")" />
+    </p>
+    <h3>Implementation flow for integrations with server install</h3>
+    <p>
+        The implementation flow is build from a predefined serie of meetings and gates to ensure a fast and consistent
+        implementation. The flow described below also defined the elements that is included in any startup fee agreed
+        as part of the contract.
+    </p>
+    <ul class="checkmarks">
+        <li>Customer signs contract</li>
+        <li>
+            Start-up meeting between customer CFO and/or NAV responsible, ERP partner of the customer, IT administrator
+            of the customer, TimeLog consultant and TimeLog integration specialist. This meeting includes mapping the
+            business flows to the integration flows as well as handing over preinstall documents.
+        </li>
+        <li>Deliver completed: @Html.ActionLink("Preinstall document for the IT administrator", "PreinstallDocumentForIt")</li>
+        <li>Deliver completed: @Html.ActionLink("Preinstall document for the NAV partner", "PreinstallDocumentForNAVPartner")</li>
+        <li>Deliver completed: @Html.ActionLink("Preinstall document for the customer", "PreinstallDocumentForCustomer")</li>
+        <li>
+            Planning meeting for the install and configuration steps including customer CFO and/or ERP responsible, ERP partner
+            of the customer, IT administrator of the customer, TimeLog consultant and TimeLog integration specialist
+        </li>
+    </ul>
     <p>@Html.ActionLink("Read more about how we are securing the middleware (FinancialHost)", "MiddlewareSecurity")</p>
 </article>
 
