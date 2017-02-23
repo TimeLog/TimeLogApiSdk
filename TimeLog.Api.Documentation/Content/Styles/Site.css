@@ -4832,6 +4832,10 @@ pre {
         text-align: center;
     }
 
+    .setting_table .text-right {
+        text-align: right;
+    }
+
     .setting_table .tablespacer td{
         padding-top: 40px;
         font-weight: bold;

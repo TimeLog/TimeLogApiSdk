@@ -47,28 +47,62 @@
     <p>
         <img src="@Url.Content("~/Source/TimeLog.Financial.Architecture.png")" />
     </p>
-    <h3>Implementation flow for integrations with server install</h3>
+    <p>@Html.ActionLink("Read more about how we are securing the middleware (FinancialHost)", "MiddlewareSecurity")</p>
+    <h3>Implementation flow for NAV integrations</h3>
     <p>
         The implementation flow is build from a predefined serie of meetings and gates to ensure a fast and consistent
         implementation. The flow described below also defined the elements that is included in any startup fee agreed
         as part of the contract.
     </p>
-    <ul class="checkmarks">
+    <p>
+        TimeLog estimates the process from pre-install meeting to usable staging/production environment should take
+        less than 30 days.
+    </p>
+    <ol>
         <li>Customer signs contract</li>
         <li>
-            Start-up meeting between customer CFO and/or NAV responsible, ERP partner of the customer, IT administrator
-            of the customer, TimeLog consultant and TimeLog integration specialist. This meeting includes mapping the
-            business flows to the integration flows as well as handing over preinstall documents.
+            Deliver completed: @Html.ActionLink("Presales document for the business owner", "PreinstallDocumentForCustomer")
         </li>
-        <li>Deliver completed: @Html.ActionLink("Preinstall document for the IT administrator", "PreinstallDocumentForIt")</li>
-        <li>Deliver completed: @Html.ActionLink("Preinstall document for the NAV partner", "PreinstallDocumentForNAVPartner")</li>
-        <li>Deliver completed: @Html.ActionLink("Preinstall document for the customer", "PreinstallDocumentForCustomer")</li>
         <li>
-            Planning meeting for the install and configuration steps including customer CFO and/or ERP responsible, ERP partner
-            of the customer, IT administrator of the customer, TimeLog consultant and TimeLog integration specialist
+            <strong>Planning meeting</strong> between customer CFO and/or ERP responsible, ERP partner of the customer, IT administrator
+            of the customer, TimeLog consultant and TimeLog integration specialist. This meeting includes mapping the
+            business flows to the integration flows as well as handing over preinstall documents. Outcome is a detailed implementation
+            plan at that all stakeholder commits to. <br /><i>Expected time usage: 2 hours</i>
         </li>
-    </ul>
-    <p>@Html.ActionLink("Read more about how we are securing the middleware (FinancialHost)", "MiddlewareSecurity")</p>
+        <li>
+            Deliver completed: @Html.ActionLink("Preinstall document for the IT administrator", "PreinstallDocumentForIt")
+            <br /><i>Expected time usage: 4 hours</i>
+        </li>
+        <li>
+            If NAV, deliver completed: @Html.ActionLink("Preinstall document for the NAV partner", "PreinstallDocumentForNAVPartner")
+            <br /><i>Expected time usage: 2 hours</i>
+        </li>
+        <li>
+            <strong>Pre-install meeting</strong> for discussing the preinstall documents and clarifying the install and configuration
+            steps. Stakeholders for this meeting: Customer CFO and/or ERP responsible, ERP partner of the customer, IT administrator
+            of the customer, TimeLog consultant and TimeLog integration specialist. Outcome: All stakeholders knows the next install
+            steps and are ready to execute. 
+            <br /><i>Expected time usage: 2 hours</i>
+        </li>
+        <li>
+            NAV partner delivery: Install FOB file and merge code into standard NAV objects
+            <br /><i>Expected time usage: 4 hours</i>
+        </li>
+        <li>
+            TimeLog integration specialist delivery: Install of FinancialHost middleware (NAV partner delivery required)
+        </li>
+        <li>
+            TimeLog technical consultant delivery: Test business flows of the integration
+        </li>
+        <li>
+            <strong>Business setup meeting</strong> for finalizing configuration before going into production. Stakeholders:
+            Customer CFO and/or ERP responsible and TimeLog consultant. Outcome: Customer approves that integration is working
+            as specified and a final plan for go-live.
+            <br/><i>Expected time usage: 4 hours</i>
+        </li>
+        <li>If staging environment in place, redo steps 7-10 in order to migrate to production.</li>
+        <li>Go live</li>
+    </ol>
 </article>
 
 @section sidebar
