@@ -31,12 +31,10 @@
         <ol>
             <li style="list-style-type:disc">Debtor group</li>
             <li style="list-style-type:disc">VAT code (VAT zone)</li>
-            <li style="list-style-type:disc">Terms of payment</li>
             <li style="list-style-type:disc">Invoice template</li>
             <li style="list-style-type:disc">Discount percentage</li>
         </ol>
     <p>VAT no. in TimeLog Project is also the CIN/PIN no. on Fortnox. When a customer is transferred to Fortnox the CIN/PIN no. for that customer on Fortnox will change to the corresponding CIN/PIN no. belonging to the VAT no.</p>
-    <p>Payment terms can be transferred with a customer to Fortnox. However the payment term's days have to match.</p>
         
     <h3>Product numbers</h3>
     <p>
@@ -79,7 +77,7 @@
 
     <br />
     <h2>Mapping</h2>
-    <p>This section contains the explicit mapping of fields between TimeLog Project and e-conomic.</p>
+    <p>This section contains the explicit mapping of fields between TimeLog Project and Fortnox.</p>
 
     <h3 id="mapping-customers">Customers</h3>
     <div class="bs-example">
@@ -191,13 +189,7 @@
                     <td>Currency</td>
                     <td><span class="wrapcomment">Only currency is transferred, Fortnox uses own currency rate</span></td>
                 </tr>
-                <tr>
-                    <td>PaymentTermId</td>
-                    <td>Payment terms</td>
-                    <td>TermsOfPayment</td>
-                    <td>TermOfPayment</td>
-                    <td></td>
-                </tr>
+                
             <tr>
                 <td>Discount</td>
                 <td>Fakturarabatt (%)</td>
@@ -310,7 +302,7 @@
                     <td>Betalningsvillkor</td>
                     <td>-</td>
                     <td>TermOfPayment</td>
-                    <td><span class="wrapcomment">Terms of payment is set by the customer's payment terms on Fortnox</span></td>
+                    <td><span class="wrapcomment">Terms of payment is set by the customer's payment terms in Fortnox</span></td>
                 </tr>
                 <tr>
                     <td>Currency</td>
@@ -451,7 +443,7 @@
                     <td>À-pris</td>
                     <td>Rate</td>
                     <td>Price</td>
-                    <td><span class="wrapcomment">Unit attached to product retrieved from e-conomic</span></td>
+                    <td><span class="wrapcomment">Unit attached to product retrieved from Fortnox</span></td>
                 </tr>
                 <tr>
                     <td>Description</td>
@@ -524,14 +516,14 @@
                     <td>Valuta</td>
                     <td>CurrencyID</td>
                     <td>ID</td>
-                    <td><span class="wrapcomment">The currencyID in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                    <td><span class="wrapcomment">The currencyID in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from Fortnox</span></td>
                 </tr>
                 <tr>
                     <td>Currency</td>
                     <td>Kurs</td>
                     <td>ExchangeRate</td>
                     <td>Rate</td>
-                    <td><span class="wrapcomment">The currency rate in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                    <td><span class="wrapcomment">The currency rate in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from Fortnox</span></td>
                 </tr>
                 <tr>
                     <td></td>
