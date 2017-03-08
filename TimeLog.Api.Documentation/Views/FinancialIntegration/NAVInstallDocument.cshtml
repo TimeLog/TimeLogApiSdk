@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Financial Integrations - NAV Install Document";
+    Layout = "../Shared/_Layout_Single_Column.cshtml";
+}
+<article class="article">
+    <h1>NAV Install Document</h1>
+    <h2>
+        This document outlines the installation and configuration procedure for the required steps to enable
+        the integration.
+    </h2>
+    <p>This document should be followed by personel of the NAV partner of the customer.</p>
+
+    <h3>(1/5) Install NAV Objects</h3>
+
+    <h3>(2/5) Modify Standard NAV Objects</h3>
+
+    <h3>(3/5) Install TimeLog.FinancialHost.Core.dll</h3>
+    <a href="@Url.Content("~/Source/Financial/NAV-InstallCoreDll.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-InstallCoreDll.png")" /></a>
+
+    <h3>(3/5) Setup job queue entry</h3>
+    <p>This job processes the queue of changes made in NAV and transfers them to TimeLog Project.</p>
+    <a href="@Url.Content("~/Source/Financial/NAV-JobQueue.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-JobQueue.png")" /></a>
+
+    <h3>(5/5) Setup Web Services</h3>
+    <p>These services are used by the FinancialHost middleware to fetch data from NAV as well as insert to NAV.</p>
+    <p><em>Pay close attention to the naming. The default name suggested by NAV is not the correct.</em></p>
+    <a href="@Url.Content("~/Source/Financial/NAV-WebServices.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-WebServices.png")" /></a>
+   
+    <h3>Connection Configuration (TimeLog Integration Specialist)</h3>
+</article>

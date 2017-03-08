@@ -360,6 +360,7 @@
     <Content Include="Views\FinancialIntegration\PreinstallDocumentForNAVPartner.cshtml" />
     <Content Include="Views\FinancialIntegration\PreinstallDocumentForCustomer.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
+    <Content Include="Views\FinancialIntegration\NAVInstallDocument.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
