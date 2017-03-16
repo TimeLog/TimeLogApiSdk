@@ -29,7 +29,7 @@
                 string code = values;
                 AuthenticationContext ac = new AuthenticationContext(PersonalConfigurationManager.AppSettings["AzureAuthorityUri"]);
                 ClientCredential cc = new ClientCredential(PersonalConfigurationManager.AppSettings["AzureClientId"], PersonalConfigurationManager.AppSettings["AzureKey"]);
-                AuthenticationResult ar = ac.AcquireTokenByAuthorizationCode(code, new Uri(PersonalConfigurationManager.AppSettings["AzureRedirectUrl"]), cc);
+                AuthenticationResult ar = ac.AcquireTokenByAuthorizationCodeAsync(code, new Uri(PersonalConfigurationManager.AppSettings["AzureRedirectUrl"]), cc).Result;
 
                 AzureAuthenticationHelper.SetSession(ar);
                 return this.RedirectToAction("Transfer");

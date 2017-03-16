@@ -79,5 +79,10 @@
         {
             return this.View("Index");
         }
+
+        public ActionResult ConfigurationFile()
+        {
+            return this.View();
+        }
     }
 }
