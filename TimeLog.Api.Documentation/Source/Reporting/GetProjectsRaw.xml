@@ -39,5 +39,9 @@
     <tlp:LastModifiedByEmployeeId>1</tlp:LastModifiedByEmployeeId>
     <tlp:LastModifiedBy>AL</tlp:LastModifiedBy>
     <tlp:ProjectStatusName>Ongoing</tlp:ProjectStatusName>
+    <tlp:ContactFullName>Peter Smith</tlp:ContactFullName>
+    <tlp:ContactEmail>PS@timelog.com</tlp:ContactEmail>
+    <tlp:PONumber>PO15386</tlp:PONumber>
+
   </tlp:Project>
 </tlp:Projects>

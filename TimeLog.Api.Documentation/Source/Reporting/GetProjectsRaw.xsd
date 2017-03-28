@@ -55,6 +55,7 @@
       <xsd:element name="ProjectStatusName" type="xsd:string" />
       <xsd:element name="ContactFullName" type="xsd:string" />
       <xsd:element name="ContactEmail" type="xsd:string" />
+      <xsd:element name="PONumber" type="xsd:string" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
     <xsd:attribute name="GUID" type="xsd:string" use="required" />

@@ -52,6 +52,7 @@
       <xsd:element name="DepartmentID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="DepartmentTree" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ExternalInvoiceNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerReference" type="xsd:string" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="ExternalInvoiceStatus" type="xsd:string" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
 		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>

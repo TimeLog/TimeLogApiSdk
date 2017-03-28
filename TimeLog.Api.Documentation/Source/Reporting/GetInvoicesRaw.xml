@@ -36,6 +36,7 @@
     <tlp:DepartmentID>34</tlp:DepartmentID>
     <tlp:DepartmentTree>TimeLog A/S » Consultancy</tlp:DepartmentTree>
     <tlp:ExternalInvoiceNo>23411</tlp:ExternalInvoiceNo>
+    <tlp:CustomerReference>Peter Smith</tlp:CustomerReference>
     <tlp:ExternalInvoiceStatus>Booked</tlp:ExternalInvoiceStatus>
   </tlp:Invoice>
 </tlp:Invoices>
