@@ -20,11 +20,14 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Employee))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.EmployeeHeader))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Department))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Role))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ModuleType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfstring))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfModuleType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken))]
     public partial class APIBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -53,7 +56,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://www.timelog.com/api/tlp/v1_5")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
     public partial class Employee : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
         
@@ -91,9 +94,6 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
         private string DepartmentNoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SecurityLevelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int InterfaceLanguageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -128,9 +128,6 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsLockedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool HasCoordinatorRoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid CostPriceGuidField;
@@ -288,19 +285,6 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
-        public int SecurityLevel {
-            get {
-                return this.SecurityLevelField;
-            }
-            set {
-                if ((this.SecurityLevelField.Equals(value) != true)) {
-                    this.SecurityLevelField = value;
-                    this.RaisePropertyChanged("SecurityLevel");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
         public int InterfaceLanguage {
             get {
                 return this.InterfaceLanguageField;
@@ -313,7 +297,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
         public string Telephone {
             get {
                 return this.TelephoneField;
@@ -326,7 +310,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
         public string Mobile {
             get {
                 return this.MobileField;
@@ -339,7 +323,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
         public string PrivateAddress {
             get {
                 return this.PrivateAddressField;
@@ -352,7 +336,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
         public string PrivateZip {
             get {
                 return this.PrivateZipField;
@@ -365,7 +349,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
         public string PrivateCity {
             get {
                 return this.PrivateCityField;
@@ -378,7 +362,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
         public string PrivateTelephone {
             get {
                 return this.PrivateTelephoneField;
@@ -391,7 +375,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
         public string ExternalIdentifier {
             get {
                 return this.ExternalIdentifierField;
@@ -404,7 +388,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
         public System.DateTime HiredDate {
             get {
                 return this.HiredDateField;
@@ -417,7 +401,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
         public System.DateTime TerminationDate {
             get {
                 return this.TerminationDateField;
@@ -430,7 +414,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
         public bool IsHired {
             get {
                 return this.IsHiredField;
@@ -443,7 +427,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
         public bool IsLocked {
             get {
                 return this.IsLockedField;
@@ -456,20 +440,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
-        public bool HasCoordinatorRole {
-            get {
-                return this.HasCoordinatorRoleField;
-            }
-            set {
-                if ((this.HasCoordinatorRoleField.Equals(value) != true)) {
-                    this.HasCoordinatorRoleField = value;
-                    this.RaisePropertyChanged("HasCoordinatorRole");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
         public System.Guid CostPriceGuid {
             get {
                 return this.CostPriceGuidField;
@@ -482,7 +453,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
         public double CostPrice {
             get {
                 return this.CostPriceField;
@@ -495,7 +466,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
         public System.Guid HourlyRateGuid {
             get {
                 return this.HourlyRateGuidField;
@@ -508,7 +479,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
         public double HourlyRate {
             get {
                 return this.HourlyRateField;
@@ -524,7 +495,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeHeader", Namespace="http://www.timelog.com/api/tlp/v1_5")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeHeader", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
     public partial class EmployeeHeader : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
         
@@ -643,7 +614,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Department", Namespace="http://www.timelog.com/api/tlp/v1_5")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Department", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
     public partial class Department : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
         
@@ -723,6 +694,164 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                 if ((this.DepartmentManagerGuidField.Equals(value) != true)) {
                     this.DepartmentManagerGuidField = value;
                     this.RaisePropertyChanged("DepartmentManagerGuid");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Role", Namespace="http://www.timelog.com/api/tlp/v1_6")]
+    [System.SerializableAttribute()]
+    public partial class Role : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RoleIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool isActiveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EmployeeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsLockedSystemRoleField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int RoleID {
+            get {
+                return this.RoleIDField;
+            }
+            set {
+                if ((this.RoleIDField.Equals(value) != true)) {
+                    this.RoleIDField = value;
+                    this.RaisePropertyChanged("RoleID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public bool isActive {
+            get {
+                return this.isActiveField;
+            }
+            set {
+                if ((this.isActiveField.Equals(value) != true)) {
+                    this.isActiveField = value;
+                    this.RaisePropertyChanged("isActive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int EmployeeID {
+            get {
+                return this.EmployeeIDField;
+            }
+            set {
+                if ((this.EmployeeIDField.Equals(value) != true)) {
+                    this.EmployeeIDField = value;
+                    this.RaisePropertyChanged("EmployeeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool IsLockedSystemRole {
+            get {
+                return this.IsLockedSystemRoleField;
+            }
+            set {
+                if ((this.IsLockedSystemRoleField.Equals(value) != true)) {
+                    this.IsLockedSystemRoleField = value;
+                    this.RaisePropertyChanged("IsLockedSystemRole");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ModuleType", Namespace="http://www.timelog.com/api/tlp/v1_6")]
+    [System.SerializableAttribute()]
+    public partial class ModuleType : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
                 }
             }
         }
@@ -1190,12 +1319,12 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfstring", Namespace="http://api.timelog.com")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfRole", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfstring : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
+    public partial class ResponseOfRole : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] ReturnField;
+        private TimeLog.TransactionalApi.SDK.OrganisationService.Role[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
@@ -1219,7 +1348,142 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] Return {
+        public TimeLog.TransactionalApi.SDK.OrganisationService.Role[] Return {
+            get {
+                return this.ReturnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnField, value) != true)) {
+                    this.ReturnField = value;
+                    this.RaisePropertyChanged("Return");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnTypeDescription {
+            get {
+                return this.ReturnTypeDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnTypeDescriptionField, value) != true)) {
+                    this.ReturnTypeDescriptionField = value;
+                    this.RaisePropertyChanged("ReturnTypeDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.Request Request {
+            get {
+                return this.RequestField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RequestField, value) != true)) {
+                    this.RequestField = value;
+                    this.RaisePropertyChanged("Request");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ExecutionStatus ResponseState {
+            get {
+                return this.ResponseStateField;
+            }
+            set {
+                if ((this.ResponseStateField.Equals(value) != true)) {
+                    this.ResponseStateField = value;
+                    this.RaisePropertyChanged("ResponseState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.APIMessage[] Messages {
+            get {
+                return this.MessagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
+                    this.MessagesField = value;
+                    this.RaisePropertyChanged("Messages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((this.ErrorCodeField.Equals(value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool IsReturnPaged {
+            get {
+                return this.IsReturnPagedField;
+            }
+            set {
+                if ((this.IsReturnPagedField.Equals(value) != true)) {
+                    this.IsReturnPagedField = value;
+                    this.RaisePropertyChanged("IsReturnPaged");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int TotalPageCount {
+            get {
+                return this.TotalPageCountField;
+            }
+            set {
+                if ((this.TotalPageCountField.Equals(value) != true)) {
+                    this.TotalPageCountField = value;
+                    this.RaisePropertyChanged("TotalPageCount");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfModuleType", Namespace="http://api.timelog.com")]
+    [System.SerializableAttribute()]
+    public partial class ResponseOfModuleType : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.ModuleType[] ReturnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReturnTypeDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.Request RequestField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.ExecutionStatus ResponseStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.APIMessage[] MessagesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ErrorCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsReturnPagedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TotalPageCountField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ModuleType[] Return {
             get {
                 return this.ReturnField;
             }
@@ -1545,35 +1809,36 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_5", ConfigurationName="OrganisationService.OrganisationService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_6", ConfigurationName="OrganisationService.OrganisationService")]
     public interface OrganisationService {
         
-        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_5)
+        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_6)
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         TimeLog.TransactionalApi.SDK.OrganisationService.IsAliveResponse IsAlive(TimeLog.TransactionalApi.SDK.OrganisationService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalApi.SDK.OrganisationService.IsAliveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeesPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeesPagedResponse" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeesPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeesPagedResponse" +
             "")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee GetEmployeesPaged(int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeesPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeesPagedResponse" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeesPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeesPagedResponse" +
             "")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee> GetEmployeesPagedAsync(int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeeByInitials", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeeByInitialsResp" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeeByUsername", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeeByUsernameResp" +
             "onse")]
-        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader GetEmployeeByInitials(string initials, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader GetEmployeeByUsername(string username, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeeByInitials", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeeByInitialsResp" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeeByUsername", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeeByUsernameResp" +
             "onse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> GetEmployeeByInitialsAsync(string initials, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> GetEmployeeByUsernameAsync(string username, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateEmployeeResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateEmployeeResponse")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader CreateEmployee(
                     System.Guid employeeGuid, 
+                    string username, 
                     string initials, 
                     string firstname, 
                     string lastname, 
@@ -1589,13 +1854,13 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                     string hourlyRateName, 
                     string costPriceName, 
                     string externalIdentifier, 
-                    string password, 
                     System.Guid departmentGuid, 
                     TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateEmployeeResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateEmployeeResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> CreateEmployeeAsync(
                     System.Guid employeeGuid, 
+                    string username, 
                     string initials, 
                     string firstname, 
                     string lastname, 
@@ -1611,23 +1876,23 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                     string hourlyRateName, 
                     string costPriceName, 
                     string externalIdentifier, 
-                    string password, 
                     System.Guid departmentGuid, 
                     TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateEmployeeNotificatio" +
-            "n", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateEmployeeNotificatio" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateEmployeeNotificatio" +
+            "n", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateEmployeeNotificatio" +
             "nResponse")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader CreateEmployeeNotification(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateEmployeeNotificatio" +
-            "n", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateEmployeeNotificatio" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateEmployeeNotificatio" +
+            "n", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateEmployeeNotificatio" +
             "nResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> CreateEmployeeNotificationAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/UpdateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/UpdateEmployeeResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/UpdateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/UpdateEmployeeResponse")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader UpdateEmployee(
                     System.Guid employeeGuid, 
+                    string username, 
                     string initials, 
                     string firstname, 
                     string lastname, 
@@ -1645,9 +1910,10 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                     string externalIdentifier, 
                     TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/UpdateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/UpdateEmployeeResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/UpdateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/UpdateEmployeeResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> UpdateEmployeeAsync(
                     System.Guid employeeGuid, 
+                    string username, 
                     string initials, 
                     string firstname, 
                     string lastname, 
@@ -1665,77 +1931,161 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                     string externalIdentifier, 
                     TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ActivateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ActivateEmployeeResponse")]
-        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader ActivateEmployee(System.Guid employeeGuid, int securityLevel, bool hasCoordinatorRole, System.DateTime hiredDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/ActivateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/ActivateEmployeeResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader ActivateEmployee(System.Guid employeeGuid, System.DateTime hiredDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token, System.Nullable<bool> sendActivationMail);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ActivateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ActivateEmployeeResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> ActivateEmployeeAsync(System.Guid employeeGuid, int securityLevel, bool hasCoordinatorRole, System.DateTime hiredDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/ActivateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/ActivateEmployeeResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> ActivateEmployeeAsync(System.Guid employeeGuid, System.DateTime hiredDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token, System.Nullable<bool> sendActivationMail);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ChangeEmployeeSecurityLev" +
-            "el", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ChangeEmployeeSecurityLev" +
-            "elResponse")]
-        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader ChangeEmployeeSecurityLevel(System.Guid employeeGuid, int securityLevel, bool hasCoordinatorRole, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ChangeEmployeeSecurityLev" +
-            "el", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ChangeEmployeeSecurityLev" +
-            "elResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> ChangeEmployeeSecurityLevelAsync(System.Guid employeeGuid, int securityLevel, bool hasCoordinatorRole, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ChangeEmployeeDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ChangeEmployeeDepartmentR" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/ChangeEmployeeDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/ChangeEmployeeDepartmentR" +
             "esponse")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader ChangeEmployeeDepartment(System.Guid employeeGuid, System.Guid departmentGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ChangeEmployeeDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/ChangeEmployeeDepartmentR" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/ChangeEmployeeDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/ChangeEmployeeDepartmentR" +
             "esponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> ChangeEmployeeDepartmentAsync(System.Guid employeeGuid, System.Guid departmentGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/DeactivateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/DeactivateEmployeeRespons" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/DeactivateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/DeactivateEmployeeRespons" +
             "e")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader DeactivateEmployee(System.Guid employeeGuid, System.DateTime terminationDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/DeactivateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/DeactivateEmployeeRespons" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/DeactivateEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/DeactivateEmployeeRespons" +
             "e")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> DeactivateEmployeeAsync(System.Guid employeeGuid, System.DateTime terminationDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetDepartments", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetDepartmentsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetDepartments", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetDepartmentsResponse")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment GetDepartments(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetDepartments", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetDepartmentsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetDepartments", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetDepartmentsResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment> GetDepartmentsAsync(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetDepartmentByNo", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetDepartmentByNoResponse" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetDepartmentByNo", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetDepartmentByNoResponse" +
             "")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment GetDepartmentByNo(string departmentNo, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetDepartmentByNo", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetDepartmentByNoResponse" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetDepartmentByNo", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetDepartmentByNoResponse" +
             "")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment> GetDepartmentByNoAsync(string departmentNo, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateDepartmentResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateDepartmentResponse")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment CreateDepartment(System.Guid departmentGuid, string name, string no, System.Guid parentDepartmentGuid, System.Guid departmentManagerGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/CreateDepartmentResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/CreateDepartmentResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment> CreateDepartmentAsync(System.Guid departmentGuid, string name, string no, System.Guid parentDepartmentGuid, System.Guid departmentManagerGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/UpdateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/UpdateDepartmentResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/UpdateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/UpdateDepartmentResponse")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment UpdateDepartment(System.Guid departmentGuid, string name, string no, System.Guid parentDepartmentGuid, System.Guid departmentManagerGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/UpdateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/UpdateDepartmentResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/UpdateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/UpdateDepartmentResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment> UpdateDepartmentAsync(System.Guid departmentGuid, string name, string no, System.Guid parentDepartmentGuid, System.Guid departmentManagerGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/DeactivateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/DeactivateDepartmentRespo" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/DeactivateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/DeactivateDepartmentRespo" +
             "nse")]
         TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment DeactivateDepartment(System.Guid departmentGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/DeactivateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/DeactivateDepartmentRespo" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/DeactivateDepartment", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/DeactivateDepartmentRespo" +
             "nse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment> DeactivateDepartmentAsync(System.Guid departmentGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeeTypes", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeeTypesResponse")]
-        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfstring GetEmployeeTypes(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddRoleToEmployeeByName", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddRoleToEmployeeByNameRe" +
+            "sponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AddRoleToEmployeeByName(System.Guid employeeGuid, string rolename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeeTypes", ReplyAction="http://www.timelog.com/api/tlp/v1_5/OrganisationService/GetEmployeeTypesResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfstring> GetEmployeeTypesAsync(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddRoleToEmployeeByName", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddRoleToEmployeeByNameRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AddRoleToEmployeeByNameAsync(System.Guid employeeGuid, string rolename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveRoleFromEmployeeByN" +
+            "ame", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveRoleFromEmployeeByN" +
+            "ameResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader RemoveRoleFromEmployeeByName(System.Guid employeeGuid, string rolename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveRoleFromEmployeeByN" +
+            "ame", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveRoleFromEmployeeByN" +
+            "ameResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> RemoveRoleFromEmployeeByNameAsync(System.Guid employeeGuid, string rolename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddRoleToEmployeeByGuid", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddRoleToEmployeeByGuidRe" +
+            "sponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AddRoleToEmployeeByGuid(System.Guid employeeGuid, System.Guid roleGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddRoleToEmployeeByGuid", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddRoleToEmployeeByGuidRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AddRoleToEmployeeByGuidAsync(System.Guid employeeGuid, System.Guid roleGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveRoleFromEmployeeByG" +
+            "uid", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveRoleFromEmployeeByG" +
+            "uidResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader RemoveRoleFromEmployeeByGuid(System.Guid employeeGuid, System.Guid roleGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveRoleFromEmployeeByG" +
+            "uid", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveRoleFromEmployeeByG" +
+            "uidResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> RemoveRoleFromEmployeeByGuidAsync(System.Guid employeeGuid, System.Guid roleGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetRoles", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetRolesResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole GetRoles(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetRoles", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetRolesResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole> GetRolesAsync(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetModules", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetModulesResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfModuleType GetModules(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetModules", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetModulesResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfModuleType> GetModulesAsync(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeeRoles", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeeRolesResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole GetEmployeeRoles(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeeRoles", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/GetEmployeeRolesResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole> GetEmployeeRolesAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddModuleToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddModuleToEmployeeRespon" +
+            "se")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AddModuleToEmployee(System.Guid employeeGuid, string modulename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddModuleToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AddModuleToEmployeeRespon" +
+            "se")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AddModuleToEmployeeAsync(System.Guid employeeGuid, string modulename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveModuleFromEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveModuleFromEmployeeR" +
+            "esponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader RemoveModuleFromEmployee(System.Guid employeeGuid, string modulename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveModuleFromEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/RemoveModuleFromEmployeeR" +
+            "esponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> RemoveModuleFromEmployeeAsync(System.Guid employeeGuid, string modulename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignExternalLicenseType" +
+            "ToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignExternalLicenseType" +
+            "ToEmployeeResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AssignExternalLicenseTypeToEmployee(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignExternalLicenseType" +
+            "ToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignExternalLicenseType" +
+            "ToEmployeeResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignExternalLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignStandardLicenseType" +
+            "ToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignStandardLicenseType" +
+            "ToEmployeeResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AssignStandardLicenseTypeToEmployee(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignStandardLicenseType" +
+            "ToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignStandardLicenseType" +
+            "ToEmployeeResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignStandardLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignAdvancedLicenseType" +
+            "ToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignAdvancedLicenseType" +
+            "ToEmployeeResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AssignAdvancedLicenseTypeToEmployee(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignAdvancedLicenseType" +
+            "ToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_6/OrganisationService/AssignAdvancedLicenseType" +
+            "ToEmployeeResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignAdvancedLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1821,16 +2171,17 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             return base.Channel.GetEmployeesPagedAsync(page, pageSize, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader GetEmployeeByInitials(string initials, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.GetEmployeeByInitials(initials, token);
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader GetEmployeeByUsername(string username, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetEmployeeByUsername(username, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> GetEmployeeByInitialsAsync(string initials, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.GetEmployeeByInitialsAsync(initials, token);
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> GetEmployeeByUsernameAsync(string username, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetEmployeeByUsernameAsync(username, token);
         }
         
         public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader CreateEmployee(
                     System.Guid employeeGuid, 
+                    string username, 
                     string initials, 
                     string firstname, 
                     string lastname, 
@@ -1846,14 +2197,14 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                     string hourlyRateName, 
                     string costPriceName, 
                     string externalIdentifier, 
-                    string password, 
                     System.Guid departmentGuid, 
                     TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.CreateEmployee(employeeGuid, initials, firstname, lastname, employeeNo, email, title, telephone, mobile, normalWorkingTimeName, holidayCalendarName, allowanceLegislationName, employeeTypeName, hourlyRateName, costPriceName, externalIdentifier, password, departmentGuid, token);
+            return base.Channel.CreateEmployee(employeeGuid, username, initials, firstname, lastname, employeeNo, email, title, telephone, mobile, normalWorkingTimeName, holidayCalendarName, allowanceLegislationName, employeeTypeName, hourlyRateName, costPriceName, externalIdentifier, departmentGuid, token);
         }
         
         public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> CreateEmployeeAsync(
                     System.Guid employeeGuid, 
+                    string username, 
                     string initials, 
                     string firstname, 
                     string lastname, 
@@ -1869,10 +2220,9 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                     string hourlyRateName, 
                     string costPriceName, 
                     string externalIdentifier, 
-                    string password, 
                     System.Guid departmentGuid, 
                     TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.CreateEmployeeAsync(employeeGuid, initials, firstname, lastname, employeeNo, email, title, telephone, mobile, normalWorkingTimeName, holidayCalendarName, allowanceLegislationName, employeeTypeName, hourlyRateName, costPriceName, externalIdentifier, password, departmentGuid, token);
+            return base.Channel.CreateEmployeeAsync(employeeGuid, username, initials, firstname, lastname, employeeNo, email, title, telephone, mobile, normalWorkingTimeName, holidayCalendarName, allowanceLegislationName, employeeTypeName, hourlyRateName, costPriceName, externalIdentifier, departmentGuid, token);
         }
         
         public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader CreateEmployeeNotification(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
@@ -1885,6 +2235,7 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
         
         public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader UpdateEmployee(
                     System.Guid employeeGuid, 
+                    string username, 
                     string initials, 
                     string firstname, 
                     string lastname, 
@@ -1901,11 +2252,12 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                     string costPriceName, 
                     string externalIdentifier, 
                     TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.UpdateEmployee(employeeGuid, initials, firstname, lastname, employeeNo, email, title, telephone, mobile, normalWorkingTimeName, holidayCalendarName, allowanceLegislationName, employeeTypeName, hourlyRateName, costPriceName, externalIdentifier, token);
+            return base.Channel.UpdateEmployee(employeeGuid, username, initials, firstname, lastname, employeeNo, email, title, telephone, mobile, normalWorkingTimeName, holidayCalendarName, allowanceLegislationName, employeeTypeName, hourlyRateName, costPriceName, externalIdentifier, token);
         }
         
         public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> UpdateEmployeeAsync(
                     System.Guid employeeGuid, 
+                    string username, 
                     string initials, 
                     string firstname, 
                     string lastname, 
@@ -1922,23 +2274,15 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                     string costPriceName, 
                     string externalIdentifier, 
                     TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.UpdateEmployeeAsync(employeeGuid, initials, firstname, lastname, employeeNo, email, title, telephone, mobile, normalWorkingTimeName, holidayCalendarName, allowanceLegislationName, employeeTypeName, hourlyRateName, costPriceName, externalIdentifier, token);
+            return base.Channel.UpdateEmployeeAsync(employeeGuid, username, initials, firstname, lastname, employeeNo, email, title, telephone, mobile, normalWorkingTimeName, holidayCalendarName, allowanceLegislationName, employeeTypeName, hourlyRateName, costPriceName, externalIdentifier, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader ActivateEmployee(System.Guid employeeGuid, int securityLevel, bool hasCoordinatorRole, System.DateTime hiredDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.ActivateEmployee(employeeGuid, securityLevel, hasCoordinatorRole, hiredDate, token);
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader ActivateEmployee(System.Guid employeeGuid, System.DateTime hiredDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token, System.Nullable<bool> sendActivationMail) {
+            return base.Channel.ActivateEmployee(employeeGuid, hiredDate, token, sendActivationMail);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> ActivateEmployeeAsync(System.Guid employeeGuid, int securityLevel, bool hasCoordinatorRole, System.DateTime hiredDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.ActivateEmployeeAsync(employeeGuid, securityLevel, hasCoordinatorRole, hiredDate, token);
-        }
-        
-        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader ChangeEmployeeSecurityLevel(System.Guid employeeGuid, int securityLevel, bool hasCoordinatorRole, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.ChangeEmployeeSecurityLevel(employeeGuid, securityLevel, hasCoordinatorRole, token);
-        }
-        
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> ChangeEmployeeSecurityLevelAsync(System.Guid employeeGuid, int securityLevel, bool hasCoordinatorRole, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.ChangeEmployeeSecurityLevelAsync(employeeGuid, securityLevel, hasCoordinatorRole, token);
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> ActivateEmployeeAsync(System.Guid employeeGuid, System.DateTime hiredDate, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token, System.Nullable<bool> sendActivationMail) {
+            return base.Channel.ActivateEmployeeAsync(employeeGuid, hiredDate, token, sendActivationMail);
         }
         
         public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader ChangeEmployeeDepartment(System.Guid employeeGuid, System.Guid departmentGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
@@ -1997,12 +2341,100 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             return base.Channel.DeactivateDepartmentAsync(departmentGuid, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfstring GetEmployeeTypes(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.GetEmployeeTypes(token);
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AddRoleToEmployeeByName(System.Guid employeeGuid, string rolename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AddRoleToEmployeeByName(employeeGuid, rolename, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfstring> GetEmployeeTypesAsync(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
-            return base.Channel.GetEmployeeTypesAsync(token);
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AddRoleToEmployeeByNameAsync(System.Guid employeeGuid, string rolename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AddRoleToEmployeeByNameAsync(employeeGuid, rolename, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader RemoveRoleFromEmployeeByName(System.Guid employeeGuid, string rolename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.RemoveRoleFromEmployeeByName(employeeGuid, rolename, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> RemoveRoleFromEmployeeByNameAsync(System.Guid employeeGuid, string rolename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.RemoveRoleFromEmployeeByNameAsync(employeeGuid, rolename, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AddRoleToEmployeeByGuid(System.Guid employeeGuid, System.Guid roleGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AddRoleToEmployeeByGuid(employeeGuid, roleGuid, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AddRoleToEmployeeByGuidAsync(System.Guid employeeGuid, System.Guid roleGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AddRoleToEmployeeByGuidAsync(employeeGuid, roleGuid, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader RemoveRoleFromEmployeeByGuid(System.Guid employeeGuid, System.Guid roleGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.RemoveRoleFromEmployeeByGuid(employeeGuid, roleGuid, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> RemoveRoleFromEmployeeByGuidAsync(System.Guid employeeGuid, System.Guid roleGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.RemoveRoleFromEmployeeByGuidAsync(employeeGuid, roleGuid, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole GetRoles(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetRoles(token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole> GetRolesAsync(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetRolesAsync(token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfModuleType GetModules(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetModules(token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfModuleType> GetModulesAsync(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetModulesAsync(token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole GetEmployeeRoles(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetEmployeeRoles(employeeGuid, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole> GetEmployeeRolesAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetEmployeeRolesAsync(employeeGuid, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AddModuleToEmployee(System.Guid employeeGuid, string modulename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AddModuleToEmployee(employeeGuid, modulename, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AddModuleToEmployeeAsync(System.Guid employeeGuid, string modulename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AddModuleToEmployeeAsync(employeeGuid, modulename, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader RemoveModuleFromEmployee(System.Guid employeeGuid, string modulename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.RemoveModuleFromEmployee(employeeGuid, modulename, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> RemoveModuleFromEmployeeAsync(System.Guid employeeGuid, string modulename, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.RemoveModuleFromEmployeeAsync(employeeGuid, modulename, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AssignExternalLicenseTypeToEmployee(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AssignExternalLicenseTypeToEmployee(employeeGuid, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignExternalLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AssignExternalLicenseTypeToEmployeeAsync(employeeGuid, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AssignStandardLicenseTypeToEmployee(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AssignStandardLicenseTypeToEmployee(employeeGuid, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignStandardLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AssignStandardLicenseTypeToEmployeeAsync(employeeGuid, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader AssignAdvancedLicenseTypeToEmployee(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AssignAdvancedLicenseTypeToEmployee(employeeGuid, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignAdvancedLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.AssignAdvancedLicenseTypeToEmployeeAsync(employeeGuid, token);
         }
     }
 }
