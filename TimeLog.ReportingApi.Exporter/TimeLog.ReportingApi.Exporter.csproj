@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="IConfig.cs" />
     <Compile Include="IMethod.cs" />
+    <Compile Include="MethodTemplates\GetOpportunitiesRaw.cs" />
     <Compile Include="MethodTemplates\GetWorkUnitsRaw.cs" />
     <Compile Include="MethodTemplates\GetContactsRaw.cs" />
     <Compile Include="MethodTemplates\GetContactsShortList.cs" />
