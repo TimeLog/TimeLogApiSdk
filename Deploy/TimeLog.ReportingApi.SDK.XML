@@ -338,6 +338,16 @@
             Gets or sets the industry name.
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.SubOpportunity.Id">
+            <summary>
+            Gets or sets the identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Opportunity.All">
+            <summary>
+            Gets the default parameter value for filtering for all opportunities
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.Opportunity.Id">
             <summary>
             Gets or sets the identifier

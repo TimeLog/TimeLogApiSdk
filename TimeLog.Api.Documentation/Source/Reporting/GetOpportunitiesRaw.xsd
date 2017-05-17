@@ -18,11 +18,15 @@
 
 	<xsd:complexType name="OpportunitiesRaw_Type">
 		<xsd:sequence>
-			<xsd:element name="CustomerID" type="xsd:positiveInteger" />
-			<xsd:element name="ContactID" type="xsd:positiveInteger" />
+      <xsd:element name="CustomerID" type="xsd:positiveInteger" />
+      <xsd:element name="CustomerName" type="xsd:string" />
+      <xsd:element name="ContactID" type="xsd:positiveInteger" />
+      <xsd:element name="ContactName" type="xsd:string" />
 			<xsd:element name="Subject" type="xsd:string" />
       <xsd:element name="OpportunityTypeID" type="xsd:positiveInteger" />
-      <xsd:element name="OwnerID" type="xsd:positiveInteger" />
+      <xsd:element name="OpportunityTypeName" type="xsd:string" />
+      <xsd:element name="EmployeeID" type="xsd:positiveInteger" />
+      <xsd:element name="EmployeeName" type="xsd:string" />
       <xsd:element name="BarrierID" type="xsd:positiveInteger" />
       <xsd:element name="Status" type="xsd:string" />
       <xsd:element name="Potential" type="xsd:decimal" />
@@ -35,6 +39,7 @@
       <xsd:element name="QuotationSent" type="xsd:string" />
       <xsd:element name="Quotation" type="xsd:string" />
       <xsd:element name="CurrencyID" type="xsd:positiveInteger" />
+      <xsd:element name="CurrencyISOCode" type="xsd:string" />
     </xsd:sequence>
 		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
 	</xsd:complexType>

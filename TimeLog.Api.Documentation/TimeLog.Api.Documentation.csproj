@@ -156,6 +156,16 @@
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Source\Financial\NAV-ChangeObjects1.png" />
+    <Content Include="Source\Financial\NAV-ChangeObjects2.png" />
+    <Content Include="Source\Financial\NAV-ChangeObjects3.png" />
+    <Content Include="Source\Financial\NAV-ChangeObjects4.png" />
+    <Content Include="Source\Financial\NAV-ChangeObjects5.png" />
+    <Content Include="Source\Financial\NAV-InstallCoreDll.png" />
+    <Content Include="Source\Financial\NAV-InstallObjects1.PNG" />
+    <Content Include="Source\Financial\NAV-InstallObjects2.PNG" />
+    <Content Include="Source\Financial\NAV-JobQueue.png" />
+    <Content Include="Source\Financial\NAV-WebServices.png" />
     <Content Include="Source\Reporting\GetAllocationsRaw.xml" />
     <Content Include="Source\Reporting\GetContactsRaw.xml" />
     <Content Include="Source\Reporting\GetContactsShortList.xml" />

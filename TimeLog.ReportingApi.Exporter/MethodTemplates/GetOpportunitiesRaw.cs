@@ -16,8 +16,8 @@
                 ListElementType = typeof(Opportunity).FullName
             };
 
-            result.InternalParameters.Add("OpportunityID ", Allocation.All);
-            result.InternalParameters.Add("CustomerID", Task.All);
+            result.InternalParameters.Add("OpportunityID ", Opportunity.All);
+            result.InternalParameters.Add("CustomerID", Customer.All);
             result.InternalParameters.Add("OwnerID", Employee.All);
             result.InternalParameters.Add("OpportunityTypeID", OpportunityType.All);
             result.InternalParameters.Add("BarrierID", Barrier.All);

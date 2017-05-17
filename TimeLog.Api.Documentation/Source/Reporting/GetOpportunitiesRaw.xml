@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tlp:Opportunities xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/OpportunitiesRaw.xsd">
+<tlp:Opportunities xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4">
   <tlp:Opportunity ID="1499">
-    <CustomerID>13</CustomerID>
-    <ContactID>102</ContactID>
-    <Subject>test</Subject>
-    <OpportunityTypeID>2</OpportunityTypeID>
-     <OwnerID>312</OwnerID>
-     <BarrierID>10</BarrierID>
-     <Status>Lead</Status>  Note: Status is obsolete on opportinities. 
-                            It has been moved to sub-opportunity! 
-     <Potential>450000</Potential>
-     <ForecastRate>50</ForecastRate>
-     <Description>Opportunity no. 1</Description>
-     <Created>2016-07-01 00:00:00.000</Created>
-     <Createdby>312</Createdby>
-     <LastModified>2016-07-01 00:00:00.000</LastModified>
-     <LastModifiedBy>312</LastModifiedBy>
-     <QuotationSent>2016-07-11 00:00:00.000</QuotationSent>
-     <Quotation>40000</Quotation>
-     <CurrencyID>33</CurrencyID>
+    <tlp:CustomerID>669</tlp:CustomerID>
+    <tlp:CustomerName>Volvo AB</tlp:CustomerName>
+    <tlp:ContactID>4</tlp:ContactID>
+    <tlp:ContactName>Karolina Nielson</tlp:ContactName>
+    <tlp:Subject>Project Management Course</tlp:Subject>
+    <tlp:OpportunityTypeID>1</tlp:OpportunityTypeID>
+    <tlp:OpportunityTypeName>Management</tlp:OpportunityTypeName>
+    <tlp:EmployeeID>373</tlp:EmployeeID>
+    <tlp:EmployeeName>Lars Olsen</tlp:EmployeeName>
+    <tlp:BarrierID>;3;</tlp:BarrierID>
+    <tlp:Potential>4.800000000000000e+004</tlp:Potential>
+    <tlp:ForecastRate>100</tlp:ForecastRate>
+    <tlp:Description>30 hours, April</tlp:Description>
+    <tlp:Created>2016-12-09T16:51:20</tlp:Created>
+    <tlp:Createdby>373</tlp:Createdby>
+    <tlp:LastModified>2017-01-20T10:15:06</tlp:LastModified>
+    <tlp:LastModifiedBy>373</tlp:LastModifiedBy>
+    <tlp:QuotationSent>2016-12-09T00:00:00</tlp:QuotationSent>
+    <tlp:Quotation></tlp:Quotation>
+    <tlp:CurrencyID>28</tlp:CurrencyID>
+    <tlp:CurrencyISOCode>SEK</tlp:CurrencyISOCode>
   </tlp:Opportunity>
 </tlp:Opportunities>

@@ -18,9 +18,13 @@
 
 	<xsd:complexType name="SubOpportunitiesRaw_Type">
 		<xsd:sequence>
-			<xsd:element name="Name" type="xsd:string" />
+      <xsd:element name="OpportunityID" type="xsd:positiveInteger" />
+      <xsd:element name="OpportunitySubject" type="xsd:string" />
+      <xsd:element name="Name" type="xsd:string" />
 			<xsd:element name="OpportunityTypeID" type="xsd:positiveInteger" />
+			<xsd:element name="OpportunityTypeName" type="xsd:string" />
 			<xsd:element name="OpportunityStatusID" type="xsd:positiveInteger" />
+			<xsd:element name="OpportunityStatusName" type="xsd:string" />
       <xsd:element name="ForecastAmount" type="xsd:decimal" />
       <xsd:element name="ForecastRate" type="xsd:decimal" />
       <xsd:element name="Date" type="xsd:dateTime" />

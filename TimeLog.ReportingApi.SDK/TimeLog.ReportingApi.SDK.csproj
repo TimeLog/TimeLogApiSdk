@@ -50,6 +50,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Barrier.cs" />
+    <Compile Include="SubOpportunity.cs" />
     <Compile Include="Opportunity.cs" />
     <Compile Include="OpportunityType.cs" />
     <Compile Include="ProjectManager.cs" />
