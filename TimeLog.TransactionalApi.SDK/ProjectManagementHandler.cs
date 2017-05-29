@@ -45,10 +45,10 @@
             {
                 if (SettingsHandler.Instance.Url.Contains("https"))
                 {
-                    return SettingsHandler.Instance.Url + "WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc";
+                    return SettingsHandler.Instance.Url + "WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc";
                 }
 
-                return SettingsHandler.Instance.Url + "WebServices/ProjectManagement/V1_6/ProjectManagementService.svc";
+                return SettingsHandler.Instance.Url + "WebServices/ProjectManagement/V1_7/ProjectManagementService.svc";
             }
         }
 

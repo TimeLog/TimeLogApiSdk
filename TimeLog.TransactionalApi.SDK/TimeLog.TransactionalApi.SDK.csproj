@@ -226,10 +226,10 @@
     <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.wsdl" />
-    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure1.wsdl" />
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure2.wsdl" />
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure21.wsdl" />
+    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure22.wsdl" />
+    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure23.wsdl" />
     <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfAllocation.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -439,9 +439,6 @@
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure1.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\HelpDeskService\HelpDeskServiceSecure.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -461,6 +458,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\OrganisationService\OrganisationServiceSecure1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure11.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

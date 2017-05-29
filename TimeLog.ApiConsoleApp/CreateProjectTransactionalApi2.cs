@@ -62,7 +62,7 @@
                     EndDate = DateTime.Today.AddDays(30),
                     ExchangeRate = 1,
                     No = "42",
-                    PriceListID = 1,
+                    LegalEntityID = 1,
                     PriceGroupID = 1,
                     PurchaseOrderNumber = "42"
                 };

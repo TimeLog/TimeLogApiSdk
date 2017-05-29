@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ProjectManagementServiceSecure.disco" MetadataType="Disco" ID="ee9676b4-4275-4cb7-819e-4f55b09294ea" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc?disco" />
-    <MetadataFile FileName="ProjectManagementServiceSecure1.wsdl" MetadataType="Wsdl" ID="77a3d543-6b98-4392-9c8e-0e1c98f77238" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ProjectManagementServiceSecure.wsdl" MetadataType="Wsdl" ID="0ba69b82-bc48-4053-957c-70cce18969dc" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="ProjectManagementServiceSecure22.wsdl" MetadataType="Wsdl" ID="729e7cb1-8b9a-49d8-a1a4-305f7d44dd0f" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="ProjectManagementServiceSecure11.disco" MetadataType="Disco" ID="49a4ef0e-0e6c-4a95-bf6a-72906aee04c7" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?disco" />
+    <MetadataFile FileName="ProjectManagementServiceSecure23.wsdl" MetadataType="Wsdl" ID="3d9ae554-e5b4-43c2-81d1-3321b9111e78" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

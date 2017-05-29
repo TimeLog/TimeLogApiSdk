@@ -34,7 +34,7 @@
                 // CreateProjectTransactionalApi2.Consume();
                 // InsertCustomerTest.Consume();
                 // CreateProjectsForAllCustomers.Consume();
-                // CreateProjectsForCustomersInCsv.Consume();
+                CreateProjectsForCustomersInSql.Consume();
             }
             catch (Exception ex)
             {

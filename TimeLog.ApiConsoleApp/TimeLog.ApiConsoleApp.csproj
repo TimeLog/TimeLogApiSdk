@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ConsumeCsvFile.cs" />
     <Compile Include="ConsumeReportingApi.cs" />
+    <Compile Include="CreateProjectsForCustomersInSql.cs" />
     <Compile Include="CreateProjectsForCustomersInCsv.cs" />
     <Compile Include="CreateProjectsForAllCustomers.cs" />
     <Compile Include="CreateProjectTransactionalApi.cs" />
