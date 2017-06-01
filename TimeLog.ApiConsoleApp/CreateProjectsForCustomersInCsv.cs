@@ -103,7 +103,7 @@ namespace TimeLog.ApiConsoleApp
                             csv.GetString(6),
                             csv.GetString(7),
                             csv.GetString(8),
-                            csv.GetString(9),
+                            csv.GetString(8),
                             csv.GetBoolean(10),
                             csv.GetBoolean(11),
                             csv.GetBoolean(12),
