@@ -32,6 +32,9 @@
       <xsd:element name="PMID" type="xsd:positiveInteger" />
       <xsd:element name="PMInitials" type="xsd:string" />
       <xsd:element name="PMFullName" type="xsd:string" />
+      <xsd:element name="AccountManagerID" type="xsd:positiveInteger" />
+      <xsd:element name="AccountManagerInitials" type="xsd:string" />
+      <xsd:element name="AccountManagerFullName" type="xsd:string" />
       <xsd:element name="ProjectTypeID" type="xsd:positiveInteger" />
       <xsd:element name="ProjectTypeName" type="xsd:string" />
       <xsd:element name="ProjectCategoryID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />

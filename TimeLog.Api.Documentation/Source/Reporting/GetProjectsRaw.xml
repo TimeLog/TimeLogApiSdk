@@ -18,6 +18,9 @@
     <tlp:PMID>20</tlp:PMID>
     <tlp:PMInitials>PWP</tlp:PMInitials>
     <tlp:PMFullName>Peder Wuth Pedersen</tlp:PMFullName>
+    <tlp:AccountManagerID>373</tlp:AccountManagerID>
+    <tlp:AccountManagerInitials>JOL</tlp:AccountManagerInitials>
+    <tlp:AccountManagerFullName>Jacob Olmfeldt</tlp:AccountManagerFullName>
     <tlp:ProjectTypeID>16</tlp:ProjectTypeID>
     <tlp:ProjectTypeName>Internal - Support</tlp:ProjectTypeName>
     <tlp:ProjectCategoryID>2</tlp:ProjectCategoryID>
@@ -42,6 +45,5 @@
     <tlp:ContactFullName>Peter Smith</tlp:ContactFullName>
     <tlp:ContactEmail>PS@timelog.com</tlp:ContactEmail>
     <tlp:PONumber>PO15386</tlp:PONumber>
-
   </tlp:Project>
 </tlp:Projects>
