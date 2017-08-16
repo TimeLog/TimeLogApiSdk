@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="FlexTimes" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="FlexTime" type="tlp:FlexTimeRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    
+  </xsd:element>
+
+  <xsd:complexType name="FlexTimeRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="Date" type="xsd:dateTime" />
+      <xsd:element name="FlexTime" type="xsd:decimal" />
+      <xsd:element name="EmployeeUserID" type="xsd:positiveInteger" />
+      <xsd:element name="EmployeeInitials" type="xsd:string" />
+      <xsd:element name="EmployeeFullName" type="xsd:string" />
+      <xsd:element name="DepartmentID" type="xsd:positiveInteger" />
+      <xsd:element name="Department" type="xsd:string" />
+      <xsd:element name="Type" type="xsd:string"  />
+      <xsd:element name="Description" type="xsd:string" />
+    
+    </xsd:sequence>
+   
+  </xsd:complexType>
+  
+</xsd:schema>

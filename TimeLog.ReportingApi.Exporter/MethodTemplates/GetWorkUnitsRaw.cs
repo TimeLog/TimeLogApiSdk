@@ -40,8 +40,8 @@
                 configuration.GetIntegerSafe("TaskId"),
                 configuration.GetIntegerSafe("ProjectId"),
                 configuration.GetIntegerSafe("DepartmentId"),
-                configuration.GetDateTimeSafe("StartDate"),
-                configuration.GetDateTimeSafe("EndDate"));
+                configuration.GetDateTimeSafe("StartDate").ToString(),
+                configuration.GetDateTimeSafe("EndDate").ToString());
         }
     }
 }

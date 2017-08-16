@@ -15,13 +15,12 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", ConfigurationName="ReportingService.ServiceSoap")]
     public interface ServiceSoap {
         
-        // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkUnitsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawResponse GetWorkUnitsRaw(TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawRequest request);
+        System.Xml.XmlNode GetWorkUnitsRaw(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkUnitsRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawResponse> GetWorkUnitsRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawRequest request);
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetAllocationsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -50,6 +49,13 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetTimeOffRegistrationsRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetTimeOffRegistrationsRawAsync(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, System.DateTime fromDate, System.DateTime toDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetFlexTimeRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetFlexTimeRaw(string siteCode, string apiID, string apiPassword, int employeeUserID, int departmentID, System.DateTime fromDate, System.DateTime toDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetFlexTimeRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetFlexTimeRawAsync(string siteCode, string apiID, string apiPassword, int employeeUserID, int departmentID, System.DateTime fromDate, System.DateTime toDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetCustomersShortList", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -128,29 +134,26 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetProjectCategoriesShortList", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetProjectCategoriesShortListAsync(string siteCode, string apiID, string apiPassword);
         
-        // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoicesRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawResponse GetInvoicesRaw(TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawRequest request);
+        System.Xml.XmlNode GetInvoicesRaw(string siteCode, string apiID, string apiPassword, int invoiceID, int customerID, int status, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoicesRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawResponse> GetInvoicesRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawRequest request);
-        
-        // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoiceLinesRaw", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawResponse GetInvoiceLinesRaw(TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawRequest request);
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoicesRawAsync(string siteCode, string apiID, string apiPassword, int invoiceID, int customerID, int status, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoiceLinesRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawResponse> GetInvoiceLinesRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawRequest request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetInvoiceLinesRaw(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate);
         
-        // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoiceLinesRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoiceLinesRawAsync(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoiceLineDetailsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawResponse GetInvoiceLineDetailsRaw(TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawRequest request);
+        System.Xml.XmlNode GetInvoiceLineDetailsRaw(string siteCode, string apiID, string apiPassword, int invoiceLineDetailID, int customerID, int projectID, int invoiceID, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoiceLineDetailsRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawResponse> GetInvoiceLineDetailsRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawRequest request);
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoiceLineDetailsRawAsync(string siteCode, string apiID, string apiPassword, int invoiceLineDetailID, int customerID, int projectID, int invoiceID, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetDepartmentsShortList", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -194,7 +197,7 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetMilestoneTypesRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetMilestoneTypesRawAsync(string siteCode, string apiID, string apiPassword, int milestoneTypeID, int status);
         
-        // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        // CODEGEN: Parameter 'selfPayment' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetMileageRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawResponse GetMileageRaw(TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawRequest request);
@@ -202,13 +205,12 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetMileageRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawResponse> GetMileageRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawRequest request);
         
-        // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetOpportunitiesRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse GetOpportunitiesRaw(TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawRequest request);
+        System.Xml.XmlNode GetOpportunitiesRaw(string siteCode, string apiID, string apiPassword, int opportunityID, int customerID, int ownerID, int opportunityTypeID, int barrierID, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetOpportunitiesRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse> GetOpportunitiesRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawRequest request);
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetOpportunitiesRawAsync(string siteCode, string apiID, string apiPassword, int opportunityID, int customerID, int ownerID, int opportunityTypeID, int barrierID, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSubOpportunitiesRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -280,13 +282,12 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetCountriesShortList", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetCountriesShortListAsync(string siteCode, string apiID, string apiPassword);
         
-        // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEventsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse GetEventsRaw(TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest request);
+        System.Xml.XmlNode GetEventsRaw(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEventsRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse> GetEventsRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest request);
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetEventsRawAsync(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEventTypesShortlist", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -295,13 +296,12 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEventTypesShortlist", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetEventTypesShortlistAsync(string siteCode, string apiID, string apiPassword, int status);
         
-        // CODEGEN: Parameter 'startDate' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkingHoursRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse GetWorkingHoursRaw(TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest request);
+        System.Xml.XmlNode GetWorkingHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkingHoursRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse> GetWorkingHoursRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest request);
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkingHoursRawAsync(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormalWorkingHoursRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -316,282 +316,6 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/ValidateCredentials", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> ValidateCredentialsAsync(string siteCode, string apiID, string apiPassword);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWorkUnitsRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetWorkUnitsRawRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public string siteCode;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=1)]
-        public string apiID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=2)]
-        public string apiPassword;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=3)]
-        public int workUnitID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=4)]
-        public int employeeID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
-        public int allocationID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=6)]
-        public int taskID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
-        public int projectID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=8)]
-        public int departmentID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=9)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> startDate;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=10)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> endDate;
-        
-        public GetWorkUnitsRawRequest() {
-        }
-        
-        public GetWorkUnitsRawRequest(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            this.siteCode = siteCode;
-            this.apiID = apiID;
-            this.apiPassword = apiPassword;
-            this.workUnitID = workUnitID;
-            this.employeeID = employeeID;
-            this.allocationID = allocationID;
-            this.taskID = taskID;
-            this.projectID = projectID;
-            this.departmentID = departmentID;
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWorkUnitsRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetWorkUnitsRawResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public System.Xml.XmlNode GetWorkUnitsRawResult;
-        
-        public GetWorkUnitsRawResponse() {
-        }
-        
-        public GetWorkUnitsRawResponse(System.Xml.XmlNode GetWorkUnitsRawResult) {
-            this.GetWorkUnitsRawResult = GetWorkUnitsRawResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoicesRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetInvoicesRawRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public string siteCode;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=1)]
-        public string apiID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=2)]
-        public string apiPassword;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=3)]
-        public int invoiceID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=4)]
-        public int customerID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
-        public int status;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> startDate;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> endDate;
-        
-        public GetInvoicesRawRequest() {
-        }
-        
-        public GetInvoicesRawRequest(string siteCode, string apiID, string apiPassword, int invoiceID, int customerID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            this.siteCode = siteCode;
-            this.apiID = apiID;
-            this.apiPassword = apiPassword;
-            this.invoiceID = invoiceID;
-            this.customerID = customerID;
-            this.status = status;
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoicesRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetInvoicesRawResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public System.Xml.XmlNode GetInvoicesRawResult;
-        
-        public GetInvoicesRawResponse() {
-        }
-        
-        public GetInvoicesRawResponse(System.Xml.XmlNode GetInvoicesRawResult) {
-            this.GetInvoicesRawResult = GetInvoicesRawResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceLinesRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetInvoiceLinesRawRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public string siteCode;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=1)]
-        public string apiID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=2)]
-        public string apiPassword;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=3)]
-        public int invoiceLineID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=4)]
-        public int customerID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
-        public int projectID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=6)]
-        public int invoiceID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> startDate;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> endDate;
-        
-        public GetInvoiceLinesRawRequest() {
-        }
-        
-        public GetInvoiceLinesRawRequest(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            this.siteCode = siteCode;
-            this.apiID = apiID;
-            this.apiPassword = apiPassword;
-            this.invoiceLineID = invoiceLineID;
-            this.customerID = customerID;
-            this.projectID = projectID;
-            this.invoiceID = invoiceID;
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceLinesRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetInvoiceLinesRawResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public System.Xml.XmlNode GetInvoiceLinesRawResult;
-        
-        public GetInvoiceLinesRawResponse() {
-        }
-        
-        public GetInvoiceLinesRawResponse(System.Xml.XmlNode GetInvoiceLinesRawResult) {
-            this.GetInvoiceLinesRawResult = GetInvoiceLinesRawResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceLineDetailsRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetInvoiceLineDetailsRawRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public string siteCode;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=1)]
-        public string apiID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=2)]
-        public string apiPassword;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=3)]
-        public int invoiceLineDetailID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=4)]
-        public int customerID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
-        public int projectID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=6)]
-        public int invoiceID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> startDate;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> endDate;
-        
-        public GetInvoiceLineDetailsRawRequest() {
-        }
-        
-        public GetInvoiceLineDetailsRawRequest(string siteCode, string apiID, string apiPassword, int invoiceLineDetailID, int customerID, int projectID, int invoiceID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            this.siteCode = siteCode;
-            this.apiID = apiID;
-            this.apiPassword = apiPassword;
-            this.invoiceLineDetailID = invoiceLineDetailID;
-            this.customerID = customerID;
-            this.projectID = projectID;
-            this.invoiceID = invoiceID;
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetInvoiceLineDetailsRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetInvoiceLineDetailsRawResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public System.Xml.XmlNode GetInvoiceLineDetailsRawResult;
-        
-        public GetInvoiceLineDetailsRawResponse() {
-        }
-        
-        public GetInvoiceLineDetailsRawResponse(System.Xml.XmlNode GetInvoiceLineDetailsRawResult) {
-            this.GetInvoiceLineDetailsRawResult = GetInvoiceLineDetailsRawResult;
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -622,12 +346,10 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         public int departmentID;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> startDate;
+        public string startDate;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> endDate;
+        public string endDate;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=9)]
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
@@ -642,7 +364,7 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         public GetMileageRawRequest() {
         }
         
-        public GetMileageRawRequest(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate, System.Nullable<bool> selfPayment, int travelCarID, int transportRateID) {
+        public GetMileageRawRequest(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, string startDate, string endDate, System.Nullable<bool> selfPayment, int travelCarID, int transportRateID) {
             this.siteCode = siteCode;
             this.apiID = apiID;
             this.apiPassword = apiPassword;
@@ -675,214 +397,6 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOpportunitiesRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetOpportunitiesRawRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public string siteCode;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=1)]
-        public string apiID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=2)]
-        public string apiPassword;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=3)]
-        public int opportunityID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=4)]
-        public int customerID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
-        public int ownerID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=6)]
-        public int opportunityTypeID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
-        public int barrierID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> startDate;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=9)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> endDate;
-        
-        public GetOpportunitiesRawRequest() {
-        }
-        
-        public GetOpportunitiesRawRequest(string siteCode, string apiID, string apiPassword, int opportunityID, int customerID, int ownerID, int opportunityTypeID, int barrierID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            this.siteCode = siteCode;
-            this.apiID = apiID;
-            this.apiPassword = apiPassword;
-            this.opportunityID = opportunityID;
-            this.customerID = customerID;
-            this.ownerID = ownerID;
-            this.opportunityTypeID = opportunityTypeID;
-            this.barrierID = barrierID;
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetOpportunitiesRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetOpportunitiesRawResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public System.Xml.XmlNode GetOpportunitiesRawResult;
-        
-        public GetOpportunitiesRawResponse() {
-        }
-        
-        public GetOpportunitiesRawResponse(System.Xml.XmlNode GetOpportunitiesRawResult) {
-            this.GetOpportunitiesRawResult = GetOpportunitiesRawResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEventsRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetEventsRawRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public string siteCode;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=1)]
-        public string apiID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=2)]
-        public string apiPassword;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=3)]
-        public int eventID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=4)]
-        public int eventTypeID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
-        public int customerID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=6)]
-        public int employeeID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
-        public int status;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=8)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> startDate;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=9)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> endDate;
-        
-        public GetEventsRawRequest() {
-        }
-        
-        public GetEventsRawRequest(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            this.siteCode = siteCode;
-            this.apiID = apiID;
-            this.apiPassword = apiPassword;
-            this.eventID = eventID;
-            this.eventTypeID = eventTypeID;
-            this.customerID = customerID;
-            this.employeeID = employeeID;
-            this.status = status;
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetEventsRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetEventsRawResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public System.Xml.XmlNode GetEventsRawResult;
-        
-        public GetEventsRawResponse() {
-        }
-        
-        public GetEventsRawResponse(System.Xml.XmlNode GetEventsRawResult) {
-            this.GetEventsRawResult = GetEventsRawResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWorkingHoursRaw", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetWorkingHoursRawRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public string siteCode;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=1)]
-        public string apiID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=2)]
-        public string apiPassword;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=3)]
-        public int employeeID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=4)]
-        public int departmentID;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=5)]
-        public int status;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=6)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> startDate;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=7)]
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<System.DateTime> endDate;
-        
-        public GetWorkingHoursRawRequest() {
-        }
-        
-        public GetWorkingHoursRawRequest(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            this.siteCode = siteCode;
-            this.apiID = apiID;
-            this.apiPassword = apiPassword;
-            this.employeeID = employeeID;
-            this.departmentID = departmentID;
-            this.status = status;
-            this.startDate = startDate;
-            this.endDate = endDate;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GetWorkingHoursRawResponse", WrapperNamespace="http://www.timelog.com/ws/tlp/v4_4", IsWrapped=true)]
-    public partial class GetWorkingHoursRawResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
-        public System.Xml.XmlNode GetWorkingHoursRawResult;
-        
-        public GetWorkingHoursRawResponse() {
-        }
-        
-        public GetWorkingHoursRawResponse(System.Xml.XmlNode GetWorkingHoursRawResult) {
-            this.GetWorkingHoursRawResult = GetWorkingHoursRawResult;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceSoapChannel : TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -910,47 +424,12 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetWorkUnitsRaw(TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawRequest request) {
-            return base.Channel.GetWorkUnitsRaw(request);
+        public System.Xml.XmlNode GetWorkUnitsRaw(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate) {
+            return base.Channel.GetWorkUnitsRaw(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate);
         }
         
-        public System.Xml.XmlNode GetWorkUnitsRaw(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.workUnitID = workUnitID;
-            inValue.employeeID = employeeID;
-            inValue.allocationID = allocationID;
-            inValue.taskID = taskID;
-            inValue.projectID = projectID;
-            inValue.departmentID = departmentID;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetWorkUnitsRaw(inValue);
-            return retVal.GetWorkUnitsRawResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetWorkUnitsRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawRequest request) {
-            return base.Channel.GetWorkUnitsRawAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawResponse> GetWorkUnitsRawAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.workUnitID = workUnitID;
-            inValue.employeeID = employeeID;
-            inValue.allocationID = allocationID;
-            inValue.taskID = taskID;
-            inValue.projectID = projectID;
-            inValue.departmentID = departmentID;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetWorkUnitsRawAsync(inValue);
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate) {
+            return base.Channel.GetWorkUnitsRawAsync(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate);
         }
         
         public System.Xml.XmlNode GetAllocationsRaw(string siteCode, string apiID, string apiPassword, int allocationID, int taskID, int employeeID, int projectID) {
@@ -983,6 +462,14 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         
         public System.Threading.Tasks.Task<System.Xml.XmlNode> GetTimeOffRegistrationsRawAsync(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, System.DateTime fromDate, System.DateTime toDate) {
             return base.Channel.GetTimeOffRegistrationsRawAsync(siteCode, apiID, apiPassword, employeeID, departmentID, fromDate, toDate);
+        }
+        
+        public System.Xml.XmlNode GetFlexTimeRaw(string siteCode, string apiID, string apiPassword, int employeeUserID, int departmentID, System.DateTime fromDate, System.DateTime toDate) {
+            return base.Channel.GetFlexTimeRaw(siteCode, apiID, apiPassword, employeeUserID, departmentID, fromDate, toDate);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetFlexTimeRawAsync(string siteCode, string apiID, string apiPassword, int employeeUserID, int departmentID, System.DateTime fromDate, System.DateTime toDate) {
+            return base.Channel.GetFlexTimeRawAsync(siteCode, apiID, apiPassword, employeeUserID, departmentID, fromDate, toDate);
         }
         
         public System.Xml.XmlNode GetCustomersShortList(string siteCode, string apiID, string apiPassword, int customerStatusID, int accountManagerID) {
@@ -1073,119 +560,28 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
             return base.Channel.GetProjectCategoriesShortListAsync(siteCode, apiID, apiPassword);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetInvoicesRaw(TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawRequest request) {
-            return base.Channel.GetInvoicesRaw(request);
+        public System.Xml.XmlNode GetInvoicesRaw(string siteCode, string apiID, string apiPassword, int invoiceID, int customerID, int status, string startDate, string endDate) {
+            return base.Channel.GetInvoicesRaw(siteCode, apiID, apiPassword, invoiceID, customerID, status, startDate, endDate);
         }
         
-        public System.Xml.XmlNode GetInvoicesRaw(string siteCode, string apiID, string apiPassword, int invoiceID, int customerID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.invoiceID = invoiceID;
-            inValue.customerID = customerID;
-            inValue.status = status;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetInvoicesRaw(inValue);
-            return retVal.GetInvoicesRawResult;
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoicesRawAsync(string siteCode, string apiID, string apiPassword, int invoiceID, int customerID, int status, string startDate, string endDate) {
+            return base.Channel.GetInvoicesRawAsync(siteCode, apiID, apiPassword, invoiceID, customerID, status, startDate, endDate);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetInvoicesRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawRequest request) {
-            return base.Channel.GetInvoicesRawAsync(request);
+        public System.Xml.XmlNode GetInvoiceLinesRaw(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate) {
+            return base.Channel.GetInvoiceLinesRaw(siteCode, apiID, apiPassword, invoiceLineID, customerID, projectID, invoiceID, startDate, endDate);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawResponse> GetInvoicesRawAsync(string siteCode, string apiID, string apiPassword, int invoiceID, int customerID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.invoiceID = invoiceID;
-            inValue.customerID = customerID;
-            inValue.status = status;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetInvoicesRawAsync(inValue);
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoiceLinesRawAsync(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate) {
+            return base.Channel.GetInvoiceLinesRawAsync(siteCode, apiID, apiPassword, invoiceLineID, customerID, projectID, invoiceID, startDate, endDate);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetInvoiceLinesRaw(TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawRequest request) {
-            return base.Channel.GetInvoiceLinesRaw(request);
+        public System.Xml.XmlNode GetInvoiceLineDetailsRaw(string siteCode, string apiID, string apiPassword, int invoiceLineDetailID, int customerID, int projectID, int invoiceID, string startDate, string endDate) {
+            return base.Channel.GetInvoiceLineDetailsRaw(siteCode, apiID, apiPassword, invoiceLineDetailID, customerID, projectID, invoiceID, startDate, endDate);
         }
         
-        public System.Xml.XmlNode GetInvoiceLinesRaw(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.invoiceLineID = invoiceLineID;
-            inValue.customerID = customerID;
-            inValue.projectID = projectID;
-            inValue.invoiceID = invoiceID;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetInvoiceLinesRaw(inValue);
-            return retVal.GetInvoiceLinesRawResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetInvoiceLinesRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawRequest request) {
-            return base.Channel.GetInvoiceLinesRawAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawResponse> GetInvoiceLinesRawAsync(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.invoiceLineID = invoiceLineID;
-            inValue.customerID = customerID;
-            inValue.projectID = projectID;
-            inValue.invoiceID = invoiceID;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetInvoiceLinesRawAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetInvoiceLineDetailsRaw(TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawRequest request) {
-            return base.Channel.GetInvoiceLineDetailsRaw(request);
-        }
-        
-        public System.Xml.XmlNode GetInvoiceLineDetailsRaw(string siteCode, string apiID, string apiPassword, int invoiceLineDetailID, int customerID, int projectID, int invoiceID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.invoiceLineDetailID = invoiceLineDetailID;
-            inValue.customerID = customerID;
-            inValue.projectID = projectID;
-            inValue.invoiceID = invoiceID;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetInvoiceLineDetailsRaw(inValue);
-            return retVal.GetInvoiceLineDetailsRawResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetInvoiceLineDetailsRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawRequest request) {
-            return base.Channel.GetInvoiceLineDetailsRawAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawResponse> GetInvoiceLineDetailsRawAsync(string siteCode, string apiID, string apiPassword, int invoiceLineDetailID, int customerID, int projectID, int invoiceID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.invoiceLineDetailID = invoiceLineDetailID;
-            inValue.customerID = customerID;
-            inValue.projectID = projectID;
-            inValue.invoiceID = invoiceID;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetInvoiceLineDetailsRawAsync(inValue);
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoiceLineDetailsRawAsync(string siteCode, string apiID, string apiPassword, int invoiceLineDetailID, int customerID, int projectID, int invoiceID, string startDate, string endDate) {
+            return base.Channel.GetInvoiceLineDetailsRawAsync(siteCode, apiID, apiPassword, invoiceLineDetailID, customerID, projectID, invoiceID, startDate, endDate);
         }
         
         public System.Xml.XmlNode GetDepartmentsShortList(string siteCode, string apiID, string apiPassword) {
@@ -1241,7 +637,7 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
             return base.Channel.GetMileageRaw(request);
         }
         
-        public System.Xml.XmlNode GetMileageRaw(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate, System.Nullable<bool> selfPayment, int travelCarID, int transportRateID) {
+        public System.Xml.XmlNode GetMileageRaw(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, string startDate, string endDate, System.Nullable<bool> selfPayment, int travelCarID, int transportRateID) {
             TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawRequest();
             inValue.siteCode = siteCode;
             inValue.apiID = apiID;
@@ -1264,7 +660,7 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
             return base.Channel.GetMileageRawAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawResponse> GetMileageRawAsync(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate, System.Nullable<bool> selfPayment, int travelCarID, int transportRateID) {
+        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawResponse> GetMileageRawAsync(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, string startDate, string endDate, System.Nullable<bool> selfPayment, int travelCarID, int transportRateID) {
             TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawRequest();
             inValue.siteCode = siteCode;
             inValue.apiID = apiID;
@@ -1281,45 +677,12 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
             return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetMileageRawAsync(inValue);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetOpportunitiesRaw(TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawRequest request) {
-            return base.Channel.GetOpportunitiesRaw(request);
+        public System.Xml.XmlNode GetOpportunitiesRaw(string siteCode, string apiID, string apiPassword, int opportunityID, int customerID, int ownerID, int opportunityTypeID, int barrierID, string startDate, string endDate) {
+            return base.Channel.GetOpportunitiesRaw(siteCode, apiID, apiPassword, opportunityID, customerID, ownerID, opportunityTypeID, barrierID, startDate, endDate);
         }
         
-        public System.Xml.XmlNode GetOpportunitiesRaw(string siteCode, string apiID, string apiPassword, int opportunityID, int customerID, int ownerID, int opportunityTypeID, int barrierID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.opportunityID = opportunityID;
-            inValue.customerID = customerID;
-            inValue.ownerID = ownerID;
-            inValue.opportunityTypeID = opportunityTypeID;
-            inValue.barrierID = barrierID;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetOpportunitiesRaw(inValue);
-            return retVal.GetOpportunitiesRawResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetOpportunitiesRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawRequest request) {
-            return base.Channel.GetOpportunitiesRawAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse> GetOpportunitiesRawAsync(string siteCode, string apiID, string apiPassword, int opportunityID, int customerID, int ownerID, int opportunityTypeID, int barrierID, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.opportunityID = opportunityID;
-            inValue.customerID = customerID;
-            inValue.ownerID = ownerID;
-            inValue.opportunityTypeID = opportunityTypeID;
-            inValue.barrierID = barrierID;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetOpportunitiesRawAsync(inValue);
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetOpportunitiesRawAsync(string siteCode, string apiID, string apiPassword, int opportunityID, int customerID, int ownerID, int opportunityTypeID, int barrierID, string startDate, string endDate) {
+            return base.Channel.GetOpportunitiesRawAsync(siteCode, apiID, apiPassword, opportunityID, customerID, ownerID, opportunityTypeID, barrierID, startDate, endDate);
         }
         
         public System.Xml.XmlNode GetSubOpportunitiesRaw(string siteCode, string apiID, string apiPassword, int opportunityID) {
@@ -1402,45 +765,12 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
             return base.Channel.GetCountriesShortListAsync(siteCode, apiID, apiPassword);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetEventsRaw(TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest request) {
-            return base.Channel.GetEventsRaw(request);
+        public System.Xml.XmlNode GetEventsRaw(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, string startDate, string endDate) {
+            return base.Channel.GetEventsRaw(siteCode, apiID, apiPassword, eventID, eventTypeID, customerID, employeeID, status, startDate, endDate);
         }
         
-        public System.Xml.XmlNode GetEventsRaw(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.eventID = eventID;
-            inValue.eventTypeID = eventTypeID;
-            inValue.customerID = customerID;
-            inValue.employeeID = employeeID;
-            inValue.status = status;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetEventsRaw(inValue);
-            return retVal.GetEventsRawResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetEventsRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest request) {
-            return base.Channel.GetEventsRawAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse> GetEventsRawAsync(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.eventID = eventID;
-            inValue.eventTypeID = eventTypeID;
-            inValue.customerID = customerID;
-            inValue.employeeID = employeeID;
-            inValue.status = status;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetEventsRawAsync(inValue);
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetEventsRawAsync(string siteCode, string apiID, string apiPassword, int eventID, int eventTypeID, int customerID, int employeeID, int status, string startDate, string endDate) {
+            return base.Channel.GetEventsRawAsync(siteCode, apiID, apiPassword, eventID, eventTypeID, customerID, employeeID, status, startDate, endDate);
         }
         
         public System.Xml.XmlNode GetEventTypesShortlist(string siteCode, string apiID, string apiPassword, int status) {
@@ -1451,41 +781,12 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
             return base.Channel.GetEventTypesShortlistAsync(siteCode, apiID, apiPassword, status);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetWorkingHoursRaw(TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest request) {
-            return base.Channel.GetWorkingHoursRaw(request);
+        public System.Xml.XmlNode GetWorkingHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, string startDate, string endDate) {
+            return base.Channel.GetWorkingHoursRaw(siteCode, apiID, apiPassword, employeeID, departmentID, status, startDate, endDate);
         }
         
-        public System.Xml.XmlNode GetWorkingHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.employeeID = employeeID;
-            inValue.departmentID = departmentID;
-            inValue.status = status;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse retVal = ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetWorkingHoursRaw(inValue);
-            return retVal.GetWorkingHoursRawResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse> TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap.GetWorkingHoursRawAsync(TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest request) {
-            return base.Channel.GetWorkingHoursRawAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse> GetWorkingHoursRawAsync(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, System.Nullable<System.DateTime> startDate, System.Nullable<System.DateTime> endDate) {
-            TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest inValue = new TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawRequest();
-            inValue.siteCode = siteCode;
-            inValue.apiID = apiID;
-            inValue.apiPassword = apiPassword;
-            inValue.employeeID = employeeID;
-            inValue.departmentID = departmentID;
-            inValue.status = status;
-            inValue.startDate = startDate;
-            inValue.endDate = endDate;
-            return ((TimeLog.ReportingApi.SDK.ReportingService.ServiceSoap)(this)).GetWorkingHoursRawAsync(inValue);
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkingHoursRawAsync(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status, string startDate, string endDate) {
+            return base.Channel.GetWorkingHoursRawAsync(siteCode, apiID, apiPassword, employeeID, departmentID, status, startDate, endDate);
         }
         
         public System.Xml.XmlNode GetEmployeeNormalWorkingHoursRaw(string siteCode, string apiID, string apiPassword, int employeeID, int departmentID, int status) {

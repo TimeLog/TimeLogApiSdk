@@ -6,6 +6,22 @@ TimeLog.TLP.WebAppCode
 </name>
 </assembly>
 <members>
+<member name="T:TimeLog.TLP.WebAppCode.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
 <member name="M:TimeLog.TLP.WebAppCode.clsGenral_Functions.DateAspToWeb(System.DateTime)">
  <summary>
  Returns a date formated after the applicationsetting "PageLCID"
@@ -92,29 +108,13 @@ TimeLog.TLP.WebAppCode
  <returns></returns>
  <remarks></remarks>
 </member>
-<member name="T:TimeLog.TLP.WebAppCode.My.Resources.Resources">
-<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member>
-<member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.ResourceManager">
-<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member>
-<member name="P:TimeLog.TLP.WebAppCode.My.Resources.Resources.Culture">
-<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member>
 <member name="T:TimeLog.TLP.WebAppCode.Service">
  <summary>
  Reporting API Service class
  </summary>
  <remarks></remarks>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetWorkUnitsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetWorkUnitsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
  <summary>
  Gets a list of work units.
  </summary>
@@ -180,6 +180,19 @@ TimeLog.TLP.WebAppCode
  <param name="fromDate">Start date to get the registrations from</param>
  <param name="toDate">End date to get the registrations to</param>
  <returns>A list of work unit objects in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetFlexTimeRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+ <summary>
+ Gets a list of flex registrations and flex adjustments.
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="employeeUserID">ID of specific employeeUser. Set to 0 to get all flex registrations</param>
+ <param name="departmentID">ID of specific department. Set to 0 to get all flex registrations</param>
+ <param name="fromDate">Start date to get the flex registrations from</param>
+ <param name="toDate">End date to get the flex registrations to</param>
+ <returns>A list of flex registrations objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetCustomersShortList(System.String,System.String,System.String,System.Int32,System.Int32)">
  <summary>
@@ -292,7 +305,7 @@ TimeLog.TLP.WebAppCode
  <param name="apiPassword">The API password</param>
  <returns>A list of project category objects in XML format</returns>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoicesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoicesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String)">
  <summary>
  Gets a list of invoices
  </summary>
@@ -306,7 +319,7 @@ TimeLog.TLP.WebAppCode
  <param name="endDate">Limits result to invoices with invoice date equal to or earlier than specified date</param>
  <returns>A list of invoice objects in XML format</returns>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoiceLinesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoiceLinesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
  <summary>
  Gets a list of invoice lines
  </summary>
@@ -321,7 +334,7 @@ TimeLog.TLP.WebAppCode
  <param name="endDate">Limits result to invoices with invoice date equal to or earlier than specified date</param>
  <returns>A list of invoice line objects in XML format</returns>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoiceLineDetailsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoiceLineDetailsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
  <summary>
  Gets a list of invoice line details
  </summary>
@@ -402,7 +415,7 @@ TimeLog.TLP.WebAppCode
  <param name="status">0 for uncompleted milestones; 1 for completed milestones; -1 for all milestones</param>
  <returns>A list of milestones objects in XML format</returns>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetMileageRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Int32,System.Int32)">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetMileageRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.Nullable{System.Boolean},System.Int32,System.Int32)">
  <summary>
  Gets a list of mileage
  </summary>
@@ -421,9 +434,9 @@ TimeLog.TLP.WebAppCode
  <returns>A list of mileage objects in XML format</returns>
  <remarks></remarks>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunitiesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunitiesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
  <summary>
- Gets a list of opportunities. 
+ Gets a list of opportunities
  </summary>
  <param name="siteCode">Unique identification for your TimeLog Project account</param>
  <param name="apiID">The API ID</param>
@@ -433,20 +446,20 @@ TimeLog.TLP.WebAppCode
  <param name="ownerID">ID of the employee in charge of opportunity. Set to 0 to get all opportunities</param>
  <param name="opportunityTypeID">ID of specific opportunityType. Set to 0 to get all opportunities</param>
  <param name="barrierID">ID of specific barrier. Set to 0 to get all opportunities</param>    
- <param name="startDate">Limits result to opportunities with opportunities date equal to or later than specified date</param>
- <param name="endDate">Limits result to opportunities with opportunities date equal to or earlier than specified date</param>
+ <param name="startDate">Limits result to opportunities with quotation date equal to or later than specified date</param>
+ <param name="endDate">Limits result to opportunities with quotation date equal to or earlier than specified date</param>
  <returns>A list of opportunity objects in XML format</returns>
 </member>
-  <member name="M:TimeLog.TLP.WebAppCode.Service.GetSubOpportunitiesRaw(System.String,System.String,System.String,System.Int32)">
-    <summary>
-     Gets a list of sub-opportinities
-    </summary>
-    <param name="siteCode">Unique identification for your TimeLog Project account</param>
-    <param name="apiID">The API ID</param>
-    <param name="apiPassword">The API password</param>
-    <Param name="opportunityID">ID of opportunity that contain sub-opportunities. Set to 0 to get all sub-opportunities</Param>
-    <returns>A list of sub-opportunity objects in XML format</returns>
-  </member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetSubOpportunitiesRaw(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Gets a list of sub-opportinities
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <Param name="opportunityID">ID of opportunity that contain sub-opportunities. Set to 0 to get all sub-opportunities</Param>
+ <returns>A list of sub-opportunity objects in XML format</returns>
+</member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetOpportunityTypesShortlist(System.String,System.String,System.String,System.Int32)">
  <summary>
  Gets a list of opportunityTypes
@@ -546,7 +559,7 @@ TimeLog.TLP.WebAppCode
  <param name="apiPassword">The API password</param>
  <returns>A list of countrie objects in XML format</returns>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetEventsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetEventsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
  <summary>
  Gets a list of events
  </summary>
@@ -572,7 +585,7 @@ TimeLog.TLP.WebAppCode
  <param name="status">0 for inactive eventTypes; 1 for active eventTypes; -1 for all eventTypes</param>
  <returns>A list of eventtype objects in XML format</returns>
 </member>
-<member name="M:TimeLog.TLP.WebAppCode.Service.GetWorkingHoursRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetWorkingHoursRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.String,System.String)">
  <summary>
  Gets a list of working hours
  </summary>

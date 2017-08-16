@@ -38,8 +38,8 @@
                 configuration.GetIntegerSafe("OwnerID"),
                 configuration.GetIntegerSafe("OpportunityTypeID"),
                 configuration.GetIntegerSafe("BarrierID"),
-                configuration.GetDateTimeSafe("StartDate"),
-                configuration.GetDateTimeSafe("EndDate"));
+                configuration.GetDateTimeSafe("StartDate").ToString(),
+                configuration.GetDateTimeSafe("EndDate").ToString());
         }
     }
 }

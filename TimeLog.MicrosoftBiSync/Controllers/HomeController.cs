@@ -212,8 +212,8 @@
                     Task.All,
                     Project.All,
                     Department.All,
-                    DateTime.Now.AddMonths(-6),
-                    DateTime.Now);
+                    DateTime.Now.AddMonths(-6).ToString(),
+                    DateTime.Now.ToString());
 
                 if (workUnitsRaw.OwnerDocument != null)
                 {
