@@ -7,7 +7,8 @@
     <tlp:Name>Webinar</tlp:Name>
     <tlp:No>P07.0080</tlp:No>
     <tlp:Status>1</tlp:Status>
-    <tlp:OrderedByDepartment>Sales Denmark</tlp:OrderedByDepartment>
+    <tlp:Department>3</tlp:Department>
+    <tlp:OrderedByDepartment>1</tlp:OrderedByDepartment>
     <tlp:ProjectStartDate>2015-03-01</tlp:ProjectStartDate>
     <tlp:ProjectEndDate>2015-09-01</tlp:ProjectEndDate>
     <tlp:ProjectLink>https://oursecret.sharepoint.com/projectpage</tlp:ProjectLink>

@@ -21,6 +21,7 @@
       <xsd:element name="Name" type="xsd:string" />
       <xsd:element name="No" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Status" type="xsd:byte" />
+      <xsd:element name="Department" type="xsd:positiveInteger" />
       <xsd:element name="OrderedByDepartment" type="xsd:positiveInteger" />
       <xsd:element name="ProjectStartDate" type="xsd:dateTime" />
       <xsd:element name="ProjectEndDate" type="xsd:dateTime" />
