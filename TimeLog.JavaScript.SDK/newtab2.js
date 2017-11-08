@@ -486,7 +486,7 @@ function taskviewGetAllocationsSuccess(data) {
     for (index in data) {
         if (data.hasOwnProperty(index)) {
 
-            var fullName = data[index].Details.ProjectHeader.Name + ' &raquo; ' + data[index].FullName;
+            var fullName = data[index].Details.CustomerHeader.Name.__text + ' &raquo; ' + data[index].Details.ProjectHeader.Name + ' &raquo; ' + data[index].FullName;
 
             if (taskviewResults < 50 && data[index].Details.IsParent !== "true" && fullName.toLowerCase().indexOf($('#taskview-search').val().toLowerCase()) > -1) {
                 $('#taskview-list').append('<li data-id="' + data[index].TaskID + '">' + fullName + '</li>');
