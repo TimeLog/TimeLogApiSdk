@@ -55,7 +55,8 @@
                     Currency = "DKK",
                     DefaultDiscountPercent = 2,
                     Status = "Customer",
-                    ID = 11078
+                    ID = 11078,
+                    OrganizationNumber = "123456789"
                 };
 
                 var customersResult = CrmHandler.Instance.CrmClient.InsertCustomer(newCustomer, 2,

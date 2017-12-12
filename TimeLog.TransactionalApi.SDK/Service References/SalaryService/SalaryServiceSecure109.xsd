@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Employees" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Employees" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="NormalWorkingTimeTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OneWeek" />
+      <xs:enumeration value="TwoWeeks" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NormalWorkingTimeTypes" nillable="true" type="tns:NormalWorkingTimeTypes" />
+</xs:schema>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="a9olZyCBTYvKPZE8X1AV5odrOqA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="NZYxPEwfTjD8T5azqQUOH8C+KqE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_OrganisationService1">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_OrganisationService" contract="OrganisationService.OrganisationService" bindingType="basicHttpBinding" address="https://app4.timelog.com/coldemo/WebServices/Organisation/V1_6/OrganisationServiceSecure.svc" bindingConfiguration="BasicHttpBinding_OrganisationService1">
+    <endpoint name="BasicHttpBinding_OrganisationService" contract="OrganisationService.OrganisationService" bindingType="basicHttpBinding" address="https://app4.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc" bindingConfiguration="BasicHttpBinding_OrganisationService1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://app4.timelog.com/coldemo/WebServices/Organisation/V1_6/OrganisationServiceSecure.svc</serializedValue>
+          <serializedValue>https://app4.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

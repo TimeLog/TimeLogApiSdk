@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_1" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Salary/V1_1/SalaryServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
+  <xs:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Salary/V1_1/SalaryServiceSecure.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_3" />
+  <xs:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Salary/V1_1/SalaryServiceSecure.svc?xsd=xsd5" namespace="http://api.timelog.com" />
+  <xs:element name="GetAllSalaryCodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="salaryCodeStatus" type="q1:SalaryCodeStatus" />
+        <xs:element xmlns:q2="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q2:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSalaryCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://api.timelog.com" minOccurs="0" name="GetAllSalaryCodesResult" nillable="true" type="q3:ResponseOfSalary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNormalWorkweeks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q4:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNormalWorkweeksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://api.timelog.com" minOccurs="0" name="GetNormalWorkweeksResult" nillable="true" type="q5:ResponseOfNormalWorkingTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHolidayCalendars">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q6:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHolidayCalendarsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://api.timelog.com" minOccurs="0" name="GetHolidayCalendarsResult" nillable="true" type="q7:ResponseOfHolidayCalendar" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllowances">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q8:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllowancesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://api.timelog.com" minOccurs="0" name="GetAllowancesResult" nillable="true" type="q9:ResponseOfAllowance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

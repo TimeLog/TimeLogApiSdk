@@ -17,6 +17,10 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceSpecification))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceSpecification))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.Invoice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.Address))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceLine))]
@@ -27,15 +31,13 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.Currency))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.CustomerHeader))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceWithExternalKey))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.CreditNoteWithExternalKey))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfCreditNote))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceWithExternalKey))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceWithExternalKey))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfCreditNoteWithExternalKey))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.CreditNoteWithExternalKey))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.InvoicingService.SecurityToken))]
     public partial class APIBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -58,6 +60,290 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfInvoiceSpecification", Namespace="http://www.timelog.com/api/tlp/v1_1")]
+    [System.SerializableAttribute()]
+    public partial class ResponseOfInvoiceSpecification : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceSpecification[] ReturnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReturnTypeDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.Request RequestField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] MessagesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ErrorCodeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceSpecification[] Return {
+            get {
+                return this.ReturnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnField, value) != true)) {
+                    this.ReturnField = value;
+                    this.RaisePropertyChanged("Return");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnTypeDescription {
+            get {
+                return this.ReturnTypeDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnTypeDescriptionField, value) != true)) {
+                    this.ReturnTypeDescriptionField = value;
+                    this.RaisePropertyChanged("ReturnTypeDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.Request Request {
+            get {
+                return this.RequestField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RequestField, value) != true)) {
+                    this.RequestField = value;
+                    this.RaisePropertyChanged("Request");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseState {
+            get {
+                return this.ResponseStateField;
+            }
+            set {
+                if ((this.ResponseStateField.Equals(value) != true)) {
+                    this.ResponseStateField = value;
+                    this.RaisePropertyChanged("ResponseState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] Messages {
+            get {
+                return this.MessagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
+                    this.MessagesField = value;
+                    this.RaisePropertyChanged("Messages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((this.ErrorCodeField.Equals(value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceSpecification", Namespace="http://www.timelog.com/api/tlp/v1")]
+    [System.SerializableAttribute()]
+    public partial class InvoiceSpecification : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] specificationField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] specification {
+            get {
+                return this.specificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.specificationField, value) != true)) {
+                    this.specificationField = value;
+                    this.RaisePropertyChanged("specification");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://www.timelog.com/api/tlp/v1_1")]
+    [System.SerializableAttribute()]
+    public partial class Request : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.RequestParameter[] ParametersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ServiceClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MethodNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.RequestParameter[] Parameters {
+            get {
+                return this.ParametersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParametersField, value) != true)) {
+                    this.ParametersField = value;
+                    this.RaisePropertyChanged("Parameters");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ServiceClass {
+            get {
+                return this.ServiceClassField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ServiceClassField, value) != true)) {
+                    this.ServiceClassField = value;
+                    this.RaisePropertyChanged("ServiceClass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string MethodName {
+            get {
+                return this.MethodNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MethodNameField, value) != true)) {
+                    this.MethodNameField = value;
+                    this.RaisePropertyChanged("MethodName");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfInvoice", Namespace="http://www.timelog.com/api/tlp/v1_1")]
+    [System.SerializableAttribute()]
+    public partial class ResponseOfInvoice : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.Invoice[] ReturnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReturnTypeDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.Request RequestField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] MessagesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ErrorCodeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.Invoice[] Return {
+            get {
+                return this.ReturnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnField, value) != true)) {
+                    this.ReturnField = value;
+                    this.RaisePropertyChanged("Return");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnTypeDescription {
+            get {
+                return this.ReturnTypeDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnTypeDescriptionField, value) != true)) {
+                    this.ReturnTypeDescriptionField = value;
+                    this.RaisePropertyChanged("ReturnTypeDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.Request Request {
+            get {
+                return this.RequestField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RequestField, value) != true)) {
+                    this.RequestField = value;
+                    this.RaisePropertyChanged("Request");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseState {
+            get {
+                return this.ResponseStateField;
+            }
+            set {
+                if ((this.ResponseStateField.Equals(value) != true)) {
+                    this.ResponseStateField = value;
+                    this.RaisePropertyChanged("ResponseState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] Messages {
+            get {
+                return this.MessagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
+                    this.MessagesField = value;
+                    this.RaisePropertyChanged("Messages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((this.ErrorCodeField.Equals(value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
+                }
             }
         }
     }
@@ -142,6 +428,12 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string InvoicingAttentionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InvoicingCustomerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustomerReferenceIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string InvoiceNoExternalField;
@@ -475,6 +767,32 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        public string InvoicingCustomerName {
+            get {
+                return this.InvoicingCustomerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoicingCustomerNameField, value) != true)) {
+                    this.InvoicingCustomerNameField = value;
+                    this.RaisePropertyChanged("InvoicingCustomerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        public int CustomerReferenceID {
+            get {
+                return this.CustomerReferenceIDField;
+            }
+            set {
+                if ((this.CustomerReferenceIDField.Equals(value) != true)) {
+                    this.CustomerReferenceIDField = value;
+                    this.RaisePropertyChanged("CustomerReferenceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
         public string InvoiceNoExternal {
             get {
                 return this.InvoiceNoExternalField;
@@ -487,7 +805,7 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
         public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceDetails Details {
             get {
                 return this.DetailsField;
@@ -1286,6 +1604,109 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfCreditNote", Namespace="http://www.timelog.com/api/tlp/v1_1")]
+    [System.SerializableAttribute()]
+    public partial class ResponseOfCreditNote : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote[] ReturnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReturnTypeDescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.Request RequestField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseStateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] MessagesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ErrorCodeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote[] Return {
+            get {
+                return this.ReturnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnField, value) != true)) {
+                    this.ReturnField = value;
+                    this.RaisePropertyChanged("Return");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnTypeDescription {
+            get {
+                return this.ReturnTypeDescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnTypeDescriptionField, value) != true)) {
+                    this.ReturnTypeDescriptionField = value;
+                    this.RaisePropertyChanged("ReturnTypeDescription");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.Request Request {
+            get {
+                return this.RequestField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RequestField, value) != true)) {
+                    this.RequestField = value;
+                    this.RaisePropertyChanged("Request");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseState {
+            get {
+                return this.ResponseStateField;
+            }
+            set {
+                if ((this.ResponseStateField.Equals(value) != true)) {
+                    this.ResponseStateField = value;
+                    this.RaisePropertyChanged("ResponseState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] Messages {
+            get {
+                return this.MessagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
+                    this.MessagesField = value;
+                    this.RaisePropertyChanged("Messages");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ErrorCode {
+            get {
+                return this.ErrorCodeField;
+            }
+            set {
+                if ((this.ErrorCodeField.Equals(value) != true)) {
+                    this.ErrorCodeField = value;
+                    this.RaisePropertyChanged("ErrorCode");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CreditNote", Namespace="http://www.timelog.com/api/tlp/v1")]
     [System.SerializableAttribute()]
     public partial class CreditNote : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
@@ -1358,6 +1779,15 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EANField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InvoicingCustomerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustomerReferenceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CreditedInvoiceIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.InvoicingService.CreditNoteDetails DetailsField;
@@ -1662,6 +2092,45 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+        public string InvoicingCustomerName {
+            get {
+                return this.InvoicingCustomerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoicingCustomerNameField, value) != true)) {
+                    this.InvoicingCustomerNameField = value;
+                    this.RaisePropertyChanged("InvoicingCustomerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+        public int CustomerReferenceID {
+            get {
+                return this.CustomerReferenceIDField;
+            }
+            set {
+                if ((this.CustomerReferenceIDField.Equals(value) != true)) {
+                    this.CustomerReferenceIDField = value;
+                    this.RaisePropertyChanged("CustomerReferenceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        public int CreditedInvoiceID {
+            get {
+                return this.CreditedInvoiceIDField;
+            }
+            set {
+                if ((this.CreditedInvoiceIDField.Equals(value) != true)) {
+                    this.CreditedInvoiceIDField = value;
+                    this.RaisePropertyChanged("CreditedInvoiceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
         public TimeLog.TransactionalApi.SDK.InvoicingService.CreditNoteDetails Details {
             get {
                 return this.DetailsField;
@@ -1670,45 +2139,6 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
                 if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
                     this.DetailsField = value;
                     this.RaisePropertyChanged("Details");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceWithExternalKey", Namespace="http://www.timelog.com/api/tlp/v1")]
-    [System.SerializableAttribute()]
-    public partial class InvoiceWithExternalKey : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.Invoice InvoiceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext[] ExternalSystemContextsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.Invoice Invoice {
-            get {
-                return this.InvoiceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InvoiceField, value) != true)) {
-                    this.InvoiceField = value;
-                    this.RaisePropertyChanged("Invoice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext[] ExternalSystemContexts {
-            get {
-                return this.ExternalSystemContextsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExternalSystemContextsField, value) != true)) {
-                    this.ExternalSystemContextsField = value;
-                    this.RaisePropertyChanged("ExternalSystemContexts");
                 }
             }
         }
@@ -1748,306 +2178,6 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
                 if ((object.ReferenceEquals(this.ExternalIDField, value) != true)) {
                     this.ExternalIDField = value;
                     this.RaisePropertyChanged("ExternalID");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CreditNoteWithExternalKey", Namespace="http://www.timelog.com/api/tlp/v1")]
-    [System.SerializableAttribute()]
-    public partial class CreditNoteWithExternalKey : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote CreditNoteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext[] ExternalSystemContextsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote CreditNote {
-            get {
-                return this.CreditNoteField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreditNoteField, value) != true)) {
-                    this.CreditNoteField = value;
-                    this.RaisePropertyChanged("CreditNote");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext[] ExternalSystemContexts {
-            get {
-                return this.ExternalSystemContextsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExternalSystemContextsField, value) != true)) {
-                    this.ExternalSystemContextsField = value;
-                    this.RaisePropertyChanged("ExternalSystemContexts");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfInvoice", Namespace="http://www.timelog.com/api/tlp/v1_1")]
-    [System.SerializableAttribute()]
-    public partial class ResponseOfInvoice : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.Invoice[] ReturnField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReturnTypeDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.Request RequestField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseStateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] MessagesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ErrorCodeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.Invoice[] Return {
-            get {
-                return this.ReturnField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReturnField, value) != true)) {
-                    this.ReturnField = value;
-                    this.RaisePropertyChanged("Return");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReturnTypeDescription {
-            get {
-                return this.ReturnTypeDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReturnTypeDescriptionField, value) != true)) {
-                    this.ReturnTypeDescriptionField = value;
-                    this.RaisePropertyChanged("ReturnTypeDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.Request Request {
-            get {
-                return this.RequestField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RequestField, value) != true)) {
-                    this.RequestField = value;
-                    this.RaisePropertyChanged("Request");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseState {
-            get {
-                return this.ResponseStateField;
-            }
-            set {
-                if ((this.ResponseStateField.Equals(value) != true)) {
-                    this.ResponseStateField = value;
-                    this.RaisePropertyChanged("ResponseState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] Messages {
-            get {
-                return this.MessagesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
-                    this.MessagesField = value;
-                    this.RaisePropertyChanged("Messages");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public int ErrorCode {
-            get {
-                return this.ErrorCodeField;
-            }
-            set {
-                if ((this.ErrorCodeField.Equals(value) != true)) {
-                    this.ErrorCodeField = value;
-                    this.RaisePropertyChanged("ErrorCode");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://www.timelog.com/api/tlp/v1_1")]
-    [System.SerializableAttribute()]
-    public partial class Request : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.RequestParameter[] ParametersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ServiceClassField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MethodNameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.RequestParameter[] Parameters {
-            get {
-                return this.ParametersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ParametersField, value) != true)) {
-                    this.ParametersField = value;
-                    this.RaisePropertyChanged("Parameters");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ServiceClass {
-            get {
-                return this.ServiceClassField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ServiceClassField, value) != true)) {
-                    this.ServiceClassField = value;
-                    this.RaisePropertyChanged("ServiceClass");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public string MethodName {
-            get {
-                return this.MethodNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MethodNameField, value) != true)) {
-                    this.MethodNameField = value;
-                    this.RaisePropertyChanged("MethodName");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfCreditNote", Namespace="http://www.timelog.com/api/tlp/v1_1")]
-    [System.SerializableAttribute()]
-    public partial class ResponseOfCreditNote : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote[] ReturnField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReturnTypeDescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.Request RequestField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseStateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] MessagesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ErrorCodeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote[] Return {
-            get {
-                return this.ReturnField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReturnField, value) != true)) {
-                    this.ReturnField = value;
-                    this.RaisePropertyChanged("Return");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReturnTypeDescription {
-            get {
-                return this.ReturnTypeDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReturnTypeDescriptionField, value) != true)) {
-                    this.ReturnTypeDescriptionField = value;
-                    this.RaisePropertyChanged("ReturnTypeDescription");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.Request Request {
-            get {
-                return this.RequestField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RequestField, value) != true)) {
-                    this.RequestField = value;
-                    this.RaisePropertyChanged("Request");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.ExecutionStatus ResponseState {
-            get {
-                return this.ResponseStateField;
-            }
-            set {
-                if ((this.ResponseStateField.Equals(value) != true)) {
-                    this.ResponseStateField = value;
-                    this.RaisePropertyChanged("ResponseState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.APIMessage[] Messages {
-            get {
-                return this.MessagesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
-                    this.MessagesField = value;
-                    this.RaisePropertyChanged("Messages");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public int ErrorCode {
-            get {
-                return this.ErrorCodeField;
-            }
-            set {
-                if ((this.ErrorCodeField.Equals(value) != true)) {
-                    this.ErrorCodeField = value;
-                    this.RaisePropertyChanged("ErrorCode");
                 }
             }
         }
@@ -2158,6 +2288,45 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceWithExternalKey", Namespace="http://www.timelog.com/api/tlp/v1")]
+    [System.SerializableAttribute()]
+    public partial class InvoiceWithExternalKey : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.Invoice InvoiceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext[] ExternalSystemContextsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.Invoice Invoice {
+            get {
+                return this.InvoiceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceField, value) != true)) {
+                    this.InvoiceField = value;
+                    this.RaisePropertyChanged("Invoice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext[] ExternalSystemContexts {
+            get {
+                return this.ExternalSystemContextsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExternalSystemContextsField, value) != true)) {
+                    this.ExternalSystemContextsField = value;
+                    this.RaisePropertyChanged("ExternalSystemContexts");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfCreditNoteWithExternalKey", Namespace="http://www.timelog.com/api/tlp/v1_1")]
     [System.SerializableAttribute()]
     public partial class ResponseOfCreditNoteWithExternalKey : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
@@ -2261,6 +2430,45 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CreditNoteWithExternalKey", Namespace="http://www.timelog.com/api/tlp/v1")]
+    [System.SerializableAttribute()]
+    public partial class CreditNoteWithExternalKey : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote CreditNoteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext[] ExternalSystemContextsField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.CreditNote CreditNote {
+            get {
+                return this.CreditNoteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreditNoteField, value) != true)) {
+                    this.CreditNoteField = value;
+                    this.RaisePropertyChanged("CreditNote");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ExternalSystemContext[] ExternalSystemContexts {
+            get {
+                return this.ExternalSystemContextsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExternalSystemContextsField, value) != true)) {
+                    this.ExternalSystemContextsField = value;
+                    this.RaisePropertyChanged("ExternalSystemContexts");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SecurityToken", Namespace="http://www.timelog.com/api/tlp/v1_1")]
     [System.SerializableAttribute()]
     public partial class SecurityToken : TimeLog.TransactionalApi.SDK.InvoicingService.APIBase {
@@ -2307,317 +2515,6 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
                     this.HashField = value;
                     this.RaisePropertyChanged("Hash");
                 }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceDetails", Namespace="http://www.timelog.com/api/tlp/v1")]
-    [System.SerializableAttribute()]
-    public partial class InvoiceDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceState StatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceTypes TypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.EmployeeHeader InternalReferenceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.Currency CurrencyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.CustomerHeader CustomerHeaderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader ContactHeaderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeaderField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceState Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceTypes Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.EmployeeHeader InternalReference {
-            get {
-                return this.InternalReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InternalReferenceField, value) != true)) {
-                    this.InternalReferenceField = value;
-                    this.RaisePropertyChanged("InternalReference");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.Currency Currency {
-            get {
-                return this.CurrencyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
-                    this.CurrencyField = value;
-                    this.RaisePropertyChanged("Currency");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.CustomerHeader CustomerHeader {
-            get {
-                return this.CustomerHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerHeaderField, value) != true)) {
-                    this.CustomerHeaderField = value;
-                    this.RaisePropertyChanged("CustomerHeader");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader ContactHeader {
-            get {
-                return this.ContactHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContactHeaderField, value) != true)) {
-                    this.ContactHeaderField = value;
-                    this.RaisePropertyChanged("ContactHeader");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeader {
-            get {
-                return this.ProjectHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProjectHeaderField, value) != true)) {
-                    this.ProjectHeaderField = value;
-                    this.RaisePropertyChanged("ProjectHeader");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceLineDetails", Namespace="http://www.timelog.com/api/tlp/v1")]
-    [System.SerializableAttribute()]
-    public partial class InvoiceLineDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeaderField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeader {
-            get {
-                return this.ProjectHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProjectHeaderField, value) != true)) {
-                    this.ProjectHeaderField = value;
-                    this.RaisePropertyChanged("ProjectHeader");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CreditNoteDetails", Namespace="http://www.timelog.com/api/tlp/v1")]
-    [System.SerializableAttribute()]
-    public partial class CreditNoteDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceState StatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceTypes TypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.EmployeeHeader InternalReferenceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.Currency CurrencyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.CustomerHeader CustomerHeaderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader ContactHeaderField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceState Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceTypes Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.EmployeeHeader InternalReference {
-            get {
-                return this.InternalReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InternalReferenceField, value) != true)) {
-                    this.InternalReferenceField = value;
-                    this.RaisePropertyChanged("InternalReference");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.Currency Currency {
-            get {
-                return this.CurrencyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
-                    this.CurrencyField = value;
-                    this.RaisePropertyChanged("Currency");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.CustomerHeader CustomerHeader {
-            get {
-                return this.CustomerHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerHeaderField, value) != true)) {
-                    this.CustomerHeaderField = value;
-                    this.RaisePropertyChanged("CustomerHeader");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader ContactHeader {
-            get {
-                return this.ContactHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContactHeaderField, value) != true)) {
-                    this.ContactHeaderField = value;
-                    this.RaisePropertyChanged("ContactHeader");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
     }
@@ -2791,6 +2688,349 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         Message = 2,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceDetails", Namespace="http://www.timelog.com/api/tlp/v1")]
+    [System.SerializableAttribute()]
+    public partial class InvoiceDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceState StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceTypes TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.EmployeeHeader InternalReferenceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.Currency CurrencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.CustomerHeader CustomerHeaderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader ContactHeaderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeaderField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceState Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceTypes Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.EmployeeHeader InternalReference {
+            get {
+                return this.InternalReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InternalReferenceField, value) != true)) {
+                    this.InternalReferenceField = value;
+                    this.RaisePropertyChanged("InternalReference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.Currency Currency {
+            get {
+                return this.CurrencyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
+                    this.CurrencyField = value;
+                    this.RaisePropertyChanged("Currency");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.CustomerHeader CustomerHeader {
+            get {
+                return this.CustomerHeaderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerHeaderField, value) != true)) {
+                    this.CustomerHeaderField = value;
+                    this.RaisePropertyChanged("CustomerHeader");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader ContactHeader {
+            get {
+                return this.ContactHeaderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContactHeaderField, value) != true)) {
+                    this.ContactHeaderField = value;
+                    this.RaisePropertyChanged("ContactHeader");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeader {
+            get {
+                return this.ProjectHeaderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectHeaderField, value) != true)) {
+                    this.ProjectHeaderField = value;
+                    this.RaisePropertyChanged("ProjectHeader");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InvoiceLineDetails", Namespace="http://www.timelog.com/api/tlp/v1")]
+    [System.SerializableAttribute()]
+    public partial class InvoiceLineDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeaderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommentField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeader {
+            get {
+                return this.ProjectHeaderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectHeaderField, value) != true)) {
+                    this.ProjectHeaderField = value;
+                    this.RaisePropertyChanged("ProjectHeader");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string Comment {
+            get {
+                return this.CommentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommentField, value) != true)) {
+                    this.CommentField = value;
+                    this.RaisePropertyChanged("Comment");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CreditNoteDetails", Namespace="http://www.timelog.com/api/tlp/v1")]
+    [System.SerializableAttribute()]
+    public partial class CreditNoteDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceState StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceTypes TypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.EmployeeHeader InternalReferenceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.Currency CurrencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.CustomerHeader CustomerHeaderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader ContactHeaderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeaderField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceState Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.InvoiceTypes Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.EmployeeHeader InternalReference {
+            get {
+                return this.InternalReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InternalReferenceField, value) != true)) {
+                    this.InternalReferenceField = value;
+                    this.RaisePropertyChanged("InternalReference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.Currency Currency {
+            get {
+                return this.CurrencyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
+                    this.CurrencyField = value;
+                    this.RaisePropertyChanged("Currency");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.CustomerHeader CustomerHeader {
+            get {
+                return this.CustomerHeaderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerHeaderField, value) != true)) {
+                    this.CustomerHeaderField = value;
+                    this.RaisePropertyChanged("CustomerHeader");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ContactHeader ContactHeader {
+            get {
+                return this.ContactHeaderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ContactHeaderField, value) != true)) {
+                    this.ContactHeaderField = value;
+                    this.RaisePropertyChanged("ContactHeader");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ProjectHeader ProjectHeader {
+            get {
+                return this.ProjectHeaderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectHeaderField, value) != true)) {
+                    this.ProjectHeaderField = value;
+                    this.RaisePropertyChanged("ProjectHeader");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1", ConfigurationName="InvoicingService.InvoicingService")]
     public interface InvoicingService {
@@ -2801,6 +3041,12 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.InvoicingService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalApi.SDK.InvoicingService.IsAliveRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="GetInvoiceSpecificationPDFRequest", ReplyAction="GetInvoiceSpecificationPDFResponse")]
+        TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceSpecification GetInvoiceSpecificationPDF(int invoiceID, TimeLog.TransactionalApi.SDK.InvoicingService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="GetInvoiceSpecificationPDFRequest", ReplyAction="GetInvoiceSpecificationPDFResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceSpecification> GetInvoiceSpecificationPDFAsync(int invoiceID, TimeLog.TransactionalApi.SDK.InvoicingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetInvoiceByIDRequest", ReplyAction="GetInvoiceByIDResponse")]
         TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoice GetInvoiceByID(int id, TimeLog.TransactionalApi.SDK.InvoicingService.SecurityToken token);
@@ -2932,6 +3178,14 @@ namespace TimeLog.TransactionalApi.SDK.InvoicingService {
         public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.InvoicingService.IsAliveResponse> IsAliveAsync() {
             TimeLog.TransactionalApi.SDK.InvoicingService.IsAliveRequest inValue = new TimeLog.TransactionalApi.SDK.InvoicingService.IsAliveRequest();
             return ((TimeLog.TransactionalApi.SDK.InvoicingService.InvoicingService)(this)).IsAliveAsync(inValue);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceSpecification GetInvoiceSpecificationPDF(int invoiceID, TimeLog.TransactionalApi.SDK.InvoicingService.SecurityToken token) {
+            return base.Channel.GetInvoiceSpecificationPDF(invoiceID, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceSpecification> GetInvoiceSpecificationPDFAsync(int invoiceID, TimeLog.TransactionalApi.SDK.InvoicingService.SecurityToken token) {
+            return base.Channel.GetInvoiceSpecificationPDFAsync(invoiceID, token);
         }
         
         public TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoice GetInvoiceByID(int id, TimeLog.TransactionalApi.SDK.InvoicingService.SecurityToken token) {

@@ -31,11 +31,12 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.Salary))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfSalary))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.Salary))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkweek))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkweek))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkingTime))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkingTime))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkingTimeDay))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfHolidayCalendar))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.HolidayCalendar))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfAllowance))]
@@ -62,189 +63,6 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Salary", Namespace="http://api.timelog.com/services/salary/1_0")]
-    [System.SerializableAttribute()]
-    public partial class Salary : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SalaryCodeNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SalaryService.SalaryType SalaryTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SalaryService.CalculationMethod CalculationMethodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double FlexFactorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool FlexIncludedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsActiveField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SalaryCodeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsPartOfWorkloadField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid SalaryCodeGuidField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SalaryCodeNo {
-            get {
-                return this.SalaryCodeNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SalaryCodeNoField, value) != true)) {
-                    this.SalaryCodeNoField = value;
-                    this.RaisePropertyChanged("SalaryCodeNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.SalaryService.SalaryType SalaryType {
-            get {
-                return this.SalaryTypeField;
-            }
-            set {
-                if ((this.SalaryTypeField.Equals(value) != true)) {
-                    this.SalaryTypeField = value;
-                    this.RaisePropertyChanged("SalaryType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.SalaryService.CalculationMethod CalculationMethod {
-            get {
-                return this.CalculationMethodField;
-            }
-            set {
-                if ((this.CalculationMethodField.Equals(value) != true)) {
-                    this.CalculationMethodField = value;
-                    this.RaisePropertyChanged("CalculationMethod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public double FlexFactor {
-            get {
-                return this.FlexFactorField;
-            }
-            set {
-                if ((this.FlexFactorField.Equals(value) != true)) {
-                    this.FlexFactorField = value;
-                    this.RaisePropertyChanged("FlexFactor");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public bool FlexIncluded {
-            get {
-                return this.FlexIncludedField;
-            }
-            set {
-                if ((this.FlexIncludedField.Equals(value) != true)) {
-                    this.FlexIncludedField = value;
-                    this.RaisePropertyChanged("FlexIncluded");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public bool IsActive {
-            get {
-                return this.IsActiveField;
-            }
-            set {
-                if ((this.IsActiveField.Equals(value) != true)) {
-                    this.IsActiveField = value;
-                    this.RaisePropertyChanged("IsActive");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public int SalaryCodeID {
-            get {
-                return this.SalaryCodeIDField;
-            }
-            set {
-                if ((this.SalaryCodeIDField.Equals(value) != true)) {
-                    this.SalaryCodeIDField = value;
-                    this.RaisePropertyChanged("SalaryCodeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public bool IsPartOfWorkload {
-            get {
-                return this.IsPartOfWorkloadField;
-            }
-            set {
-                if ((this.IsPartOfWorkloadField.Equals(value) != true)) {
-                    this.IsPartOfWorkloadField = value;
-                    this.RaisePropertyChanged("IsPartOfWorkload");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
-        public System.Guid SalaryCodeGuid {
-            get {
-                return this.SalaryCodeGuidField;
-            }
-            set {
-                if ((this.SalaryCodeGuidField.Equals(value) != true)) {
-                    this.SalaryCodeGuidField = value;
-                    this.RaisePropertyChanged("SalaryCodeGuid");
-                }
             }
         }
     }
@@ -386,6 +204,237 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Salary", Namespace="http://api.timelog.com/services/salary/1_1")]
+    [System.SerializableAttribute()]
+    public partial class Salary : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.SalaryService.SalaryCodeSystemTypes SalaryCodeSystemTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SalaryAccountFactorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double FlexPositiveFactorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.SalaryService.SalaryAccountFactorEffectTypes SalaryAccountFactorEffectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsActiveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SalaryCodeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsSystemSalaryCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid SalaryCodeGuidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SalaryAccountIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.SalaryService.TimeTrackingFormat TimeTrackingFormatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.SalaryService.SalarySpecificationTypes SalarySpecificationTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodeField, value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalApi.SDK.SalaryService.SalaryCodeSystemTypes SalaryCodeSystemType {
+            get {
+                return this.SalaryCodeSystemTypeField;
+            }
+            set {
+                if ((this.SalaryCodeSystemTypeField.Equals(value) != true)) {
+                    this.SalaryCodeSystemTypeField = value;
+                    this.RaisePropertyChanged("SalaryCodeSystemType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public double SalaryAccountFactor {
+            get {
+                return this.SalaryAccountFactorField;
+            }
+            set {
+                if ((this.SalaryAccountFactorField.Equals(value) != true)) {
+                    this.SalaryAccountFactorField = value;
+                    this.RaisePropertyChanged("SalaryAccountFactor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public double FlexPositiveFactor {
+            get {
+                return this.FlexPositiveFactorField;
+            }
+            set {
+                if ((this.FlexPositiveFactorField.Equals(value) != true)) {
+                    this.FlexPositiveFactorField = value;
+                    this.RaisePropertyChanged("FlexPositiveFactor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public TimeLog.TransactionalApi.SDK.SalaryService.SalaryAccountFactorEffectTypes SalaryAccountFactorEffect {
+            get {
+                return this.SalaryAccountFactorEffectField;
+            }
+            set {
+                if ((this.SalaryAccountFactorEffectField.Equals(value) != true)) {
+                    this.SalaryAccountFactorEffectField = value;
+                    this.RaisePropertyChanged("SalaryAccountFactorEffect");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public bool IsActive {
+            get {
+                return this.IsActiveField;
+            }
+            set {
+                if ((this.IsActiveField.Equals(value) != true)) {
+                    this.IsActiveField = value;
+                    this.RaisePropertyChanged("IsActive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public int SalaryCodeID {
+            get {
+                return this.SalaryCodeIDField;
+            }
+            set {
+                if ((this.SalaryCodeIDField.Equals(value) != true)) {
+                    this.SalaryCodeIDField = value;
+                    this.RaisePropertyChanged("SalaryCodeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public bool IsSystemSalaryCode {
+            get {
+                return this.IsSystemSalaryCodeField;
+            }
+            set {
+                if ((this.IsSystemSalaryCodeField.Equals(value) != true)) {
+                    this.IsSystemSalaryCodeField = value;
+                    this.RaisePropertyChanged("IsSystemSalaryCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public System.Guid SalaryCodeGuid {
+            get {
+                return this.SalaryCodeGuidField;
+            }
+            set {
+                if ((this.SalaryCodeGuidField.Equals(value) != true)) {
+                    this.SalaryCodeGuidField = value;
+                    this.RaisePropertyChanged("SalaryCodeGuid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public int SalaryAccountID {
+            get {
+                return this.SalaryAccountIDField;
+            }
+            set {
+                if ((this.SalaryAccountIDField.Equals(value) != true)) {
+                    this.SalaryAccountIDField = value;
+                    this.RaisePropertyChanged("SalaryAccountID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public TimeLog.TransactionalApi.SDK.SalaryService.TimeTrackingFormat TimeTrackingFormat {
+            get {
+                return this.TimeTrackingFormatField;
+            }
+            set {
+                if ((this.TimeTrackingFormatField.Equals(value) != true)) {
+                    this.TimeTrackingFormatField = value;
+                    this.RaisePropertyChanged("TimeTrackingFormat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public TimeLog.TransactionalApi.SDK.SalaryService.SalarySpecificationTypes SalarySpecificationType {
+            get {
+                return this.SalarySpecificationTypeField;
+            }
+            set {
+                if ((this.SalarySpecificationTypeField.Equals(value) != true)) {
+                    this.SalarySpecificationTypeField = value;
+                    this.RaisePropertyChanged("SalarySpecificationType");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
     public partial class Request : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
@@ -441,12 +490,12 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfNormalWorkweek", Namespace="http://api.timelog.com")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfNormalWorkingTime", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfNormalWorkweek : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
+    public partial class ResponseOfNormalWorkingTime : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkweek[] ReturnField;
+        private TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkingTime[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
@@ -470,7 +519,7 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkweek[] Return {
+        public TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkingTime[] Return {
             get {
                 return this.ReturnField;
             }
@@ -576,12 +625,21 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NormalWorkweek", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NormalWorkingTime", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_1")]
     [System.SerializableAttribute()]
-    public partial class NormalWorkweek : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
+    public partial class NormalWorkingTime : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
+        private bool CanBeDeletedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkingTimeDay[] DaysField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsActiveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsDefaultField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
@@ -589,15 +647,60 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.Dictionary<int, double> NormHoursField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NormalWorkingTimeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkingTimeTypes NormalWorkingTimeTypeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
+        public bool CanBeDeleted {
             get {
-                return this.IdField;
+                return this.CanBeDeletedField;
             }
             set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
+                if ((this.CanBeDeletedField.Equals(value) != true)) {
+                    this.CanBeDeletedField = value;
+                    this.RaisePropertyChanged("CanBeDeleted");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkingTimeDay[] Days {
+            get {
+                return this.DaysField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DaysField, value) != true)) {
+                    this.DaysField = value;
+                    this.RaisePropertyChanged("Days");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsActive {
+            get {
+                return this.IsActiveField;
+            }
+            set {
+                if ((this.IsActiveField.Equals(value) != true)) {
+                    this.IsActiveField = value;
+                    this.RaisePropertyChanged("IsActive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsDefault {
+            get {
+                return this.IsDefaultField;
+            }
+            set {
+                if ((this.IsDefaultField.Equals(value) != true)) {
+                    this.IsDefaultField = value;
+                    this.RaisePropertyChanged("IsDefault");
                 }
             }
         }
@@ -624,6 +727,135 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
                 if ((object.ReferenceEquals(this.NormHoursField, value) != true)) {
                     this.NormHoursField = value;
                     this.RaisePropertyChanged("NormHours");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NormalWorkingTimeID {
+            get {
+                return this.NormalWorkingTimeIDField;
+            }
+            set {
+                if ((this.NormalWorkingTimeIDField.Equals(value) != true)) {
+                    this.NormalWorkingTimeIDField = value;
+                    this.RaisePropertyChanged("NormalWorkingTimeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.SalaryService.NormalWorkingTimeTypes NormalWorkingTimeType {
+            get {
+                return this.NormalWorkingTimeTypeField;
+            }
+            set {
+                if ((this.NormalWorkingTimeTypeField.Equals(value) != true)) {
+                    this.NormalWorkingTimeTypeField = value;
+                    this.RaisePropertyChanged("NormalWorkingTimeType");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NormalWorkingTimeDay", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_1")]
+    [System.SerializableAttribute()]
+    public partial class NormalWorkingTimeDay : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DayOfWeek DayOfWeekField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double HoursField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double MinutesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NormalWorkingTimeDayIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NormalWorkingTimeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DayOfWeek DayOfWeek {
+            get {
+                return this.DayOfWeekField;
+            }
+            set {
+                if ((this.DayOfWeekField.Equals(value) != true)) {
+                    this.DayOfWeekField = value;
+                    this.RaisePropertyChanged("DayOfWeek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Hours {
+            get {
+                return this.HoursField;
+            }
+            set {
+                if ((this.HoursField.Equals(value) != true)) {
+                    this.HoursField = value;
+                    this.RaisePropertyChanged("Hours");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Minutes {
+            get {
+                return this.MinutesField;
+            }
+            set {
+                if ((this.MinutesField.Equals(value) != true)) {
+                    this.MinutesField = value;
+                    this.RaisePropertyChanged("Minutes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NormalWorkingTimeDayID {
+            get {
+                return this.NormalWorkingTimeDayIDField;
+            }
+            set {
+                if ((this.NormalWorkingTimeDayIDField.Equals(value) != true)) {
+                    this.NormalWorkingTimeDayIDField = value;
+                    this.RaisePropertyChanged("NormalWorkingTimeDayID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NormalWorkingTimeID {
+            get {
+                return this.NormalWorkingTimeIDField;
+            }
+            set {
+                if ((this.NormalWorkingTimeIDField.Equals(value) != true)) {
+                    this.NormalWorkingTimeIDField = value;
+                    this.RaisePropertyChanged("NormalWorkingTimeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Order {
+            get {
+                return this.OrderField;
+            }
+            set {
+                if ((this.OrderField.Equals(value) != true)) {
+                    this.OrderField = value;
+                    this.RaisePropertyChanged("Order");
                 }
             }
         }
@@ -766,7 +998,7 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HolidayCalendar", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HolidayCalendar", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_1")]
     [System.SerializableAttribute()]
     public partial class HolidayCalendar : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
         
@@ -940,7 +1172,7 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Allowance", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Allowance", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Salary.V1_1")]
     [System.SerializableAttribute()]
     public partial class Allowance : TimeLog.TransactionalApi.SDK.SalaryService.APIBase {
         
@@ -1027,46 +1259,6 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
                 }
             }
         }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalaryType", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common")]
-    public enum SalaryType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WorkingTimeNormal = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WorkingTimeOverTime = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Vacation = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Illness = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FreeWithPay = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FreeWithoutPay = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Flex = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Supplement = 8,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CalculationMethod", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common")]
-    public enum CalculationMethod : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Adds = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Substracts = 0,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -1163,6 +1355,62 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
         }
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SalaryCodeSystemTypes", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary")]
+    public enum SalaryCodeSystemTypes : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NormalWorkingTime = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectTime = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SalaryAccountFactorEffectTypes", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary")]
+    public enum SalaryAccountFactorEffectTypes : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Substract = -1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Add = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TimeTrackingFormat", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary")]
+    public enum TimeTrackingFormat : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Hours = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FullDay = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HalfDay = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        YesNo = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Count = 4,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SalarySpecificationTypes", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary")]
+    public enum SalarySpecificationTypes : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryTime = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Supplement = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PaidOut = 3,
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="RequestParameter", Namespace="http://api.timelog.com")]
@@ -1238,39 +1486,50 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
         Message = 2,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="NormalWorkingTimeTypes", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Employees")]
+    public enum NormalWorkingTimeTypes : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OneWeek = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TwoWeeks = 1,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_0", ConfigurationName="SalaryService.SalaryService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_1", ConfigurationName="SalaryService.SalaryService")]
     public interface SalaryService {
         
-        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_0)
+        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_1)
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         TimeLog.TransactionalApi.SDK.SalaryService.IsAliveResponse IsAlive(TimeLog.TransactionalApi.SDK.SalaryService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SalaryService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalApi.SDK.SalaryService.IsAliveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetAllSalaryCodes", ReplyAction="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetAllSalaryCodesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetAllSalaryCodes", ReplyAction="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetAllSalaryCodesResponse")]
         TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfSalary GetAllSalaryCodes(TimeLog.TransactionalApi.SDK.SalaryService.SalaryCodeStatus salaryCodeStatus, TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetAllSalaryCodes", ReplyAction="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetAllSalaryCodesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetAllSalaryCodes", ReplyAction="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetAllSalaryCodesResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfSalary> GetAllSalaryCodesAsync(TimeLog.TransactionalApi.SDK.SalaryService.SalaryCodeStatus salaryCodeStatus, TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetNormalWorkweeks", ReplyAction="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetNormalWorkweeksResponse")]
-        TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkweek GetNormalWorkweeks(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetNormalWorkweeks", ReplyAction="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetNormalWorkweeksResponse")]
+        TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkingTime GetNormalWorkweeks(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetNormalWorkweeks", ReplyAction="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetNormalWorkweeksResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkweek> GetNormalWorkweeksAsync(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetNormalWorkweeks", ReplyAction="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetNormalWorkweeksResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkingTime> GetNormalWorkweeksAsync(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetHolidayCalendars", ReplyAction="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetHolidayCalendarsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetHolidayCalendars", ReplyAction="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetHolidayCalendarsResponse")]
         TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfHolidayCalendar GetHolidayCalendars(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetHolidayCalendars", ReplyAction="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetHolidayCalendarsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetHolidayCalendars", ReplyAction="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetHolidayCalendarsResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfHolidayCalendar> GetHolidayCalendarsAsync(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetAllowances", ReplyAction="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetAllowancesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetAllowances", ReplyAction="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetAllowancesResponse")]
         TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfAllowance GetAllowances(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetAllowances", ReplyAction="http://www.timelog.com/api/tlp/v1_0/SalaryService/GetAllowancesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetAllowances", ReplyAction="http://www.timelog.com/api/tlp/v1_1/SalaryService/GetAllowancesResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfAllowance> GetAllowancesAsync(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token);
     }
     
@@ -1357,11 +1616,11 @@ namespace TimeLog.TransactionalApi.SDK.SalaryService {
             return base.Channel.GetAllSalaryCodesAsync(salaryCodeStatus, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkweek GetNormalWorkweeks(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token) {
+        public TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkingTime GetNormalWorkweeks(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token) {
             return base.Channel.GetNormalWorkweeks(token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkweek> GetNormalWorkweeksAsync(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkingTime> GetNormalWorkweeksAsync(TimeLog.TransactionalApi.SDK.SalaryService.SecurityToken token) {
             return base.Channel.GetNormalWorkweeksAsync(token);
         }
         

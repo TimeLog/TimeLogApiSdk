@@ -161,6 +161,12 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int AdditionalTextFieldTypeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NumberOfTasksReturnedInTrackerSearchField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LimitTrackerSearchToProjectsField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool UseCaseSensetiveLogin {
             get {
@@ -391,6 +397,32 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
                 if ((this.AdditionalTextFieldTypeField.Equals(value) != true)) {
                     this.AdditionalTextFieldTypeField = value;
                     this.RaisePropertyChanged("AdditionalTextFieldType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public int NumberOfTasksReturnedInTrackerSearch {
+            get {
+                return this.NumberOfTasksReturnedInTrackerSearchField;
+            }
+            set {
+                if ((this.NumberOfTasksReturnedInTrackerSearchField.Equals(value) != true)) {
+                    this.NumberOfTasksReturnedInTrackerSearchField = value;
+                    this.RaisePropertyChanged("NumberOfTasksReturnedInTrackerSearch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public bool LimitTrackerSearchToProjects {
+            get {
+                return this.LimitTrackerSearchToProjectsField;
+            }
+            set {
+                if ((this.LimitTrackerSearchToProjectsField.Equals(value) != true)) {
+                    this.LimitTrackerSearchToProjectsField = value;
+                    this.RaisePropertyChanged("LimitTrackerSearchToProjects");
                 }
             }
         }

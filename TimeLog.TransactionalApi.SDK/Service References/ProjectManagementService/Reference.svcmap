@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ProjectManagementServiceSecure22.wsdl" MetadataType="Wsdl" ID="729e7cb1-8b9a-49d8-a1a4-305f7d44dd0f" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl" />
-    <MetadataFile FileName="ProjectManagementServiceSecure11.disco" MetadataType="Disco" ID="49a4ef0e-0e6c-4a95-bf6a-72906aee04c7" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?disco" />
-    <MetadataFile FileName="ProjectManagementServiceSecure23.wsdl" MetadataType="Wsdl" ID="3d9ae554-e5b4-43c2-81d1-3321b9111e78" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ProjectManagementServiceSecure.disco" MetadataType="Disco" ID="420994d2-977c-4eba-9a20-83cb9bf36d15" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?disco" />
+    <MetadataFile FileName="ProjectManagementServiceSecure.wsdl" MetadataType="Wsdl" ID="735d3c5c-24bb-4df5-b87f-738aa5632b02" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="ProjectManagementServiceSecure1.wsdl" MetadataType="Wsdl" ID="0efa7abb-ab16-475d-ae24-35503f538bc4" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

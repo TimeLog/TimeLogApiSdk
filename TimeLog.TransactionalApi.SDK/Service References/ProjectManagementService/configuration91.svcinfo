@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="wkdHhxZzx7uJeWv2AJHQRfU25LQ=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="aphGzrdXRVz8e1zMHnV51b8XWkg=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ProjectManagementService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ProjectManagementService" contract="ProjectManagementService.ProjectManagementService" bindingType="basicHttpBinding" address="https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc" bindingConfiguration="BasicHttpBinding_ProjectManagementService">
+    <endpoint name="BasicHttpBinding_ProjectManagementService" contract="ProjectManagementService.ProjectManagementService" bindingType="basicHttpBinding" address="https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc" bindingConfiguration="BasicHttpBinding_ProjectManagementService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://app4.timelog.com/soxdemo4/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc</serializedValue>
+          <serializedValue>https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

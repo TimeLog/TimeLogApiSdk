@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app4.timelog.com/soxdemo4/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app4.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HelpDeskServiceSecure.wsdl" MetadataType="Wsdl" ID="163d163a-f824-4d6f-8ee5-e54092d2b7c1" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="HelpDeskServiceSecure.disco" MetadataType="Disco" ID="fddd041c-cb43-4c48-ba02-69d867333112" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?disco" />
-    <MetadataFile FileName="HelpDeskServiceSecure1.wsdl" MetadataType="Wsdl" ID="05b6a483-e845-4a32-bbd8-e8519ef54a18" SourceId="1" SourceUrl="https://app4.timelog.com/soxdemo4/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="HelpDeskServiceSecure1.disco" MetadataType="Disco" ID="d2bf45d1-5eee-4052-9f70-38454c115aa3" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?disco" />
+    <MetadataFile FileName="HelpDeskServiceSecure2.wsdl" MetadataType="Wsdl" ID="c2ccd280-768f-4757-a5c8-531aeb02eb39" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="HelpDeskServiceSecure21.wsdl" MetadataType="Wsdl" ID="51e4dbda-e9b8-4a44-835c-2c729789ecb4" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
