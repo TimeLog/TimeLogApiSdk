@@ -794,6 +794,12 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private bool IsActiveField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProfessionalTitle1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProfessionalTitle2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.CrmService.ContactDetails DetailsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -979,6 +985,32 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public string ProfessionalTitle1 {
+            get {
+                return this.ProfessionalTitle1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProfessionalTitle1Field, value) != true)) {
+                    this.ProfessionalTitle1Field = value;
+                    this.RaisePropertyChanged("ProfessionalTitle1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public string ProfessionalTitle2 {
+            get {
+                return this.ProfessionalTitle2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProfessionalTitle2Field, value) != true)) {
+                    this.ProfessionalTitle2Field = value;
+                    this.RaisePropertyChanged("ProfessionalTitle2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
         public TimeLog.TransactionalApi.SDK.CrmService.ContactDetails Details {
             get {
                 return this.DetailsField;

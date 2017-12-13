@@ -1827,6 +1827,8 @@
               <xsd:element minOccurs="0" name="ContactID" type="xsd:int" />
               <xsd:element minOccurs="0" name="DefaultInvoiceSettingContactID" type="xsd:int" />
               <xsd:element minOccurs="0" name="IsActive" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="ProfessionalTitle1" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ProfessionalTitle2" nillable="true" type="xsd:string" />
               <xsd:element minOccurs="0" name="Details" nillable="true" type="tns:ContactDetails" />
             </xsd:sequence>
           </xsd:extension>
