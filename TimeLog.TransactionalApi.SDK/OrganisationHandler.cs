@@ -45,10 +45,10 @@
             {
                 if (SettingsHandler.Instance.Url.Contains("https"))
                 {
-                    return SettingsHandler.Instance.Url + "WebServices/Organisation/V1_6/OrganisationServiceSecure.svc";
+                    return SettingsHandler.Instance.Url + "WebServices/Organisation/V1_7/OrganisationServiceSecure.svc";
                 }
 
-                return SettingsHandler.Instance.Url + "WebServices/Organisation/V1_6/OrganisationService.svc";
+                return SettingsHandler.Instance.Url + "WebServices/Organisation/V1_7/OrganisationService.svc";
             }
         }
 
