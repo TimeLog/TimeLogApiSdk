@@ -109,6 +109,41 @@
             Gets the active expense client
             </summary>
         </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.FinancialHandler">
+            <summary>
+            Handler of functionality related to the fiancial service
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.FinancialHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.FinancialHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.FinancialHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.TransactionalApi.SDK.FinancialHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.FinancialHandler.FinancialServiceUrl">
+            <summary>
+            Gets the uri associated with the Financial service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.FinancialHandler.Token">
+            <summary>
+            Gets the financial token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.FinancialHandler.CollectRawRequestResponse">
+            <summary>
+            Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.FinancialHandler.FinancialClient">
+            <summary>
+            Gets the active Financial client
+            </summary>
+        </member>
         <member name="T:TimeLog.TransactionalApi.SDK.SalaryHandler">
             <summary>
             Handler of functionality related to the salary service

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_2" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/tlp/WebServices/Financial/V1_2/FinancialService.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_3" />
+  <xs:import schemaLocation="http://localhost/tlp/WebServices/Financial/V1_2/FinancialService.svc?xsd=xsd4" namespace="http://api.timelog.com" />
+  <xs:import schemaLocation="http://localhost/tlp/WebServices/Financial/V1_2/FinancialService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/tlp/WebServices/Financial/V1_2/FinancialService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2" />
+  <xs:complexType name="APIBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="APIBase" nillable="true" type="tns:APIBase" />
+  <xs:element name="GetLegalEntities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q1:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLegalEntitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://api.timelog.com" minOccurs="0" name="GetLegalEntitiesResult" nillable="true" type="q2:ResponseOfLegalEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLegalEntitiesByCurrency">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currencyABB" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q3:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLegalEntitiesByCurrencyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://api.timelog.com" minOccurs="0" name="GetLegalEntitiesByCurrencyResult" nillable="true" type="q4:ResponseOfLegalEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLegalEntitiesByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q5:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLegalEntitiesByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://api.timelog.com" minOccurs="0" name="GetLegalEntitiesByNameResult" nillable="true" type="q6:ResponseOfLegalEntity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriceGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="legalEntityID" type="q7:guid" />
+        <xs:element xmlns:q8="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q8:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriceGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://api.timelog.com" minOccurs="0" name="GetPriceGroupsResult" nillable="true" type="q9:ResponseOfPriceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHourlyRates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="currencyAbb" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="legalEntityId" type="xs:int" />
+        <xs:element xmlns:q10="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q10:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHourlyRatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://api.timelog.com" minOccurs="0" name="GetHourlyRatesResult" nillable="true" type="q11:ResponseOfHourlyRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmployeeCostRates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q12:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmployeeCostRatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://api.timelog.com" minOccurs="0" name="GetEmployeeCostRatesResult" nillable="true" type="q13:ResponseOfEmployeeCostRate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContractList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="projectID" type="xs:int" />
+        <xs:element xmlns:q14="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q14:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetContractListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://api.timelog.com" minOccurs="0" name="GetContractListResult" nillable="true" type="q15:ResponseOfContract" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="contractID" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element xmlns:q16="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q16:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaymentListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://api.timelog.com" minOccurs="0" name="GetPaymentListResult" nillable="true" type="q17:ResponseOfPayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePaymentQuantity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2" minOccurs="0" name="payment" nillable="true" type="q18:Payment" />
+        <xs:element minOccurs="0" name="source" type="xs:int" />
+        <xs:element xmlns:q19="http://www.timelog.com/api/tlp/v1_3" minOccurs="0" name="token" nillable="true" type="q19:SecurityToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePaymentQuantityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://api.timelog.com" minOccurs="0" name="UpdatePaymentQuantityResult" nillable="true" type="q20:ResponseOfPayment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

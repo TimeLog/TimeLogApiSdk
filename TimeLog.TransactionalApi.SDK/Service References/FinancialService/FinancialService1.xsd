@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/tlp/WebServices/Financial/V1_2/FinancialService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/tlp/WebServices/Financial/V1_2/FinancialService.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:complexType name="ArrayOfLegalEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LegalEntity" nillable="true" type="tns:LegalEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLegalEntity" nillable="true" type="tns:ArrayOfLegalEntity" />
+  <xs:complexType name="LegalEntity">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.timelog.com/api/tlp/v1_2" base="q1:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LegalEntityID" type="ser:guid" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LegalEntity" nillable="true" type="tns:LegalEntity" />
+  <xs:complexType name="ArrayOfPriceGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceGroup" nillable="true" type="tns:PriceGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriceGroup" nillable="true" type="tns:ArrayOfPriceGroup" />
+  <xs:complexType name="PriceGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://www.timelog.com/api/tlp/v1_2" base="q2:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="ser:guid" />
+          <xs:element minOccurs="0" name="ISO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LegalEntityID" type="ser:guid" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PriceGroup" nillable="true" type="tns:PriceGroup" />
+  <xs:complexType name="ArrayOfHourlyRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HourlyRate" nillable="true" type="tns:HourlyRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHourlyRate" nillable="true" type="tns:ArrayOfHourlyRate" />
+  <xs:complexType name="HourlyRate">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://www.timelog.com/api/tlp/v1_2" base="q3:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+          <xs:element minOccurs="0" name="HourlyRateID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsCustomerSpecific" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDefault" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rate" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HourlyRate" nillable="true" type="tns:HourlyRate" />
+  <xs:complexType name="ArrayOfEmployeeCostRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeCostRate" nillable="true" type="tns:EmployeeCostRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeCostRate" nillable="true" type="tns:ArrayOfEmployeeCostRate" />
+  <xs:complexType name="EmployeeCostRate">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://www.timelog.com/api/tlp/v1_2" base="q4:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EmployeeCostRateId" type="xs:int" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rate" type="xs:float" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeCostRate" nillable="true" type="tns:EmployeeCostRate" />
+  <xs:complexType name="ArrayOfContract">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contract" nillable="true" type="tns:Contract" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContract" nillable="true" type="tns:ArrayOfContract" />
+  <xs:complexType name="Contract">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://www.timelog.com/api/tlp/v1_2" base="q5:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContractID" type="xs:int" />
+          <xs:element minOccurs="0" name="ContractType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Contract" nillable="true" type="tns:Contract" />
+  <xs:complexType name="ArrayOfPayment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Payment" nillable="true" type="tns:Payment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPayment" nillable="true" type="tns:ArrayOfPayment" />
+  <xs:complexType name="Payment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://www.timelog.com/api/tlp/v1_2" base="q6:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="InvoiceDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentID" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjectID" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjectSubContractID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Payment" nillable="true" type="tns:Payment" />
+</xs:schema>

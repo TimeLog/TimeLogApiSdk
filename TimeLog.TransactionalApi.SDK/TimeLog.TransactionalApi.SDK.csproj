@@ -47,6 +47,7 @@
     <Compile Include="HelpDeskHandler.cs" />
     <Compile Include="OrganisationHandler.cs" />
     <Compile Include="ExpenseHandler.cs" />
+    <Compile Include="FinancialHandler.cs" />
     <Compile Include="SalaryHandler.cs" />
     <Compile Include="CrmHandler.cs" />
     <Compile Include="InvoicingHandler.cs" />
@@ -64,6 +65,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Service References\ExpenseService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FinancialService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -157,6 +163,50 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfPaymentMethod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\FinancialService.wsdl" />
+    <None Include="Service References\FinancialService\FinancialService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinancialService\FinancialService1.wsdl" />
+    <None Include="Service References\FinancialService\FinancialService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinancialService\FinancialService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinancialService\FinancialService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinancialService\FinancialService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinancialService\FinancialService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinancialService\FinancialService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.IsAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfContract.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfEmployeeCostRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfHourlyRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfLegalEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfPayment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfPriceGroup.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\HelpDeskService\HelpDeskServiceSecure2.wsdl" />
@@ -348,6 +398,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CrmService\" />
     <WCFMetadataStorage Include="Service References\ExpenseService\" />
+    <WCFMetadataStorage Include="Service References\FinancialService\" />
     <WCFMetadataStorage Include="Service References\InvoicingService\" />
     <WCFMetadataStorage Include="Service References\OrganisationService\" />
     <WCFMetadataStorage Include="Service References\ProjectManagementService\" />
@@ -477,6 +528,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\OrganisationService\OrganisationService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FinancialService\FinancialService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FinancialService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FinancialService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FinancialService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -45,10 +45,10 @@
             {
                 if (SettingsHandler.Instance.Url.Contains("https"))
                 {
-                    return SettingsHandler.Instance.Url + "WebServices/Salary/V1_0/SalaryServiceSecure.svc";
+                    return SettingsHandler.Instance.Url + "WebServices/Salary/V1_1/SalaryServiceSecure.svc";
                 }
 
-                return SettingsHandler.Instance.Url + "WebServices/Salary/V1_0/SalaryService.svc";
+                return SettingsHandler.Instance.Url + "WebServices/Salary/V1_1/SalaryService.svc";
             }
         }
 
