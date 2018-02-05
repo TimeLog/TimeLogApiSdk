@@ -15,7 +15,7 @@
     }
     <h3>Methods</h3>
     <ul>
-        @foreach (var method in Model.Methods.Where(m => !m.IsConstructor))
+        @foreach (var method in Model.Methods.Where(m => !m.IsConstructor).OrderBy(m => m.Name))
         {
             <li class="icon-arrow_in_circle"><a href="@Url.Action("Method", "Transactional", new { id = method.FullyQuantifiedName.UrlEncode() })">@method.Name</a> - @method.Summary</li>
         }
