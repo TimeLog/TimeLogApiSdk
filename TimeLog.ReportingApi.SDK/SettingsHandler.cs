@@ -4,9 +4,12 @@
     using System.Configuration;
     using System.Globalization;
 
+    /// <summary>
+    /// Allows access to application settings including default values.
+    /// </summary>
     public class SettingsHandler : IDisposable
     {
-        private static SettingsHandler instance;
+        private static SettingsHandler _instance;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="SettingsHandler"/> class from being created.
@@ -22,7 +25,7 @@
         {
             get
             {
-                return instance ?? (instance = new SettingsHandler());
+                return _instance ?? (_instance = new SettingsHandler());
             }
         }
 
@@ -34,21 +37,20 @@
         {
             get
             {
-                var url = ConfigurationManager.AppSettings["TimeLogProjectUri"];
-                if (!url.EndsWith("/"))
+                var _url = ConfigurationManager.AppSettings["TimeLogProjectUri"];
+                if (!_url.EndsWith("/"))
                 {
-                    url += "/";
+                    _url += "/";
                 }
 
-                Uri rootUri;
-                if (Uri.TryCreate(url, UriKind.Absolute, out rootUri))
+                if (Uri.TryCreate(_url, UriKind.Absolute, out var _rootUri))
                 {
-                    if (rootUri.ToString().Contains("http://") && !rootUri.ToString().Contains("localhost"))
+                    if (_rootUri.ToString().Contains("http://") && !_rootUri.ToString().Contains("localhost"))
                     {
-                        return rootUri.ToString().Replace("http://", "https://");
+                        return _rootUri.ToString().Replace("http://", "https://");
                     }
 
-                    return rootUri.ToString();
+                    return _rootUri.ToString();
                 }
 
                 throw new ArgumentException("The AppSetting \"TimeLogProjectUri\" is missing or invalid Uri");
@@ -63,10 +65,9 @@
         {
             get
             {
-                long result;
-                if (long.TryParse(ConfigurationManager.AppSettings["TimeLogProjectMaxReceivedMessageSize"], out result))
+                if (long.TryParse(ConfigurationManager.AppSettings["TimeLogProjectMaxReceivedMessageSize"], out var _result))
                 {
-                    return result;
+                    return _result;
                 }
 
                 return 4096000;
@@ -74,19 +75,33 @@
         }
 
         /// <summary>
-        /// Gets the correct culture for converting data from the reporting API
+        /// Gets the default timeout value for all calls to the TimeLog Project API.
+        /// Default is 60 seconds, but can be overwritten from applicatino setting TimeLogProjectTimeoutInSeconds.
         /// </summary>
-        public CultureInfo DataCulture
+        public TimeSpan Timeout
         {
             get
             {
-                return new CultureInfo("en-US");
+                if (int.TryParse(ConfigurationManager.AppSettings["TimeLogProjectTimeoutInSeconds"], out var _result))
+                {
+                    return TimeSpan.FromSeconds(_result);
+                }
+
+                return TimeSpan.FromSeconds(60);
             }
         }
 
+        /// <summary>
+        /// Gets the correct culture for converting data from the reporting API
+        /// </summary>
+        public CultureInfo DataCulture => new CultureInfo("en-US");
+
+        /// <summary>
+        /// Disposes the class and releases memory
+        /// </summary>
         public void Dispose()
         {
-            instance = null;
+            _instance = null;
         }
     }
 }

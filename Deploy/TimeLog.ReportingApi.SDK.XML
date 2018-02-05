@@ -895,6 +895,11 @@
             Disposes the handler.
             </summary>
         </member>
+        <member name="T:TimeLog.ReportingApi.SDK.SettingsHandler">
+            <summary>
+            Allows access to application settings including default values.
+            </summary>
+        </member>
         <member name="M:TimeLog.ReportingApi.SDK.SettingsHandler.#ctor">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.SettingsHandler"/> class from being created.
@@ -917,9 +922,20 @@
             Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.Timeout">
+            <summary>
+            Gets the default timeout value for all calls to the TimeLog Project API.
+            Default is 60 seconds, but can be overwritten from applicatino setting TimeLogProjectTimeoutInSeconds.
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.DataCulture">
             <summary>
             Gets the correct culture for converting data from the reporting API
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.SettingsHandler.Dispose">
+            <summary>
+            Disposes the class and releases memory
             </summary>
         </member>
         <member name="T:TimeLog.ReportingApi.SDK.XmlNodeExtensions">

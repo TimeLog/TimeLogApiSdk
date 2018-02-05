@@ -1,6 +1,7 @@
 ﻿namespace TimeLog.ReportingApi.Exporter.MethodTemplates
 {
     using System;
+    using System.Globalization;
     using System.Reflection;
     using System.Xml;
 
@@ -10,22 +11,22 @@
     {
         public OutputConfiguration GetConfiguration(ExportFormat format)
         {
-            var result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType.Name)
+            var _result = new OutputConfiguration(MethodBase.GetCurrentMethod().DeclaringType?.Name)
             {
                 ExportFormat = format,
                 ListElementType = typeof(WorkUnit).FullName
             };
 
-            result.InternalParameters.Add("WorkUnitId", WorkUnit.All);
-            result.InternalParameters.Add("EmployeeId", Employee.All);
-            result.InternalParameters.Add("AllocationId", Allocation.All);
-            result.InternalParameters.Add("TaskId", Task.All);
-            result.InternalParameters.Add("ProjectId", Project.All);
-            result.InternalParameters.Add("DepartmentId", Department.All);
-            result.InternalParameters.Add("StartDate", DateTime.Now.AddMonths(-3));
-            result.InternalParameters.Add("EndDate", DateTime.Now);
+            _result.InternalParameters.Add("WorkUnitId", WorkUnit.All);
+            _result.InternalParameters.Add("EmployeeId", Employee.All);
+            _result.InternalParameters.Add("AllocationId", Allocation.All);
+            _result.InternalParameters.Add("TaskId", Task.All);
+            _result.InternalParameters.Add("ProjectId", Project.All);
+            _result.InternalParameters.Add("DepartmentId", Department.All);
+            _result.InternalParameters.Add("StartDate", DateTime.Now.AddMonths(-3));
+            _result.InternalParameters.Add("EndDate", DateTime.Now);
 
-            return result;
+            return _result;
         }
 
         public XmlNode GetData(OutputConfiguration configuration)
@@ -40,8 +41,8 @@
                 configuration.GetIntegerSafe("TaskId"),
                 configuration.GetIntegerSafe("ProjectId"),
                 configuration.GetIntegerSafe("DepartmentId"),
-                configuration.GetDateTimeSafe("StartDate").ToString(),
-                configuration.GetDateTimeSafe("EndDate").ToString());
+                configuration.GetDateTimeSafe("StartDate").ToString("yyyy-MM-dd"),
+                configuration.GetDateTimeSafe("EndDate").ToString("yyyy-MM-dd"));
         }
     }
 }

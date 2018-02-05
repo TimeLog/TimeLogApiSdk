@@ -11,8 +11,8 @@
     /// </summary>
     public class ServiceHandler : IDisposable
     {
-        private static ServiceHandler instance;
-        private ServiceSoapClient client;
+        private static ServiceHandler _instance;
+        private ServiceSoapClient _client;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="ServiceHandler"/> class from being created.
@@ -32,7 +32,7 @@
         {
             get
             {
-                return instance ?? (instance = new ServiceHandler());
+                return _instance ?? (_instance = new ServiceHandler());
             }
         }
 
@@ -63,20 +63,28 @@
         {
             get
             {
-                if (this.client == null)
+                if (this._client == null)
                 {
-                    var binding = new BasicHttpBinding { MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize };
-                    var endpoint = new EndpointAddress(this.ServiceUrl);
+                    var _binding = new BasicHttpBinding
+                                      {
+                                          MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize,
+                                          CloseTimeout = SettingsHandler.Instance.Timeout,
+                                          OpenTimeout = SettingsHandler.Instance.Timeout,
+                                          ReceiveTimeout = SettingsHandler.Instance.Timeout,
+                                          SendTimeout = SettingsHandler.Instance.Timeout
+                                      };
+
+                    var _endpoint = new EndpointAddress(this.ServiceUrl);
 
                     if (this.ServiceUrl.Contains("https"))
                     {
-                        binding.Security.Mode = BasicHttpSecurityMode.Transport;
+                        _binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    this.client = new ServiceSoapClient(binding, endpoint);
+                    this._client = new ServiceSoapClient(_binding, _endpoint);
                 }
 
-                return this.client;
+                return this._client;
             }
         }
 
@@ -145,8 +153,8 @@
         /// </summary>
         public void Dispose()
         {
-            this.client = null;
-            instance = null;
+            this._client = null;
+            _instance = null;
         }
     }
 }

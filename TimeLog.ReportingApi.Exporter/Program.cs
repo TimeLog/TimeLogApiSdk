@@ -27,18 +27,18 @@ namespace TimeLog.ReportingApi.Exporter
                     args = new[] { "/?" };
                 }
 
-                var command = args[0].Trim('/');
+                var _command = args[0].Trim('/');
 
-                switch (command)
+                switch (_command)
                 {
                     case "m":
                     case "methods":
                         {
                             Console.WriteLine("List of available methods to query:");
-                            var methods = Assembly.GetExecutingAssembly().GetTypes().Where(t => typeof(IMethod).IsAssignableFrom(t) && !t.IsInterface);
-                            foreach (var method in methods)
+                            var _methods = Assembly.GetExecutingAssembly().GetTypes().Where(t => typeof(IMethod).IsAssignableFrom(t) && !t.IsInterface);
+                            foreach (var _method in _methods)
                             {
-                                Console.WriteLine("\t" + method.Name);
+                                Console.WriteLine("\t" + _method.Name);
                             }
 
                             break;
@@ -70,38 +70,38 @@ namespace TimeLog.ReportingApi.Exporter
                                 return;
                             }
 
-                            var methodName = args[1];
-                            FileInfo outputFilePath = new FileInfo(methodName + ".config");
+                            var _methodName = args[1];
+                            FileInfo _outputFilePath = new FileInfo(_methodName + ".config");
 
-                            ExportFormat format;
+                            ExportFormat _format;
                             switch (args[2].ToLowerInvariant())
                             {
                                 case "csv":
-                                    format = ExportFormat.Csv;
+                                    _format = ExportFormat.Csv;
                                     break;
                                 case "xml":
-                                    format = ExportFormat.Xml;
+                                    _format = ExportFormat.Xml;
                                     break;
                                 default:
                                     Console.WriteLine("Format not recognized.");
                                     return;
                             }
 
-                            var methodType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.ToLower() == methodName.ToLower());
+                            var _methodType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.ToLower() == _methodName.ToLower());
 
-                            if (methodType != null)
+                            if (_methodType != null)
                             {
-                                IMethod method = (IMethod)Activator.CreateInstance(methodType);
-                                using (TextWriter writer = new StreamWriter(outputFilePath.FullName, false, Encoding.UTF8))
+                                IMethod _method = (IMethod)Activator.CreateInstance(_methodType);
+                                using (TextWriter _writer = new StreamWriter(_outputFilePath.FullName, false, Encoding.UTF8))
                                 {
-                                    var serializer = new XmlSerializer(typeof(OutputConfiguration));
-                                    serializer.Serialize(writer, method.GetConfiguration(format));
-                                    Console.WriteLine("Default configuration for \"" + methodName + "\" saved to " + outputFilePath.Name);
+                                    var _serializer = new XmlSerializer(typeof(OutputConfiguration));
+                                    _serializer.Serialize(_writer, _method.GetConfiguration(_format));
+                                    Console.WriteLine("Default configuration for \"" + _methodName + "\" saved to " + _outputFilePath.Name);
                                 }
                             }
                             else
                             {
-                                Console.WriteLine("Method \"" + methodName + "\" not found");
+                                Console.WriteLine("Method \"" + _methodName + "\" not found");
                             }
 
                             break;
@@ -119,16 +119,16 @@ namespace TimeLog.ReportingApi.Exporter
                                 return;
                             }
 
-                            FileInfo configImport = new FileInfo(args[1]);
+                            FileInfo _configImport = new FileInfo(args[1]);
 
-                            if (!configImport.FullName.Contains(".config"))
+                            if (!_configImport.FullName.Contains(".config"))
                             {
-                                configImport = new FileInfo(args[1] + ".config");
+                                _configImport = new FileInfo(args[1] + ".config");
                             }
 
-                            FileInfo outputFilePath;
+                            FileInfo _outputFilePath;
 
-                            if (!configImport.Exists)
+                            if (!_configImport.Exists)
                             {
                                 Console.WriteLine("Invalid config file path");
                                 return;
@@ -136,8 +136,8 @@ namespace TimeLog.ReportingApi.Exporter
 
                             try
                             {
-                                outputFilePath = new FileInfo(args[2]);
-                                if (outputFilePath.Directory == null || !outputFilePath.Directory.Exists)
+                                _outputFilePath = new FileInfo(args[2]);
+                                if (_outputFilePath.Directory == null || !_outputFilePath.Directory.Exists)
                                 {
                                     Console.WriteLine("Invalid output file path");
                                     return;
@@ -152,39 +152,39 @@ namespace TimeLog.ReportingApi.Exporter
 
                             try
                             {
-                                OutputConfiguration configuration = GetMethodClass<OutputConfiguration>(configImport);
-                                Console.WriteLine("Trying to run " + configuration.Name + " with parameters:");
-                                foreach (var parameter in configuration.Parameter)
+                                OutputConfiguration _configuration = GetMethodClass<OutputConfiguration>(_configImport);
+                                Console.WriteLine("Trying to run " + _configuration.Name + " with parameters:");
+                                foreach (var _parameter in _configuration.Parameter)
                                 {
-                                    Console.WriteLine(parameter.Name + ": " + parameter.Value);
+                                    Console.WriteLine(_parameter.Name + ": " + _parameter.Value);
                                 }
 
-                                var methodType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.ToLower() == configuration.Name.ToLower());
-                                if (methodType != null)
+                                var _methodType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.ToLower() == _configuration.Name.ToLower());
+                                if (_methodType != null)
                                 {
-                                    IMethod method = (IMethod)Activator.CreateInstance(methodType);
-                                    var outputNode = method.GetData(configuration);
+                                    IMethod _method = (IMethod)Activator.CreateInstance(_methodType);
+                                    var _outputNode = _method.GetData(_configuration);
 
                                     // Allow other namespaces
-                                    var listElementTypeName = configuration.ListElementType.Contains(",")
-                                        ? configuration.ListElementType
-                                        : configuration.ListElementType + ",TimeLog.ReportingApi.SDK";
-                                    var listElementType = Type.GetType(listElementTypeName);
-                                    if (listElementType == null)
+                                    var _listElementTypeName = _configuration.ListElementType.Contains(",")
+                                        ? _configuration.ListElementType
+                                        : _configuration.ListElementType + ",TimeLog.ReportingApi.SDK";
+                                    var _listElementType = Type.GetType(_listElementTypeName);
+                                    if (_listElementType == null)
                                     {
-                                        throw new ArgumentException(string.Format("ListElementType is not recognized. Searching for \"{0}\"", listElementTypeName));
+                                        throw new ArgumentException(string.Format("ListElementType is not recognized. Searching for \"{0}\"", _listElementTypeName));
                                     }
 
-                                    SaveOutput(listElementType, configuration.ExportFormat, outputNode, outputFilePath);
+                                    SaveOutput(_listElementType, _configuration.ExportFormat, _outputNode, _outputFilePath);
                                 }
                                 else
                                 {
-                                    Console.WriteLine("Method \"" + configuration.Name + "\" not found");
+                                    Console.WriteLine("Method \"" + _configuration.Name + "\" not found");
                                 }
                             }
-                            catch (Exception ex)
+                            catch (Exception _ex)
                             {
-                                Console.WriteLine(ex.Message + ex.StackTrace);
+                                Console.WriteLine(_ex.Message + _ex.StackTrace);
                             }
 
                             break;
@@ -210,11 +210,11 @@ namespace TimeLog.ReportingApi.Exporter
                         }
                 }
             }
-            catch (Exception ex)
+            catch (Exception _ex)
             {
                 Console.WriteLine("The application failed with the following error:");
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(_ex.Message);
+                Console.WriteLine(_ex.StackTrace);
             }
 
             //// Console.ReadKey();
@@ -222,16 +222,16 @@ namespace TimeLog.ReportingApi.Exporter
 
         private static T GetMethodClass<T>(FileInfo configFilePath)
         {
-            var methodName = XDocument.Load(configFilePath.FullName).Root.Name.ToString();
-            var methodType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.ToLower() == methodName.ToLower());
-            object methodClass;
-            using (TextReader reader = new StreamReader(configFilePath.FullName, Encoding.UTF8))
+            var _methodName = XDocument.Load(configFilePath.FullName).Root.Name.ToString();
+            var _methodType = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.ToLower() == _methodName.ToLower());
+            object _methodClass;
+            using (TextReader _reader = new StreamReader(configFilePath.FullName, Encoding.UTF8))
             {
-                var serializer = new XmlSerializer(methodType);
-                methodClass = serializer.Deserialize(reader);
+                var _serializer = new XmlSerializer(_methodType);
+                _methodClass = _serializer.Deserialize(_reader);
             }
 
-            return (T)methodClass;
+            return (T)_methodClass;
         }
 
         private static void SaveOutput(Type listElementType, ExportFormat format, XmlNode rawData, FileInfo outputFile)
@@ -242,50 +242,50 @@ namespace TimeLog.ReportingApi.Exporter
                     XDocument.Parse(rawData.OuterXml).Save(outputFile.FullName);
                     break;
                 case ExportFormat.Csv:
-                    var document = XDocument.Parse(rawData.OuterXml);
+                    var _document = XDocument.Parse(rawData.OuterXml);
 
-                    var mainElement = document.Elements().FirstOrDefault();
-                    bool firstLine = true;
+                    var _mainElement = _document.Elements().FirstOrDefault();
+                    bool _firstLine = true;
 
-                    using (TextWriter writer = new StreamWriter(outputFile.FullName, false, Encoding.GetEncoding(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ANSICodePage)))
+                    using (TextWriter _writer = new StreamWriter(outputFile.FullName, false, Encoding.GetEncoding(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ANSICodePage)))
                     {
-                        if (mainElement != null)
+                        if (_mainElement != null)
                         {
                             // Find the properties that aren't ignored
-                            var headers = listElementType.GetProperties().Where(p => !p.CustomAttributes.Any(a => a.AttributeType.Name.Contains("Ignore"))).ToList();
+                            var _headers = listElementType.GetProperties().Where(p => !p.CustomAttributes.Any(a => a.AttributeType.Name.Contains("Ignore"))).ToList();
 
                             // Print them to the file as CSV headers
-                            writer.WriteLine(string.Join(
+                            _writer.WriteLine(string.Join(
                                 System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator, 
-                                headers.Select(a => string.Format("\"{0}\"", a.Name))));
+                                _headers.Select(a => string.Format("\"{0}\"", a.Name))));
 
                             // Loop each XML element
-                            foreach (XElement childElement in mainElement.Elements())
+                            foreach (XElement _childElement in _mainElement.Elements())
                             {
                                 // Loop through each property in the header reference list
-                                var cells = new List<string>();
-                                foreach (var propertyInfo in headers)
+                                var _cells = new List<string>();
+                                foreach (var _propertyInfo in _headers)
                                 {
-                                    var elementvalue = childElement.Elements().FirstOrDefault(e => e.Name.LocalName.ToLower() == propertyInfo.Name.ToLower());
-                                    var attributevalue = childElement.Attributes().FirstOrDefault(e => e.Name.LocalName.ToLower() == propertyInfo.Name.ToLower());
+                                    var _elementvalue = _childElement.Elements().FirstOrDefault(e => e.Name.LocalName.ToLower() == _propertyInfo.Name.ToLower());
+                                    var _attributevalue = _childElement.Attributes().FirstOrDefault(e => e.Name.LocalName.ToLower() == _propertyInfo.Name.ToLower());
 
                                     // Did any element or attribute fit?
-                                    if (elementvalue != null)
+                                    if (_elementvalue != null)
                                     {
-                                        cells.Add(elementvalue.Value);
+                                        _cells.Add(_elementvalue.Value);
                                     }
-                                    else if (attributevalue != null)
+                                    else if (_attributevalue != null)
                                     {
-                                        cells.Add(attributevalue.Value);
+                                        _cells.Add(_attributevalue.Value);
                                     }
                                     else
                                     {
                                         // Empty is also fine
-                                        cells.Add(string.Empty);
+                                        _cells.Add(string.Empty);
                                     }
                                 }
 
-                                writer.WriteLine(string.Join(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator, cells.Select(a => string.Format("\"{0}\"", a))));
+                                _writer.WriteLine(string.Join(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ListSeparator, _cells.Select(a => string.Format("\"{0}\"", a))));
                             }
                         }
                     }
