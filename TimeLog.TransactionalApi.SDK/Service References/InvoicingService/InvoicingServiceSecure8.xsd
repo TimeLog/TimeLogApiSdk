@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_2" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="APIBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="APIBase" nillable="true" type="tns:APIBase" />
+</xs:schema>

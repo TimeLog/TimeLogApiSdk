@@ -45,10 +45,10 @@
             {
                 if (SettingsHandler.Instance.Url.Contains("https"))
                 {
-                    return SettingsHandler.Instance.Url + "WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc";
+                    return SettingsHandler.Instance.Url + "WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc";
                 }
 
-                return SettingsHandler.Instance.Url + "WebServices/Invoicing/V1_0/InvoicingService.svc";
+                return SettingsHandler.Instance.Url + "WebServices/Invoicing/V1_1/InvoicingService.svc";
             }
         }
 

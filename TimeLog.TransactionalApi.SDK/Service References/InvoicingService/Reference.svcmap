@@ -19,17 +19,23 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="InvoicingServiceSecure6.xsd" MetadataType="Schema" ID="62396b7b-37bf-4368-9741-00d3901c6915" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd1" />
-    <MetadataFile FileName="InvoicingServiceSecure61.xsd" MetadataType="Schema" ID="da34cf8a-c7a4-420e-95b9-763c7bf807f3" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd2" />
-    <MetadataFile FileName="InvoicingServiceSecure1.disco" MetadataType="Disco" ID="cd1f5ab7-32ee-4a1d-8307-8dc933793a00" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?disco" />
-    <MetadataFile FileName="InvoicingServiceSecure62.xsd" MetadataType="Schema" ID="d349069e-da7b-4a0a-88e5-2b30ac2b83cc" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd3" />
-    <MetadataFile FileName="InvoicingServiceSecure1.wsdl" MetadataType="Wsdl" ID="f31a0b44-b565-40d0-b121-131ea12ddd81" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?wsdl" />
-    <MetadataFile FileName="InvoicingServiceSecure63.xsd" MetadataType="Schema" ID="4b210f4c-af5d-4711-b625-0b6678a2ac2f" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd4" />
-    <MetadataFile FileName="InvoicingServiceSecure64.xsd" MetadataType="Schema" ID="e25889a2-6597-4248-ab83-6bd3e7d5a52b" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd5" />
-    <MetadataFile FileName="InvoicingServiceSecure65.xsd" MetadataType="Schema" ID="c8b8b732-3cc4-454f-bb43-9e498c83f9c6" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd0" />
+    <MetadataFile FileName="InvoicingServiceSecure.xsd" MetadataType="Schema" ID="1144b95e-2551-4862-8f69-235bd7c854ba" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd11" />
+    <MetadataFile FileName="InvoicingServiceSecure.disco" MetadataType="Disco" ID="3ba42975-7415-4882-a39f-4771809502ab" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?disco" />
+    <MetadataFile FileName="InvoicingServiceSecure.wsdl" MetadataType="Wsdl" ID="7c9b306a-5da4-40d7-9ad1-fe0061ece3fc" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="InvoicingServiceSecure1.xsd" MetadataType="Schema" ID="0d728bc6-28e4-4fb2-980e-d9503c26f90c" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd9" />
+    <MetadataFile FileName="InvoicingServiceSecure2.xsd" MetadataType="Schema" ID="9c1dd96c-925a-4f57-b949-86af45d82ba1" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd8" />
+    <MetadataFile FileName="InvoicingServiceSecure3.xsd" MetadataType="Schema" ID="98525753-eb95-4389-8507-4bece4bfb806" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd7" />
+    <MetadataFile FileName="InvoicingServiceSecure4.xsd" MetadataType="Schema" ID="6a1e1a54-f7b3-435c-a2eb-c3676a5d06ca" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd6" />
+    <MetadataFile FileName="InvoicingServiceSecure5.xsd" MetadataType="Schema" ID="d02b5d46-b12c-4382-a8da-5ee19f48b938" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd5" />
+    <MetadataFile FileName="InvoicingServiceSecure6.xsd" MetadataType="Schema" ID="25a53c3f-3482-43b4-80f6-09bf6402674f" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd4" />
+    <MetadataFile FileName="InvoicingServiceSecure7.xsd" MetadataType="Schema" ID="5818cfa3-d012-4b36-b096-99d5635b817a" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd3" />
+    <MetadataFile FileName="InvoicingServiceSecure8.xsd" MetadataType="Schema" ID="5523e080-c195-459e-a3a1-7e09350a3f5a" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd2" />
+    <MetadataFile FileName="InvoicingServiceSecure9.xsd" MetadataType="Schema" ID="fffe3a68-7931-4eb9-8745-de3eb548a3f2" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd1" />
+    <MetadataFile FileName="InvoicingServiceSecure10.xsd" MetadataType="Schema" ID="d13af214-c600-4324-a6a0-b8c05ab16841" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd0" />
+    <MetadataFile FileName="InvoicingServiceSecure11.xsd" MetadataType="Schema" ID="4bf17b5f-6b5a-4d69-aa1f-27c41d37ac47" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd10" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

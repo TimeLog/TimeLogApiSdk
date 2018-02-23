@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="GPTUwgTirOOVyOg2/6rghz+QqgM=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="RXQ9Q7mOWeANsoNegWpSKr0+gPU=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_InvoicingService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_InvoicingService" contract="InvoicingService.InvoicingService" bindingType="basicHttpBinding" address="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc" bindingConfiguration="BasicHttpBinding_InvoicingService">
+    <endpoint name="BasicHttpBinding_InvoicingService" contract="InvoicingService.InvoicingService" bindingType="basicHttpBinding" address="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc" bindingConfiguration="BasicHttpBinding_InvoicingService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc</serializedValue>
+          <serializedValue>https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

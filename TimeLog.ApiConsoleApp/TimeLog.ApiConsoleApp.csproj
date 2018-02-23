@@ -55,10 +55,12 @@
     <Compile Include="CreateProjectsForAllCustomers.cs" />
     <Compile Include="CreateProjectTransactionalApi.cs" />
     <Compile Include="ConsumeTransactionalApi.cs" />
+    <Compile Include="ManipulateTasks.cs" />
     <Compile Include="CreateProjectTransactionalApi2.cs" />
     <Compile Include="GetEmployeesTransactionalApi.cs" />
     <Compile Include="InsertEmployeeTest.cs" />
     <Compile Include="InsertCustomerTest.cs" />
+    <Compile Include="InvoiceManipulation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

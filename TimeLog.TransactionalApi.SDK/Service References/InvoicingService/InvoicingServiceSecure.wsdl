@@ -27,19 +27,25 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.timelog.com/api/tlp/v1/Imports">
-      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_1" />
-      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" />
-      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
-      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd4" namespace="http://www.timelog.com/api/tlp/v1" />
-      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_3" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd4" namespace="http://www.timelog.com/api/tlp/v1" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd5" namespace="http://api.timelog.com" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Attributes" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd7" namespace="http://api.timelog.com/services/customfield/1_0" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd10" namespace="http://www.timelog.com/api/tlp/v1_1" />
+      <xsd:import schemaLocation="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="InvoicingService_IsAlive_InputMessage">
-    <wsdl:part xmlns:q1="http://www.timelog.com/api/tlp/v1_1" name="parameters" element="q1:IsAlive" />
+    <wsdl:part xmlns:q1="http://www.timelog.com/api/tlp/v1_3" name="parameters" element="q1:IsAlive" />
   </wsdl:message>
   <wsdl:message name="InvoicingService_IsAlive_OutputMessage">
-    <wsdl:part xmlns:q2="http://www.timelog.com/api/tlp/v1_1" name="parameters" element="q2:IsAliveResponse" />
+    <wsdl:part xmlns:q2="http://www.timelog.com/api/tlp/v1_3" name="parameters" element="q2:IsAliveResponse" />
   </wsdl:message>
   <wsdl:message name="InvoicingService_GetInvoiceSpecificationPDF_InputMessage">
     <wsdl:part name="parameters" element="tns:GetInvoiceSpecificationPDF" />
@@ -101,6 +107,18 @@
   <wsdl:message name="InvoicingService_CreateCreditNoteExternalMapping_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateCreditNoteExternalMappingResponse" />
   </wsdl:message>
+  <wsdl:message name="InvoicingService_GetInvoicesModifiedInPeriodPaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesModifiedInPeriodPaged" />
+  </wsdl:message>
+  <wsdl:message name="InvoicingService_GetInvoicesModifiedInPeriodPaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoicesModifiedInPeriodPagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvoicingService_GetCreditNotesModifiedInPeriodPaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditNotesModifiedInPeriodPaged" />
+  </wsdl:message>
+  <wsdl:message name="InvoicingService_GetCreditNotesModifiedInPeriodPaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditNotesModifiedInPeriodPagedResponse" />
+  </wsdl:message>
   <wsdl:portType name="InvoicingService">
     <wsdl:operation name="IsAlive">
       <wsdl:input wsaw:Action="IsAliveRequest" message="tns:InvoicingService_IsAlive_InputMessage" />
@@ -145,6 +163,14 @@
     <wsdl:operation name="CreateCreditNoteExternalMapping">
       <wsdl:input wsaw:Action="CreateCreditNoteExternalMappingRequest" message="tns:InvoicingService_CreateCreditNoteExternalMapping_InputMessage" />
       <wsdl:output wsaw:Action="CreateCreditNoteExternalMappingResponse" message="tns:InvoicingService_CreateCreditNoteExternalMapping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicesModifiedInPeriodPaged">
+      <wsdl:input wsaw:Action="http://www.timelog.com/api/tlp/v1/InvoicingService/GetInvoicesModifiedInPeriodPaged" message="tns:InvoicingService_GetInvoicesModifiedInPeriodPaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.timelog.com/api/tlp/v1/InvoicingService/GetInvoicesModifiedInPeriodPagedResponse" message="tns:InvoicingService_GetInvoicesModifiedInPeriodPaged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditNotesModifiedInPeriodPaged">
+      <wsdl:input wsaw:Action="http://www.timelog.com/api/tlp/v1/InvoicingService/GetCreditNotesModifiedInPeriodPaged" message="tns:InvoicingService_GetCreditNotesModifiedInPeriodPaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.timelog.com/api/tlp/v1/InvoicingService/GetCreditNotesModifiedInPeriodPagedResponse" message="tns:InvoicingService_GetCreditNotesModifiedInPeriodPaged_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_InvoicingService" type="tns:InvoicingService">
@@ -249,10 +275,28 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetInvoicesModifiedInPeriodPaged">
+      <soap:operation soapAction="http://www.timelog.com/api/tlp/v1/InvoicingService/GetInvoicesModifiedInPeriodPaged" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditNotesModifiedInPeriodPaged">
+      <soap:operation soapAction="http://www.timelog.com/api/tlp/v1/InvoicingService/GetCreditNotesModifiedInPeriodPaged" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="InvoicingServiceSecure">
     <wsdl:port name="BasicHttpBinding_InvoicingService" binding="tns:BasicHttpBinding_InvoicingService">
-      <soap:address location="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc" />
+      <soap:address location="https://app4.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

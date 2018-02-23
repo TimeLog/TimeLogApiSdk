@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/TimeLog.TLP.Web/WebServices/ProjectManagement/V1_7/ProjectManagementService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ProjectManagementServiceSecure.disco" MetadataType="Disco" ID="420994d2-977c-4eba-9a20-83cb9bf36d15" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?disco" />
-    <MetadataFile FileName="ProjectManagementServiceSecure.wsdl" MetadataType="Wsdl" ID="735d3c5c-24bb-4df5-b87f-738aa5632b02" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl" />
-    <MetadataFile FileName="ProjectManagementServiceSecure1.wsdl" MetadataType="Wsdl" ID="0efa7abb-ab16-475d-ae24-35503f538bc4" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ProjectManagementService.wsdl" MetadataType="Wsdl" ID="8606a834-edc9-483b-a255-7035315e5566" SourceId="1" SourceUrl="http://localhost/TimeLog.TLP.Web/WebServices/ProjectManagement/V1_7/ProjectManagementService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ProjectManagementService1.wsdl" MetadataType="Wsdl" ID="bd60a38f-2c44-41e8-9af1-72fede7db56c" SourceId="1" SourceUrl="http://localhost/TimeLog.TLP.Web/WebServices/ProjectManagement/V1_7/ProjectManagementService.svc?wsdl" />
+    <MetadataFile FileName="ProjectManagementService.disco" MetadataType="Disco" ID="318600a7-57f8-448c-8963-dfcfc29dc1b9" SourceId="1" SourceUrl="http://localhost/TimeLog.TLP.Web/WebServices/ProjectManagement/V1_7/ProjectManagementService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

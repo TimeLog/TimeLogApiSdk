@@ -32,10 +32,12 @@
                 // GetEmployeesTransactionalApi.Consume();
                 // CreateProjectTransactionalApi.Consume();
                 // CreateProjectTransactionalApi2.Consume();
-                //InsertCustomerTest.Consume();
-                InsertEmployeeTest.Consume();
+                // InsertCustomerTest.Consume();
+                // InsertEmployeeTest.Consume();
                 // CreateProjectsForAllCustomers.Consume();
-                //CreateProjectsForCustomersInSql.Consume();
+                // CreateProjectsForCustomersInSql.Consume();
+                // InvoiceManipulation.Consume();
+                ManipulateTasks.Consume();
             }
             catch (Exception ex)
             {

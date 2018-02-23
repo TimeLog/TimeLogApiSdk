@@ -2032,12 +2032,6 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         private string AdditionalTextField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsMeetingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.TimeSpan> BillableDurationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.ProjectManagementService.WorkUnitDetails DetailsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -2184,32 +2178,6 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
-        public bool IsMeeting {
-            get {
-                return this.IsMeetingField;
-            }
-            set {
-                if ((this.IsMeetingField.Equals(value) != true)) {
-                    this.IsMeetingField = value;
-                    this.RaisePropertyChanged("IsMeeting");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
-        public System.Nullable<System.TimeSpan> BillableDuration {
-            get {
-                return this.BillableDurationField;
-            }
-            set {
-                if ((this.BillableDurationField.Equals(value) != true)) {
-                    this.BillableDurationField = value;
-                    this.RaisePropertyChanged("BillableDuration");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
         public TimeLog.TransactionalApi.SDK.ProjectManagementService.WorkUnitDetails Details {
             get {
                 return this.DetailsField;
@@ -5836,9 +5804,6 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         Deleted = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Copied = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
         Undefined = 99,
     }
     
@@ -6411,7 +6376,7 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         InvoiceableTravelExpense = 34,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InvoiceableInstallment = 35,
+        Payment = 35,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Employee = 36,
@@ -6741,25 +6706,25 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         ProjectSubContractStatus = 144,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PlatformPaymentMethod = 145,
+        Platform = 145,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MilestoneType = 146,
+        PlatformLicenceOverview = 146,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        TimeRegistration = 147,
+        PlatformInvoiceInformation = 147,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        OpportunityStatus = 148,
+        EventHeader = 148,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AbsenceCode = 149,
+        PlatformPaymentMethod = 149,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalaryAccount = 150,
+        MilestoneType = 150,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalaryGroup = 151,
+        EmployeeHeader = 151,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         WorkerRequest = 152,
@@ -6768,10 +6733,10 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         WorkerItem = 153,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        EmployeeProjection = 154,
+        WorkerItemLog = 154,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        NormalWorkingTime = 155,
+        OpportunityStatus = 155,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         DepartmentDimensionMapping = 156,
@@ -6792,133 +6757,22 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         HardBooking = 161,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AggregationMaster = 162,
+        HardBookingDetail = 162,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        AggregationUnit = 163,
+        CalendarEventAttendee = 163,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WorkflowTemplate = 164,
+        ReportAdjustProjectPayment = 164,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WorkflowTemplateStep = 165,
+        ProjectFinancialsContext = 165,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WorkflowTransitionTemplate = 166,
+        ProjectPlanFinancialsContext = 166,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WorkflowTemplateRelation = 167,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Workflow = 168,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WorkflowToken = 169,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WorkflowTransitionItem = 170,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ApprovalContextItem = 171,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AbsenceApprovalContextItem = 172,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EmployeeHeader = 173,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Platform = 174,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PlatformLicenceOverview = 175,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PlatformInvoiceInformation = 176,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Holiday = 177,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalaryAccountType = 178,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TimeTrackingDetailGroup = 179,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WorkerItemLog = 180,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EventHeader = 181,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TimeRegistrationFinancialData = 186,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AbsenceCodeType = 187,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NormalWorkingTimeDay = 188,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalaryAccountEmployeePosting = 189,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ApprovalFlowItem = 190,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UserChangeHistory = 191,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Favourite = 192,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Dialogue = 192,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ApprovalContextItemRemoveApprovedAbsence = 193,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CalendarEventAttendee = 194,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HardBookingDetail = 195,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CommentActionLog = 196,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ApprovalTimeTrackingItem = 197,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ReportAdjustProjectPayment = 198,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HardBookingItem = 199,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SystemAdminHourlyRate = 200,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalaryTime = 201,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ProjectFinancialsContext = 202,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GenericBudget = 201,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GenericBudgetValue = 204,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ProjectPlanFinancialsContext = 203,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UserAreaPrivilege = 205,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ProjectSubContractDropdown = 206,
+        CommentActionLog = 167,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,
@@ -7204,46 +7058,6 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
                     int source, 
                     TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="CreateProjectFromTemplateByCustomerIDRequest", ReplyAction="CreateProjectFromTemplateByCustomerIDReponse")]
-        TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfProject CreateProjectFromTemplateByCustomerID(
-                    string projectTemplateName, 
-                    string projectName, 
-                    string projectNo, 
-                    int customerID, 
-                    System.Guid legalEntityID, 
-                    System.Guid priceGroupID, 
-                    string projectManagerInitials, 
-                    string accountManagerInitials, 
-                    string handledByDepartmentNo, 
-                    string orderedByDepartmentNo, 
-                    bool useProjectNumberSeries, 
-                    bool useTasksAndMileStonesFromTemplate, 
-                    bool useResourceGroupFromTemplate, 
-                    bool useAllocationsFromTemplate, 
-                    bool usePaymentPlanFromTemplate, 
-                    int source, 
-                    TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="CreateProjectFromTemplateByCustomerIDRequest", ReplyAction="CreateProjectFromTemplateByCustomerIDReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfProject> CreateProjectFromTemplateByCustomerIDAsync(
-                    string projectTemplateName, 
-                    string projectName, 
-                    string projectNo, 
-                    int customerID, 
-                    System.Guid legalEntityID, 
-                    System.Guid priceGroupID, 
-                    string projectManagerInitials, 
-                    string accountManagerInitials, 
-                    string handledByDepartmentNo, 
-                    string orderedByDepartmentNo, 
-                    bool useProjectNumberSeries, 
-                    bool useTasksAndMileStonesFromTemplate, 
-                    bool useResourceGroupFromTemplate, 
-                    bool useAllocationsFromTemplate, 
-                    bool usePaymentPlanFromTemplate, 
-                    int source, 
-                    TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
-        
         [System.ServiceModel.OperationContractAttribute(Action="UpdateProjectRequest", ReplyAction="UpdateProjectReponse")]
         TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfProject UpdateProject(TimeLog.TransactionalApi.SDK.ProjectManagementService.Project project, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
         
@@ -7297,6 +7111,28 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         
         [System.ServiceModel.OperationContractAttribute(Action="ChangeTaskStatusRequest", ReplyAction="ChangeTaskStatusReponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> ChangeTaskStatusAsync(System.Guid taskGuid, int targetStatus, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeTaskContract", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeTaskContractRe" +
+            "sponse")]
+        TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask ChangeTaskContract(System.Guid taskGuid, int projectSubContractId, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeTaskContract", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeTaskContractRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> ChangeTaskContractAsync(System.Guid taskGuid, int projectSubContractId, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskById", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskByIdResponse")]
+        TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask GetTaskById(System.Guid taskGuid, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskById", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskByIdResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> GetTaskByIdAsync(System.Guid taskGuid, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksByProjectId", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksByProjectIdR" +
+            "esponse")]
+        TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask GetTasksByProjectId(System.Guid projectGuid, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksByProjectId", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksByProjectIdR" +
+            "esponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> GetTasksByProjectIdAsync(System.Guid projectGuid, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetAllocationByExternalKeyRequest", ReplyAction="GetAllocationByExternalKeyReponse")]
         TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfAllocation GetAllocationByExternalKey(string key, string systemName, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
@@ -7433,12 +7269,6 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
             "d", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkChangeLogPage" +
             "dResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfWorkUnitFlat> GetWorkChangeLogPagedAsync(System.DateTime startDate, System.DateTime endDate, bool includeCreates, bool includeUpdates, bool includeDeletes, int page, int pageSize, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="GetTasksBySearchTextWithoutFinancialRequest", ReplyAction="GetTasksBySearchTextWithoutFinancialReponse")]
-        TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask GetTasksBySearchTextWithoutFinancial(string critiria, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="GetTasksBySearchTextWithoutFinancialRequest", ReplyAction="GetTasksBySearchTextWithoutFinancialReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> GetTasksBySearchTextWithoutFinancialAsync(string critiria, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7590,48 +7420,6 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
             return base.Channel.CreateProjectFromTemplateAsync(projectTemplateName, projectName, projectNo, customerName, legalEntityID, priceGroupID, projectManagerInitials, accountManagerInitials, handledByDepartmentNo, orderedByDepartmentNo, useProjectNumberSeries, useTasksAndMileStonesFromTemplate, useResourceGroupFromTemplate, useAllocationsFromTemplate, usePaymentPlanFromTemplate, source, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfProject CreateProjectFromTemplateByCustomerID(
-                    string projectTemplateName, 
-                    string projectName, 
-                    string projectNo, 
-                    int customerID, 
-                    System.Guid legalEntityID, 
-                    System.Guid priceGroupID, 
-                    string projectManagerInitials, 
-                    string accountManagerInitials, 
-                    string handledByDepartmentNo, 
-                    string orderedByDepartmentNo, 
-                    bool useProjectNumberSeries, 
-                    bool useTasksAndMileStonesFromTemplate, 
-                    bool useResourceGroupFromTemplate, 
-                    bool useAllocationsFromTemplate, 
-                    bool usePaymentPlanFromTemplate, 
-                    int source, 
-                    TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
-            return base.Channel.CreateProjectFromTemplateByCustomerID(projectTemplateName, projectName, projectNo, customerID, legalEntityID, priceGroupID, projectManagerInitials, accountManagerInitials, handledByDepartmentNo, orderedByDepartmentNo, useProjectNumberSeries, useTasksAndMileStonesFromTemplate, useResourceGroupFromTemplate, useAllocationsFromTemplate, usePaymentPlanFromTemplate, source, token);
-        }
-        
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfProject> CreateProjectFromTemplateByCustomerIDAsync(
-                    string projectTemplateName, 
-                    string projectName, 
-                    string projectNo, 
-                    int customerID, 
-                    System.Guid legalEntityID, 
-                    System.Guid priceGroupID, 
-                    string projectManagerInitials, 
-                    string accountManagerInitials, 
-                    string handledByDepartmentNo, 
-                    string orderedByDepartmentNo, 
-                    bool useProjectNumberSeries, 
-                    bool useTasksAndMileStonesFromTemplate, 
-                    bool useResourceGroupFromTemplate, 
-                    bool useAllocationsFromTemplate, 
-                    bool usePaymentPlanFromTemplate, 
-                    int source, 
-                    TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
-            return base.Channel.CreateProjectFromTemplateByCustomerIDAsync(projectTemplateName, projectName, projectNo, customerID, legalEntityID, priceGroupID, projectManagerInitials, accountManagerInitials, handledByDepartmentNo, orderedByDepartmentNo, useProjectNumberSeries, useTasksAndMileStonesFromTemplate, useResourceGroupFromTemplate, useAllocationsFromTemplate, usePaymentPlanFromTemplate, source, token);
-        }
-        
         public TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfProject UpdateProject(TimeLog.TransactionalApi.SDK.ProjectManagementService.Project project, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
             return base.Channel.UpdateProject(project, token);
         }
@@ -7702,6 +7490,30 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         
         public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> ChangeTaskStatusAsync(System.Guid taskGuid, int targetStatus, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
             return base.Channel.ChangeTaskStatusAsync(taskGuid, targetStatus, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask ChangeTaskContract(System.Guid taskGuid, int projectSubContractId, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
+            return base.Channel.ChangeTaskContract(taskGuid, projectSubContractId, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> ChangeTaskContractAsync(System.Guid taskGuid, int projectSubContractId, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
+            return base.Channel.ChangeTaskContractAsync(taskGuid, projectSubContractId, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask GetTaskById(System.Guid taskGuid, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
+            return base.Channel.GetTaskById(taskGuid, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> GetTaskByIdAsync(System.Guid taskGuid, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
+            return base.Channel.GetTaskByIdAsync(taskGuid, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask GetTasksByProjectId(System.Guid projectGuid, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
+            return base.Channel.GetTasksByProjectId(projectGuid, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> GetTasksByProjectIdAsync(System.Guid projectGuid, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
+            return base.Channel.GetTasksByProjectIdAsync(projectGuid, token);
         }
         
         public TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfAllocation GetAllocationByExternalKey(string key, string systemName, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
@@ -7862,14 +7674,6 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         
         public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfWorkUnitFlat> GetWorkChangeLogPagedAsync(System.DateTime startDate, System.DateTime endDate, bool includeCreates, bool includeUpdates, bool includeDeletes, int page, int pageSize, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
             return base.Channel.GetWorkChangeLogPagedAsync(startDate, endDate, includeCreates, includeUpdates, includeDeletes, page, pageSize, token);
-        }
-        
-        public TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask GetTasksBySearchTextWithoutFinancial(string critiria, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
-            return base.Channel.GetTasksBySearchTextWithoutFinancial(critiria, token);
-        }
-        
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask> GetTasksBySearchTextWithoutFinancialAsync(string critiria, TimeLog.TransactionalApi.SDK.ProjectManagementService.SecurityToken token) {
-            return base.Channel.GetTasksBySearchTextWithoutFinancialAsync(critiria, token);
         }
     }
 }
