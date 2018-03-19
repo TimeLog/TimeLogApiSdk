@@ -43,7 +43,7 @@
             <Details>
               <CustomerHeader xmlns:b="http://api.timelog.com/services/crm/1_2">
                 <b:ID>667</b:ID>
-                <b:Name>TimeLog Project A/S</b:Name>
+                <b:Name>TimeLog A/S</b:Name>
                 <b:No>2003-0002</b:No>
                 <b:GUID>6848da3f-1f62-e111-a1cd-00187177245a</b:GUID>
               </CustomerHeader>
@@ -267,7 +267,7 @@
             <Details>
               <CustomerHeader xmlns:b="http://api.timelog.com/services/crm/1_2">
                 <b:ID>667</b:ID>
-                <b:Name>TimeLog Project A/S</b:Name>
+                <b:Name>TimeLog A/S</b:Name>
                 <b:No>2003-0002</b:No>
                 <b:GUID>6848da3f-1f62-e111-a1cd-00187177245a</b:GUID>
               </CustomerHeader>
@@ -323,7 +323,7 @@
             <Details>
               <CustomerHeader xmlns:b="http://api.timelog.com/services/crm/1_2">
                 <b:ID>667</b:ID>
-                <b:Name>TimeLog Project A/S</b:Name>
+                <b:Name>TimeLog A/S</b:Name>
                 <b:No>2003-0002</b:No>
                 <b:GUID>6848da3f-1f62-e111-a1cd-00187177245a</b:GUID>
               </CustomerHeader>
@@ -379,7 +379,7 @@
             <Details>
               <CustomerHeader xmlns:b="http://api.timelog.com/services/crm/1_2">
                 <b:ID>667</b:ID>
-                <b:Name>TimeLog Project A/S</b:Name>
+                <b:Name>TimeLog A/S</b:Name>
                 <b:No>2003-0002</b:No>
                 <b:GUID>6848da3f-1f62-e111-a1cd-00187177245a</b:GUID>
               </CustomerHeader>
@@ -435,7 +435,7 @@
             <Details>
               <CustomerHeader xmlns:b="http://api.timelog.com/services/crm/1_2">
                 <b:ID>667</b:ID>
-                <b:Name>TimeLog Project A/S</b:Name>
+                <b:Name>TimeLog A/S</b:Name>
                 <b:No>2003-0002</b:No>
                 <b:GUID>6848da3f-1f62-e111-a1cd-00187177245a</b:GUID>
               </CustomerHeader>

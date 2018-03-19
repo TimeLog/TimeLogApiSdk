@@ -1,4 +1,4 @@
-﻿Runs queries agains the TimeLog Project API and outputs the result in a file
+﻿Runs queries agains the TimeLog API and outputs the result in a file
 
 TimeLog.ReportingApi.Exporter.exe /e methodName outputFile
 

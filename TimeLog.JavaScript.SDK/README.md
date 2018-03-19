@@ -1,6 +1,6 @@
 # TimeLog.JavaScript.SDK
 
-An experimental Chrome extension utilizing the TimeLog Project Transactional API to register time
+An experimental Chrome extension utilizing the TimeLog Transactional API to register time
 from the new tab interface.
 
 Add to Chrome from the Chrome Web Store

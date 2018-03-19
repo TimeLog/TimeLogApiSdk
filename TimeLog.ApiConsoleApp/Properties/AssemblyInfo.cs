@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TimeLog.ApiConsoleApp")]
-[assembly: AssemblyDescription("Example application for using the TimeLog Project SDKs")]
+[assembly: AssemblyDescription("Example application for using the TimeLog SDKs")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TimeLog A/S")]
 [assembly: AssemblyProduct("TimeLog.ApiConsoleApp")]

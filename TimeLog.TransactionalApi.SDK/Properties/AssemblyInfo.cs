@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TimeLog.TransactionalApi.SDK")]
-[assembly: AssemblyDescription("TimeLog Project SDK for the transactional API")]
+[assembly: AssemblyDescription("TimeLog SDK for the transactional API")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TimeLog A/S")]
 [assembly: AssemblyProduct("TimeLog.TransactionalApi.SDK")]

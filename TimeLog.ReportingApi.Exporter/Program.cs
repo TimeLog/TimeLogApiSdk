@@ -191,7 +191,7 @@ namespace TimeLog.ReportingApi.Exporter
                         }
                     default:
                         {
-                            Console.WriteLine("Runs queries agains the TimeLog Project API and outputs the result in a file");
+                            Console.WriteLine("Runs queries agains the TimeLog API and outputs the result in a file");
                             Console.WriteLine(string.Empty);
                             Console.WriteLine("TimeLog.ReportingApi.Exporter /e methodName outputFile");
                             Console.WriteLine(string.Empty);

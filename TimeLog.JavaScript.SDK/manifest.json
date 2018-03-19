@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
 
-    "name": "TimeLog Project New Tab Extension Beta",
-    "short_name": "TimeLog Project New Tab",
-    "description": "This extension replaces the new tab page with an easy access to track time directly into TimeLog Project",
+    "name": "TimeLog New Tab Extension Beta",
+    "short_name": "TimeLog New Tab",
+    "description": "This extension replaces the new tab page with an easy access to track time directly into TimeLog",
     "version": "0.17",
     "chrome_url_overrides": {
         "newtab": "newtab.html"

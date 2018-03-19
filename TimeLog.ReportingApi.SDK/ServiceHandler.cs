@@ -91,7 +91,7 @@
         /// <summary>
         /// Overwrites the service URL from the app.config
         /// </summary>
-        /// <param name="url">TimeLog Project URL (e.g. https://app4.timelog.com/soxdemo4 )</param>
+        /// <param name="url">TimeLog URL (e.g. https://app4.timelog.com/soxdemo4 )</param>
         public void OverwriteServiceUrl(string url)
         {
             this.ServiceUrl = url.Trim('/') + "/service.asmx";

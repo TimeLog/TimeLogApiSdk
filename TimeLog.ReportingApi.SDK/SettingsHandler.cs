@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// Gets the base uri for the TimeLog Project site read from the
+        /// Gets the base uri for the TimeLog site read from the
         /// application setting TimeLogProjectUri.
         /// </summary>
         public string Url
@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// Gets the default max received message size for all calls to the TimeLog Project API.
+        /// Gets the default max received message size for all calls to the TimeLog API.
         /// Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
         /// </summary>
         public long MaxReceivedMessageSize
@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// Gets the default timeout value for all calls to the TimeLog Project API.
+        /// Gets the default timeout value for all calls to the TimeLog API.
         /// Default is 60 seconds, but can be overwritten from applicatino setting TimeLogProjectTimeoutInSeconds.
         /// </summary>
         public TimeSpan Timeout
