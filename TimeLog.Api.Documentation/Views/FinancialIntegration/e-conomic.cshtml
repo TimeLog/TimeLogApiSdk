@@ -9,15 +9,15 @@
     <h1>@ViewBag.Title</h1>
     <h2>Introduction</h2>
     <p>
-        The integration between TimeLog Project and e-conomic consists of partial integrations that provide seamless cooperation between the two systems.
+        The integration between TimeLog and e-conomic consists of partial integrations that provide seamless cooperation between the two systems.
         The integration consists of the following features:
         <ul>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog Project to e-conomic</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of contacts from TimeLog Project to e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog to e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of contacts from TimeLog to e-conomic</li>
             <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic update of customer and contact information in e-conomic</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Synchronisation of product numbers between TimeLog Project and e-conomic</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of invoices from TimeLog Project to e-conomic</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog Project and e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Synchronisation of product numbers between TimeLog and e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of invoices from TimeLog to e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog and e-conomic</li>
 
         </ul>
     </p>
@@ -25,55 +25,55 @@
     <h2>Features</h2>
     <p>This section includes a list of features and limitations to each transfer area of the integration.</p>
     <h3>Currencies</h3>
-    <p>TimeLog Project does not create the currency in e-conomic if it does not exist. Therefore, make sure that all the currencies used in TimeLog Project are created in e-conomic.</p>
+    <p>TimeLog does not create the currency in e-conomic if it does not exist. Therefore, make sure that all the currencies used in TimeLog are created in e-conomic.</p>
     <h3>Customers</h3>
     <p>
-        Customers can be transferred to AND from TimeLog Project and e-conomic.<br />
+        Customers can be transferred to AND from TimeLog and e-conomic.<br />
         When customers are created in e-conomic, a string of values need to be filled out in e-conomic. In the current integration implementation, it is not possible to set all values for each customer so,
-        for the moment, the following four values are set in TimeLog Project centrally:
+        for the moment, the following four values are set in TimeLog centrally:
         <ol>
             <li style="list-style-type:disc">Debtor group</li>
             <li style="list-style-type:disc">VAT code (VAT zone)</li>
             <li style="list-style-type:disc">Terms of payment</li>
             <li style="list-style-type:disc">Template collection</li>
         </ol>
-        <br />Subsequently, these values can be adjusted in e-conomic and will not be overwritten when customer data are updated automatically in TimeLog Project.
+        <br />Subsequently, these values can be adjusted in e-conomic and will not be overwritten when customer data are updated automatically in TimeLog.
         <br />Please note that the values in the employee group drop-down menu are retrieved from e-conomic. To edit these values, go to e-conomic.
     </p>
     <h3>Contact</h3>
     <p>
-        Contacts can be transferred to AND from TimeLog Project and e-conomic.
+        Contacts can be transferred to AND from TimeLog and e-conomic.
     </p>
     <h3>Product numbers</h3>
     <p>
-        Product numbers can only be transferred from e-conomic to TimeLog Project. Note that they are not transferred automatically.
+        Product numbers can only be transferred from e-conomic to TimeLog. Note that they are not transferred automatically.
         An system administrator will have to go to the system administration > integrations and choose to import them manually.
-        The product number setup is carried out in TimeLog Project and consists of 3 steps:
+        The product number setup is carried out in TimeLog and consists of 3 steps:
         <ol>
             <li>Importing product numbers from e-conomic</li>
-            <li>Configuring a product number principle for various TimeLog Project data types</li>
-            <li>Configuring default product numbers for various TimeLog Project data types</li>
+            <li>Configuring a product number principle for various TimeLog data types</li>
+            <li>Configuring default product numbers for various TimeLog data types</li>
         </ol>
     </p>
     <h3>Employees</h3>
     <p>
-        When transferring an invoice to e-conomic with an internal reference, TimeLog Project checks whether the employee has already been created.
+        When transferring an invoice to e-conomic with an internal reference, TimeLog checks whether the employee has already been created.
         If not, an employee is created from the e-conomic employee directory.
         However, employees in e-conomic must be assigned to an employee group.
         The default group used for creating employees is selected in the Default values for transferring employees section on the integration confuguration page.
-        You can change the employee group in e-conomic for employees created in TimeLog Project. Later updates will not overwrite this group.
+        You can change the employee group in e-conomic for employees created in TimeLog. Later updates will not overwrite this group.
     </p>
     <h3>Invoices</h3>
-    <p>Only booked invoices can be transferred from TimeLog Project to e-conomic. Invoices are transferred as drafts. Changes in invoice drafts inside e-conomic will not be reflected in TimeLog Project.</p>
+    <p>Only booked invoices can be transferred from TimeLog to e-conomic. Invoices are transferred as drafts. Changes in invoice drafts inside e-conomic will not be reflected in TimeLog.</p>
     <h3>Invoice lines</h3>
-    <p>Invoice lines are transferred along with the invoice. Invoice lines can be modified in e-conomic and addition line can be added. Changes will not be reflected in TimeLog Project.</p>
+    <p>Invoice lines are transferred along with the invoice. Invoice lines can be modified in e-conomic and addition line can be added. Changes will not be reflected in TimeLog.</p>
     <h3>Expenses</h3>
-    <p>Expenses can only be transferred from e-conomic to TimeLog Project. </p>
+    <p>Expenses can only be transferred from e-conomic to TimeLog. </p>
     <h3>Projects</h3>
     <p>
-        Projects can be transferred from TimeLog Project to e-conomic. The functionality can only be used if you have activated the Projects module in e-conomic.
+        Projects can be transferred from TimeLog to e-conomic. The functionality can only be used if you have activated the Projects module in e-conomic.
         Projects transferred must have an Project group attached. The default project group are set up on the integration configuration page when transfer of projects are activated.
-        Projects created in TimeLog Project wil automatiaclly be transferred to e-conomic when they are created.
+        Projects created in TimeLog wil automatiaclly be transferred to e-conomic when they are created.
     </p>
     <h3>Tasks</h3>
     <p>Not part of the integration.</p>
@@ -84,7 +84,7 @@
 
     <br />
     <h2>Mapping</h2>
-    <p>This section contains the explicit mapping of fields between TimeLog Project and e-conomic.</p>
+    <p>This section contains the explicit mapping of fields between TimeLog and e-conomic.</p>
 
     <h3 id="mapping-customers">Customers</h3>
     <div class="bs-example">
@@ -97,9 +97,9 @@
                     <th></th>
                 </tr>
                 <tr class="underline">
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>Remarks</th>
                 </tr>
@@ -215,28 +215,28 @@
                     <td>Payment terms</td>
                     <td>-</td>
                     <td>TermOfPayment</td>
-                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog Project</span></td>
+                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog</span></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Layout</td>
                     <td>-</td>
                     <td>Layout</td>
-                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog Project</span></td>
+                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog</span></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>VAT zone</td>
                     <td>-</td>
                     <td>VatZone</td>
-                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog Project</span></td>
+                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog</span></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>Group</td>
                     <td>-</td>
                     <td>DebtorGroup</td>
-                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog Project</span></td>
+                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog</span></td>
                 </tr>
 
             </tbody>
@@ -251,9 +251,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>Remarks</th>
                 </tr>
@@ -299,7 +299,7 @@
                     <td>-</td>
                     <td>ExternalID</td>
                     <td>Debtor</td>
-                    <td><span class="wrapcomment">The debtor from e-conomic is retrieved basen on the externalKey mapping in TimeLog Project.</span></td>
+                    <td><span class="wrapcomment">The debtor from e-conomic is retrieved basen on the externalKey mapping in TimeLog.</span></td>
                 </tr>
                 <tr class="info">
                     <td>-</td>
@@ -320,9 +320,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>Remarks</th>
                 </tr>
@@ -354,9 +354,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>Remarks</th>
                 </tr>
@@ -396,9 +396,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>Remarks</th>
                 </tr>
@@ -446,7 +446,7 @@
                     <td>-</td>
                     <td>Details.Currency.Abbreviation</td>
                     <td>Currency</td>
-                    <td><span class="wrapcomment">Abbreviation of the currency from the invoice in TimeLog Project</span></td>
+                    <td><span class="wrapcomment">Abbreviation of the currency from the invoice in TimeLog</span></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -481,7 +481,7 @@
                     <td>Other ref.</td>
                     <td>ID</td>
                     <td>OtherReference</td>
-                    <td><span class="wrapcomment">TimeLog Project invoiceID is noted in other reference i e-conomic</span></td>
+                    <td><span class="wrapcomment">TimeLog invoiceID is noted in other reference i e-conomic</span></td>
                 </tr>
                 <tr>
                     <td>Internal reference</td>
@@ -545,9 +545,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>Remarks</th>
                 </tr>
@@ -610,9 +610,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>Remarks</th>
                 </tr>
@@ -638,14 +638,14 @@
                     <td>Currency</td>
                     <td>CurrencyID</td>
                     <td>Currency</td>
-                    <td><span class="wrapcomment">The currencyID in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                    <td><span class="wrapcomment">The currencyID in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from e-conomic</span></td>
                 </tr>
                 <tr>
                     <td>Currency</td>
                     <td>-</td>
                     <td>ExchangeRate</td>
                     <td>Currency</td>
-                    <td><span class="wrapcomment">The currency rate in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                    <td><span class="wrapcomment">The currency rate in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from e-conomic</span></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -666,7 +666,7 @@
                     <td></td>
                     <td>PaymentMethod</td>
                     <td>-</td>
-                    <td><span class="wrapcomment">Default paymentmethod for import. Set up in TimeLog Project</span></td>
+                    <td><span class="wrapcomment">Default paymentmethod for import. Set up in TimeLog</span></td>
                 </tr>
                 <tr>
                     <td>Date</td>
@@ -724,9 +724,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>Remarks</th>
                 </tr>
@@ -752,7 +752,7 @@
                     <td>Description</td>
                     <td>Description</td>
                     <td>Description</td>
-                    <td><span class="wrapcomment">The currencyID in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                    <td><span class="wrapcomment">The currencyID in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from e-conomic</span></td>
                 </tr>
                 <tr>
                     <td></td>

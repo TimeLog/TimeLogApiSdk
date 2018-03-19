@@ -8,15 +8,15 @@
     <h1>@ViewBag.Title</h1>
     <h2>Introduction</h2>
     <p>
-        The integration between TimeLog Project and Exact Online consists of partial integrations that provide seamless cooperation between the two systems.
+        The integration between TimeLog and Exact Online consists of partial integrations that provide seamless cooperation between the two systems.
         The integration consists of the following features:
         <ul>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog Project to Exact Online</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of contacts from TimeLog Project to Exact Online</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog to Exact Online</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of contacts from TimeLog to Exact Online</li>
             <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic update of customer and contact information in Exact Online</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Synchronisation of product numbers between TimeLog Project and Exact Online</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of invoices from TimeLog Project to Exact Online</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog Project and Exact Online</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Synchronisation of product numbers between TimeLog and Exact Online</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of invoices from TimeLog to Exact Online</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog and Exact Online</li>
         </ul>
     </p>
     <br />
@@ -24,18 +24,18 @@
     <p>This section includes a list of features and limitations to each transfer area of the integration.</p>
     <h3>Currencies</h3>
     <p>
-        TimeLog Project does not create the currency in Exact Online if it does not exist. Therefore, make sure that all the currencies used in TimeLog Project are created in Exact Online.
+        TimeLog does not create the currency in Exact Online if it does not exist. Therefore, make sure that all the currencies used in TimeLog are created in Exact Online.
         The invoice will not transfer if the currency is not present in Exact Online.
     </p>
     <h3>Sales journal</h3>
     <p>
-        TimeLog Project transfers the currency of the invoice to Exact Online.
+        TimeLog transfers the currency of the invoice to Exact Online.
         For this to succeed, the sales journal used for invoice transferal in Exact Online must have enabled variable currency.
     </p>
     <h3>Customers</h3>
     <p>
         Customers can be transferred to AND from TLP and Exact Online.
-        To transfer customers from TimeLog Project to Exact Online and link customer pairs, the customer number in TimeLog Project must only consist of numbers.
+        To transfer customers from TimeLog to Exact Online and link customer pairs, the customer number in TimeLog must only consist of numbers.
         Exact Online does not accept special characters in customer numbers.
     </p>
     <h3>Contact</h3>
@@ -46,8 +46,8 @@
     <p>
         Product numbers can only be transferred from Exact Online to TLP. Note that they are not transferred automatically.
         An system administrator will have to go to the system administration > integrations and choose to import them manually.
-        In order to successfully use the product items from Exact Online in TimeLog Project, you have to make sure that your item in Exact Online are divisible.
-        Time in TimeLog Project is (usually) noted with decimals. This ensures that the decimals can be transferred to Exact Online.
+        In order to successfully use the product items from Exact Online in TimeLog, you have to make sure that your item in Exact Online are divisible.
+        Time in TimeLog is (usually) noted with decimals. This ensures that the decimals can be transferred to Exact Online.
     </p>
     <h3>Employees</h3>
     <p>Employees can not be created in Exact Online from TLP. If an employee is not present in Exat Online a systemadministrator in Exact Online will have to add the employee.</p>
@@ -544,7 +544,7 @@
                     <td>Cost center</td>
                     <td>ProjectNo</td>
                     <td>CostCenter</td>
-                    <td><span class="wrapcomment">If a project number is present on attached project in TimeLog Project, this will be added as cost center in Exact Online</span></td>
+                    <td><span class="wrapcomment">If a project number is present on attached project in TimeLog, this will be added as cost center in Exact Online</span></td>
                 </tr>
             </tbody>
         </table>

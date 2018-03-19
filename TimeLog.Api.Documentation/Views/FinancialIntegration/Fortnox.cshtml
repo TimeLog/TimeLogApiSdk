@@ -7,13 +7,13 @@
     <h1>Fortnox</h1>
     <h2>Introduction</h2>
     <p>
-        The integration between TimeLog Project and Fortnox consists of partial integrations that provide seamless cooperation between the two systems.
+        The integration between TimeLog and Fortnox consists of partial integrations that provide seamless cooperation between the two systems.
         The integration consists of the following features:
         <ul>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog Project to Fortnox</li>            
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog to Fortnox</li>            
             <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic update of customer information in Fortnox</li>            
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of invoices from TimeLog Project to Fortnox</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog Project and Fortnox</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of invoices from TimeLog to Fortnox</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog and Fortnox</li>
             
         </ul>
     </p>
@@ -26,45 +26,45 @@
     
     <h3>Customers</h3>
     <p> Customers can be transferred to and from Fortnox.</p>
-    <p> In the current integration implementation, it is not possible to set all values for each customer on Fortnox and transfer them to TimeLog Project,
-        for the moment, the following values are set in TimeLog Project and can be transferred to Fortnox, but not vice versa: </p>
+    <p> In the current integration implementation, it is not possible to set all values for each customer on Fortnox and transfer them to TimeLog,
+        for the moment, the following values are set in TimeLog and can be transferred to Fortnox, but not vice versa: </p>
         <ol>
             <li style="list-style-type:disc">Debtor group</li>
             <li style="list-style-type:disc">VAT code (VAT zone)</li>
             <li style="list-style-type:disc">Invoice template</li>
             <li style="list-style-type:disc">Discount percentage</li>
         </ol>
-<p>VAT no. in TimeLog Project is also the CIN/PIN no. on Fortnox. When a customer is transferred to Fortnox the CIN/PIN no. for that customer on Fortnox will change to the corresponding CIN/PIN no. belonging to the VAT no.</p>
-<p>Payment terms are not mapped between the two systems. Customers transferred from TimeLog Project to Fortnox will be created with no payment term and invoices transferred to the customer wil have the default payment term from Fortnox.</p>
+<p>VAT no. in TimeLog is also the CIN/PIN no. on Fortnox. When a customer is transferred to Fortnox the CIN/PIN no. for that customer on Fortnox will change to the corresponding CIN/PIN no. belonging to the VAT no.</p>
+<p>Payment terms are not mapped between the two systems. Customers transferred from TimeLog to Fortnox will be created with no payment term and invoices transferred to the customer wil have the default payment term from Fortnox.</p>
         
     <h3>Product numbers</h3>
     <p>
-        Product numbers can only be transferred from Fortnox to TimeLog Project. Note that they are not transferred automatically.
+        Product numbers can only be transferred from Fortnox to TimeLog. Note that they are not transferred automatically.
         An system administrator will have to go to the system administration > integrations and choose to import them manually.
-        The product number setup is carried out in TimeLog Project and consists of 3 steps:
+        The product number setup is carried out in TimeLog and consists of 3 steps:
         <ol>
             <li>Importing product numbers from Fortnox</li>
-            <li>Configuring a product number principle for various TimeLog Project data types</li>
-            <li>Configuring default product numbers for various TimeLog Project data types</li>
+            <li>Configuring a product number principle for various TimeLog data types</li>
+            <li>Configuring default product numbers for various TimeLog data types</li>
         </ol>
     </p>
 
     <h3>Invoices</h3>
-    <p>Only booked invoices can be transferred from TimeLog Project to Fortnox. Invoices are transferred as drafts.</p>
-    <p>Once an invoice is booked on Fortnox, its status changes on TimeLog Project to Booked in the Transferred invoices table in TimeLog Project.</p>
-    <p>It is possible to change an invoice on Fortnox once transferred, however this will result in changes values, e.g. Amount, being highlighted on the Transferred invoices table in TimeLog Project.</p>
+    <p>Only booked invoices can be transferred from TimeLog to Fortnox. Invoices are transferred as drafts.</p>
+    <p>Once an invoice is booked on Fortnox, its status changes on TimeLog to Booked in the Transferred invoices table in TimeLog.</p>
+    <p>It is possible to change an invoice on Fortnox once transferred, however this will result in changes values, e.g. Amount, being highlighted on the Transferred invoices table in TimeLog.</p>
     <p>Some values must be the same when transferring an invoice. E.g. Fortnox does not accept VAT percentage that does not exist on Fortnox. If you get an invalid VAT error, it means the VAT percentage you've chosen for the invoice, is not on your Fortnox account.
        You can however add VAT to your Fortnox by going into Settings and search for 'moms'.
     </p>
 
     <h3>Invoice lines</h3>
-    <p>Invoice lines are transferred along with the invoice. Invoice lines can be modified in Fortnox and addition line can be added. Changes will not be reflected in TimeLog Project.</p>
-    <p>All invoicelines from TimeLog Project are transferred to Fortnox except subtotal lines as Fortnox cannot handle those.</p>
-    <p>Unit types on the invoicelines in TimeLog Project are not transferred to Fortnox as there is no direct mapping of unit types. Instead in Fortnox the unit type of the chosen product is put on the invoiceline</p>
+    <p>Invoice lines are transferred along with the invoice. Invoice lines can be modified in Fortnox and addition line can be added. Changes will not be reflected in TimeLog.</p>
+    <p>All invoicelines from TimeLog are transferred to Fortnox except subtotal lines as Fortnox cannot handle those.</p>
+    <p>Unit types on the invoicelines in TimeLog are not transferred to Fortnox as there is no direct mapping of unit types. Instead in Fortnox the unit type of the chosen product is put on the invoiceline</p>
     <p>Unit types must therefor be set up in Fortnox on the products in order to get the right unit types on the invoicelines.</p>
 
     <h3>Expenses</h3>
-    <p>Expenses can only be transferred from Fortnox to TimeLog Project. </p>
+    <p>Expenses can only be transferred from Fortnox to TimeLog. </p>
     <h3>Projects</h3>
     <p>
         Not part of the integration.
@@ -78,7 +78,7 @@
 
     <br />
     <h2>Mapping</h2>
-    <p>This section contains the explicit mapping of fields between TimeLog Project and Fortnox.</p>
+    <p>This section contains the explicit mapping of fields between TimeLog and Fortnox.</p>
 
     <h3 id="mapping-customers">Customers</h3>
     <div class="bs-example">
@@ -91,9 +91,9 @@
                     <th></th>
                 </tr>
                 <tr class="underline">
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
                     <th>Remarks</th>
                 </tr>
@@ -218,9 +218,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
                     <th>Remarks</th>
                 </tr>
@@ -254,9 +254,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
                     <th>Remarks</th>
                 </tr>
@@ -310,7 +310,7 @@
                     <td>Valuta</td>
                     <td>Details.Currency.Abbreviation</td>
                     <td>Currency</td>
-                    <td><span class="wrapcomment">Abbreviation of the currency from the invoice in TimeLog Project</span></td>
+                    <td><span class="wrapcomment">Abbreviation of the currency from the invoice in TimeLog</span></td>
                 </tr>
                 <tr>
                     <td>Due date</td>
@@ -424,9 +424,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
                     <th>Remarks</th>
                 </tr>
@@ -482,9 +482,9 @@
                     <th colspan="2">Technical name</th>
                 </tr>
                 <tr>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
-                    <th>TimeLog Project</th>
+                    <th>TimeLog</th>
                     <th>Fortnox</th>
                     <th>Remarks</th>
                 </tr>
@@ -517,14 +517,14 @@
                     <td>Valuta</td>
                     <td>CurrencyID</td>
                     <td>ID</td>
-                    <td><span class="wrapcomment">The currencyID in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from Fortnox</span></td>
+                    <td><span class="wrapcomment">The currencyID in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from Fortnox</span></td>
                 </tr>
                 <tr>
                     <td>Currency</td>
                     <td>Kurs</td>
                     <td>ExchangeRate</td>
                     <td>Rate</td>
-                    <td><span class="wrapcomment">The currency rate in TimeLog Project is fetched from the TimeLog Project currency, based on the currency ABB on the purchase from Fortnox</span></td>
+                    <td><span class="wrapcomment">The currency rate in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from Fortnox</span></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -545,7 +545,7 @@
                     <td></td>
                     <td>PaymentMethod</td>
                     <td>-</td>
-                    <td><span class="wrapcomment">Default paymentmethod for import. Set up in TimeLog Project</span></td>
+                    <td><span class="wrapcomment">Default paymentmethod for import. Set up in TimeLog</span></td>
                 </tr>
 
                 <tr>

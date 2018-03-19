@@ -9,13 +9,13 @@
         TimeLog takes security seriously and want to make clear how we protect our middleware (FinancialHost) for enabling
         financial integrations with on-premise ERP solutions.
     </h2>
-    <p>Communication between TimeLog Project and the FinancialHost is secured in various ways to keep data safe.</p>
+    <p>Communication between TimeLog and the FinancialHost is secured in various ways to keep data safe.</p>
     <p>
-        Data transfer from the FinancialHost to TimeLog Project is done over SSL (for encryption) and utilizes a user
+        Data transfer from the FinancialHost to TimeLog is done over SSL (for encryption) and utilizes a user
         specific time limited token for accessing resources through a WCF API endpoint.
     </p>
     <p>
-        Data transfer from TimeLog Project to the FinancialHost can optionally be done over SSL (for encryption). All
+        Data transfer from TimeLog to the FinancialHost can optionally be done over SSL (for encryption). All
         requests to the WCF API endpoint requires a white listed IP, a unique and not used previously transaction ID as well
         as a MD5 hash of the entire content. This makes man-in-the-middle attacks extremely difficult. The same request
         cannot be used twice and tampering data cannot be done without the MD5 secret.

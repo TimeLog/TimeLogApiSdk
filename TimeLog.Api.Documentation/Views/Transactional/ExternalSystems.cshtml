@@ -1,15 +1,15 @@
 ﻿@{
-    ViewBag.Title = "Handling external systems in TimeLog Project";
+    ViewBag.Title = "Handling external systems in TimeLog";
 }
 
 <article class="article">
     <h1>Handling External Systems</h1>
     <h2>
-        TimeLog Project allows integrations to store foreign keys from other systems together with
-        the normal data from TimeLog Project.
+        TimeLog allows integrations to store foreign keys from other systems together with
+        the normal data from TimeLog.
     </h2>
     <p>
-        TimeLog Project API was made with integration purpose in mind. Often when two or more business 
+        TimeLog API was made with integration purpose in mind. Often when two or more business 
         systems are integrated, the first part of the integration is to synchronize the two systems 
         customer base. Keeping a customer base synchronized through more than two systems can be a 
         nightmare.
@@ -18,15 +18,15 @@
         For many of the objects available through the API, you have access to a ExternalKeys-property.
         This property is populated and can be populated with an external system and external key pair
         for tracking foreign keys in a third party system. For a system integrator, this engine allows
-        TimeLog Project to be a hub for the foreign key relationship between multiple systems.
+        TimeLog to be a hub for the foreign key relationship between multiple systems.
     </p>
     <p>
-        E.g. the TimeLog Project e-conomic integration internally uses these external key constructs to
+        E.g. the TimeLog e-conomic integration internally uses these external key constructs to
         keep track of the foreign key from e-conomic after transferring customers, contacts and
         invoices.
     </p>
     <p>
-        Additionally, some of our APIs support direct requests by external keys to get TimeLog Project
+        Additionally, some of our APIs support direct requests by external keys to get TimeLog
         objects related to an external system key. The keys are interpreted as strings and can
         essentially be any object type that can be turned into a string.
     </p>
