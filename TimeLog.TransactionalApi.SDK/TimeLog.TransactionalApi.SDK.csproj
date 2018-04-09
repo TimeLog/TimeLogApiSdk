@@ -48,6 +48,12 @@
     <Compile Include="OrganisationHandler.cs" />
     <Compile Include="ExpenseHandler.cs" />
     <Compile Include="FinancialHandler.cs" />
+    <Compile Include="Service References\TimeTrackingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TimeTrackingHandler.cs" />
     <Compile Include="SalaryHandler.cs" />
     <Compile Include="CrmHandler.cs" />
     <Compile Include="InvoicingHandler.cs" />
@@ -412,6 +418,68 @@
     <None Include="Service References\SecurityService\TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure.wsdl" />
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure1.wsdl" />
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure9.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CrmService\" />
@@ -423,6 +491,7 @@
     <WCFMetadataStorage Include="Service References\SalaryService\" />
     <WCFMetadataStorage Include="Service References\SecurityService\" />
     <WCFMetadataStorage Include="Service References\HelpDeskService\" />
+    <WCFMetadataStorage Include="Service References\TimeTrackingService\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SecurityService\configuration91.svcinfo" />
@@ -561,6 +630,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ProjectManagementService\ProjectManagementService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TimeTrackingService\TimeTrackingServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TimeTrackingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TimeTrackingService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TimeTrackingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

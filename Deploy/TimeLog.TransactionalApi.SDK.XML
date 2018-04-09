@@ -144,6 +144,41 @@
             Gets the active Financial client
             </summary>
         </member>
+        <member name="T:TimeLog.TransactionalApi.SDK.TimeTrackingHandler">
+            <summary>
+            Handler of functionality related to the time tracking service
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalApi.SDK.TimeTrackingHandler.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TimeLog.TransactionalApi.SDK.TimeTrackingHandler"/> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.TimeTrackingHandler.Instance">
+            <summary>
+            Gets the singleton instance of the <see cref="T:TimeLog.TransactionalApi.SDK.TimeTrackingHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.TimeTrackingHandler.TimeTrackingServiceUrl">
+            <summary>
+            Gets the uri associated with the time tracking service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.TimeTrackingHandler.Token">
+            <summary>
+            Gets the time tracking token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.TimeTrackingHandler.CollectRawRequestResponse">
+            <summary>
+            Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalApi.SDK.TimeTrackingHandler.TimeTrackingClient">
+            <summary>
+            Gets the active time tracking client
+            </summary>
+        </member>
         <member name="T:TimeLog.TransactionalApi.SDK.SalaryHandler">
             <summary>
             Handler of functionality related to the salary service
@@ -556,19 +591,19 @@
         </member>
         <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.Url">
             <summary>
-            Gets the base uri for the TimeLog Project site read from the
+            Gets the base uri for the TimeLog site read from the
             application setting TimeLogProjectUri.
             </summary>
         </member>
         <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.MaxReceivedMessageSize">
             <summary>
-            Gets the default max received message size for all calls to the TimeLog Project API.
+            Gets the default max received message size for all calls to the TimeLog API.
             Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
             </summary>
         </member>
         <member name="P:TimeLog.TransactionalApi.SDK.SettingsHandler.OperationTimeout">
             <summary>
-            Gets the default operation timeout for all calls to the TimeLog Project API.
+            Gets the default operation timeout for all calls to the TimeLog API.
             Default is 60 seconds, but can be overwritten from application setting TimeLogProjectOperationTimeoutSeconds.
             </summary>
         </member>

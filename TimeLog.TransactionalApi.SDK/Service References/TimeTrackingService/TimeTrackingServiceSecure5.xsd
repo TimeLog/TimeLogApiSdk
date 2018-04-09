@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_3" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:complexType name="SecurityToken">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.timelog.com/api/tlp/v1_2" base="q1:APIBase">
+        <xs:sequence>
+          <xs:element name="Initials" nillable="true" type="xs:string" />
+          <xs:element name="Expires" type="xs:dateTime" />
+          <xs:element name="Hash" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SecurityToken" nillable="true" type="tns:SecurityToken" />
+  <xs:element name="IsAlive">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAliveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsAliveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

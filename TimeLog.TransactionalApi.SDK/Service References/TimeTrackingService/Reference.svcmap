@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b505bede-5d36-4b07-addf-951bb92fd675" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TimeTrackingServiceSecure.xsd" MetadataType="Schema" ID="f0636e75-2810-4e8c-962b-b3b36d32785a" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd4" />
+    <MetadataFile FileName="TimeTrackingServiceSecure1.xsd" MetadataType="Schema" ID="b4d3c302-6367-4a59-b681-1bc29f696754" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd5" />
+    <MetadataFile FileName="TimeTrackingServiceSecure2.xsd" MetadataType="Schema" ID="3727c7b8-7670-46a6-98f1-ed9ac8d047f9" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd6" />
+    <MetadataFile FileName="TimeTrackingServiceSecure3.xsd" MetadataType="Schema" ID="fee24702-4d1f-4212-b749-b442d9e73f34" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd7" />
+    <MetadataFile FileName="TimeTrackingServiceSecure4.xsd" MetadataType="Schema" ID="87818493-2fce-4df9-8961-d3b14b1f92dd" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd0" />
+    <MetadataFile FileName="TimeTrackingServiceSecure5.xsd" MetadataType="Schema" ID="e356336f-0b7f-4d73-baeb-3cc70b59cc58" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd1" />
+    <MetadataFile FileName="TimeTrackingServiceSecure6.xsd" MetadataType="Schema" ID="588cbf7b-daa2-4fde-ba7d-22a5b6b1a7f6" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd2" />
+    <MetadataFile FileName="TimeTrackingServiceSecure7.xsd" MetadataType="Schema" ID="e7b34387-15b3-49a8-8b87-978031a805b7" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd3" />
+    <MetadataFile FileName="TimeTrackingServiceSecure8.xsd" MetadataType="Schema" ID="133db689-0c19-48b9-80ae-9a7c593f43c8" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd13" />
+    <MetadataFile FileName="TimeTrackingServiceSecure9.xsd" MetadataType="Schema" ID="ea60f4b0-42f0-4979-acfb-a744e3c7a224" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd8" />
+    <MetadataFile FileName="TimeTrackingServiceSecure10.xsd" MetadataType="Schema" ID="c14c8ac6-e823-41d0-ab8b-f9c4ed299df4" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd9" />
+    <MetadataFile FileName="TimeTrackingServiceSecure11.xsd" MetadataType="Schema" ID="9ef60c1b-2851-467f-bef1-914d7fb325f3" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd12" />
+    <MetadataFile FileName="TimeTrackingServiceSecure12.xsd" MetadataType="Schema" ID="000a463b-199b-4908-ac22-d6a0f2221e85" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd14" />
+    <MetadataFile FileName="TimeTrackingServiceSecure.wsdl" MetadataType="Wsdl" ID="d55963f9-9e21-4c5b-bd41-c88e520cbbab" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TimeTrackingServiceSecure1.wsdl" MetadataType="Wsdl" ID="fa3e784a-0e32-4c87-a05d-51f5320fdded" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="TimeTrackingServiceSecure.disco" MetadataType="Disco" ID="6637918d-839c-4202-931e-c9b1d8036d8a" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?disco" />
+    <MetadataFile FileName="TimeTrackingServiceSecure13.xsd" MetadataType="Schema" ID="231ee5bb-b347-4d51-92c6-0a0dd8d27397" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd11" />
+    <MetadataFile FileName="TimeTrackingServiceSecure14.xsd" MetadataType="Schema" ID="1c2c38da-8e8a-4dd3-9fd4-ef9475d6be96" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd15" />
+    <MetadataFile FileName="TimeTrackingServiceSecure15.xsd" MetadataType="Schema" ID="9aa0613b-6f29-4d36-8cf1-975bdc10ca3a" SourceId="1" SourceUrl="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd10" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

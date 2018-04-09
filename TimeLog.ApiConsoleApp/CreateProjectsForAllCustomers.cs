@@ -14,7 +14,7 @@
     {
         private static readonly ILog Logger = LogManager.GetLogger(typeof(CreateProjectsForAllCustomers));
 
-        public static void Comsume()
+        public static void Consume()
         {
             if (ServiceHandler.Instance.TryAuthenticate())
             {

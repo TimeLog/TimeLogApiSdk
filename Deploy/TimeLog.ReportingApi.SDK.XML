@@ -869,7 +869,7 @@
             <summary>
             Overwrites the service URL from the app.config
             </summary>
-            <param name="url">TimeLog Project URL (e.g. https://app4.timelog.com/soxdemo4 )</param>
+            <param name="url">TimeLog URL (e.g. https://app4.timelog.com/soxdemo4 )</param>
         </member>
         <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.TryAuthenticate">
             <summary>
@@ -912,19 +912,19 @@
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.Url">
             <summary>
-            Gets the base uri for the TimeLog Project site read from the
+            Gets the base uri for the TimeLog site read from the
             application setting TimeLogProjectUri.
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.MaxReceivedMessageSize">
             <summary>
-            Gets the default max received message size for all calls to the TimeLog Project API.
+            Gets the default max received message size for all calls to the TimeLog API.
             Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.Timeout">
             <summary>
-            Gets the default timeout value for all calls to the TimeLog Project API.
+            Gets the default timeout value for all calls to the TimeLog API.
             Default is 60 seconds, but can be overwritten from applicatino setting TimeLogProjectTimeoutInSeconds.
             </summary>
         </member>
