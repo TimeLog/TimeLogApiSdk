@@ -18,21 +18,24 @@
 
   <xsd:complexType name="InvoiceLineDetailRaw_Type">
     <xsd:sequence>
-      <xsd:element name="InvoiceLineID" type="xsd:positiveInteger" />
-      <xsd:element name="InvoiceID" type="xsd:positiveInteger" />
-      <xsd:element name="RegistrationDate" type="xsd:dateTime" />
+      <xsd:element name="InvoiceLineID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="InvoiceID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RegistrationDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Text" type="xsd:string" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="Units" type="xsd:decimal" />
-      <xsd:element name="Rate" type="xsd:decimal" />
-      <xsd:element name="Amount" type="xsd:decimal" />
-      <xsd:element name="OriginalUnits" type="xsd:decimal" />
-      <xsd:element name="OriginalRate" type="xsd:decimal" />
-      <xsd:element name="OriginalAmount" type="xsd:decimal" />
-      <xsd:element name="RegistrationType" type="xsd:unsignedByte" />
-      <xsd:element name="OriginalType" type="xsd:unsignedByte" />
+      <xsd:element name="Quantity" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Rate" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RateSystemCurrency" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Amount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="AmountSystemCurrency" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RegisteredQuantity" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RegisteredRateSystemCurrency" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RegisteredAmountSystemCurrency" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RegistrationType" type="xsd:unsignedByte" minOccurs="0" maxOccurs="1" />
       <xsd:element name="EmployeeInitials" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="TaskID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="TaskName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RegistrationID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="UnitType" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
   </xsd:complexType>
