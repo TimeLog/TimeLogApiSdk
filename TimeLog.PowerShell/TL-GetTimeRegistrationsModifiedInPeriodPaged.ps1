@@ -22,10 +22,13 @@ $job = Start-Job -ArgumentList $rootFolder -ScriptBlock {
 
     Write-Host "Trying to authenticate with transactional API..."
     if ([TimeLog.TransactionalApi.SDK.SecurityHandler]::Instance.TryAuthenticate([ref]$messages) -eq $true) {
-        Write-Host("Sucessfully authenticated on transactional API!")
+        Write-Host("Successfully authenticated on transactional API!")
 
-        $startDate = [DateTime]::Parse('2018-01-01 00:00:00')
-        $endDate = [DateTime]::Parse('2018-01-31 23:00:00')
+        $startDate = [DateTime]::Parse('2018-03-01 00:00:00')
+        $endDate = [DateTime]::Parse('2018-04-05 23:00:00')
+
+        Write-Host StartDate: $startDate
+        Write-Host EndDate: $endDate
 
         $page = 1
         $fetchMorePages = $true
@@ -45,6 +48,11 @@ $job = Start-Job -ArgumentList $rootFolder -ScriptBlock {
                 Write-Host "Successfully fetched the list for page $page!"
 
                 Write-Host Results: $getTimeRegistrationsModifiedInPeriodPagedRaw.Return.Length
+
+                foreach ($obj in $getTimeRegistrationsModifiedInPeriodPagedRaw.Return) {
+                    Write-Host ($obj.ID.ToString() + " (" + $obj.StartAt + " - " + $obj.EndAt + ") >> " + $obj.Delta + " (Comment: " + $obj.TimeRegistrationDetails.Task.Name + ")")
+                }
+
                 Write-Host Messages:
                 foreach ($message in $getTimeRegistrationsModifiedInPeriodPagedRaw.Messages) {
                     Write-Host (">> " + $message.Message)
