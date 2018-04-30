@@ -141,11 +141,6 @@
             Gets the time registration setting adapter for version 1.2
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.WorkUnitV10">
-            <summary>
-            Gets the project management adapter for version 1.0
-            </summary>
-        </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.WorkUnitV11">
             <summary>
             Gets the project management adapter for version 1.1
@@ -159,11 +154,6 @@
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.WorkUnitV13">
             <summary>
             Gets the project management adapter for version 1.3
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.WorkUnitBatchContainerV10">
-            <summary>
-            Gets the work unit batch container adapter for version 1.0
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.WorkUnitBatchContainerV11">
@@ -181,11 +171,6 @@
             Gets the work unit batch container adapter for version 1.3
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.ProjectHeaderV10">
-            <summary>
-            Gets the project header adapter for version 1.0
-            </summary>
-        </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.ProjectHeaderV11">
             <summary>
             Gets the project header adapter for version 1.1
@@ -199,11 +184,6 @@
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.ProjectHeaderV13">
             <summary>
             Gets the project header adapter for version 1.3
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.ProjectV10">
-            <summary>
-            Gets the project adapter for version 1.0
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.ProjectV11">
@@ -221,11 +201,6 @@
             Gets the project adapter for version 1.3
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.ProjectBatchContainerV10">
-            <summary>
-            Gets the project batch container adapter for version 1.0
-            </summary>
-        </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.ProjectBatchContainerV11">
             <summary>
             Gets the project batch container adapter for version 1.1
@@ -234,11 +209,6 @@
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.ProjectBatchContainerV12">
             <summary>
             Gets the project batch container adapter for version 1.2
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.TaskHeaderV10">
-            <summary>
-            Gets the task header adapter for version 1.0
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.TaskHeaderV11">
@@ -256,11 +226,6 @@
             Gets the task header adapter for version 1.3
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.TaskV10">
-            <summary>
-            Gets the task adapter for version 1.0
-            </summary>
-        </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.TaskV11">
             <summary>
             Gets the task adapter for version 1.1
@@ -276,19 +241,9 @@
             Gets the task adapter for version 1.3
             </summary>
         </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.TaskBatchContainerV10">
-            <summary>
-            Gets the task batch container adapter for version 1.0
-            </summary>
-        </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.TaskBatchContainerV11">
             <summary>
             Gets the task batch container adapter for version 1.1
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.AllocationV10">
-            <summary>
-            Gets allocation adapter for version 1.0
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.AllocationV11">
@@ -304,11 +259,6 @@
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.AllocationV13">
             <summary>
             Gets allocation adapter for version 1.3
-            </summary>
-        </member>
-        <member name="P:TimeLog.TLP.API.Common.GetAdapter.AllocationBatchContainerV10">
-            <summary>
-            Gets allocation batch adapter for version 1.0
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Common.GetAdapter.AllocationBatchContainerV11">
@@ -740,7 +690,7 @@
             Adapter interface for translating price groups
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_2.IPriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.ICurrencyList)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_2.IPriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceGroup)">
             <summary>
             Converts a domain object to an API object
             </summary>
@@ -780,7 +730,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.Invoicing.HourlyRates.Service"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_2.Service"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_2.PaymentAdapter">
@@ -793,7 +743,7 @@
             Unit_Price group adapter for API
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_2.PriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.ICurrencyList)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_2.PriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceGroup)">
             <summary>
             The domain to api.
             </summary>
@@ -833,7 +783,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.Invoicing.HourlyRates.Service"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_2.Service"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_1.ContractAdapter">
@@ -985,7 +935,7 @@
             Adapter interface for translating price groups
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_1.IPriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.ICurrencyList)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.IPriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceGroup)">
             <summary>
             Converts a domain object to an API object
             </summary>
@@ -1025,7 +975,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.Invoicing.HourlyRates.Service"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_1.Service"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_1.PriceGroupAdapter">
@@ -1033,7 +983,7 @@
             Unit_Price group adapter for API
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_1.PriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.ICurrencyList)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_1.PriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceGroup)">
             <summary>
             The domain to api.
             </summary>
@@ -1073,7 +1023,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.Invoicing.HourlyRates.Service"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_1.Service"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_0.PriceGroupAdapter">
@@ -1086,7 +1036,7 @@
             Adapter interface for translating price groups
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_0.IPriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.ICurrencyList)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_0.IPriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceGroup)">
             <summary>
             Converts a domain object to an API object
             </summary>
@@ -1319,7 +1269,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.Contact"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.Contact"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_4.ContactAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.Contact,TimeLog.TLP.Common.IViolation@)">
@@ -1690,7 +1640,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.Customer"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.Customer"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.Customer,TimeLog.TLP.Common.IViolation@,System.Boolean)">
@@ -1734,7 +1684,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerHeader"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerHeaderAdapter.DomainToApi(System.Int32)">
@@ -1745,7 +1695,7 @@
             The domain id.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerHeader"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.CRM.V1_4.CustomerStatusAdapter">
@@ -1761,7 +1711,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerStatus"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerStatusAdapter.DomainToApi(System.Int32)">
@@ -1772,7 +1722,7 @@
             The domain id.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerStatus"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_4.CustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus)">
@@ -1868,7 +1818,7 @@
             The domain id.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerHeader"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.CRM.V1_4.ICustomerStatusAdapter">
@@ -1884,7 +1834,7 @@
             The domain id.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerStatus"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_4.ICustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.CustomerStatus)">
@@ -1927,7 +1877,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.Industry"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_4.Industry"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_4.IndustryAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_4.Industry)">
@@ -2009,7 +1959,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.Contact"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.Contact"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.ContactAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Contact,TimeLog.TLP.Common.IViolation@)">
@@ -2365,7 +2315,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.Customer"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.Customer"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Customer,TimeLog.TLP.Common.IViolation@,System.Boolean)">
@@ -2409,7 +2359,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerHeader"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerHeaderAdapter.DomainToApi(System.Int32)">
@@ -2420,7 +2370,7 @@
             The domain id.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerHeader"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.CRM.V1_3.CustomerStatusAdapter">
@@ -2436,7 +2386,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerStatus"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerStatusAdapter.DomainToApi(System.Int32)">
@@ -2447,7 +2397,7 @@
             The domain id.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerStatus"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.CustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus)">
@@ -2543,7 +2493,7 @@
             The domain id.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerHeader"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter">
@@ -2559,7 +2509,7 @@
             The domain id.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.CustomerStatus"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.ICustomerStatusAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.CustomerStatus)">
@@ -2602,7 +2552,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.CRM.Industry"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.CRM.V1_3.Industry"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.IndustryAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.CRM.V1_3.Industry)">
@@ -3339,7 +3289,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.Invoicing.V1_0.InvoicingService">
             <summary>
-            Service for handling invoicing in TimeLog (released August 2013) 
+            Service for handling invoicing in TimeLog (released August 2013) - OBSOLETE
             </summary>
             <remarks>
             Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Invoicing/V1_0/InvoicingService.svc
@@ -3447,7 +3397,7 @@
             <param name="externalIdentifier">The external identifier (string)</param>
             <param name="departmentGuid">The department identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_2.EmployeeHeader"/>
             <returns>Details of the new employee</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Language.V1_0.LanguageService.GetLanguage(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3494,7 +3444,7 @@
             <param name="page">Page to get results from (int)</param>
             <param name="pageSize">Number of results per page. Max value: 100. (int)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.Employee"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.Employee"/>
             <returns>A list of employees</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.GetEmployeeByUsername(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3503,7 +3453,7 @@
             </summary>
             <param name="username">username to query for (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>A header employee object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.CreateEmployee(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3529,7 +3479,7 @@
             <param name="externalIdentifier">The external identifier (string)</param>
             <param name="departmentGuid">The department identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>Details of the new employee</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.CreateEmployeeNotification(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3538,7 +3488,7 @@
             </summary>
             <param name="employeeGuid">Employee unique identifier. Generate a new one for each employee (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>Details of the new employee</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.UpdateEmployee(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3563,7 +3513,7 @@
             <param name="costPriceName">Cost price name of the employee (string)</param>
             <param name="externalIdentifier">The external identifier (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.ActivateEmployee(System.Guid,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3574,7 +3524,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="hiredDate">The date the employee was hired. Determines the flex calculation start date etc. (DateTime)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.ChangeEmployeeDepartment(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3584,7 +3534,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="departmentGuid">Department unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.DeactivateEmployee(System.Guid,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3594,7 +3544,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="terminationDate">The termination date</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.GetDepartments(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3602,7 +3552,7 @@
             Gets the list of departments.
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.Department"/>
             <returns>A list of department objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.GetDepartmentByNo(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3611,7 +3561,7 @@
             </summary>
             <param name="departmentNo">Number to look up (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.Department"/>
             <returns>A list of departments</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.CreateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3624,7 +3574,7 @@
             <param name="parentDepartmentGuid">Parent department unique identifier. Use Guid.Empty to place it in the root (Guid)</param>
             <param name="departmentManagerGuid">Department manager, employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.Department"/>
             <returns>A department object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.UpdateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3637,7 +3587,7 @@
             <param name="parentDepartmentGuid">Parent department unique identifier. Use Guid.Empty to place it in the root (Guid)</param>
             <param name="departmentManagerGuid">Department manager, employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.Department"/>
             <returns>A department object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.DeactivateDepartment(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3646,7 +3596,7 @@
             </summary>
             <param name="departmentGuid">Department unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.Department"/>
             <returns>A department object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.GetModules(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3654,7 +3604,7 @@
             Gets the list of modules.
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Security.Role"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.Role"/>
             <returns>A list of Role objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.GetRoles(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3662,7 +3612,7 @@
             Gets the list of roles.
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Security.Role"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.Role"/>
             <returns>A list of Role objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.GetEmployeeRoles(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3671,7 +3621,7 @@
             </summary>
             <param name="employeeGuid">the guid of the employee</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Security.Role"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.Role"/>
             <returns>A list of Role objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.AddModuleToEmployee(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3681,7 +3631,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="modulename">The name of the module (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.RemoveModuleFromEmployee(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3691,7 +3641,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="modulename">The name of the module (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.AddRoleToEmployeeByName(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3701,7 +3651,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="rolename">The name of the role (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.RemoveRoleFromEmployeeByName(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3711,7 +3661,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="rolename">The name of the role (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.AddRoleToEmployeeByGuid(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3721,7 +3671,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="roleGuid">The Guid of the role</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.RemoveRoleFromEmployeeByGuid(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3731,7 +3681,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="roleGuid">The Guid of the role </param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.AssignExternalLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3740,7 +3690,7 @@
             </summary>
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.AssignStandardLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3749,7 +3699,7 @@
             </summary>
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.AssignAdvancedLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3758,7 +3708,7 @@
             </summary>
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_7.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="T:TimeLog.TLP.API.Organisation.V1_7.OrganisationServiceSecure">
@@ -3788,7 +3738,7 @@
             <param name="page">Page to get results from (int)</param>
             <param name="pageSize">Number of results per page. Max value: 100. (int)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.Employee"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.Employee"/>
             <returns>A list of employees</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.GetEmployeeByUsername(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3797,7 +3747,7 @@
             </summary>
             <param name="username">username to query for (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>A header employee object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.CreateEmployee(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3823,7 +3773,7 @@
             <param name="externalIdentifier">The external identifier (string)</param>
             <param name="departmentGuid">The department identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>Details of the new employee</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.CreateEmployeeNotification(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3832,7 +3782,7 @@
             </summary>
             <param name="employeeGuid">Employee unique identifier. Generate a new one for each employee (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>Details of the new employee</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.UpdateEmployee(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3857,7 +3807,7 @@
             <param name="costPriceName">Cost price name of the employee (string)</param>
             <param name="externalIdentifier">The external identifier (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.ActivateEmployee(System.Guid,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken,System.Nullable{System.Boolean})">
@@ -3869,7 +3819,7 @@
             <param name="hiredDate">The date the employee was hired. Determines the flex calculation start date etc. (DateTime)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <param name="sendActivationMail">Set to true if activation notification should be send to employee. Default false</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.ChangeEmployeeDepartment(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3879,7 +3829,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="departmentGuid">Department unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.DeactivateEmployee(System.Guid,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3889,7 +3839,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="terminationDate">The termination date</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.GetDepartments(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3897,7 +3847,7 @@
             Gets the list of departments.
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.Department"/>
             <returns>A list of department objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.GetDepartmentByNo(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3906,7 +3856,7 @@
             </summary>
             <param name="departmentNo">Number to look up (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.Department"/>
             <returns>A list of departments</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.CreateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3919,7 +3869,7 @@
             <param name="parentDepartmentGuid">Parent department unique identifier. Use Guid.Empty to place it in the root (Guid)</param>
             <param name="departmentManagerGuid">Department manager, employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.Department"/>
             <returns>A department object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.UpdateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3932,7 +3882,7 @@
             <param name="parentDepartmentGuid">Parent department unique identifier. Use Guid.Empty to place it in the root (Guid)</param>
             <param name="departmentManagerGuid">Department manager, employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.Department"/>
             <returns>A department object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.DeactivateDepartment(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3941,7 +3891,7 @@
             </summary>
             <param name="departmentGuid">Department unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.Department"/>
             <returns>A department object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.GetModules(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3949,7 +3899,7 @@
             Gets the list of modules.
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Security.Role"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.Role"/>
             <returns>A list of Role objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.GetRoles(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3957,7 +3907,7 @@
             Gets the list of roles.
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Security.Role"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.Role"/>
             <returns>A list of Role objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.GetEmployeeRoles(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3966,7 +3916,7 @@
             </summary>
             <param name="employeeGuid">the guid of the employee</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Security.Role"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.Role"/>
             <returns>A list of Role objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.AddModuleToEmployee(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3976,7 +3926,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="modulename">The name of the module (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.RemoveModuleFromEmployee(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3986,7 +3936,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="modulename">The name of the module (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.AddRoleToEmployeeByName(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -3996,7 +3946,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="rolename">The name of the role (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.RemoveRoleFromEmployeeByName(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4006,7 +3956,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="rolename">The name of the role (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.AddRoleToEmployeeByGuid(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4016,7 +3966,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="roleGuid">The Guid of the role</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.RemoveRoleFromEmployeeByGuid(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4026,7 +3976,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="roleGuid">The Guid of the role </param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.AssignExternalLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4035,7 +3985,7 @@
             </summary>
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.AssignStandardLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4044,7 +3994,7 @@
             </summary>
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.AssignAdvancedLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4053,7 +4003,7 @@
             </summary>
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_6.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="T:TimeLog.TLP.API.Organisation.V1_6.OrganisationServiceSecure">
@@ -4209,7 +4159,7 @@
             </summary>
             <param name="initials">Initials to query for (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader"/>
             <returns>A header employee object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.CreateEmployee(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4235,7 +4185,7 @@
             <param name="password">The password (string)</param>
             <param name="departmentGuid">The department identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader"/>
             <returns>Details of the new employee</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.CreateEmployeeNotification(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4244,7 +4194,7 @@
             </summary>
             <param name="employeeGuid">Employee unique identifier. Generate a new one for each employee (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader"/>
             <returns>Details of the new employee</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.UpdateEmployee(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4268,7 +4218,7 @@
             <param name="costPriceName">Cost price name of the employee (string)</param>
             <param name="externalIdentifier">The external identifier (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.ActivateEmployee(System.Guid,System.Int32,System.Boolean,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4281,7 +4231,7 @@
             <param name="hasCoordinatorRole">A value indicating whether this employee should have the coordinator role (bool)</param>
             <param name="hiredDate">The date the employee was hired. Determines the flex calculation start date etc. (DateTime)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.ChangeEmployeeSecurityLevel(System.Guid,System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4292,7 +4242,7 @@
             <param name="securityLevel">Security level for the employee. External [5], Project member [10], Project manager [20], Manager [30], System administrator [40] (int)</param>
             <param name="hasCoordinatorRole">A value indicating whether this employee should have the coordinator role (bool)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.ChangeEmployeeDepartment(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4302,7 +4252,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="departmentGuid">Department unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.DeactivateEmployee(System.Guid,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4312,7 +4262,7 @@
             <param name="employeeGuid">Employee unique identifier (Guid)</param>
             <param name="terminationDate">The termination date</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Common.EmployeeHeader"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.GetDepartments(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4320,7 +4270,7 @@
             Gets the list of departments.
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department"/>
             <returns>A list of department objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.GetDepartmentByNo(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4329,7 +4279,7 @@
             </summary>
             <param name="departmentNo">Number to look up (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department"/>
             <returns>A list of departments</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.CreateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4342,7 +4292,7 @@
             <param name="parentDepartmentGuid">Parent department unique identifier. Use Guid.Empty to place it in the root (Guid)</param>
             <param name="departmentManagerGuid">Department manager, employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department"/>
             <returns>A department object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.UpdateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4355,7 +4305,7 @@
             <param name="parentDepartmentGuid">Parent department unique identifier. Use Guid.Empty to place it in the root (Guid)</param>
             <param name="departmentManagerGuid">Department manager, employee unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department"/>
             <returns>A department object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.DeactivateDepartment(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4364,7 +4314,7 @@
             </summary>
             <param name="departmentGuid">Department unique identifier (Guid)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.Organisation.Department"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department"/>
             <returns>A department object</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.GetEmployeeTypes(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -4572,26 +4522,6 @@
             </summary>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_1.ProjectManagementService.InsertWork(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_1.WorkUnit},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
-            <summary>
-            
-            </summary>
-            <param name="work"></param>
-            <param name="source">3 = Tracker</param>
-            <param name="token"></param>
-            <returns></returns>
-        </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_0.ProjectManagementService.ProjectThenSortOrderComparer">
-            <summary>
-            Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
-            </summary>
-            
-        </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_0.ProjectManagementService.GetEmployeeWork(System.String,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_0.SecurityToken)">
-            <summary>
-            Return all work, on the employee in the given period
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_0.ProjectManagementService.InsertWork(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_0.WorkUnit},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_0.SecurityToken)">
             <summary>
             
             </summary>
@@ -5037,7 +4967,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.Allocation"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Allocation"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter.TimeLog#TLP#API#ProjectManagement#V1_7#IAllocationAdapter#ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
@@ -5097,7 +5027,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.Project"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ITaskAdapter">
@@ -5216,7 +5146,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.Project"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project,TimeLog.TLP.ProjectManagement.IProject)">
@@ -5289,7 +5219,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.ProjectHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.ProjectHeader"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService">
@@ -5370,6 +5300,15 @@
             <param name="token"></param>
             <returns>The specified Project in the state after the Status is changed</returns>
         </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetProjectByID(System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a project based on the project ID
+            </summary>
+            <param name="projectID">Project number (int)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A Task object</returns>
+        </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.CreateTask(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Creates a Task on the specified Project. The Task is placed as the last item in the WBS-structure of the Project
@@ -5394,8 +5333,8 @@
             Updates the data properties of the specified Task. 
             </summary>
             <param name="task">The task to update</param>
-            <param name="projectID"></param>
-            <param name="token"></param>
+            <param name="projectID">The id of the project the task belong to</param>
+            <param name="token">Security token of the current user</param>
             <returns>The task in the state after update</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.DeleteTask(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -5403,7 +5342,7 @@
             Deletes the specified Task
             </summary>
             <param name="taskGuid">The ID of the Task to be deleted</param>
-            <param name="token"></param>
+            <param name="token">Security token of the current user</param>
             <returns>The specified Task in the state before it is deleted</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTaskByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -5412,7 +5351,7 @@
             </summary>
             <param name="key">The ID of the Task in an external system</param>
             <param name="systemName">The system identifier as defined in TimeLog API settings</param>
-            <param name="token"></param>
+            <param name="token">Security token of the current user</param>
             <returns>The Task in its current state</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ChangeTaskStatus(System.Guid,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -5421,8 +5360,33 @@
             </summary>
             <param name="taskGuid">The ID of the Task to change Status on</param>
             <param name="targetStatus">The interger value of the Status the specified Task should be changed to</param>
-            <param name="token"></param>
+            <param name="token">Security token of the current user</param>
             <returns>The specified Task in the state after the Status is changed</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ChangeTaskContract(System.Guid,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Changes the contract associated with a task.
+            </summary>
+            <param name="taskGuid">The guid of the task</param>
+            <param name="projectSubContractId">The new contract id to attach the task to</param>
+            <param name="token">Security token of the current user</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTaskById(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a task based on the guid
+            </summary>
+            <param name="taskGuid">The guid of the task</param>
+            <param name="token">Security token of the current user</param>
+            <returns>A task object</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTasksByProjectId(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of tasks associated to a project
+            </summary>
+            <param name="projectGuid">The guid of the project</param>
+            <param name="token">Security token of the current user</param>
+            <returns>A list fo task objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTasksAllocatedToEmployee(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
@@ -5618,6 +5582,15 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of Task objects</returns>
         </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTaskByID(System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a task based on the task ID
+            </summary>
+            <param name="taskID">Task ID (int)</param>
+            <param name="loadExternalKeys">Load external keys (if any) associated (bool)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A Task object</returns>
+        </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ProjectThenSortOrderComparer">
             <summary>
             Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
@@ -5751,7 +5724,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.Task"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task,TimeLog.TLP.ProjectManagement.ITask)">
@@ -5820,7 +5793,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.TaskHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.TaskHeader"/>.
             </returns>
             <exception cref="T:System.Exception">
             </exception>
@@ -5886,7 +5859,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.WorkUnit"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnit"/>.
             </returns>
             <exception cref="T:System.Exception">
             </exception>
@@ -5987,7 +5960,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.Allocation"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Allocation"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter.TimeLog#TLP#API#ProjectManagement#V1_6#IAllocationAdapter#ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
@@ -6047,7 +6020,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.Project"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Project"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ITaskAdapter">
@@ -6166,7 +6139,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.Project"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Project"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Project,TimeLog.TLP.ProjectManagement.IProject)">
@@ -6239,7 +6212,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.ProjectHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.ProjectHeader"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService">
@@ -6677,7 +6650,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.Task"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Task"/>.
             </returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.TaskAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.Task,TimeLog.TLP.ProjectManagement.ITask)">
@@ -6746,7 +6719,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.TaskHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.TaskHeader"/>.
             </returns>
             <exception cref="T:System.Exception">
             </exception>
@@ -6812,7 +6785,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.ProjectManagement.WorkUnit"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_6.WorkUnit"/>.
             </returns>
             <exception cref="T:System.Exception">
             </exception>
@@ -6942,7 +6915,7 @@
             <param name="token">Security token associated with the request</param>
             <returns>Current OTT version in the system</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Registration.V1_0.TimeTrackingService.GetTimeRegistrationsModifiedInPeriodPaged(System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Registration.V1_0.TimeTrackingService.GetTimeRegistrationsModifiedInPeriodPaged(System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken,System.Boolean,System.String)">
             <summary>
             Will return all timeregistrations with a data action defining what type of change has been made. And a delta value for the change of time on the registration. 
             </summary>
@@ -6951,6 +6924,7 @@
             <param name="page"></param>
             <param name="pageSize"></param>
             <param name="token"></param>
+            <param name="includeExternalKeys"></param>
             <returns></returns>
         </member>
         <member name="M:TimeLog.TLP.API.Registration.V1_0.TimeTrackingService.ExecuteMethodApi``2(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken,System.Func{System.Collections.Generic.IEnumerable{``1}},System.Func{``1,``0},System.String)">

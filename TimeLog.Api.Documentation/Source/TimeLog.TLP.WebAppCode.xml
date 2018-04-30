@@ -118,7 +118,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of work units.
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="workUnitID">ID of specific work unit. Set to 0 to get work units</param>
@@ -135,7 +135,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of allocations
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="allocationID">ID of specific allocation. Set to 0 to get all allocations</param>
@@ -148,7 +148,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of employees with key information only
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="departmentID">ID of specific department. Set to 0 to get all employees</param>
@@ -159,7 +159,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of employees
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="employeeID">ID of specific employee. Set to 0 to get all employees</param>
@@ -172,7 +172,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of time off registrations. Work units related to salary codes.
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="employeeID">ID of specific employee. Set to 0 to get all allocations</param>
@@ -185,7 +185,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of flex registrations and flex adjustments.
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="employeeUserID">ID of specific employeeUser. Set to 0 to get all flex registrations</param>
@@ -198,7 +198,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of customers with key information only
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="customerStatusID">ID of specific Customer Status. Set to -1 to get all customers</param>
@@ -209,7 +209,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of customers
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="customerID">ID of specific customer. Set to 0 to get all customers</param>
@@ -221,7 +221,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of comments associated to a particular customer
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="customerID">Customer ID of customer to list all associated comments or pass 0 to query from all customer</param>
@@ -236,7 +236,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of customer statuses
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of customer status objects in XML format</returns>
@@ -245,7 +245,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of contacts with key information only
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="customerID">ID of specific customer. Set to 0 to get all contacts</param>
@@ -255,18 +255,36 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of contacts
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="customerID">ID of specific customer. Set to 0 to get all contacts</param>
  <param name="contactID">ID of specific contact. Set to 0 to get all contacts</param>
  <returns>A list of contact objects in XML format</returns>
 </member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetExpensesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+ <summary>
+ Gets a list of expenses
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="customerID">ID of specific customer. Set to 0 to get all expenses</param>
+ <param name="projectID">ID of specific project. Set to 0 to get all expenses</param>
+ <param name="supplierCustomerID">ID of specific supplier. Set to 0 to get all expenses</param>
+ <param name="employeeID">ID of specific employee. Set to 0 to get all expenses</param>
+ <param name="employeeDepartmentID">ID of specific employee department. Set to 0 to get all expenses</param>
+ <param name="expenseTypeID">ID of specific expense type. Set to 0 to get all expenses</param>
+ <param name="paymentMethodID">ID of specific payment method. Set to 0 to get all expenses</param>
+ <param name="startDate">Limits result to expenses with purchase date equal to or later than specified date</param>
+ <param name="endDate">Limits result to expenses with purchase date equal to or earlier than specified date</param>
+ <returns>A list of expense objects in XML format</returns>
+</member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetProjectsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
  <summary>
  Gets a list of projects
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="projectID">ID of specific project. Set to 0 to get all projects</param>
@@ -279,7 +297,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of projects with key information only
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="status">0 for inactive projects; 1 for active projects; -2 for all projects</param>
@@ -291,7 +309,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of project types
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of project type objects in XML format</returns>
@@ -300,7 +318,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of project categories
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of project category objects in XML format</returns>
@@ -309,7 +327,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of invoices
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="invoiceID">ID of specific invoice. Set to 0 to get all invoices</param>
@@ -323,7 +341,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of invoice lines
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="invoiceLineID">ID of specific invoiceline. Set to 0 to get all invoices</param>
@@ -338,7 +356,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of invoice line details
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="invoiceLineDetailID">ID of specific invoicelinedetail. Set to 0 to get all invoices</param>
@@ -353,7 +371,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of departments
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of department objects in XML format</returns>
@@ -362,7 +380,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of tasks
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="taskID">ID of specific Task. Set to 0 to get all tasks</param>
@@ -375,7 +393,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of tasks with key information only
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="projectID">ID of specific Project. Set to 0 to get all tasks</param>
@@ -387,7 +405,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of task types
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of task type object in XML format</returns>
@@ -396,7 +414,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of milestones
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="milestoneID">ID of specific Milestone. Set to 0 to get all milestones</param>
@@ -408,7 +426,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of milestoneTypes
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="milestoneTypeID">ID of specific MilestoneType. Set to 0 to get all milestoneTypes</param>
@@ -419,7 +437,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of mileage
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="customerID">ID of specific customer. Set to 0 to get all.</param>
@@ -438,7 +456,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of opportunities
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="opportunityID">ID of specific opportunity. Set to 0 to get all opportunities</param>
@@ -454,7 +472,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of sub-opportinities
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <Param name="opportunityID">ID of opportunity that contain sub-opportunities. Set to 0 to get all sub-opportunities</Param>
@@ -464,7 +482,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of opportunityTypes
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="status">0 for inactive opportunityTypes; 1 for active opportunityTypes; -1 for all opportunityTypes</param>
@@ -474,7 +492,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of opportunity status
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of opportunity status objects in XML format</returns>
@@ -483,7 +501,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of barriers
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="status">0 for inactive barriers; 1 for active barriers; -1 for all barriers</param>
@@ -493,7 +511,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of industries
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of industry objects in XML format</returns>
@@ -502,7 +520,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of support types with key information only
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of support type objects in XML format</returns>
@@ -511,7 +529,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of support cases
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="supportCaseID">ID of specific support case. Set to 0 to get all</param>
@@ -528,7 +546,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of support contracts
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="supportContractID">ID of specific support contract. Set to 0 to get all</param>
@@ -541,7 +559,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of support journals
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="supportCaseID">ID of specific support case. Set to 0 to get all</param>
@@ -554,7 +572,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of countries
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A list of countrie objects in XML format</returns>
@@ -563,7 +581,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of events
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="eventID">ID of specific event. Set to 0 to get all events</param>
@@ -579,7 +597,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of eventTypes
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="status">0 for inactive eventTypes; 1 for active eventTypes; -1 for all eventTypes</param>
@@ -589,7 +607,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of working hours
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="employeeID">ID of specific employee. Set to 0 to get all employees</param>
@@ -603,7 +621,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Gets a list of employee normal working hours
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="employeeID">ID of specific employee. Set to 0 to get all employees</param>
@@ -615,7 +633,7 @@ TimeLog.TLP.WebAppCode
  <summary>
  Validates a credentials set
  </summary>
- <param name="siteCode">Unique identification for your TimeLog Project account</param>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A message about the validation</returns>
@@ -647,20 +665,20 @@ TimeLog.TLP.WebAppCode
 </member>
 <member name="T:TimeLog.TLP.WebAppCode.Standard_Tables">
  <summary>
- This Class contains all standard functions to build TimeLog Project Dynamic Tables
+ This Class contains all standard functions to build TimeLog Dynamic Tables
  </summary>
  <remarks></remarks>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.pageTable">
  <summary>
- Returns a TimeLog Project Result Table
+ Returns a TimeLog Result Table
  </summary>
  <returns></returns>
  <remarks></remarks>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.pageTable(System.String)">
  <summary>
- Returns a TimeLog Project Result Table with parsed caption
+ Returns a TimeLog Result Table with parsed caption
  </summary>
  <param name="Caption">The caption of the returned table</param>
  <returns></returns>
@@ -668,14 +686,14 @@ TimeLog.TLP.WebAppCode
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultTable">
  <summary>
- Returns a TimeLog Project Result Table
+ Returns a TimeLog Result Table
  </summary>
  <returns></returns>
  <remarks></remarks>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.ResultTable(System.String)">
  <summary>
- Returns a TimeLog Project Result Table with parsed caption
+ Returns a TimeLog Result Table with parsed caption
  </summary>
  <param name="Caption">The caption of the returned table</param>
  <returns></returns>
@@ -683,14 +701,14 @@ TimeLog.TLP.WebAppCode
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.FullTable">
  <summary>
- Returns a TimeLog Project Full Table
+ Returns a TimeLog Full Table
  </summary>
  <returns></returns>
  <remarks></remarks>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.FullTable(System.String)">
  <summary>
- Returns a TimeLog Project Full Table with parsed caption
+ Returns a TimeLog Full Table with parsed caption
  </summary>
  <param name="Caption">The caption of the returned table</param>
  <returns></returns>
@@ -738,14 +756,14 @@ TimeLog.TLP.WebAppCode
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.FirstColumn">
  <summary>
- The first column in any TimeLog Project Tablerow
+ The first column in any TimeLog Tablerow
  </summary>
  <returns></returns>
  <remarks></remarks>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Standard_Tables.FirstColumn(System.String)">
  <summary>
- The first column in any expandable TimeLog Project Tablerow 
+ The first column in any expandable TimeLog Tablerow 
  </summary>
  <param name="MenuString">The returnstring from newMenu call</param>
  <returns></returns>

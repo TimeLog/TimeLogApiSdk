@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -157,6 +158,10 @@
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Source\Reporting\GetAllocationsRaw.xml" />
+    <None Include="Source\Reporting\GetExpensesRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Source\Reporting\GetExpensesRaw.xml" />
     <Content Include="Source\Reporting\GetFlexTimeRaw.xml" />
     <Content Include="Source\Reporting\GetContactsRaw.xml" />
     <Content Include="Source\Reporting\GetContactsShortList.xml" />
