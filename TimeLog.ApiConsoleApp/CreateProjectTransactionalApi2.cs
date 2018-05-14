@@ -38,8 +38,8 @@
                 var newProject = new Project()
                 {
                     ID = Guid.NewGuid(),
-                    AccountManagerID = 384,
-                    ProjectManagerID = 384,
+                    AccountManagerID = 376,
+                    ProjectManagerID = 376,
                     TypeID = 247,
                     StartDate = DateTime.Today,
                     StageID = 2,
@@ -56,6 +56,7 @@
                     BudgetWorkHoursTimeAndMaterial = 0,
                     CategoryID = 3,
                     CurrencyID = 35,
+                    MainContractID = 1, // TimeMaterial = 1, FixedPrice = 2, TimeMaterialAccountEndBalancing = 3, TimeMaterialAccountPeriodicBalancing = 4, PrepaidServices = 5, RevenueReqPerTask = 6, ContinuousService = 7, ContinuousItemInvoicing = 8
                     DepartmentHandledByID = 0,
                     DepartmentOrderedByID = 0,
                     Description = string.Empty,
