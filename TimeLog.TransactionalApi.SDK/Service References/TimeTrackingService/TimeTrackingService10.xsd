@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://api.timelog.com/services/customfield/1_0" elementFormDefault="qualified" targetNamespace="http://api.timelog.com/services/customfield/1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
-  <xs:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" />
-  <xs:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
+  <xs:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" />
+  <xs:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
   <xs:complexType name="ArrayOfCustomField">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomField" nillable="true" type="tns:CustomField" />

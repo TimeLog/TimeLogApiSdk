@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.timelog.com/api/tlp/v1_0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.timelog.com/api/tlp/v1" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TimeTrackingServiceSecure" targetNamespace="http://www.timelog.com/api/tlp/v1_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:import namespace="http://www.timelog.com/api/tlp/v1" location="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?wsdl=wsdl0" />
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.timelog.com/api/tlp/v1_0" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.timelog.com/api/tlp/v1" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TimeTrackingService" targetNamespace="http://www.timelog.com/api/tlp/v1_0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.timelog.com/api/tlp/v1" location="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?wsdl=wsdl0" />
   <wsdl:types>
     <xsd:schema targetNamespace="http://www.timelog.com/api/tlp/v1_0/Imports">
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_3" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd4" namespace="http://www.timelog.com/api/tlp/v1_0" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd5" namespace="http://api.timelog.com" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd6" namespace="http://www.timelog.com/api/tlp/v1" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Attributes" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd8" namespace="http://api.timelog.com/services/customfield/1_0" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Registration" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd11" namespace="http://www.timelog.com/api/tlp/v1_6" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd12" namespace="http://api.timelog.com/services/crm/1_3" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd13" namespace="http://api.timelog.com/services/salary/1_0" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
-      <xsd:import schemaLocation="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd15" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd1" namespace="http://www.timelog.com/api/tlp/v1_3" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd4" namespace="http://www.timelog.com/api/tlp/v1_0" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd5" namespace="http://api.timelog.com" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd6" namespace="http://www.timelog.com/api/tlp/v1" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Attributes" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd8" namespace="http://api.timelog.com/services/customfield/1_0" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Registration" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd11" namespace="http://www.timelog.com/api/tlp/v1_6" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd12" namespace="http://api.timelog.com/services/crm/1_3" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd13" namespace="http://api.timelog.com/services/salary/1_0" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" />
+      <xsd:import schemaLocation="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc?xsd=xsd15" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="TimeTrackingService_IsAlive_InputMessage">
@@ -93,9 +93,9 @@
       <wsdl:output wsaw:Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeRegistrationsModifiedInPeriodPagedResponse" message="tns:TimeTrackingService_GetTimeRegistrationsModifiedInPeriodPaged_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:service name="TimeTrackingServiceSecure">
+  <wsdl:service name="TimeTrackingService">
     <wsdl:port name="BasicHttpBinding_TimeTrackingService" binding="i0:BasicHttpBinding_TimeTrackingService">
-      <soap:address location="https://app4.timelog.com/soxidentity/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc" />
+      <soap:address location="http://localhost/TLP/WebServices/Registration/V1_0/TimeTrackingService.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
