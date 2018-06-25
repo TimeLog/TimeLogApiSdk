@@ -27,5 +27,11 @@
     <tlp:IndustryID>6</tlp:IndustryID>
     <tlp:IndustryName>Software Company</tlp:IndustryName>
     <tlp:CustomerSince>2011-08-12</tlp:CustomerSince>
+    <tlp:CreatedAt>2010-04-16T09:35:59</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>417</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>Peter Nielsen</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2010-04-16T09:35:59</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>417</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>Peter Nielsen</tlp:LastModifiedBy>
   </tlp:Customer>
 </tlp:Customers>
