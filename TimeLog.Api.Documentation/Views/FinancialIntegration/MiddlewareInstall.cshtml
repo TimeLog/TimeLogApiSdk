@@ -1,0 +1,393 @@
+﻿
+<body>
+   
+    <div class="bs-docs-header" id="content">
+        <div class="container">
+            <h1>TimeLog Project Generic Financial Integration</h1>
+        </div>
+    </div>
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-9" role="main">
+                <div class="bs-docs-section">
+                    <h1 id="install" class="page-header">Install procedure</h1>
+                    <h3 id="install-general">Install day</h3>
+                    <ol>
+                        <li>
+                            Install TimeLog.Financial.Host on IIS
+                            <ul>
+                                <li>Get latest published version from TimeLog.Financial.Host</li>
+                                <li>Extract TimeLog.Financial.Host files to c:\inetput\wwwroot\timelog.financial.host</li>
+                                <li>Setup new application pool for .NET v4.0 in integrated mode</li>
+                                <li>If Visma, ensure that "Enable 32-bit Applications" is set to true in the advanced settings for the application pool</li>
+                                <li>Setup a new virtual directory for http://localhost/timelog.financial.host using newly created applicationpool</li>
+                                <li>Anonymous Authentication must be enabled on the application in the IIS</li>
+                            </ul>
+                        </li>
+                        <li>Add the appropriate Financial Integration dll to the Assembly-folder</li>
+                        <li>
+                            Configure settings in web.config
+                            <ol>
+                                <li>Setup Financial Integration namespace mapping in appSettings section in web.config</li>
+                                <li>
+                                    <img src="../../Content/web.config - namespace.png" class="img-responsive" />
+                                </li>
+                                <li>If https is used enable https-section in web.config, change address and flip tru/false (see image)</li>
+                                <li>
+                                    <img src="../../Content/web.config - https.png" class="img-responsive" />
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Configure host settings in TimeLog.Financial.Host.Settings.xml
+                            <ol>
+                                <li>Copy template reference from TimeLog.Financial.Host.Config</li>
+                                <li>Webservice*: Connection details to TimeLog.Financial.Host from TimeLog Project</li>
+                                <li>DefaultCustomerStatus: String representation of the default Timelog Project customer status</li>
+                                <li>Restservice*: Connection details to TimeLog.Financial.Host from the financial system</li>
+                                <li>SystemName: Customize to fit customer</li>
+                                <li>TimelogWebservice*: Connection details to TimeLog Project from TimeLog.Financial.Host (Create integration user in TimeLog)</li>
+                                <li>NextOutgoingTransactionId: Reset to 1000 for new installs</li>
+
+
+                                <li><strong>NAV only:</strong></li>
+                                <li>Use Contact Telation Mgr.: In the Timelog setup page in NAV mark checkbox if customer don't use contacts in NAV. </li>
+                                <li>InvoiceLineType: Default invoice line type (for NAV only)</li>
+                                <li>Get Navision base URL from webservices in Navision (Webtjenester)</li>
+                                <li>
+                                    Settings file for NAV-integration (What to remenber)
+                                    <img src="../../Content/TimeLog.Financial.Host.Settings for NAV-integration.png" class="img-responsive" />
+                                </li>
+
+                                <li><strong>Visma only:</strong></li>
+                                <li>UseExpenseHandler: Enable build-in expense tracking (for Visma only)</li>
+                                <li>VismaAddProjectReferenceToInvoices: Include the TimeLog Project invoice header as the first line in Visma Administration (0 or 1)</li>
+                                <li>VismaCurrencyFactorSEK: Find currency factor in in Visma Administration/Arkiv/Valutakurser</li>
+                                <li>In web.config check paths in applicationSettings section. AdkNet4Wrapper.dll must be present in C:\Program Files (x86)\SPCS\SPCS Administration</li>
+                                <li>
+                                    Make sure to include these files in the bin folder in TimeLog.Financial.Host
+                                    <ol>
+                                        <li>DPAB.VismaLibrary.dll</li>
+                                        <li>TimeLog.Financial.Visma.Common.dll</li>
+                                    </ol>
+                                </li>
+
+                            </ol>
+                        </li>
+                        <li>Make sure IIS user has full control in timelog.financial.host folder.</li>
+                        <li>Configure SMTP details (smtpHost) and subject (naming convention is "TimeLog Financial Host - [Customer name] - Error") and sender email (naming convention is timelog-financial-host@customerdomain) in log4net.config</li>
+                        <li>Test access to the TimeLog.Financial.Host on <a href="http://localhost/timelog.financial.host">http://localhost/timelog.financial.host</a></li>
+                        <li>Test if integration is active and if version info is available</li>
+                    </ol>
+                    <h3 id="install-nav">Implementations steps for Dynamics NAV</h3>
+                    <ol>
+                        <li>
+                            Import the objects
+                            <ol>
+                                If not in DK all references to EAN-has to be removed from TimeLog functions in NAV.
+                            </ol>
+                        </li>
+
+                        <li>Open the form "TimeLog Setup"</li>
+                        <li>Configure the connection details based on the settings file</li>
+                        <li>Test access to web services (see <a href="tests.html#nav-tests">NAV install tests</a>)</li>
+                    </ol>
+                    <h3 id="install-visma">Implementations steps for Visma Administration</h3>
+                    <ol>
+                        <li>In web.config cross check all paths in the DPAB.VismaLibrary.Properties.Settings section</li>
+                        <li>
+                            Ensure all employees are created as "säljere" in <strong>Arkiv</strong> &gt; <strong>Inställningar</strong>
+                            &gt; <strong>Företagsinställningar</strong> &gt; <strong>Referens</strong>
+                        </li>
+                        <li>
+                            Customize currency factors in TimeLog.Financial.Host.Settings.xml according to the settings in Visma
+                            Administration in <strong>Arkiv</strong> &gt; <strong>Inställningar</strong> &gt; <strong>Valutakurser</strong>
+                        </li>
+                    </ol>
+                    <h3 id="install-ax">Implementations steps for Dynamics AX</h3>
+                    <ol>
+                        <li>To be defined</li>
+                    </ol>
+                    <h3 id="install-finalizing">Finalizing install</h3>
+                    <ol>
+                        <li>
+                            On <a href="http://localhost/timelog.financial.host.prod/">http://localhost/timelog.financial.host.prod/</a> test the following:
+                            <ol>
+                                <li>IsAlive</li>
+                                <li>GetVersion</li>
+                            </ol>
+                        </li>
+                        <li>Verify everything in the CurrentProject.log in the \logs\ folder</li>
+                        <li>Setup connection in TimeLog Project</li>
+                        <li>Carry out the <a href="tests.html">tests</a></li>
+                    </ol>
+                </div>
+                <div class="bs-docs-section">
+                    <h1 id="backup" class="page-header">Backup considerations</h1>
+                    <p>For standard installs backup of the following are required:</p>
+                    <ul>
+                        <li>All files in C:\inetpub\wwwroot (Weekly)</li>
+                        <li>IIS setup (Weekly)</li>
+                    </ul>
+                    <p>
+                        The application itself does only contain few data pieces - everything is stored in either the financial system or TimeLog Project.
+                        Most dynamic data is related to short term security mechanisms only. Restore does not require any special actions.
+                    </p>
+                </div>
+                <div class="bs-docs-section">
+                    <h1 id="config" class="page-header">Configuration file</h1>
+                    <table class="table table-condensed">
+                        <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th style="width: 250px;">Key</th>
+                                <th style="width: 150px;">Default value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DebugMode</td>
+                                <td>0</td>
+                                <td>Allow access to debug methods in the host web interfaces. (0 or 1)</td>
+                            </tr>
+                            <tr>
+                                <td>DefaultCustomerStatus</td>
+                                <td>Customer</td>
+                                <td>The name of the default customer status in TimeLog Project (e.g. Customer, Kunde)</td>
+                            </tr>
+                            <tr>
+                                <td>FrequentlyDisposeDAO</td>
+                                <td>0</td>
+                                <td>Debug feature to dispose and clear cache of objects frequently (0 or 1)</td>
+                            </tr>
+                            <tr>
+                                <td>InvoiceLineType</td>
+                                <td>2</td>
+                                <td><strong>Dynamics NAV</strong> Invoice line type: 0 = Text line, 1 = G/L Account, 2 = Item, 3 = Resource</td>
+                            </tr>
+                            <tr>
+                                <td>NavisionBaseCustomUrl</td>
+                                <td><input value="http://localhost:7047/DynamicsNAV90/WS/[Company]/Codeunit/" /></td>
+                                <td><strong>Dynamics NAV</strong> Web service path for code units</td>
+                            </tr>
+                            <tr>
+                                <td>NavisionBaseUrl</td>
+                                <td><input value="http://localhost:7047/DynamicsNAV90/WS/VestConsult%20/Page/" /></td>
+                                <td><strong>Dynamics NAV</strong> Web service path for pages</td>
+                            </tr>
+                            <tr>
+                                <td>NavisionPassword</td>
+                                <td></td>
+                                <td><strong>Dynamics NAV</strong> Password</td>
+                            </tr>
+                            <tr>
+                                <td>NavisionUsername</td>
+                                <td></td>
+                                <td><strong>Dynamics NAV</strong> User name</td>
+                            </tr>
+                            <tr>
+                                <td>NavisionWebserviceOperationTimeout</td>
+                                <td>180</td>
+                                <td><strong>Dynamics NAV</strong> TLP Webservice timeout in seconds</td>
+                            </tr>
+                            <tr>
+                                <td>NavisionDateRangeLimitInDays</td>
+                                <td></td>
+                                <td><strong>Dynamics NAV</strong> Limits the date range possible when importing time to NAV</td>
+                            </tr>
+                            <tr>
+                                <td>NavisionPageSize</td>
+                                <td></td>
+                                <td><strong>Dynamics NAV</strong> Set the number of results to get per page when importing time to NAV</td>
+                            </tr>
+                            <tr>
+                                <td>NavProjectDimensionNumber</td>
+                                <td>2</td>
+                                <td><strong>Dynamics NAV</strong> Defines the global dimension number for projects used for invoices</td>
+                            </tr>
+                            <tr>
+                                <td>NavUseDimension1</td>
+                                <td>0</td>
+                                <td><strong>Dynamics NAV</strong> Enable the use of global dimension 1 for projects or departments (0 or 1)</td>
+                            </tr>
+                            <tr>
+                                <td>NavUseDimension2</td>
+                                <td>0</td>
+                                <td><strong>Dynamics NAV</strong> Enable the use of global dimension 2 for projects or departments (0 or 1)</td>
+                            </tr>
+                            <tr>
+                                <td>NavIncludeDateInInvoiceLine</td>
+                                <td>0</td>
+                                <td><strong>Dynamics NAV</strong> Enable that the invoice line description should include the date for all lines (0 or 1)</td>
+                            </tr>
+                            <tr>
+                                <td>NavDateFormatInInvoiceLine</td>
+                                <td>yyyy-MM-dd</td>
+                                <td><strong>Dynamics NAV</strong> Date format for all invoice line dates</td>
+                            </tr>
+                            <tr>
+                                <td>RestserviceAllowedIPs</td>
+                                <td>::1 127.0.0.1</td>
+                                <td>List of allowed IP addresses for the REST endpoint. If the financial system is running on the same machine, leave values default</td>
+                            </tr>
+                            <tr>
+                                <td>RestserviceHandle</td>
+                                <td>timelog</td>
+                                <td>Handle for the REST endpoint. Used in the configuration in the financial system</td>
+                            </tr>
+                            <tr>
+                                <td>RestserviceSecret</td>
+                                <td>***</td>
+                                <td>Secret for the REST endpoint. Used in the configuration in the financial system</td>
+                            </tr>
+                            <tr>
+                                <td>SpecialContactHandling</td>
+                                <td>0</td>
+                                <td><strong>Dynamics NAV</strong> Enable for instances of NAV that does not have contacts enabled. Default attention on the debtor will change based on latest invoice instead (0 or 1)</td>
+                            </tr>
+                            <tr>
+                                <td>SystemName</td>
+                                <td>My Financial System</td>
+                                <td>Name of the financial system that shows up in TimeLog Project</td>
+                            </tr>
+                            <tr>
+                                <td>TimelogWebservicePassword</td>
+                                <td>***</td>
+                                <td>Password for a valid system administrator user in TimeLog Project</td>
+                            </tr>
+                            <tr>
+                                <td>TimelogWebserviceURL</td>
+                                <td><input value="https://app3.timelog.com/soxdemo/" /></td>
+                                <td>URL for the related TimeLog Project site</td>
+                            </tr>
+                            <tr>
+                                <td>TimelogWebserviceUser</td>
+                                <td>sox</td>
+                                <td>User name for a valid system administrator user in TimeLog Project</td>
+                            </tr>
+                            <tr>
+                                <td>UseExpenseHandler</td>
+                                <td>0</td>
+                                <td><strong>Visma Administration</strong> Put to 1 for financial systems that cannot track if an imported expense is used for not (0 or 1)</td>
+                            </tr>
+                            <tr>
+                                <td>VismaAddProjectReferenceToInvoices</td>
+                                <td>0</td>
+                                <td><strong>Visma Administration</strong> Put to 1 to include the TimeLog Project invoice header as the first line in Visma Administration (0 or 1)</td>
+                            </tr>
+                            <tr>
+                                <td>VismaCurrencyFactor[ISOcode]</td>
+                                <td>1</td>
+                                <td><strong>Visma Administration</strong> Look up the value in the currency setup in Visma Administration to make sure the invoice amounts are correct. Most likely 1 or 100</td>
+                            </tr>
+                            <tr>
+                                <td>VismaDefaultUnitType</td>
+                                <td>st</td>
+                                <td><strong>Visma Administration</strong> Set the fallback unit type for invoice rows when "-" is selected in TimeLog Project (dag, tim, km, min, st)</td>
+                            </tr>
+                            <tr>
+                                <td>WebserviceAllowedIPs</td>
+                                <td>::1 127.0.0.1 - 85.233.240.40</td>
+                                <td>List of allowed IP addresses for the web service endpoint. Add IP of the server hosting the TimeLog Project instance</td>
+                            </tr>
+                            <tr>
+                                <td>WebserviceHandle</td>
+                                <td>timelog</td>
+                                <td>Handle for the web service. Used in the configuration in TimeLog Project</td>
+                            </tr>
+                            <tr>
+                                <td>WebserviceSecret</td>
+                                <td>***</td>
+                                <td>Secret for the web service. Used in the configuration in TimeLog Project</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bs-docs-section">
+                    <h1 id="debugging" class="page-header">Debugging</h1>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Error message</th>
+                                <th>Reason</th>
+                                <th>Fix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Receiving "WCF ASP.NET (405) Method Not Allowed" or similar when trying to integrate against the .svc service enpoint</td>
+                                <td>The SVC extension is not installed as an ISAPI module on the IIS.</td>
+                                <td>Ensure feature ".NET Framework 4.5 Features > WCF Services > HTTP Activation" is installed and run "C:\Windows\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModelReg.exe –i"</td>
+                            </tr>
+                            <tr>
+                                <td>Could not load type 'System.ServiceModel.Activation.HttpHandler' from assembly 'System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'.</td>
+                                <td>WCF not installed with HTTP activation</td>
+                                <td>Add features: ".NET Framework 3.5 > Windows Communication Foundation HTTP Activation" and ".NET Framework 4.5 > WCF Services > HTTP Activation"</td>
+                            </tr>
+                            <tr>
+                                <td>Unable to start the TimeLog.Financial.Service Windows service after install</td>
+                                <td>.NET 4.5 is not installed on the machine</td>
+                                <td>Double click the service in explorer. It will prompt you to download the latest version of .NET</td>
+                            </tr>
+                            <tr>
+                                <td>Unable to install the TimeLog.Financial.Service Windows service with: System.ComponentModel.Win32Exception: The account does not exist, or the supplied password is not correct</td>
+                                <td>Local username is not correct</td>
+                                <td>Make sure to use ".\timelog" for the username</td>
+                            </tr>
+                            <tr>
+                                <td>Receives "HTTP Error 403.14 - Forbidden" when trying to access newly created virtual directory with TimeLog.FinancialHost</td>
+                                <td>ASP.NET v4.5 is not activated</td>
+                                <td>In an administrative console run the following command:<br />dism /online /enable-feature /featurename:IIS-ASPNET45 /all<br />Applies to IIS8<br />https://support.microsoft.com/en-us/kb/2736284</td>
+                            </tr>
+                            <tr>
+                                <td>Receives "HTTP Error 500.21 - Internal Server Error Handler PageHandlerFactory-Integrated has a bad module ManagedPipelineHandler in its module list" when trying to access newly created virtual directory with TimeLog.FinancialHost</td>
+                                <td>ASP.NET v4.5 is not activated</td>
+                                <td>In an administrative console run the following command: %windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_regiis.exe -i or %windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe -i</td>
+                            </tr>
+                            <tr>
+                                <td>Receives "Service 'TimeLog.Financial.Host.FinancialService' has zero application (non-infrastructure) endpoints. This might be because no configuration file was found for your application, or because no service element matching the service name could be found in the configuration file, or because no endpoints were defined in the service element." when accessing the FinancialService.svc</td>
+                                <td>HTTP/HTTPS mismatch</td>
+                                <td>
+                                    For HTTPS enable and customize the "services" section in web.config and the "serviceMetadata" section.
+                                    For HTTP comment out the "services" section and customize the "serviceMetadata" section in web.config.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bs-docs-sidebar hidden-print" role="complementary">
+                    <ul class="nav bs-docs-sidenav">
+                        <li class="active">
+                            <a href="#install">Install procedure</a>
+                            <ul class="nav">
+                                <li><a href="#install-general">Install day</a></li>
+                                <li><a href="#install-nav">Dynamics NAV</a></li>
+                                <li><a href="#install-visma">Visma Administration</a></li>
+                                <li><a href="#install-ax">Dynamics AX</a></li>
+                                <li><a href="#install-finalizing">Finalizing install</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#config">Configuration file</a></li>
+                        <li><a href="#debugging">Debugging</a></li>
+                    </ul>
+                    <a class="back-to-top" href="#top">Back to top </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bs-docs-footer" role="contentinfo">
+        <div class="container">
+            <p>Code licensed to <a href="http://www.timelog.com" target="_blank">TimeLog A/S</a>, documentation under copyright.</p>
+        </div>
+    </footer>
+    <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/docs.min.js"></script>
+</body>

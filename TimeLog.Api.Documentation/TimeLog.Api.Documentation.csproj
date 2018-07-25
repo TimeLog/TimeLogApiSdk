@@ -131,6 +131,8 @@
     <Compile Include="DocExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\architecture.png" />
+    <Content Include="Content\Authentication setting.png" />
     <Content Include="Content\docs.min.css" />
     <Content Include="Content\Fonts\icomoon.svg" />
     <Content Include="Content\Images\chl.png" />
@@ -140,7 +142,12 @@
     <Content Include="Content\Images\next.png" />
     <Content Include="Content\Images\previous.png" />
     <Content Include="Content\Images\sox.png" />
+    <Content Include="Content\NAVProjectVersionIntegrationLog.PNG" />
     <Content Include="Content\TimeLog Data Model.svg" />
+    <Content Include="Content\TimeLog Data Model.xml" />
+    <Content Include="Content\TimeLog.Financial.Host.Settings for NAV-integration.png" />
+    <Content Include="Content\web.config - https.png" />
+    <Content Include="Content\web.config - namespace.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Styles\Site.css" />
@@ -381,6 +388,8 @@
     <Content Include="Views\FinancialIntegration\ConfigurationFile.cshtml" />
     <Content Include="Views\FinancialIntegration\Dinero.cshtml" />
     <Content Include="Views\FinancialIntegration\Uniconta.cshtml" />
+    <Content Include="Views\FinancialIntegration\Visma.cshtml" />
+    <Content Include="Views\FinancialIntegration\MiddlewareInstall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
