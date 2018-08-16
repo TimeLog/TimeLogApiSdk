@@ -22,8 +22,10 @@
     <tlp:RegAmount>800.0000</tlp:RegAmount>
     <tlp:EstimatedHours>1.0000</tlp:EstimatedHours>
     <tlp:EstimatedAmount>800.0000</tlp:EstimatedAmount>
-    <tlp:InvHours>1.0000</tlp:InvHours>
-    <tlp:InvAmount>800.0000</tlp:InvAmount>
+    <tlp:BARHours>1.0000</tlp:BARHours>
+    <tlp:BARAmount>800.0000</tlp:BARAmount>
+    <tlp:InvoicedHours>1.0000</tlp:InvoicedHours>
+    <tlp:InvoicedAmount>800.0000</tlp:InvoicedAmount>
     <tlp:CostAmount>320.0000</tlp:CostAmount>
     <tlp:IsBillable>1</tlp:IsBillable>
     <tlp:ApprovedStatus>0</tlp:ApprovedStatus>
@@ -54,8 +56,10 @@
     <tlp:RegAmount>800.0000</tlp:RegAmount>
     <tlp:EstimatedHours>1.0000</tlp:EstimatedHours>
     <tlp:EstimatedAmount>800.0000</tlp:EstimatedAmount>
-    <tlp:InvHours>1.0000</tlp:InvHours>
-    <tlp:InvAmount>800.0000</tlp:InvAmount>
+    <tlp:BARHours>1.0000</tlp:BARHours>
+    <tlp:BARAmount>800.0000</tlp:BARAmount>
+    <tlp:InvoicedHours>1.0000</tlp:InvoicedHours>
+    <tlp:InvoicedAmount>800.0000</tlp:InvoicedAmount>
     <tlp:CostAmount>320.0000</tlp:CostAmount>
     <tlp:IsBillable>0</tlp:IsBillable>
     <tlp:ApprovedStatus>10</tlp:ApprovedStatus>
@@ -85,8 +89,10 @@
     <tlp:RegAmount>0.0000</tlp:RegAmount>
     <tlp:EstimatedHours>1.0000</tlp:EstimatedHours>
     <tlp:EstimatedAmount>0.0000</tlp:EstimatedAmount>
-    <tlp:InvHours>1.0000</tlp:InvHours>
-    <tlp:InvAmount>0.0000</tlp:InvAmount>
+    <tlp:BARHours>1.0000</tlp:BARHours>
+    <tlp:BARAmount>800.0000</tlp:BARAmount>
+    <tlp:InvoicedHours>1.0000</tlp:InvoicedHours>
+    <tlp:InvoicedAmount>800.0000</tlp:InvoicedAmount>
     <tlp:CostAmount>320.0000</tlp:CostAmount>
     <tlp:Billable>1</tlp:Billable>
     <tlp:ApprovedStatus>10</tlp:ApprovedStatus>

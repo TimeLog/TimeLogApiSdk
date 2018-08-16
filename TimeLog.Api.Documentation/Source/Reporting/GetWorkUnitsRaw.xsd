@@ -37,8 +37,12 @@
       <xsd:element name="RegAmount" type="xsd:decimal" />
       <xsd:element name="EstimatedHours" type="xsd:decimal" />
       <xsd:element name="EstimatedAmount" type="xsd:decimal" />
-      <xsd:element name="InvHours" type="xsd:decimal" />
-      <xsd:element name="InvAmount" type="xsd:decimal" />
+      <xsd:element name="BARHours" type="xsd:decimal" /><!-- BAR: Booked as revenue -->
+      <xsd:element name="BARAmount" type="xsd:decimal" />
+      <xsd:element name="InvoicedHours" type="xsd:decimal" />
+      <xsd:element name="InvoicedAmount" type="xsd:decimal" />
+      <xsd:element name="InvHours" type="xsd:decimal" /><!-- InvHours deprecated, use BARHours instead -->
+      <xsd:element name="InvAmount" type="xsd:decimal" /><!-- InvAmount deprecated, use BARAmount instead -->
       <xsd:element name="CostAmount" type="xsd:decimal" />
       <xsd:element name="IsBillable" type="xsd:boolean" />
       <xsd:element name="ApprovedStatus" type="xsd:short" />
@@ -51,5 +55,5 @@
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
   </xsd:complexType>
-  
+
 </xsd:schema>
