@@ -5,6 +5,7 @@
   xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/TasksRaw.xsd">
   <tlp:Task ID="9" GUID="a5a14970-4cc5-4372-bcc9-a7882eced7d4">
     <tlp:Name>Stabilisering/Fejlretning</tlp:Name>
+    <tlp:TaskNo>2453</tlp:TaskNo>
     <tlp:ProjectID>1</tlp:ProjectID>
     <tlp:Status>1</tlp:Status>
     <tlp:StatusDetailed>1</tlp:StatusDetailed>
@@ -28,6 +29,7 @@
   </tlp:Task>
   <tlp:Task ID="4" GUID="491b43aa-b14e-4a1e-afaa-5c89fd958138">
     <tlp:Name>Drift &amp; Support</tlp:Name>
+    <tlp:TaskNo>2454</tlp:TaskNo>
     <tlp:ProjectID>1</tlp:ProjectID>
     <tlp:Status>1</tlp:Status>
     <tlp:StatusDetailed>1</tlp:StatusDetailed>
