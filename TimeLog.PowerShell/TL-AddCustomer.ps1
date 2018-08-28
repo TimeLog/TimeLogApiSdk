@@ -30,7 +30,8 @@ $job = Start-Job -ArgumentList $rootFolder -ScriptBlock {
         $customer.CalculateVAT = $true 
         $customer.Currency = 'DKK' 
         $customer.ID = '254' 
-        $customer.Status = 'Kund'
+        $customer.Status = 'Kunde'
+        $customer.VAT = 21
 
         $address = New-Object TimeLog.TransactionalApi.SDK.CrmService.Address 
         $address.Address1 = "Addr1" 
