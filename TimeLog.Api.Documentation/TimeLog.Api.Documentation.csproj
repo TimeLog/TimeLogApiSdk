@@ -156,9 +156,13 @@
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Source\Reporting\GetAllocationsRaw.xml" />
-    <None Include="Source\Reporting\GetExpensesRaw.xsd">
+    <Content Include="Source\Reporting\GetContractsRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
+    </Content>
+    <Content Include="Source\Reporting\GetExpensesRaw.xsd">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Source\Reporting\GetContractsRaw.xml" />
     <Content Include="Source\Reporting\GetExpensesRaw.xml" />
     <Content Include="Source\Reporting\GetFlexTimeRaw.xml" />
     <Content Include="Source\Reporting\GetContactsRaw.xml" />
@@ -320,48 +324,48 @@
     <Content Include="Views\FileServices\InvoiceLineExport.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
-    <None Include="Source\Reporting\GetBarriersShortlist.xsd">
+    <Content Include="Source\Reporting\GetBarriersShortlist.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetFlexTimeRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetFlexTimeRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetEventsRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetEventsRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetHardbookingsRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetHardbookingsRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetSubOpportunitiesRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetSubOpportunitiesRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetOpportunityStatusShortlist.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetOpportunityStatusShortlist.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetWorkingHoursRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetWorkingHoursRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetEmployeeNormalWorkingHoursRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetEmployeeNormalWorkingHoursRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetOpportunitiesRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetOpportunitiesRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetEventTypesRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetEventTypesRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetOpportunityTypesShortlist.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetOpportunityTypesShortlist.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetMilestoneTypesRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetMilestoneTypesRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetMilestonesRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetMilestonesRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Source\Reporting\GetMileageRaw.xsd">
+    </Content>
+    <Content Include="Source\Reporting\GetMileageRaw.xsd">
       <SubType>Designer</SubType>
-    </None>
+    </Content>
     <Content Include="Views\FinancialIntegration\Index.cshtml" />
     <Content Include="Views\FinancialIntegration\ExactOnline.cshtml" />
     <Content Include="Views\Shared\_Layout_Single_Column.cshtml" />
