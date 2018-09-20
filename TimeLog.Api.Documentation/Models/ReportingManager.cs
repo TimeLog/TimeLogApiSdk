@@ -9,35 +9,35 @@ namespace TimeLog.Api.Documentation.Models
 
     public class ReportingManager
     {
-        private readonly DocumentationHelper helper;
+        private readonly DocumentationHelper _helper;
 
         private ReportingManager(string filePath)
         {
-            this.helper = new DocumentationHelper(filePath);
+            this._helper = new DocumentationHelper(filePath);
         }
 
         public static ReportingManager Instance
         {
             get
             {
-                ReportingManager instance = (ReportingManager)HttpContext.Current.Cache["ReportingManager"];
-                if (instance == null)
+                ReportingManager _instance = (ReportingManager)HttpContext.Current.Cache["ReportingManager"];
+                if (_instance == null)
                 {
-                    string filePath = HttpContext.Current.Server.MapPath("~/Source/") + "TimeLog.TLP.WebAppCode.XML";
-                    instance = new ReportingManager(filePath);
-                    HttpContext.Current.Cache.Add("ReportingManager", instance, new CacheDependency(filePath), Cache.NoAbsoluteExpiration, new TimeSpan(1, 0, 0), CacheItemPriority.Normal, null);
+                    string _filePath = HttpContext.Current.Server.MapPath("~/Source/") + "TimeLog.TLP.WebAppCode.XML";
+                    _instance = new ReportingManager(_filePath);
+                    HttpContext.Current.Cache.Add("ReportingManager", _instance, new CacheDependency(_filePath), Cache.NoAbsoluteExpiration, new TimeSpan(1, 0, 0), CacheItemPriority.Normal, null);
                 }
 
-                return instance;
+                return _instance;
             }
         }
 
         public IEnumerable<MethodDoc> GetMethods()
         {
-            var doc = this.helper.Types.FirstOrDefault(t => t.FullName == "TimeLog.TLP.WebAppCode.Service");
-            if (doc != null)
+            var _doc = this._helper.Types.FirstOrDefault(t => t.FullName == "TimeLog.TLP.WebAppCode.Service");
+            if (_doc != null)
             {
-                return doc.Methods.OrderBy(m => m.FullName);
+                return _doc.Methods.OrderBy(m => m.FullName);
             }
 
             return new List<MethodDoc>();
@@ -45,7 +45,7 @@ namespace TimeLog.Api.Documentation.Models
 
         public MethodDoc GetMethod(string methodFullName)
         {
-            return this.helper.Methods.FirstOrDefault(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
+            return this._helper.Methods.FirstOrDefault(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
         }
     }
 }

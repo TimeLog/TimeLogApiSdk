@@ -8,42 +8,42 @@
 
     public class TransactionalManager
     {
-        private readonly DocumentationHelper helper;
-        
+        private readonly DocumentationHelper _helper;
+
         private TransactionalManager(string filePath)
         {
-            this.helper = new DocumentationHelper(filePath);
+            this._helper = new DocumentationHelper(filePath);
         }
 
         public static TransactionalManager Instance
         {
             get
             {
-                TransactionalManager instance = (TransactionalManager)HttpContext.Current.Cache["TransactionalManager"];
-                if (instance == null)
+                TransactionalManager _instance = (TransactionalManager)HttpContext.Current.Cache["TransactionalManager"];
+                if (_instance == null)
                 {
-                    string filePath = HttpContext.Current.Server.MapPath("~/Source/") + "TimeLog.TLP.API.XML";
-                    instance = new TransactionalManager(filePath);
-                    HttpContext.Current.Cache.Add("TransactionalManager", instance, new CacheDependency(filePath), Cache.NoAbsoluteExpiration, new TimeSpan(1, 0, 0), CacheItemPriority.Normal, null);
+                    string _filePath = HttpContext.Current.Server.MapPath("~/Source/") + "TimeLog.TLP.API.XML";
+                    _instance = new TransactionalManager(_filePath);
+                    HttpContext.Current.Cache.Add("TransactionalManager", _instance, new CacheDependency(_filePath), Cache.NoAbsoluteExpiration, new TimeSpan(1, 0, 0), CacheItemPriority.Normal, null);
                 }
 
-                return instance;
+                return _instance;
             }
         }
 
         public IEnumerable<TypeDoc> GetServices()
         {
-            return this.helper.GetTypes("^TimeLog\\.TLP\\.API\\..+Service$").OrderBy(t => t.FullName);
+            return this._helper.GetTypes("^TimeLog\\.TLP\\.API\\..+Service$").OrderBy(t => t.FullName);
         }
 
         public TypeDoc GetService(string typeFullName)
         {
-            return this.helper.Types.FirstOrDefault(t => t.FullName.UrlEncode() == typeFullName);
+            return this._helper.Types.FirstOrDefault(t => t.FullName.UrlEncode() == typeFullName);
         }
 
         public MethodDoc GetMethod(string methodFullName)
         {
-            return this.helper.Methods.FirstOrDefault(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
+            return this._helper.Methods.FirstOrDefault(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
         }
     }
 }

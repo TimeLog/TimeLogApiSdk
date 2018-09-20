@@ -528,6 +528,32 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:TimeLog.TLP.API.Customization.HempelService.TimeLog#TLP#API#Proxy#Customization#IHempelService#CreateFreeExternalResource(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
+            <summary>
+            Creates an employee into TimeLog
+            </summary>
+            <param name="employeeGuid">Employee unique identifier. Generate a new one for each employee (Guid)</param>
+            <param name="username">The username of the new employee (string)</param>
+            <param name="initials">The initials of the new employee (string)</param>
+            <param name="firstname">Employee firstname (string)</param>
+            <param name="lastname">Employee lastname (string)</param>
+            <param name="employeeNo">Employee number (string)</param>
+            <param name="email">Employee email address (string)</param>
+            <param name="title">Employee title (string)</param>
+            <param name="telephone">Telephone number (string)</param>
+            <param name="mobile">Mobile telephone number (string)</param>
+            <param name="normalWorkingTimeName">The name of the type of working time (string)</param>
+            <param name="holidayCalendarName">The holiday calendar name (string)</param>
+            <param name="allowanceName">The allowance legislation name (DK, SE or DE) (string)</param>
+            <param name="employeeTypeName">The employee type name (string)</param>
+            <param name="hourlyRateName">Standard hourly rate name of the employee (string)</param>
+            <param name="costPriceName">Cost price name of the employee (string)</param>
+            <param name="externalIdentifier">The external identifier (string)</param>
+            <param name="departmentGuid">The department identifier (Guid)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_2.EmployeeHeader"/>
+            <returns>Details of the new employee</returns>
+        </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_2.ContractAdapter">
             <summary>
             Contractadapter for API
@@ -3374,32 +3400,6 @@
             Service for handling invoicing in TimeLog
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Customization.HempelService.TimeLog#TLP#API#Proxy#Customization#IHempelService#CreateFreeExternalResource(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
-            <summary>
-            Creates an employee into TimeLog
-            </summary>
-            <param name="employeeGuid">Employee unique identifier. Generate a new one for each employee (Guid)</param>
-            <param name="username">The username of the new employee (string)</param>
-            <param name="initials">The initials of the new employee (string)</param>
-            <param name="firstname">Employee firstname (string)</param>
-            <param name="lastname">Employee lastname (string)</param>
-            <param name="employeeNo">Employee number (string)</param>
-            <param name="email">Employee email address (string)</param>
-            <param name="title">Employee title (string)</param>
-            <param name="telephone">Telephone number (string)</param>
-            <param name="mobile">Mobile telephone number (string)</param>
-            <param name="normalWorkingTimeName">The name of the type of working time (string)</param>
-            <param name="holidayCalendarName">The holiday calendar name (string)</param>
-            <param name="allowanceName">The allowance legislation name (DK, SE or DE) (string)</param>
-            <param name="employeeTypeName">The employee type name (string)</param>
-            <param name="hourlyRateName">Standard hourly rate name of the employee (string)</param>
-            <param name="costPriceName">Cost price name of the employee (string)</param>
-            <param name="externalIdentifier">The external identifier (string)</param>
-            <param name="departmentGuid">The department identifier (Guid)</param>
-            <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_2.EmployeeHeader"/>
-            <returns>Details of the new employee</returns>
-        </member>
         <member name="M:TimeLog.TLP.API.Language.V1_0.LanguageService.GetLanguage(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a list of localization items related to an external system. All authenticated users
@@ -3566,7 +3566,7 @@
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.CreateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
-            Creates a department. The department is activated on creation.
+            Creates a department. The department is deactivated on creation.
             </summary>
             <param name="departmentGuid">Department unique identifier. Generate a new for each department (Guid)</param>
             <param name="name">Name of the department (string)</param>
@@ -3861,7 +3861,7 @@
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.CreateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
-            Creates a department. The department is activated on creation.
+            Creates a department. The department is deactivated on creation.
             </summary>
             <param name="departmentGuid">Department unique identifier. Generate a new for each department (Guid)</param>
             <param name="name">Name of the department (string)</param>
@@ -4284,7 +4284,7 @@
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.CreateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
-            Creates a department. The department is activated on creation.
+            Creates a department. The department is deactivated on creation.
             </summary>
             <param name="departmentGuid">Department unique identifier. Generate a new for each department (Guid)</param>
             <param name="name">Name of the department (string)</param>

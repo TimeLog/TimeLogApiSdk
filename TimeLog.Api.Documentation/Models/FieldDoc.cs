@@ -6,17 +6,17 @@ namespace TimeLog.Api.Documentation.Models
     {
         public FieldDoc(XElement element)
         {
-            var attribute = element.Attribute("name");
-            if (attribute != null)
+            var _attribute = element.Attribute("name");
+            if (_attribute != null)
             {
-                this.FullName = attribute.Value;
-                this.Name = attribute.Value; //.Replace("F:" + typeNamespace + ".", string.Empty).Replace("P:" + typeNamespace + ".", string.Empty).Replace("P:" + typeNamespace + "Header.", string.Empty);
+                this.FullName = _attribute.Value;
+                this.Name = _attribute.Value; //.Replace("F:" + typeNamespace + ".", string.Empty).Replace("P:" + typeNamespace + ".", string.Empty).Replace("P:" + typeNamespace + "Header.", string.Empty);
             }
 
-            var summary = element.Element("summary");
-            if (summary != null)
+            var _summary = element.Element("summary");
+            if (_summary != null)
             {
-                this.Summary = summary.Value;
+                this.Summary = _summary.Value;
             }
         }
 

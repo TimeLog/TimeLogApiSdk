@@ -177,8 +177,8 @@ TimeLog.TLP.WebAppCode
  <param name="apiPassword">The API password</param>
  <param name="employeeID">ID of specific employee. Set to 0 to get all allocations</param>
  <param name="departmentID">ID of specific department. Set to 0 to get all allocations</param>
- <param name="fromDate">Start date to get the registrations from</param>
- <param name="toDate">End date to get the registrations to</param>
+ <param name="fromDate">Limits result to registrations with registration date on or later than this date</param>
+ <param name="toDate">Limits result to registrations with registration date on or prior to this date</param>
  <returns>A list of work unit objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetFlexTimeRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime)">
@@ -190,8 +190,8 @@ TimeLog.TLP.WebAppCode
  <param name="apiPassword">The API password</param>
  <param name="employeeUserID">ID of specific employeeUser. Set to 0 to get all flex registrations</param>
  <param name="departmentID">ID of specific department. Set to 0 to get all flex registrations</param>
- <param name="fromDate">Start date to get the flex registrations from</param>
- <param name="toDate">End date to get the flex registrations to</param>
+ <param name="fromDate">Limits result to flex registrations with registration date on or later than this date</param>
+ <param name="toDate">Limits result to flex registrations with registration date on or prior to this date</param>
  <returns>A list of flex registrations objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetCustomersShortList(System.String,System.String,System.String,System.Int32,System.Int32)">
@@ -227,8 +227,8 @@ TimeLog.TLP.WebAppCode
  <param name="customerID">Customer ID of customer to list all associated comments or pass 0 to query from all customer</param>
  <param name="customerStatusID">Customer statusID, or 0 to list accross all customer status</param>
  <param name="accountManagerID">Account manager ID, or 0 to list accross all account managers</param>
- <param name="fromDate">Starting date to search comments from, or default Date value to list all comments without from constraint</param>
- <param name="toDate">Starting date to search comments to, or default Date value to list all comments without to constraint</param>
+ <param name="fromDate">Limits result to comments created on or later than this date</param>
+ <param name="toDate">Limits result to comments created on or prior to this date</param>
  <returns>A list of customer comment objects in XML</returns>
  <remarks>The result comment is sort by customer name, then by newest comment first to oldest comment last</remarks>
 </member>
@@ -276,8 +276,8 @@ TimeLog.TLP.WebAppCode
  <param name="employeeDepartmentID">ID of specific employee department. Set to 0 to get all expenses</param>
  <param name="expenseTypeID">ID of specific expense type. Set to 0 to get all expenses</param>
  <param name="paymentMethodID">ID of specific payment method. Set to 0 to get all expenses</param>
- <param name="startDate">Limits result to expenses with purchase date equal to or later than specified date</param>
- <param name="endDate">Limits result to expenses with purchase date equal to or earlier than specified date</param>
+ <param name="startDate">Limits result to expenses with purchase date on or later than this date</param>
+ <param name="endDate">Limits result to expenses with purchase date on or prior to this date</param>
  <returns>A list of expense objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetProjectsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
@@ -333,8 +333,8 @@ TimeLog.TLP.WebAppCode
  <param name="invoiceID">ID of specific invoice. Set to 0 to get all invoices</param>
  <param name="customerID">ID of specific customer. Set to 0 to get all invoices</param>
  <param name="status">0 for draft invoice; 1 for booked, checked and overdue invoices; 2 for overdue invoices; 3 for checked invoices; -1 for all invoices</param>
- <param name="startDate">Limits result to invoices with invoice date equal to or later than specified date</param>
- <param name="endDate">Limits result to invoices with invoice date equal to or earlier than specified date</param>
+ <param name="startDate">Limits result to invoices with invoice date on or later than this date</param>
+ <param name="endDate">Limits result to invoices with invoice date on or prior to this date</param>
  <returns>A list of invoice objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoiceLinesRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
@@ -348,8 +348,8 @@ TimeLog.TLP.WebAppCode
  <param name="customerID">ID of specific customer. Set to 0 to get all customers</param>
  <param name="projectID">ID of specific project. Set to 0 to get all projects</param>
  <param name="invoiceID">ID of specific invoice. Set to 0 to get all invoices</param>
- <param name="startDate">Limits result to invoices with invoice date equal to or later than specified date</param>
- <param name="endDate">Limits result to invoices with invoice date equal to or earlier than specified date</param>
+ <param name="startDate">Limits result to invoices with invoice date on or later than this date</param>
+ <param name="endDate">Limits result to invoices with invoice date on or prior to this date</param>
  <returns>A list of invoice line objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoiceLineDetailsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
@@ -363,8 +363,8 @@ TimeLog.TLP.WebAppCode
  <param name="customerID">ID of specific customer. Set to 0 to get all customers</param>
  <param name="projectID">ID of specific project. Set to 0 to get all projects</param>
  <param name="invoiceID">ID of specific invoice. Set to 0 to get all invoices</param>
- <param name="startDate">Limits result to invoices with invoice date equal to or later than specified date</param>
- <param name="endDate">Limits result to invoices with invoice date equal to or earlier than specified date</param>
+ <param name="startDate">Limits result to invoices with invoice date on or later than this date</param>
+ <param name="endDate">Limits result to invoices with invoice date on or prior to this date</param>
  <returns>A list of invoice line detail objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetDepartmentsShortList(System.String,System.String,System.String)">
@@ -464,8 +464,8 @@ TimeLog.TLP.WebAppCode
  <param name="ownerID">ID of the employee in charge of opportunity. Set to 0 to get all opportunities</param>
  <param name="opportunityTypeID">ID of specific opportunityType. Set to 0 to get all opportunities</param>
  <param name="barrierID">ID of specific barrier. Set to 0 to get all opportunities</param>    
- <param name="startDate">Limits result to opportunities with quotation date equal to or later than specified date</param>
- <param name="endDate">Limits result to opportunities with quotation date equal to or earlier than specified date</param>
+ <param name="startDate">Limits result to opportunities with quotation date on or later than this date</param>
+ <param name="endDate">Limits result to opportunities with quotation date on or prior to this date</param>
  <returns>A list of opportunity objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetSubOpportunitiesRaw(System.String,System.String,System.String,System.Int32)">
@@ -588,9 +588,9 @@ TimeLog.TLP.WebAppCode
  <param name="eventTypeID">ID of specific eventType. Set to 0 to get all events</param>
  <param name="customerID">ID of specific customer. Set to 0 to get all events</param>
  <param name="employeeID">ID of the employee in charge of the event. Set to 0 to get all events</param>
- <param name="status">ID of the event status. Set to 0 to get all. Planned = 1, Postponed = 2, Finished = 3, Cancelled = 4,</param>
- <param name="startDate">Limits result to events with date equal to or later than specified date</param>
- <param name="endDate">Limits result to events with date equal to or earlier than specified date</param>
+ <param name="status">ID of the event status. Set to 0 to get all. Planned = 1, Postponed = 2, Finished = 3, Cancelled = 4</param>
+ <param name="startDate">Limits result to events with date on or later than this date</param>
+ <param name="endDate">Limits result to events with date on or prior to this date</param>
  <returns>A list of events objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetEventTypesShortlist(System.String,System.String,System.String,System.Int32)">
@@ -613,8 +613,8 @@ TimeLog.TLP.WebAppCode
  <param name="employeeID">ID of specific employee. Set to 0 to get all employees</param>
  <param name="departmentID">ID of specific department. Set to 0 to get all employees</param>
  <param name="status">Set to 0 for inactive employees; 1 for active employees; -1 to get all employees</param>
- <param name="startDate">Limits result to working hours with date equal to or later than specified date</param>
- <param name="endDate">Limits result to working hours with date equal to or earlier than specified date</param>
+ <param name="startDate">Limits result to working hours with date on or later than this date</param>
+ <param name="endDate">Limits result to working hours with date on or prior to this date</param>
  <returns>A list of working hour objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetEmployeeNormalWorkingHoursRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
@@ -637,6 +637,30 @@ TimeLog.TLP.WebAppCode
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <returns>A message about the validation</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetContractsRaw(System.String,System.String,System.String,System.Int32,System.Int32)">
+ <summary>
+ Gets a list of contracts
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="projectID">ID of specific project. Set to 0 to get all contracts</param>
+ <param name="contractModelType">Type of specific contract. Set to 0 to get all contracts</param>
+ <returns>A list of contract objects in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetHardBookingsRaw(System.String,System.String,System.String,System.Int32,System.DateTime,System.DateTime,System.Int32)">
+ <summary>
+ Get a list of hardbookings
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="employeeUserId">User ID of specific employee. Set to 0 to get all</param>
+ <param name="startDate">Limits result to all hard bookings on or later than this date</param>
+ <param name="endDate">Limits result to all hard bookings on or prior to this date</param>
+ <param name="hardbookingType">Set to 0 for manual bookings; 1 for calendar bookings; -1 for all</param>
+ <returns>A list of hardbookings in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.ServiceBase.ValidateRetreivalAttempt(System.String,System.String,System.String)">
  <summary>

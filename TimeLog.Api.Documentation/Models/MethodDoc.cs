@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text.RegularExpressions;
     using System.Xml.Linq;
 
     public class MethodDoc
@@ -25,49 +24,49 @@
         {
             this.Parent = parent;
 
-            var attribute = element.Attribute("name");
-            this.FullName = attribute.Value.Replace("M:", string.Empty);
+            var _attribute = element.Attribute("name")?.Value ?? string.Empty;
+            this.FullName = _attribute.Replace("M:", string.Empty);
 
-            var firstParentesis = attribute.Value.IndexOf('(');
-            if (firstParentesis < 0)
+            var _firstParentesis = _attribute.IndexOf('(');
+            if (_firstParentesis < 0)
             {
-                firstParentesis = attribute.Value.Length - 1;
+                _firstParentesis = _attribute.Length - 1;
             }
 
-            var lastDot = attribute.Value.LastIndexOf('.', firstParentesis);
-            this.Name = attribute.Value.Substring(lastDot + 1, firstParentesis - lastDot - 1);
-            this.FullyQuantifiedName = attribute.Value.Substring(0, firstParentesis).Replace("M:", string.Empty);
+            var _lastDot = _attribute.LastIndexOf('.', _firstParentesis);
+            this.Name = _attribute.Substring(_lastDot + 1, _firstParentesis - _lastDot - 1);
+            this.FullyQuantifiedName = _attribute.Substring(0, _firstParentesis).Replace("M:", string.Empty);
 
             this.IsConstructor = this.Name.StartsWith("#");
 
-            var xmlSummary = element.Descendants("summary").FirstOrDefault();
-            if (xmlSummary != null)
+            var _xmlSummary = element.Descendants("summary").FirstOrDefault();
+            if (_xmlSummary != null)
             {
-                this.Summary = xmlSummary.Value;
+                this.Summary = _xmlSummary.Value;
             }
 
-            var xmlRemarks = element.Descendants("remarks").FirstOrDefault();
-            if (xmlRemarks != null)
+            var _xmlRemarks = element.Descendants("remarks").FirstOrDefault();
+            if (_xmlRemarks != null)
             {
-                this.Remarks = xmlRemarks.Value;
+                this.Remarks = _xmlRemarks.Value;
             }
 
-            var xmlExample = element.Descendants("example").FirstOrDefault();
-            if (xmlExample != null)
+            var _xmlExample = element.Descendants("example").FirstOrDefault();
+            if (_xmlExample != null)
             {
-                this.Example = xmlExample.Value;
+                this.Example = _xmlExample.Value;
             }
 
-            var xmlPermission = element.Descendants("permission").FirstOrDefault();
-            if (xmlPermission != null)
+            var _xmlPermission = element.Descendants("permission").FirstOrDefault();
+            if (_xmlPermission != null)
             {
-                this.Permission = xmlPermission.Value;
+                this.Permission = _xmlPermission.Value;
             }
 
-            var xmlReturns = element.Descendants("returns").FirstOrDefault();
-            if (xmlReturns != null)
+            var _xmlReturns = element.Descendants("returns").FirstOrDefault();
+            if (_xmlReturns != null)
             {
-                this.Returns = xmlReturns.Value;
+                this.Returns = _xmlReturns.Value;
             }
 
             //foreach (var seealso in element.Descendants("seealso"))
@@ -88,30 +87,30 @@
             //    }
             //}
 
-            firstParentesis = this.FullName.IndexOf('(');
-            var parameterTypeList = firstParentesis > 0 ? this.FullName.Substring(
-                firstParentesis + 1, 
-                this.FullName.LastIndexOf(")", StringComparison.Ordinal) - firstParentesis - 1).Split(',')
-                : new string[] {};
-            var parameterIndex = 0;
+            _firstParentesis = this.FullName.IndexOf('(');
+            var _parameterTypeList = _firstParentesis > 0 ? this.FullName.Substring(
+                _firstParentesis + 1,
+                this.FullName.LastIndexOf(")", StringComparison.Ordinal) - _firstParentesis - 1).Split(',')
+                : new string[] { };
+            var _parameterIndex = 0;
 
-            foreach (var param in element.Descendants("param"))
+            foreach (var _param in element.Descendants("param"))
             {
-                var nameAttribute = param.Attribute("name");
-                if (nameAttribute != null)
+                var _nameAttribute = _param.Attribute("name");
+                if (_nameAttribute != null)
                 {
-                    this.Params.Add(new MethodParam(nameAttribute.Value, param.Value, parameterTypeList[parameterIndex]));
+                    this.Params.Add(new MethodParam(_nameAttribute.Value, _param.Value, _parameterTypeList[_parameterIndex]));
                 }
 
-                parameterIndex++;
+                _parameterIndex++;
             }
 
-            foreach (var exc in element.Descendants("exception"))
+            foreach (var _exc in element.Descendants("exception"))
             {
-                var crefAttribute = exc.Attribute("cref");
-                if (crefAttribute != null)
+                var _crefAttribute = _exc.Attribute("cref");
+                if (_crefAttribute != null)
                 {
-                    this.Exceptions.Add(new MethodException(crefAttribute.Value, exc.Value));
+                    this.Exceptions.Add(new MethodException(_crefAttribute.Value, _exc.Value));
                 }
             }
         }

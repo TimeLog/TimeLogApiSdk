@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace TimeLog.Api.Documentation.Controllers
 {
@@ -13,16 +9,16 @@ namespace TimeLog.Api.Documentation.Controllers
         // GET: Reporting
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
         public ActionResult GettingStarted()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult Security()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult Methods()
@@ -37,7 +33,7 @@ namespace TimeLog.Api.Documentation.Controllers
 
         public ActionResult EnumerableTypes()
         {
-            return View();
+            return this.View();
         }
     }
 }

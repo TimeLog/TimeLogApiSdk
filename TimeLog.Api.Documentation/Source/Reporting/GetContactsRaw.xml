@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tlp:Contacts 
-  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
+<tlp:Contacts
+  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/ContactsRaw.xsd">
   <tlp:Contact ID="3353">
     <tlp:FirstName>John</tlp:FirstName>

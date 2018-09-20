@@ -18,7 +18,7 @@
 
   <xsd:complexType name="EmployeeRaw_Type">
     <xsd:sequence>
-      <xsd:element name="EmployeeUserId" type="xsd:positiveInt" />
+      <xsd:element name="EmployeeUserId" type="xsd:positiveInteger" />
       <xsd:element name="FirstName" type="xsd:string" />
       <xsd:element name="LastName" type="xsd:string" />
       <xsd:element name="FullName" type="xsd:string" />

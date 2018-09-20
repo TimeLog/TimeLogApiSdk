@@ -15,8 +15,17 @@ namespace TimeLog.Api.Documentation.Models
             }
             else
             {
-                var lastDot = type.LastIndexOf(".", StringComparison.Ordinal);
-                this.Type = type.Substring(lastDot + 1, type.Length - lastDot - 1);
+                var _lastDot = type.LastIndexOf(".", StringComparison.Ordinal);
+                this.Type = type.Substring(_lastDot + 1, type.Length - _lastDot - 1);
+            }
+
+            if (this.Type.ToLowerInvariant() == "datetime")
+            {
+                this.Type = "DateTime (yyyy-MM-dd)";
+            }
+            else if (this.Type.ToLowerInvariant() == "int32")
+            {
+                this.Type = "Integer";
             }
         }
 

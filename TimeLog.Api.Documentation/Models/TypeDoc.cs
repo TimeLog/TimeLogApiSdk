@@ -13,50 +13,50 @@
                 throw new NullReferenceException("Parameter \"element\" cannot be null");
             }
 
-            var fields = new List<FieldDoc>();
-            var properties = new List<FieldDoc>();
-            var methods = new List<MethodDoc>();
+            var _fields = new List<FieldDoc>();
+            var _properties = new List<FieldDoc>();
+            var _methods = new List<MethodDoc>();
 
-            var attribute = element.Attribute("name");
-            this.FullName = attribute.Value.Replace("T:", string.Empty);
-            this.Name = attribute.Value.Substring(attribute.Value.LastIndexOf('.') + 1, attribute.Value.Length - attribute.Value.LastIndexOf('.') - 1);
+            var _attribute = element.Attribute("name")?.Value ?? string.Empty;
+            this.FullName = _attribute.Replace("T:", string.Empty);
+            this.Name = _attribute.Substring(_attribute.LastIndexOf('.') + 1, _attribute.Length - _attribute.LastIndexOf('.') - 1);
 
-            this.Summary = element.Element("summary") != null ? element.Element("summary").Value : string.Empty;
-            this.Remarks = element.Element("remarks") != null ? element.Element("remarks").Value : string.Empty;
+            this.Summary = element.Element("summary")?.Value ?? string.Empty;
+            this.Remarks = element.Element("remarks")?.Value ?? string.Empty;
 
             if (element.Document != null)
             {
-                foreach (XElement member in element.Document.Descendants("member"))
+                foreach (XElement _member in element.Document.Descendants("member"))
                 {
-                    var name = member.Attribute("name") != null ? member.Attribute("name").Value : string.Empty;
-                    if (name.StartsWith("M:" + this.FullName + "."))
+                    var _name = _member.Attribute("name")?.Value ?? string.Empty;
+                    if (_name.StartsWith("M:" + this.FullName + "."))
                     {
-                        methods.Add(new MethodDoc(this, member));
+                        _methods.Add(new MethodDoc(this, _member));
                     }
-                    else if (name.StartsWith("F:" + this.FullName + "."))
+                    else if (_name.StartsWith("F:" + this.FullName + "."))
                     {
-                        fields.Add(new FieldDoc(member));
+                        _fields.Add(new FieldDoc(_member));
                     }
                 }
             }
 
-            this.Fields = fields;
-            this.Methods = methods;
-            this.Properties = properties;
+            this.Fields = _fields;
+            this.Methods = _methods;
+            this.Properties = _properties;
         }
 
-        public string Name { get; private set; }
+        public string Name { get; }
 
-        public string FullName { get; private set; }
+        public string FullName { get; }
 
-        public string Summary { get; private set; }
+        public string Summary { get; }
 
-        public string Remarks { get; private set; }
+        public string Remarks { get; }
 
-        public IEnumerable<FieldDoc> Fields { get; private set; }
+        public IEnumerable<FieldDoc> Fields { get; }
 
-        public IEnumerable<FieldDoc> Properties { get; private set; }
+        public IEnumerable<FieldDoc> Properties { get; }
 
-        public IEnumerable<MethodDoc> Methods { get; private set; }
+        public IEnumerable<MethodDoc> Methods { get; }
     }
 }

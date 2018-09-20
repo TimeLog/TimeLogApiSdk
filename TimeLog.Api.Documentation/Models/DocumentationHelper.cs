@@ -16,40 +16,40 @@
 
         public DocumentationHelper(string path)
         {
-            var documentation = XDocument.Load(path);
-            var typeDocs = new List<TypeDoc>();
-            var methodDocs = new List<MethodDoc>();
-            var fieldDocs = new List<FieldDoc>();
+            var _documentation = XDocument.Load(path);
+            var _typeDocs = new List<TypeDoc>();
+            var _methodDocs = new List<MethodDoc>();
+            var _fieldDocs = new List<FieldDoc>();
 
-            foreach (XElement element in documentation.Descendants("member"))
+            foreach (XElement _element in _documentation.Descendants("member"))
             {
-                var name = element.Attribute("name") != null ? element.Attribute("name").Value : string.Empty;
+                var _name = _element.Attribute("name")?.Value ?? string.Empty;
 
-                if (name.StartsWith("T:"))
+                if (_name.StartsWith("T:"))
                 {
-                    var newType = new TypeDoc(element);
-                    typeDocs.Add(newType);
+                    var _newType = new TypeDoc(_element);
+                    _typeDocs.Add(_newType);
 
-                    methodDocs.AddRange(newType.Methods);
-                    fieldDocs.AddRange(newType.Fields);
+                    _methodDocs.AddRange(_newType.Methods);
+                    _fieldDocs.AddRange(_newType.Fields);
                 }
             }
 
-            this.Types = typeDocs;
-            this.Methods = methodDocs;
-            this.Fields = fieldDocs;
+            this.Types = _typeDocs;
+            this.Methods = _methodDocs;
+            this.Fields = _fieldDocs;
         }
 
-        public IEnumerable<TypeDoc> Types { get; private set; }
-        
-        public IEnumerable<MethodDoc> Methods { get; private set; }
-        
-        public IEnumerable<FieldDoc> Fields { get; private set; }
+        public IEnumerable<TypeDoc> Types { get; }
+
+        public IEnumerable<MethodDoc> Methods { get; }
+
+        public IEnumerable<FieldDoc> Fields { get; }
 
         public IEnumerable<TypeDoc> GetTypes(string nameRegexSearchPattern)
         {
-            var regExp = new Regex(nameRegexSearchPattern);
-            return this.Types.Where(t => regExp.IsMatch(t.FullName));
-        } 
+            var _regExp = new Regex(nameRegexSearchPattern);
+            return this.Types.Where(t => _regExp.IsMatch(t.FullName));
+        }
     }
 }

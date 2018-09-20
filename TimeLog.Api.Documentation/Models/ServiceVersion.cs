@@ -6,9 +6,9 @@
     {
         public ServiceVersion(string v)
         {
-            var versionSplit = v.Split('.', '_');
-            this.Major = Convert.ToInt32(versionSplit[0]);
-            this.Minor = Convert.ToInt32(versionSplit[1]);
+            var _versionSplit = v.Split('.', '_');
+            this.Major = Convert.ToInt32(_versionSplit[0]);
+            this.Minor = Convert.ToInt32(_versionSplit[1]);
         }
 
         public ServiceVersion(int major, int minor)
