@@ -15,15 +15,17 @@
       <xsd:field xpath="@ID" />
     </xsd:key>
   </xsd:element>
-  
+
   <xsd:complexType name="TaskRaw_Type">
     <xsd:sequence>
       <xsd:element name="Name" type="xsd:string" />
       <xsd:element name="WBS" type="xsd:string" />
       <xsd:element name="TaskNo" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="ProjectID" type="xsd:positiveInteger" />
+      <xsd:element name="ProjectNo" type="xsd:string" />
       <xsd:element name="Status" type="xsd:byte" />
       <xsd:element name="StatusDetailed" type="xsd:byte" />
+      <xsd:element name="ProjectSubContractID" type="xsd:positiveInteger" />
       <xsd:element name="ParentID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="IsParent" type="xsd:boolean" />
       <xsd:element name="TaskTypeID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
@@ -47,5 +49,5 @@
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"/>
     <xsd:attribute name="GUID" type="xsd:string" use="required"/>
   </xsd:complexType>
-  
+
 </xsd:schema>

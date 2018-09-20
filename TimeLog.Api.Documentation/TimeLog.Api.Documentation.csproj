@@ -170,7 +170,7 @@
     <Content Include="Source\Reporting\GetDepartmentsShortlist.xml" />
     <Content Include="Source\Reporting\GetBarriersShortlist.xml" />
     <Content Include="Source\Reporting\GetEventsRaw.xml" />
-    <Content Include="Source\Reporting\GetHardBookingRaw.xml" />
+    <Content Include="Source\Reporting\GetHardBookingsRaw.xml" />
     <Content Include="Source\Reporting\GetSubOpportunitiesRaw.xml" />
     <Content Include="Source\Reporting\GetOpportunityStatusShortlist.xml" />
     <Content Include="Source\Reporting\GetWorkingHoursRaw.xml" />
@@ -329,7 +329,7 @@
     <None Include="Source\Reporting\GetEventsRaw.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Source\Reporting\GetHardbookingRaw.xsd">
+    <None Include="Source\Reporting\GetHardbookingsRaw.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Source\Reporting\GetSubOpportunitiesRaw.xsd">

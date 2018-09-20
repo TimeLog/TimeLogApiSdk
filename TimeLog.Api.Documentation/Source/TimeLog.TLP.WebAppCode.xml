@@ -646,7 +646,7 @@ TimeLog.TLP.WebAppCode
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
  <param name="projectID">ID of specific project. Set to 0 to get all contracts</param>
- <param name="contractModelType">Type of specific contract. Set to 0 to get all contracts</param>
+ <param name="contractModelType">Type of specific contract. Set to 0 to get all contracts; 1 for TimeMaterial; 2 for FixedPrice; 3 = TimeMaterialAccountEndBalancing; 4 = TimeMaterialAccountPeriodicBalancing; 5 for PrepaidServices; 6 for RevenueReqPerTask; 7 for ContinuousService; 8 for ContinuousItemInvoicing</param>
  <returns>A list of contract objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetHardBookingsRaw(System.String,System.String,System.String,System.Int32,System.DateTime,System.DateTime,System.Int32)">

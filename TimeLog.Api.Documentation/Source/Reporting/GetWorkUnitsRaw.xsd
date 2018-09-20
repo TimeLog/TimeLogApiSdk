@@ -18,6 +18,8 @@
 
   <xsd:complexType name="WorkUnitRaw_Type">
     <xsd:sequence>
+	  <xsd:element name="TimeRegistrationGuid" type="xsd:string" />
+	  <xsd:element name="OvertimeFactor" type="xsd:decimal" />
       <xsd:element name="EmployeeID" type="xsd:positiveInteger" />
       <xsd:element name="EmployeeInitials" type="xsd:string" />
       <xsd:element name="EmployeeFirstName" type="xsd:string" />
@@ -52,6 +54,7 @@
       <xsd:element name="LastModifiedAt" type="xsd:dateTime" />
       <xsd:element name="LastModifiedByEmployeeId" type="xsd:positiveInteger" />
       <xsd:element name="LastModifiedBy" type="xsd:string" />
+	  <xsd:element name="UserID" type="xsd:positiveInteger" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
   </xsd:complexType>
