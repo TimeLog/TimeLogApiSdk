@@ -84,5 +84,10 @@
         {
             return this.View();
         }
+
+        public ActionResult Dinero()
+        {
+            return this.View("Dinero");
+        }
     }
 }
