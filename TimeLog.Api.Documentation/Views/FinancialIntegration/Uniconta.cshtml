@@ -1,0 +1,799 @@
+﻿@{ 
+    ViewBag.Title = "Uniconta";
+    Layout = "../Shared/_Layout_Single_Column.cshtml"; 
+}
+
+<article class="article">
+    <h1>@ViewBag.Title</h1>
+
+    <h2>Introduction</h2>
+    <p>The integration between TimeLog and Uniconta consists of partial integrations that provide seamless cooperation between the two systems.</p>
+    <p>Following functions is supported in Uniconta integration.</p>
+    <p>Overall functions:</p>
+    <p>
+        <ul>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog to Uniconta</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of contacts from TimeLog to Uniconta</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic update of customer and contact information in Uniconta</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Synchronisation of product numbers between TimeLog and Uniconta</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of project number from TimeLog to Uniconta</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import of expenses from Uniconta</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog and Uniconta</li>
+        </ul>
+    </p>
+    <br />
+
+    <h2>Features</h2>
+    <p>This section includes a list of features and limitations to each transfer area of the integration.</p>
+
+    <h3>Dimensions</h3>
+    <p>Not part of the integration.</p>
+
+    <h3>Currencies</h3>
+    <p>TimeLog does not create the currency in Uniconta if it does not exist. Therefore, make sure that all the currencies used in TimeLog are created in Uniconta.</p>
+
+    <h3>Customers</h3>
+    <p>Customers can be transferred to AND from TimeLog and Uniconta.</p>
+    <p>When customers are created in Uniconta, a string of values need to be filled out in Uniconta. In the current integration implementation, it is not possible to set all values for each customer so, for the moment, the following four values are set in TimeLog centrally</p>
+    <p>
+        <ul>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Debtor group</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">VAT code (VAT zone)</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Terms of payment</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Template collection (Layout group)</li>
+        </ul>
+    </p>
+
+    <h3>Contacts</h3>
+    <p>Contacts can be transferred to AND from TimeLog and Uniconta.</p>
+
+    <h3>Product numbers</h3>
+    <p>Product numbers can only be transferred from Uniconta to TimeLog. Note that they are not transferred automatically. A system administrator will have to go to the system administration > integrations and choose to import them manually. The product number setup is carried out in TimeLog and consists of 3 steps.</p>
+    <p>
+        <ul>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Importing product numbers from Uniconta</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Configuring a product number principle for various TimeLog data types</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Configuring default product number for various TimeLog data types</li>
+        </ul>
+    </p>
+
+
+    <h3>Employees</h3>
+    <p>When transferring an invoice to Uniconta with an internal reference, TimeLog checks whether the employee has already been created. If not, an employee is created from the Uniconta employee directory.</p>
+
+    <h3>Invoices</h3>
+    <p>Only booked invoices can be transferred from TimeLog to Uniconta. Invoices are transferred as drafts. Changes in invoice drafts inside Uniconta will not be reflected in TimeLog. In Uniconta, creating an invoice out of a draft will require a project category, if the draft has a project selected. The default project category to be used when transferring invoices, can be set up on the integration configuration page.</p>
+
+    <h3>Invoice lines</h3>
+    <p>Invoice lines are transferred along with the invoice. Invoice lines can be modified in Uniconta and addition line can be added. Changes will not be reflected in TimeLog.</p>
+
+    <h3>Expenses</h3>
+    <p>Expenses can only be transferred from Uniconta to TimeLog</p>
+
+    <h3>Projects</h3>
+    <p>Projects can be transferred from TimeLog to Uniconta. The functionality can only be used if you have activated the Projects module in Uniconta. Projects transferred must have a Project group attached. The default project group are set up on the integration configuration page when transfer of projects are activated. Projects created in TimeLog will automatically be transferred to Uniconta when they are created.</p>
+
+    <h3>Tasks</h3>
+    <p>Not part of the integration.</p>
+
+    <h3>Allocations</h3>
+    <p>Not part of the integration.</p>
+
+    <h3>Registrations</h3>
+    <p>Not part of the integration.</p>
+
+    <br />
+
+    <h2>Mapping</h2>
+    <p>This section contains the explicit mapping of fields between TimeLog and Uniconta.</p>
+
+    <h3 id="mapping-customers">Customer</h3>
+    <div class="bs-example">
+
+        <table class="mapping_table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                    <th></th>
+                </tr>
+                <tr class="underline">
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Firmanavn (Company name)</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kundenr. (Customer no.)</td>
+                    <td>-</td>
+                    <td>CustomerNo</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Ejer (Owner)</td>
+                    <td>-</td>
+                    <td>KeyAccountManagerInitials</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Telefon</td>
+                    <td>Telephone</td>
+                    <td>Phone</td>
+                    <td>Phone</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fax</td>
+                    <td>-</td>
+                    <td>Fax</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td>Email for contact</td>
+                    <td>Email</td>
+                    <td>ContactEmail</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Website</td>
+                    <td>-</td>
+                    <td>Website</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Adresse (Address)</td>
+                    <td>Address 1</td>
+                    <td>Address.Address</td>
+                    <td>Address1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Adresse 2 (Address 2)</td>
+                    <td>Address 2</td>
+                    <td>Address.Address2</td>
+                    <td>Address2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Adresse 3 (Address 3)</td>
+                    <td>Address 3</td>
+                    <td>Address.Address3</td>
+                    <td>Address3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Postnr. (Zip code</td>
+                    <td>ZIP/Postal cdoe</td>
+                    <td>Address.ZipCode</td>
+                    <td>Zipcode</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>By (City)</td>
+                    <td>City</td>
+                    <td>Address.City</td>
+                    <td>City</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Stat (State)</td>
+                    <td>-</td>
+                    <td>Address.State</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Land (Country)</td>
+                    <td>Country)</td>
+                    <td>Address.Country</td>
+                    <td>Country</td>
+                    <td><span class="wrapcomment">Uniconta country is retrieved from customer country</span></td>
+                </tr>
+                <tr>
+                    <td>CVR-nr. (VAT no.)</td>
+                    <td>VAT no.</td>
+                    <td>VatNo</td>
+                    <td>LegalIdent</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Giro-nr. (Giro no.)</td>
+                    <td>-</td>
+                    <td>GiroNo</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Organisation nr. (Organization no.)</td>
+                    <td>-</td>
+                    <td>OrganizatioNo</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Valuta (Currency)</td>
+                    <td>Currency code</td>
+                    <td>Currency</td>
+                    <td>Currency</td>
+                    <td><span class="wrapcomment">Uniconta currency is retrieved by customer currency code.</span></td>
+                </tr>
+                <tr>
+                    <td>EAN-nr. (EAN no.)</td>
+                    <td>EAN</td>
+                    <td>EAN</td>
+                    <td>EAN</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 id="mapping-contacts">Contacts</h3>
+    <div class="bs-example">
+        <table class="mapping_table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nr.</td>
+                    <td>No.</td>
+                    <td>ProductNo</td>
+                    <td>ProductNumbre</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fornavn (First name)</td>
+                    <td>Name</td>
+                    <td>FirstName</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment">Concatenated in name</span></td>
+                </tr>
+                <tr>
+                    <td>Efternavn (Last name)</td>
+                    <td>Name</td>
+                    <td>LastName</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment">Concatenated in name</span></td>
+                </tr>
+                <tr>
+                    <td>Telefon (Phone)</td>
+                    <td>Mobile phone</td>
+                    <td>Phone</td>
+                    <td>Mobile</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>E-mail (Email)</td>
+                    <td>Email</td>
+                    <td>Email</td>
+                    <td>Email</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Min kommentar (Your comment)</td>
+                    <td>-</td>
+                    <td>Comment</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kunde (Customer)</td>
+                    <td>Account name</td>
+                    <td>ExternalID</td>
+                    <td>DCAccount</td>
+                    <td><span class="wrapcomment">The debtor from Uniconta is retrieved based on the externalKey mapping in TimeLog</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 id="mapping-productnumbers">Product numbers</h3>
+    <div class="bs-example">
+        <table class="mapping_table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nr. (No.)</td>
+                    <td>Item</td>
+                    <td>ProductNo</td>
+                    <td>Item</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Navn (Name)</td>
+                    <td>Item name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Beskrivelse (Description)</td>
+                    <td>-</td>
+                    <td>Description</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h3 id="mapping-employess">Employees</h3>
+    <div class="bs-example">
+        <table class="mapping_table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>-</td>
+                    <td>Number</td>
+                    <td>ExternalKey</td>
+                    <td>Number</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fornavn (First name)</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment">Name is full name in Uniconta</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 id="mapping-invoices">Invoices</h3>
+    <div class="bs-example">
+
+        <table class="mapping_table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fakuranr. (Invoice no.)</td>
+                    <td></td>
+                    <td>InvoiceNo</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kundenr. (Customer no.)</td>
+                    <td>Account</td>
+                    <td>CustomerKey</td>
+                    <td>DCAccount</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kontaktperson nr. (Contactperson no.)</td>
+                    <td>Contact</td>
+                    <td>Details.ContactHeader</td>
+                    <td>ContactRef</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Faktura adresse: (Kundens navn) (Invoice address (Customers name))</td>
+                    <td>-</td>
+                    <td>FixedCustomerName</td>
+                    <td>Adress</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Faktura adresse: (Att kontaktperson) (Invoice address (Att contact person))</td>
+                    <td>-</td>
+                    <td>FixedContactFullName</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fakturadato (Invoice date)</td>
+                    <td></td>
+                    <td>InvoiceDate</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fakturaafdeling (Invoice department)</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Projektnavn (Project name)</td>
+                    <td>Project name</td>
+                    <td>Detail.ProjectHeader</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Projektnr. (Project no.)</td>
+                    <td>Project no</td>
+                    <td>Detail.ProjectHeader</td>
+                    <td>Project</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Rekvisionsnr. (Requisition no.)</td>
+                    <td>Requisition</td>
+                    <td>RequisitionNo</td>
+                    <td>Requisition</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kundens ref. (Customer ref)</td>
+                    <td>Your ref.</td>
+                    <td>CustomersReference / FixedAttContactFullName</td>
+                    <td>YourRef</td>
+                    <td><span class="wrapcomment">Contact i retrieved from Uniconta based on the CustomerReferenceID</span></td>
+                </tr>
+                <tr>
+                    <td>Intern reference (Internal ref.)</td>
+                    <td>Employee / Our ref.</td>
+                    <td>InternalReference</td>
+                    <td>Employee / OurRef</td>
+                    <td><span class="wrapcomment">Employee is linked with employee field and employee's name is duplicated to Our ref</span></td>
+                </tr>
+                <tr>
+                    <td>EAN</td>
+                    <td>-</td>
+                    <td>EAN</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Faktura adresse: (address 1)</td>
+                    <td>Delivery address1</td>
+                    <td>InvoicingAddress.Address1</td>
+                    <td>DeliveryAddress1</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Faktura adresse: (address 2)</td>
+                    <td>Delivery address2</td>
+                    <td>InvoicingAddress.Address2</td>
+                    <td>DeliveryAddress2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Faktura adresse: (address 3)</td>
+                    <td>Delivery address3</td>
+                    <td>InvoicingAddress.Address3</td>
+                    <td>DeliveryAddress3</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>By (City)</td>
+                    <td>Delivery city</td>
+                    <td>InvoicingAddress.City</td>
+                    <td>DeliveryCity</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Postnr. (Zip code)</td>
+                    <td>Delivery zip</td>
+                    <td>InvoicingAddress.Zip</td>
+                    <td>DeliveryZipCode</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Faktura adresse: (Landekode (ISO)) (Invoice address (Country (ISO))</td>
+                    <td>Country for delivery</td>
+                    <td>InvoicingAddress.Country</td>
+                    <td>DeliveryContry</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Overskrift (Heading)</td>
+                    <td>Header</td>
+                    <td>Header</td>
+                    <td>Remark</td>
+                    <td><span class="wrapcomment">Concatenated in remark</span></td>
+                </tr>
+                <tr>
+                    <td>Besked</td>
+                    <td>Remarks</td>
+                    <td>Comment</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Betalingsbetingelser (Payment terms)</td>
+                    <td>Payment</td>
+                    <td>-</td>
+                    <td>Payment</td>
+                    <td><span class="wrapcomment">Invoice payment is left blank, so it will defaul to customers payment term.</span></td>
+                </tr>
+                <tr>
+                    <td>Betalingsfrist (Due date)</td>
+                    <td>-</td>
+                    <td>DueDate</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Invoice payment is left blank, so it will defaul to customers payment term.</span></td>
+                </tr>
+                <tr>
+                    <td>Valuta (Currency)</td>
+                    <td>Currency code</td>
+                    <td>CurrencyISO</td>
+                    <td>Currency</td>
+                    <td><span class="wrapcomment">Abbreviation of the currency from the invoice in TimeLog</span></td>
+                </tr>
+                <tr>
+                    <td>Standard rabat % (Discount)</td>
+                    <td>-</td>
+                    <td>DefaultDiscount</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Moms % (Vat)</td>
+                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="wrapcomment">Handled in Uniconta</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 id="mapping-invoicelines">Invoice lines</h3>
+    <div class="bs-example">
+
+        <table class="mapping_table" style="width: 100%;">
+            <thead>
+            <tr>
+                <th colspan="2">Field name</th>
+                <th colspan="2">Technical name</th>
+            </tr>
+            <tr>
+                <th>TimeLog</th>
+                <th>Uniconta</th>
+                <th>TimeLog</th>
+                <th>Uniconta</th>
+                <th>Remarks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Varenr. (Product no.)</td>
+                <td>Item</td>
+                <td>ProductNo</td>
+                <td>Item</td>
+                <td><span class="wrapcomment">Item is retrieved from Uniconta based on the productNo.</span></td>
+            </tr>
+            <tr>
+                <td>Beskrivelse (faktura linje) (Description)</td>
+                <td>Text</td>
+                <td>Text</td>
+                <td>Text</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Antal (Quantity)</td>
+                <td>Quantity</td>
+                <td>Quantity</td>
+                <td>Qty</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Enhed (Unit)</td>
+                <td>-</td>
+                <td>Unit</td>
+                <td>-</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Sats (Rate)</td>
+                <td>Price</td>
+                <td>Rate</td>
+                <td>Price</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>% (Discount)</td>
+                <td>Discount pct.</td>
+                <td>Discount</td>
+                <td>DiscountPet</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Moms (VAT)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>TotalVat</td>
+                <td><span class="wrapcomment">Handled in Uniconta</span></td>
+            </tr>
+            <tr>
+                <td>Beløb (Amount)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>TotalInclVat</td>
+                <td><span class="wrapcomment">Handled in Uniconta</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h3 id="mapping-expenses">Expenses</h3>
+    <div class="bs-example">
+        <table class="mapping_table" style="width: 100%;">
+            <thead>
+            <tr>
+                <th colspan="2">Field name</th>
+                <th colspan="2">Technical name</th>
+            </tr>
+            <tr>
+                <th>TimeLog</th>
+                <th>Uniconta</th>
+                <th>TimeLog</th>
+                <th>Uniconta</th>
+                <th>Remarks</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Oprettelses dato (Date)</td>
+                    <td>Date</td>
+                    <td>Created</td>
+                    <td>Date</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Valuta (Currency)</td>
+                    <td>currency</td>
+                    <td>CurrencyID</td>
+                    <td>Currency</td>
+                    <td><span class="wrapcomment">The currencyID in TimeLog is fatched from the TimeLog currency, based on the currency ABB on the company in Uniconta</span></td>
+                </tr>
+                <tr>
+                    <td>Antal (Quantity)</td>
+                    <td>Quantity</td>
+                    <td>Quantity</td>
+                    <td>Qty</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Valuta kurs (Currency rate)</td>
+                    <td>-</td>
+                    <td>ExchangeRate</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">The currency rate in TimeLog is fetched from the TimeLog currency ABB on the purchase from Uniconta</span></td>
+                </tr>
+                <tr>
+                    <td>Betalings metode (Payment method)</td>
+                    <td>/</td>
+                    <td>PaymentMethod</td>
+                    <td>-</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Købs dato (Date of purchase)</td>
+                    <td>Purchase date</td>
+                    <td>PurchaseDate</td>
+                    <td>PurchaseDate</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Project</td>
+                    <td></td>
+                    <td>ProjectID</td>
+                    <td></td>
+                    <td><span class="wrapcomment">Is always set to 0</span></td>
+                </tr>
+                <tr>
+                    <td>Beløb inkl moms (Amount incl. vat)</td>
+                    <td>-</td>
+                    <td>PurchasedAmount</td>
+                    <td>Amount + AmountVat</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Moms (VAT)</td>
+                    <td>-</td>
+                    <td>PurchasedAmountVat</td>
+                    <td>AmountVat</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Kommentar (Comment)</td>
+                    <td>-</td>
+                    <td>Comment</td>
+                    <td>JournalPostedComment</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h3 id="mapping-projects">Projects</h3>
+    <div class="bs-example">
+        <table class="mapping_table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th colspan="2">Field name</th>
+                    <th colspan="2">Technical name</th>
+                </tr>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>TimeLog</th>
+                    <th>Uniconta</th>
+                    <th>Remarks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Navn (Name)</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Beskrivelse (Description)</td>
+                    <td>Description</td>
+                    <td>Description</td>
+                    <td>Description</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</article>

@@ -379,6 +379,8 @@
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\FinancialIntegration\NAVInstallDocument.cshtml" />
     <Content Include="Views\FinancialIntegration\ConfigurationFile.cshtml" />
+    <Content Include="Views\FinancialIntegration\Dinero.cshtml" />
+    <Content Include="Views\FinancialIntegration\Uniconta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
