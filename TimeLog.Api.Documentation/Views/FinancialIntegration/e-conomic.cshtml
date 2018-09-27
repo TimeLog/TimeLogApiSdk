@@ -7,93 +7,94 @@
 
 <article class="article">
     <h1>@ViewBag.Title</h1>
-    <h2>Introduction</h2>
-    <p>
-        The integration between TimeLog and e-conomic consists of partial integrations that provide seamless cooperation between the two systems.
-        The integration consists of the following features:
+    <h2>Introduktion</h2>
+<p>Dette dokument giver en beskrivelse af hvilke TimeLog data der overføres til, hvilket felt i e-conomic.</p>
+    <p>Følgende funktioner er supporteret i e-conomic integrationen.</p>
+<p><b>Overordnede funktioner:</b></p>
         <ul>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog to e-conomic</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of contacts from TimeLog to e-conomic</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic update of customer and contact information in e-conomic</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Synchronisation of product numbers between TimeLog and e-conomic</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of invoices from TimeLog to e-conomic</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog and e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">To vejs synkronisering af kunder</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import af varenumre fra e-conomic til TimeLog</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Overførsel af bogførte fakturaer fra TimeLog til e-conomic</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatisk sammenkædning af e-conomic fakturastatus og fakturanummer i TimeLog</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">TimeLog viser den enkelte fakturas beløb i e-conomic og TimeLog</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import af udgifter fra e-conomic til TimeLog</li>
 
         </ul>
-    </p>
+    
     <br />
     <h2>Features</h2>
-    <p>This section includes a list of features and limitations to each transfer area of the integration.</p>
-    <h3>Currencies</h3>
-    <p>TimeLog does not create the currency in e-conomic if it does not exist. Therefore, make sure that all the currencies used in TimeLog are created in e-conomic.</p>
-    <h3>Customers</h3>
+<p>Denne sektion indeholder en liste af features, og begrænsninger for, hvert område af integrationen.</p>
+    
+<h3>Dimensioner</h3>
+<p>TimeLog understøtter overførsel af dimensioner på fakturaer til e-conomic.</p>
+<p>Dimensionerne defineres i integrationskoden (financialhost) i samarbejde med kunden.</p>
+<p>Følgende dimensioner kan overføres til e-conomic</p>
+<ul>
+    <li style="text-indent: 20px;" class="icon-arrow_in_circle">Projektnummer</li>
+    <li style="text-indent: 20px;" class="icon-arrow_in_circle">Fakturaens afdelingsnummer</li>
+    <li style="text-indent: 20px;" class="icon-arrow_in_circle">Fakturaens afdelingsnavn</li>
+    <li style="text-indent: 20px;" class="icon-arrow_in_circle">Medarbejderens afdelingsnummer (kun mulig, hvis fakturalinjen indeholder én medarbejders registreringer)</li>
+</ul>
+
+<h3>Valuta</h3>
+<p>TimeLog opretter ikke valutaer I e-conomic, hvis fakturaens valuta ikke findes i e-conomic. Derfor skal alle benyttede valuta i TimeLog også være oprettet i e-conomic.</p>
+
+<h3>Kunder</h3>
+<p>
+    Kunder sammenkædes ved oprettelse af integrationen. Nye kunder kan overføres til e-conomic sammen med første faktura, eller importeres i TimeLog.
+    <br/>Den ønskede funktionalitet vælges i integrationsopsætningen.
+</p>
+    <h3>Kontaktpersoner</h3>
+<p>
+    Kontaktpersoner på en faktura i TimeLog, overføres til e-conomic sammen med fakturaerne. Kontaktpersoner i e-conomic overføres ikke til TimeLog.
+</p>
+
+<h3>Varenumre</h3>
+<p>
+    Varenumre I e-conomic importeres ved oprettelse af integrationen. Varenumre i e-conomic kan ikke overføres, ændres eller slettes fra TimeLog.
+</p>
+
+    <h3>Medarbejdere</h3>
+<p>
+    TimeLog medarbejdere der er angivet på en faktura, overføres til e-conomic. Medarbejderen overføres til den valgte medarbejdergruppe I e-conomic.
+</p>
+
+<h3>Fakturaer</h3>
+<p>Kun bogførte TimeLog fakturaer kan overføres til e-conomic. Fakturaer overføres som en fakturakladde i e-conomic. Ændres en faktuura i e-conomic, bliver ændringen ikke reflekteret i TimeLog. </p>
+
+<h3>Fakturalinjer</h3>
+<p>Feltet ”Enhed” på en TimeLog faktura overføres ikke til e-conomic på fakturakladden. Enhedskoden på fakturalinjen i e-conomic vælges på varenummerets opsætning.</p>
+
+<h3>Udgifter</h3>
+<p>Udgifter kan kun importeres fra e-conomic til TimeLog.</p>
+
+    <h3>Projekter</h3>
     <p>
-        Customers can be transferred to AND from TimeLog and e-conomic.<br />
-        When customers are created in e-conomic, a string of values need to be filled out in e-conomic. In the current integration implementation, it is not possible to set all values for each customer so,
-        for the moment, the following four values are set in TimeLog centrally:
-        <ol>
-            <li style="list-style-type:disc">Debtor group</li>
-            <li style="list-style-type:disc">VAT code (VAT zone)</li>
-            <li style="list-style-type:disc">Terms of payment</li>
-            <li style="list-style-type:disc">Template collection</li>
-        </ol>
-        <br />Subsequently, these values can be adjusted in e-conomic and will not be overwritten when customer data are updated automatically in TimeLog.
-        <br />Please note that the values in the employee group drop-down menu are retrieved from e-conomic. To edit these values, go to e-conomic.
+        TimeLog projektnumre kan overføres til e-conomic, hvis aktiveret i integrationen.
+        <br/>Projekter der overføres skal have en projekt gruppe tilknyttet. Standard projekt gruppe er opsat under e-conomic integrations siden.
+        <br/>Projekter oprettet i TimeLog vil automatisk bliver overført til e-conomic når de oprettes.
     </p>
-    <h3>Contact</h3>
-    <p>
-        Contacts can be transferred to AND from TimeLog and e-conomic.
-    </p>
-    <h3>Product numbers</h3>
-    <p>
-        Product numbers can only be transferred from e-conomic to TimeLog. Note that they are not transferred automatically.
-        An system administrator will have to go to the system administration > integrations and choose to import them manually.
-        The product number setup is carried out in TimeLog and consists of 3 steps:
-        <ol>
-            <li>Importing product numbers from e-conomic</li>
-            <li>Configuring a product number principle for various TimeLog data types</li>
-            <li>Configuring default product numbers for various TimeLog data types</li>
-        </ol>
-    </p>
-    <h3>Employees</h3>
-    <p>
-        When transferring an invoice to e-conomic with an internal reference, TimeLog checks whether the employee has already been created.
-        If not, an employee is created from the e-conomic employee directory.
-        However, employees in e-conomic must be assigned to an employee group.
-        The default group used for creating employees is selected in the Default values for transferring employees section on the integration confuguration page.
-        You can change the employee group in e-conomic for employees created in TimeLog. Later updates will not overwrite this group.
-    </p>
-    <h3>Invoices</h3>
-    <p>Only booked invoices can be transferred from TimeLog to e-conomic. Invoices are transferred as drafts. Changes in invoice drafts inside e-conomic will not be reflected in TimeLog.</p>
-    <h3>Invoice lines</h3>
-    <p>Invoice lines are transferred along with the invoice. Invoice lines can be modified in e-conomic and addition line can be added. Changes will not be reflected in TimeLog.</p>
-    <h3>Expenses</h3>
-    <p>Expenses can only be transferred from e-conomic to TimeLog. </p>
-    <h3>Projects</h3>
-    <p>
-        Projects can be transferred from TimeLog to e-conomic. The functionality can only be used if you have activated the Projects module in e-conomic.
-        Projects transferred must have an Project group attached. The default project group are set up on the integration configuration page when transfer of projects are activated.
-        Projects created in TimeLog wil automatiaclly be transferred to e-conomic when they are created.
-    </p>
-    <h3>Tasks</h3>
-    <p>Not part of the integration.</p>
-    <h3>Allocations</h3>
-    <p>Not part of the integration.</p>
-    <h3>Registrations</h3>
-    <p>Not part of the integration.</p>
+    <h3>Projektopgaver</h3>
+<p>Projektopgaver overføres ikke til e-conomic</p>
+
+    <h3>Allokeringer</h3>
+<p>Allokerede medarbejdere overføres ikke til e-conomic</p>
+
+    <h3>Tidsregistreringer</h3>
+    <p>Tidsregistreringer overføres ikke til e-conomic </p>
 
     <br />
     <h2>Mapping</h2>
-    <p>This section contains the explicit mapping of fields between TimeLog and e-conomic.</p>
+    <p>Denne sektion indeholder informationer om felter i TimeLog der overføres til, hvilke i e-conomic</p>
 
-    <h3 id="mapping-customers">Customers</h3>
+    <h3 id="mapping-customers">Kunder (Customers)</h3>
     <div class="bs-example">
 
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
+                    <th colspan="2">Feltnavne</th>
+                    <th colspan="2">Tekniske navne</th>
                     <th></th>
                 </tr>
                 <tr class="underline">
@@ -101,205 +102,212 @@
                     <th>e-conomic</th>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Company name</td>
+                    <td>Firmanavn (Company name)</td>
                     <td>Name</td>
                     <td>Name</td>
                     <td>Name</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Phone</td>
-                    <td>Telephone/Fax</td>
-                    <td>Phone</td>
-                    <td>TelephoneAndFaxNumber</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>VAT no</td>
+                    <td>Kundenr. (Customer no)</td>
                     <td>-</td>
-                    <td>VatNo</td>
-                    <td>CINumber</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>VAT no</td>
+                    <td>CustomerNo</td>
                     <td>-</td>
-                    <td>VatNo</td>
-                    <td>VATNumber</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>EAN no.</td>
-                    <td>EAN no.</td>
-                    <td>EAN</td>
-                    <td>Ean</td>
+                    <td>Ejer (Owner)</td>
+                    <td>-</td>
+                    <td>KeyAccountManagerInitials</td>
+                    <td>-</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Address</td>
-                    <td>Address</td>
+                    <td>Telefon (Phone)</td>
+                    <td>Phone</td>
+                    <td>Phone</td>
+                    <td>PhoneNumber</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fax (Fax)</td>
+                    <td>Fax</td>
+                    <td>Fax</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Dette samles under telefon</span></td>
+                </tr>
+                <tr>
+                    <td>E-mail (Email)</td>
+                    <td>E-mail</td>
+                    <td>Email</td>
+                    <td>Email</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Website (Website)</td>
+                    <td>Homepage</td>
+                    <td>Website</td>
+                    <td>Website</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Adresse (Address)</td>
+                    <td>-</td>
                     <td>Address.Address</td>
                     <td>Address</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Address 2</td>
+                    <td>Adresse 2 (Address 2)</td>
                     <td>-</td>
                     <td>Address.Address2</td>
-                    <td>Address</td>
-                    <td><span class="wrapcomment">Concatenated with address</span></td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Samles i "adresse"</span></td>
                 </tr>
                 <tr>
-                    <td>Address 3</td>
+                    <td>Adresse 3 (Address 3)</td>
                     <td>-</td>
                     <td>Address.Address3</td>
-                    <td>Address</td>
-                    <td><span class="wrapcomment">Concatenated with address</span></td>
-                </tr>
-                <tr>
-                    <td>City</td>
-                    <td>Town/City</td>
-                    <td>Address.City</td>
-                    <td>City</td>
                     <td></td>
+                    <td><span class="wrapcomment">Samles i "adresse"</span></td>
                 </tr>
                 <tr>
-                    <td>Country</td>
-                    <td>Country</td>
-                    <td>Address.Country</td>
-                    <td>Country</td>
-                    <td><span class="wrapcomment">e-conomic country is retrieved from customer country</span></td>
-                </tr>
-                <tr>
-                    <td>Postal code</td>
+                    <td>Postnr. (Postal code)</td>
                     <td>Postcode</td>
                     <td>Address.ZipCode</td>
                     <td>Postcode</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Website</td>
-                    <td>Website</td>
-                    <td>Website</td>
-                    <td>Website</td>
+                    <td>By (City)</td>
+                    <td>City</td>
+                    <td>Address.City</td>
+                    <td>City</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>E-mail</td>
-                    <td>Invoice e-mail</td>
-                    <td>Email</td>
-                    <td>Email</td>
+                    <td>Stat (State)</td>
+                    <td>-</td>
+                    <td>Address.State</td>
+                    <td>-</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Currency</td>
-                    <td>Currency</td>
-                    <td>Currency</td>
-                    <td>Currency</td>
-                    <td><span class="wrapcomment">e-conomic currency is retrieved by customer currency code.</span></td>
+                    <td>Land (Country)</td>
+                    <td>Country</td>
+                    <td>Address.Country</td>
+                    <td>Country</td>
+                    <td><span class="wrapcomment">Kommer fra kundekortet</span></td>
                 </tr>
                 <tr class="info">
+                    <td>CVR-nr. (VAT no.)</td>
+                    <td>VAT no</td>
+                    <td>VATNo</td>
+                    <td>CINumber</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Giro-nr. (Giro no.)</td>
                     <td>-</td>
-                    <td>No.</td>
+                    <td>Giro</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Organistation nr.</td>
+                    <td>-</td>
+                    <td>OrganizationNo</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Benyttes kun i svenske TimeLog installationer</span></td>
+                </tr>
+                <tr>
+                    <td>Valuta (Currency)</td>
+                    <td>Currency</td>
+                    <td>Currency</td>
+                    <td>Currency</td>
+                    <td><span class="wrapcomment">e-conomic valuta hentes fra kundens valuta kode</span></td>
+                </tr>
+                <tr>
+                    <td>EAN-nr. (EAN no.)</td>
+                    <td>EAN no.</td>
+                    <td>EAN</td>
+                    <td>Ean</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>-<td>
                     <td>ExternalKey</td>
-                    <td>Number</td>
-                    <td></td>
+                    <td>Customer.GUID</td>
+                    <td><span class="wrapcomment">Bliver ikke overført. Benyttes til sammenkædning af kundenavne</span></td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td>Payment terms</td>
-                    <td>-</td>
-                    <td>TermOfPayment</td>
-                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog</span></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Layout</td>
-                    <td>-</td>
-                    <td>Layout</td>
-                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog</span></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>VAT zone</td>
-                    <td>-</td>
-                    <td>VatZone</td>
-                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog</span></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Group</td>
-                    <td>-</td>
-                    <td>DebtorGroup</td>
-                    <td><span class="wrapcomment">Retrieved from default setting in integration configuration in TimeLog</span></td>
-                </tr>
-
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-contacts">Contact</h3>
+
+<h3 id="mapping-contacts">Kontaktpersoner (Contact persons)</h3>
     <div class="bs-example">
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
+                    <th colspan="2">Feltnavne</th>
+                    <th colspan="2">Tekniske navne</th>
                 </tr>
                 <tr>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>First name</td>
+                    <td>Fornavn (First name)</td>
                     <td>Name</td>
                     <td>FirstName</td>
                     <td>Name</td>
-                    <td><span class="wrapcomment">Concatenated in name</span></td>
+                    <td><span class="wrapcomment">Samlet i "Name"</span></td>
                 </tr>
                 <tr>
-                    <td>Last name</td>
+                    <td>Efternavn (Last name)</td>
                     <td>Name</td>
                     <td>LastName</td>
                     <td>Name</td>
-                    <td><span class="wrapcomment">Concatenated in name</span></td>
+                    <td><span class="wrapcomment">Samlet i "Name"</span></td>
                 </tr>
                 <tr>
-                    <td>Phone</td>
+                    <td>Telefon (Phone)</td>
                     <td>Telephone</td>
                     <td>Phone</td>
                     <td>TelephoneNumber</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Email</td>
+                    <td>E-mail (Email)</td>
                     <td>E-mail</td>
                     <td>Email</td>
                     <td>Email</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Your comment</td>
+                    <td>Min kommentar (Your comment)</td>
                     <td>Comments</td>
                     <td>Comment</td>
                     <td>Comments</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Customer</td>
+                    <td>Kunde (Customer)</td>
                     <td>-</td>
                     <td>ExternalID</td>
                     <td>Debtor</td>
-                    <td><span class="wrapcomment">The debtor from e-conomic is retrieved basen on the externalKey mapping in TimeLog.</span></td>
+                    <td><span class="wrapcomment">Debitor i e-conomic er sammenkædet via externalKey på sammenkædede kunder</span></td>
                 </tr>
                 <tr class="info">
                     <td>-</td>
@@ -311,20 +319,21 @@
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-productnumbers">Product numbers</h3>
+
+    <h3 id="mapping-productnumbers">Varenumre (Product numbers)</h3>
     <div class="bs-example">
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
+                    <th colspan="2">Feltnavne</th>
+                    <th colspan="2">Tekniske navne</th>
                 </tr>
                 <tr>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
@@ -345,20 +354,21 @@
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-employees">Employees</h3>
+
+    <h3 id="mapping-employees">Medarbejdere (Employees)</h3>
     <div class="bs-example">
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
+                    <th colspan="2">Feltnavne</th>
+                    <th colspan="2">Tekniske navne</th>
                 </tr>
                 <tr>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
@@ -370,7 +380,14 @@
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>First name</td>
+                    <td>Fornavn (First name)</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td><span class="wrapcomment">Name is full name in e-conomic</span></td>
+                </tr>
+                <tr>
+                    <td>Efternavn (Last name)</td>
                     <td>Name</td>
                     <td>Name</td>
                     <td>Name</td>
@@ -381,216 +398,280 @@
                     <td>Group</td>
                     <td>-</td>
                     <td>Group</td>
-                    <td><span class="wrapcomment">Default employee group from integration configuration setting</span></td>
+                    <td><span class="wrapcomment">Valgte medarbejdergruppe I integrationsopsætningen</span></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-invoices">Invoices</h3>
+    <h3 id="mapping-invoices">Fakturaer (Invoices)</h3>
     <div class="bs-example">
 
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
+                    <th colspan="2">Feltnavne</th>
+                    <th colspan="2">Tekniske navne</th>
                 </tr>
                 <tr>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Customer</td>
-                    <td>Customer</td>
-                    <td>InvoicingCustomerName</td>
-                    <td>DebtorName</td>
-                    <td><span class="wrapcomment"></span></td>
+                    <td>Fakturanr. (Invoice no.)</td>
+                    <td>-</td>
+                    <td>InvoiceNo</td>
+                    <td>OtherReference</td>
+                    <td><span class="wrapcomment">TimeLog fakturanr. overføres til Other ref.</span></td>
                 </tr>
                 <tr>
-                    <td>Heading</td>
-                    <td>Heading</td>
-                    <td>Header</td>
-                    <td>Heading</td>
+                    <td>Kundenr. (Customer no.)</td>
+                    <td>Customer</td>
+                    <td>CustomerKey</td>
+                    <td>CustomerNumber</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
 
                 <tr>
-                    <td>Invoice date</td>
+                    <td>Kontaktperson nr. (Contact)</td>
+                    <td>-</td>
+                    <td>ContactKey</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Kommer i forbindelser med valg af kunde</span></td>
+                </tr>
+                <tr>
+                    <td>Fakturaadresse, kundeadresse (Customer address)</td>
+                    <td>-</td>
+                    <td>FixedCustomerName</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Kommer i forbindelse med valg af kunde</span></td>
+                </tr>
+
+                <tr>
+                    <td>Fakturaadresse, kontaktperson (Invoice address, contact person)</td>
+                    <td>-</td>
+                    <td>FixedAttContactFullName</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Kommer i forbindelse med valg af kunde</span></td>
+                </tr>
+                <tr>
+                    <td>Fakturadato (Invoice date)</td>
                     <td>Date</td>
                     <td>InvoiceDate</td>
                     <td>Date</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Payment terms</td>
-                    <td>Payment terms</td>
+                    <td>Fakturaafdeling (Department)</td>
                     <td>-</td>
-                    <td>TermOfPayment</td>
-                    <td><span class="wrapcomment">Term of payment is retrieved from the e-conomic debtor</span></td>
-                </tr>
-
-                <tr class="info">
-                    <td>-</td>
-                    <td>Invoice no.</td>
-                    <td>ExternalID</td>
-                    <td>EntryNumber</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Currency</td>
-                    <td>-</td>
-                    <td>Details.Currency.Abbreviation</td>
-                    <td>Currency</td>
-                    <td><span class="wrapcomment">Abbreviation of the currency from the invoice in TimeLog</span></td>
-                </tr>
-                <tr>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Layout</td>
-                    <td><span class="wrapcomment">Layout is retrieved from the debtor in e-conomic</span></td>
-                </tr>
-                <tr>
-                    <td>Customer's Ref.</td>
-                    <td>Your ref.</td>
-                    <td>CustomerReferenceID</td>
-                    <td>YourReference</td>
-                    <td><span class="wrapcomment">Contact is retrieved from e-conomic based on the CustomerReferenceID</span></td>
-                </tr>
-                <tr>
-                    <td>Due date</td>
-                    <td>Due date</td>
-                    <td>DueDate</td>
-                    <td>DueDate</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Calculate VAT</td>
                     <td>-</td>
-                    <td>CalculateVAT</td>
-                    <td>IsVatIncluded</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Other ref.</td>
-                    <td>ID</td>
-                    <td>OtherReference</td>
-                    <td><span class="wrapcomment">TimeLog invoiceID is noted in other reference i e-conomic</span></td>
-                </tr>
-                <tr>
-                    <td>Internal reference</td>
-                    <td>Our ref.</td>
-                    <td>Details.InternalReference</td>
-                    <td>OurReference</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Contact</td>
-                    <td>Attention</td>
-                    <td>Details.ContactHeader</td>
-                    <td>Attention</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Message + P.O. no.</td>
-                    <td>Text 1</td>
-                    <td>Message + RequisitionNo</td>
-                    <td>TextLine1</td>
-                    <td><span class="wrapcomment">Message and requisitionNo is concatenated into TextLine1 in e-conomic</span></td>
-                </tr>
-                <tr>
-                    <td>Exchange rate (DKK):</td>
+                    <td>Projektnavn (Project name)</td>
                     <td>-</td>
-                    <td>InvoiceCurrencyRate</td>
-                    <td>ExchangeRate</td>
+                    <td>Details.ProjectHeader.Name</td>
+                    <td>-</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Invoice address:</td>
-                    <td>Town/City</td>
-                    <td>InvoicingAddress.City</td>
-                    <td>DebtorCity</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Invoice address:</td>
-                    <td>Country</td>
-                    <td>InvoicingAddress.Country</td>
-                    <td>DebtorCountry</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Project no.</td>
+                    <td>Projektnr. (Project no.)</td>
                     <td>Project no.</td>
                     <td>Details.ProjectHeader.No</td>
                     <td>Project</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
+                <tr>
+                    <td>Rekvisionsnr. (P.O. no.)</td>
+                    <td>External Document Number</td>
+                    <td>Message + RequisitionNo</td>
+                    <td>TextLine1</td>
+                    <td><span class="wrapcomment">Samlet i "TextLine1" - 1000 karaktere maks.</span></td>
+                </tr>
+                <tr>
+                    <td>Kundens ref. (Customers ref)</td>
+                    <td>Your reference</td>
+                    <td>CustomerReference</td>
+                    <td>YourReference</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Intern reference (Internal reference)</td>
+                    <td>Sales person code</td>
+                    <td>Details.InternalReference</td>
+                    <td>SalesPersonCode</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>EAN</td>
+                    <td>EAN</td>
+                    <td>EAN</td>
+                    <td>EAN</td>
+                    <td><span class="wrapcomment">Et specifikt EAN nr. kan tilføjes i rekvisitions nr.  Nummeret skal starte med “EAN” for at blive overført. Hvis feltet er tomt, benyttes feltet EAN ved overførslen.</span></td>
+                </tr>
+                <tr>
+                    <td>Fakturaadresse: (address 1)</td>
+                    <td>-</td>
+                    <td>FixedAddress1</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Fakturaadresse: (address 2)</td>
+                    <td>-</td>
+                    <td>FixedAddress2</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Samlet i "Adresse"</span></td>
+                </tr>
+                <tr>
+                    <td>Fakturaadresse: (address 3)</td>
+                    <td>-</td>
+                    <td>FixedAddress3</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Samlet i "Adresse"</span></td>
+                </tr>
+                <tr>
+                    <td>By (City)</td>
+                    <td>-</td>
+                    <td>FixedCity</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Postnr. (Postal code)</td>
+                    <td>-</td>
+                    <td>FixedZipCode</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Land (Country)</td>
+                    <td>-</td>
+                    <td>FixedCountryISO</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Overskrift (Heading)</td>
+                    <td>Posting description</td>
+                    <td>Header</td>
+                    <td>Heading</td>
+                    <td><span class="wrapcomment">Tekst over 250 karaktere kan ikke overføres</span></td>
+                </tr>
+                <tr>
+                    <td>Besked (Message)</td>
+                    <td>Text1</td>
+                    <td>Message</td>
+                    <td>TextLine1</td>
+                    <td><span class="wrapcomment">Samlet i "TextLine1" - 1000 karaktere. Både Rekvisionsnr. og besked</span></td>
+                </tr>
+                <tr>
+                    <td>Betalingsbetingelser (Payment terms)</td>
+                    <td>Payment terms</td>
+                    <td>-</td>
+                    <td>PaymentTerms</td>
+                    <td><span class="wrapcomment">Overføres ikke</span></td>
+                </tr>
+                <tr>
+                    <td>Betalingsfrist (Due date)</td>
+                    <td>Due date</td>
+                    <td>DueDate</td>
+                    <td>DueDate</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Valuta (Currency)</td>
+                    <td>CurrencyCode</td>
+                    <td>CurrencyISO</td>
+                    <td>CurrencyCode</td>
+                    <td><span class="wrapcomment">Forkortelse af valuta på fakturaen</span></td>
+                </tr>
+                <tr>
+                    <td>Standard rabat % (Default discount %)</td>
+                    <td>Invoice disc. Code</td>
+                    <td>DefaulDiscount</td>
+                    <td>InvoiceDiscCode</td>
+                    <td><span class="wrapcomment">Overføres ikke</span></td>
+                </tr>
+                <tr>
+                    <td>Moms % (Default VAT %)</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Prices including VAT</td>
+                    <td>-</td>
+                    <td>PricesIncludingVAT</td>
+                    <td><span class="wrapcomment">Håndteres i e-conomic</span></td>
+                </tr>
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-invoicelines">Invoice lines</h3>
+
+    <h3 id="mapping-invoicelines">Fakturalinjer (Invoice lines)</h3>
     <div class="bs-example">
 
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
+                    <th colspan="2">Feltnavne</th>
+                    <th colspan="2">Tekniske navne</th>
                 </tr>
                 <tr>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Product no.</td>
+                    <td>Varenr. (Product no.)</td>
                     <td>Product no.</td>
                     <td>ProductNo</td>
                     <td>Product</td>
-                    <td><span class="wrapcomment">Item is retrieved from e-conomic based on the productNo</span></td>
+                    <td><span class="wrapcomment">Er importeret fra e-conomic (Product no)</span></td>
                 </tr>
                 <tr>
-                    <td>Unit</td>
-                    <td>Unit</td>
+                    <td>Beskrivelse (Description)</td>
                     <td>-</td>
-                    <td>Unit</td>
-                    <td><span class="wrapcomment">Unit attached to product retrieved from e-conomic</span></td>
-                </tr>
-
-                <tr>
-                    <td>Description</td>
-                    <td></td>
                     <td>Text</td>
                     <td>Description</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
+
                 <tr>
+                    <td>Antal (Quantitty)</td>
                     <td>Quantity</td>
                     <td>Quantity</td>
                     <td>Quantity</td>
-                    <td>Quantity</td>
-                    <td><span class="wrapcomment">Economic doesn't allow a quantity of 0. If so the rate will be set to 0 instead</span></td>
+                    <td><span class="wrapcomment">e-conomic tillader ikke antal til at være 0. Hvis det skal være 0 skal "sats" være 0 istedet.</span></td>
                 </tr>
                 <tr>
-                    <td>Rate</td>
+                    <td>Enhed (Unit)</td>
+                    <td>Unit</td>
+                    <td>Unit</td>
+                    <td>Unit</td>
+                    <td><span class="wrapcomment">Overføres ikke. e-conomic enhed på varenummer benyttes.</span></td>
+                </tr>
+                <tr>
+                    <td>Sats (rate)</td>
                     <td>Price</td>
                     <td>Rate</td>
                     <td>UnitNetPrice</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>%</td>
+                    <td>% (%)</td>
                     <td>Discount (%)</td>
                     <td>Discount</td>
                     <td>DiscountAsPercent</td>
@@ -600,21 +681,21 @@
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-expenses">Expenses</h3>
+    <h3 id="mapping-expenses">Import af udgifter (Import of expenses)</h3>
     <div class="bs-example">
 
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
+                    <th colspan="2">Feltnavne</th>
+                    <th colspan="2">Tekniske navne</th>
                 </tr>
                 <tr>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
@@ -627,81 +708,67 @@
                 </tr>
 
                 <tr>
-                    <td>Date</td>
+                    <td>Dato (Date)</td>
                     <td>Date</td>
                     <td>Created</td>
                     <td>Date</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Currency</td>
+                    <td>Valuta (Currency)</td>
                     <td>Currency</td>
                     <td>CurrencyID</td>
                     <td>Currency</td>
-                    <td><span class="wrapcomment">The currencyID in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                    <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Currency</td>
+                    <td>Valutakurs (Exchange rate)</td>
                     <td>-</td>
                     <td>ExchangeRate</td>
                     <td>Currency</td>
-                    <td><span class="wrapcomment">The currency rate in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from e-conomic</span></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>DisbursementNo</td>
-                    <td>-</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td>InvoiceNo</td>
+                    <td>Betalingsform (Payment method)</td>
                     <td>-</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Payment method</td>
-                    <td></td>
                     <td>PaymentMethod</td>
                     <td>-</td>
-                    <td><span class="wrapcomment">Default paymentmethod for import. Set up in TimeLog</span></td>
+                    <td><span class="wrapcomment">Standard betalingsform kommer fra TimeLog opsætning</span></td>
                 </tr>
                 <tr>
-                    <td>Date</td>
+                    <td>Dato (Date)</td>
                     <td>Date</td>
                     <td>PurchaseDate</td>
                     <td>Date</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Project</td>
+                    <td>Projekt (Project)</td>
                     <td></td>
                     <td>ProjectID</td>
                     <td>-</td>
-                    <td><span class="wrapcomment">Is always set to 0</span></td>
+                    <td><span class="wrapcomment">Overføres kun, hvis udgiften tilhører et projekt i e-conomic</span></td>
                 </tr>
                 <tr>
-                    <td>Amount incl. VAT</td>
+                    <td>Beløb inkl. moms (Amount incl. VAT)</td>
                     <td>Amount (Curr)</td>
                     <td>PurchasedAmount</td>
                     <td>Amount</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>VAT</td>
+                    <td>Moms (VAT)</td>
                     <td></td>
                     <td>VATIncluded</td>
                     <td>-</td>
-                    <td><span class="wrapcomment">Always set to 0. Expenses will exclude VAT amounts</span></td>
+                    <td><span class="wrapcomment">Er altid sat til 0,00. Importerede udgifter er altid inkl. moms</span></td>
                 </tr>
                 <tr>
-                    <td>Comment</td>
+                    <td>Kommentar (Comment)</td>
                     <td></td>
                     <td>Comment</td>
                     <td>entry.Account.AccountNumber</td>
-                    <td><span class="wrapcomment">Used as placeholder for account no. from e-conomic</span></td>
+                    <td><span class="wrapcomment">Er brugt til at opbevare konto nr. fra e-conomic</span></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -714,21 +781,21 @@
         </table>
     </div>
 
-    <h3 id="mapping-expenses">Projects</h3>
+    <h3 id="mapping-expenses">Projekter (Projects)</h3>
     <div class="bs-example">
 
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
+                    <th colspan="2">Feltnavne</th>
+                    <th colspan="2">Tekniske navne</th>
                 </tr>
                 <tr>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
                     <th>TimeLog</th>
                     <th>e-conomic</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
@@ -741,25 +808,25 @@
                 </tr>
 
                 <tr>
-                    <td>Name</td>
+                    <td>Navn (Name)</td>
                     <td>Name</td>
                     <td>Name</td>
                     <td>Name</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
+                    <td>Beskrivelse (Description)</td>
                     <td>Description</td>
                     <td>Description</td>
                     <td>Description</td>
-                    <td>Description</td>
-                    <td><span class="wrapcomment">The currencyID in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                    <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>ProjectGroup</td>
                     <td></td>
                     <td>ProjectGroup</td>
-                    <td><span class="wrapcomment">Default project group from integration configuration setting</span></td>
+                    <td><span class="wrapcomment"></span></td>
                 </tr>
               
             </tbody>
