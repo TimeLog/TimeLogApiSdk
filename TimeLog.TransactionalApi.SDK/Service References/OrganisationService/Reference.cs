@@ -18,14 +18,17 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Employee))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.EmployeeHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Department))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Role))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ModuleType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfLegalEntity))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.CustomField))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Department))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Employee))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole))]
@@ -177,445 +180,6 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://www.timelog.com/api/tlp/v1_7")]
-    [System.SerializableAttribute()]
-    public partial class Employee : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int EmployeeIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InitialsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FullnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmployeeNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid DepartmentGuidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DepartmentNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DepartmentNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int InterfaceLanguageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TelephoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MobileField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PrivateAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PrivateZipField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PrivateCityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PrivateTelephoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ExternalIdentifierField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime HiredDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TerminationDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsHiredField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsLockedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid CostPriceGuidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double CostPriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid HourlyRateGuidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double HourlyRateField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int EmployeeID {
-            get {
-                return this.EmployeeIDField;
-            }
-            set {
-                if ((this.EmployeeIDField.Equals(value) != true)) {
-                    this.EmployeeIDField = value;
-                    this.RaisePropertyChanged("EmployeeID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public string Initials {
-            get {
-                return this.InitialsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InitialsField, value) != true)) {
-                    this.InitialsField = value;
-                    this.RaisePropertyChanged("Initials");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public string Fullname {
-            get {
-                return this.FullnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FullnameField, value) != true)) {
-                    this.FullnameField = value;
-                    this.RaisePropertyChanged("Fullname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public string EmployeeNo {
-            get {
-                return this.EmployeeNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmployeeNoField, value) != true)) {
-                    this.EmployeeNoField = value;
-                    this.RaisePropertyChanged("EmployeeNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public System.Guid DepartmentGuid {
-            get {
-                return this.DepartmentGuidField;
-            }
-            set {
-                if ((this.DepartmentGuidField.Equals(value) != true)) {
-                    this.DepartmentGuidField = value;
-                    this.RaisePropertyChanged("DepartmentGuid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public string DepartmentName {
-            get {
-                return this.DepartmentNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DepartmentNameField, value) != true)) {
-                    this.DepartmentNameField = value;
-                    this.RaisePropertyChanged("DepartmentName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
-        public string DepartmentNo {
-            get {
-                return this.DepartmentNoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DepartmentNoField, value) != true)) {
-                    this.DepartmentNoField = value;
-                    this.RaisePropertyChanged("DepartmentNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
-        public int InterfaceLanguage {
-            get {
-                return this.InterfaceLanguageField;
-            }
-            set {
-                if ((this.InterfaceLanguageField.Equals(value) != true)) {
-                    this.InterfaceLanguageField = value;
-                    this.RaisePropertyChanged("InterfaceLanguage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
-        public string Telephone {
-            get {
-                return this.TelephoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TelephoneField, value) != true)) {
-                    this.TelephoneField = value;
-                    this.RaisePropertyChanged("Telephone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
-        public string Mobile {
-            get {
-                return this.MobileField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MobileField, value) != true)) {
-                    this.MobileField = value;
-                    this.RaisePropertyChanged("Mobile");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
-        public string PrivateAddress {
-            get {
-                return this.PrivateAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PrivateAddressField, value) != true)) {
-                    this.PrivateAddressField = value;
-                    this.RaisePropertyChanged("PrivateAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
-        public string PrivateZip {
-            get {
-                return this.PrivateZipField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PrivateZipField, value) != true)) {
-                    this.PrivateZipField = value;
-                    this.RaisePropertyChanged("PrivateZip");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
-        public string PrivateCity {
-            get {
-                return this.PrivateCityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PrivateCityField, value) != true)) {
-                    this.PrivateCityField = value;
-                    this.RaisePropertyChanged("PrivateCity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
-        public string PrivateTelephone {
-            get {
-                return this.PrivateTelephoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PrivateTelephoneField, value) != true)) {
-                    this.PrivateTelephoneField = value;
-                    this.RaisePropertyChanged("PrivateTelephone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
-        public string ExternalIdentifier {
-            get {
-                return this.ExternalIdentifierField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExternalIdentifierField, value) != true)) {
-                    this.ExternalIdentifierField = value;
-                    this.RaisePropertyChanged("ExternalIdentifier");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
-        public System.DateTime HiredDate {
-            get {
-                return this.HiredDateField;
-            }
-            set {
-                if ((this.HiredDateField.Equals(value) != true)) {
-                    this.HiredDateField = value;
-                    this.RaisePropertyChanged("HiredDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
-        public System.DateTime TerminationDate {
-            get {
-                return this.TerminationDateField;
-            }
-            set {
-                if ((this.TerminationDateField.Equals(value) != true)) {
-                    this.TerminationDateField = value;
-                    this.RaisePropertyChanged("TerminationDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
-        public bool IsHired {
-            get {
-                return this.IsHiredField;
-            }
-            set {
-                if ((this.IsHiredField.Equals(value) != true)) {
-                    this.IsHiredField = value;
-                    this.RaisePropertyChanged("IsHired");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
-        public bool IsLocked {
-            get {
-                return this.IsLockedField;
-            }
-            set {
-                if ((this.IsLockedField.Equals(value) != true)) {
-                    this.IsLockedField = value;
-                    this.RaisePropertyChanged("IsLocked");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
-        public System.Guid CostPriceGuid {
-            get {
-                return this.CostPriceGuidField;
-            }
-            set {
-                if ((this.CostPriceGuidField.Equals(value) != true)) {
-                    this.CostPriceGuidField = value;
-                    this.RaisePropertyChanged("CostPriceGuid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
-        public double CostPrice {
-            get {
-                return this.CostPriceField;
-            }
-            set {
-                if ((this.CostPriceField.Equals(value) != true)) {
-                    this.CostPriceField = value;
-                    this.RaisePropertyChanged("CostPrice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
-        public System.Guid HourlyRateGuid {
-            get {
-                return this.HourlyRateGuidField;
-            }
-            set {
-                if ((this.HourlyRateGuidField.Equals(value) != true)) {
-                    this.HourlyRateGuidField = value;
-                    this.RaisePropertyChanged("HourlyRateGuid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
-        public double HourlyRate {
-            get {
-                return this.HourlyRateField;
-            }
-            set {
-                if ((this.HourlyRateField.Equals(value) != true)) {
-                    this.HourlyRateField = value;
-                    this.RaisePropertyChanged("HourlyRate");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeHeader", Namespace="http://www.timelog.com/api/tlp/v1_7")]
     [System.SerializableAttribute()]
     public partial class EmployeeHeader : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
@@ -728,93 +292,6 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                 if ((object.ReferenceEquals(this.FullnameField, value) != true)) {
                     this.FullnameField = value;
                     this.RaisePropertyChanged("Fullname");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Department", Namespace="http://www.timelog.com/api/tlp/v1_7")]
-    [System.SerializableAttribute()]
-    public partial class Department : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid ParentDepartmentGuidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid DepartmentManagerGuidField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string No {
-            get {
-                return this.NoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NoField, value) != true)) {
-                    this.NoField = value;
-                    this.RaisePropertyChanged("No");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ParentDepartmentGuid {
-            get {
-                return this.ParentDepartmentGuidField;
-            }
-            set {
-                if ((this.ParentDepartmentGuidField.Equals(value) != true)) {
-                    this.ParentDepartmentGuidField = value;
-                    this.RaisePropertyChanged("ParentDepartmentGuid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public System.Guid DepartmentManagerGuid {
-            get {
-                return this.DepartmentManagerGuidField;
-            }
-            set {
-                if ((this.DepartmentManagerGuidField.Equals(value) != true)) {
-                    this.DepartmentManagerGuidField = value;
-                    this.RaisePropertyChanged("DepartmentManagerGuid");
                 }
             }
         }
@@ -1298,6 +775,881 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
                 if ((this.TotalPageCountField.Equals(value) != true)) {
                     this.TotalPageCountField = value;
                     this.RaisePropertyChanged("TotalPageCount");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="APIBaseExtended", Namespace="http://api.timelog.com")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Department))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Employee))]
+    public partial class APIBaseExtended : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.DataAction ActionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsCustomFieldsLoadedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.CustomField[] CustomFieldsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsExternalKeysLoadedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.ExternalSystemContext[] ExternalKeysField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.DataAction Action {
+            get {
+                return this.ActionField;
+            }
+            set {
+                if ((this.ActionField.Equals(value) != true)) {
+                    this.ActionField = value;
+                    this.RaisePropertyChanged("Action");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsCustomFieldsLoaded {
+            get {
+                return this.IsCustomFieldsLoadedField;
+            }
+            set {
+                if ((this.IsCustomFieldsLoadedField.Equals(value) != true)) {
+                    this.IsCustomFieldsLoadedField = value;
+                    this.RaisePropertyChanged("IsCustomFieldsLoaded");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.CustomField[] CustomFields {
+            get {
+                return this.CustomFieldsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomFieldsField, value) != true)) {
+                    this.CustomFieldsField = value;
+                    this.RaisePropertyChanged("CustomFields");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public bool IsExternalKeysLoaded {
+            get {
+                return this.IsExternalKeysLoadedField;
+            }
+            set {
+                if ((this.IsExternalKeysLoadedField.Equals(value) != true)) {
+                    this.IsExternalKeysLoadedField = value;
+                    this.RaisePropertyChanged("IsExternalKeysLoaded");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ExternalSystemContext[] ExternalKeys {
+            get {
+                return this.ExternalKeysField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExternalKeysField, value) != true)) {
+                    this.ExternalKeysField = value;
+                    this.RaisePropertyChanged("ExternalKeys");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomField", Namespace="http://api.timelog.com/services/customfield/1_0")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIBase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ExecutionStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.DomainType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.LegalEntity[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Employee[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Employee))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.EmployeeHeader[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.EmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Department[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Department))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Role[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Role))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ModuleType[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ModuleType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfLegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.RequestParameter[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.RequestParameter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIMessage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIMessage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ExternalSystemContext[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfModuleType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIMessageSeverity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.DataAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.CustomField[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ValueOption[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ValueOption))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.DataTypeEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ValidateModelEnum))]
+    public partial class CustomField : TimeLog.TransactionalApi.SDK.OrganisationService.APIBase {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SectionLabelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SectionIdentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LabelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.DomainType DomainTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.DataTypeEnum DataTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.ValueOption[] DataValuesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private object ValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SortOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.OrganisationService.ValidateModelEnum ValidationModelField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SectionLabel {
+            get {
+                return this.SectionLabelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SectionLabelField, value) != true)) {
+                    this.SectionLabelField = value;
+                    this.RaisePropertyChanged("SectionLabel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string SectionIdent {
+            get {
+                return this.SectionIdentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SectionIdentField, value) != true)) {
+                    this.SectionIdentField = value;
+                    this.RaisePropertyChanged("SectionIdent");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string Label {
+            get {
+                return this.LabelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LabelField, value) != true)) {
+                    this.LabelField = value;
+                    this.RaisePropertyChanged("Label");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string Ident {
+            get {
+                return this.IdentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdentField, value) != true)) {
+                    this.IdentField = value;
+                    this.RaisePropertyChanged("Ident");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.DomainType DomainType {
+            get {
+                return this.DomainTypeField;
+            }
+            set {
+                if ((this.DomainTypeField.Equals(value) != true)) {
+                    this.DomainTypeField = value;
+                    this.RaisePropertyChanged("DomainType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.DataTypeEnum DataType {
+            get {
+                return this.DataTypeField;
+            }
+            set {
+                if ((this.DataTypeField.Equals(value) != true)) {
+                    this.DataTypeField = value;
+                    this.RaisePropertyChanged("DataType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ValueOption[] DataValues {
+            get {
+                return this.DataValuesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataValuesField, value) != true)) {
+                    this.DataValuesField = value;
+                    this.RaisePropertyChanged("DataValues");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public object Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public int SortOrder {
+            get {
+                return this.SortOrderField;
+            }
+            set {
+                if ((this.SortOrderField.Equals(value) != true)) {
+                    this.SortOrderField = value;
+                    this.RaisePropertyChanged("SortOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ValidateModelEnum ValidationModel {
+            get {
+                return this.ValidationModelField;
+            }
+            set {
+                if ((this.ValidationModelField.Equals(value) != true)) {
+                    this.ValidationModelField = value;
+                    this.RaisePropertyChanged("ValidationModel");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExternalSystemContext", Namespace="http://api.timelog.com")]
+    [System.SerializableAttribute()]
+    public partial class ExternalSystemContext : TimeLog.TransactionalApi.SDK.OrganisationService.APIBaseExtended {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SystemNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExternalIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SystemName {
+            get {
+                return this.SystemNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SystemNameField, value) != true)) {
+                    this.SystemNameField = value;
+                    this.RaisePropertyChanged("SystemName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public string ExternalID {
+            get {
+                return this.ExternalIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExternalIDField, value) != true)) {
+                    this.ExternalIDField = value;
+                    this.RaisePropertyChanged("ExternalID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Department", Namespace="http://www.timelog.com/api/tlp/v1_7")]
+    [System.SerializableAttribute()]
+    public partial class Department : TimeLog.TransactionalApi.SDK.OrganisationService.APIBaseExtended {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid ParentDepartmentGuidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid DepartmentManagerGuidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DepartmentIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string No {
+            get {
+                return this.NoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NoField, value) != true)) {
+                    this.NoField = value;
+                    this.RaisePropertyChanged("No");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ParentDepartmentGuid {
+            get {
+                return this.ParentDepartmentGuidField;
+            }
+            set {
+                if ((this.ParentDepartmentGuidField.Equals(value) != true)) {
+                    this.ParentDepartmentGuidField = value;
+                    this.RaisePropertyChanged("ParentDepartmentGuid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public System.Guid DepartmentManagerGuid {
+            get {
+                return this.DepartmentManagerGuidField;
+            }
+            set {
+                if ((this.DepartmentManagerGuidField.Equals(value) != true)) {
+                    this.DepartmentManagerGuidField = value;
+                    this.RaisePropertyChanged("DepartmentManagerGuid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int DepartmentID {
+            get {
+                return this.DepartmentIDField;
+            }
+            set {
+                if ((this.DepartmentIDField.Equals(value) != true)) {
+                    this.DepartmentIDField = value;
+                    this.RaisePropertyChanged("DepartmentID");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://www.timelog.com/api/tlp/v1_7")]
+    [System.SerializableAttribute()]
+    public partial class Employee : TimeLog.TransactionalApi.SDK.OrganisationService.APIBaseExtended {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int EmployeeIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InitialsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FullnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmployeeNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid DepartmentGuidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DepartmentNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DepartmentNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int InterfaceLanguageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TelephoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MobileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrivateAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrivateZipField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrivateCityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PrivateTelephoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ExternalIdentifierField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime HiredDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TerminationDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsHiredField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsLockedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid CostPriceGuidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CostPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid HourlyRateGuidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double HourlyRateField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int EmployeeID {
+            get {
+                return this.EmployeeIDField;
+            }
+            set {
+                if ((this.EmployeeIDField.Equals(value) != true)) {
+                    this.EmployeeIDField = value;
+                    this.RaisePropertyChanged("EmployeeID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string Initials {
+            get {
+                return this.InitialsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InitialsField, value) != true)) {
+                    this.InitialsField = value;
+                    this.RaisePropertyChanged("Initials");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public string Fullname {
+            get {
+                return this.FullnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FullnameField, value) != true)) {
+                    this.FullnameField = value;
+                    this.RaisePropertyChanged("Fullname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public string EmployeeNo {
+            get {
+                return this.EmployeeNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmployeeNoField, value) != true)) {
+                    this.EmployeeNoField = value;
+                    this.RaisePropertyChanged("EmployeeNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public System.Guid DepartmentGuid {
+            get {
+                return this.DepartmentGuidField;
+            }
+            set {
+                if ((this.DepartmentGuidField.Equals(value) != true)) {
+                    this.DepartmentGuidField = value;
+                    this.RaisePropertyChanged("DepartmentGuid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public string DepartmentName {
+            get {
+                return this.DepartmentNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DepartmentNameField, value) != true)) {
+                    this.DepartmentNameField = value;
+                    this.RaisePropertyChanged("DepartmentName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public string DepartmentNo {
+            get {
+                return this.DepartmentNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DepartmentNoField, value) != true)) {
+                    this.DepartmentNoField = value;
+                    this.RaisePropertyChanged("DepartmentNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public int InterfaceLanguage {
+            get {
+                return this.InterfaceLanguageField;
+            }
+            set {
+                if ((this.InterfaceLanguageField.Equals(value) != true)) {
+                    this.InterfaceLanguageField = value;
+                    this.RaisePropertyChanged("InterfaceLanguage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public string Telephone {
+            get {
+                return this.TelephoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TelephoneField, value) != true)) {
+                    this.TelephoneField = value;
+                    this.RaisePropertyChanged("Telephone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public string Mobile {
+            get {
+                return this.MobileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MobileField, value) != true)) {
+                    this.MobileField = value;
+                    this.RaisePropertyChanged("Mobile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public string PrivateAddress {
+            get {
+                return this.PrivateAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrivateAddressField, value) != true)) {
+                    this.PrivateAddressField = value;
+                    this.RaisePropertyChanged("PrivateAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public string PrivateZip {
+            get {
+                return this.PrivateZipField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrivateZipField, value) != true)) {
+                    this.PrivateZipField = value;
+                    this.RaisePropertyChanged("PrivateZip");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public string PrivateCity {
+            get {
+                return this.PrivateCityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrivateCityField, value) != true)) {
+                    this.PrivateCityField = value;
+                    this.RaisePropertyChanged("PrivateCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public string PrivateTelephone {
+            get {
+                return this.PrivateTelephoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PrivateTelephoneField, value) != true)) {
+                    this.PrivateTelephoneField = value;
+                    this.RaisePropertyChanged("PrivateTelephone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public string ExternalIdentifier {
+            get {
+                return this.ExternalIdentifierField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExternalIdentifierField, value) != true)) {
+                    this.ExternalIdentifierField = value;
+                    this.RaisePropertyChanged("ExternalIdentifier");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public System.DateTime HiredDate {
+            get {
+                return this.HiredDateField;
+            }
+            set {
+                if ((this.HiredDateField.Equals(value) != true)) {
+                    this.HiredDateField = value;
+                    this.RaisePropertyChanged("HiredDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public System.DateTime TerminationDate {
+            get {
+                return this.TerminationDateField;
+            }
+            set {
+                if ((this.TerminationDateField.Equals(value) != true)) {
+                    this.TerminationDateField = value;
+                    this.RaisePropertyChanged("TerminationDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+        public bool IsHired {
+            get {
+                return this.IsHiredField;
+            }
+            set {
+                if ((this.IsHiredField.Equals(value) != true)) {
+                    this.IsHiredField = value;
+                    this.RaisePropertyChanged("IsHired");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+        public bool IsLocked {
+            get {
+                return this.IsLockedField;
+            }
+            set {
+                if ((this.IsLockedField.Equals(value) != true)) {
+                    this.IsLockedField = value;
+                    this.RaisePropertyChanged("IsLocked");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+        public System.Guid CostPriceGuid {
+            get {
+                return this.CostPriceGuidField;
+            }
+            set {
+                if ((this.CostPriceGuidField.Equals(value) != true)) {
+                    this.CostPriceGuidField = value;
+                    this.RaisePropertyChanged("CostPriceGuid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+        public double CostPrice {
+            get {
+                return this.CostPriceField;
+            }
+            set {
+                if ((this.CostPriceField.Equals(value) != true)) {
+                    this.CostPriceField = value;
+                    this.RaisePropertyChanged("CostPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        public System.Guid HourlyRateGuid {
+            get {
+                return this.HourlyRateGuidField;
+            }
+            set {
+                if ((this.HourlyRateGuidField.Equals(value) != true)) {
+                    this.HourlyRateGuidField = value;
+                    this.RaisePropertyChanged("HourlyRateGuid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        public double HourlyRate {
+            get {
+                return this.HourlyRateField;
+            }
+            set {
+                if ((this.HourlyRateField.Equals(value) != true)) {
+                    this.HourlyRateField = value;
+                    this.RaisePropertyChanged("HourlyRate");
                 }
             }
         }
@@ -2064,6 +2416,842 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
         Message = 2,
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataAction", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Attributes")]
+    public enum DataAction : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Original = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Created = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Updated = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Deleted = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Copied = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Undefined = 99,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DomainType", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common")]
+    public enum DomainType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Customer = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Contact = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DescriptionType = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BillingCode = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PrintTemplateElement = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Currency = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExternalSystem = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaskCategory = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Industry = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Country = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExtractionTemplateElement = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkUnit = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HourlyRate = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntegrationContext = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PrintTemplate = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExchangeRate = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableDisbursement = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaskType = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Voucher = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaskType2 = 20,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Invoice = 21,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SupportTicket = 22,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableWorkUnit = 23,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableSupportContract = 24,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CreditNote = 25,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProductNumber = 26,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExtractionTemplate = 27,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomerStatus = 28,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomerHeader = 29,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Reminder = 30,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ETCEmployee = 31,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectTemplateHeader = 32,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Event = 33,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableTravelExpense = 34,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Payment = 35,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Employee = 36,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableRaw = 37,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Milestone = 38,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Disbursement = 39,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntegrationEventContext = 40,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AccountingPeriod = 41,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectResource = 42,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Allocation = 43,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceLine = 44,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectResourceGroup = 45,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaskHeader = 46,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PaymentTerm = 47,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableSupportUnit = 48,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        File = 49,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BillingPlan = 50,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Project = 51,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeLogExchangeRate = 52,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectType = 53,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectCategory = 54,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Milleage = 55,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Allowances = 56,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Accomodation = 57,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DomainProductNoCarrier = 58,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectHeader = 59,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectOrderStatus = 60,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SupportJournalPost = 61,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Department = 62,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeMachineMapping = 63,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HostingContract = 64,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ExpenseType = 65,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectType2 = 66,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SupportType = 67,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeOff = 68,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LicenseType = 69,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LicenseTypeRange = 70,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractLicense = 71,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractLicenseRange = 72,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceLineExport = 73,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DashboardWidget = 74,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DashboardItem = 75,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Notification = 76,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AuditLog = 77,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableCurrencyDifferent = 78,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeType = 79,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeCostRate = 80,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MileageRate = 81,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PriceList = 82,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CurrencyList = 83,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Service = 84,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableRounding = 85,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PaymentMethod = 86,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryCode = 87,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryCodeGroup = 88,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Process = 89,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FinancialIntegration = 94,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomFieldSection = 90,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomFieldDefinition = 91,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntegrationTransaction = 92,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntegrationTransactionLog = 93,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NormalWorkweek = 95,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AllowanceLegislation = 96,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HolidayCalendar = 97,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Task = 98,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Page = 99,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PersonalLink = 100,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Menu = 101,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserPageFavorite = 102,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomHelp = 103,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        User = 104,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserProfile = 105,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PageSetting = 106,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Area = 107,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AreaPrivilege = 108,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EventTypeGroup = 109,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Role = 110,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PageProperty = 111,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserSetting = 112,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MainSearchResultItem = 113,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProcessStep = 114,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Barrier = 115,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OpportunityType = 116,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Car = 117,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AllowanceRate = 118,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EventType = 119,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IndustryCode = 120,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Skills = 121,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceGroupingRuleTemplate = 122,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceGroupingRule = 123,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceLineGroupingRule = 124,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceLineGroupingRuleDetail = 125,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AutoInvoiceDetailLog = 126,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AutoInvoiceDetail = 127,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AutoInvoiceMaster = 128,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceSettings = 129,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractModel = 130,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectSubContract = 131,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectSubContractHeader = 132,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Recurrence = 133,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DataImportTemplate = 134,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CRMGroup = 135,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CRMGroupRelationDetails = 136,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PageFilter = 137,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Product = 138,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntegrationHandler = 139,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeTrackingItem = 140,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeTrackingGroup = 141,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CustomerRelationer = 142,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UnitType = 143,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectSubContractStatus = 144,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PlatformPaymentMethod = 145,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MilestoneType = 146,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeRegistration = 147,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OpportunityStatus = 148,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AbsenceCode = 149,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryAccount = 150,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryGroup = 151,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkerRequest = 152,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkerItem = 153,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeProjection = 154,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NormalWorkingTime = 155,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DepartmentDimensionMapping = 156,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProductNumberDimensionMapping = 157,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LegalEntity = 158,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CalendarEvent = 159,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Comment = 160,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HardBooking = 161,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AggregationMaster = 162,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AggregationUnit = 163,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkflowTemplate = 164,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkflowTemplateStep = 165,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkflowTransitionTemplate = 166,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkflowTemplateRelation = 167,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Workflow = 168,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkflowToken = 169,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkflowTransitionItem = 170,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ApprovalContextItem = 171,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AbsenceApprovalContextItem = 172,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeHeader = 173,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Platform = 174,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PlatformLicenceOverview = 175,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PlatformInvoiceInformation = 176,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Holiday = 177,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryAccountType = 178,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeTrackingDetailGroup = 179,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        WorkerItemLog = 180,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EventHeader = 181,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeRegistrationFinancialData = 186,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AbsenceCodeType = 187,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NormalWorkingTimeDay = 188,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryAccountEmployeePosting = 189,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ApprovalFlowItem = 190,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserChangeHistory = 191,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Favourite = 192,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Dialogue = 192,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ApprovalContextItemRemoveApprovedAbsence = 193,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CalendarEventAttendee = 194,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HardBookingDetail = 195,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CommentActionLog = 196,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ApprovalTimeTrackingItem = 197,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ReportAdjustProjectPayment = 198,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        HardBookingItem = 199,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SystemAdminHourlyRate = 200,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryTime = 201,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectFinancialsContext = 202,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GenericBudgetValue = 204,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectPlanFinancialsContext = 203,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserAreaPrivilege = 205,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectSubContractDropdown = 206,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeRegistrationWorkflow = 207,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryPeriod = 208,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GenericBudget = 209,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectSubContractCustomer = 210,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PaymentBudgetPeriod = 211,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectForecastTotal = 212,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoicingPotential = 213,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PriceGroupBasic = 214,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractTeamMember = 215,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Agent = 216,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaskSearchDenormalized = 217,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AllocationSearchDenormalized = 218,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NotSpecified = 0,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ValueOption", Namespace="http://api.timelog.com/services/customfield/1_0")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIBase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ExecutionStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.DomainType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.LegalEntity[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Employee[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Employee))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.EmployeeHeader[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.EmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Department[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Department))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Role[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Role))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ModuleType[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ModuleType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfLegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.RequestParameter[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.RequestParameter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIMessage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIMessage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ExternalSystemContext[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfModuleType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.APIMessageSeverity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.DataAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.CustomField[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.CustomField))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ValueOption[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.DataTypeEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.OrganisationService.ValidateModelEnum))]
+    public partial class ValueOption : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LabelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SortOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private object ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Label {
+            get {
+                return this.LabelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LabelField, value) != true)) {
+                    this.LabelField = value;
+                    this.RaisePropertyChanged("Label");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SortOrder {
+            get {
+                return this.SortOrderField;
+            }
+            set {
+                if ((this.SortOrderField.Equals(value) != true)) {
+                    this.SortOrderField = value;
+                    this.RaisePropertyChanged("SortOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public object Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DataTypeEnum", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields")]
+    public enum DataTypeEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        String = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Integer = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Float = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Date = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        List = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CheckBox = 5,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ValidateModelEnum", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields")]
+    public enum ValidateModelEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IsNotEmptyOrWhiteSpace = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IsPositiveNumber = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IsNegativeNumber = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IsEmail = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IsNotNull = 5,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_7", ConfigurationName="OrganisationService.OrganisationService")]
     public interface OrganisationService {
@@ -2356,6 +3544,26 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
             "ToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_7/OrganisationService/AssignAdvancedLicenseType" +
             "ToEmployeeResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignAdvancedLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/OrganisationService/GetEmployeesModifiedInPer" +
+            "iodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/OrganisationService/GetEmployeesModifiedInPer" +
+            "iodPagedResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee GetEmployeesModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/OrganisationService/GetEmployeesModifiedInPer" +
+            "iodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/OrganisationService/GetEmployeesModifiedInPer" +
+            "iodPagedResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee> GetEmployeesModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/OrganisationService/GetDepartmentsModifiedInP" +
+            "eriodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/OrganisationService/GetDepartmentsModifiedInP" +
+            "eriodPagedResponse")]
+        TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment GetDepartmentsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/OrganisationService/GetDepartmentsModifiedInP" +
+            "eriodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/OrganisationService/GetDepartmentsModifiedInP" +
+            "eriodPagedResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment> GetDepartmentsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2721,6 +3929,22 @@ namespace TimeLog.TransactionalApi.SDK.OrganisationService {
         
         public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignAdvancedLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
             return base.Channel.AssignAdvancedLicenseTypeToEmployeeAsync(employeeGuid, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee GetEmployeesModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetEmployeesModifiedInPeriodPaged(startDate, endDate, page, pageSize, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee> GetEmployeesModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetEmployeesModifiedInPeriodPagedAsync(startDate, endDate, page, pageSize, token);
+        }
+        
+        public TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment GetDepartmentsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetDepartmentsModifiedInPeriodPaged(startDate, endDate, page, pageSize, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment> GetDepartmentsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.OrganisationService.SecurityToken token) {
+            return base.Channel.GetDepartmentsModifiedInPeriodPagedAsync(startDate, endDate, page, pageSize, token);
         }
     }
 }
