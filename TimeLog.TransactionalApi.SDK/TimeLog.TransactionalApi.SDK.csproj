@@ -309,8 +309,8 @@
     <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\ProjectManagementService.wsdl" />
-    <None Include="Service References\ProjectManagementService\ProjectManagementService1.wsdl" />
+    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.wsdl" />
+    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure1.wsdl" />
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure2.wsdl" />
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure21.wsdl" />
     <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfAllocation.datasource">
@@ -323,6 +323,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfWorkUnit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.GetTaskByIDResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.IsAliveResponse.datasource">
@@ -626,9 +629,6 @@
     <None Include="Service References\InvoicingService\InvoicingServiceSecure.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ProjectManagementService\ProjectManagementService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\TimeTrackingService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -645,6 +645,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\OrganisationService\OrganisationServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
