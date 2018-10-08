@@ -26,6 +26,8 @@
       <xsd:element name="EmployeeLastName" type="xsd:string" />
       <xsd:element name="EmployeeFullName" type="xsd:string" />
       <xsd:element name="EmployeeInitials" type="xsd:string" />
+      <xsd:element name="EmployeeID" type="xsd:positiveInteger" /><!-- Relates to employee -->
+      <xsd:element name="EmployeeUserID" type="xsd:positiveInteger" /><!-- Relates to user -->
       <xsd:element name="TravelStartDate" type="xsd:dateTime" />
       <xsd:element name="TravelEndDate" type="xsd:dateTime" />
       <xsd:element name="TravelPurpose" type="xsd:string" />
