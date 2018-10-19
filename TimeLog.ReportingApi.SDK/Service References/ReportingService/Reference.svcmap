@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/tlp/service.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/tlp_bugfix/service.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service11.wsdl" MetadataType="Wsdl" ID="5c7dc629-7430-46a6-8db0-a8f7db20af6e" SourceId="1" SourceUrl="http://localhost/tlp/service.asmx?wsdl" />
-    <MetadataFile FileName="service11.disco" MetadataType="Disco" ID="3fd08b0b-4a72-4eb6-bbd2-fb288bfeb407" SourceId="1" SourceUrl="http://localhost/tlp/service.asmx?disco" />
+    <MetadataFile FileName="service2.disco" MetadataType="Disco" ID="d765d737-d894-4a15-9fb9-129d580b406b" SourceId="1" SourceUrl="http://localhost/tlp_bugfix/service.asmx?disco" />
+    <MetadataFile FileName="service2.wsdl" MetadataType="Wsdl" ID="14fd4005-89e1-45e5-af30-bd4bd9c3248a" SourceId="1" SourceUrl="http://localhost/tlp_bugfix/service.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

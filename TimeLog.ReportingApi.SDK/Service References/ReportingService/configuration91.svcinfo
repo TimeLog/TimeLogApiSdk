@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="4V8fryOd+sNKVFw7+ERt7RjkgOk=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="KRmj/DnDraOe19hb3E33T+NG5dk=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="ServiceSoap">
       <properties>
@@ -263,10 +263,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="ServiceSoap" contract="ReportingService.ServiceSoap" bindingType="basicHttpBinding" address="http://localhost/tlp/service.asmx" bindingConfiguration="ServiceSoap">
+    <endpoint name="ServiceSoap" contract="ReportingService.ServiceSoap" bindingType="basicHttpBinding" address="http://localhost/tlp_bugfix/service.asmx" bindingConfiguration="ServiceSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost/tlp/service.asmx</serializedValue>
+          <serializedValue>http://localhost/tlp_bugfix/service.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -348,10 +348,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="ServiceSoap12" contract="ReportingService.ServiceSoap" bindingType="customBinding" address="http://localhost/tlp/service.asmx" bindingConfiguration="ServiceSoap12">
+    <endpoint name="ServiceSoap12" contract="ReportingService.ServiceSoap" bindingType="customBinding" address="http://localhost/tlp_bugfix/service.asmx" bindingConfiguration="ServiceSoap12">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost/tlp/service.asmx</serializedValue>
+          <serializedValue>http://localhost/tlp_bugfix/service.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace TimeLog.ReportingApi.SDK
@@ -8,6 +9,88 @@ namespace TimeLog.ReportingApi.SDK
     /// </summary>
     public class Project
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Customer"/> class.
+        /// </summary>
+        public Project()
+        {
+            this.Id = 0;
+            this.ProjectGuid = Guid.Empty;
+            this.Name = String.Empty;
+            this.Status = -1;
+            this.OrderedByDepartment = -1;
+            this.ProjectStartDate = DateTime.MinValue;
+            this.ProjectEndDate = DateTime.MinValue;
+            this.Link = string.Empty;
+            this.Description = String.Empty;
+            this.CustomerId = 0;
+            this.CustomerName = string.Empty;
+            this.CustomerNo = String.Empty;
+            this.PMId = -1;
+            this.PMInitials = string.Empty;
+            this.PMFullname = String.Empty;
+            this.ProjectTypeId = -1;
+            this.ProjectTypeName = string.Empty;
+            this.ProjectCategoryId = -1;
+            this.ProjectCategoryName = string.Empty;
+            this.BudgetAmountExpenses = 0;
+            this.BudgetAmountTravel = 0;
+            this.BudgetAmount = 0;
+            this.BudgetHours = 0;
+            this.CreatedAt = DateTime.MinValue;
+            this.CreatedByEmployeeId = 0;
+            this.CreatedBy = string.Empty;
+            this.LastModifiedAt = DateTime.MinValue;
+            this.LastModifiedByEmployeeId = 0;
+            this.LastModifiedBy = string.Empty;
+            this.ProjectStatusName = string.Empty;
+            this.ContactFullName = string.Empty;
+            this.ContactEmail = string.Empty;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Customer"/> class.
+        /// </summary>
+        /// <param name="node">The XML node to initialize from</param>
+        /// <param name="namespaceManager">The namespace manager</param>
+        public Project(XmlNode node, XmlNamespaceManager namespaceManager)
+        {
+            this.Id = int.Parse(node.Attributes["ID"].InnerText);
+            this.ProjectGuid = Guid.Parse(node.Attributes["GUID"].InnerText);
+            this.Name = node.GetStringSafe("tlp:Name", namespaceManager);
+            this.Status = node.GetIntSafe("tlp:Status", namespaceManager);
+            this.OrderedByDepartment = node.GetIntSafe("tlp:OrderedByDepartment", namespaceManager);
+            this.ProjectStartDate = node.GetDateTimeSafe("tlp:ProjectStartDate", namespaceManager);
+            this.ProjectEndDate = node.GetDateTimeSafe("tlp:ProjectEndDate", namespaceManager);
+            this.Link = node.GetStringSafe("tlp:Link", namespaceManager);
+            this.Description = node.GetStringSafe("tlp:Description", namespaceManager);
+            this.CustomerId = node.GetIntSafe("tlp:CustomerId", namespaceManager);
+            this.CustomerName = node.GetStringSafe("tlp:CustomerName", namespaceManager);
+            this.CustomerNo = node.GetStringSafe("tlp:CustomerNo", namespaceManager);
+            this.PMId = node.GetIntSafe("tlp:PMId", namespaceManager);
+            this.PMInitials = node.GetStringSafe("tlp:PMInitials", namespaceManager);
+            this.PMFullname = node.GetStringSafe("tlp:PMFullname", namespaceManager);
+            this.ProjectTypeId = node.GetIntSafe("tlp:ProjectTypeId", namespaceManager);
+            this.ProjectTypeName = node.GetStringSafe("tlp:ProjectTypeName", namespaceManager);
+            this.ProjectCategoryId = node.GetIntSafe("tlp:ProjectCategoryId", namespaceManager);
+            this.ProjectCategoryName = node.GetStringSafe("tlp:ProjectCategoryName", namespaceManager);
+            this.BudgetAmountExpenses = node.GetIntSafe("tlp:BudgetAmountExpenses", namespaceManager);
+            this.BudgetAmountTravel = node.GetIntSafe("tlp:BudgetAmountTravel", namespaceManager);
+            this.BudgetAmount = node.GetIntSafe("tlp:BudgetAmount", namespaceManager);
+            this.BudgetHours = node.GetIntSafe("tlp:BudgetHours", namespaceManager);
+            this.CreatedAt = node.GetDateTimeSafe("tlp:CreatedAt", namespaceManager);
+            this.CreatedByEmployeeId = node.GetIntSafe("tlp:CreatedByEmployeeId", namespaceManager);
+            this.CreatedBy = node.GetStringSafe("tlp:CreatedBy", namespaceManager);
+            this.LastModifiedAt = node.GetDateTimeSafe("tlp:LastModifiedAt", namespaceManager);
+            this.LastModifiedByEmployeeId = node.GetIntSafe("tlp:LastModifiedByEmployeeId", namespaceManager);
+            this.LastModifiedBy = node.GetStringSafe("tlp:LastModifiedBy", namespaceManager);
+            this.ProjectStatusName = node.GetStringSafe("tlp:ProjectStatusName", namespaceManager);
+            this.ContactFullName = node.GetStringSafe("tlp:ContactFullName", namespaceManager);
+            this.ContactEmail = node.GetStringSafe("tlp:ContactEmail", namespaceManager);
+        }
+
+
         /// <summary>
         /// Gets the default parameter value for filtering for all projects
         /// </summary>
@@ -25,6 +108,7 @@ namespace TimeLog.ReportingApi.SDK
         /// </summary>
         public int Id { get; set; }
 
+        public Guid ProjectGuid { get; set; }
         /// <summary>
         /// Gets or set the name
         /// </summary>

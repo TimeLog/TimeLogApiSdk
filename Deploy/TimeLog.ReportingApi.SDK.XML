@@ -196,6 +196,11 @@
             Gets or sets a value indicating whether the allocation is active
             </summary>
         </member>
+        <member name="T:TimeLog.ReportingApi.SDK.ProjectContract">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:TimeLog.ReportingApi.SDK.Customer">
             <summary>
             Placeholder for customer related constants and properties
@@ -357,6 +362,18 @@
             <summary>
             Placeholder for project related constants and properties
             </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.Project.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Customer"/> class.
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingApi.SDK.Project.#ctor(System.Xml.XmlNode,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeLog.ReportingApi.SDK.Customer"/> class.
+            </summary>
+            <param name="node">The XML node to initialize from</param>
+            <param name="namespaceManager">The namespace manager</param>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Project.All">
             <summary>

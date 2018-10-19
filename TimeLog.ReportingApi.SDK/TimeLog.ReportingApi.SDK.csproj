@@ -47,6 +47,7 @@
     <Compile Include="Contact.cs" />
     <Compile Include="AccountManager.cs" />
     <Compile Include="Allocation.cs" />
+    <Compile Include="ProjectContract.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Barrier.cs" />
@@ -79,29 +80,8 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
     <None Include="Service References\ReportingService\service1.wsdl" />
-    <None Include="Service References\ReportingService\service11.wsdl" />
-    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetEventsRawResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLineDetailsRawResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetInvoiceLinesRawResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetInvoicesRawResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+    <None Include="Service References\ReportingService\service2.wsdl" />
     <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetOpportunitiesRawResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetWorkingHoursRawResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetWorkUnitsRawResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
@@ -124,7 +104,7 @@
     <None Include="Service References\ReportingService\service1.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ReportingService\service11.disco" />
+    <None Include="Service References\ReportingService\service2.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

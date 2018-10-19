@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace TimeLog.ReportingApi.SDK
@@ -8,6 +9,42 @@ namespace TimeLog.ReportingApi.SDK
     /// </summary>
     public class Task
     {
+        public Task()
+        {
+
+        }
+
+        public Task(XmlNode node, XmlNamespaceManager namespaceManager)
+        {
+            this.Id = int.Parse(node.Attributes["ID"].InnerText);
+            this.Name = node.GetStringSafe("tlp:Name", namespaceManager);
+            this.Wbs = node.GetStringSafe("tlp:WBS", namespaceManager);
+            this.Status = node.GetIntSafe("tlp:Status", namespaceManager);
+            this.ProjectId = node.GetIntSafe("tlp:ProjectId", namespaceManager);
+            this.Status = node.GetIntSafe("tlp:Status", namespaceManager);
+            this.StatusDetailed = node.GetIntSafe("tlp:StatusDetailed", namespaceManager);
+            this.ParentId = node.GetIntSafe("tlp:ParentID", namespaceManager);
+            this.IsParent = node.GetBoolTimeSafe("tlp:IsParent", namespaceManager);
+            this.TaskTypeId = node.GetIntSafe("tlp:TaskTypeId", namespaceManager);
+            this.TaskType = node.GetStringSafe("tlp:TaskType", namespaceManager);
+            this.TaskCategoryId = node.GetIntSafe("tlp:TaskCategoryId", namespaceManager);
+            this.TaskCategory = node.GetStringSafe("tlp:TaskCategory", namespaceManager);
+            this.BudgetHours = node.GetIntSafe("tlp:BudgetHours", namespaceManager);
+            this.BudgetAmount = node.GetIntSafe("tlp:BudgetAmount", namespaceManager);
+            this.IsFixedPrice = node.GetBoolTimeSafe("tlp:IsFixedPrice", namespaceManager);
+            this.StartDate = node.GetDateTimeSafe("tlp:StartDate", namespaceManager);
+            this.EndDate = node.GetDateTimeSafe("tlp:EndDate", namespaceManager);
+            this.InvoicingType = node.GetStringSafe("tlp:InvoicingType", namespaceManager);
+            this.CreatedAt = node.GetDateTimeSafe("tlp:CreatedAt", namespaceManager);
+            this.CreatedByEmployeeId = node.GetIntSafe("tlp:CreatedByEmployeeId", namespaceManager);
+            this.CreatedBy = node.GetStringSafe("tlp:CreatedBy", namespaceManager);
+            this.LastModifiedAt = node.GetDateTimeSafe("tlp:LastModifiedAt", namespaceManager);
+            this.LastModifiedByEmployeeId = node.GetIntSafe("tlp:LastModifiedByEmployeeId", namespaceManager);
+            this.LastModifiedBy = node.GetStringSafe("tlp:LastModifiedBy", namespaceManager);
+        }
+
+
+
         /// <summary>
         /// Gets the default parameter value for filtering for all tasks
         /// </summary>

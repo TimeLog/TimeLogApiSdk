@@ -16,6 +16,7 @@
         {
             // Initialize console and file logging.
             XmlConfigurator.Configure(new FileInfo(AppPath + "\\log4net.config"));
+
             BasicConfigurator.Configure();
 
             try
@@ -32,12 +33,13 @@
                 // GetEmployeesTransactionalApi.Consume();
                 // CreateProjectTransactionalApi.Consume();
                 // CreateProjectTransactionalApi2.Consume();
-                // InsertCustomerTest.Consume();
+                //InsertCustomerTest.Consume();
                 // InsertEmployeeTest.Consume();
-                // CreateProjectsForAllCustomers.Consume();
+                CreateProjectsForAllCustomers.Consume();
+                //CreateProjectsForCustomersInCsv.Consume();
                 // CreateProjectsForCustomersInSql.Consume();
                 // InvoiceManipulation.Consume();
-                ManipulateTasks.Consume();
+                // ManipulateTasks.Consume();
             }
             catch (Exception ex)
             {
