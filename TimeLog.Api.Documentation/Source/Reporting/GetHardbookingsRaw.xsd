@@ -19,7 +19,7 @@
       <xsd:element name="AllocationID" type="xsd:positiveInteger" />
       <xsd:element name="Date" type="xsd:dateTime" />
       <xsd:element name="CustomerName" type="xsd:string" />
-      <xsd:element name="Hours" type="xsd:positiveInteger" />
+      <xsd:element name="Hours" type="xsd:decimal" />
       <xsd:element name="HardBookingType" type="xsd:positiveInteger" />
       <xsd:element name="UID" type="xsd:string" minOccurs="0" />
       <xsd:element name="RecurrenceID" type="xsd:string" minOccurs="0"/>
