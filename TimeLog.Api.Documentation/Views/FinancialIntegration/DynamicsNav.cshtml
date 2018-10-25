@@ -1,104 +1,111 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Microsoft Dynamics NAV";
     Layout = "../Shared/_Layout_Single_Column.cshtml";
 }
-
 <article class="article">
     <h1>@ViewBag.Title</h1>
     <h2>Introduction</h2>
-
     <p>
-        The Microsoft Dynamics NAV implementation of the TimeLog generic financial integration supports the full set of features for a complete integration with TLP.
-        The NAV integration supports the following features of the generic financial integration:
+        The Microsoft Dynamics NAV implementation of the TimeLog generic financial integration supports the full set of features for a complete integration with TimeLog. The NAV integration supports the following features of the generic financial integration:
     </p>
     <p><strong>Invoicing version:</strong></p>
     <p>
         <ul>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Two-way synchronization of customers and contacts</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import of product numbers from NAV to TLP</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Transfer of booked invoices from TLP to NAV</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic tracking of NAV invoice number and status from inside TLP</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">TLP Audit interface matching the individual invoice totals from NAV and TLP</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import expenses from NAV to TLP</li>
-
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Two-way synchronization of customers</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import of product numbers from NAV to TimeLog</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Transfer of booked invoices from TimeLog to NAV</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic tracking of NAV invoice number and status from TimeLog</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">TimeLog Audit interface matching the individual invoice totals from NAV and TimeLog</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import expenses from NAV to TimeLog</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Export of TimeLog project number to NAV</li>
         </ul>
     </p>
     <p><strong>Quick intro</strong></p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/mDX_6Ns-Ldo" frameborder="0" allowfullscreen></iframe>
     <br />
     <br />
-    <h2>Features</h2>
+
+<h2>NAV licenses</h2>
+    <p>NAV licenses must be cut according to the list of object numbers in the <a href="https://api.timelog.com/FinancialIntegration/NAVInstallDocument#objectlicensing">NAV Install Document</a></p>
+
+<h2>Features</h2>
     <p>This section includes a list of features and limitations to each transfer area of the integration.</p>
-    <h3>Dimensions</h3>
-<p>TimeLog support transfer of dimensions of the invoice to Global Dimension 1 and 2 in NAV. <br/>
-    Dimensions can be specified for both invoice header and invoice lines. If nothing is specified for the lines they will inherit from header. <br/>
-    Following dimension can be transferred to NAV: 
-        <ul>
-            <li> - Project number</li>
-            <li> - Invoice Department Number</li>
-            <li> - Invoice Department Name</li>
-            <li> - Employee Department Number (only transferred on invoice line level)</li>
-        </ul>
-        
-    </p>
-    <h3>Currencies</h3>
-    <p>TimeLog does not create the currency in NAV if it does not exist. Therefore, make sure that all the currencies used in TimeLog are created in NAV.</p>
-    <h3>Customers</h3>
-    <p>None</p>
-    <h3>Contact</h3>
-    <p>
-        In the integration settings inside NAV, you find the checkbox for turning on/off extended contact handling ("Brug udvidet kontakt mgr").
-    </p>
+
+<h3>Dimensions</h3>
+<p>
+    TimeLog support transfer of dimensions of the invoice to Global Dimension 1 and 2 in NAV. <br/>
+    Dimensions can be specified for both invoice header and invoice lines. If nothing is specified for the lines they will inherit from the header. <br/>
+    Following dimension can be transferred to NAV:<br/>
+    <br/>
     <ul>
-        <li>If it is turned on, then the integration uses the NAV contact relationship ("kontakt relationsstyring"). One-to-many relation.</li>
-        <li>If it is turned off, then the integration uses the field "kontakt" on the debtor view. One-to-one relation.</li>
+        <li> - Project number</li>
+        <li> - Invoice Department Number</li>
+        <li> - Invoice Department Name</li>
+        <li> - Employee Department Number (only transferred on invoice line level)</li>
+    </ul>
+</p>
+
+
+<h3>Currencies</h3>
+    <p>TimeLog does not create the currency in NAV if it does not exist. Therefore, make sure that all the currencies used in TimeLog are created in NAV.</p>
+
+<h3>Customers</h3>
+<p>In the integration setup is it possible to control which system that is the master for new customers and how they are synchronized between TimeLog and NAV</p>
+
+<h3>Contact</h3>
+<p>In the integration settings inside NAV, you find the checkbox for turning on/off extended contact handling ("Brug udvidet kontakt mgr").</p>
+    <ul>
+        <li>If it is turned on, the integration uses the NAV contact relationship ("kontakt relationsstyring"). One-to-many relation.</li>
+        <li>If it is turned off, the integration uses the field "kontakt" on the debtor view. One-to-one relation.</li>
     </ul>
     <p>
         <strong>Without contact relationship</strong>
     </p>
-    <p>
-        When a contact is created or updated in TLP and transferred to NAV, then the field "kontakt" on the debtor updated with the latest transfer.
-        Any previous transfers are overwritten. When updating the field "kontakt" in NAV, this will NOT create a new contact in TLP.
-    </p>
-    <h3>Product numbers</h3>
-    <p>
-        Product numbers in NAV can not be added/modified/deleted from TLP. TLP can import NAV product numbers.
-    </p>
-    <h3>Employees</h3>
-    <p>
-        If employees are pushed from TLP to NAV, then an employee template is used to map fields that does not exist in TLP.
-        The template can be chosen in the NAV-TLP settings dialog. Employees can not be transferred from NAV to TLP.
-    </p>
-    <p>
-        If automatic transfer of employees is turned off then they have to be created manually in "Personale" > "Medarbejdere" using the exact same initials in the "Nummer"-field
-    </p>
-    <h3>Invoices</h3>
-    <p>Only booked invoices can be transferred from TLP to NAV. Invoices are transferred as drafts. Changes in invoice drafts inside NAV will not be reflected in TLP.</p>
-    <h3>Invoice lines</h3>
-    <p>
-        The TLP field "Unit of meassure" is NOT transferred to NAV on invoice lines. In NAV, the field "Enhedskoden" defaults to one specified in the item setup ("Vareopsætningen").
-    </p>
-    <h3>Expenses</h3>
-    <p>Expenses can only be transferred from NAV to TLP. TLP notifies NAV if an expense is taken or deleted from the pool.</p>
-    <h3>Projects</h3>
-    <p>
-        Projects can be transferred from NAV to TLP in the project version. In the invoicing version, an optional transfer of project details to either NAV global dimension 1 or 2 is possible.
-    </p>
-    <h3>Tasks</h3>
-    <p>Tasks can only be transferred from NAV to TLP. If tasks are deleted or moved in NAV then this will not be reflected in TLP.</p>
-    <h3>Allocations</h3>
-    <p>Allocations can only be transferred from NAV to TLP.</p>
-    <h3>Registrations</h3>
-    <p>Missing section.</p>
+    <p>When a contact is created or updated in TimeLog and transferred to NAV, is the field "kontakt" on the debtor updated with the latest transfer. Any previous transfers are overwritten. When updating the field "kontakt" in NAV, will this NOT create a new contact in TimeLog.</p>
 
-    <br />
-    <h2>Mapping</h2>
-    <p>This section contains the explicit mapping of fields between TLP and NAV.</p>
+<h3>Product numbers</h3>
+<p>
+    Product numbers in NAV cannot be added/modified/deleted from TimeLog. TimeLog can import NAV product numbers.
+</p>
 
+
+<h3>Employees</h3>
+<p>
+    If employees are pushed from TimeLog to NAV, then an employee template is used to map fields that does not exist in TimeLog. The template can be chosen in the NAV-TimeLog settings dialog. Employees cannot be transferred from NAV to TimeLog.
+</p>
+    <p>
+        If automatic transfer of employees is turned off, they have to be created manually in "Personale" > "Medarbejdere" using the exact same initials in the "Nummer"-field.    </p>
+
+<h3>Invoices</h3>
+<p>Only booked invoices can be transferred from TimeLog to NAV. Invoices are transferred as drafts. Changes in invoice drafts inside NAV will not be reflected in TimeLog.</p>
+
+<h3>Invoice lines</h3>
+    <p>
+        The TimeLog field "Unit of meassure" is NOT transferred to NAV on invoice lines. In NAV, the field "Enhedskoden" defaults to the one specified in the item setup ("Vareopsætningen").
+    </p>
+
+<h3>Expenses</h3>
+<p>Expenses can only be transferred from NAV to TimeLog. TimeLog notifies NAV if an expense is taken or deleted from the import pool.</p>
+
+<h3>Projects</h3>
+    <p>
+        Optional transfer of project number to either NAV global dimension 1 or 2 is possible
+    </p>
+
+<h3>Tasks</h3>
+<p>Tasks can only be transferred from NAV to TimeLog. If tasks are deleted or moved in NAV then this will not be reflected in TimeLog.</p>
+
+<h3>Allocations</h3>
+<p>Allocations can only be transferred from NAV to TimeLog.</p>
+
+<h3>Registrations</h3>
+<p>Time tracking in TimeLog is not transferred to NAV</p>
+<br />
+
+<h2>Mapping</h2>
+<p>This section contains the explicit mapping of fields between TimeLog and NAV.</p>
     <h3 id="mapping-customers">Customers</h3>
     <div class="bs-example">
-
         <table style="width: 100%;" class="mapping_table">
             <thead>
                 <tr>
@@ -116,6 +123,13 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>Company name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td>Name</td>
+                    <td></td>
+                </tr>
+                <tr>
                     <td>Customer No. </td>
                     <td>Customer No.</td>
                     <td>CustomerNo</td>
@@ -123,19 +137,12 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Company name</td>
-                    <td>Name</td>
-                    <td>Name</td>
-                    <td>Name</td>
+                    <td>Phone</td>
+                    <td>Phone</td>
+                    <td>Phone</td>
+                    <td>PhoneNumber</td>
                     <td></td>
                 </tr>
-            <tr>
-                <td>Phone</td>
-                <td>Phone</td>
-                <td>Phone</td>
-                <td>PhoneNumber</td>
-                <td></td>
-            </tr>
                 <tr>
                     <td>Fax</td>
                     <td>Fax</td>
@@ -148,7 +155,7 @@
                     <td>VAT no.</td>
                     <td>VatNo</td>
                     <td>VATNo</td>
-                    <td><span class="wrapcomment">Only available on Swedish NAV at the moment</span></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Organisation no.</td>
@@ -183,15 +190,15 @@
                     <td>-</td>
                     <td>Address.Address3</td>
                     <td></td>
-                    <td><span class="wrapcomment">Not transferred</span></td>
+                    <td><span class="wrapcomment">Is not transferred</span></td>
                 </tr>
-            <tr>
-                <td>City</td>
-                <td>City</td>
-                <td>Address.City</td>
-                <td>City</td>
-                <td></td>
-            </tr>
+                <tr>
+                    <td>City</td>
+                    <td>City</td>
+                    <td>Address.City</td>
+                    <td>City</td>
+                    <td></td>
+                </tr>
                 <tr>
                     <td>State</td>
                     <td>Territory</td>
@@ -202,7 +209,7 @@
                 <tr>
                     <td>Country</td>
                     <td>Country</td>
-                    <td>Address.Country</td>
+                    <td>Address.CountryISO</td>
                     <td>Country</td>
                     <td></td>
                 </tr>
@@ -234,13 +241,6 @@
                     <td>CurrencyCode</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
-                <tr class="info">
-                    <td>-</td>
-                    <td>-</td>
-                    <td>ExternalKey</td>
-                    <td>NavUniqueNo</td>
-                    <td><span class="wrapcomment">Is not transferred but used for mapping customers</span></td>
-                </tr>           
                 <tr>
                     <td>Owner</td>
                     <td>SalesPerson</td>
@@ -248,11 +248,11 @@
                     <td>SalesPerson</td>
                     <td><span class="wrapcomment">Is not transferred on customer</span></td>
                 </tr>
-                
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-contacts">Contact</h3>
+<h3 id="mapping-contacts">Contact persons</h3>
+<p>Contact persons at the TimeLog customer is only transferred together with the invoice</p>
     <div class="bs-example">
         <table style="width: 100%; display:none;" class="mapping_table">
             <thead>
@@ -262,9 +262,9 @@
                 </tr>
                 <tr>
                     <th>TimeLog</th>
-                    <th>e-conomic</th>
+                    <th>NAV</th>
                     <th>TimeLog</th>
-                    <th>e-conomic</th>
+                    <th>NAV</th>
                     <th>Remarks</th>
                 </tr>
             </thead>
@@ -273,21 +273,21 @@
                     <td>First name</td>
                     <td>Name</td>
                     <td>FirstName</td>
-                    <td>Name</td>
-                    <td><span class="wrapcomment">Concatenated in name</span></td>
+                    <td>FirstName</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Last name</td>
                     <td>Name</td>
                     <td>LastName</td>
-                    <td>Name</td>
-                    <td><span class="wrapcomment">Concatenated in name</span></td>
+                    <td>Surname</td>
+                    <td><span class="wrapcomment">Truncate to 30 in NAV</span></td>
                 </tr>
                 <tr>
                     <td>Phone</td>
                     <td>Telephone</td>
                     <td>Phone</td>
-                    <td>TelephoneNumber</td>
+                    <td>Mobile</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
@@ -298,24 +298,31 @@
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Your comment</td>
-                    <td>Comments</td>
-                    <td>Comment</td>
-                    <td>Comments</td>
+                    <td>Address</td>
+                    <td>Address</td>
+                    <td>Address</td>
+                    <td>Address</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>Customer</td>
-                    <td>-</td>
-                    <td>ExternalID</td>
-                    <td>Debtor</td>
-                    <td><span class="wrapcomment">The debtor from e-conomic is retrieved basen on the externalKey mapping in TimeLog.</span></td>
+                    <td>Address2</td>
+                    <td>Address2</td>
+                    <td>Address2</td>
+                    <td>Address2</td>
+                    <td><span class="wrapcomment"></span></td>
                 </tr>
-                <tr class="info">
-                    <td>-</td>
-                    <td>-</td>
-                    <td>ExternalID</td>
-                    <td>Name</td>
+                <tr>
+                    <td>City</td>
+                    <td>City</td>
+                    <td>City</td>
+                    <td>City</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Zip code</td>
+                    <td>Post code</td>
+                    <td>>ZipCode</td>
+                    <td>PostCode</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
             </tbody>
@@ -342,28 +349,28 @@
                     <td>No.</td>
                     <td>No.</td>
                     <td>ProductNo</td>
-                    <td>Number</td>
+                    <td>No</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
-            <tr>
-                <td>Name</td>
-                <td>Description</td>
-                <td>Name</td>
-                <td>Name</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td>Description</td>
-                <td>Description 2</td>
-                <td>Description</td>
-                <td>Description2</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-
+                <tr>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>Description 2</td>
+                    <td>Description</td>
+                    <td>Description2</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-employees">Employees</h3>
+<h3 id="mapping-employees">Employees</h3>
+<p>TimeLog employees is only transferred together with the invoice if listed as internal reference on the invoice</p>
     <div class="bs-example">
         <table style="width: 100%; display:none;" class="mapping_table">
             <thead>
@@ -373,40 +380,95 @@
                 </tr>
                 <tr>
                     <th>TimeLog</th>
-                    <th>e-conomic</th>
+                    <th>NAV</th>
                     <th>TimeLog</th>
-                    <th>e-conomic</th>
+                    <th>NAV</th>
                     <th>Remarks</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="info">
-                    <td>-</td>
-                    <td>No.</td>
-                    <td>ExternalKey</td>
-                    <td>Number</td>
+                <tr>
+                    <td>First name</td>
+                    <td>First name</td>
+                    <td>FirstName</td>
+                    <td>FirstName</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
-                    <td>First name</td>
-                    <td>Name</td>
-                    <td>Name</td>
-                    <td>Name</td>
-                    <td><span class="wrapcomment">Name is full name in e-conomic</span></td>
+                    <td>Last name</td>
+                    <td>Last name</td>
+                    <td>LastName</td>
+                    <td>LastName</td>
+                    <td></td>
                 </tr>
                 <tr>
+                    <td>Address</td>
+                    <td>Address</td>
+                    <td>Address</td>
+                    <td>Address</td>
                     <td></td>
-                    <td>Group</td>
-                    <td>-</td>
-                    <td>Group</td>
-                    <td><span class="wrapcomment">Default employee group from integration configuration setting</span></td>
+                </tr>
+                <tr>
+                    <td>Address2</td>
+                    <td>Address2</td>
+                    <td>Address2</td>
+                    <td>Address2</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>City</td>
+                    <td>City</td>
+                    <td>City</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>Country</td>
+                    <td>CountryISO</td>
+                    <td>Country</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>Email</td>
+                    <td>Email</td>
+                    <td>Email</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Initials</td>
+                    <td>Initial</td>
+                    <td>Initials</td>
+                    <td>No</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td>Mobile</td>
+                    <td>Mobile</td>
+                    <td>MobilePhone</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>Phone</td>
+                    <td>Phone</td>
+                    <td>Phone</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Zip code</td>
+                    <td>Post code</td>
+                    <td>ZipCode</td>
+                    <td>PostCode</td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
     </div>
     <h3 id="mapping-invoices">Invoices</h3>
     <div class="bs-example">
-
         <table style="width: 100%;" class="mapping_table">
             <thead>
                 <tr>
@@ -422,22 +484,20 @@
                 </tr>
             </thead>
             <tbody>
-                
-                
-            <tr>
-                <td>Customer No.</td>
-                <td>Sell-to Customer No.</td>
-                <td>CustomerKey</td>
-                <td>Sell-to Customer No.</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td>Contact No.</td>
-                <td>Bill-to/Sell-to Contact</td>
-                <td>ContactKey</td>
-                <td>Bill-to/Sell-to Contact</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
+                <tr>
+                    <td>Customer No.</td>
+                    <td>Sell-to Customer No.</td>
+                    <td>CustomerKey</td>
+                    <td>Sell-to Customer No.</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Contact No.</td>
+                    <td>Bill-to/Sell-to Contact</td>
+                    <td>ContactKey</td>
+                    <td>Bill-to/Sell-to Contact</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
                 <tr>
                     <td>Currency</td>
                     <td>CurrencyCode</td>
@@ -445,83 +505,83 @@
                     <td>CurrencyCode</td>
                     <td><span class="wrapcomment">Abbreviation of the currency from the invoice in TimeLog</span></td>
                 </tr>
-            <tr>
-                <td>Invoice Date</td>
-                <td>Document Date</td>
-                <td>InvoiceDate</td>
-                <td>DocumentDate</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td>Customers Reference / Invoice Address:(AttContactFullName)</td>
-                <td>Your Reference</td>
-                <td>CustomersReference / FixedAttContactFullName</td>
-                <td>YourReference</td>
-                <td><span class="wrapcomment">If customer Reference is null or empty FixedAttContactFullName is used.</span></td>
-            </tr>
-            <tr>
-                <td>Default discount %:</td>
-                <td>Invoice Disc. Code</td>
-                <td>DefaultDiscount</td>
-                <td>InvoiceDiscCode</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Prices Including VAT</td>
-                <td></td>
-                <td>PricesIncludingVAT</td>
-                <td><span class="wrapcomment">Is always set to false</span></td>
-            </tr>
-            <tr>
-                <td>Due Date</td>
-                <td>DueDate</td>
-                <td>Due Date</td>
-                <td>DueDate</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td>EAN</td>
-                <td>EAN</td>
-                <td>EAN</td>
-                <td>EAN</td>
-                <td><span class="wrapcomment">A specified EAN no. can be put in "Requsition no." on invoice. The number must start with "EAN" to be taken in consideration. If none in "Requisition no." invoice EAN will be used. Both are truncated to 13 characters.</span></td>
-            </tr>
-            <tr>
-                <td>Requisition No</td>
-                <td>External Document Number</td>
-                <td>RequisitionNo</td>
-                <td>ExternalDocumentNumber</td>
-                <td><span class="wrapcomment">Id truncated to 35 characters</span></td>
-            </tr>
-            <tr>
-                <td>Invoice No</td>
-                <td>No</td>
-                <td>InvoiceNo</td>
-                <td>No</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td>Invoice address: (Customer name)</td>
-                <td>Sell-To Customer Name</td>
-                <td>FixedCustomerName</td>
-                <td>SellToCustomerName</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td>Invoice address: (Att Contact Fullname)</td>
-                <td>Bill-to/Sell-to Contact</td>
-                <td>FixedAttContactFullName</td>
-                <td>Bill-to/Sell-to Contact</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td>Invoice Date</td>
-                <td>PostingDate</td>
-                <td>InvoiceDate</td>
-                <td>PostingDate</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
+                <tr>
+                    <td>Invoice Date</td>
+                    <td>Document Date</td>
+                    <td>InvoiceDate</td>
+                    <td>DocumentDate</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Customers Reference / Invoice Address:(AttContactFullName)</td>
+                    <td>Your Reference</td>
+                    <td>CustomersReference / FixedAttContactFullName</td>
+                    <td>YourReference</td>
+                    <td><span class="wrapcomment">If customer Reference is null or empty FixedAttContactFullName is used and is truncated to 30 characters in NAV.</span></td>
+                </tr>
+                <tr>
+                    <td>Default discount %:</td>
+                    <td>Invoice Disc. Code</td>
+                    <td>DefaultDiscount</td>
+                    <td>InvoiceDiscCode</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Prices Including VAT</td>
+                    <td></td>
+                    <td>PricesIncludingVAT</td>
+                    <td><span class="wrapcomment">Is always set to false</span></td>
+                </tr>
+                <tr>
+                    <td>Due Date</td>
+                    <td>DueDate</td>
+                    <td>Due Date</td>
+                    <td>DueDate</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>EAN</td>
+                    <td>EAN</td>
+                    <td>EAN</td>
+                    <td>EAN</td>
+                    <td><span class="wrapcomment">A specified EAN no. can be put in "Requisition no." on invoice. The number must start with "EAN" to be taken in consideration. If none in "Requisition no." invoice EAN will be used. Both are truncated to 13 characters.</span></td>
+                </tr>
+                <tr>
+                    <td>Requisition No</td>
+                    <td>External Document Number</td>
+                    <td>RequisitionNo</td>
+                    <td>ExternalDocumentNumber</td>
+                    <td><span class="wrapcomment">Id truncated to 35 characters</span></td>
+                </tr>
+                <tr>
+                    <td>Invoice No</td>
+                    <td>No</td>
+                    <td>InvoiceNo</td>
+                    <td>No</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Invoice address: (Customer name)</td>
+                    <td>Sell-To Customer Name</td>
+                    <td>FixedCustomerName</td>
+                    <td>SellToCustomerName</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Invoice address: (Att Contact Fullname)</td>
+                    <td>Bill-to/Sell-to Contact</td>
+                    <td>FixedAttContactFullName</td>
+                    <td>Bill-to/Sell-to Contact</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Invoice Date</td>
+                    <td>PostingDate</td>
+                    <td>InvoiceDate</td>
+                    <td>PostingDate</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
                 <tr>
                     <td>Invoice Date</td>
                     <td>OrderDate</td>
@@ -529,78 +589,74 @@
                     <td>OrderDate</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
-            <tr>
-                <td>Header</td>
-                <td>Posting Description</td>
-                <td>Header</td>
-                <td>PostingDescription</td>
-                <td><span class="wrapcomment">Is truncated to 50 characters</span></td>
-            </tr>
                 <tr>
-                    <td>Requisition No</td>
+                    <td>Heading</td>
+                    <td>Posting Description</td>
+                    <td>Header</td>
+                    <td>PostingDescription</td>
+                    <td><span class="wrapcomment">Is truncated to 50 characters in NAV. Setup a warning in TimeLog</span></td>
+                </tr>
+                <tr>
+                    <td>Message</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="wrapcomment">In not transferred</span></td>
+                </tr>
+                <tr>
+                    <td>P.O. No</td>
                     <td>Quote No</td>
                     <td>RequisitionNo</td>
                     <td>QuoteNo</td>
                     <td><span class="wrapcomment">Is truncated to 20 characters</span></td>
                 </tr>
-
-            <tr>
-                <td>Internal Reference Initials</td>
-                <td>Sales Person Code</td>
-                <td>InternalReferenceInitials</td>
-                <td>SalesPersonCode</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td>Invoice address: (Country Code(ISO))</td>
-                <td>Bill-to/Sell-to Country Code</td>
-                <td>FixedCountryISO</td>
-                <td>Bill-to/Sell-to CountryCode</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
                 <tr>
-            <td>Invoice address: (address 1)</td>
-            <td>Bill-to/Sell-to address</td>
-            <td>FixedAddress1</td>
-            <td>Bill-to/Sell-to address</td>
-            <td><span class="wrapcomment">Is truncated to 50 characters</span></td>
-        </tr>
-            <tr>
-                <td>Invoice address: (address 2)</td>
-                <td>Bill-to/Sell-to address 2</td>
-                <td>FixedAddress2</td>
-                <td>Bill-to/Sell-to address 2</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-            <tr>
-                <td>Invoice address: (Zip code)</td>
-                <td>Bill-to/Sell-to PostCode</td>
-                <td>FixedZipCode</td>
-                <td>Bill-to/Sell-to PostCode</td>
-                <td><span class="wrapcomment"></span></td>
-            </tr>
-           
-            <tr>
-                <td>-</td>
-                <td>Global Dimension 1</td>
-                <td>-</td>
-                <td>GlobalDimension1</td>
-                <td><span class="wrapcomment">The global dimension is transferred based on the setting in the financial host setting file. Project Number, Department Number, Department Name is possible dimensions. </span></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Global Dimension2</td>
-                <td></td>
-                <td>GlobalDimension2</td>
-                <td><span class="wrapcomment">The global dimension is transferred based on the setting in the financial host setting file. Project Number, Department Number, Department Name is possible dimensions. </span></td>
-            </tr>
-               
+                    <td>VAT %</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="wrapcomment">Is not transferred. Is a default setup in the integration page</span></td>
+                </tr>
+                <tr>
+                    <td>Internal Reference Initials</td>
+                    <td>Sales Person Code</td>
+                    <td>InternalReferenceInitials</td>
+                    <td>SalesPersonCode</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Invoice address: (Country Code(ISO))</td>
+                    <td>Bill-to/Sell-to Country Code</td>
+                    <td>FixedCountryISO</td>
+                    <td>Bill-to/Sell-to CountryCode</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Invoice address: (address 1)</td>
+                    <td>Bill-to/Sell-to address</td>
+                    <td>FixedAddress1</td>
+                    <td>Bill-to/Sell-to address</td>
+                    <td><span class="wrapcomment">Is truncated to 50 characters</span></td>
+                </tr>
+                <tr>
+                    <td>Invoice address: (address 2)</td>
+                    <td>Bill-to/Sell-to address 2</td>
+                    <td>FixedAddress2</td>
+                    <td>Bill-to/Sell-to address 2</td>
+                    <td><span class="wrapcomment">Is truncated to 50 characters in NAV</span></td>
+                </tr>
+                <tr>
+                    <td>Invoice address: (Zip code)</td>
+                    <td>Bill-to/Sell-to PostCode</td>
+                    <td>FixedZipCode</td>
+                    <td>Bill-to/Sell-to PostCode</td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
             </tbody>
         </table>
     </div>
     <h3 id="mapping-invoicelines">Invoice lines</h3>
     <div class="bs-example">
-
         <table style="width: 100%; display:none;" class="mapping_table">
             <thead>
                 <tr>
@@ -609,9 +665,9 @@
                 </tr>
                 <tr>
                     <th>TimeLog</th>
-                    <th>e-conomic</th>
+                    <th>NAV</th>
                     <th>TimeLog</th>
-                    <th>e-conomic</th>
+                    <th>NAV</th>
                     <th>Remarks</th>
                 </tr>
             </thead>
@@ -621,20 +677,12 @@
                     <td>Product no.</td>
                     <td>ProductNo</td>
                     <td>Product</td>
-                    <td><span class="wrapcomment">Item is retrieved from e-conomic basen on the productNo</span></td>
+                    <td><span class="wrapcomment"></span></td>
                 </tr>
-                <tr>
-                    <td>Unit</td>
-                    <td>Unit</td>
-                    <td>-</td>
-                    <td>Unit</td>
-                    <td><span class="wrapcomment">Unit attached to product retrieved from e-conomic</span></td>
-                </tr>
-
                 <tr>
                     <td>Description</td>
                     <td></td>
-                    <td>Text</td>
+                    <td>Description</td>
                     <td>Description</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
@@ -643,29 +691,34 @@
                     <td>Quantity</td>
                     <td>Quantity</td>
                     <td>Quantity</td>
-                    <td><span class="wrapcomment">Economic doesn't allow a quantity of 0. If so the rate will be set to 0 instead</span></td>
+                    <td><span class="wrapcomment"></span></td>
+                </tr>
+                <tr>
+                    <td>Unit</td>
+                    <td>Unit</td>
+                    <td>-</td>
+                    <td>InvoiceUnitType</td>
+                    <td><span class="wrapcomment">If not set, is pieces used as default.</span></td>
                 </tr>
                 <tr>
                     <td>Rate</td>
                     <td>Price</td>
                     <td>Rate</td>
-                    <td>UnitNetPrice</td>
+                    <td>UnitPrice</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
                     <td>%</td>
                     <td>Discount (%)</td>
                     <td>Discount</td>
-                    <td>DiscountAsPercent</td>
+                    <td>-</td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
-
             </tbody>
         </table>
     </div>
     <h3 id="mapping-expenses">Expenses</h3>
     <div class="bs-example">
-
         <table style="width: 100%; display: none;" class="mapping_table">
             <thead>
                 <tr>
@@ -674,41 +727,26 @@
                 </tr>
                 <tr>
                     <th>TimeLog</th>
-                    <th>e-conomic</th>
+                    <th>NAV</th>
                     <th>TimeLog</th>
-                    <th>e-conomic</th>
+                    <th>NAV</th>
                     <th>Remarks</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="info">
+                <tr>
+                    <td>Currency</td>
+                    <td>Currency</td>
+                    <td>CurrencyISO</td>
+                    <td>CurrencyCode</td>
+                    <td><span class="wrapcomment">The currencyISO in TimeLog is fetched from the TimeLog currency, based on the currency abbreviation on the purchase from NAV</span></td>
+                </tr>
+                <tr>
                     <td>-</td>
-                    <td></td>
-                    <td>ExternalID</td>
-                    <td>EntryNumber</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-
-                <tr>
-                    <td>Date</td>
-                    <td>Date</td>
-                    <td>Created</td>
-                    <td>Date</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Currency</td>
-                    <td>Currency</td>
-                    <td>CurrencyID</td>
-                    <td>Currency</td>
-                    <td><span class="wrapcomment">The currencyID in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from e-conomic</span></td>
-                </tr>
-                <tr>
-                    <td>Currency</td>
                     <td>-</td>
-                    <td>ExchangeRate</td>
-                    <td>Currency</td>
-                    <td><span class="wrapcomment">The currency rate in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from e-conomic</span></td>
+                    <td>CurrencyRate</td>
+                    <td>CurrencyRate</td>
+                    <td><span class="wrapcomment">The CurrencyRate in TimeLog is fetched from the TimeLog currency, based on the currency abbreviation on the purchase from NAV</span></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -721,7 +759,7 @@
                     <td></td>
                     <td></td>
                     <td>InvoiceNo</td>
-                    <td>-</td>
+                    <td></td>
                     <td><span class="wrapcomment"></span></td>
                 </tr>
                 <tr>
@@ -729,63 +767,36 @@
                     <td></td>
                     <td>PaymentMethod</td>
                     <td>-</td>
-                    <td><span class="wrapcomment">Default paymentmethod for import. Set up in TimeLog</span></td>
+                    <td><span class="wrapcomment">Default payment method for import is setup in TimeLog</span></td>
                 </tr>
                 <tr>
                     <td>Date</td>
                     <td>Date</td>
                     <td>PurchaseDate</td>
-                    <td>Date</td>
+                    <td>DocumentDate</td>
                     <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Project</td>
-                    <td></td>
-                    <td>ProjectID</td>
-                    <td>-</td>
-                    <td><span class="wrapcomment">Is always set to 0</span></td>
                 </tr>
                 <tr>
                     <td>Amount incl. VAT</td>
                     <td>Amount (Curr)</td>
-                    <td>PurchasedAmount</td>
+                    <td>CostCurrencyIncludingVAT</td>
                     <td>Amount</td>
                     <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>VAT</td>
-                    <td></td>
-                    <td>VATIncluded</td>
-                    <td>-</td>
-                    <td><span class="wrapcomment">Always set to 0. Expenses will exclude VAT amounts</span></td>
                 </tr>
                 <tr>
                     <td>Comment</td>
                     <td></td>
                     <td>Comment</td>
                     <td>entry.Account.AccountNumber</td>
-                    <td><span class="wrapcomment">Used as placeholder for account no. from e-conomic</span></td>
-                </tr>
-                <tr>
                     <td></td>
-                    <td>Entry</td>
-                    <td>InvoiceNo</td>
-                    <td>VoucherNumber</td>
-                    <td><span class="wrapcomment"></span></td>
                 </tr>
             </tbody>
         </table>
-
-
-        <br />
-        <h2>Technical details</h2>
-        <p>This section will outline the technical needs from Dynamics NAV in order to make this integration work.</p>
-        <h3>NAV licenses</h3>
-        <p>NAV licenses must be cut according to the list of object numbers in the <a href="@Url.Action("NAVInstallDocument")#objectlicensing">NAV Install Document</a></p>
-        <h3>Custom settings</h3>
+        
+        @*<h3>Custom settings</h3>
         <p>
             Some settings can be changed in the settings file (TimeLog.Financial.Host.Settings.xml) that is part of the financial host.
             These settings should only be changed after consulting TimeLog. See the @Html.ActionLink("full documentation", "ConfigurationFile")
-        </p>
+        </p>*@
     </div>
 </article>
