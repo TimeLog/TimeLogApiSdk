@@ -25,14 +25,14 @@
                     Logger.Info("Sucessfully authenticated on transactional API");
                 }
 
-                var _result = ProjectManagementHandler.Instance.ProjectManagementClient.GetTasksByProjectId(Guid.Parse("02624193-784C-4569-9CD1-50B764EEE1A6"), ProjectManagementHandler.Instance.Token);
+                var _result = ProjectManagementHandler.Instance.ProjectManagementClient.GetProjectTasksPaged(Guid.Parse("02624193-784C-4569-9CD1-50B764EEE1A6"), 1, 100, ProjectManagementHandler.Instance.Token);
                 if (_result.ResponseState == ExecutionStatus.Success)
                 {
                     foreach (var _task in _result.Return)
                     {
                         if (Logger.IsDebugEnabled)
                         {
-                            Logger.DebugFormat("{0} > {1}", _task.Details.WBS, _task.Name);
+                            Logger.DebugFormat("{0} > {1}", _task.TaskWBS, _task.TaskName);
                         }
                     }
                 }
