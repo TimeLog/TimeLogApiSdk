@@ -35,8 +35,8 @@
                 var _newProject = new Project
                 {
                     ID = Guid.NewGuid(),
-                    AccountManagerID = 68,
-                    ProjectManagerID = 68,
+                    AccountManagerID = 523,
+                    ProjectManagerID = 523,
                     TypeID = 249,
                     StartDate = DateTime.Today,
                     StageID = 0,
@@ -55,7 +55,7 @@
                     CurrencyID = 0,
                     MainContractID =
                                               1, // TimeMaterial = 1, FixedPrice = 2, TimeMaterialAccountEndBalancing = 3, TimeMaterialAccountPeriodicBalancing = 4, PrepaidServices = 5, RevenueReqPerTask = 6, ContinuousService = 7, ContinuousItemInvoicing = 8
-                    DepartmentHandledByID = 97,
+                    DepartmentHandledByID = 8,
                     DepartmentOrderedByID = 0,
                     //Description = string.Empty,
                     EndDate = DateTime.Today.AddDays(30),
@@ -112,7 +112,7 @@
                     Name = "Test task",
                     No = "TASK001",
                     StartDate = DateTime.Now,
-                    ProjectSubContractID = 0,
+                    ProjectSubContractID = 0, // 0 = Inherit from project default contract
                     State = new TaskState { IsActive = true },
                     TaskID = -1,
                     TaskTypeID = 328
@@ -161,7 +161,7 @@
                     Name = "Test task",
                     No = "TASK002",
                     StartDate = DateTime.Now,
-                    ProjectSubContractID = 0,
+                    ProjectSubContractID = 0, // 0 = Inherit from parent task
                     State = new TaskState { IsActive = true },
                     TaskID = -1,
                     TaskTypeID = 328
