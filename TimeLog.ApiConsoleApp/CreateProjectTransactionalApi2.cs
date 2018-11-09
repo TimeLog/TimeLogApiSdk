@@ -54,7 +54,7 @@
                     CategoryID = 0,
                     CurrencyID = 0,
                     MainContractID =
-                                              1, // TimeMaterial = 1, FixedPrice = 2, TimeMaterialAccountEndBalancing = 3, TimeMaterialAccountPeriodicBalancing = 4, PrepaidServices = 5, RevenueReqPerTask = 6, ContinuousService = 7, ContinuousItemInvoicing = 8
+                                              1, // ONLY FOR CREATION! TimeMaterial = 1, FixedPrice = 2, TimeMaterialAccountEndBalancing = 3, TimeMaterialAccountPeriodicBalancing = 4, PrepaidServices = 5, RevenueReqPerTask = 6, ContinuousService = 7, ContinuousItemInvoicing = 8
                     DepartmentHandledByID = 8,
                     DepartmentOrderedByID = 0,
                     //Description = string.Empty,
@@ -97,6 +97,38 @@
                 if (Logger.IsDebugEnabled)
                 {
                     Logger.DebugFormat("Project created (ID: {0})", _project.Item.ProjectID);
+                }
+
+                _project.Item.Name = "TimeLog test implementering updated";
+
+                var _updateProjectResult = ProjectManagementHandler.Instance.ProjectManagementClient.UpdateProject(_project.Item, ProjectManagementHandler.Instance.Token);
+                if (_updateProjectResult.ResponseState != ExecutionStatus.Success)
+                {
+                    foreach (var _apiMessage in _updateProjectResult.Messages)
+                    {
+                        if (Logger.IsErrorEnabled)
+                        {
+                            Logger.Error(_apiMessage.Message);
+                        }
+                    }
+
+                    return;
+                }
+
+                _project = _updateProjectResult.Return.FirstOrDefault();
+                if (_project == null || _project.Status != ExecutionStatus.Success)
+                {
+                    if (Logger.IsWarnEnabled)
+                    {
+                        Logger.Warn("No project updated");
+                    }
+
+                    return;
+                }
+
+                if (Logger.IsDebugEnabled)
+                {
+                    Logger.DebugFormat("Project updated (ID: {0})", _project.Item.ProjectID);
                 }
 
                 var _task1 = new Task
