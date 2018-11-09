@@ -150,6 +150,9 @@
                     TaskTypeID = 328
                 };
 
+                _task1.ExternalKeys = new[] { new ExternalSystemContext { SystemName = "OEBS", ExternalID = "9988" } };
+                _task1.IsExternalKeysLoaded = true;
+
                 var _createTaskResult = ProjectManagementHandler.Instance.ProjectManagementClient.CreateTask(_task1, _project.Item.ProjectID, ProjectManagementHandler.Instance.Token);
                 if (_createTaskResult.ResponseState != ExecutionStatus.Success)
                 {
@@ -214,7 +217,7 @@
                 }
 
                 var _task2Return = _createTask2Result.Return.FirstOrDefault();
-                if (_task2Return == null || _task.Status != ExecutionStatus.Success)
+                if (_task2Return == null || _task2Return.Status != ExecutionStatus.Success)
                 {
                     if (Logger.IsWarnEnabled)
                     {
@@ -229,6 +232,27 @@
                     Logger.DebugFormat("Task created (ID: {0})", _task2Return.Item.TaskID);
                 }
 
+                var _getTaskByIdResult = ProjectManagementHandler.Instance.ProjectManagementClient.GetTaskById(_task.Item.ID, ProjectManagementHandler.Instance.Token);
+                if (_getTaskByIdResult.ResponseState != ExecutionStatus.Success)
+                {
+                    foreach (var _apiMessage in _createTask2Result.Messages)
+                    {
+                        if (Logger.IsErrorEnabled)
+                        {
+                            Logger.Error(_apiMessage.Message);
+                        }
+                    }
+
+                    return;
+                }
+
+                foreach (var _taskItem in _getTaskByIdResult.Return)
+                {
+                    if (Logger.IsDebugEnabled)
+                    {
+                        Logger.DebugFormat("{0} > {1}", _taskItem.Details.WBS, _taskItem.Name);
+                    }
+                }
 
             }
             else

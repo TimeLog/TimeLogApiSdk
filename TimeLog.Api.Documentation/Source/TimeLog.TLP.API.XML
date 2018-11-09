@@ -5239,8 +5239,19 @@
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.CreateProject(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
-            Create a Project
+            Create a Project.
             </summary>
+            <remarks>
+            Project.MainContractID refers in the creation scenario to the following values:
+            TimeMaterial = 1
+            FixedPrice = 2
+            TimeMaterialAccountEndBalancing = 3
+            TimeMaterialAccountPeriodicBalancing = 4
+            PrepaidServices = 5
+            RevenueReqPerTask = 6
+            ContinuousService = 7
+            ContinuousItemInvoicing = 8
+            </remarks>
             <param name="project">The Project to be created</param>
             <param name="token"></param>
             <returns>The Project in state after creation in TimeLog {Project}</returns>
@@ -5313,6 +5324,7 @@
             <summary>
             Creates a Task on the specified Project. The Task is placed as the last item in the WBS-structure of the Project
             </summary>
+            <remarks>Note: Put Task.ProjectSubContractID to 0 to inherit from the default contract of the project</remarks>
             <param name="task">The task to be created</param>
             <param name="projectID">The integer ID of the Project the created Task shold be added to</param>
             <param name="token"></param>
@@ -5322,6 +5334,7 @@
             <summary>
             Creates a Task as a Sub-task to an existing Task. The new Task is placed as the last Sub-task in the WBS-structure of the Parent-task
             </summary>
+            <remarks>Note: Put Task.ProjectSubContractID to 0 to inherit from the contract of the parent task</remarks>
             <param name="task">The task to be created</param>
             <param name="parentTaskId">The integer ID of the Parent-task the created Task shold be added to</param>
             <param name="projectID">The integer ID of the Project the holds the Parent-task</param>
@@ -5382,7 +5395,7 @@
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTasksByProjectId(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
-            Gets a list of tasks associated to a project
+            Gets a list of tasks associated to a project. Only first level tasks are returned, use GetProjectTasksPaged to get all levels.
             </summary>
             <param name="projectGuid">The guid of the project</param>
             <param name="token">Security token of the current user</param>
@@ -5411,6 +5424,16 @@
             <param name="criteria">Criteria to search for</param>
             <param name="token">Security token of the current user</param>
             <returns>A list of tasks that matches the search criteria</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.MoveTaskUnderParentTask(System.Int32,TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Move task to another task
+            </summary>
+            <param name="parentTaskID">receiver task id</param>
+            <param name="task">dropped task</param>
+            <param name="changeToParentContract">if required change the dropped task contract to same as parent task contract</param>
+            <param name="token">Security token of the current user</param>
+            <returns>The specified Task that has been moved</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetEmployeeWork(System.String,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>

@@ -26,8 +26,8 @@
     }
     @if (!string.IsNullOrWhiteSpace(Model.Remarks))
     {
-        <h3>Returns</h3>
-        <p>@Model.Remarks</p>
+        <h3>Remarks</h3>
+        <p>@Html.Raw(Model.Remarks.Trim('\n').Replace("\n", "<br />"))</p>
     }
 
 
