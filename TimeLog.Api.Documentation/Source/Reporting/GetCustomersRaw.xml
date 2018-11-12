@@ -20,6 +20,7 @@
     <tlp:Fax>+1 999 9999 9999</tlp:Fax>
     <tlp:Email>info@microsoft.com</tlp:Email>
     <tlp:WebPage>www.microsoft.com</tlp:WebPage>
+    <tlp:EanNo>1234567890123</tlp:EanNo>
     <tlp:VATNo>812780570</tlp:VATNo>
     <tlp:Comment>Contacts need data</tlp:Comment>
     <tlp:AccountManagerID>10</tlp:AccountManagerID>
