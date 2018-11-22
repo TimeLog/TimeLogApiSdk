@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="HourlyRates">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="HourlyRate" type="tlp:HourlyRateRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="HourlyRate_Key">
+      <xsd:selector xpath=".//tlp:HourlyRate" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="HourlyRateRaw_Type">
+    <xsd:sequence>
+	  <xsd:element name="Name" type="xsd:string" />
+	  <xsd:element name="Amount" type="xsd:decimal" />
+	  <xsd:element name="Currency" type="xsd:string" />
+	  <xsd:element name="Status" type="xsd:positiveInteger" />
+	  <xsd:element name="PriceGroupID" type="xsd:positiveInteger" />
+	  <xsd:element name="CustomerID" type="xsd:positiveInteger" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

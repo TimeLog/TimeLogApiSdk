@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:HourlyRates xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/HourlyRatesRaw.xsd">
+	<tlp:HourlyRates>
+		<tlp:Name>Secretary</tlp:Name>
+		<tlp:Amount>80.0000</tlp:Amount>
+		<tlp:Currency>EUR</tlp:Currency>
+		<tlp:Status>1</tlp:Status>
+		<tlp:PriceGroupID>1</tlp:PriceGroupID>
+		<tlp:CustomerID>669</tlp:CustomerID>
+	</tlp:HourlyRates>
+	<tlp:HourlyRates>
+		<tlp:Name>Consultant</tlp:Name>
+		<tlp:Amount>150.0000</tlp:Amount>
+		<tlp:Currency>EUR</tlp:Currency>
+		<tlp:Status>1</tlp:Status>
+		<tlp:PriceGroupID>1</tlp:PriceGroupID>
+		<tlp:CustomerID>669</tlp:CustomerID>
+	</tlp:HourlyRates>
+	<tlp:HourlyRates>
+		<tlp:Name>Project manager</tlp:Name>
+		<tlp:Amount>140.0000</tlp:Amount>
+		<tlp:Currency>EUR</tlp:Currency>
+		<tlp:Status>1</tlp:Status>
+		<tlp:PriceGroupID>1</tlp:PriceGroupID>
+		<tlp:CustomerID>669</tlp:CustomerID>
+	</tlp:HourlyRates>
+	<tlp:HourlyRates>
+		<tlp:Name>Programmer</tlp:Name>
+		<tlp:Amount>120.0000</tlp:Amount>
+		<tlp:Currency>EUR</tlp:Currency>
+		<tlp:Status>1</tlp:Status>
+		<tlp:PriceGroupID>1</tlp:PriceGroupID>
+		<tlp:CustomerID>669</tlp:CustomerID>
+	</tlp:HourlyRates>
+	<tlp:HourlyRates>
+		<tlp:Name>TimeLog Internal</tlp:Name>
+		<tlp:Amount>0.0000</tlp:Amount>
+		<tlp:Currency>EUR</tlp:Currency>
+		<tlp:Status>1</tlp:Status>
+		<tlp:PriceGroupID>1</tlp:PriceGroupID>
+		<tlp:CustomerID>669</tlp:CustomerID>
+	</tlp:HourlyRates>
+</tlp:HourlyRates>
