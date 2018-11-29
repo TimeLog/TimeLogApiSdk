@@ -14,6 +14,12 @@
               <xs:element name="TimeOffName" type="xs:string" />
               <xs:element name="Date" type="xs:dateTime" />
               <xs:element name="RegHours" type="xs:float" />
+              <xs:element name="CreatedAt" type="xs:dateTime" />
+              <xs:element name="CreatedByEmployeeId" type="xs:positiveInteger" />
+              <xs:element name="CreatedBy" type="xs:string" />
+              <xs:element name="LastModifiedAt" type="xs:dateTime" />
+              <xs:element name="LastModifiedByEmployeeId" type="xs:positiveInteger" />
+              <xs:element name="LastModifiedBy" type="xs:string" />
             </xs:sequence>
             <xs:attribute name="ID" type="xs:positiveInteger" use="required" />
           </xs:complexType>

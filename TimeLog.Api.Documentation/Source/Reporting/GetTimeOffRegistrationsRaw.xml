@@ -7,7 +7,13 @@
     <tlp:EmployeeLastName>Doe</tlp:EmployeeLastName>
     <tlp:TimeOffCode>70</tlp:TimeOffCode>
     <tlp:TimeOffName>Afspadsering</tlp:TimeOffName>
-    <tlp:Date>2013-02-11T00:00:00</tlp:Date>
+    <tlp:Date>2018-10-29T00:00:00</tlp:Date>
     <tlp:RegHours>3.000000000000000e+000</tlp:RegHours>
+    <tlp:CreatedAt>2018-10-30T09:59:22.3200000</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>17</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>JDO</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2018-10-30T09:59:22.3200000</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>17</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>JDO</tlp:LastModifiedBy>
   </tlp:TimeOffRegistration>
 </tlp:TimeOffRegistrations>
