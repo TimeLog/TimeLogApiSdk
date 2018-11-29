@@ -6,9 +6,9 @@
 	  <tlp:TimeRegistrationGuid>87ED7267-3C2F-4892-ACEB-138E3754876C</tlp:TimeRegistrationGuid>
 	  <tlp:OvertimeFactor>100</tlp:OvertimeFactor>
 	  <tlp:EmployeeID>373</tlp:EmployeeID>
-	  <tlp:EmployeeInitials>gha</tlp:EmployeeInitials>
-	  <tlp:EmployeeFirstName>Gilli</tlp:EmployeeFirstName>
-	  <tlp:EmployeeLastName>Haraldsen</tlp:EmployeeLastName>
+	  <tlp:EmployeeInitials>psu</tlp:EmployeeInitials>
+	  <tlp:EmployeeFirstName>Peter</tlp:EmployeeFirstName>
+	  <tlp:EmployeeLastName>Summersen</tlp:EmployeeLastName>
 	  <tlp:AllocationID>5</tlp:AllocationID>
 	  <tlp:TaskID>7</tlp:TaskID>
 	  <tlp:TaskName>Period balancing</tlp:TaskName>
@@ -22,13 +22,17 @@
 	  <tlp:DepartmentName>TimeLog A/S</tlp:DepartmentName>
 	  <tlp:AdditionalTextField/>
 	  <tlp:RegHours>4.0000</tlp:RegHours>
-	  <tlp:RegAmount>480.0000</tlp:RegAmount>
+	  <tlp:RegHourlyRate>120.0000</tlp:RegHourlyRate>
+    <tlp:RegAmount>480.0000</tlp:RegAmount>
 	  <tlp:EstimatedHours>4.0000</tlp:EstimatedHours>
-	  <tlp:EstimatedAmount>480.0000</tlp:EstimatedAmount>
+    <tlp:EstimatedHourlyRate>120.0000</tlp:EstimatedHourlyRate>
+    <tlp:EstimatedAmount>480.0000</tlp:EstimatedAmount>
 	  <tlp:BARHours>4.0000</tlp:BARHours>
-	  <tlp:BARAmount>480.0000</tlp:BARAmount>
+    <tlp:BARHourlyRate>120.0000</tlp:BARHourlyRate>
+    <tlp:BARAmount>480.0000</tlp:BARAmount>
 	  <tlp:InvoicedHours>0.0000</tlp:InvoicedHours>
-	  <tlp:InvoicedAmount>0.0000</tlp:InvoicedAmount>
+    <tlp:InvoicedHourlyRate>0.0000</tlp:InvoicedHourlyRate>
+    <tlp:InvoicedAmount>0.0000</tlp:InvoicedAmount>
 	  <tlp:InvHours>4.0000</tlp:InvHours>
 	  <tlp:InvAmount>480.0000</tlp:InvAmount>
 	  <tlp:CostAmount>280.0000</tlp:CostAmount>
@@ -36,19 +40,19 @@
 	  <tlp:ApprovedStatus>0</tlp:ApprovedStatus>
 	  <tlp:CreatedAt>2018-07-20T12:36:34.3666667</tlp:CreatedAt>
 	  <tlp:CreatedByEmployeeId>373</tlp:CreatedByEmployeeId>
-	  <tlp:CreatedBy>gha</tlp:CreatedBy>
+	  <tlp:CreatedBy>psu</tlp:CreatedBy>
 	  <tlp:LastModifiedAt>2018-07-20T12:36:34.3666667</tlp:LastModifiedAt>
 	  <tlp:LastModifiedByEmployeeId>373</tlp:LastModifiedByEmployeeId>
-	  <tlp:LastModifiedBy>gha</tlp:LastModifiedBy>
+	  <tlp:LastModifiedBy>psu</tlp:LastModifiedBy>
 	  <tlp:UserID>1</tlp:UserID>
 	</tlp:WorkUnit>
 	<tlp:WorkUnit ID="6">
 	  <tlp:TimeRegistrationGuid>954E075A-BA38-44C9-BDAE-CA8B17C4A5BA</tlp:TimeRegistrationGuid>
 	  <tlp:OvertimeFactor>100</tlp:OvertimeFactor>
 	  <tlp:EmployeeID>373</tlp:EmployeeID>
-	  <tlp:EmployeeInitials>gha</tlp:EmployeeInitials>
-	  <tlp:EmployeeFirstName>Gilli</tlp:EmployeeFirstName>
-	  <tlp:EmployeeLastName>Haraldsen</tlp:EmployeeLastName>
+	  <tlp:EmployeeInitials>psu</tlp:EmployeeInitials>
+	  <tlp:EmployeeFirstName>Peter</tlp:EmployeeFirstName>
+	  <tlp:EmployeeLastName>Summersen</tlp:EmployeeLastName>
 	  <tlp:AllocationID>3</tlp:AllocationID>
 	  <tlp:TaskID>5</tlp:TaskID>
 	  <tlp:TaskName>End balancing</tlp:TaskName>
@@ -62,13 +66,17 @@
 	  <tlp:DepartmentName>TimeLog A/S</tlp:DepartmentName>
 	  <tlp:AdditionalTextField/>
 	  <tlp:RegHours>2.0000</tlp:RegHours>
-	  <tlp:RegAmount>240.0000</tlp:RegAmount>
+    <tlp:RegHourlyRate>120.0000</tlp:RegHourlyRate>
+    <tlp:RegAmount>240.0000</tlp:RegAmount>
 	  <tlp:EstimatedHours>2.0000</tlp:EstimatedHours>
-	  <tlp:EstimatedAmount>240.0000</tlp:EstimatedAmount>
+    <tlp:EstimatedHourlyRate>120.0000</tlp:EstimatedHourlyRate>
+    <tlp:EstimatedAmount>240.0000</tlp:EstimatedAmount>
 	  <tlp:BARHours>2.0000</tlp:BARHours>
-	  <tlp:BARAmount>240.0000</tlp:BARAmount>
+    <tlp:BARHourlyRate>240.0000</tlp:BARHourlyRate>
+    <tlp:BARAmount>240.0000</tlp:BARAmount>
 	  <tlp:InvoicedHours>0.0000</tlp:InvoicedHours>
-	  <tlp:InvoicedAmount>0.0000</tlp:InvoicedAmount>
+    <tlp:InvoicedHourlyRate>0.0000</tlp:InvoicedHourlyRate>
+    <tlp:InvoicedAmount>0.0000</tlp:InvoicedAmount>
 	  <tlp:InvHours>2.0000</tlp:InvHours>
 	  <tlp:InvAmount>240.0000</tlp:InvAmount>
 	  <tlp:CostAmount>140.0000</tlp:CostAmount>
@@ -76,19 +84,19 @@
 	  <tlp:ApprovedStatus>0</tlp:ApprovedStatus>
 	  <tlp:CreatedAt>2018-07-20T12:36:34.0600000</tlp:CreatedAt>
 	  <tlp:CreatedByEmployeeId>373</tlp:CreatedByEmployeeId>
-	  <tlp:CreatedBy>gha</tlp:CreatedBy>
+	  <tlp:CreatedBy>psu</tlp:CreatedBy>
 	  <tlp:LastModifiedAt>2018-07-20T12:36:34.0600000</tlp:LastModifiedAt>
 	  <tlp:LastModifiedByEmployeeId>373</tlp:LastModifiedByEmployeeId>
-	  <tlp:LastModifiedBy>gha</tlp:LastModifiedBy>
+	  <tlp:LastModifiedBy>psu</tlp:LastModifiedBy>
 	  <tlp:UserID>1</tlp:UserID>
 	</tlp:WorkUnit>
 	<tlp:WorkUnit ID="5">
 	  <tlp:TimeRegistrationGuid>5885ACAF-690B-4237-9D7A-60B7DDA45A17</tlp:TimeRegistrationGuid>
 	  <tlp:OvertimeFactor>100</tlp:OvertimeFactor>
 	  <tlp:EmployeeID>373</tlp:EmployeeID>
-	  <tlp:EmployeeInitials>gha</tlp:EmployeeInitials>
-	  <tlp:EmployeeFirstName>Gilli</tlp:EmployeeFirstName>
-	  <tlp:EmployeeLastName>Haraldsen</tlp:EmployeeLastName>
+	  <tlp:EmployeeInitials>psu</tlp:EmployeeInitials>
+	  <tlp:EmployeeFirstName>Peter</tlp:EmployeeFirstName>
+	  <tlp:EmployeeLastName>Summersen</tlp:EmployeeLastName>
 	  <tlp:AllocationID>4</tlp:AllocationID>
 	  <tlp:TaskID>6</tlp:TaskID>
 	  <tlp:TaskName>Prepaid</tlp:TaskName>
@@ -102,13 +110,17 @@
 	  <tlp:DepartmentName>TimeLog A/S</tlp:DepartmentName>
 	  <tlp:AdditionalTextField/>
 	  <tlp:RegHours>3.0000</tlp:RegHours>
-	  <tlp:RegAmount>360.0000</tlp:RegAmount>
+    <tlp:RegHourlyRate>120.0000</tlp:RegHourlyRate>
+    <tlp:RegAmount>360.0000</tlp:RegAmount>
 	  <tlp:EstimatedHours>3.0000</tlp:EstimatedHours>
-	  <tlp:EstimatedAmount>360.0000</tlp:EstimatedAmount>
+    <tlp:EstimatedHourlyRate>120.0000</tlp:EstimatedHourlyRate>
+    <tlp:EstimatedAmount>360.0000</tlp:EstimatedAmount>
 	  <tlp:BARHours>3.0000</tlp:BARHours>
+    <tlp:BARHourlyRate>120.0000</tlp:BARHourlyRate>
 	  <tlp:BARAmount>360.0000</tlp:BARAmount>
 	  <tlp:InvoicedHours>0.0000</tlp:InvoicedHours>
-	  <tlp:InvoicedAmount>0.0000</tlp:InvoicedAmount>
+    <tlp:InvoicedHourlyRate>0.0000</tlp:InvoicedHourlyRate>
+    <tlp:InvoicedAmount>0.0000</tlp:InvoicedAmount>
 	  <tlp:InvHours>3.0000</tlp:InvHours>
 	  <tlp:InvAmount>360.0000</tlp:InvAmount>
 	  <tlp:CostAmount>210.0000</tlp:CostAmount>
@@ -116,10 +128,10 @@
 	  <tlp:ApprovedStatus>0</tlp:ApprovedStatus>
 	  <tlp:CreatedAt>2018-07-20T12:36:33.4466667</tlp:CreatedAt>
 	  <tlp:CreatedByEmployeeId>373</tlp:CreatedByEmployeeId>
-	  <tlp:CreatedBy>gha</tlp:CreatedBy>
+	  <tlp:CreatedBy>psu</tlp:CreatedBy>
 	  <tlp:LastModifiedAt>2018-07-20T12:36:33.4466667</tlp:LastModifiedAt>
 	  <tlp:LastModifiedByEmployeeId>373</tlp:LastModifiedByEmployeeId>
-	  <tlp:LastModifiedBy>gha</tlp:LastModifiedBy>
+	  <tlp:LastModifiedBy>psu</tlp:LastModifiedBy>
 	  <tlp:UserID>1</tlp:UserID>
 	</tlp:WorkUnit>
 </tlp:WorkUnits>
