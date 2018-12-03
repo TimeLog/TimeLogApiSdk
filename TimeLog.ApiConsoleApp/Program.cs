@@ -38,7 +38,9 @@
                 // CreateProjectsForCustomersInSql.Consume();
                 // InvoiceManipulation.Consume();
                 // ManipulateTasks.Consume();
-                InsertWork.Consume();
+                // InsertWork.Consume();
+                // CreateProjectTransactionalApi2.Consume();
+                ExternalKeysOnProjectAndTasks.Consume();
             }
             catch (Exception ex)
             {
