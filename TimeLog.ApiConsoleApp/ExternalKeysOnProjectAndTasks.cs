@@ -25,6 +25,8 @@
             IEnumerable<string> messages;
             if (SecurityHandler.Instance.TryAuthenticate(out messages))
             {
+                RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\TryAuthenticate.txt");
+
                 if (Logger.IsInfoEnabled)
                 {
                     Logger.Info("Sucessfully authenticated on transactional API");
@@ -150,10 +152,15 @@
                     TaskTypeID = 328
                 };
 
-                _task1.ExternalKeys = new[] { new ExternalSystemContext { SystemName = "Jira", ExternalID = "ENDK-1" } };
+                _task1.ExternalKeys = new[]
+                                          {
+                                              new ExternalSystemContext { SystemName = "Jira", ExternalID = "ENDK-1" },
+                                              new ExternalSystemContext { SystemName = "OEBS", ExternalID = "200542" }
+                                          };
                 _task1.IsExternalKeysLoaded = true;
 
                 var _createTaskResult = ProjectManagementHandler.Instance.ProjectManagementClient.CreateTask(_task1, _project.Item.ProjectID, ProjectManagementHandler.Instance.Token);
+                RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\CreateTask.txt");
                 if (_createTaskResult.ResponseState != ExecutionStatus.Success)
                 {
                     foreach (var _apiMessage in _createTaskResult.Messages)
@@ -182,6 +189,11 @@
                 {
                     Logger.DebugFormat("Task created (ID: {0})", _task.Item.TaskID);
                 }
+
+                var _getByID = ProjectManagementHandler.Instance.ProjectManagementClient.GetTaskByID1(_task.Item.TaskID, true, ProjectManagementHandler.Instance.Token);
+
+                var _updateTaskResult = ProjectManagementHandler.Instance.ProjectManagementClient.UpdateTask(_task.Item, _project.Item.ProjectID, ProjectManagementHandler.Instance.Token);
+                RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\UpdateTask.txt");
 
                 var _getTaskByExternalKeyResult = ProjectManagementHandler.Instance.ProjectManagementClient.GetTaskByExternalKey("ENDK-1", "Jira", ProjectManagementHandler.Instance.Token);
                 RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\GetTaskByExternalKey.txt");

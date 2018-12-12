@@ -51,6 +51,7 @@
     <Compile Include="ConsumeCsvFile.cs" />
     <Compile Include="ConsumeReportingApi.cs" />
     <Compile Include="ExternalKeysOnProjectAndTasks.cs" />
+    <Compile Include="ManipulateExternalKeys.cs" />
     <Compile Include="FetchProjectAndTasks.cs" />
     <Compile Include="CreateProjectsForCustomersInSql.cs" />
     <Compile Include="CreateProjectsForCustomersInCsv.cs" />

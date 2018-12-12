@@ -1,5 +1,6 @@
 ﻿namespace TimeLog.TransactionalApi.SDK.RawHelper
 {
+    using System;
     using System.IO;
     using System.ServiceModel.Channels;
 
@@ -66,6 +67,8 @@
                 File.Delete(path);
             }
 
+            File.AppendAllText(path, "<!---- " + DateTime.Now.ToString("O") + " ---->\r\n");
+            File.AppendAllText(path, "<!---- " + SettingsHandler.Instance.Url + " ---->\r\n");
             File.AppendAllText(path, "<!--------------- REQUEST ------------------->\r\n\r\n");
             File.AppendAllText(path, this.Request);
             File.AppendAllText(path, "\r\n\r\n<!--------------- RESPONSE ------------------->\r\n\r\n");

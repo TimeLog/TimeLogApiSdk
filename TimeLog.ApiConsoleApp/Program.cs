@@ -40,7 +40,7 @@
                 // ManipulateTasks.Consume();
                 // InsertWork.Consume();
                 // CreateProjectTransactionalApi2.Consume();
-                ExternalKeysOnProjectAndTasks.Consume();
+                ManipulateExternalKeys.Consume();
             }
             catch (Exception ex)
             {
