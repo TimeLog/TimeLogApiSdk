@@ -25,6 +25,8 @@
       <xsd:element name="HourlyRate" type="xsd:decimal" />
       <xsd:element name="TaskIsFixedPrice" type="xsd:boolean" />
       <xsd:element name="IsActive" type="xsd:boolean" />
+      <xsd:element name="StartsAt" type="xsd:dateTime" />
+      <xsd:element name="EndsAt" type="xsd:dateTime" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
   </xsd:complexType>

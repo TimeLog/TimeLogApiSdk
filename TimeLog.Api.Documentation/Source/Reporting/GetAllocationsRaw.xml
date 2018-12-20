@@ -10,6 +10,8 @@
     <tlp:HourlyRate>1250.0000</tlp:HourlyRate>
     <tlp:TaskIsFixedPrice>0</tlp:TaskIsFixedPrice>
     <tlp:IsActive>0</tlp:IsActive>
+    <tlp:StartsAt>2015-01-01T00:00:00</tlp:StartsAt>
+    <tlp:EndsAt>2015-01-02T00:00:00</tlp:EndsAt>
   </tlp:Allocation>
   <tlp:Allocation ID="3930">
     <tlp:ProjectID>712</tlp:ProjectID>
@@ -19,6 +21,8 @@
     <tlp:HourlyRate>0.0000</tlp:HourlyRate>
     <tlp:TaskIsFixedPrice>0</tlp:TaskIsFixedPrice>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:StartsAt>2015-01-01T00:00:00</tlp:StartsAt>
+    <tlp:EndsAt>2015-01-02T00:00:00</tlp:EndsAt>
   </tlp:Allocation>
   <tlp:Allocation ID="3931">
     <tlp:ProjectID>712</tlp:ProjectID>
@@ -28,6 +32,8 @@
     <tlp:HourlyRate>300.0000</tlp:HourlyRate>
     <tlp:TaskIsFixedPrice>0</tlp:TaskIsFixedPrice>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:StartsAt>2015-01-01T00:00:00</tlp:StartsAt>
+    <tlp:EndsAt>2015-01-02T00:00:00</tlp:EndsAt>
   </tlp:Allocation>
   <tlp:Allocation ID="3932">
     <tlp:ProjectID>712</tlp:ProjectID>
@@ -37,6 +43,8 @@
     <tlp:HourlyRate>0.0000</tlp:HourlyRate>
     <tlp:TaskIsFixedPrice>0</tlp:TaskIsFixedPrice>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:StartsAt>2015-01-01T00:00:00</tlp:StartsAt>
+    <tlp:EndsAt>2015-01-02T00:00:00</tlp:EndsAt>
   </tlp:Allocation>
   <tlp:Allocation ID="3933">
     <tlp:ProjectID>712</tlp:ProjectID>
@@ -46,6 +54,8 @@
     <tlp:HourlyRate>1250.0000</tlp:HourlyRate>
     <tlp:TaskIsFixedPrice>0</tlp:TaskIsFixedPrice>
     <tlp:IsActive>0</tlp:IsActive>
+    <tlp:StartsAt>2015-01-01T00:00:00</tlp:StartsAt>
+    <tlp:EndsAt>2015-01-02T00:00:00</tlp:EndsAt>
   </tlp:Allocation>
   <tlp:Allocation ID="3934">
     <tlp:ProjectID>712</tlp:ProjectID>
@@ -55,6 +65,8 @@
     <tlp:HourlyRate>1250.0000</tlp:HourlyRate>
     <tlp:TaskIsFixedPrice>0</tlp:TaskIsFixedPrice>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:StartsAt>2015-01-01T00:00:00</tlp:StartsAt>
+    <tlp:EndsAt>2015-01-02T00:00:00</tlp:EndsAt>
   </tlp:Allocation>
   <tlp:Allocation ID="3935">
     <tlp:ProjectID>712</tlp:ProjectID>
@@ -64,6 +76,8 @@
     <tlp:HourlyRate>1250.0000</tlp:HourlyRate>
     <tlp:TaskIsFixedPrice>0</tlp:TaskIsFixedPrice>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:StartsAt>2015-01-01T00:00:00</tlp:StartsAt>
+    <tlp:EndsAt>2015-01-02T00:00:00</tlp:EndsAt>
   </tlp:Allocation>
   <tlp:Allocation ID="3936">
     <tlp:ProjectID>712</tlp:ProjectID>
@@ -73,5 +87,7 @@
     <tlp:HourlyRate>800.0000</tlp:HourlyRate>
     <tlp:TaskIsFixedPrice>0</tlp:TaskIsFixedPrice>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:StartsAt>2015-01-01T00:00:00</tlp:StartsAt>
+    <tlp:EndsAt>2015-01-02T00:00:00</tlp:EndsAt>
   </tlp:Allocation>
 </tlp:Allocations>
