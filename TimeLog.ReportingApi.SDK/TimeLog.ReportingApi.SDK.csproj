@@ -110,7 +110,8 @@
   <PropertyGroup>
     <PostBuildEvent>copy /y $(TargetDir)*.dll $(SolutionDir)Deploy
 copy /y $(TargetDir)*.xml $(SolutionDir)Deploy
-copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
+copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy
+copy /y $(TargetDir)*.dll $(SolutionDir)TimeLog.ReportingApi.Exporter\Deploy</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
