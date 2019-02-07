@@ -51,6 +51,7 @@
     <Compile Include="ConsumeCsvFile.cs" />
     <Compile Include="ConsumeReportingApi.cs" />
     <Compile Include="ExternalKeysOnProjectAndTasks.cs" />
+    <Compile Include="GetWorkUnitChangeLog.cs" />
     <Compile Include="ManipulateExternalKeys.cs" />
     <Compile Include="FetchProjectAndTasks.cs" />
     <Compile Include="CreateProjectsForCustomersInSql.cs" />
@@ -74,6 +75,7 @@
     </None>
     <None Include="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
     <None Include="test.csv">

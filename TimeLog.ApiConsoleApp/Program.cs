@@ -36,11 +36,13 @@
                 // InsertEmployeeTest.Consume();
                 // CreateProjectsForAllCustomers.Consume();
                 // CreateProjectsForCustomersInSql.Consume();
+                CreateProjectsForCustomersInCsv.Consume();
                 // InvoiceManipulation.Consume();
                 // ManipulateTasks.Consume();
                 // InsertWork.Consume();
                 // CreateProjectTransactionalApi2.Consume();
-                ManipulateExternalKeys.Consume();
+                // ManipulateExternalKeys.Consume();
+                // GetWorkUnitChangeLog.Consume();
             }
             catch (Exception ex)
             {
