@@ -13,9 +13,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TimeLog.Api.Documentation</RootNamespace>
     <AssemblyName>TimeLog.Api.Documentation</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -32,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -52,6 +53,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -59,6 +61,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -113,6 +116,7 @@
     <Compile Include="Controllers\FinancialIntegrationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ReportingController.cs" />
+    <Compile Include="Controllers\RestController.cs" />
     <Compile Include="Controllers\TransactionalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -124,6 +128,21 @@
     <Compile Include="Models\MethodException.cs" />
     <Compile Include="Models\MethodParam.cs" />
     <Compile Include="Models\ReportingManager.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\RestDoc.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\Core\RestRefSchema.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\Core\RestAction.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\Core\RestDefinition.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\RestDocumentationHelper.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\RestInfo.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\RestMethodDoc.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\RestMethodParam.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\Core\RestParameter.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\Core\RestPath.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\Core\RestProperty.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\Core\RestResponse.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\Core\RestTag.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\RestTypeDoc.cs" />
+    <Compile Include="Models\RestManager.cs" />
     <Compile Include="Models\ServiceVersion.cs" />
     <Compile Include="Models\TransactionalManager.cs" />
     <Compile Include="Models\TypeDoc.cs" />
@@ -216,7 +235,9 @@
     <Content Include="Source\TimeLog.TLP.API.Proxy.xml" />
     <Content Include="Source\TimeLog.TLP.API.XML" />
     <Content Include="Source\TimeLog.TLP.WebAppCode.xml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -390,6 +411,11 @@
     <Content Include="Views\FinancialIntegration\Uniconta.cshtml" />
     <Content Include="Views\FinancialIntegration\Visma.cshtml" />
     <Content Include="Views\FinancialIntegration\MiddlewareInstall.cshtml" />
+    <Content Include="Source\TimeLog.REST.API.json" />
+    <Content Include="Views\Rest\Index.cshtml" />
+    <Content Include="Views\Rest\Services.cshtml" />
+    <Content Include="Views\Rest\Service.cshtml" />
+    <Content Include="Views\Rest\Method.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -411,16 +437,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>43307</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:43307/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

@@ -39,6 +39,17 @@
                         </ul>
                     </li>
                     <li class="top-level__item has-subnav">
+                        <a class="top-level__link @Html.DetectActiveMenu("Rest")" href="#">
+                            REST API
+                            <span class="mobile-nav-expand">expand/contract</span>
+                        </a>
+                        <ul class="sub-level">
+                            <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Index", "Rest")">Introduction</a></li>
+                            <li class="sub-level__item"><a class="sub-level__link" href="https://newlogin.timelog.com/documentation">Getting Started & Security</a></li>
+                            <li class="sub-level__item"><a class="sub-level__link" href="@Url.Action("Services", "Rest")">Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="top-level__item has-subnav">
                         <a class="top-level__link @Html.DetectActiveMenu("Transactional")" href="#">
                             Transactional API
                             <span class="mobile-nav-expand">expand/contract</span>

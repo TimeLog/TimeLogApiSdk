@@ -4906,3 +4906,33 @@ pre {
             display: none;
         }
     }
+
+span.badge {
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.7em;
+    text-align: center;
+    padding: 7px 0 4px;
+    width: 50px;
+    display: inline-block;
+}
+
+li.post span.badge {
+    background-color: #10a54a;
+}
+
+li.get span.badge {
+    background-color: #0f6ab4;
+}
+
+li.put span.badge {
+    background-color: #c5862b;
+}
+
+li.delete span.badge {
+    background-color: #a41e22;
+}
+
+.m-t {
+    margin-top: 5px;
+}

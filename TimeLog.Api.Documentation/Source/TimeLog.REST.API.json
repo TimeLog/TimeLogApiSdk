@@ -1,0 +1,6411 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Timelog Web API version 1 (BETA)",
+    "description": "This documentation is in BETA release, we'll update the API without prior notice."
+  },
+  "host": "localhost",
+  "basePath": "/mobile-api/api",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/v{version}/absence-code/{status}": {
+      "get": {
+        "tags": [
+          "AbsenceCode"
+        ],
+        "summary": "Get a list of absence code by status (all, inactive, active)",
+        "operationId": "AbsenceCode_GetByStatus",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "description": "An enum of ActiveStatus, can be all(-1), inactive(0) or active(1)",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": -1,
+            "enum": [
+              0,
+              1,
+              -1
+            ]
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of absence code",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.AbsenceCode.AbsenceCodeApiReadModel"
+            }
+          },
+          "400": {
+            "description": "Status specified is invalid",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "500": {
+            "description": "Request to GetByStatus has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/absence-code/get-recently-registered": {
+      "get": {
+        "tags": [
+          "AbsenceCode"
+        ],
+        "summary": "Get a list of absence code that user has registered time on",
+        "operationId": "AbsenceCode_GetRecentlyRegistered",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of absence code",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.AbsenceCode.AbsenceCodeApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetRecentlyRegistered has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/absence-code/time-tracker": {
+      "post": {
+        "tags": [
+          "AbsenceCode"
+        ],
+        "summary": "Create registration of absence with half the normal working time",
+        "operationId": "AbsenceCode_CreateTimeTracker",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Contains the type which should be half day (0)",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.TimeTracker.TimeTrackerApiCreateModelForAbsenceCode"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time tracker created"
+          },
+          "500": {
+            "description": "Request to CreateTimeTracker has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/absence-code/registration-by-hours": {
+      "post": {
+        "tags": [
+          "AbsenceCode"
+        ],
+        "summary": "Create registration of absence with hours",
+        "operationId": "AbsenceCode_CreateRegistrationByHours",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Duration of this absence registration",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Settings.Models.TimeRegistration.TimeRegistrationApiCreateByHoursModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Absence registration created"
+          },
+          "500": {
+            "description": "Absence registration has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/absence-code/registration-by-full-day": {
+      "post": {
+        "tags": [
+          "AbsenceCode"
+        ],
+        "summary": "Create registration of absence with full normal working time",
+        "operationId": "AbsenceCode_CreateRegistrationByFullDay",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Settings.Models.TimeRegistration.TimeRegistrationApiCreateByFullDayModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Absence registration created"
+          },
+          "500": {
+            "description": "Absence registration has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/absence-code/registration-by-half-day": {
+      "post": {
+        "tags": [
+          "AbsenceCode"
+        ],
+        "summary": "Create registration of absence with half/full day.",
+        "operationId": "AbsenceCode_CreateRegistrationByHalfFullDay",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Settings.Models.TimeRegistration.TimeRegistrationApiCreateByHalfDayModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Absence registration created"
+          },
+          "500": {
+            "description": "Absence registration has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/barrier": {
+      "get": {
+        "tags": [
+          "Barrier"
+        ],
+        "summary": "Gets all.",
+        "operationId": "Barrier_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Settings.Models.Barrier.BarrierApiReadModel"
+              }
+            }
+          },
+          "500": {
+            "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Barrier"
+        ],
+        "summary": "Updates the specified barrier.",
+        "operationId": "Barrier_Update",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "barrierApi",
+            "in": "body",
+            "description": "The barrier.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Settings.Models.Barrier.BarrierApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Request to Update has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Barrier"
+        ],
+        "summary": "Saves the specified model.",
+        "operationId": "Barrier_Create",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "barrier",
+            "in": "body",
+            "description": "The barrier.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Settings.Models.Barrier.BarrierApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Request to Create has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/barrier/{barrierId}": {
+      "get": {
+        "tags": [
+          "Barrier"
+        ],
+        "summary": "Gets the by identifier.",
+        "operationId": "Barrier_GetById",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "barrierId",
+            "in": "path",
+            "description": "The barrier identifier.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Settings.Models.Barrier.BarrierApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetById has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/barrier/{id}": {
+      "delete": {
+        "tags": [
+          "Barrier"
+        ],
+        "summary": "Deletes the specified barrier identifier.",
+        "operationId": "Barrier_Delete",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The identifier.",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Request to Delete has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/currency/{status}": {
+      "get": {
+        "tags": [
+          "Currency"
+        ],
+        "summary": "Get a list of currency by status (all, inactive, active)",
+        "operationId": "Currency_GetByStatus",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "description": "An enum of ActiveStatus, can be all(-1), inactive(0) or active(1)",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": -1,
+            "enum": [
+              0,
+              1,
+              -1
+            ]
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of currency",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Common.Models.Currency.CurrencyApiReadModel"
+            }
+          },
+          "400": {
+            "description": "Status specified is invalid",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "500": {
+            "description": "Request to GetByStatus has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/customer": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get all the customers",
+        "operationId": "Customer_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of customer",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/customer/{customerID}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get the customer with the customer identifier",
+        "operationId": "Customer_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "path",
+            "description": "Customer identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer detail",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetByID has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/customer/search-for-time-tracking": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Search for customer that the user can register time on, with customer information",
+        "operationId": "Customer_SearchForTimeTracking",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Customer name, customer nickname, or customer number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of customer",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTracking has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/customer/search-for-time-tracking-order-by-recent-registration": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Search for customer that the user can register time on, with customer information (Result is ordered by recent registration)",
+        "operationId": "Customer_SearchForTimeTrackingOrderByRecentRegistration",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Customer name, customer nickname, or customer number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of customer",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingOrderByRecentRegistration has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/employee-expense": {
+      "get": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Get all the employee expenses",
+        "operationId": "EmployeeExpense_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "query",
+            "description": "User identifier (optional)",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of employee expense",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Employee expense with the user identifier does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Update employee expense",
+        "operationId": "EmployeeExpense_Update",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "New employee expense information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expense was updated successfully"
+          },
+          "500": {
+            "description": "Expense could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Create an employee expense",
+        "operationId": "EmployeeExpense_Create",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Expense information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expense was created successfully"
+          },
+          "500": {
+            "description": "Expense could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/employee-expense/{employeeExpenseID}": {
+      "get": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Get the employee expense with the employee expense identifier",
+        "operationId": "EmployeeExpense_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeExpenseID",
+            "in": "path",
+            "description": "Employee expense identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee Expense",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Employee expense with the identifier does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Delete employee expense with the employee expense identifier",
+        "operationId": "EmployeeExpense_Delete",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeExpenseID",
+            "in": "path",
+            "description": "Employee expense identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee expense was deleted"
+          },
+          "500": {
+            "description": "Employee expense with the identifier does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/employee-expense/{employeeExpenseID}/image": {
+      "post": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Attach a image to an employee expense.",
+        "operationId": "EmployeeExpense_AttachImage",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeExpenseID",
+            "in": "path",
+            "description": "The employee expense identifier.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully attach the image to the employee expense"
+          },
+          "500": {
+            "description": "Failed to attach image to the employee expense",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Delete employee expense image with the employee expense identifier and the image url",
+        "operationId": "EmployeeExpense_DeleteImage",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeExpenseID",
+            "in": "path",
+            "description": "Employee expense identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "imageUrl",
+            "in": "query",
+            "description": "Employee expense image Uri",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee expense image was deleted"
+          },
+          "500": {
+            "description": "Employee expense image with the identifier and image does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/employee-expense-financial-data/get-by-date": {
+      "get": {
+        "tags": [
+          "EmployeeExpenseFinancialData"
+        ],
+        "summary": "Get the employee expense financial data information of the user by the given date",
+        "operationId": "EmployeeExpenseFinancialData_GetByDate",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Date to select",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee expense financial data",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpenseFinancialData.EmployeeExpenseFinancialDataApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetByDate has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/employee-expense-financial-data/get-by-date-range": {
+      "get": {
+        "tags": [
+          "EmployeeExpenseFinancialData"
+        ],
+        "summary": "Get a list of employee expense financial data information of the user by the given period",
+        "operationId": "EmployeeExpenseFinancialData_GetByDateRange",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of employee expense financial data",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpenseFinancialData.EmployeeExpenseFinancialDataApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetByDateRange has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/employee-projection/get-in-period": {
+      "get": {
+        "tags": [
+          "EmployeeProjection"
+        ],
+        "summary": "Get a list of employee projection in the period",
+        "operationId": "EmployeeProjection_GetInPeriod",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of employee projection",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Organization.Models.EmployeeProjection.EmployeeProjectionApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetInPeriod has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/expense-type/{status}": {
+      "get": {
+        "tags": [
+          "ExpenseType"
+        ],
+        "summary": "Get a list of expense type by status (all, inactive, active)",
+        "operationId": "ExpenseType_GetByStatus",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "description": "An enum of ActiveStatus, can be all(-1), inactive(0) or active(1)",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": -1,
+            "enum": [
+              0,
+              1,
+              -1
+            ]
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of expense type",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.ExpenseType.ExpenseTypeApiReadModel"
+            }
+          },
+          "400": {
+            "description": "Status specified is invalid",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "500": {
+            "description": "Request to GetByStatus has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}": {
+      "get": {
+        "tags": [
+          "Index"
+        ],
+        "summary": "Indexes this instance.",
+        "operationId": "Index_Index",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "500": {
+            "description": "Request to Index has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/payment-method/{status}": {
+      "get": {
+        "tags": [
+          "PaymentMethod"
+        ],
+        "summary": "Get a list of payment method belonging to the user by status (all, inactive, active)",
+        "operationId": "PaymentMethod_GetByStatus",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "description": "An enum of ActiveStatus, can be all(-1), inactive(0) or active(1)",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": -1,
+            "enum": [
+              0,
+              1,
+              -1
+            ]
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of payment method",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.PaymentMethod.PaymentMethodApiReadModel"
+            }
+          },
+          "400": {
+            "description": "Status specified is invalid",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "500": {
+            "description": "Request to GetByStatus has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/project/{projectID}": {
+      "get": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Get a project by the project identifier",
+        "operationId": "Project_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "projectID",
+            "in": "path",
+            "description": "Project identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A project",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Project with the identifier does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/project-header/search-for-time-tracking": {
+      "get": {
+        "tags": [
+          "ProjectHeader"
+        ],
+        "summary": "Search for project that the user can register time on, with the project information",
+        "operationId": "ProjectHeader_SearchForTimeTracking",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Project name or project number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of project header",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTracking has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/project-header/search-for-time-tracking-order-by-recent-registration": {
+      "get": {
+        "tags": [
+          "ProjectHeader"
+        ],
+        "summary": "Search for project that the user can register time on (Result is ordered by recent registration)",
+        "operationId": "ProjectHeader_SearchForTimeTrackingOrderByRecentRegistration",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Project name or project number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of project header",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingOrderByRecentRegistration has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/project-header/search-for-time-tracking-by-customer-id": {
+      "get": {
+        "tags": [
+          "ProjectHeader"
+        ],
+        "summary": "Search for project that the user can register time on, that belongs to a customer",
+        "operationId": "ProjectHeader_SearchForTimeTrackingByCustomerID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "query",
+            "description": "Customer identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Search string",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of project header",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingByCustomerID has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/project-header/search-for-time-tracking-by-customer-id-order-by-recent-registration": {
+      "get": {
+        "tags": [
+          "ProjectHeader"
+        ],
+        "summary": "Search for project that the user can register time on, that belongs to a customer (Result is ordered by recent registration)",
+        "operationId": "ProjectHeader_SearchForTimeTrackingByCustomerIDOrderByRecentRegistration",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "query",
+            "description": "Customer identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Search string",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of project header",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingByCustomerIDOrderByRecentRegistration has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/project-header/employee-expense": {
+      "post": {
+        "tags": [
+          "ProjectHeader"
+        ],
+        "summary": "Creates the employee expense.",
+        "operationId": "ProjectHeader_CreateEmployeeExpense",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.EmployeeExpense.EmployeeExpenseApiCreateModelForProject"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee expense was created created successfully"
+          },
+          "500": {
+            "description": "Employee expense could not be created for the project",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/{taskID}": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Get a task with the task identifier",
+        "operationId": "Task_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "taskID",
+            "in": "path",
+            "description": "Task identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Task with the TaskID provided does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/get-recently-registered": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Get a list of task that the user has registered time on",
+        "operationId": "Task_GetRecentlyRegistered",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetRecentlyRegistered has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-by-project": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, that belongs to a project",
+        "operationId": "Task_SearchByProject",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Project name or project number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchByProject has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-by-customer": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, that belongs to the customer",
+        "operationId": "Task_SearchByCustomer",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Customer name, customer nickname or customer number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchByCustomer has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-for-time-tracking": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, with the task information",
+        "operationId": "Task_SearchForTimeTracking",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Task name or task number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTracking has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-for-time-tracking-order-by-recent-registration": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, with the task information (Result is ordered by recent registration)",
+        "operationId": "Task_SearchForTimeTrackingOrderByRecentRegistration",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Task name or task number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingOrderByRecentRegistration has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-for-time-tracking-by-project-id": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, that belongs to a project",
+        "operationId": "Task_SearchForTimeTrackingByProjectID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "projectID",
+            "in": "query",
+            "description": "Project identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Task name or task number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingByProjectID has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-for-time-tracking-by-customer-id": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, that belongs to a customer",
+        "operationId": "Task_SearchForTimeTrackingByCustomerID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "query",
+            "description": "Customer identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Task name or task number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingByCustomerID has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-for-time-tracking-by-project-id-order-by-recent-registration": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, that belongs to a project (Result is ordered by recent registration)",
+        "operationId": "Task_SearchForTimeTrackingByProjectIDOrderByRecentRegistration",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "projectID",
+            "in": "query",
+            "description": "Project identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Task name or task number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingByProjectIDOrderByRecentRegistration has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-for-time-tracking-by-customer-id-order-by-recent-registration": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, that belongs to a customer (Result is ordered by recent registration)",
+        "operationId": "Task_SearchForTimeTrackingByCustomerIDOrderByRecentRegistration",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "query",
+            "description": "Customer identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Task name or task number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingByCustomerIDOrderByRecentRegistration has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/registration": {
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Create registration with task and hour",
+        "operationId": "Task_CreateRegistration",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.TimeRegistration.TimeRegistrationApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Registration was created successfully"
+          },
+          "500": {
+            "description": "Registration could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration/{timeRegistrationID}": {
+      "get": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Get time registration with the time registration identifier",
+        "operationId": "TimeRegistration_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationID",
+            "in": "path",
+            "description": "Time registration identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No time registration with the identifier was found",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "500": {
+            "description": "Request to GetByID has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration": {
+      "post": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Create time registration.",
+        "operationId": "TimeRegistration_Create",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationApiCreateModel",
+            "in": "body",
+            "description": "The time registration API create model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time registration was created"
+          },
+          "500": {
+            "description": "Time registration could not be created"
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration/update-time": {
+      "post": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Update existing time registration",
+        "operationId": "TimeRegistration_UpdateTime",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "New time information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateTimeModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time registration was updated successfully"
+          },
+          "500": {
+            "description": "Time registration does not exist"
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration/time-tracker": {
+      "post": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Creates the time tracker.",
+        "operationId": "TimeRegistration_CreateTimeTracker",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiCreateModelForRegistration"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time tracker created for this registration"
+          },
+          "500": {
+            "description": "Request to CreateTimeTracker has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration/update-hours-absence": {
+      "post": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Update hours for absence registration",
+        "operationId": "TimeRegistration_UpdateHoursAbsence",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "New hour information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateHoursAbsenceModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Absence registration was updated"
+          },
+          "500": {
+            "description": "Time registration does not exist"
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration/update-half-or-full-day-absence": {
+      "post": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Update absence registration with full day or half day normal working time",
+        "operationId": "TimeRegistration_UpdateHalfOrFullDaysAbsence",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateHalfOrFullDaysAbsenceModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Absence registration was updated"
+          },
+          "500": {
+            "description": "Time registration does not exist"
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration/stop-time-tracker/{timeTrackerId}": {
+      "post": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Stop the time tracker.",
+        "operationId": "TimeRegistration_StopTimeTracker",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeTrackerId",
+            "in": "path",
+            "description": "The time tracker identifier.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiUpdateModelBase"
+            }
+          },
+          "500": {
+            "description": "Request to StopTimeTracker has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration/{id}": {
+      "delete": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Delete time registration with the GUID",
+        "operationId": "TimeRegistration_Delete",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "GUID",
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time registration was deleted"
+          },
+          "500": {
+            "description": "Time registration does not exist"
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration-financial-data/get-by-date": {
+      "get": {
+        "tags": [
+          "TimeRegistrationFinancialData"
+        ],
+        "summary": "Get the financial data information of the user by the given date",
+        "operationId": "TimeRegistrationFinancialData_GetByDate",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Date to select",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time registration financial data",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistrationFinancialData.TimeRegistrationFinancialDataApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetByDate has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration-financial-data/get-by-date-range": {
+      "get": {
+        "tags": [
+          "TimeRegistrationFinancialData"
+        ],
+        "summary": "Get a list of financial data information of the user by the given period",
+        "operationId": "TimeRegistrationFinancialData_GetByDateRange",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of time registration financial data",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistrationFinancialData.TimeRegistrationFinancialDataApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetByDateRange has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-tracker": {
+      "get": {
+        "tags": [
+          "TimeTracker"
+        ],
+        "summary": "Gets all.",
+        "operationId": "TimeTracker_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "TimeTracker"
+        ],
+        "summary": "Updates the specified time tracker API update model detail.",
+        "operationId": "TimeTracker_Update",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeTrackerApiUpdateModelDetail",
+            "in": "body",
+            "description": "The time tracker API update model detail.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiUpdateModelDetail"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiUpdateModelDetail"
+            }
+          },
+          "500": {
+            "description": "Request to Update has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "TimeTracker"
+        ],
+        "summary": "Creates the specified time tracker API create model.",
+        "operationId": "TimeTracker_Create",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeTrackerApiCreateModel",
+            "in": "body",
+            "description": "The time tracker API create model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiCreateModelBase"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiCreateModelBase"
+            }
+          },
+          "500": {
+            "description": "Request to Create has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-tracker/{timeTrackerID}": {
+      "get": {
+        "tags": [
+          "TimeTracker"
+        ],
+        "summary": "Gets the by identifier.",
+        "operationId": "TimeTracker_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeTrackerID",
+            "in": "path",
+            "description": "The time tracker identifier.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetByID has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "TimeTracker"
+        ],
+        "summary": "Delete the specified time tracker identifier.",
+        "operationId": "TimeTracker_Delete",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeTrackerID",
+            "in": "path",
+            "description": "The time tracker identifier.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Request to Delete has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-tracker/active-time-tracker": {
+      "get": {
+        "tags": [
+          "TimeTracker"
+        ],
+        "summary": "Gets the user active time tracking.",
+        "operationId": "TimeTracker_GetUserActiveTimeTracking",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetUserActiveTimeTracking has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-tracker/task/start-time-tracker": {
+      "post": {
+        "tags": [
+          "TimeTracker"
+        ],
+        "summary": "Start the time tracker.",
+        "operationId": "TimeTracker_StartTimeTrackerForTask",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.TimeTracker.TimeTrackerApiCreateModelForTask"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time tracker started"
+          },
+          "500": {
+            "description": "Request to StartTimeTrackerForTask has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-tracking-item/{timeRegistrationID}": {
+      "get": {
+        "tags": [
+          "TimeTrackingItem"
+        ],
+        "summary": "Get the time tracking item by the time registration identifier",
+        "operationId": "TimeTrackingItem_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationID",
+            "in": "path",
+            "description": "Time registration identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A time tracking item",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel"
+            }
+          },
+          "500": {
+            "description": "No time tracking item matching the identifier is found",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-tracking-item/get-by-date": {
+      "get": {
+        "tags": [
+          "TimeTrackingItem"
+        ],
+        "summary": "Get a list of time tracking item by the given period",
+        "operationId": "TimeTrackingItem_GetByDate",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of time tracking item",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetByDate has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-tracking-item/get-by-date-order-by-recent-registration": {
+      "get": {
+        "tags": [
+          "TimeTrackingItem"
+        ],
+        "summary": "Get a list of time tracking item by the given period, ordered by recent registration",
+        "operationId": "TimeTrackingItem_GetByDateOrderByRecentRegistration",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of time tracking item",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetByDateOrderByRecentRegistration has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/user": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get a list of all users in the organization",
+        "operationId": "User_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Organization.Models.User.UserApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update user information",
+        "operationId": "User_Update",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "Update user informtaion",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Organization.Models.User.UserUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Request to Update has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/user/me": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get the current user information",
+        "operationId": "User_GetCurrentUser",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Organization.Models.User.UserApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetCurrentUser has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/user/{id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Get a user with the user identifier",
+        "operationId": "User_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Organization.Models.User.UserApiReadModel"
+            }
+          },
+          "500": {
+            "description": "No user matching the identifier was found",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/user-setting": {
+      "get": {
+        "tags": [
+          "UserSetting"
+        ],
+        "summary": "Get user settings such as BillableHourIsEditable",
+        "operationId": "UserSetting_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of User Settings that is defined by the system admin",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Common.Models.UserSetting.UserSettingApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "TimeLog.TLP.Web.WebApi.V1.Salary.Models.AbsenceCode.AbsenceCodeApiReadModel": {
+      "type": "object",
+      "properties": {
+        "AbsenceCodeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AbsenceCode": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "IsActive": {
+          "type": "boolean"
+        },
+        "FlexPositiveFactor": {
+          "format": "double",
+          "type": "number"
+        },
+        "SalaryAccountFactor": {
+          "format": "double",
+          "type": "number"
+        },
+        "SalaryAccountFactorEffect": {
+          "format": "int32",
+          "enum": [
+            1,
+            -1
+          ],
+          "type": "integer"
+        },
+        "SalaryAccountID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AbsenceCodeTypeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "DeductCapacity": {
+          "type": "boolean"
+        },
+        "TimeTrackingFormat": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "RequireApproval": {
+          "type": "boolean"
+        },
+        "IsPublicVisible": {
+          "type": "boolean"
+        },
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError": {
+      "type": "object",
+      "properties": {
+        "Code": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "Details": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "readOnly": true
+        },
+        "Message": {
+          "type": "string",
+          "readOnly": true
+        },
+        "Parameters": {
+          "type": "string",
+          "readOnly": true
+        },
+        "Url": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Salary.Models.TimeTracker.TimeTrackerApiCreateModelForAbsenceCode": {
+      "type": "object",
+      "properties": {
+        "AbsenceCodeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "Minute": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Settings.Models.TimeRegistration.TimeRegistrationApiCreateByHoursModel": {
+      "type": "object",
+      "properties": {
+        "Hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "Minutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AbsenceID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Comment": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Settings.Models.TimeRegistration.TimeRegistrationApiCreateByFullDayModel": {
+      "type": "object",
+      "properties": {
+        "AbsenceID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Comment": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Settings.Models.TimeRegistration.TimeRegistrationApiCreateByHalfDayModel": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "format": "int32",
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer"
+        },
+        "AbsenceID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Comment": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Settings.Models.Barrier.BarrierApiReadModel": {
+      "type": "object",
+      "properties": {
+        "BarrierID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Settings.Models.Barrier.BarrierApiUpdateModel": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Settings.Models.Barrier.BarrierApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Common.Models.Currency.CurrencyApiReadModel": {
+      "type": "object",
+      "properties": {
+        "CurrencyID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CurrencyABB": {
+          "type": "string"
+        },
+        "DescriptiveName": {
+          "type": "string"
+        },
+        "CurrentRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "IsActive": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "No": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiReadModel": {
+      "type": "object",
+      "properties": {
+        "EmployeeExpenseID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "VatAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "IsBillable": {
+          "type": "boolean"
+        },
+        "Number": {
+          "type": "string"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "ExchangeRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "CurrencyID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "EmployeeUserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExpenseTypeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PaymentMethodID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ProjectID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ImageUrls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "IsImageUrlLoaded": {
+          "type": "boolean"
+        },
+        "HasReceiptPictures": {
+          "type": "boolean"
+        },
+        "Project": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel"
+        },
+        "Currency": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Common.Models.Currency.CurrencyApiReadModel"
+        },
+        "ExpenseType": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.ExpenseType.ExpenseTypeApiReadModel"
+        },
+        "PaymentMethod": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.PaymentMethod.PaymentMethodApiReadModel"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ProjectID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "No": {
+          "type": "string"
+        },
+        "ExpenseIsBillable": {
+          "type": "boolean"
+        },
+        "CustomerID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Customer": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Expenses.Models.ExpenseType.ExpenseTypeApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ExpenseTypeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExpenseTypeName": {
+          "type": "string"
+        },
+        "ShowInTravel": {
+          "type": "boolean"
+        },
+        "AccountNo": {
+          "type": "string"
+        },
+        "VAT": {
+          "format": "double",
+          "type": "number"
+        },
+        "ProductNo": {
+          "type": "string"
+        },
+        "SalaryCode": {
+          "type": "string"
+        },
+        "IsActive": {
+          "type": "boolean"
+        },
+        "IsEquipment": {
+          "type": "boolean"
+        },
+        "CostPrice": {
+          "format": "double",
+          "type": "number"
+        },
+        "SalesPrice": {
+          "format": "double",
+          "type": "number"
+        },
+        "EquipmentText": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Expenses.Models.PaymentMethod.PaymentMethodApiReadModel": {
+      "type": "object",
+      "properties": {
+        "PaymentMethodID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "IsPaidByEmployee": {
+          "type": "boolean"
+        },
+        "IsDefaultForEmployeeExpense": {
+          "type": "boolean"
+        },
+        "IsDefaultForProjectExpense": {
+          "type": "boolean"
+        },
+        "IsActive": {
+          "type": "boolean"
+        },
+        "IsDefaultForImport": {
+          "type": "boolean"
+        },
+        "IsPersonalCreditCard": {
+          "type": "boolean"
+        },
+        "CreditCardEmployeeUserID": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiUpdateModel": {
+      "type": "object",
+      "properties": {
+        "EmployeeExpenseID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "VatAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "IsBillable": {
+          "type": "boolean"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "ExchangeRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "CurrencyID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExpenseTypeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PaymentMethodID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ProjectID": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Number": {
+          "type": "string"
+        },
+        "Amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "VatAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "IsBillable": {
+          "type": "boolean"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "ExchangeRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "CurrencyID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExpenseTypeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PaymentMethodID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ProjectID": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpenseFinancialData.EmployeeExpenseFinancialDataApiReadModel": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "TotalEmployeeExpenseCount": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TotalAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "TotalAmountWithoutVat": {
+          "format": "double",
+          "type": "number"
+        },
+        "CurrencyID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CurrencyABB": {
+          "type": "string"
+        },
+        "CurrencyRate": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Organization.Models.EmployeeProjection.EmployeeProjectionApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ProjectionID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "User": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Organization.Models.User.UserApiReadModel"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "NormalWorkingTimeDayOrder": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "NormalWorkingHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "NormalWorkingMinutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsClosed": {
+          "type": "boolean"
+        },
+        "IsInClosedAccountingPeriod": {
+          "type": "boolean"
+        },
+        "HasRejectedTime": {
+          "type": "boolean"
+        },
+        "IsApproved": {
+          "type": "boolean"
+        },
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Organization.Models.User.UserApiReadModel": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Initials": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ProjectID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "No": {
+          "type": "string"
+        },
+        "ExpenseIsBillable": {
+          "type": "boolean"
+        },
+        "CustomerID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Customer": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.EmployeeExpense.EmployeeExpenseApiCreateModelForProject": {
+      "type": "object",
+      "properties": {
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Number": {
+          "type": "string"
+        },
+        "Amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "VatAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "IsBillable": {
+          "type": "boolean"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "ExchangeRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "CurrencyID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ExpenseTypeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "PaymentMethodID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ProjectID": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel": {
+      "type": "object",
+      "properties": {
+        "TaskID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "No": {
+          "type": "string"
+        },
+        "IsFixedPrice": {
+          "type": "boolean"
+        },
+        "IsDefaultBillable": {
+          "type": "boolean"
+        },
+        "ParentFullName": {
+          "type": "string"
+        },
+        "ProjectID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Project": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.TimeRegistration.TimeRegistrationApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "Billable": {
+          "type": "boolean"
+        },
+        "BillableHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "BillableMinutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "Minutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "AdditionalComment": {
+          "type": "string"
+        },
+        "TaskID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Factor": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiReadModel": {
+      "type": "object",
+      "properties": {
+        "AdditionalTextField": {
+          "type": "string"
+        },
+        "ApprovalStatus": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "Created": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "CreatedBy": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "DepartmentID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "EntityID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "EntityType": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221
+          ],
+          "type": "integer"
+        },
+        "Factor": {
+          "format": "double",
+          "type": "number"
+        },
+        "InvoiceStatus": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "IsBillable": {
+          "type": "boolean"
+        },
+        "IsInClosedAccountingPeriod": {
+          "type": "boolean"
+        },
+        "IsFixedPrice": {
+          "type": "boolean"
+        },
+        "IsInvoiced": {
+          "type": "boolean"
+        },
+        "LastModified": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastModifiedBy": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "Status": {
+          "format": "int32",
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer"
+        },
+        "TimeRegistrationGUID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "TimeRegistrationID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TimeTrackingFormat": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Minutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsMeeting": {
+          "type": "boolean"
+        },
+        "CalendarEventID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "BillableHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "BillableMinutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "InterfaceCreated": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            98,
+            99
+          ],
+          "type": "integer"
+        },
+        "InterfaceModified": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            98,
+            99
+          ],
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "TaskID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "GroupType": {
+          "format": "int32",
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "Billable": {
+          "type": "boolean"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "AdditionalComment": {
+          "type": "string"
+        },
+        "TimeTrackingFormat": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "BillableHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "EntityID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "BillableMinutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Minutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Factor": {
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateTimeModel": {
+      "type": "object",
+      "properties": {
+        "Hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "Minutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Billable": {
+          "type": "boolean"
+        },
+        "BillableHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "BillableMinutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Factor": {
+          "format": "double",
+          "type": "number"
+        },
+        "TimeRegistrationID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "AdditionalComment": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiCreateModelForRegistration": {
+      "type": "object",
+      "properties": {
+        "TimeRegistrationID": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateHoursAbsenceModel": {
+      "type": "object",
+      "properties": {
+        "Hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "Minutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TimeRegistrationID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "AdditionalComment": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateHalfOrFullDaysAbsenceModel": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "format": "int32",
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer"
+        },
+        "TimeRegistrationID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "AdditionalComment": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiUpdateModelBase": {
+      "type": "object",
+      "properties": {
+        "TimeTrackerID": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistrationFinancialData.TimeRegistrationFinancialDataApiReadModel": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "TotalActualHour": {
+          "format": "double",
+          "type": "number"
+        },
+        "TotalBillableHour": {
+          "format": "double",
+          "type": "number"
+        },
+        "TotalActualMinute": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TotalBillableMinute": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TotalBillableAmount": {
+          "format": "double",
+          "type": "number"
+        },
+        "BillableCurrencyABB": {
+          "type": "string"
+        },
+        "TotalRegistrationCount": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiReadModel": {
+      "type": "object",
+      "properties": {
+        "TimeTrackerID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EntityType": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221
+          ],
+          "type": "integer"
+        },
+        "EntityID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Task": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+        },
+        "TimeRegistrationID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "Minute": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "BillableMinute": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsBillable": {
+          "type": "boolean"
+        },
+        "TimeTrackerStatus": {
+          "format": "int32",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiUpdateModelDetail": {
+      "type": "object",
+      "properties": {
+        "EntityType": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221
+          ],
+          "type": "integer"
+        },
+        "EntityID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsBillable": {
+          "type": "boolean"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "TimeTrackerID": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiCreateModelBase": {
+      "type": "object",
+      "properties": {
+        "Comment": {
+          "type": "string"
+        },
+        "Minute": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.TimeTracker.TimeTrackerApiCreateModelForTask": {
+      "type": "object",
+      "properties": {
+        "TaskID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "BillableMinute": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsBillable": {
+          "type": "boolean"
+        },
+        "TimeRegistrationID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "Minute": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "CustomerName": {
+          "type": "string"
+        },
+        "CustomerNo": {
+          "type": "string"
+        },
+        "ProjectID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ProjectName": {
+          "type": "string"
+        },
+        "ProjectNo": {
+          "type": "string"
+        },
+        "TaskID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TaskName": {
+          "type": "string"
+        },
+        "TaskFullName": {
+          "type": "string"
+        },
+        "IsFixedPrice": {
+          "type": "boolean"
+        },
+        "TaskNo": {
+          "type": "string"
+        },
+        "TaskIsActive": {
+          "type": "boolean"
+        },
+        "AbsenceCodeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AbsenceName": {
+          "type": "string"
+        },
+        "AbsenceCode": {
+          "type": "string"
+        },
+        "AbsenceIsActive": {
+          "type": "boolean"
+        },
+        "AdditionalTextIsRequired": {
+          "type": "boolean"
+        },
+        "DefaultBillable": {
+          "type": "boolean"
+        },
+        "IsETCProject": {
+          "type": "boolean"
+        },
+        "ShowBillable": {
+          "type": "boolean"
+        },
+        "AllocatedHour": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TimeRegistrationID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "EntityID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "EntityType": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Created": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "CreatedBy": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "LastModified": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastModifiedBy": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsBillable": {
+          "type": "boolean"
+        },
+        "Status": {
+          "type": "boolean"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Comment": {
+          "type": "string"
+        },
+        "Hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "AdditionalTextField": {
+          "type": "string"
+        },
+        "InvoiceStatus": {
+          "type": "boolean"
+        },
+        "TimeRegistrationApprovalStatus": {
+          "type": "boolean"
+        },
+        "TimeTrackingFormat": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Minutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "BillableHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "BillableMinutes": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "IsFavourite": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Organization.Models.User.UserUpdateModel": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "format": "uuid",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Common.Models.UserSetting.UserSettingApiReadModel": {
+      "type": "object",
+      "properties": {
+        "CompanyName": {
+          "type": "string"
+        },
+        "NumberCultureID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TimeFormat": {
+          "format": "int32",
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer"
+        },
+        "TimeRoundingFormat": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "type": "integer"
+        },
+        "BillableHourIsEditable": {
+          "type": "boolean"
+        },
+        "StopwatchTimeTracking": {
+          "type": "boolean"
+        },
+        "SystemCurrencyID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "SystemCurrencyRate": {
+          "format": "double",
+          "type": "number"
+        },
+        "SystemCurrencyABB": {
+          "type": "string"
+        },
+        "IsAbsenceActive": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Common.Controllers.CurrencyController[CurrencyController]",
+      "description": "Service for handling currency in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Common.Controllers.UserSettingController[UserSettingController]",
+      "description": "Service for handling user settings in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.CRM.Controllers.CustomerController[CustomerController]",
+      "description": "Service for handling customer in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Expenses.Controllers.EmployeeExpenseFinancialDataController[EmployeeExpenseFinancialDataController]",
+      "description": "Service for handling employee expense financial data in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Expenses.Controllers.PaymentMethodController[PaymentMethodController]",
+      "description": "Service for handling payment method in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Expenses.Controllers.ExpenseTypeController[ExpenseTypeController]",
+      "description": "Service for handling expense type in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Expenses.Controllers.EmployeeExpenseController[EmployeeExpenseController]",
+      "description": "Service for handling employee expense in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Organization.Controllers.EmployeeProjectionController[EmployeeProjectionController]",
+      "description": "Service for handling employee projection in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Organization.Controllers.UserController[UserController]",
+      "description": "Service for handling user in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectHeaderController[ProjectHeaderController]",
+      "description": "Service for handling project header in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskController[TaskController]",
+      "description": "Service for handling task in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectController[ProjectController]",
+      "description": "Service for handling project in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeTrackingItemController[TimeTrackingItemController]",
+      "description": "Service for handling time tracking item in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Index.Controllers.IndexController[IndexController]",
+      "description": "Service for handling index in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.AbsenceCodeController[AbsenceCodeController]",
+      "description": "Service for handling absence code in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Settings.Controllers.BarrierController[BarrierController]",
+      "description": "Service for handling barrier in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeRegistrationController[TimeRegistrationController]",
+      "description": "Service for handling time registration in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeRegistrationFinancialDataController[TimeRegistrationFinancialDataController]",
+      "description": "Service for handling time registration financial data in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeTrackerController[TimeTrackerController]",
+      "description": "Service for handling time tracker in TimeLog."
+    }
+  ]
+}
