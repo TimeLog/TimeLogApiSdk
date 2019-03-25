@@ -9,7 +9,7 @@
 
         public string Name { get; }
         public string Description { get; }
-        public string Type { get; }
+        public RestType Type { get; }
         public string Format { get; }
         public string Default { get; }
         public RestRefSchema SchemaRestRef { get; }
@@ -22,7 +22,7 @@
         {
             Name = name;
             Description = description;
-            Type = type ?? "object";
+            Type = new RestType(type);
             Format = format;
             Default = @default;
             SchemaRestRef = schemaRestRef;

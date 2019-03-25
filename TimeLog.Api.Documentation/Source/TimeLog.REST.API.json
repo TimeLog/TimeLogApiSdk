@@ -2716,6 +2716,61 @@
       }
     },
     "/v{version}/time-registration": {
+      "put": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Update time registration",
+        "operationId": "TimeRegistration_Update",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationApiUpdateModel",
+            "in": "body",
+            "description": "The registration that needs to be updated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time registration was updated"
+          },
+          "500": {
+            "description": "Time registration could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
       "post": {
         "tags": [
           "TimeRegistration"
@@ -3538,7 +3593,7 @@
         "tags": [
           "TimeTracker"
         ],
-        "summary": "Start the time tracker.",
+        "summary": "Start the time tracker for task.",
         "operationId": "TimeTracker_StartTimeTrackerForTask",
         "consumes": [
           "application/json",
@@ -3573,6 +3628,63 @@
           },
           "500": {
             "description": "Request to StartTimeTrackerForTask has failed",
+            "schema": {
+              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-tracker/absence/start-time-tracker": {
+      "post": {
+        "tags": [
+          "TimeTracker"
+        ],
+        "summary": "Start the time tracker for absence.",
+        "operationId": "TimeTracker_StartTimeTrackerForAbsence",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "The model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.TimeTracker.TimeTrackerApiCreateModelForAbsenceCode"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time tracker started"
+          },
+          "500": {
+            "description": "Request to StartTimeTrackerForAbsence has failed",
             "schema": {
               "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
@@ -4036,30 +4148,38 @@
       "properties": {
         "AbsenceCodeID": {
           "format": "int32",
+          "description": "Gets or sets the absence code identifier.",
           "type": "integer"
         },
         "AbsenceCode": {
+          "description": "Gets or sets the absence code.",
           "type": "string"
         },
         "Name": {
+          "description": "Gets or sets the name.",
           "type": "string"
         },
         "Description": {
+          "description": "Gets or sets the description.",
           "type": "string"
         },
         "IsActive": {
+          "description": "Gets or sets a value indicating whether this instance is active.",
           "type": "boolean"
         },
         "FlexPositiveFactor": {
           "format": "double",
+          "description": "Gets or sets the flex positive factor.",
           "type": "number"
         },
         "SalaryAccountFactor": {
           "format": "double",
+          "description": "Gets or sets the salary account factor.",
           "type": "number"
         },
         "SalaryAccountFactorEffect": {
           "format": "int32",
+          "description": "Gets or sets the salary account factor effect.",
           "enum": [
             1,
             -1
@@ -4068,17 +4188,21 @@
         },
         "SalaryAccountID": {
           "format": "int32",
+          "description": "Gets or sets the salary account identifier.",
           "type": "integer"
         },
         "AbsenceCodeTypeID": {
           "format": "int32",
+          "description": "Gets or sets the absence code type identifier.",
           "type": "integer"
         },
         "DeductCapacity": {
+          "description": "Gets or sets a value indicating whether [deduct capacity].",
           "type": "boolean"
         },
         "TimeTrackingFormat": {
           "format": "int32",
+          "description": "Gets or sets the time tracking format.",
           "enum": [
             0,
             1,
@@ -4089,13 +4213,16 @@
           "type": "integer"
         },
         "RequireApproval": {
+          "description": "Gets or sets a value indicating whether [require approval].",
           "type": "boolean"
         },
         "IsPublicVisible": {
+          "description": "Gets or sets a value indicating whether this instance is public visible.",
           "type": "boolean"
         },
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         }
@@ -4106,10 +4233,12 @@
       "properties": {
         "Code": {
           "format": "int32",
+          "description": "Gets the code.",
           "type": "integer",
           "readOnly": true
         },
         "Details": {
+          "description": "Gets the details.",
           "type": "array",
           "items": {
             "type": "object"
@@ -4117,14 +4246,17 @@
           "readOnly": true
         },
         "Message": {
+          "description": "Gets the message.",
           "type": "string",
           "readOnly": true
         },
         "Parameters": {
+          "description": "Gets the parameters.",
           "type": "string",
           "readOnly": true
         },
         "Url": {
+          "description": "Gets the URL.",
           "type": "string",
           "readOnly": true
         }
@@ -4135,13 +4267,16 @@
       "properties": {
         "AbsenceCodeID": {
           "format": "int32",
+          "description": "Gets or sets the absence code identifier.",
           "type": "integer"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "Minute": {
           "format": "int32",
+          "description": "Gets or sets the minute.",
           "type": "integer"
         }
       }
@@ -4151,21 +4286,26 @@
       "properties": {
         "Hours": {
           "format": "double",
+          "description": "Gets or sets the hours.",
           "type": "number"
         },
         "Minutes": {
           "format": "int32",
+          "description": "Gets or sets the minutes.",
           "type": "integer"
         },
         "AbsenceID": {
           "format": "int32",
+          "description": "Gets or sets the absence identifier.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         }
       }
@@ -4175,13 +4315,16 @@
       "properties": {
         "AbsenceID": {
           "format": "int32",
+          "description": "Gets or sets the absence identifier.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         }
       }
@@ -4191,6 +4334,7 @@
       "properties": {
         "Type": {
           "format": "int32",
+          "description": "Gets or sets the type.",
           "enum": [
             0,
             1
@@ -4199,13 +4343,16 @@
         },
         "AbsenceID": {
           "format": "int32",
+          "description": "Gets or sets the absence identifier.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         }
       }
@@ -4215,14 +4362,17 @@
       "properties": {
         "BarrierID": {
           "format": "int32",
+          "description": "Gets or sets the barrier identifier.",
           "type": "integer"
         },
         "Id": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "Name": {
+          "description": "Gets or sets the name.",
           "type": "string"
         }
       }
@@ -4232,10 +4382,12 @@
       "properties": {
         "Id": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "Name": {
+          "description": "Gets or sets the name.",
           "type": "string"
         }
       }
@@ -4245,10 +4397,12 @@
       "properties": {
         "Id": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "Name": {
+          "description": "Gets or sets the name.",
           "type": "string"
         }
       }
@@ -4258,19 +4412,24 @@
       "properties": {
         "CurrencyID": {
           "format": "int32",
+          "description": "Gets or sets the currency identifier.",
           "type": "integer"
         },
         "CurrencyABB": {
+          "description": "Gets or sets the currency abb.",
           "type": "string"
         },
         "DescriptiveName": {
+          "description": "Gets or sets the name of the descriptive.",
           "type": "string"
         },
         "CurrentRate": {
           "format": "double",
+          "description": "Gets or sets the current rate.",
           "type": "number"
         },
         "IsActive": {
+          "description": "Gets or sets a value indicating whether this instance is active.",
           "type": "boolean"
         }
       }
@@ -4280,17 +4439,21 @@
       "properties": {
         "CustomerID": {
           "format": "int32",
+          "description": "Gets or sets the customer identifier.",
           "type": "integer"
         },
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "Name": {
+          "description": "Gets or sets the name.",
           "type": "string"
         },
         "No": {
+          "description": "Gets or sets the no.",
           "type": "string"
         }
       }
@@ -4300,76 +4463,96 @@
       "properties": {
         "EmployeeExpenseID": {
           "format": "int32",
+          "description": "Gets or sets the employee expense identifier.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "Amount": {
           "format": "double",
+          "description": "Gets or sets the amount.",
           "type": "number"
         },
         "VatAmount": {
           "format": "double",
+          "description": "Gets or sets the vat amount.",
           "type": "number"
         },
         "IsBillable": {
+          "description": "Gets or sets a value indicating whether this instance is billable.",
           "type": "boolean"
         },
         "Number": {
+          "description": "Gets or sets the number.",
           "type": "string"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "ExchangeRate": {
           "format": "double",
+          "description": "Gets or sets the exchange rate.",
           "type": "number"
         },
         "CurrencyID": {
           "format": "int32",
+          "description": "Gets or sets the currency identifier.",
           "type": "integer"
         },
         "EmployeeUserID": {
           "format": "int32",
+          "description": "Gets or sets the employee user identifier.",
           "type": "integer"
         },
         "ExpenseTypeID": {
           "format": "int32",
+          "description": "Gets or sets the expense type identifier.",
           "type": "integer"
         },
         "PaymentMethodID": {
           "format": "int32",
+          "description": "Gets or sets the payment method identifier.",
           "type": "integer"
         },
         "ProjectID": {
           "format": "int32",
+          "description": "Gets or sets the project identifier.",
           "type": "integer"
         },
         "ImageUrls": {
+          "description": "Gets or sets the image urls.",
           "type": "array",
           "items": {
             "type": "string"
           }
         },
         "IsImageUrlLoaded": {
+          "description": "Gets or sets a value indicating whether this instance is image URL loaded.",
           "type": "boolean"
         },
         "HasReceiptPictures": {
+          "description": "Gets or sets a value indicating whether this instance has receipt pictures.",
           "type": "boolean"
         },
         "Project": {
-          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel"
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel",
+          "description": "Gets or sets the project."
         },
         "Currency": {
-          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Common.Models.Currency.CurrencyApiReadModel"
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Common.Models.Currency.CurrencyApiReadModel",
+          "description": "Gets or sets the currency."
         },
         "ExpenseType": {
-          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.ExpenseType.ExpenseTypeApiReadModel"
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.ExpenseType.ExpenseTypeApiReadModel",
+          "description": "Gets or sets the type of the expense."
         },
         "PaymentMethod": {
-          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.PaymentMethod.PaymentMethodApiReadModel"
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.PaymentMethod.PaymentMethodApiReadModel",
+          "description": "Gets or sets the payment method."
         }
       }
     },
@@ -4378,28 +4561,35 @@
       "properties": {
         "ProjectID": {
           "format": "int32",
+          "description": "Gets or sets the project identifier.",
           "type": "integer"
         },
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "Name": {
+          "description": "Gets or sets the name.",
           "type": "string"
         },
         "No": {
+          "description": "Gets or sets the no.",
           "type": "string"
         },
         "ExpenseIsBillable": {
+          "description": "Gets or sets a value indicating whether [expense is billable].",
           "type": "boolean"
         },
         "CustomerID": {
           "format": "int32",
+          "description": "Gets or sets the customer identifier.",
           "type": "integer"
         },
         "Customer": {
-          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel",
+          "description": "Gets or sets the customer."
         }
       }
     },
@@ -4408,42 +4598,54 @@
       "properties": {
         "ExpenseTypeID": {
           "format": "int32",
+          "description": "Gets or sets the expense type identifier.",
           "type": "integer"
         },
         "ExpenseTypeName": {
+          "description": "Gets or sets the name of the expense type.",
           "type": "string"
         },
         "ShowInTravel": {
+          "description": "Gets or sets a value indicating whether [show in travel].",
           "type": "boolean"
         },
         "AccountNo": {
+          "description": "Gets or sets the account no.",
           "type": "string"
         },
         "VAT": {
           "format": "double",
+          "description": "Gets or sets the vat.",
           "type": "number"
         },
         "ProductNo": {
+          "description": "Gets or sets the product no.",
           "type": "string"
         },
         "SalaryCode": {
+          "description": "Gets or sets the salary code.",
           "type": "string"
         },
         "IsActive": {
+          "description": "Gets or sets a value indicating whether this instance is active.",
           "type": "boolean"
         },
         "IsEquipment": {
+          "description": "Gets or sets a value indicating whether this instance is equipment.",
           "type": "boolean"
         },
         "CostPrice": {
           "format": "double",
+          "description": "Gets or sets the cost price.",
           "type": "number"
         },
         "SalesPrice": {
           "format": "double",
+          "description": "Gets or sets the sales price.",
           "type": "number"
         },
         "EquipmentText": {
+          "description": "Gets or sets the equipment text.",
           "type": "string"
         }
       }
@@ -4453,31 +4655,40 @@
       "properties": {
         "PaymentMethodID": {
           "format": "int32",
+          "description": "Gets or sets the payment method identifier.",
           "type": "integer"
         },
         "Name": {
+          "description": "Gets or sets the name.",
           "type": "string"
         },
         "IsPaidByEmployee": {
+          "description": "Gets or sets a value indicating whether this instance is paid by employee.",
           "type": "boolean"
         },
         "IsDefaultForEmployeeExpense": {
+          "description": "Gets or sets a value indicating whether this instance is default for employee expense.",
           "type": "boolean"
         },
         "IsDefaultForProjectExpense": {
+          "description": "Gets or sets a value indicating whether this instance is default for project expense.",
           "type": "boolean"
         },
         "IsActive": {
+          "description": "Gets or sets a value indicating whether this instance is active.",
           "type": "boolean"
         },
         "IsDefaultForImport": {
+          "description": "Gets or sets a value indicating whether this instance is default for import.",
           "type": "boolean"
         },
         "IsPersonalCreditCard": {
+          "description": "Gets or sets a value indicating whether this instance is personal credit card.",
           "type": "boolean"
         },
         "CreditCardEmployeeUserID": {
           "format": "int32",
+          "description": "Gets or sets the credit card employee user identifier.",
           "type": "integer"
         }
       }
@@ -4487,44 +4698,55 @@
       "properties": {
         "EmployeeExpenseID": {
           "format": "int32",
+          "description": "Gets or sets the employee expense identifier.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "Amount": {
           "format": "double",
+          "description": "Gets or sets the amount.",
           "type": "number"
         },
         "VatAmount": {
           "format": "double",
+          "description": "Gets or sets the vat amount.",
           "type": "number"
         },
         "IsBillable": {
+          "description": "Gets or sets a value indicating whether this instance is billable.",
           "type": "boolean"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "ExchangeRate": {
           "format": "double",
+          "description": "Gets or sets the exchange rate.",
           "type": "number"
         },
         "CurrencyID": {
           "format": "int32",
+          "description": "Gets or sets the currency identifier.",
           "type": "integer"
         },
         "ExpenseTypeID": {
           "format": "int32",
+          "description": "Gets or sets the expense type identifier.",
           "type": "integer"
         },
         "PaymentMethodID": {
           "format": "int32",
+          "description": "Gets or sets the payment method identifier.",
           "type": "integer"
         },
         "ProjectID": {
           "format": "int32",
+          "description": "Gets or sets the project identifier.",
           "type": "integer"
         }
       }
@@ -4534,43 +4756,54 @@
       "properties": {
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "Number": {
+          "description": "Gets or sets the number.",
           "type": "string"
         },
         "Amount": {
           "format": "double",
+          "description": "Gets or sets the amount.",
           "type": "number"
         },
         "VatAmount": {
           "format": "double",
+          "description": "Gets or sets the vat amount.",
           "type": "number"
         },
         "IsBillable": {
+          "description": "Gets or sets a value indicating whether this instance is billable.",
           "type": "boolean"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "ExchangeRate": {
           "format": "double",
+          "description": "Gets or sets the exchange rate.",
           "type": "number"
         },
         "CurrencyID": {
           "format": "int32",
+          "description": "Gets or sets the currency identifier.",
           "type": "integer"
         },
         "ExpenseTypeID": {
           "format": "int32",
+          "description": "Gets or sets the expense type identifier.",
           "type": "integer"
         },
         "PaymentMethodID": {
           "format": "int32",
+          "description": "Gets or sets the payment method identifier.",
           "type": "integer"
         },
         "ProjectID": {
           "format": "int32",
+          "description": "Gets or sets the project identifier.",
           "type": "integer"
         }
       }
@@ -4580,33 +4813,41 @@
       "properties": {
         "UserID": {
           "format": "int32",
+          "description": "Gets or sets the user identifier.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "TotalEmployeeExpenseCount": {
           "format": "int32",
+          "description": "Gets or sets the total employee expense count.",
           "type": "integer"
         },
         "TotalAmount": {
           "format": "double",
+          "description": "Gets or sets the total amount.",
           "type": "number"
         },
         "TotalAmountWithoutVat": {
           "format": "double",
+          "description": "Gets or sets the total amount without vat.",
           "type": "number"
         },
         "CurrencyID": {
           "format": "int32",
+          "description": "Gets or sets the currency identifier.",
           "type": "integer"
         },
         "CurrencyABB": {
+          "description": "Gets or sets the currency abb.",
           "type": "string"
         },
         "CurrencyRate": {
           "format": "double",
+          "description": "Gets or sets the currency rate.",
           "type": "number"
         }
       }
@@ -4616,45 +4857,57 @@
       "properties": {
         "ProjectionID": {
           "format": "int32",
+          "description": "Gets or sets the projection identifier.",
           "type": "integer"
         },
         "UserID": {
           "format": "int32",
+          "description": "Gets or sets the user identifier.",
           "type": "integer"
         },
         "User": {
-          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Organization.Models.User.UserApiReadModel"
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Organization.Models.User.UserApiReadModel",
+          "description": "Gets or sets the user."
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "NormalWorkingTimeDayOrder": {
           "format": "int32",
+          "description": "Gets or sets the normal working time day order.",
           "type": "integer"
         },
         "NormalWorkingHours": {
           "format": "double",
+          "description": "Gets or sets the normal working hours.",
           "type": "number"
         },
         "NormalWorkingMinutes": {
           "format": "int32",
+          "description": "Gets or sets the normal working minutes.",
           "type": "integer"
         },
         "IsClosed": {
+          "description": "Gets or sets a value indicating whether this instance is closed.",
           "type": "boolean"
         },
         "IsInClosedAccountingPeriod": {
+          "description": "Gets or sets a value indicating whether this instance is in closed accounting period.",
           "type": "boolean"
         },
         "HasRejectedTime": {
+          "description": "Gets or sets a value indicating whether this instance has rejected time.",
           "type": "boolean"
         },
         "IsApproved": {
+          "description": "Gets or sets a value indicating whether this instance is approved.",
           "type": "boolean"
         },
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         }
@@ -4665,20 +4918,25 @@
       "properties": {
         "UserID": {
           "format": "int32",
+          "description": "Gets or sets the user identifier.",
           "type": "integer"
         },
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "FirstName": {
+          "description": "Gets or sets the first name.",
           "type": "string"
         },
         "LastName": {
+          "description": "Gets or sets the last name.",
           "type": "string"
         },
         "Initials": {
+          "description": "Gets or sets the initials.",
           "type": "string"
         }
       }
@@ -4688,28 +4946,35 @@
       "properties": {
         "ProjectID": {
           "format": "int32",
+          "description": "Gets or sets the project identifier.",
           "type": "integer"
         },
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "Name": {
+          "description": "Gets or sets the name.",
           "type": "string"
         },
         "No": {
+          "description": "Gets or sets the no.",
           "type": "string"
         },
         "ExpenseIsBillable": {
+          "description": "Gets or sets a value indicating whether [expense is billable].",
           "type": "boolean"
         },
         "CustomerID": {
           "format": "int32",
+          "description": "Gets or sets the customer identifier.",
           "type": "integer"
         },
         "Customer": {
-          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel",
+          "description": "Gets or sets the customer."
         }
       }
     },
@@ -4718,43 +4983,54 @@
       "properties": {
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "Number": {
+          "description": "Gets or sets the number.",
           "type": "string"
         },
         "Amount": {
           "format": "double",
+          "description": "Gets or sets the amount.",
           "type": "number"
         },
         "VatAmount": {
           "format": "double",
+          "description": "Gets or sets the vat amount.",
           "type": "number"
         },
         "IsBillable": {
+          "description": "Gets or sets a value indicating whether this instance is billable.",
           "type": "boolean"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "ExchangeRate": {
           "format": "double",
+          "description": "Gets or sets the exchange rate.",
           "type": "number"
         },
         "CurrencyID": {
           "format": "int32",
+          "description": "Gets or sets the currency identifier.",
           "type": "integer"
         },
         "ExpenseTypeID": {
           "format": "int32",
+          "description": "Gets or sets the expense type identifier.",
           "type": "integer"
         },
         "PaymentMethodID": {
           "format": "int32",
+          "description": "Gets or sets the payment method identifier.",
           "type": "integer"
         },
         "ProjectID": {
           "format": "int32",
+          "description": "Gets or sets the project identifier.",
           "type": "integer"
         }
       }
@@ -4764,34 +5040,43 @@
       "properties": {
         "TaskID": {
           "format": "int32",
+          "description": "Gets or sets the task identifier.",
           "type": "integer"
         },
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "Name": {
+          "description": "Gets or sets the name.",
           "type": "string"
         },
         "No": {
+          "description": "Gets or sets the no.",
           "type": "string"
         },
         "IsFixedPrice": {
+          "description": "Gets or sets a value indicating whether this instance is fixed price.",
           "type": "boolean"
         },
         "IsDefaultBillable": {
+          "description": "Gets or sets a value indicating whether this instance is default billable.",
           "type": "boolean"
         },
         "ParentFullName": {
+          "description": "Gets or sets the full name of the parent.",
           "type": "string"
         },
         "ProjectID": {
           "format": "int32",
+          "description": "Gets or sets the project identifier.",
           "type": "integer"
         },
         "Project": {
-          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel"
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel",
+          "description": "Gets or sets the project."
         }
       }
     },
@@ -4799,40 +5084,50 @@
       "type": "object",
       "properties": {
         "Billable": {
+          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.TimeRegistration.TimeRegistrationApiCreateModel} is billable.",
           "type": "boolean"
         },
         "BillableHours": {
           "format": "double",
+          "description": "Gets or sets the billable hours.",
           "type": "number"
         },
         "BillableMinutes": {
           "format": "int32",
+          "description": "Gets or sets the billable minutes.",
           "type": "integer"
         },
         "Hours": {
           "format": "double",
+          "description": "Gets or sets the hours.",
           "type": "number"
         },
         "Minutes": {
           "format": "int32",
+          "description": "Gets or sets the minutes.",
           "type": "integer"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "AdditionalComment": {
+          "description": "Gets or sets the additional comment.",
           "type": "string"
         },
         "TaskID": {
           "format": "int32",
+          "description": "Gets or sets the task identifier.",
           "type": "integer"
         },
         "Factor": {
           "format": "double",
+          "description": "Gets or sets the factor.",
           "type": "number"
         }
       }
@@ -4841,10 +5136,12 @@
       "type": "object",
       "properties": {
         "AdditionalTextField": {
+          "description": "Gets or sets the additional text field.",
           "type": "string"
         },
         "ApprovalStatus": {
           "format": "int32",
+          "description": "Gets or sets the approval status.",
           "enum": [
             0,
             1,
@@ -4857,30 +5154,37 @@
           "type": "integer"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "Created": {
           "format": "date-time",
+          "description": "Gets or sets the created.",
           "type": "string"
         },
         "CreatedBy": {
           "format": "int32",
+          "description": "Gets or sets the created by.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "DepartmentID": {
           "format": "int32",
+          "description": "Gets or sets the department identifier.",
           "type": "integer"
         },
         "EntityID": {
           "format": "int32",
+          "description": "Gets or sets the entity identifier.",
           "type": "integer"
         },
         "EntityType": {
           "format": "int32",
+          "description": "Gets or sets the type of the entity.",
           "enum": [
             0,
             1,
@@ -5100,16 +5404,19 @@
             218,
             219,
             220,
-            221
+            221,
+            222
           ],
           "type": "integer"
         },
         "Factor": {
           "format": "double",
+          "description": "Gets or sets the factor.",
           "type": "number"
         },
         "InvoiceStatus": {
           "format": "int32",
+          "description": "Gets or sets the invoice status.",
           "enum": [
             0,
             1,
@@ -5118,31 +5425,39 @@
           "type": "integer"
         },
         "IsBillable": {
+          "description": "Gets or sets a value indicating whether this instance is billable.",
           "type": "boolean"
         },
         "IsInClosedAccountingPeriod": {
+          "description": "Gets or sets a value indicating whether this instance is in closed accounting period.",
           "type": "boolean"
         },
         "IsFixedPrice": {
+          "description": "Gets or sets the is fixed price.",
           "type": "boolean"
         },
         "IsInvoiced": {
+          "description": "Gets or sets a value indicating whether this instance is invoiced.",
           "type": "boolean"
         },
         "LastModified": {
           "format": "date-time",
+          "description": "Gets or sets the last modified.",
           "type": "string"
         },
         "LastModifiedBy": {
           "format": "int32",
+          "description": "Gets or sets the last modified by.",
           "type": "integer"
         },
         "Hours": {
           "format": "double",
+          "description": "Gets or sets the hours.",
           "type": "number"
         },
         "Status": {
           "format": "int32",
+          "description": "Gets or sets the status.",
           "enum": [
             0,
             1
@@ -5151,15 +5466,18 @@
         },
         "TimeRegistrationGUID": {
           "format": "uuid",
+          "description": "Gets or sets the time registration unique identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "TimeRegistrationID": {
           "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
           "type": "integer"
         },
         "TimeTrackingFormat": {
           "format": "int32",
+          "description": "Gets or sets the time tracking format.",
           "enum": [
             0,
             1,
@@ -5171,29 +5489,36 @@
         },
         "UserID": {
           "format": "int32",
+          "description": "Gets or sets the user identifier.",
           "type": "integer"
         },
         "Minutes": {
           "format": "int32",
+          "description": "Gets or sets the minutes.",
           "type": "integer"
         },
         "IsMeeting": {
+          "description": "Gets or sets a value indicating whether this instance is meeting.",
           "type": "boolean"
         },
         "CalendarEventID": {
           "format": "int32",
+          "description": "Gets or sets the calendar event identifier.",
           "type": "integer"
         },
         "BillableHours": {
           "format": "double",
+          "description": "Gets or sets the billable hours.",
           "type": "number"
         },
         "BillableMinutes": {
           "format": "int32",
+          "description": "Gets or sets the billable minutes.",
           "type": "integer"
         },
         "InterfaceCreated": {
           "format": "int32",
+          "description": "Gets or sets the interface created.",
           "enum": [
             0,
             1,
@@ -5260,6 +5585,7 @@
         },
         "InterfaceModified": {
           "format": "int32",
+          "description": "Gets or sets the interface modified.",
           "enum": [
             0,
             1,
@@ -5326,32 +5652,38 @@
         }
       }
     },
-    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiCreateModel": {
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateModel": {
       "type": "object",
       "properties": {
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "TaskID": {
           "format": "int32",
+          "description": "Gets or sets the task identifier.",
           "type": "integer"
         },
         "UserID": {
           "format": "int32",
+          "description": "Gets or sets the user identifier.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "Hours": {
           "format": "double",
+          "description": "Gets or sets the hours.",
           "type": "number"
         },
         "GroupType": {
           "format": "int32",
+          "description": "Gets or sets the type of the group.",
           "enum": [
             1,
             2,
@@ -5361,16 +5693,20 @@
           "type": "integer"
         },
         "Billable": {
+          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateModel} is billable.",
           "type": "boolean"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "AdditionalComment": {
+          "description": "Gets or sets the additional comment.",
           "type": "string"
         },
         "TimeTrackingFormat": {
           "format": "int32",
+          "description": "Gets or sets the time tracking format.",
           "enum": [
             0,
             1,
@@ -5382,22 +5718,118 @@
         },
         "BillableHours": {
           "format": "double",
+          "description": "Gets or sets the billable hours.",
           "type": "number"
         },
         "EntityID": {
           "format": "int32",
+          "description": "Gets or sets the entity identifier.",
           "type": "integer"
         },
         "BillableMinutes": {
           "format": "int32",
+          "description": "Gets or sets the billable minutes.",
           "type": "integer"
         },
         "Minutes": {
           "format": "int32",
+          "description": "Gets or sets the minutes.",
           "type": "integer"
         },
         "Factor": {
           "format": "double",
+          "description": "Gets or sets the factor.",
+          "type": "number"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "format": "uuid",
+          "description": "Gets or sets the identifier.",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "TaskID": {
+          "format": "int32",
+          "description": "Gets or sets the task identifier.",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "description": "Gets or sets the user identifier.",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "description": "Gets or sets the date.",
+          "type": "string"
+        },
+        "Hours": {
+          "format": "double",
+          "description": "Gets or sets the hours.",
+          "type": "number"
+        },
+        "GroupType": {
+          "format": "int32",
+          "description": "Gets or sets the type of the group.",
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "Billable": {
+          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiCreateModel} is billable.",
+          "type": "boolean"
+        },
+        "Comment": {
+          "description": "Gets or sets the comment.",
+          "type": "string"
+        },
+        "AdditionalComment": {
+          "description": "Gets or sets the additional comment.",
+          "type": "string"
+        },
+        "TimeTrackingFormat": {
+          "format": "int32",
+          "description": "Gets or sets the time tracking format.",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "BillableHours": {
+          "format": "double",
+          "description": "Gets or sets the billable hours.",
+          "type": "number"
+        },
+        "EntityID": {
+          "format": "int32",
+          "description": "Gets or sets the entity identifier.",
+          "type": "integer"
+        },
+        "BillableMinutes": {
+          "format": "int32",
+          "description": "Gets or sets the billable minutes.",
+          "type": "integer"
+        },
+        "Minutes": {
+          "format": "int32",
+          "description": "Gets or sets the minutes.",
+          "type": "integer"
+        },
+        "Factor": {
+          "format": "double",
+          "description": "Gets or sets the factor.",
           "type": "number"
         }
       }
@@ -5407,35 +5839,44 @@
       "properties": {
         "Hours": {
           "format": "double",
+          "description": "Gets or sets the hours.",
           "type": "number"
         },
         "Minutes": {
           "format": "int32",
+          "description": "Gets or sets the minutes.",
           "type": "integer"
         },
         "Billable": {
+          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateTimeModel} is billable.",
           "type": "boolean"
         },
         "BillableHours": {
           "format": "double",
+          "description": "Gets or sets the billable hours.",
           "type": "number"
         },
         "BillableMinutes": {
           "format": "int32",
+          "description": "Gets or sets the billable minutes.",
           "type": "integer"
         },
         "Factor": {
           "format": "double",
+          "description": "Gets or sets the factor.",
           "type": "number"
         },
         "TimeRegistrationID": {
           "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
           "type": "integer"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "AdditionalComment": {
+          "description": "Gets or sets the additional comment.",
           "type": "string"
         }
       }
@@ -5445,6 +5886,7 @@
       "properties": {
         "TimeRegistrationID": {
           "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
           "type": "integer"
         }
       }
@@ -5454,20 +5896,25 @@
       "properties": {
         "Hours": {
           "format": "double",
+          "description": "Gets or sets the hours.",
           "type": "number"
         },
         "Minutes": {
           "format": "int32",
+          "description": "Gets or sets the minutes.",
           "type": "integer"
         },
         "TimeRegistrationID": {
           "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
           "type": "integer"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "AdditionalComment": {
+          "description": "Gets or sets the additional comment.",
           "type": "string"
         }
       }
@@ -5477,6 +5924,7 @@
       "properties": {
         "Type": {
           "format": "int32",
+          "description": "Gets or sets the type.",
           "enum": [
             0,
             1
@@ -5485,12 +5933,15 @@
         },
         "TimeRegistrationID": {
           "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
           "type": "integer"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "AdditionalComment": {
+          "description": "Gets or sets the additional comment.",
           "type": "string"
         }
       }
@@ -5500,6 +5951,7 @@
       "properties": {
         "TimeTrackerID": {
           "format": "int32",
+          "description": "Gets or sets the time tracker identifier.",
           "type": "integer"
         }
       }
@@ -5509,37 +5961,46 @@
       "properties": {
         "UserID": {
           "format": "int32",
+          "description": "Gets or sets the user identifier.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "TotalActualHour": {
           "format": "double",
+          "description": "Gets or sets the total actual hour.",
           "type": "number"
         },
         "TotalBillableHour": {
           "format": "double",
+          "description": "Gets or sets the total billable hour.",
           "type": "number"
         },
         "TotalActualMinute": {
           "format": "int32",
+          "description": "Gets or sets the total actual minute.",
           "type": "integer"
         },
         "TotalBillableMinute": {
           "format": "int32",
+          "description": "Gets or sets the total billable minute.",
           "type": "integer"
         },
         "TotalBillableAmount": {
           "format": "double",
+          "description": "Gets or sets the total billable amount.",
           "type": "number"
         },
         "BillableCurrencyABB": {
+          "description": "Gets or sets the billable currency abb.",
           "type": "string"
         },
         "TotalRegistrationCount": {
           "format": "int32",
+          "description": "Gets or sets the total registration count.",
           "type": "integer"
         }
       }
@@ -5549,22 +6010,27 @@
       "properties": {
         "TimeTrackerID": {
           "format": "int32",
+          "description": "Gets or sets the time tracker identifier.",
           "type": "integer"
         },
         "UserID": {
           "format": "int32",
+          "description": "Gets or sets the user identifier.",
           "type": "integer"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "StartTime": {
           "format": "date-time",
+          "description": "Gets or sets the start time.",
           "type": "string"
         },
         "EntityType": {
           "format": "int32",
+          "description": "Gets or sets the type of the entity.",
           "enum": [
             0,
             1,
@@ -5784,37 +6250,50 @@
             218,
             219,
             220,
-            221
+            221,
+            222
           ],
           "type": "integer"
         },
         "EntityID": {
           "format": "int32",
+          "description": "Gets or sets the entity identifier.",
           "type": "integer"
         },
         "Task": {
-          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel",
+          "description": "Gets or sets the task."
+        },
+        "AbsenceCode": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.AbsenceCode.AbsenceCodeApiReadModel",
+          "description": "Gets or sets the absence code."
         },
         "TimeRegistrationID": {
           "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
           "type": "integer"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "Minute": {
           "format": "int32",
+          "description": "Gets or sets the minute.",
           "type": "integer"
         },
         "BillableMinute": {
           "format": "int32",
+          "description": "Gets or sets the billable minute.",
           "type": "integer"
         },
         "IsBillable": {
+          "description": "Gets or sets the is billable.",
           "type": "boolean"
         },
         "TimeTrackerStatus": {
           "format": "int32",
+          "description": "Gets or sets the time tracker status.",
           "enum": [
             1,
             2
@@ -5823,6 +6302,7 @@
         },
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         }
@@ -5833,6 +6313,7 @@
       "properties": {
         "EntityType": {
           "format": "int32",
+          "description": "Gets or sets the type of the entity.",
           "enum": [
             0,
             1,
@@ -6052,22 +6533,27 @@
             218,
             219,
             220,
-            221
+            221,
+            222
           ],
           "type": "integer"
         },
         "EntityID": {
           "format": "int32",
+          "description": "Gets or sets the entity identifier.",
           "type": "integer"
         },
         "IsBillable": {
+          "description": "Gets or sets the is billable.",
           "type": "boolean"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "TimeTrackerID": {
           "format": "int32",
+          "description": "Gets or sets the time tracker identifier.",
           "type": "integer"
         }
       }
@@ -6076,10 +6562,12 @@
       "type": "object",
       "properties": {
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "Minute": {
           "format": "int32",
+          "description": "Gets or sets the minute.",
           "type": "integer"
         }
       }
@@ -6089,24 +6577,30 @@
       "properties": {
         "TaskID": {
           "format": "int32",
+          "description": "Gets or sets the task identifier.",
           "type": "integer"
         },
         "BillableMinute": {
           "format": "int32",
+          "description": "Gets or sets the billable minute.",
           "type": "integer"
         },
         "IsBillable": {
+          "description": "Gets or sets a value indicating whether this instance is billable.",
           "type": "boolean"
         },
         "TimeRegistrationID": {
           "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
           "type": "integer"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "Minute": {
           "format": "int32",
+          "description": "Gets or sets the minute.",
           "type": "integer"
         }
       }
@@ -6116,147 +6610,189 @@
       "properties": {
         "CustomerID": {
           "format": "int32",
+          "description": "Gets or sets the customer identifier.",
           "type": "integer"
         },
         "CustomerName": {
+          "description": "Gets or sets the name of the customer.",
           "type": "string"
         },
         "CustomerNo": {
+          "description": "Gets or sets the customer no.",
           "type": "string"
         },
         "ProjectID": {
           "format": "int32",
+          "description": "Gets or sets the project identifier.",
           "type": "integer"
         },
         "ProjectName": {
+          "description": "Gets or sets the name of the project.",
           "type": "string"
         },
         "ProjectNo": {
+          "description": "Gets or sets the project no.",
           "type": "string"
         },
         "TaskID": {
           "format": "int32",
+          "description": "Gets or sets the task identifier.",
           "type": "integer"
         },
         "TaskName": {
+          "description": "Gets or sets the name of the task.",
           "type": "string"
         },
         "TaskFullName": {
+          "description": "Gets or sets the full name of the task.",
           "type": "string"
         },
         "IsFixedPrice": {
+          "description": "Gets or sets the is fixed price.",
           "type": "boolean"
         },
         "TaskNo": {
+          "description": "Gets or sets the task no.",
           "type": "string"
         },
         "TaskIsActive": {
+          "description": "Gets or sets the task is active.",
           "type": "boolean"
         },
         "AbsenceCodeID": {
           "format": "int32",
+          "description": "Gets or sets the absence code identifier.",
           "type": "integer"
         },
         "AbsenceName": {
+          "description": "Gets or sets the name of the absence.",
           "type": "string"
         },
         "AbsenceCode": {
+          "description": "Gets or sets the absence code.",
           "type": "string"
         },
         "AbsenceIsActive": {
+          "description": "Gets or sets the absence is active.",
           "type": "boolean"
         },
         "AdditionalTextIsRequired": {
+          "description": "Gets or sets a value indicating whether [additional text is required].",
           "type": "boolean"
         },
         "DefaultBillable": {
+          "description": "Gets or sets a value indicating whether [default billable].",
           "type": "boolean"
         },
         "IsETCProject": {
+          "description": "Gets or sets a value indicating whether this instance is etc project.",
           "type": "boolean"
         },
         "ShowBillable": {
+          "description": "Gets or sets a value indicating whether [show billable].",
           "type": "boolean"
         },
         "AllocatedHour": {
           "format": "int32",
+          "description": "Gets or sets the allocated hour.",
           "type": "integer"
         },
         "TimeRegistrationID": {
           "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
           "type": "integer"
         },
         "EntityID": {
           "format": "int32",
+          "description": "Gets or sets the entity identifier.",
           "type": "integer"
         },
         "EntityType": {
           "format": "int32",
+          "description": "Gets or sets the type of the entity.",
           "type": "integer"
         },
         "UserID": {
           "format": "int32",
+          "description": "Gets or sets the user identifier.",
           "type": "integer"
         },
         "Created": {
           "format": "date-time",
+          "description": "Gets or sets the created.",
           "type": "string"
         },
         "CreatedBy": {
           "format": "int32",
+          "description": "Gets or sets the created by.",
           "type": "integer"
         },
         "LastModified": {
           "format": "date-time",
+          "description": "Gets or sets the last modified.",
           "type": "string"
         },
         "LastModifiedBy": {
           "format": "int32",
+          "description": "Gets or sets the last modified by.",
           "type": "integer"
         },
         "IsBillable": {
+          "description": "Gets or sets a value indicating whether this instance is billable.",
           "type": "boolean"
         },
         "Status": {
+          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel} is status.",
           "type": "boolean"
         },
         "Date": {
           "format": "date-time",
+          "description": "Gets or sets the date.",
           "type": "string"
         },
         "Comment": {
+          "description": "Gets or sets the comment.",
           "type": "string"
         },
         "Hours": {
           "format": "double",
+          "description": "Gets or sets the hours.",
           "type": "number"
         },
         "AdditionalTextField": {
+          "description": "Gets or sets the additional text field.",
           "type": "string"
         },
         "InvoiceStatus": {
+          "description": "Gets or sets a value indicating whether [invoice status].",
           "type": "boolean"
         },
         "TimeRegistrationApprovalStatus": {
+          "description": "Gets or sets a value indicating whether [time registration approval status].",
           "type": "boolean"
         },
         "TimeTrackingFormat": {
           "format": "int32",
+          "description": "Gets or sets the time tracking format.",
           "type": "integer"
         },
         "Minutes": {
           "format": "int32",
+          "description": "Gets or sets the minutes.",
           "type": "integer"
         },
         "BillableHours": {
           "format": "double",
+          "description": "Gets or sets the billable hours.",
           "type": "number"
         },
         "BillableMinutes": {
           "format": "int32",
+          "description": "Gets or sets the billable minutes.",
           "type": "integer"
         },
         "IsFavourite": {
+          "description": "Gets or sets a value indicating whether this instance is favourite.",
           "type": "boolean"
         }
       }
@@ -6266,13 +6802,16 @@
       "properties": {
         "ID": {
           "format": "uuid",
+          "description": "Gets or sets the identifier.",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
         "FirstName": {
+          "description": "Gets or sets the first name.",
           "type": "string"
         },
         "LastName": {
+          "description": "Gets or sets the last name.",
           "type": "string"
         }
       }
@@ -6281,14 +6820,17 @@
       "type": "object",
       "properties": {
         "CompanyName": {
+          "description": "Gets or sets the name of the company.",
           "type": "string"
         },
         "NumberCultureID": {
           "format": "int32",
+          "description": "Gets or sets the number culture identifier.",
           "type": "integer"
         },
         "TimeFormat": {
           "format": "int32",
+          "description": "Gets or sets the time format.",
           "enum": [
             0,
             1
@@ -6297,6 +6839,7 @@
         },
         "TimeRoundingFormat": {
           "format": "int32",
+          "description": "Gets or sets the time rounding format.",
           "enum": [
             0,
             1,
@@ -6308,23 +6851,29 @@
           "type": "integer"
         },
         "BillableHourIsEditable": {
+          "description": "Gets or sets a value indicating whether [billable hour is editable].",
           "type": "boolean"
         },
         "StopwatchTimeTracking": {
+          "description": "Gets or sets a value indicating whether [stopwatch time tracking].",
           "type": "boolean"
         },
         "SystemCurrencyID": {
           "format": "int32",
+          "description": "Gets or sets the system currency identifier.",
           "type": "integer"
         },
         "SystemCurrencyRate": {
           "format": "double",
+          "description": "Gets or sets the system currency rate.",
           "type": "number"
         },
         "SystemCurrencyABB": {
+          "description": "Gets or sets the system currency abb.",
           "type": "string"
         },
         "IsAbsenceActive": {
+          "description": "Gets or sets a value indicating whether this instance is absence active.",
           "type": "boolean"
         }
       }

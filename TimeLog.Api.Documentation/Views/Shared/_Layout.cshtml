@@ -23,6 +23,7 @@
                     </div>
                 </div>
                 <div class="layout__item">
+                    @RenderSection("sidebarExtra", false)
                     @RenderSection("sidebar", required: false)
                     @if (!IsSectionDefined("sidebar"))
                     {

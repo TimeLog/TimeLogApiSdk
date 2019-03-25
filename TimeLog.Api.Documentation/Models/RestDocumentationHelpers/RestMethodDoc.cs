@@ -14,15 +14,15 @@ namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers
 
         public string MethodType { get; }
 
-        public RestTypeDoc Parent { get; private set; }
+        public RestTypeDoc Parent { get; }
 
-        public string OperationId { get; private set; }
+        public string OperationId { get; }
 
-        public string FullName { get; private set; }
+        public string FullName { get; }
 
-        public string Summary { get; private set; }
+        public string Summary { get; }
 
-        public string Name { get; private set; }
+        public string Name { get; }
 
         #endregion
 
@@ -37,7 +37,7 @@ namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers
             MethodType = action.MethodType;
             Parent = restTypeDoc;
             Params = MapToMethodParam(action.Parameters);
-            Responses = action.Responses;
+            Responses = action.Responses.OrderBy(x => x.Code).ToList();
         }
 
         #endregion

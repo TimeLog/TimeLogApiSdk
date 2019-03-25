@@ -40,7 +40,7 @@ namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core
             var _result = new ExpandoObject() as IDictionary<string, object>;
 
             foreach (var _restProperty in properties)
-                switch (_restProperty.Type)
+                switch (_restProperty.Type.Value)
                 {
                     case "integer":
                         _result.Add(_restProperty.Name, 0);
@@ -57,7 +57,7 @@ namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core
                     case "string" when _restProperty.Format == "date-time":
                         _result.Add(_restProperty.Name, DateTime.Now.Date);
                         break;
-                    case null when !string.IsNullOrEmpty(_restProperty.RefSchema.Value):
+                    case "object":
                         _result.Add(_restProperty.Name, BuildObjectFromProperties(_restProperty.RefSchema.Definition.RestProperties));
                         break;
                     default:

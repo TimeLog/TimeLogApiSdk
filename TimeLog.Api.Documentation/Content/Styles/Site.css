@@ -4917,22 +4917,49 @@ span.badge {
     display: inline-block;
 }
 
-li.post span.badge {
+h2 > span.badge {
+    width: 70px;
+}
+
+.post span.badge {
     background-color: #10a54a;
 }
 
-li.get span.badge {
+.get span.badge {
     background-color: #0f6ab4;
 }
 
-li.put span.badge {
+.put span.badge {
     background-color: #c5862b;
 }
 
-li.delete span.badge {
+.delete span.badge {
     background-color: #a41e22;
 }
 
-.m-t {
-    margin-top: 5px;
+.m-t-s {
+    margin-top: 3px !important;
+}
+
+ul.signature-nav {
+    display: block;
+    min-width: 230px;
+    margin: 0;
+    padding: 0;
+}
+
+ul.signature-nav li {
+    float: left;
+    margin: 0 5px 5px 0;
+    padding: 2px 5px 2px 0;
+    border-right: 1px solid #ddd;
+}
+
+ul.signature-nav li:last-child {
+    padding-right: 0;
+    border-right: none;
+}
+
+ul ~ * {
+    clear: both;
 }

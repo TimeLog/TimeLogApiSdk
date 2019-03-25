@@ -375,3 +375,27 @@ jQuery.fn.selectText = function () {
     });
 
 }());
+
+
+$(function() {
+    $('ul[data-tab]').click(function($event) {
+        var $target = $($event.target);
+
+        if (!$target.is('a')) return;
+
+        var navigationBar = $target.parent().parent();
+        var selectedBarIndex = $target.parent().index();
+        var tabContainers = navigationBar.nextAll();
+        var $currentTabContainer;
+
+        for (var i = 0; i < tabContainers.length; i++) {
+            $currentTabContainer = $(tabContainers[i]);
+
+            if (selectedBarIndex === i) {
+                $currentTabContainer.show();
+            } else {
+                $currentTabContainer.hide();
+            }
+        }
+    });
+}());

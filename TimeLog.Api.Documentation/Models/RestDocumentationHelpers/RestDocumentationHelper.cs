@@ -67,7 +67,8 @@ namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers
                                 property.Name,
                                 (string) property.Value["format"],
                                 (string) property.Value["type"],
-                                new RestRefSchema((string) property.Value["$ref"])
+                                new RestRefSchema((string) property.Value["$ref"]),
+                                (string) property.Value["description"]
                             ))
                             .OrderBy(x => x.Name)
                             .ToList()

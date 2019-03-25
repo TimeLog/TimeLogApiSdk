@@ -9,19 +9,21 @@
 
         public string Name { get; }
         public string Format { get; }
-        public string Type { get; }
+        public RestType Type { get; }
         public RestRefSchema RefSchema { get; }
+        public string Description { get; }
 
         #endregion
 
         #region Constructor
 
-        public RestProperty(string name, string format, string type, RestRefSchema refSchema)
+        public RestProperty(string name, string format, string type, RestRefSchema refSchema, string description)
         {
             Name = name;
             Format = format;
-            Type = type;
+            Type = new RestType(type);
             RefSchema = refSchema;
+            Description = description;
         }
 
         #endregion

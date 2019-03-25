@@ -128,6 +128,7 @@
     <Compile Include="Models\MethodException.cs" />
     <Compile Include="Models\MethodParam.cs" />
     <Compile Include="Models\ReportingManager.cs" />
+    <Compile Include="Models\RestDocumentationHelpers\Core\RestType.cs" />
     <Compile Include="Models\RestDocumentationHelpers\RestDoc.cs" />
     <Compile Include="Models\RestDocumentationHelpers\Core\RestRefSchema.cs" />
     <Compile Include="Models\RestDocumentationHelpers\Core\RestAction.cs" />

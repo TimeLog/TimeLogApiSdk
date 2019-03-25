@@ -8,14 +8,14 @@ namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers
 
         public string Name { get; }
         public string Description { get; }
-        public string Type { get; }
+        public RestType Type { get; }
         public RestRefSchema RefSchema { get; }
 
         #endregion
 
         #region Constructor
 
-        public RestMethodParam(string name, string description, string type, RestRefSchema refSchema)
+        public RestMethodParam(string name, string description, RestType type, RestRefSchema refSchema)
         {
             Name = name;
             Description = description;
