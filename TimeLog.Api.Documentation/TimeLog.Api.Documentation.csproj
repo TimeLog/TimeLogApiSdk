@@ -417,6 +417,7 @@
     <Content Include="Views\Rest\Services.cshtml" />
     <Content Include="Views\Rest\Service.cshtml" />
     <Content Include="Views\Rest\Method.cshtml" />
+    <Content Include="Source\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
