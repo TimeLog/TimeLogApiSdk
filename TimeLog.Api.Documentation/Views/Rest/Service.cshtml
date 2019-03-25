@@ -1,0 +1,23 @@
+﻿@model TimeLog.Api.Documentation.Models.RestDocumentationHelpers.RestTypeDoc
+@{
+    ViewBag.Title = Model.Name + " - Service Details";
+}
+
+<article class="article">
+    <p>
+        <a href="@Url.Action("Services")">Back to services</a>
+    </p>
+    <h2>Service Details for @Model.Name.</h2>
+    <p>@Model.Description</p>
+    <h3>Methods</h3>
+    <ul>
+        @foreach (var _method in Model.Methods)
+        {
+            <li class="@_method.MethodType">
+                <a href="@Url.Action("Method", "Rest", new { id = _method.OperationId.UrlEncode() })">
+                    <span class="badge">@_method.MethodType</span> @_method.Name
+                </a> - @_method.Summary
+            </li>
+        }
+    </ul>
+</article>
