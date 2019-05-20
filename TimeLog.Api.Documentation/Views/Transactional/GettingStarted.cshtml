@@ -32,8 +32,7 @@
         <strong>Integrations and API</strong> then <strong>API settings (WCF)</strong>.
     </p>
     <p>
-        Make sure the check box for activation is selected. Also enable all modules and as a best practice we
-        encourage all to ensure HTTPS for all API connections.
+        Make sure the check box for activation is selected.
     </p>
     <h3>3. Setup your project</h3>
     <p>
@@ -45,7 +44,8 @@
     </p>
     <p>
         Add the following keys to the appSettings-section in web.config or app.config and fill them
-        with appropriate values as step 2.
+        with appropriate values as step 2. Use credentials from normal TimeLog users (currently, we 
+        do not have dedicated API users).
     </p>
     <pre>
 &lt;add key="TimeLogProjectUri" value="" /&gt;
