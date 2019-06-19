@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="ContractCustomers" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ContractCustomer" type="tlp:ContractCustomerRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="ContractCustomer_Key">
+      <xsd:selector xpath=".//tlp:ContractCustomer" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="ContractCustomerRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="ProjectSubContractID" type="xsd:integer" />
+      <xsd:element name="SplitType" type="xsd:integer" />
+      <xsd:element name="UserDefinedSplitValue" type="xsd:decimal" />
+      <xsd:element name="ComputedSplitPercentageRatio" type="xsd:decimal" />
+      <xsd:element name="CustomerID" type="xsd:integer" />
+      <xsd:element name="CustomerName" type="xsd:string" />
+      <xsd:element name="CustomerNo" type="xsd:string" />
+      <xsd:element name="ProjectID" type="xsd:integer" />
+      <xsd:element name="ProjectName" type="xsd:string" />
+      <xsd:element name="ProjectNo" type="xsd:string" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+    <xsd:attribute name="GUID" type="xsd:string" use="required" />
+  </xsd:complexType>
+
+</xsd:schema>

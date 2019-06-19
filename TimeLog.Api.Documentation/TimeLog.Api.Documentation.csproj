@@ -182,6 +182,7 @@
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Source\Reporting\GetContractCustomersRaw.xml" />
     <Content Include="Source\Reporting\GetAllocationsRaw.xml" />
     <Content Include="Source\Reporting\GetContractsRaw.xsd">
       <SubType>Designer</SubType>
@@ -418,6 +419,9 @@
     <Content Include="Views\Rest\Service.cshtml" />
     <Content Include="Views\Rest\Method.cshtml" />
     <Content Include="Source\README.md" />
+    <None Include="Source\Reporting\GetContractCustomersRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
