@@ -49,6 +49,6 @@
     <tlp:ProjectStage>Idea</tlp:ProjectStage>
     <tlp:CurrencyISOCode>DKK</tlp:CurrencyISOCode>
     <tlp:CurrencyRate>100.0000</tlp:CurrencyRate>
-    <tlp:IsMultiCustomerProject>No</tlp:IsMultiCustomerProject>
+    <tlp:IsMultiCustomerProject>0</tlp:IsMultiCustomerProject>
   </tlp:Project>
 </tlp:Projects>
