@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:ContractCustomers
+  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/ContractCustomersRaw.xsd">
+  <tlp:ContractCustomer ID="5147" GUID="452EB2E7-B2CF-4FDB-B3C0-B6DFB17805A7">
+    <tlp:ProjectSubContractID>11109</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>14338</tlp:ProjectID>
+    <tlp:ProjectName>_TIMJenm035EUR</tlp:ProjectName>
+    <tlp:ProjectNo>P17.0202</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="5148" GUID="3FF9FDF4-195A-47BD-A32E-9098114313A7">
+    <tlp:ProjectSubContractID>11110</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>14338</tlp:ProjectID>
+    <tlp:ProjectName>_TIMJenm035EUR</tlp:ProjectName>
+    <tlp:ProjectNo>P17.0202</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="5149" GUID="4CBB5986-20ED-42FE-A1E3-F4CBDFF36F46">
+    <tlp:ProjectSubContractID>11111</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>14338</tlp:ProjectID>
+    <tlp:ProjectName>_TIMJenm035EUR</tlp:ProjectName>
+    <tlp:ProjectNo>P17.0202</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="5150" GUID="9C4935B3-BBBB-4558-B15F-CE21579A4761">
+    <tlp:ProjectSubContractID>11112</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>14338</tlp:ProjectID>
+    <tlp:ProjectName>_TIMJenm035EUR</tlp:ProjectName>
+    <tlp:ProjectNo>P17.0202</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="5151" GUID="173642C0-DECF-4204-9407-3B0C73C28D82">
+    <tlp:ProjectSubContractID>12125</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>14338</tlp:ProjectID>
+    <tlp:ProjectName>_TIMJenm035EUR</tlp:ProjectName>
+    <tlp:ProjectNo>P17.0202</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="5152" GUID="88BB2C18-FDA0-4537-81A4-8EBF7F29E612">
+    <tlp:ProjectSubContractID>12126</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>14338</tlp:ProjectID>
+    <tlp:ProjectName>_TIMJenm035EUR</tlp:ProjectName>
+    <tlp:ProjectNo>P17.0202</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="10116" GUID="49F5AE33-FE9E-4BD4-B578-1D183466AB3A">
+    <tlp:ProjectSubContractID>21562</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>19720</tlp:ProjectID>
+    <tlp:ProjectName>_TIMJenm122EURABC</tlp:ProjectName>
+    <tlp:ProjectNo>P18.0165</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="10932" GUID="28915FD6-D97C-4780-950E-BBB1994D379E">
+    <tlp:ProjectSubContractID>22375</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>0.5000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>0.5000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>19827</tlp:ProjectID>
+    <tlp:ProjectName>ANG Multi Customers</tlp:ProjectName>
+    <tlp:ProjectNo>P19.0076</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="10934" GUID="AAD6880A-490C-4424-8986-D8B33558C539">
+    <tlp:ProjectSubContractID>22376</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>19828</tlp:ProjectID>
+    <tlp:ProjectName>Financial posting project</tlp:ProjectName>
+    <tlp:ProjectNo>P19.0077</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="10936" GUID="50EC1FFE-3F25-4629-8247-4119BA91E6F6">
+    <tlp:ProjectSubContractID>22378</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>19828</tlp:ProjectID>
+    <tlp:ProjectName>Financial posting project</tlp:ProjectName>
+    <tlp:ProjectNo>P19.0077</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+  <tlp:ContractCustomer ID="10937" GUID="543B6CC0-48B7-4C64-8773-BC7DF5E7EEF0">
+    <tlp:ProjectSubContractID>22379</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>19828</tlp:ProjectID>
+    <tlp:ProjectName>Financial posting project</tlp:ProjectName>
+    <tlp:ProjectNo>P19.0077</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+    <tlp:ContractCustomer ID="10938" GUID="D1B7CD3D-CCB2-4C75-87A3-58532968A468">
+    <tlp:ProjectSubContractID>22380</tlp:ProjectSubContractID>
+    <tlp:SplitType>0</tlp:SplitType>
+    <tlp:UserDefinedSplitValue>1.0000</tlp:UserDefinedSplitValue>
+    <tlp:ComputedSplitPercentageRatio>1.0000</tlp:ComputedSplitPercentageRatio>
+    <tlp:CustomerID>41857</tlp:CustomerID>
+    <tlp:CustomerName>12th wonder</tlp:CustomerName>
+    <tlp:CustomerNo>101728852</tlp:CustomerNo>
+    <tlp:ProjectID>19829</tlp:ProjectID>
+    <tlp:ProjectName>Test task search denormalized</tlp:ProjectName>
+    <tlp:ProjectNo>P19.0078</tlp:ProjectNo>
+  </tlp:ContractCustomer>
+</tlp:ContractCustomers>

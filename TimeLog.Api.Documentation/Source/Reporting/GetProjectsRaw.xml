@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tlp:Projects  
-	xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<tlp:Projects
+	xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/ProjectsRaw.xsd" >
   <tlp:Project ID="740" GUID="8a7e790b-deb2-4ed3-a6be-e5dca300b2c8">
     <tlp:Name>Webinar</tlp:Name>
@@ -46,5 +46,9 @@
     <tlp:ContactFullName>Peter Smith</tlp:ContactFullName>
     <tlp:ContactEmail>PS@timelog.com</tlp:ContactEmail>
     <tlp:PONumber>PO15386</tlp:PONumber>
+    <tlp:ProjectStage>Idea</tlp:ProjectStage>
+    <tlp:CurrencyISOCode>DKK</tlp:CurrencyISOCode>
+    <tlp:CurrencyRate>100.0000</tlp:CurrencyRate>
+    <tlp:IsMultiCustomerProject>0</tlp:IsMultiCustomerProject>
   </tlp:Project>
 </tlp:Projects>
