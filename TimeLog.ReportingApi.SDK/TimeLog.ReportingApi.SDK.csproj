@@ -51,6 +51,7 @@
     <Compile Include="Customer.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Barrier.cs" />
+    <Compile Include="ProjectCategory.cs" />
     <Compile Include="SubOpportunity.cs" />
     <Compile Include="Opportunity.cs" />
     <Compile Include="OpportunityType.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="ProjectStatus.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="TaskStatus.cs" />
+    <Compile Include="ProjectType.cs" />
     <Compile Include="TaskType.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Employee.cs" />

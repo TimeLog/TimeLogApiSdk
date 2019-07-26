@@ -2,19 +2,15 @@
 
 namespace TimeLog.ReportingApi.SDK
 {
-    public class TaskType
+    public class ProjectType
     {
-        public TaskType()
+        public ProjectType()
         {
             this.Id = -1;
             this.Name = string.Empty;
         }
 
-
-
-
-
-        public TaskType(XmlNode node, XmlNamespaceManager namespaceManager)
+        public ProjectType(XmlNode node, XmlNamespaceManager namespaceManager)
         {
             this.Id = int.Parse(node.Attributes["ID"].InnerText);
             this.Name = node.GetStringSafe("tlp:Name", namespaceManager);

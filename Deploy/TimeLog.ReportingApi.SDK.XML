@@ -550,6 +550,11 @@
             Gets or sets the identifier
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Task.Guid">
+            <summary>
+            Gets or sets the unique identifier
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.Task.Name">
             <summary>
             Gets or sets the name

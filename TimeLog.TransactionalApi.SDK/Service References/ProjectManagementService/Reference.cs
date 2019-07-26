@@ -548,6 +548,9 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         private int ProjectSubContractIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HourlyRateIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.ProjectManagementService.TaskDetails DetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -736,6 +739,19 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public int HourlyRateID {
+            get {
+                return this.HourlyRateIDField;
+            }
+            set {
+                if ((this.HourlyRateIDField.Equals(value) != true)) {
+                    this.HourlyRateIDField = value;
+                    this.RaisePropertyChanged("HourlyRateID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
         public TimeLog.TransactionalApi.SDK.ProjectManagementService.TaskDetails Details {
             get {
                 return this.DetailsField;
@@ -748,7 +764,7 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
         public TimeLog.TransactionalApi.SDK.ProjectManagementService.TaskState State {
             get {
                 return this.StateField;
@@ -6969,6 +6985,18 @@ namespace TimeLog.TransactionalApi.SDK.ProjectManagementService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         AllocationSearchDenormalized = 218,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeTracker = 219,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeExpense = 220,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectExpense = 221,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UIExpandedDomain = 222,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,

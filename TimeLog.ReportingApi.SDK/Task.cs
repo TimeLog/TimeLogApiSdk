@@ -17,6 +17,7 @@ namespace TimeLog.ReportingApi.SDK
         public Task(XmlNode node, XmlNamespaceManager namespaceManager)
         {
             this.Id = int.Parse(node.Attributes["ID"].InnerText);
+            this.Guid = Guid.Parse(node.Attributes["GUID"].InnerText);
             this.Name = node.GetStringSafe("tlp:Name", namespaceManager);
             this.Wbs = node.GetStringSafe("tlp:WBS", namespaceManager);
             this.Status = node.GetIntSafe("tlp:Status", namespaceManager);
@@ -61,6 +62,12 @@ namespace TimeLog.ReportingApi.SDK
         /// Gets or sets the identifier
         /// </summary>
         public int Id { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets the unique identifier
+        /// </summary>
+        public Guid Guid { get; set; }
 
         /// <summary>
         /// Gets or sets the name
@@ -176,6 +183,7 @@ namespace TimeLog.ReportingApi.SDK
         /// Gets or sets the name of the last modifier
         /// </summary>
         public string LastModifiedBy { get; set; }
+
 
 
     }
