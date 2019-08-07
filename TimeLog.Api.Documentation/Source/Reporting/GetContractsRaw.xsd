@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
-            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
-            elementFormDefault="qualified"
-            attributeFormDefault="unqualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xsd:element name="Contracts">
     <xsd:complexType>
       <xsd:sequence>
@@ -18,15 +15,16 @@
 
   <xsd:complexType name="ContractRaw_Type">
     <xsd:sequence>
-	  <xsd:element name="Name" type="xsd:string" />
-	  <xsd:element name="ContractModelType" type="xsd:positiveInteger" />
-	  <xsd:element name="ProjectID" type="xsd:positiveInteger" />
-	  <xsd:element name="ProjectContractStatus" type="xsd:positiveInteger" />
-	  <xsd:element name="WorkBudgetHours" type="xsd:decimal" />
-	  <xsd:element name="WorkBudgetAmount" type="xsd:decimal" />
+      <xsd:element name="Name" type="xsd:string" />
+      <xsd:element name="ContractModelType" type="xsd:positiveInteger" />
+      <xsd:element name="ProjectID" type="xsd:positiveInteger" />
+      <xsd:element name="ProjectContractStatus" type="xsd:positiveInteger" />
+      <xsd:element name="WorkBudgetHours" type="xsd:decimal" />
+      <xsd:element name="WorkBudgetAmount" type="xsd:decimal" />
+      <xsd:element name="OrderDate" type="xsd:dateTime" />
     </xsd:sequence>
-	<xsd:attribute name="ID" type="xsd:positiveInteger" use="optional" />
-	<xsd:attribute name="GUID" type="xsd:string" use="optional" />
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="optional" />
+    <xsd:attribute name="GUID" type="xsd:string" use="optional" />
   </xsd:complexType>
 
 </xsd:schema>
