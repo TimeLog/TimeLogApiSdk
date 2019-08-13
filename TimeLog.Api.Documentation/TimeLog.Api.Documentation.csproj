@@ -182,6 +182,9 @@
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Source\Reporting\GetHourlyRatesRaw.xml" />
+    <Content Include="Source\Reporting\GetLegalEntitiesRaw.xml" />
+    <Content Include="Source\Reporting\GetPriceGroupsRaw.xml" />
     <Content Include="Source\Reporting\GetSalaryAccountEmployeePostingsRaw.xml" />
     <Content Include="Source\Reporting\GetSalaryAccountsRaw.xml" />
     <Content Include="Source\Reporting\GetContractCustomersRaw.xml" />
@@ -421,6 +424,15 @@
     <Content Include="Views\Rest\Service.cshtml" />
     <Content Include="Views\Rest\Method.cshtml" />
     <Content Include="Source\README.md" />
+    <None Include="Source\Reporting\GetHourlyRatesRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetLegalEntitiesRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\Reporting\GetPriceGroupsRaw.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Source\Reporting\GetSalaryAccountEmployeePostingsRaw.xsd">
       <SubType>Designer</SubType>
     </None>
