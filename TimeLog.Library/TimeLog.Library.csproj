@@ -49,6 +49,7 @@
     <Compile Include="Configuration\AppSetting.cs" />
     <Compile Include="Configuration\PersonalConfigurationManager.cs" />
     <Compile Include="Data\CsvReader.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
