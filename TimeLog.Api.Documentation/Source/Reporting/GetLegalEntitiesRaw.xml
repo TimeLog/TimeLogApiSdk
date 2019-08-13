@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:LegalEntities xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/LegalEntitiesRaw.xsd">
+
+	<tlp:LegalEntity ID="1" GUID="A117F7EF-1532-E611-80E1-005056B220E2">
+		<tlp:Name>Your company</tlp:Name>
+		<tlp:IsActive>1</tlp:IsActive>
+		<tlp:CurrencyISO>EUR</tlp:CurrencyISO>
+		<tlp:Country>Danmark</tlp:Country>
+	</tlp:LegalEntity>
+	<tlp:LegalEntity ID="3" GUID="3A7BB7E9-A4E4-4E59-9776-345FBA9B715C">
+		<tlp:Name>Genting (UK)</tlp:Name>
+		<tlp:IsActive>1</tlp:IsActive>
+		<tlp:CurrencyISO>GBP</tlp:CurrencyISO>
+		<tlp:Country>Storbritannien</tlp:Country>
+	</tlp:LegalEntity>
+	<tlp:LegalEntity ID="2" GUID="93E722C7-3863-4B2B-A65F-A4AFCBC1BE22">
+		<tlp:Name>Genting (MY)</tlp:Name>
+		<tlp:IsActive>1</tlp:IsActive>
+		<tlp:CurrencyISO>MYR</tlp:CurrencyISO>
+		<tlp:Country>Malaysia</tlp:Country>
+	</tlp:LegalEntity>
+		<tlp:LegalEntity ID="4" GUID="99AA32A2-2183-4DA6-8324-B28BCF3BE773">
+		<tlp:Name>Microsoft (MY)</tlp:Name>
+		<tlp:IsActive>1</tlp:IsActive>
+		<tlp:CurrencyISO>MYR</tlp:CurrencyISO>
+		<tlp:Country>Malaysia</tlp:Country>
+	</tlp:LegalEntity>
+</tlp:LegalEntities>

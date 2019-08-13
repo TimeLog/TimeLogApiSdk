@@ -7318,12 +7318,30 @@
             <param name="token"></param>
             <returns></returns>
         </member>
+        <member name="M:TimeLog.TLP.API.ResourceManagement.V1_0.CalendarEventService.DeleteCalendarEvents(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Delete all calendar events (under same recurring) using UID. If matches with the UID, calendar event will be deleted
+            It does the same thing like what DeleteRecurringCalendarEvent, but earlier on this method doesn't care the start date and delete all - which causing issue to TimeLog
+            Due to this reason, this method will also need to ensure only Today or future dated calendar event can be deleted
+            </summary>
+            <param name="UID">31 characters of unique ID for every unique series, eg:040000008200E00074C5B7101A82E00800000000D0003B351BE2D3010000000000000000100000006824E40094CBEC4C84A50FBB28E481A8</param>
+            <param name="token">Security token from API</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.ResourceManagement.V1_0.CalendarEventService.DeleteRecurringCalendarEvent(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Delete recurring calendar events by UID where its start date must be Today or future dated then only can be deleted
+            </summary>
+            <param name="UID">31 characters of unique ID for every unique series, eg:040000008200E00074C5B7101A82E00800000000D0003B351BE2D3010000000000000000100000006824E40094CBEC4C84A50FBB28E481A8</param>
+            <param name="token">Security token from API</param>
+            <returns></returns>
+        </member>
         <member name="M:TimeLog.TLP.API.ResourceManagement.V1_0.CalendarEventService.InsertCalendarEventsBatch(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ResourceManagement.V1_0.CalendarEvent},TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Rule: Will ignore calendar events in the past (before today) and only insert whatever is valid.
             </summary>
-            <param name="calendarEventsToInsert"></param>
-            <param name="token"></param>
+            <param name="calendarEventsToInsert">The batch that needs to be created</param>
+            <param name="token">security token from API</param>
             <returns></returns>
         </member>
         <member name="M:TimeLog.TLP.API.ResourceManagement.V1_0.CalendarEventService.ExecuteMethodApi``2(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken,System.Func{System.Collections.Generic.IEnumerable{``1}},System.Func{``1,``0},System.String)">

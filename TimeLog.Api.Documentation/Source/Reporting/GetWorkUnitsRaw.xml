@@ -38,6 +38,7 @@
 	  <tlp:CostAmount>280.0000</tlp:CostAmount>
 	  <tlp:IsBillable>1</tlp:IsBillable>
 	  <tlp:ApprovedStatus>0</tlp:ApprovedStatus>
+	  <tlp:MonthlyPeriod>2019-04</tlp:MonthlyPeriod>
 	  <tlp:CreatedAt>2018-07-20T12:36:34.3666667</tlp:CreatedAt>
 	  <tlp:CreatedByEmployeeId>373</tlp:CreatedByEmployeeId>
 	  <tlp:CreatedBy>psu</tlp:CreatedBy>
@@ -82,6 +83,7 @@
 	  <tlp:CostAmount>140.0000</tlp:CostAmount>
 	  <tlp:IsBillable>1</tlp:IsBillable>
 	  <tlp:ApprovedStatus>0</tlp:ApprovedStatus>
+	  <tlp:MonthlyPeriod>2019-04</tlp:MonthlyPeriod>
 	  <tlp:CreatedAt>2018-07-20T12:36:34.0600000</tlp:CreatedAt>
 	  <tlp:CreatedByEmployeeId>373</tlp:CreatedByEmployeeId>
 	  <tlp:CreatedBy>psu</tlp:CreatedBy>
@@ -126,6 +128,7 @@
 	  <tlp:CostAmount>210.0000</tlp:CostAmount>
 	  <tlp:IsBillable>1</tlp:IsBillable>
 	  <tlp:ApprovedStatus>0</tlp:ApprovedStatus>
+	  <tlp:MonthlyPeriod>2019-04</tlp:MonthlyPeriod>
 	  <tlp:CreatedAt>2018-07-20T12:36:33.4466667</tlp:CreatedAt>
 	  <tlp:CreatedByEmployeeId>373</tlp:CreatedByEmployeeId>
 	  <tlp:CreatedBy>psu</tlp:CreatedBy>

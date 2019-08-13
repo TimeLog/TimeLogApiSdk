@@ -205,6 +205,19 @@ TimeLog.TLP.WebAppCode
  <param name="accountManagerID">ID of an Employee. Set to 0 to get all customers</param>
  <returns>A list of customer objects in XML format</returns>
 </member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetContractCustomersRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Gets a list of contract customers
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="projectID">ID of a Project. Set to 0 to get all projects</param>
+ <param name="customerID">ID of specific customer. Set to 0 to get all customers</param>
+ <param name="projectSubContractID">ID of a Project sub contract. Set to 0 to get all project sub contracts</param>
+ <param name="contractStatusID">ID of specific project sub contract status. Set to -1 to get all customers</param>
+ <returns>A list of contract customer objects in XML</returns>
+</member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetCustomersRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32)">
  <summary>
  Gets a list of customers
@@ -661,6 +674,56 @@ TimeLog.TLP.WebAppCode
  <param name="endDate">Limits result to all hard bookings on or prior to this date</param>
  <param name="hardbookingType">Set to 0 for manual bookings; 1 for calendar bookings; -1 for all</param>
  <returns>A list of hardbookings in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetLegalEntitiesRaw(System.String,System.String,System.String,System.Int32)">
+ <summary>
+ Get a list of price groups
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="status">legal entity status</param>
+ <returns>A list of legal entities in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetPriceGroupsRaw(System.String,System.String,System.String,System.Int32,System.Int32)">
+ <summary>
+ Get a list of price groups
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="legalEntityId">Unique identification for your legal entity</param>
+ <param name="customerId">The customer ID</param>
+ <returns>A list of price groups in XML format</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetHourlyRatesRaw(System.String,System.String,System.String,System.Int32,System.Int32)">
+ <summary>
+ Get a list of hourly rates
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="CustomerID">The customer ID</param>
+ <param name="Status">Status of hourly rate</param>
+ <returns></returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetSalaryAccountsRaw(System.String,System.String,System.String)">
+ <summary>
+ Get a list of salary accounts
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <returns>A list of salary accounts in standard XML document</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetSalaryAccountEmployeePostingsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+ <summary>
+ Get a list of salary account employee postings
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <returns>A list of employee postings in standard XML document</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.ServiceBase.ValidateRetreivalAttempt(System.String,System.String,System.String)">
  <summary>
