@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <tlp:Expenses 
   xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -34,5 +34,6 @@
     <tlp:EstimatedAmount>1278.7600</tlp:EstimatedAmount>
     <tlp:ProfitRatio>0.0000</tlp:ProfitRatio>
     <tlp:InvAmount>1278.7600</tlp:InvAmount>
+   <tlp:ApprovedStatus>1</tlp:ApprovedStatus>
   </tlp:Expense>
 </tlp:Expenses>

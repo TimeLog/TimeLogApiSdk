@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
             targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
@@ -48,6 +48,7 @@
       <xsd:element name="EstimatedAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="InvAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ProfitRatio" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ApprovedStatus" type="xsd:Integer" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
 
   </xsd:complexType>
