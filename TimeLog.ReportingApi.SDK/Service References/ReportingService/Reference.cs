@@ -64,6 +64,13 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetCustomersShortList", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetCustomersShortListAsync(string siteCode, string apiID, string apiPassword, int customerStatusID, int accountManagerID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetContractCustomersRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetContractCustomersRaw(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, int contractStatusID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetContractCustomersRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetContractCustomersRawAsync(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, int contractStatusID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetCustomersRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Xml.XmlNode GetCustomersRaw(string siteCode, string apiID, string apiPassword, int customerID, int customerStatusID, int accountManagerID);
@@ -337,6 +344,41 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetHardBookingsRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetHardBookingsRawAsync(string siteCode, string apiID, string apiPassword, int employeeUserId, System.DateTime startDate, System.DateTime endDate, int hardbookingType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetLegalEntitiesRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetLegalEntitiesRaw(string siteCode, string apiID, string apiPassword, int status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetLegalEntitiesRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetLegalEntitiesRawAsync(string siteCode, string apiID, string apiPassword, int status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetPriceGroupsRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetPriceGroupsRaw(string siteCode, string apiID, string apiPassword, int legalEntityId, int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetPriceGroupsRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetPriceGroupsRawAsync(string siteCode, string apiID, string apiPassword, int legalEntityId, int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetHourlyRatesRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetHourlyRatesRaw(string siteCode, string apiID, string apiPassword, int CustomerID, int Status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetHourlyRatesRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetHourlyRatesRawAsync(string siteCode, string apiID, string apiPassword, int CustomerID, int Status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSalaryAccountsRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetSalaryAccountsRaw(string siteCode, string apiID, string apiPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSalaryAccountsRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetSalaryAccountsRawAsync(string siteCode, string apiID, string apiPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSalaryAccountEmployeePostingsRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetSalaryAccountEmployeePostingsRaw(string siteCode, string apiID, string apiPassword, int SalaryAccountID, int EmployeeUserID, System.DateTime FromDate, System.DateTime ToDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSalaryAccountEmployeePostingsRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetSalaryAccountEmployeePostingsRawAsync(string siteCode, string apiID, string apiPassword, int SalaryAccountID, int EmployeeUserID, System.DateTime FromDate, System.DateTime ToDate);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -499,6 +541,14 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         
         public System.Threading.Tasks.Task<System.Xml.XmlNode> GetCustomersShortListAsync(string siteCode, string apiID, string apiPassword, int customerStatusID, int accountManagerID) {
             return base.Channel.GetCustomersShortListAsync(siteCode, apiID, apiPassword, customerStatusID, accountManagerID);
+        }
+        
+        public System.Xml.XmlNode GetContractCustomersRaw(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, int contractStatusID) {
+            return base.Channel.GetContractCustomersRaw(siteCode, apiID, apiPassword, projectID, customerID, projectSubContractID, contractStatusID);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetContractCustomersRawAsync(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, int contractStatusID) {
+            return base.Channel.GetContractCustomersRawAsync(siteCode, apiID, apiPassword, projectID, customerID, projectSubContractID, contractStatusID);
         }
         
         public System.Xml.XmlNode GetCustomersRaw(string siteCode, string apiID, string apiPassword, int customerID, int customerStatusID, int accountManagerID) {
@@ -848,6 +898,46 @@ namespace TimeLog.ReportingApi.SDK.ReportingService {
         
         public System.Threading.Tasks.Task<System.Xml.XmlNode> GetHardBookingsRawAsync(string siteCode, string apiID, string apiPassword, int employeeUserId, System.DateTime startDate, System.DateTime endDate, int hardbookingType) {
             return base.Channel.GetHardBookingsRawAsync(siteCode, apiID, apiPassword, employeeUserId, startDate, endDate, hardbookingType);
+        }
+        
+        public System.Xml.XmlNode GetLegalEntitiesRaw(string siteCode, string apiID, string apiPassword, int status) {
+            return base.Channel.GetLegalEntitiesRaw(siteCode, apiID, apiPassword, status);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetLegalEntitiesRawAsync(string siteCode, string apiID, string apiPassword, int status) {
+            return base.Channel.GetLegalEntitiesRawAsync(siteCode, apiID, apiPassword, status);
+        }
+        
+        public System.Xml.XmlNode GetPriceGroupsRaw(string siteCode, string apiID, string apiPassword, int legalEntityId, int customerId) {
+            return base.Channel.GetPriceGroupsRaw(siteCode, apiID, apiPassword, legalEntityId, customerId);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetPriceGroupsRawAsync(string siteCode, string apiID, string apiPassword, int legalEntityId, int customerId) {
+            return base.Channel.GetPriceGroupsRawAsync(siteCode, apiID, apiPassword, legalEntityId, customerId);
+        }
+        
+        public System.Xml.XmlNode GetHourlyRatesRaw(string siteCode, string apiID, string apiPassword, int CustomerID, int Status) {
+            return base.Channel.GetHourlyRatesRaw(siteCode, apiID, apiPassword, CustomerID, Status);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetHourlyRatesRawAsync(string siteCode, string apiID, string apiPassword, int CustomerID, int Status) {
+            return base.Channel.GetHourlyRatesRawAsync(siteCode, apiID, apiPassword, CustomerID, Status);
+        }
+        
+        public System.Xml.XmlNode GetSalaryAccountsRaw(string siteCode, string apiID, string apiPassword) {
+            return base.Channel.GetSalaryAccountsRaw(siteCode, apiID, apiPassword);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetSalaryAccountsRawAsync(string siteCode, string apiID, string apiPassword) {
+            return base.Channel.GetSalaryAccountsRawAsync(siteCode, apiID, apiPassword);
+        }
+        
+        public System.Xml.XmlNode GetSalaryAccountEmployeePostingsRaw(string siteCode, string apiID, string apiPassword, int SalaryAccountID, int EmployeeUserID, System.DateTime FromDate, System.DateTime ToDate) {
+            return base.Channel.GetSalaryAccountEmployeePostingsRaw(siteCode, apiID, apiPassword, SalaryAccountID, EmployeeUserID, FromDate, ToDate);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetSalaryAccountEmployeePostingsRawAsync(string siteCode, string apiID, string apiPassword, int SalaryAccountID, int EmployeeUserID, System.DateTime FromDate, System.DateTime ToDate) {
+            return base.Channel.GetSalaryAccountEmployeePostingsRawAsync(siteCode, apiID, apiPassword, SalaryAccountID, EmployeeUserID, FromDate, ToDate);
         }
     }
 }
