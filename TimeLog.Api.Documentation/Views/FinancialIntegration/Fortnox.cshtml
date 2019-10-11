@@ -4,577 +4,697 @@
 }
 
 <article class="article">
+
+
     <h1>Fortnox</h1>
     <h2>Introduction</h2>
+
     <p>
         The integration between TimeLog and Fortnox consists of partial integrations that provide seamless cooperation between the two systems.
         The integration consists of the following features:
         <ul>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog to Fortnox</li>            
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic update of customer information in Fortnox</li>            
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of invoices from TimeLog to Fortnox</li>
-            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Invoice balancing between TimeLog and Fortnox</li>
-            
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Two-way synchronization of customers</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic transfer of customers from TimeLog to Fortnox</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic update of customer information in Fortnox</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import of product numbers from Fortnox into TimeLog</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Transfer of booked invoices from TimeLog to Fortnox</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Automatic update of Fortnox Invoice status, invoice no. and invoice amount in TimeLog</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Import of Fortnox expenses</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Transfer of TimeLog project number</li>
+            <li style="text-indent: 20px;" class="icon-arrow_in_circle">Export of TimeLog project expenses to Fortnox incl. photo</li>
+
         </ul>
     </p>
     <br />
+
+
     <h2>Features</h2>
     <p>This section includes a list of features and limitations to each transfer area of the integration.</p>
+
+
     <h3>Currencies</h3>
-    <p>Fortnox requires you to transfer a valid currency. If the currency you've selected with your invoice does not exist in Fortnox, you will receive an error. However you can add currencies to your account on Fortnox, by going into Settings and search for 'valuta'.</p>
     <p>The currency rate is decided by Fortnox, meaning you only need to choose your invoice's currency.</p>
-    
+    <p>The currency exchange rate is handled by Fortnox.</p>
+
+
     <h3>Customers</h3>
-    <p> Customers can be transferred to and from Fortnox.</p>
-    <p> In the current integration implementation, it is not possible to set all values for each customer on Fortnox and transfer them to TimeLog,
-        for the moment, the following values are set in TimeLog and can be transferred to Fortnox, but not vice versa: </p>
-        <ol>
-            <li style="list-style-type:disc">Debtor group</li>
-            <li style="list-style-type:disc">VAT code (VAT zone)</li>
-            <li style="list-style-type:disc">Invoice template</li>
-            <li style="list-style-type:disc">Discount percentage</li>
-        </ol>
-<p>VAT no. in TimeLog is also the CIN/PIN no. on Fortnox. When a customer is transferred to Fortnox the CIN/PIN no. for that customer on Fortnox will change to the corresponding CIN/PIN no. belonging to the VAT no.</p>
-<p>Payment terms are not mapped between the two systems. Customers transferred from TimeLog to Fortnox will be created with no payment term and invoices transferred to the customer wil have the default payment term from Fortnox.</p>
-        
-    <h3>Product numbers</h3>
     <p>
-        Product numbers can only be transferred from Fortnox to TimeLog. Note that they are not transferred automatically.
-        An system administrator will have to go to the system administration > integrations and choose to import them manually.
-        The product number setup is carried out in TimeLog and consists of 3 steps:
-        <ol>
-            <li>Importing product numbers from Fortnox</li>
-            <li>Configuring a product number principle for various TimeLog data types</li>
-            <li>Configuring default product numbers for various TimeLog data types</li>
-        </ol>
+        Customers are linked when configuring the integration. New customers in TimeLog are transferred and created in Fortnox when transferring the first invoice to the new customer.
+        Added customers in Fortnox is to be imported into TimeLog.
     </p>
+    <p>The preferred functionality is setup in the integration </p>
+
+
+    <h3>Contact persons</h3>
+    <p>Contact persons in TimeLog is not transferred to Fortnox.</p>
+    <p>First - and lastname is added as a reference on invoice.</p>
+
+
+    <h3>Product numbers</h3>
+    <p>Product numbers are imported from Fortnox in the integration configuration. Product numbers in Fortnox cannot be added, modified or deleted from TimeLog.</p>
+
+
+    <h3>Employees</h3>
+    <p>Employees in TimeLog is not transferred to Fortnox.</p>
+
 
     <h3>Invoices</h3>
-    <p>Only booked invoices can be transferred from TimeLog to Fortnox. Invoices are transferred as drafts.</p>
-    <p>Once an invoice is booked on Fortnox, its status changes on TimeLog to Booked in the Transferred invoices table in TimeLog.</p>
-    <p>It is possible to change an invoice on Fortnox once transferred, however this will result in changes values, e.g. Amount, being highlighted on the Transferred invoices table in TimeLog.</p>
-    <p>Some values must be the same when transferring an invoice. E.g. Fortnox does not accept VAT percentage that does not exist on Fortnox. If you get an invalid VAT error, it means the VAT percentage you've chosen for the invoice, is not on your Fortnox account.
-       You can however add VAT to your Fortnox by going into Settings and search for 'moms'.
-    </p>
+    <p>Only booked invoices can be transferred from TimeLog to Fortnox. Invoices are transferred as drafts and changes on the invoice drafts inside Fortnox will not be reflected in TimeLog. </p>
+
 
     <h3>Invoice lines</h3>
-    <p>Invoice lines are transferred along with the invoice. Invoice lines can be modified in Fortnox and addition line can be added. Changes will not be reflected in TimeLog.</p>
-    <p>All invoicelines from TimeLog are transferred to Fortnox except subtotal lines as Fortnox cannot handle those.</p>
-    <p>Unit types on the invoicelines in TimeLog are not transferred to Fortnox as there is no direct mapping of unit types. Instead in Fortnox the unit type of the chosen product is put on the invoiceline</p>
-    <p>Unit types must therefor be set up in Fortnox on the products in order to get the right unit types on the invoicelines.</p>
+    <p>Invoice lines are transferred along with the invoice and invoice lines can be modified in Fortnox. Changes will not be reflected in TimeLog.</p>
+    <p>Each transferred invoice line incl. product number, invoice line description, number of units and price per unit. Calculations are handled by Fortnox.</p>
+    <p>Unit type is not transferred and is to be setup on the product number in Fortnox.</p>
+    <p>Fortnox can receive TimeLog header lines, empty invoice lines and text lines. If an invoice line description text is exceeding 50 characters is TimeLog adding additional text lines to the Fortnox draft.</p>
 
-    <h3>Expenses</h3>
-    <p>Expenses can only be transferred from Fortnox to TimeLog. </p>
-    <h3>Projects</h3>
+
+    <h3>Expense import</h3>
     <p>
-        Not part of the integration.
+        TimeLog can import expenses from selected Journal and accounts from Fortnox.
+        TimeLog will match the account number to the TimeLog expense types if the expense types
+        have an Fortnox account number added. If the TimeLog project number is added to the Fortnox expense is this used to map the project in TimeLog.
     </p>
+
+
+    <h3>Expense export</h3>
+    <p>
+        TimeLog can transfer project expenses to Fortnox. If the expense types in TimeLog include
+        the Fortnox account number is it included in the transfer. The expenses are transferred to the configured supplier name. Transferred expenses is to be handled in Fortnox after the transfer.
+    </p>
+    <p>
+        All expenses that get transferred from TimeLog is comming from a project and is in that way project expenses. 
+        If it is an employee that have added the expense to the project, is the comment text sowing the name of the employee
+    </p>
+
+
+    <h3>Projects</h3>
+    <p>TimeLog can transfer the project number and name to Fortnox. Product numbers are only to include letters and numbers.</p>
+
+
     <h3>Tasks</h3>
-    <p>Not part of the integration.</p>
+    <p>TimeLog project tasks are not transferred.</p>
+
+
     <h3>Allocations</h3>
-    <p>Not part of the integration.</p>
+    <p>Allocated employees on tasks are not transferred.</p>
+
+
     <h3>Registrations</h3>
-    <p>Not part of the integration.</p>
+    <p>Employee time tracking, mileage and allowance is not transferred</p>
+
 
     <br />
     <h2>Mapping</h2>
-    <p>This section contains the explicit mapping of fields between TimeLog and Fortnox.</p>
+    <p>This section of the integration documentation include information about which TimeLog fields are transferred to which field in Fortnox.</p>
 
-    <h3 id="mapping-customers">Customers</h3>
+
+    <h3>Kunder (Customers)</h3>
+    <p>Customer information is handled when setting up the integration and/or when new customers are created in TimeLog.</p>
     <div class="bs-example">
-
         <table style="width: 100%" class="mapping_table">
             <thead>
-                <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
-                    <th></th>
-                </tr>
                 <tr class="underline">
                     <th>TimeLog</th>
                     <th>Fortnox</th>
-                    <th>TimeLog</th>
-                    <th>Fortnox</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Name</td>
+                    <td>Företagsnamn (Company name)</td>
                     <td>Namn</td>
-                    <td>Name</td>
-                    <td>Name</td>
-                    <td></td>
-                </tr>
-            <tr>
-                <td>Phone</td>
-                <td>Telefon</td>
-                <td>Phone</td>
-                <td>Phone1</td>
-                <td></td>
-            </tr>
-                <tr>
-                    <td>Fax</td>
-                    <td>Fax</td>
-                    <td>Fax</td>
-                    <td>Fax</td>
-                    <td></td>
-                </tr>
-               <tr>
-                    <td>VAT no</td>
-                    <td>VAT nummer</td>
-                    <td>VatNo</td>
-                    <td>VATNumber</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Address</td>
-                    <td>Fakturaadress</td>
-                    <td>Address.Address</td>
-                    <td>Address1</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Address 2</td>
-                    <td>Fakturaadress 2</td>
-                    <td>Address.Address2</td>
-                    <td>Address2</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Address 3</td>
                     <td>-</td>
-                    <td>Address.Address3</td>
+                </tr>
+                <tr>
+                    <td>Kundnr. (Customer no)</td>
+                    <td>Kundnummer</td>
                     <td>-</td>
-                    <td></td>
                 </tr>
                 <tr>
-                    <td>City</td>
-                    <td>Ort</td>
-                    <td>Address.City</td>
-                    <td>City</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Country</td>
-                    <td>Land</td>
-                    <td>Address.Country</td>
-                    <td>CountryCode</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Postal code</td>
-                    <td>Postnr</td>
-                    <td>Address.ZipCode</td>
-                    <td>ZipCode</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Website</td>
-                    <td>Webbadress</td>
-                    <td>Website</td>
-                    <td>WWW</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>E-mail</td>
-                    <td>E-post</td>
-                    <td>Email</td>
-                    <td>Email</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Currency</td>
-                    <td>Momstyp</td>
-                    <td>Currency</td>
-                    <td>Currency</td>
-                    <td><span class="wrapcomment">Only currency is transferred, Fortnox uses own currency rate</span></td>
-                </tr>
-                
-            <tr>
-                <td>Discount</td>
-                <td>Fakturarabatt (%)</td>
-                <td>DefaultDiscountPercent</td>
-                <td>InvoiceDiscount</td>
-                <td></td>
-            </tr>
-                <tr>
-                    <td>Owner</td>
+                    <td>Kundansvarig (Owner)</td>
                     <td>Vår referens</td>
-                    <td>KAM</td>
-                    <td>OurReference</td>
-                    <td></td>
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
-    <h3 id="mapping-productnumbers">Product numbers</h3>
-    <div class="bs-example">
-        <table style="width: 100%" class="mapping_table">
-            <thead>
-                <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
-                </tr>
-                <tr>
-                    <th>TimeLog</th>
-                    <th>Fortnox</th>
-                    <th>TimeLog</th>
-                    <th>Fortnox</th>
-                    <th>Remarks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Name</td>
-                    <td>Benämning</td>
-                    <td>Name</td>
-                    <td>Name</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>No.</td>
-                    <td>No.</td>
-                    <td>ProductNo</td>
-                    <td>Number</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3 id="mapping-invoices">Invoices</h3>
-    <div class="bs-example">
-
-        <table style="width: 100%" class="mapping_table">
-            <thead>
-                <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
-                </tr>
-                <tr>
-                    <th>TimeLog</th>
-                    <th>Fortnox</th>
-                    <th>TimeLog</th>
-                    <th>Fortnox</th>
-                    <th>Remarks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>ID</td>
-                    <td></td>
-                    <td>ID</td>
-                    <td>ExternalInvoiceReference1</td>
-                    <td><span class="wrapcomment">Used to identify the invoice when retrieved from Fortnox</span></td>
-                </tr>
-                <tr>
-                    <td>Invoice no.</td>
-                    <td></td>
-                    <td>InvoiceNo</td>
-                    <td>ExternalInvoiceReference2</td>
-                    <td><span class="wrapcomment">Used to identify the invoice when retrieved from Fortnox</span></td>
-                </tr>
-                <tr>
-                    <td>Customer</td>
-                    <td>Customer</td>
-                    <td>InvoicingCustomerName</td>
-                    <td>CustomerName</td>
-                    <td><span class="wrapcomment">Customer no. and name are transferred to identify customer in Fortnox</span></td>
-                </tr>
-                <tr>
-                    <td>Heading</td>
-                    <td>Fakturatext</td>
-                    <td>Heading</td>
-                    <td>Remarks</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-
-                <tr>
-                    <td>Invoice date</td>
-                    <td>Fakturadatum</td>
-                    <td>InvoiceDate</td>
-                    <td>InvoiceDate</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Payment terms</td>
-                    <td>Betalningsvillkor</td>
                     <td>-</td>
-                    <td>TermOfPayment</td>
-                    <td><span class="wrapcomment">Terms of payment is set by the customer's payment terms in Fortnox</span></td>
                 </tr>
                 <tr>
-                    <td>Currency</td>
+                    <td>Telefon (Phone)</td>
+                    <td>Telefon</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Fax (Fax)</td>
+                    <td>Fax</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>E-post (Email)</td>
+                    <td>E-post</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Webbplats (Website)</td>
+                    <td>Webbadress</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Adress (Address)</td>
+                    <td>Fakturaadress</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Adress 2 (Address 2)</td>
+                    <td>Fakturaadress 2</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Adress 3 (Address 3)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Fortnox does not have this field</span></td>
+                </tr>
+                <tr>
+                    <td>Postnummer (Postal code)</td>
+                    <td>Postnr</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Ort (City)</td>
+                    <td>Ort</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Delstat (State)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Fortnox does not have this field</span></td>
+                </tr>
+                <tr>
+                    <td>Land (Country)</td>
+                    <td>Land</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Momsregistreringsnr (VAT no.)</td>
+                    <td>VAT nummer</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Organisation nr.</td>
+                    <td>VOrg-/Personnummer</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Postgiro/Bankgiro (Giro number).</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Fortnox does not have this field</span></td>
+                </tr>
+                <tr>
+                    <td>Valuta (Currency)</td>
                     <td>Valuta</td>
-                    <td>Details.Currency.Abbreviation</td>
-                    <td>Currency</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <h3 id="mapping-invoicelines">Kontaktpersoner (Contact persons)</h3>
+    <p>Contact persons are added as our reference on the invoice</p>
+    <div class="bs-example">
+        <table style="width: 100%" class="mapping_table">
+            <thead>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Fortnox</th>
+                    <th>Kommentar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Förnamn (First name)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">First name and last name is merged</span></td>
+                </tr>
+                <tr>
+                    <td>Efternamn (Last name)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">First name and last name is merged</span></td>
+                </tr>
+                <tr>
+                    <td>Telefon (Phone)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Fortnox does not have this field on the invoice</span></td>
+                </tr>
+                <tr>
+                    <td>E-post (Email)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Fortnox does not have this field on the invoice</span></td>
+                </tr>
+                <tr>
+                    <td>Min kommentar (your comment)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Fortnox does not have this field on the invoice</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <h3 id="mapping-invoicelines">Varenumre (Product numbers)</h3>
+    <p>Product numbers are imported when setting up the integration</p>
+    <div class="bs-example">
+        <table style="width: 100%" class="mapping_table">
+            <thead>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Fortnox</th>
+                    <th>Kommentar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Artikelnummer (Product no..)</td>
+                    <td>No.</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Namn (Name)</td>
+                    <td>Benämning</td>
+                    <td>-</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <h3 id="mapping-invoicelines">Medarbejdere (Employees)</h3>
+    <p>TimeLog employees is  added as internal reference on the invoice</p>
+    <div class="bs-example">
+        <table style="width: 100%" class="mapping_table">
+            <thead>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Fortnox</th>
+                    <th>Kommentar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Förnamn (first name)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">First name and last name is merged</span></td>
+                </tr>
+                <tr>
+                    <td>Efternamn (Last name)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">First name and last name is merged</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <h3 id="mapping-invoicelines">Fakturaer (Invoice)</h3>
+    <p>Invoice information that is transferred to Fortnox</p>
+    <div class="bs-example">
+        <table style="width: 100%" class="mapping_table">
+            <thead>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Fortnox</th>
+                    <th>Kommentar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fakturanr. (Invoice no.)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">TimeLog invoice number is not transferred</span></td>
+                </tr>
+                <tr>
+                    <td>Kundnr. (Customer no.)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">The customer number is linking to the customer data in Fortnox</span></td>
+                </tr>
+                <tr>
+                    <td>Kontaktperson (Contact)</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Fakturaadress, kundadress (Customer address) </td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Fakturaadress, kontaktperson (Invoice address, contact person)</td>
+                    <td>-</td>
+                    <td>Added if setup on TimeLog customer</td>
+                </tr>
+                <tr>
+                    <td>Fakturadatum (Invoice date)</td>
+                    <td>-</td>
+                    <td>Is handled by Fortnox</td>
+                </tr>
+                <tr>
+                    <td>Upprättat, (Created)</td>
+                    <td>-</td>
+                    <td>Is not transferred</td>
+                </tr>
+                <tr>
+                    <td>Uppdaterat (Updated)</td>
+                    <td>-</td>
+                    <td>Is not transferred</td>
+                </tr>
+                <tr>
+                    <td>Avdeling (Department)</td>
+                    <td>-</td>
+                    <td>Is not transferred</td>
+                </tr>
+                <tr>
+                    <td>Projekt (Project name)</td>
+                    <td>-</td>
+                    <td>Is not transferred</td>
+                </tr>
+                <tr>
+                    <td>Projektnummer. (Project no.)</td>
+                    <td>-</td>
+                    <td>Is not transferred</td>
+                </tr>
+                <tr>
+                    <td>Projektnummer. (Project no.)</td>
+                    <td>-</td>
+                    <td>Is not transferred</td>
+                </tr>
+                <tr>
+                    <td>Rekvisionsnr. (P.O. no.)</td>
+                    <td>Ert ordernummer</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Kundens referens. (Customer ’s Ref.)</td>
+                    <td>Er referens</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Intern referens (Internal reference)</td>
+                    <td>Vår referens</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>EAN/GLN</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Is handled in Fortnox</span></td>
+                </tr>
+                <tr>
+                    <td>Fakturaadress: (address 1)</td>
+                    <td>Fakturaadress</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Fakturaadress: (address 2)</td>
+                    <td>Fakturaadress 2</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Fakturaadress: (address 3)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Fortnox does not have this field</span></td>
+                </tr>
+                <tr>
+                    <td>By (City)</td>
+                    <td>Ort</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Postnr. (Postal code)</td>
+                    <td>Postnr.</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Land (Country)</td>
+                    <td>Land</td>
+                    <td><span class="wrapcomment">Has to be the Swedish name to be valid</span></td>
+                </tr>
+                <tr>
+                    <td>Overskrift (Heading)</td>
+                    <td>Fakturatext</td>
+                    <td><span class="wrapcomment">?</span></td>
+                </tr>
+                <tr>
+                    <td>Besked (Message)</td>
+                    <td>Kommentar</td>
+                    <td><span class="wrapcomment">?</span></td>
+                </tr>
+                <tr>
+                    <td>Betalingsbetingelser (Payment terms)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Payment term is added from the customer in Fortnox</span></td>
+                </tr>
+                <tr>
+                    <td>Betalingsfrist (Due date)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Is handled by Fortnox</span></td>
+                </tr>
+                <tr>
+                    <td>Valuta (Currency)</td>
+                    <td>Valuta</td>
                     <td><span class="wrapcomment">Abbreviation of the currency from the invoice in TimeLog</span></td>
                 </tr>
                 <tr>
-                    <td>Due date</td>
-                    <td>Förfallodatum</td>
-                    <td>DueDate</td>
-                    <td></td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-            <tr>
-                <td>Message</td>
-                <td>Kommentar</td>
-                <td>Message</td>
-                <td>Comments</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>P.O. no.:</td>
-                <td>Ert ordernummer</td>
-                <td>RequisitionNo</td>
-                <td>YourOrderNumber</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Customer's Ref.:</td>
-                <td>Er referens</td>
-                <td>CustomerReference</td>
-                <td>YourReference</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Internal reference:</td>
-                <td>Vår referens</td>
-                <td>Details.InternalReference</td>
-                <td>OurReference</td>
-                <td></td>
-            </tr>
-
-                <tr>
-                    <td>Invoice address:</td>
-                    <td>Fakturaadress</td>
-                    <td>InvoicingAddress.Address1</td>
-                    <td>Address1</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Invoice address2:</td>
-                    <td>Fakturaadress 2</td>
-                    <td>InvoicingAddress.Address2</td>
-                    <td>Address2</td>
-                    <td><span class="wrapcomment">Invoice address 2 and invoice address 3 are concatenated into Address 2 in Fortnox</span></td>
-                </tr>
-                <tr>
-                    <td>Invoice address3:</td>
-                    <td>Fakturaadress 2</td>
-                    <td>InvoicingAddress.Address3</td>
-                    <td>Address2</td>
-                    <td><span class="wrapcomment">Invoice address 2 and invoice address 3 are concatenated into Address 2 in Fortnox</span></td>
-                </tr>
-                <tr>
-                    <td>Invoice Zipcode</td>
-                    <td>Postnr</td>
-                    <td>InvoicingAddress.ZipCode</td>
-                    <td>ZipCode</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Invoice City</td>
-                    <td>Ort</td>
-                    <td>InvoicingAddress.City</td>
-                    <td>City</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-            <tr>
-                <td>Invoice country:</td>
-                <td>Land</td>
-                <td>InvoicingAddress.Country</td>
-                <td>Country</td>
-                <td><span class="wrapcomment">Has to be swedish version of a country to be valid</span></td>
-            </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>VATIncluded</td>
-                    <td><span class="wrapcomment">Always set to false</span></td>
-                </tr>
-                <tr>
+                    <td>Moms % (Default VAT %)</td>
                     <td>-</td>
-                    <td></td>
-                    <td>-</td>
-                    <td>Credit</td>
-                    <td><span class="wrapcomment">Set to false if invoice, true if credit note</span></td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td></td>
-                    <td>-</td>
-                    <td>InvoiceType</td>
-                    <td><span class="wrapcomment">InvoiceType in Fortnox - Always set to INVOICE</span></td>
+                    <td><span class="wrapcomment">Is handled by Fortnox</span></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-invoicelines">Invoice lines</h3>
-    <div class="bs-example">
 
+
+    <h3 id="mapping-invoicelines">Fakturalinjer (Invoice lines)</h3>
+    <p>Invoice line information that is transferred to Fortnox</p>
+    <div class="bs-example">
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
-                </tr>
-                <tr>
                     <th>TimeLog</th>
                     <th>Fortnox</th>
-                    <th>TimeLog</th>
-                    <th>Fortnox</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Product no.</td>
-                    <td>ArtikelNr</td>
-                    <td>ProductNo</td>
-                    <td>ArticleNumber</td>
-                    <td><span class="wrapcomment"></span></td>
+                    <td>Artikelnr. (Product no.)</td>
+                    <td>Artikelnr</td>
+                    <td>-</td>
                 </tr>
                 <tr>
-                    <td>Rate</td>
-                    <td>À-pris</td>
-                    <td>Rate</td>
-                    <td>Price</td>
-                    <td><span class="wrapcomment">Unit attached to product retrieved from Fortnox</span></td>
+                    <td>Beskrivelse (Description)</td>
+                    <td>Benämning</td>
+                    <td><span class="wrapcomment">Text exceeding 50 characters is added to a new invoice line</span></td>
                 </tr>
                 <tr>
-                    <td>Description</td>
-                    <td>Benämning/td>
-                    <td>Text</td>
-                    <td>Description</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Quantity</td>
+                    <td>Antal (Quantity)</td>
                     <td>Antal</td>
-                    <td>Quantity</td>
-                    <td>DeliveredQuantity</td>
-                    <td><span class="wrapcomment">Economic doesn't allow a quantity of 0. If so the rate will be set to 0 instead</span></td>
+                    <td>-</td>
                 </tr>
                 <tr>
-                    <td>%</td>
-                    <td>Rabatt</td>
-                    <td>Discount</td>
-                    <td>Discount</td>
-                    <td><span class="wrapcomment"></span></td>
+                    <td>Enhed (Unit)</td>
+                    <td>Antal</td>
+                    <td><span class="wrapcomment">Unit type is not transferred. Is to be selected on the product number in Fortnox</span></td>
+                </tr>
+                <tr>
+                    <td>Sats (Rate)</td>
+                    <td>Á-pris</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>% (%)</td>
+                    <td>Rabat</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Moms (VAT %)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Handled by product number setup</span></td>
+                </tr>
+                <tr>
+                    <td>Beløb (Amount)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">Not transferred. Is calculated by Fortnox</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <h3 id="mapping-expenses">Import av projektkostnader (Import of project expenses)</h3>
+    <p>Import of project expenses from Fortnox</p>
+    <div class="bs-example">
+        <table style="width: 100%" class="mapping_table">
+            <thead>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Fortnox</th>
+                    <th>Kommentar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dato (Date)</td>
+                    <td>Fakturadatum</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Utgiftsnr. (Expense no.)</td>
+                    <td>Utgiftsnr</td>
+                    <td><span class="wrapcomment">Expense number in Fortnox</span></td>
+                </tr>
+                <tr>
+                    <td>Leverannnnnnntör (Supplier)</td>
+                    <td>Utgiftsnr</td>
+                    <td><span class="wrapcomment">Is matched if supplier no. is found in TimeLog</span></td>
+                </tr>
+                <tr>
+                    <td>Meddelande (Comment)</td>
+                    <td>Kommentar</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Fakturanr. (Invoice no.)</td>
+                    <td>Fakturanummer</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Valuta (Currency)</td>
+                    <td>Valuta</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Valutakurs (Exchange rate)</td>
+                    <td>Kurs</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Beløb inkl. moms (Amount incl. VAT) </td>
+                    <td>Debet</td>
+                    <td><span class="wrapcomment">Expenses are imported without VAT</span></td>
+                </tr>
+                <tr>
+                    <td>Moms (VAT)</td>
+                    <td>Moms</td>
+                    <td><span class="wrapcomment">Expenses are imported without VAT</span></td>
+                </tr>
+                <tr>
+                    <td>Uttgiftstyp (Expense type)</td>
+                    <td>Konto</td>
+                    <td><span class="wrapcomment">TimeLog expense type name if matched with Fortnox account no.</span></td>
+                </tr>
+                <tr>
+                    <td>Projekt (Project)</td>
+                    <td>Projekt</td>
+                    <td><span class="wrapcomment">Is imported if selected on the Fortnox expense</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <h3 id="mapping-expenses">Projekt (Project)</h3>
+    <p>Export of TimeLog project </p>
+    <div class="bs-example">
+        <table style="width: 100%" class="mapping_table">
+            <thead>
+                <tr>
+                    <th>TimeLog</th>
+                    <th>Fortnox</th>
+                    <th>Kommentar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Projektnummer (Project no.)</td>
+                    <td>Projektnr.</td>
+                    <td><span class="wrapcomment">May consist of letters and numbers</span></td>
+                </tr>
+                <tr>
+                    <td>Namn (Name)</td>
+                    <td>Benämning</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Projektledare (Project manager)</td>
+                    <td>Prrojektledare</td>
+                    <td>-</td>
                 </tr>
 
             </tbody>
         </table>
     </div>
-    <h3 id="mapping-expenses">Expenses</h3>
+
+
+    <h3 id="mapping-expenses">Överför kostnader till ekonomisystem (Transfer expenses to finance system)</h3>
+    <p>TimeLog transfer of project expenses </p>
     <div class="bs-example">
-
-
         <table style="width: 100%" class="mapping_table">
             <thead>
                 <tr>
-                    <th colspan="2">Field name</th>
-                    <th colspan="2">Technical name</th>
-                </tr>
-                <tr>
                     <th>TimeLog</th>
                     <th>Fortnox</th>
-                    <th>TimeLog</th>
-                    <th>Fortnox</th>
-                    <th>Remarks</th>
+                    <th>Kommentar</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="info">
-                    <td>-</td>
-                    <td></td>
-                    <td>ExternalID</td>
-                    <td>_externalId</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-
                 <tr>
-                    <td>Date</td>
+                    <td>Datum (Date)</td>
                     <td>Fakturadatum</td>
-                    <td>Created</td>
-                    <td>InvoiceDate</td>
-                    <td><span class="wrapcomment"></span></td>
+                    <td><span class="wrapcomment">May consist of letters and numbers</span></td>
                 </tr>
                 <tr>
-                    <td>Created</td>
-                    <td>Fakturadatum</td>
-                    <td>Created</td>
-                    <td>Date</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Currency</td>
-                    <td>Valuta</td>
-                    <td>CurrencyID</td>
-                    <td>ID</td>
-                    <td><span class="wrapcomment">The currencyID in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from Fortnox</span></td>
-                </tr>
-                <tr>
-                    <td>Currency</td>
-                    <td>Kurs</td>
-                    <td>ExchangeRate</td>
-                    <td>Rate</td>
-                    <td><span class="wrapcomment">The currency rate in TimeLog is fetched from the TimeLog currency, based on the currency ABB on the purchase from Fortnox</span></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>DisbursementNo</td>
-                    <td>-</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Expense no.</td>
-                    <td>Löpnr</td>
-                    <td>InvoiceNo</td>
-                    <td>InvoiceNumber</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Payment method</td>
-                    <td></td>
-                    <td>PaymentMethod</td>
-                    <td>-</td>
-                    <td><span class="wrapcomment">Default paymentmethod for import. Set up in TimeLog</span></td>
-                </tr>
-
-                <tr>
-                    <td>Amount incl. VAT</td>
-                    <td>Amount (Curr)</td>
-                    <td>PurchasedAmount</td>
-                    <td>Total</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>VAT</td>
-                    <td></td>
-                    <td>VATIncluded</td>
-                    <td>0</td>
-                    <td><span class="wrapcomment">Always set to 0. Expenses will exclude VAT amounts</span></td>
-                </tr>
-                <tr>
-                    <td>Comment</td>
-                    <td>Kommentar</td>
-                    <td>Comment</td>
-                    <td>Comments</td>
-                    <td><span class="wrapcomment"></span></td>
-                </tr>
-                <tr>
-                    <td>Product No</td>
+                    <td>Leverantör (Supplier)</td>
                     <td>Leverantör</td>
-                    <td>ProductNo</td>
-                    <td>SupplierName</td>
-                    <td><span class="wrapcomment">Used as a placeholder for Fortnox's supplier name</span></td>
+                    <td><span class="wrapcomment">Supplier name added I TimeLog integration</span></td>
+                </tr>
+                <tr>
+                    <td>Medarbetare (Employee)</td>
+                    <td>Kommentar</td>
+                    <td><span class="wrapcomment">The TimeLog employee name is added in the comment field</span></td>
+                </tr>
+                <tr>
+                    <td>Utgiftsnr. (Expense no.)</td>
+                    <td>-</td>
+                    <td><span class="wrapcomment">TimeLog expense no. is not transferred</span></td>
+                </tr>
+                <tr>
+                    <td>Beskrivning (Description)</td>
+                    <td>Kommentar</td>
+                    <td><span class="wrapcomment">TimeLog comment and employee name/supplier name.</span></td>
+                </tr>
+                <tr>
+                    <td>Projektnr. (Project no.)</td>
+                    <td>Projekt</td>
+                    <td><span class="wrapcomment">Project number in TimeLog must match project number in Fortnox, else transfering will not take place</span></td>
+                </tr>
+                <tr>
+                    <td>Expense type</td>
+                    <td>Konto</td>
+                    <td><span class="wrapcomment">Expense type in TimeLog must match expense type in Fortnox, else transfering will not take place</span></td>
+                </tr>
+                <tr>
+                    <td>Valuta (Currency)</td>
+                    <td>Valuta</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Belopp(Amount)</td>
+                    <td>Debet</td>
+                    <td><span class="wrapcomment">Amount ex. VAT</span></td>
+                </tr>
+                <tr>
+                    <td>Utgiftsnr. (Expense no.)</td>
+                    <td>Löpnr</td>
+                    <td><span class="wrapcomment">Expense number in Fortnox</span></td>
                 </tr>
             </tbody>
         </table>
