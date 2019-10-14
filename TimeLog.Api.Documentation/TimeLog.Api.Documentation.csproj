@@ -442,6 +442,7 @@
     <None Include="Source\Reporting\GetContractCustomersRaw.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\FinancialIntegration\BjornLunden.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
