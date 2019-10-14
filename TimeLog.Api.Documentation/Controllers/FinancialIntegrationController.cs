@@ -59,6 +59,10 @@
         {
             return this.View("Fortnox");
         }
+        public ActionResult BjornLunden()
+        {
+            return this.View("BjornLunden");
+        }
 
         public ActionResult Economic()
         {
