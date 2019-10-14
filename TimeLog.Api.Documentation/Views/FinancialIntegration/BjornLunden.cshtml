@@ -38,7 +38,7 @@
 
     <h3>Customers</h3>
     <p>
-        Customers are linked when configuring the integration. New customers in TimeLog are transferred and created in Björn Lundén when 
+        Customers are linked when configuring the integration. New customers in TimeLog are transferred and created in Björn Lundén when
         transferring the first invoice to the new customer.
         Added customers in Björn Lundén is to be imported into TimeLog.
     </p>
@@ -47,11 +47,13 @@
 
     <h3>Contact persons</h3>
     <p>Contact persons on the TimeLog invoice is transferred to the Björn Lundén invoice.</p>
- 
+
 
     <h3>Product numbers</h3>
-    <p>Product numbers are imported from Björn Lundén in the integration configuration. Product numbers in 
-        Björn Lundén cannot be added, modified or deleted from TimeLog.</p>
+    <p>
+        Product numbers are imported from Björn Lundén in the integration configuration. Product numbers in
+        Björn Lundén cannot be added, modified or deleted from TimeLog.
+    </p>
 
 
     <h3>Employees</h3>
@@ -59,28 +61,34 @@
 
 
     <h3>Invoices</h3>
-    <p>Only booked invoices can be transferred from TimeLog to Björn Lundén. Invoices are transferred as drafts and changes on the invoice 
-        drafts inside Björn Lundén will not be reflected in TimeLog. </p>
+    <p>
+        Only booked invoices can be transferred from TimeLog to Björn Lundén. Invoices are transferred as drafts and changes on the invoice
+        drafts inside Björn Lundén will not be reflected in TimeLog.
+    </p>
 
 
     <h3>Invoice lines</h3>
     <p>Invoice lines are transferred along with the invoice and invoice lines can be modified in Björn Lundén. Changes will not be reflected in TimeLog.</p>
-    <p>Each transferred invoice line incl. product number, invoice line description, number of units and price per unit. Calculations are handled by Björn 
-        Lundén. Unit type is not transferred and is to be setup on the product number in Björn Lundén.</p>
+    <p>
+        Each transferred invoice line incl. product number, invoice line description, number of units and price per unit. Calculations are handled by Björn
+        Lundén. Unit type is not transferred and is to be setup on the product number in Björn Lundén.
+    </p>
     <p>Björn Lundén can receive TimeLog header lines, empty invoice lines and text lines.</p>
 
 
     <h3>Expense import</h3>
     <p>
-        TimeLog can import expenses from selected accounts from Björn Lundén. TimeLog will match the account number to the TimeLog expense types if 
-        the expense types have a Björn Lundén account number added. If the TimeLog project number is added to the Björn Lundén expense is this used 
+        TimeLog can import expenses from selected accounts from Björn Lundén. TimeLog will match the account number to the TimeLog expense types if
+        the expense types have a Björn Lundén account number added. If the TimeLog project number is added to the Björn Lundén expense is this used
         to map the project in TimeLog.
     </p>
 
 
     <h3>Projects</h3>
-    <p>TimeLog can transfer the project number and name to Björn Lundén and accept product numbers consisting of letters, 
-        numbers and special characters (e.g. P19.0007).</p>
+    <p>
+        TimeLog can transfer the project number and name to Björn Lundén and accept product numbers consisting of letters,
+        numbers and special characters (e.g. P19.0007).
+    </p>
 
 
     <h3>Project tasks</h3>
@@ -115,67 +123,67 @@
                 <tr>
                     <td>Företagsnamn (Company name)</td>
                     <td>Namn</td>
-                    <td><span class="wrapcomment">Max 40 char.</span></td>
+                    <td><span class="wrapcomment">Max 40 characters</span></td>
                 </tr>
                 <tr>
                     <td>Kundnr. (Customer no)</td>
                     <td>Id</td>
-                    <td><span class="wrapcomment">Max 9 char.</span></td>
+                    <td><span class="wrapcomment">Max 9 characters</span></td>
                 </tr>
                 <tr>
                     <td>Kundansvarig (Owner)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Telefon (Phone)</td>
                     <td>Telefon</td>
-                    <td><span class="wrapcomment">Max 20 char.</span></td>
+                    <td><span class="wrapcomment">Max 20 characters</span></td>
                 </tr>
                 <tr>
                     <td>Fax (Fax)</td>
                     <td>Fax</td>
-                    <td><span class="wrapcomment">Max 20 char.</span></td>
+                    <td><span class="wrapcomment">Max 20 characters</span></td>
                 </tr>
                 <tr>
                     <td>E-post (Email)</td>
                     <td>E-post</td>
-                    <td><span class="wrapcomment">Max 80 char.</span></td>
+                    <td><span class="wrapcomment">Max 80 characters</span></td>
                 </tr>
                 <tr>
                     <td>Webbplats (Website)</td>
                     <td>Hemsida</td>
-                    <td><span class="wrapcomment">Max 80 char.</span></td>
+                    <td><span class="wrapcomment">Max 80 characters</span></td>
                 </tr>
                 <tr>
                     <td>Adress (Address)</td>
                     <td>Postadress</td>
-                    <td><span class="wrapcomment">Max 40 char.</span></td>
+                    <td><span class="wrapcomment">Max 40 characters</span></td>
                 </tr>
                 <tr>
                     <td>Adress 2 (Address 2)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Adress 3 (Address 3)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Postnummer (Postal code)</td>
                     <td>PostNr</td>
-                    <td><span class="wrapcomment">Max 10 char.</span></td>
+                    <td><span class="wrapcomment">Max 10 characters</span></td>
                 </tr>
                 <tr>
                     <td>Ort (City)</td>
                     <td>Ort</td>
-                    <td><span class="wrapcomment">Max 40 char.</span></td>
+                    <td><span class="wrapcomment">Max 40 characters</span></td>
                 </tr>
                 <tr>
                     <td>Delstat (State)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Land (Country)</td>
@@ -185,17 +193,17 @@
                 <tr>
                     <td>Momsregistreringsnr (VAT no.)</td>
                     <td>VAT-nr</td>
-                    <td><span class="wrapcomment">Max 20 char.</span></td>
+                    <td><span class="wrapcomment">Max 20 characters</span></td>
                 </tr>
                 <tr>
                     <td>Organisation nr.</td>
                     <td>Org. nr</td>
-                    <td><span class="wrapcomment">Max 25 char.</span></td>
+                    <td><span class="wrapcomment">Max 25 characters</span></td>
                 </tr>
                 <tr>
                     <td>Postgiro/Bankgiro (Giro number).</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Valuta (Currency)</td>
@@ -205,7 +213,7 @@
                 <tr>
                     <td>EAN nr.</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
             </tbody>
         </table>
@@ -331,12 +339,12 @@
                 <tr>
                     <td>Fakturanr. (Invoice no.)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Kundnr. (Customer no.)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Kontaktperson (Contact)</td>
@@ -351,7 +359,7 @@
                 <tr>
                     <td>Fakturaadress, kontaktperson (Invoice address, contact person)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Fakturadatum (Invoice date)</td>
@@ -361,52 +369,52 @@
                 <tr>
                     <td>Upprättat, (Created)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Uppdaterat (Updated)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Avdeling (Department)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Projekt (Project name)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Projektnummer. (Project no.)</td>
                     <td>-</td>
-                    <td>-</td>
-                </tr>         
+                    <td><span class="wrapcomment">Not supported</span></td>
+                </tr>
                 <tr>
                     <td>Rekvisionsnr. (P.O. no.)</td>
                     <td>Ert ordernummer</td>
-                    <td><span class="wrapcomment">Max 40 char. is shown internally in the system.</span></td>
+                    <td><span class="wrapcomment">Max 40 characters is shown internally in the system.</span></td>
                 </tr>
                 <tr>
                     <td>Kundens referens. (Customer ’s Ref.)</td>
                     <td>Vår referens</td>
-                    <td><span class="wrapcomment">Max 40 char. where 37 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
+                    <td><span class="wrapcomment">Max 40 characters where 37 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
                 </tr>
                 <tr>
                     <td>Intern referens (Internal reference)</td>
                     <td>Er referens</td>
-                    <td><span class="wrapcomment">Max 40 char. where 39 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
+                    <td><span class="wrapcomment">Max 40 characters where 39 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
                 </tr>
                 <tr>
                     <td>EAN/GLN</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Fakturaadress: (address 1)</td>
                     <td>Fakturaadress</td>
-                    <td><span class="wrapcomment">Max 40 char. where 24 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
+                    <td><span class="wrapcomment">Max 40 characters where 24 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
                 </tr>
                 <tr>
                     <td>Fakturaadress: (address 2)</td>
@@ -421,17 +429,17 @@
                 <tr>
                     <td>By (City)</td>
                     <td>Ort</td>
-                    <td><span class="wrapcomment">Max 40 char. where 26 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
+                    <td><span class="wrapcomment">Max 40 characters where 26 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
                 </tr>
                 <tr>
                     <td>Postnr. (Postal code)</td>
                     <td>Postnr.</td>
-                    <td><span class="wrapcomment">Max 10 char. where 7 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
+                    <td><span class="wrapcomment">Max 10 characters where 7 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
                 </tr>
                 <tr>
                     <td>Land (Country)</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td><span class="wrapcomment">Not supported</span></td>
                 </tr>
                 <tr>
                     <td>Overskrift (Heading)</td>
@@ -467,7 +475,7 @@
         </table>
     </div>
 
-
+   
     <h3 id="mapping-invoicelines">Fakturarad (Invoice line)</h3>
     <p>Invoice line information that is transferred to Björn Lundén.</p>
     <div class="bs-example">
@@ -488,7 +496,7 @@
                 <tr>
                     <td>Beskrivelse (Description)</td>
                     <td>Benämning</td>
-                    <td><span class="wrapcomment">Max 80 char. where 38 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
+                    <td><span class="wrapcomment">Max 80 characters where 38 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
                 </tr>
                 <tr>
                     <td>Antal (Quantity)</td>
@@ -503,7 +511,7 @@
                 <tr>
                     <td>Sats (Rate)</td>
                     <td>Apris</td>
-                    <td><span class="wrapcomment">Max 15 char. where 7 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
+                    <td><span class="wrapcomment">Max 15 characters where 7 of them is visible on a physicial invoice. Rest is stored internally in the system.</span></td>
                 </tr>
                 <tr>
                     <td>% (%)</td>
