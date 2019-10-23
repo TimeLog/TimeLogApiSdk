@@ -63,6 +63,7 @@
     <Compile Include="TaskType.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="TimeOffRegistration.cs" />
     <Compile Include="WorkUnit.cs" />
     <Compile Include="CustomerStatus.cs" />
     <Compile Include="ServiceHandler.cs" />

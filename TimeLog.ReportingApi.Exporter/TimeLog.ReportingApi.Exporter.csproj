@@ -49,6 +49,8 @@
     <Compile Include="IMethod.cs" />
     <Compile Include="MethodTemplates\GetSubOpportunitiesRaw.cs" />
     <Compile Include="MethodTemplates\GetOpportunitiesRaw.cs" />
+    <Compile Include="MethodTemplates\GetTimeOffRegistrationsRaw.cs" />
+    <Compile Include="MethodTemplates\GetEmployeesRaw.cs" />
     <Compile Include="MethodTemplates\GetWorkUnitsRaw.cs" />
     <Compile Include="MethodTemplates\GetContactsRaw.cs" />
     <Compile Include="MethodTemplates\GetContactsShortList.cs" />

@@ -18,10 +18,10 @@
         /// <returns>A string value (empty string if parsing fails)</returns>
         public static string GetStringSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager)
         {
-            var element = node.SelectSingleNode(xpath, namespaceManager);
-            if (element != null)
+            var _element = node.SelectSingleNode(xpath, namespaceManager);
+            if (_element != null)
             {
-                return element.InnerText;
+                return _element.InnerText;
             }
 
             return string.Empty;
@@ -36,13 +36,12 @@
         /// <returns>An int value (0 if parsing fails)</returns>
         public static int GetIntSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager)
         {
-            var element = node.SelectSingleNode(xpath, namespaceManager);
-            if (element != null)
+            var _element = node.SelectSingleNode(xpath, namespaceManager);
+            if (_element != null)
             {
-                int result;
-                if (int.TryParse(element.InnerText, out result))
+                if (int.TryParse(_element.InnerText, out var _result))
                 {
-                    return result;
+                    return _result;
                 }
 
                 return 0;
@@ -61,18 +60,46 @@
         /// <returns>An double value (0 if parsing fails)</returns>
         public static double GetDoubleSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager, CultureInfo culture = null)
         {
-            var element = node.SelectSingleNode(xpath, namespaceManager);
-            if (element != null)
+            var _element = node.SelectSingleNode(xpath, namespaceManager);
+            if (_element != null)
             {
                 if (culture == null)
                 {
                     culture = SettingsHandler.Instance.DataCulture;
                 }
 
-                double result;
-                if (double.TryParse(element.InnerText, NumberStyles.Any, culture, out result))
+                if (double.TryParse(_element.InnerText, NumberStyles.Any, culture, out var _result))
                 {
-                    return result;
+                    return _result;
+                }
+
+                return 0;
+            }
+
+            return 0;
+        }
+
+        /// <summary>
+        /// Gets a strongly typed float value from a given XPath. Returns 0 if parsing fails.
+        /// </summary>
+        /// <param name="node">The XML node</param>
+        /// <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
+        /// <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+        /// <param name="culture">Optional culture for conversion</param>
+        /// <returns>An double value (0 if parsing fails)</returns>
+        public static float GetFloatSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager, CultureInfo culture = null)
+        {
+            var _element = node.SelectSingleNode(xpath, namespaceManager);
+            if (_element != null)
+            {
+                if (culture == null)
+                {
+                    culture = SettingsHandler.Instance.DataCulture;
+                }
+
+                if (float.TryParse(_element.InnerText, NumberStyles.Any, culture, out var _result))
+                {
+                    return _result;
                 }
 
                 return 0;
@@ -90,13 +117,12 @@
         /// <returns>An DateTime value (DateTime.MinValue if parsing fails)</returns>
         public static DateTime GetDateTimeSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager)
         {
-            var element = node.SelectSingleNode(xpath, namespaceManager);
-            if (element != null)
+            var _element = node.SelectSingleNode(xpath, namespaceManager);
+            if (_element != null)
             {
-                DateTime result;
-                if (DateTime.TryParse(element.InnerText, out result))
+                if (DateTime.TryParse(_element.InnerText, out var _result))
                 {
-                    return result;
+                    return _result;
                 }
 
                 return DateTime.MinValue;
@@ -114,13 +140,12 @@
         /// <returns>An boolean value (false if parsing fails)</returns>
         public static bool GetBoolTimeSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager)
         {
-            var element = node.SelectSingleNode(xpath, namespaceManager);
-            if (element != null)
+            var _element = node.SelectSingleNode(xpath, namespaceManager);
+            if (_element != null)
             {
-                bool result;
-                if (bool.TryParse(element.InnerText, out result))
+                if (bool.TryParse(_element.InnerText, out var _result))
                 {
-                    return result;
+                    return _result;
                 }
 
                 return false;
