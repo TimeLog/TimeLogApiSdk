@@ -723,6 +723,10 @@ TimeLog.TLP.WebAppCode
  <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
  <param name="apiPassword">The API password</param>
+ <param name="SalaryAccountID">ID of specific salary account. Set to 0 to get all salary accounts</param>
+ <param name="EmployeeUserID">ID of specific employee. Set to 0 to get all employees</param>
+ <param name="FromDate">Limits result to postings with a posting date on or later than this date</param>
+ <param name="ToDate">Limits result to postings with a posting date on or prior to this date</param>
  <returns>A list of employee postings in standard XML document</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.ServiceBase.ValidateRetreivalAttempt(System.String,System.String,System.String)">

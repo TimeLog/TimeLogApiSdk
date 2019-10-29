@@ -5458,7 +5458,12 @@
             The _customer adapter.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.ProjectManagement.ITaskHeader,TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.TaskHeader},TimeLog.TLP.API.CRM.V1_2.ICustomerHeaderAdapter)">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter._contactAdapter">
+            <summary>
+            The _contact adapter.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.ProjectManagement.ITaskHeader,TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.TaskHeader},TimeLog.TLP.API.CRM.V1_2.ICustomerHeaderAdapter,TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.CRM.IContact,TimeLog.TLP.API.Proxy.CRM.V1_2.ContactHeader})">
             <summary>
             Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter"/> class.
             </summary>
@@ -5467,6 +5472,9 @@
             </param>
             <param name="customerAdapter">
             The customer adapter.
+            </param>
+            <param name="contactAdapter">
+            The contact adapter
             </param>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProject)">
