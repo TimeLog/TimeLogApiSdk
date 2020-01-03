@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Data Import: Templates";
+}
+
+    <article class="article">
+
+        <h1>@ViewBag.Title</h1>
+        <h2>
+            This page contains information about the format required for TimeLog to manually import data into
+            a fresh TimeLog system.
+        </h2>
+
+        <span class="text-selection">Note that these CSV import definitions is work-in-progress!</span>
+
+        <h3>Requirements</h3>
+        <ul class="arrows">
+            <li>All files must be in CSV format (Comma-separated, not semi-colon)</li>
+            <li>All files must be in UTF-8 or Windows-1252 encoding</li>
+            <li>All formatting must be in en-US</li>
+            <li>Columns annotated with optional can be left out of the CSV file</li>
+        </ul>
+        <h3>Templates</h3>
+        <ul class="arrows">
+            <li>@Html.ActionLink("Template: Employees", "Employees")</li>
+            <li>@Html.ActionLink("Template: Customers", "Customers")</li>
+            <li>@Html.ActionLink("Template: Contacts", "Contacts")</li>
+            <li>@Html.ActionLink("Template: Projects", "Projects")</li>
+            @*<li>@Html.ActionLink("Template: Contracts", "Contracts")</li>
+            <li>@Html.ActionLink("Template: Tasks", "Tasks")</li>*@
+        </ul>
+
+    </article>

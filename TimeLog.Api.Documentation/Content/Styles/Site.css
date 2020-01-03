@@ -4799,7 +4799,6 @@ pre {
     padding: 5px 10px;
     max-height: 300px;
     overflow: auto;
-    overflow-x: hidden;
 }
 
 .setting_table {
@@ -4807,12 +4806,29 @@ pre {
     margin-bottom: 20px;
 }
 
-.setting_table th.col-1 { width: 8.333333333333333%;}
-.setting_table th.col-2 { width: 16.66666666666667%;}
-.setting_table th.col-3 { width: 25%;}
-.setting_table th.col-4 { width: 33.33333333333333%;}
-.setting_table th.col-5 { width: 41.66666666666667%;}
-.setting_table th.col-6 { width: 50%;}
+    .setting_table th.col-1 {
+        width: 8.333333333333333%;
+    }
+
+    .setting_table th.col-2 {
+        width: 16.66666666666667%;
+    }
+
+    .setting_table th.col-3 {
+        width: 25%;
+    }
+
+    .setting_table th.col-4 {
+        width: 33.33333333333333%;
+    }
+
+    .setting_table th.col-5 {
+        width: 41.66666666666667%;
+    }
+
+    .setting_table th.col-6 {
+        width: 50%;
+    }
 
     .setting_table td {
         border-bottom: 1px solid #e5e5e5;
@@ -4836,10 +4852,45 @@ pre {
         text-align: right;
     }
 
-    .setting_table .tablespacer td{
+    .setting_table .tablespacer td {
         padding-top: 40px;
         font-weight: bold;
     }
+
+.csv_mapping_table {
+    font-size: 0.8em;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    .csv_mapping_table td, .csv_mapping_table th {
+        border-bottom: 1px solid #e5e5e5;
+        text-align: left;
+    }
+
+    .csv_mapping_table tr td:nth-child(1) {
+        width: 20%;
+    }
+
+    .csv_mapping_table tr td:nth-child(2) {
+        width: 10%;
+    }
+
+    .csv_mapping_table tr td:nth-child(3) {
+        width: 10%;
+    }
+
+    .csv_mapping_table tr td:nth-child(4) {
+        width: 10%;
+    }
+
+    .csv_mapping_table tr td:nth-child(5) {
+    }
+
+    .csv_mapping_table tr td:nth-child(6) {
+        width: 20%;
+    }
+
 
 .mapping_table {
     font-size: 0.8em;
@@ -4879,33 +4930,33 @@ pre {
         border-bottom: 1px solid #000;
     }
 
+.wrapcomment {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+    display: block;
+}
+
+tr:hover .wrapcomment, tr:hover .wrapcomment {
+    position: relative;
+    z-index: 1;
+    display: block;
+    text-overflow: '';
+    white-space: normal;
+}
+
+@media print {
     .wrapcomment {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 200px;
-        display: block;
-    }
-
-    tr:hover .wrapcomment, tr:hover .wrapcomment {
-        position: relative;
-        z-index: 1;
         display: block;
         text-overflow: '';
         white-space: normal;
     }
 
-    @media print {
-        .wrapcomment {
-        display: block;
-        text-overflow: '';
-        white-space: normal;
-        }   
-
-        nav {
-            display: none;
-        }
+    nav {
+        display: none;
     }
+}
 
 span.badge {
     text-transform: uppercase;
@@ -4948,17 +4999,17 @@ ul.signature-nav {
     padding: 0;
 }
 
-ul.signature-nav li {
-    float: left;
-    margin: 0 5px 5px 0;
-    padding: 2px 5px 2px 0;
-    border-right: 1px solid #ddd;
-}
+    ul.signature-nav li {
+        float: left;
+        margin: 0 5px 5px 0;
+        padding: 2px 5px 2px 0;
+        border-right: 1px solid #ddd;
+    }
 
-ul.signature-nav li:last-child {
-    padding-right: 0;
-    border-right: none;
-}
+        ul.signature-nav li:last-child {
+            padding-right: 0;
+            border-right: none;
+        }
 
 ul ~ * {
     clear: both;

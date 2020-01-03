@@ -11,7 +11,7 @@ namespace TimeLog.Api.Documentation
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-            "~/Scripts/plugins.js").Include("~/Scripts/script.js"));
+            "~/Scripts/plugins.js")); //.Include("~/Scripts/script.js"));
 
             bundles.Add(new StyleBundle("~/Content/Styles/Compiled").Include(
                       "~/Content/Styles/*.css"));
