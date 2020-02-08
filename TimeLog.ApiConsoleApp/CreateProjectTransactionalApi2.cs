@@ -55,7 +55,7 @@
                     CurrencyID = 0,
                     MainContractID =
                                               1, // ONLY FOR CREATION! TimeMaterial = 1, FixedPrice = 2, TimeMaterialAccountEndBalancing = 3, TimeMaterialAccountPeriodicBalancing = 4, PrepaidServices = 5, RevenueReqPerTask = 6, ContinuousService = 7, ContinuousItemInvoicing = 8
-                    DepartmentHandledByID = 8,
+                    DepartmentHandledByID = 0,
                     DepartmentOrderedByID = 0,
                     //Description = string.Empty,
                     EndDate = DateTime.Today.AddDays(30),
