@@ -35,5 +35,7 @@
     <tlp:ProfitRatio>0.0000</tlp:ProfitRatio>
     <tlp:InvAmount>1278.7600</tlp:InvAmount>
    <tlp:ApprovedStatus>1</tlp:ApprovedStatus>
+    <tlp:ControlledStatus>1</tlp:ControlledStatus>
+    <tlp:PaidStatus>1</tlp:PaidStatus>
   </tlp:Expense>
 </tlp:Expenses>
