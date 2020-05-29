@@ -1,0 +1,15 @@
+﻿Object Type,Object ID,Object Name,Service Name,All Tenants,Published
+Codeunit,6082886,SCB Tlp Functions WS,TlpFunctionsWS,Yes,Yes
+Page,6083262,SCB TlpContact WS,TlpContactNavWS,Yes,Yes
+Page,6083272,SCB TlpCustomerContact WS,TlpCustomerContactWS,Yes,Yes
+Page,6083263,SCB TlpCustomer WS,TlpCustomerNavWS,Yes,Yes
+Page,6083264,SCB TlpEmployee WS,TlpEmployeeNavWS,Yes,Yes
+Page,6083265,SCB TlpExpense WS,TlpExpenseNavWS,Yes,Yes
+Page,6083267,SCB TlpInvoiceLine WS,TlpInvoiceLineWS,Yes,Yes
+Page,6083266,SCB TlpInvoiceHeader WS,TlpInvoiceNavWS,Yes,Yes
+Page,6083271,SCB TlpPostedCrMemoLine WS,TlpPostedCrMemoLineWS,Yes,Yes
+Page,6083270,SCB TlpPostedCrMemoHeader WS,TlpPostedCrMemoNavWS,Yes,Yes
+Page,6083269,SCB TlpPostedInvoiceLine WS,TlpPostedInvoiceLineWS,Yes,Yes
+Page,6083268,SCB TlpPostedInvoiceHeader WS,TlpPostedInvoiceNavWS,Yes,Yes
+Page,6083261,SCB TlpProductNumber WS,TlpProductNumberNavWS,Yes,Yes
+Page,6083273,SCB TlpSalesPerson WS,TlpSalesPersonWS,Yes,Yes

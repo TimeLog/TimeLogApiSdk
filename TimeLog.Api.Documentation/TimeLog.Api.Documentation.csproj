@@ -164,6 +164,9 @@
     <Content Include="Content\Images\previous.png" />
     <Content Include="Content\Images\sox.png" />
     <Content Include="Content\NAVProjectVersionIntegrationLog.PNG" />
+    <Content Include="Content\NAV\nav-client-setup.png" />
+    <Content Include="Content\NAV\nav-development-environment-setup.png" />
+    <Content Include="Content\NAV\nav-web-services-setup.jpg" />
     <Content Include="Content\TimeLog Data Model.svg" />
     <Content Include="Content\TimeLog Data Model.xml" />
     <Content Include="Content\TimeLog.Financial.Host.Settings for NAV-integration.png" />
