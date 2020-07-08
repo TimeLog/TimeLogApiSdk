@@ -31,6 +31,9 @@
     <tlp:BudgetAmountTimeAndMaterial>[OBSOLETE from v6.0.5 - same value as tlp:BudgetAmount]</tlp:BudgetAmountTimeAndMaterial>
     <tlp:BudgetAmountExpenses>5000</tlp:BudgetAmountExpenses>
     <tlp:BudgetAmountTravel>2750</tlp:BudgetAmountTravel>
+    <tlp:BudgetAmountWorkCurrency>100</tlp:BudgetAmountWorkCurrency>
+    <tlp:BudgetAmountExpenseCurrency>200</tlp:BudgetAmountExpenseCurrency>
+    <tlp:BudgetAmountTravelCurrency>300</tlp:BudgetAmountTravelCurrency>
     <tlp:BudgetHoursFixedPriceTasks>[OBSOLETE from v6.0.5]</tlp:BudgetHoursFixedPriceTasks>
     <tlp:BudgetHoursFixedPriceProject>[OBSOLETE from v6.0.5]</tlp:BudgetHoursFixedPriceProject>
     <tlp:BudgetHoursTimeAndMaterial>[OBSOLETE from v6.0.5 - same value as tlp:BudgetHours]</tlp:BudgetHoursTimeAndMaterial>
