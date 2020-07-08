@@ -45,6 +45,9 @@
       <xsd:element name="BudgetAmountTimeAndMaterial" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
       <xsd:element name="BudgetAmountExpenses" type="xsd:decimal" />
       <xsd:element name="BudgetAmountTravel" type="xsd:decimal" />
+      <xsd:element name="BudgetAmountWorkCurrency" type="xsd:decimal" />
+      <xsd:element name="BudgetAmountExpenseCurrency" type="xsd:decimal" />
+      <xsd:element name="BudgetAmountTravelCurrency" type="xsd:decimal" />
       <xsd:element name="BudgetHoursFixedPriceTasks" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
       <xsd:element name="BudgetHoursFixedPriceProject" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
       <xsd:element name="BudgetHoursTimeAndMaterial" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
