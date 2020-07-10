@@ -34,19 +34,30 @@
       <xsd:element name="Date" type="xsd:dateTime" />
       <xsd:element name="Note" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="DepartmentID" type="xsd:int" />
+      <xsd:element name="DepartmentName" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="AdditionalTextField" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ActualExchangeRate" type="xsd:decimal" />
       <xsd:element name="RegHours" type="xsd:decimal" />
       <xsd:element name="RegHourlyRate" type="xsd:decimal" />
+      <xsd:element name="RegHourlyRateProjectCurrency" type="xsd:decimal" />
       <xsd:element name="RegAmount" type="xsd:decimal" />
+      <xsd:element name="RegAmountProjectCurrency" type="xsd:decimal" />
       <xsd:element name="EstimatedHours" type="xsd:decimal" />
       <xsd:element name="EstimatedHourlyRate" type="xsd:decimal" />
+      <xsd:element name="EstimatedHourlyRateProjectCurrency" type="xsd:decimal" />
       <xsd:element name="EstimatedAmount" type="xsd:decimal" />
+      <xsd:element name="EstimatedAmountProjectCurrency" type="xsd:decimal" />
       <xsd:element name="BARHours" type="xsd:decimal" /><!-- BAR: Booked as revenue -->
+      <xsd:element name="BARHoursProjectCurrency" type="xsd:decimal" />
       <xsd:element name="BARHourlyRate" type="xsd:decimal" />
+      <xsd:element name="BARHourlyRateProjectCurrency" type="xsd:decimal" />
       <xsd:element name="BARAmount" type="xsd:decimal" />
+      <xsd:element name="BARAmountProjectCurrency" type="xsd:decimal" />
       <xsd:element name="InvoicedHours" type="xsd:decimal" />
       <xsd:element name="InvoicedHourlyRate" type="xsd:decimal" />
+      <xsd:element name="InvoicedHourlyRateProjectCurrency" type="xsd:decimal" />
       <xsd:element name="InvoicedAmount" type="xsd:decimal" />
+      <xsd:element name="InvoicedAmountProjectCurrency" type="xsd:decimal" />
       <xsd:element name="InvHours" type="xsd:decimal" /><!-- InvHours deprecated, use BARHours instead -->
       <xsd:element name="InvAmount" type="xsd:decimal" /><!-- InvAmount deprecated, use BARAmount instead -->
       <xsd:element name="CostAmount" type="xsd:decimal" />
