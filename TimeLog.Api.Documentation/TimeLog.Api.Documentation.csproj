@@ -166,7 +166,9 @@
     <Content Include="Content\NAVProjectVersionIntegrationLog.PNG" />
     <Content Include="Content\NAV\nav-client-setup.png" />
     <Content Include="Content\NAV\nav-development-environment-setup.png" />
-    <Content Include="Content\NAV\nav-web-services-setup.jpg" />
+    <Content Include="Content\NAV\nav-job-queue-setup.png" />
+    <Content Include="Content\NAV\NAV-setup-soap-services.png" />
+    <Content Include="Content\NAV\NAV-setup-web-services.png" />
     <Content Include="Content\TimeLog Data Model.svg" />
     <Content Include="Content\TimeLog Data Model.xml" />
     <Content Include="Content\TimeLog.Financial.Host.Settings for NAV-integration.png" />
@@ -177,6 +179,7 @@
     <Content Include="Content\Styles\Site.css" />
     <Content Include="Content\Fonts\icomoon.ttf" />
     <Content Include="Content\Fonts\icomoon.woff" />
+    <Content Include="Content\NAV\NAV-setup-web-services.csv" />
     <None Include="Properties\PublishProfiles\WebPublish.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
