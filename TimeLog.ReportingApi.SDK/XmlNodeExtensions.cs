@@ -65,7 +65,7 @@
             {
                 if (culture == null)
                 {
-                    culture = SettingsHandler.Instance.DataCulture;
+                    culture = ServiceHandler.DataCulture;
                 }
 
                 if (double.TryParse(_element.InnerText, NumberStyles.Any, culture, out var _result))
@@ -94,7 +94,7 @@
             {
                 if (culture == null)
                 {
-                    culture = SettingsHandler.Instance.DataCulture;
+                    culture = ServiceHandler.DataCulture;
                 }
 
                 if (float.TryParse(_element.InnerText, NumberStyles.Any, culture, out var _result))

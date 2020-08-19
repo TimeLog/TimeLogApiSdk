@@ -73,7 +73,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="SettingsHandler.cs" />
     <Compile Include="XmlNodeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

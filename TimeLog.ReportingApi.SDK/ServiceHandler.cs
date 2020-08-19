@@ -1,4 +1,7 @@
-﻿namespace TimeLog.ReportingApi.SDK
+﻿using System.Globalization;
+using System.Security;
+
+namespace TimeLog.ReportingApi.SDK
 {
     using System;
     using System.Configuration;
@@ -17,12 +20,24 @@
         /// <summary>
         /// Prevents a default instance of the <see cref="ServiceHandler"/> class from being created.
         /// </summary>
-        private ServiceHandler()
+        public ServiceHandler(string siteCode, 
+            string apiId, 
+            string apiPassword, 
+            string serviceUrl,
+            long maxReceivedMessageSize = 4096000, 
+            TimeSpan? timeOut = null)
         {
-            this.SiteCode = ConfigurationManager.AppSettings["TimeLogProjectReportingSiteCode"];
-            this.ApiId = ConfigurationManager.AppSettings["TimeLogProjectReportingApiId"];
-            this.ApiPassword = ConfigurationManager.AppSettings["TimeLogProjectReportingApiPassword"];
-            this.ServiceUrl = SettingsHandler.Instance.Url.Trim('/') + "/service.asmx";
+            if (string.IsNullOrWhiteSpace(siteCode))
+            {
+                throw new ArgumentException("SiteCode empty!");
+            }
+
+            this.SiteCode = siteCode;
+            this.ApiId = apiId;
+            this.ApiPassword = apiPassword;
+            this.ServiceUrl = serviceUrl.Trim('/') + "/service.asmx";
+            this.MaxReceivedMessageSize = maxReceivedMessageSize;
+            this.Timeout = timeOut ?? TimeSpan.FromSeconds(60);
         }
 
         /// <summary>
@@ -32,9 +47,52 @@
         {
             get
             {
-                return _instance ?? (_instance = new ServiceHandler());
+                if (!long.TryParse(ConfigurationManager.AppSettings["TimeLogProjectMaxReceivedMessageSize"], out var _maxReceivedMessageSize))
+                {
+                    _maxReceivedMessageSize = 4096000;
+                }
+
+                if (!int.TryParse(ConfigurationManager.AppSettings["TimeLogProjectTimeoutInSeconds"],
+                    out var _timeOutSeconds))
+                {
+                    _timeOutSeconds = 60;
+                }
+
+                var _serviceUrl = "";
+                var _url = ConfigurationManager.AppSettings["TimeLogProjectUri"];
+                if (!_url.EndsWith("/"))
+                {
+                    _url += "/";
+                }
+
+                if (Uri.TryCreate(_url, UriKind.Absolute, out var _rootUri))
+                {
+                    if (_rootUri.ToString().Contains("http://") && !_rootUri.ToString().Contains("localhost"))
+                    {
+                        _serviceUrl = _rootUri.ToString().Replace("http://", "https://");
+                    }
+
+                    _serviceUrl = _rootUri.ToString();
+                }
+                else
+                {
+                    throw new ArgumentException("The AppSetting \"TimeLogProjectUri\" is missing or invalid Uri");
+                }
+
+                return _instance ?? (_instance = new ServiceHandler(
+                    ConfigurationManager.AppSettings["TimeLogProjectReportingSiteCode"],
+                    ConfigurationManager.AppSettings["TimeLogProjectReportingApiId"],
+                    ConfigurationManager.AppSettings["TimeLogProjectReportingApiPassword"],
+                    _serviceUrl,
+                    _maxReceivedMessageSize,
+                    TimeSpan.FromSeconds(_timeOutSeconds)));
             }
         }
+
+        /// <summary>
+        /// Gets the correct culture for converting data from the reporting API
+        /// </summary>
+        public static CultureInfo DataCulture => new CultureInfo("en-US");
 
         /// <summary>
         /// Gets the uri associated with the reporting service.
@@ -44,17 +102,29 @@
         /// <summary>
         /// Gets the site code associated with the reporting service
         /// </summary>
-        public string SiteCode { get; private set; }
+        public string SiteCode { get; }
 
         /// <summary>
         /// Gets the user associated with the reporting service
         /// </summary>
-        public string ApiId { get; private set; }
+        public string ApiId { get;}
 
         /// <summary>
         /// Gets the password associated with the reporting service
         /// </summary>
-        public string ApiPassword { get; private set; }
+        public string ApiPassword { get; }
+
+        /// <summary>
+        /// Gets the default max received message size for all calls to the TimeLog API.
+        /// Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
+        /// </summary>
+        public long MaxReceivedMessageSize { get; }
+
+        /// <summary>
+        /// Gets the default timeout value for all calls to the TimeLog API.
+        /// Default is 60 seconds, but can be overwritten from application setting TimeLogProjectTimeoutInSeconds.
+        /// </summary>
+        public TimeSpan Timeout { get; }
 
         /// <summary>
         /// Gets the client associated with the reporting service
@@ -67,11 +137,11 @@
                 {
                     var _binding = new BasicHttpBinding
                                       {
-                                          MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize,
-                                          CloseTimeout = SettingsHandler.Instance.Timeout,
-                                          OpenTimeout = SettingsHandler.Instance.Timeout,
-                                          ReceiveTimeout = SettingsHandler.Instance.Timeout,
-                                          SendTimeout = SettingsHandler.Instance.Timeout
+                                          MaxReceivedMessageSize = MaxReceivedMessageSize,
+                                          CloseTimeout = Timeout,
+                                          OpenTimeout = Timeout,
+                                          ReceiveTimeout = Timeout,
+                                          SendTimeout = Timeout
                                       };
 
                     var _endpoint = new EndpointAddress(this.ServiceUrl);
@@ -134,18 +204,7 @@
         /// <returns>A value indicating whether the authentication is successful</returns>
         public bool TryAuthenticate(string siteCode, string user, string password)
         {
-            if (this.Client.ValidateCredentials(siteCode, user, password))
-            {
-                this.SiteCode = siteCode;
-                this.ApiId = user;
-                this.ApiPassword = password;
-                return true;
-            }
-
-            this.SiteCode = string.Empty;
-            this.ApiId = string.Empty;
-            this.ApiPassword = string.Empty;
-            return false;
+            return this.Client.ValidateCredentials(siteCode, user, password);
         }
 
         /// <summary>

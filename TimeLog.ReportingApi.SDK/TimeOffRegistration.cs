@@ -52,7 +52,7 @@ namespace TimeLog.ReportingApi.SDK
             this.LastModifiedAt = node.GetDateTimeSafe("tlp:LastModifiedAt", namespaceManager);
             this.LastModifiedBy = node.GetStringSafe("tlp:LastModifiedBy", namespaceManager);
             this.LastModifiedByEmployeeID = node.GetIntSafe("tlp:LastModifiedByEmployeeID", namespaceManager);
-            this.RegHours = node.GetDoubleSafe("tlp:RegHours", namespaceManager, SettingsHandler.Instance.DataCulture);
+            this.RegHours = node.GetDoubleSafe("tlp:RegHours", namespaceManager, ServiceHandler.DataCulture);
             this.TimeOffCode = node.GetIntSafe("tlp:TimeOffCode", namespaceManager);
             this.TimeOffName = node.GetStringSafe("tlp:TimeOffName", namespaceManager);
         }

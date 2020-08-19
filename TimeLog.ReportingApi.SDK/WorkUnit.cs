@@ -71,11 +71,11 @@ namespace TimeLog.ReportingApi.SDK
             this.EmployeeID = node.GetIntSafe("tlp:EmployeeID", namespaceManager);
             this.EmployeeInitials = node.GetStringSafe("tlp:EmployeeInitials", namespaceManager);
             this.EmployeeLastName = node.GetStringSafe("tlp:EmployeeLastName", namespaceManager);
-            this.EstimatedAmount = node.GetDoubleSafe("tlp:EstimatedAmount", namespaceManager, SettingsHandler.Instance.DataCulture);
-            this.EstimatedHours = node.GetDoubleSafe("tlp:EstimatedHours", namespaceManager, SettingsHandler.Instance.DataCulture);
+            this.EstimatedAmount = node.GetDoubleSafe("tlp:EstimatedAmount", namespaceManager, ServiceHandler.DataCulture);
+            this.EstimatedHours = node.GetDoubleSafe("tlp:EstimatedHours", namespaceManager, ServiceHandler.DataCulture);
             this.Id = int.Parse(node.Attributes["ID"].InnerText);
-            this.InvAmount = node.GetDoubleSafe("tlp:InvAmount", namespaceManager, SettingsHandler.Instance.DataCulture);
-            this.InvHours = node.GetDoubleSafe("tlp:InvHours", namespaceManager, SettingsHandler.Instance.DataCulture);
+            this.InvAmount = node.GetDoubleSafe("tlp:InvAmount", namespaceManager, ServiceHandler.DataCulture);
+            this.InvHours = node.GetDoubleSafe("tlp:InvHours", namespaceManager, ServiceHandler.DataCulture);
             this.IsBillable = node.GetBoolTimeSafe("tlp:IsBillable", namespaceManager);
             this.LastModifiedAt = node.GetDateTimeSafe("tlp:LastModifiedAt", namespaceManager);
             this.LastModifiedBy = node.GetStringSafe("tlp:LastModifiedBy", namespaceManager);
@@ -83,8 +83,8 @@ namespace TimeLog.ReportingApi.SDK
             this.Note = node.GetStringSafe("tlp:Note", namespaceManager).Trim('\r', '\n');
             this.ProjectID = node.GetIntSafe("tlp:ProjectID", namespaceManager);
             this.ProjectName = node.GetStringSafe("tlp:ProjectName", namespaceManager);
-            this.RegAmount = node.GetDoubleSafe("tlp:RegAmount", namespaceManager, SettingsHandler.Instance.DataCulture);
-            this.RegHours = node.GetDoubleSafe("tlp:RegHours", namespaceManager, SettingsHandler.Instance.DataCulture);
+            this.RegAmount = node.GetDoubleSafe("tlp:RegAmount", namespaceManager, ServiceHandler.DataCulture);
+            this.RegHours = node.GetDoubleSafe("tlp:RegHours", namespaceManager, ServiceHandler.DataCulture);
             this.TaskID = node.GetIntSafe("tlp:TaskID", namespaceManager);
             this.TaskName = node.GetStringSafe("tlp:TaskName", namespaceManager);
         }

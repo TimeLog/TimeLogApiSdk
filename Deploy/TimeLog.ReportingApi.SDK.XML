@@ -949,7 +949,7 @@
             Handling security and connectivity for the reporting API
             </summary>
         </member>
-        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.#ctor">
+        <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.#ctor(System.String,System.String,System.String,System.String,System.Int64,System.Nullable{System.TimeSpan})">
             <summary>
             Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/> class from being created.
             </summary>
@@ -957,6 +957,11 @@
         <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Instance">
             <summary>
             Gets the singleton instance of the <see cref="T:TimeLog.ReportingApi.SDK.ServiceHandler"/>.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.DataCulture">
+            <summary>
+            Gets the correct culture for converting data from the reporting API
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ServiceUrl">
@@ -977,6 +982,18 @@
         <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.ApiPassword">
             <summary>
             Gets the password associated with the reporting service
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.MaxReceivedMessageSize">
+            <summary>
+            Gets the default max received message size for all calls to the TimeLog API.
+            Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Timeout">
+            <summary>
+            Gets the default timeout value for all calls to the TimeLog API.
+            Default is 60 seconds, but can be overwritten from application setting TimeLogProjectTimeoutInSeconds.
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.ServiceHandler.Client">
@@ -1012,49 +1029,6 @@
         <member name="M:TimeLog.ReportingApi.SDK.ServiceHandler.Dispose">
             <summary>
             Disposes the handler.
-            </summary>
-        </member>
-        <member name="T:TimeLog.ReportingApi.SDK.SettingsHandler">
-            <summary>
-            Allows access to application settings including default values.
-            </summary>
-        </member>
-        <member name="M:TimeLog.ReportingApi.SDK.SettingsHandler.#ctor">
-            <summary>
-            Prevents a default instance of the <see cref="T:TimeLog.ReportingApi.SDK.SettingsHandler"/> class from being created.
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.Instance">
-            <summary>
-            Gets the singleton instance of the SettingsHandler.
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.Url">
-            <summary>
-            Gets the base uri for the TimeLog site read from the
-            application setting TimeLogProjectUri.
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.MaxReceivedMessageSize">
-            <summary>
-            Gets the default max received message size for all calls to the TimeLog API.
-            Default is 1024000, but can be overwritten from application setting TimeLogProjectMaxReceivedMessageSize.
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.Timeout">
-            <summary>
-            Gets the default timeout value for all calls to the TimeLog API.
-            Default is 60 seconds, but can be overwritten from applicatino setting TimeLogProjectTimeoutInSeconds.
-            </summary>
-        </member>
-        <member name="P:TimeLog.ReportingApi.SDK.SettingsHandler.DataCulture">
-            <summary>
-            Gets the correct culture for converting data from the reporting API
-            </summary>
-        </member>
-        <member name="M:TimeLog.ReportingApi.SDK.SettingsHandler.Dispose">
-            <summary>
-            Disposes the class and releases memory
             </summary>
         </member>
         <member name="T:TimeLog.ReportingApi.SDK.XmlNodeExtensions">
