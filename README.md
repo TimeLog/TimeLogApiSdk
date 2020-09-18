@@ -54,7 +54,7 @@ Use the Deploy\TimeLog.ReportingApi.SDK.dll for scaffolding classes for initiali
 
 In order to replicate TimeLog data to your datawarehouse or similar we recommend the following procedure to ensure consistent data without heavy API usage:
 
-- Every quarter fetch and sync the full data set
+- Every quarter fetch and sync the full data set in batches by month
 - Every month fetch and sync the last 3 months of data
 - Every week fetch and sync the last 4 weeks of data
 - Every day fetch and sync the last 7 days of data
