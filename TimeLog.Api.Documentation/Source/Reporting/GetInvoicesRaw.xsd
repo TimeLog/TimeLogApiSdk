@@ -24,6 +24,7 @@
       <xsd:element name="InvoiceDate" type="xsd:dateTime" />
       <xsd:element name="DueDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="Amount" type="xsd:decimal" />
+      <xsd:element name="AmountSystemCurrency" type="xsd:decimal" />
       <xsd:element name="Status" type="xsd:unsignedByte" />
       <xsd:element name="Type" type="xsd:unsignedByte" />
       <xsd:element name="CustomerID" type="xsd:positiveInteger" />
@@ -36,6 +37,7 @@
       <xsd:element name="CustomerCity" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="CustomerState" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="CustomerCountry" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerCountryID" type="xsd:positiveInteger" />
       <xsd:element name="PaymentTermID" type="xsd:positiveInteger" />
       <xsd:element name="PaymentTermText" type="xsd:string" />
       <xsd:element name="CurrencyAbb" type="xsd:string" />
@@ -46,6 +48,7 @@
       <xsd:element name="NetAmountSystemCurrency" type="xsd:decimal" />
       <xsd:element name="VATIncluded" type="xsd:decimal" />
       <xsd:element name="VATIncludedSystemCurrency" type="xsd:decimal" />
+      <xsd:element name="ProjectID" type="xsd:positiveInteger" />
       <xsd:element name="ProjectNo" type="xsd:string" />
       <xsd:element name="PurchaseNo" type="xsd:string" />
       <xsd:element name="ContactFullName" type="xsd:string" />
@@ -54,6 +57,7 @@
       <xsd:element name="ExternalInvoiceNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="CustomerReference" type="xsd:string" minOccurs="0" maxOccurs="1"/>
       <xsd:element name="ExternalInvoiceStatus" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RelatesToInvoiceID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" /><!-- Voucher reference for invoice -->
     </xsd:sequence>
 		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
 	</xsd:complexType>
