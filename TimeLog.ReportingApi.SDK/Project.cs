@@ -66,15 +66,15 @@ namespace TimeLog.ReportingApi.SDK
             this.ProjectEndDate = node.GetDateTimeSafe("tlp:ProjectEndDate", namespaceManager);
             this.Link = node.GetStringSafe("tlp:Link", namespaceManager);
             this.Description = node.GetStringSafe("tlp:Description", namespaceManager);
-            this.CustomerId = node.GetIntSafe("tlp:CustomerId", namespaceManager);
+            this.CustomerId = node.GetIntSafe("tlp:CustomerID", namespaceManager);
             this.CustomerName = node.GetStringSafe("tlp:CustomerName", namespaceManager);
             this.CustomerNo = node.GetStringSafe("tlp:CustomerNo", namespaceManager);
-            this.PMId = node.GetIntSafe("tlp:PMId", namespaceManager);
+            this.PMId = node.GetIntSafe("tlp:PMID", namespaceManager);
             this.PMInitials = node.GetStringSafe("tlp:PMInitials", namespaceManager);
-            this.PMFullname = node.GetStringSafe("tlp:PMFullname", namespaceManager);
-            this.ProjectTypeId = node.GetIntSafe("tlp:ProjectTypeId", namespaceManager);
+            this.PMFullname = node.GetStringSafe("tlp:PMFullName", namespaceManager);
+            this.ProjectTypeId = node.GetIntSafe("tlp:ProjectTypeID", namespaceManager);
             this.ProjectTypeName = node.GetStringSafe("tlp:ProjectTypeName", namespaceManager);
-            this.ProjectCategoryId = node.GetIntSafe("tlp:ProjectCategoryId", namespaceManager);
+            this.ProjectCategoryId = node.GetIntSafe("tlp:ProjectCategoryID", namespaceManager);
             this.ProjectCategoryName = node.GetStringSafe("tlp:ProjectCategoryName", namespaceManager);
             this.BudgetAmountExpenses = node.GetIntSafe("tlp:BudgetAmountExpenses", namespaceManager);
             this.BudgetAmountTravel = node.GetIntSafe("tlp:BudgetAmountTravel", namespaceManager);
@@ -97,20 +97,18 @@ namespace TimeLog.ReportingApi.SDK
         /// Gets the default parameter value for filtering for all projects
         /// </summary>
         [XmlIgnore]
-        public static int All
-        {
-            get
-            {
-                return 0;
-            }
-        }
+        public static int All => 0;
 
         /// <summary>
         /// Gets or sets the project identifier
         /// </summary>
         public int Id { get; set; }
 
+        /// <summary>
+        /// Gets or sets the project unique identifier
+        /// </summary>
         public Guid ProjectGuid { get; set; }
+
         /// <summary>
         /// Gets or set the name
         /// </summary>
@@ -197,22 +195,22 @@ namespace TimeLog.ReportingApi.SDK
         public string ProjectCategoryName { get; set; }
 
         /// <summary>
-        /// Gets or sets the budgetted amount of expenses
+        /// Gets or sets the budgeted amount of expenses
         /// </summary>
         public float BudgetAmountExpenses { get; set; }
 
         /// <summary>
-        /// Gets or sets the budgetted amount of travel
+        /// Gets or sets the budgeted amount of travel
         /// </summary>
         public float BudgetAmountTravel { get; set; }
 
         /// <summary>
-        /// Gets or sets the budgetted amout in currency
+        /// Gets or sets the budgeted amount in currency
         /// </summary>
         public float BudgetAmount { get; set; }
 
         /// <summary>
-        /// Gets or sets the budgetted amount in hours
+        /// Gets or sets the budgeted amount in hours
         /// </summary>
         public float BudgetHours { get; set; }
 
@@ -260,7 +258,10 @@ namespace TimeLog.ReportingApi.SDK
         /// Gets or sets the email of the customer contact
         /// </summary>
         public string ContactEmail { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the related project number
+        /// </summary>
         public string ProjectNo { get; set; }
-
     }
 }
