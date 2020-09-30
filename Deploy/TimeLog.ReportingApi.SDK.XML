@@ -385,6 +385,11 @@
             Gets or sets the project identifier
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectGuid">
+            <summary>
+            Gets or sets the project unique identifier
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.Project.Name">
             <summary>
             Gets or set the name
@@ -472,22 +477,22 @@
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Project.BudgetAmountExpenses">
             <summary>
-            Gets or sets the budgetted amount of expenses
+            Gets or sets the budgeted amount of expenses
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Project.BudgetAmountTravel">
             <summary>
-            Gets or sets the budgetted amount of travel
+            Gets or sets the budgeted amount of travel
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Project.BudgetAmount">
             <summary>
-            Gets or sets the budgetted amout in currency
+            Gets or sets the budgeted amount in currency
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Project.BudgetHours">
             <summary>
-            Gets or sets the budgetted amount in hours
+            Gets or sets the budgeted amount in hours
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.Project.CreatedAt">
@@ -533,6 +538,11 @@
         <member name="P:TimeLog.ReportingApi.SDK.Project.ContactEmail">
             <summary>
             Gets or sets the email of the customer contact
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectNo">
+            <summary>
+            Gets or sets the related project number
             </summary>
         </member>
         <member name="T:TimeLog.ReportingApi.SDK.Task">
@@ -794,6 +804,16 @@
             Gets or sets the identifier
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.TimeRegistrationGuid">
+            <summary>
+            Gets or sets the identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.OvertimeFactor">
+            <summary>
+            Gets or sets the overtime factor 
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EmployeeID">
             <summary>
             Gets or sets the employee identifier
@@ -874,9 +894,24 @@
             Gets or sets the additional text field
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.ActualExchangeRate">
+            <summary>
+            Gets or sets the actual exchange rate
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.RegHours">
             <summary>
             Gets or sets the registered hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.RegHourlyRate">
+            <summary>
+            Gets or sets the registered hourly rate
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.RegHourlyRateProjectCurrency">
+            <summary>
+            Gets or sets the registered hourly rate in project currency
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.RegAmount">
@@ -884,9 +919,24 @@
             Gets or sets the registered amount
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.RegAmountProjectCurrency">
+            <summary>
+            Gets or sets the registered amount in project currency
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EstimatedHours">
             <summary>
             Gets or sets the estimated hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EstimatedHourlyRate">
+            <summary>
+            Gets or sets the estimated hourly rate
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EstimatedHourlyRateProjectCurrency">
+            <summary>
+            Gets or sets the estimated hourly rate in project currency
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EstimatedAmount">
@@ -894,14 +944,84 @@
             Gets or sets the estimated amount
             </summary>
         </member>
-        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvHours">
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.EstimatedAmountProjectCurrency">
+            <summary>
+            Gets or sets the estimated amount in project currency
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.BARHours">
+            <summary>
+            Gets or sets the booked as revenue hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.BARHourlyRate">
+            <summary>
+            Gets or sets the booked as revenue hourly rate
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.BARHourlyRateProjectCurrency">
+            <summary>
+            Gets or sets the booked as revenue hourly rate in project currency
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.BARAmount">
+            <summary>
+            Gets or sets the booked as revenue amount
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.BARAmountProjectCurrency">
+            <summary>
+            Gets or sets the booked as revenue amount in project currency
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvoicedHours">
             <summary>
             Gets or sets the invoiced hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvoicedHourlyRate">
+            <summary>
+            Gets or sets the invoiced hourly rate
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvoicedHourlyRateProjectCurrency">
+            <summary>
+            Gets or sets the invoiced hourly rate in project currency
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvoicedAmount">
+            <summary>
+            Gets or sets the invoiced amount
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvoicedAmountProjectCurrency">
+            <summary>
+            Gets or sets the invoiced amount in project currency
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvHours">
+            <summary>
+            Gets or sets the invoiced hours (Obsolete)
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvAmount">
             <summary>
             Gets or sets the invoiced amount
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.CostAmount">
+            <summary>
+            Gets or sets the cost amount
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.InvoiceStatus">
+            <summary>
+            Gets or sets the invoice status (0 = not booked or invoiced, 1 = added to voucher, 2 = added to invoice)
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.BillableStatus">
+            <summary>
+            Gets or sets the billable status (-3 = non-billable registration on billable task with hourly rate of zero, -2 = nillable registration on non-billable task, -1 = non-billable registration on non-billable task, 1 = billable registration on billable task, 2 = non-billable registration on billable task)
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.IsBillable">
@@ -912,6 +1032,11 @@
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.ApprovedStatus">
             <summary>
             Gets or sets the approval state (0 = time sheet open, 10 = time sheet closed, 20 = project manager approved, 30 = department manager approved)
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.MonthlyPeriod">
+            <summary>
+            Gets or sets the monthly period
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.Created">
@@ -942,6 +1067,11 @@
         <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.LastModifiedBy">
             <summary>
             Gets or sets the last modified employee name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.WorkUnit.UserID">
+            <summary>
+            Gets or sets the user of the registration
             </summary>
         </member>
         <member name="T:TimeLog.ReportingApi.SDK.ServiceHandler">
