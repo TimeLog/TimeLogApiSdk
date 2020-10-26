@@ -6,6 +6,7 @@
 	<tlp:Department ID="5">
 		<tlp:Name>Sales</tlp:Name>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:DepartmentNo>123</tlp:DepartmentNo>
     <tlp:DepartmentManagerUserID>85</tlp:DepartmentManagerUserID>
     <tlp:DepartmentManagerInitials>SJE</tlp:DepartmentManagerInitials>
     <tlp:DepartmentManagerFullName>Steen Jensen</tlp:DepartmentManagerFullName>
@@ -14,6 +15,7 @@
 		<tlp:Name>Administration</tlp:Name>
 		<tlp:ParentID>5</tlp:ParentID>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:DepartmentNo>222</tlp:DepartmentNo>
     <tlp:DepartmentManagerUserID>85</tlp:DepartmentManagerUserID>
     <tlp:DepartmentManagerInitials>SJE</tlp:DepartmentManagerInitials>
     <tlp:DepartmentManagerFullName>Steen Jensen</tlp:DepartmentManagerFullName>
@@ -22,6 +24,7 @@
 		<tlp:Name>Marketing</tlp:Name>
 		<tlp:ParentID>5</tlp:ParentID>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:DepartmentNo>221</tlp:DepartmentNo>
     <tlp:DepartmentManagerUserID>85</tlp:DepartmentManagerUserID>
     <tlp:DepartmentManagerInitials>SJE</tlp:DepartmentManagerInitials>
     <tlp:DepartmentManagerFullName>Steen Jensen</tlp:DepartmentManagerFullName>
@@ -30,6 +33,7 @@
     <tlp:Name>Research and Development</tlp:Name>
     <tlp:ParentID>5</tlp:ParentID>
     <tlp:IsActive>1</tlp:IsActive>
+    <tlp:DepartmentNo>400</tlp:DepartmentNo>
     <tlp:DepartmentManagerUserID>85</tlp:DepartmentManagerUserID>
     <tlp:DepartmentManagerInitials>SJE</tlp:DepartmentManagerInitials>
     <tlp:DepartmentManagerFullName>Steen Jensen</tlp:DepartmentManagerFullName>
