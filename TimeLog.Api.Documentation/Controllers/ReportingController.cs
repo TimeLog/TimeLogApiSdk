@@ -35,5 +35,10 @@ namespace TimeLog.Api.Documentation.Controllers
         {
             return this.View();
         }
+
+        public ActionResult PowerBi()
+        {
+            return this.View();
+        }
     }
 }
