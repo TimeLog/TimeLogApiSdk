@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.Api.Documentation",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.Library", "TimeLog.Library\TimeLog.Library.csproj", "{0ABB99CF-54EC-4415-9675-25096E7FC01E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeLog.DataImporter", "TimeLog.DataImporter\TimeLog.DataImporter.csproj", "{554EAFF7-4EA0-4E4E-8B12-80D0A68FCED3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{0ABB99CF-54EC-4415-9675-25096E7FC01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ABB99CF-54EC-4415-9675-25096E7FC01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0ABB99CF-54EC-4415-9675-25096E7FC01E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{554EAFF7-4EA0-4E4E-8B12-80D0A68FCED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{554EAFF7-4EA0-4E4E-8B12-80D0A68FCED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{554EAFF7-4EA0-4E4E-8B12-80D0A68FCED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{554EAFF7-4EA0-4E4E-8B12-80D0A68FCED3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
