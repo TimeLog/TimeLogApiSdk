@@ -11,8 +11,8 @@ namespace TimeLog.DataImporter.TimeLogApi
         public string CustomerValidateEndpoint = "/api/v1/customer/validate-new-customer";
         public string CustomerCreateEndpoint = "/api/v1/customer/create";
         //public string ProjectValidateEndpoint = "/api/v1/project/validate-new-project";
-        public string ProjectValidateEndpoint = "/api/v1/project/create";
-        public string ProjectCreateEndpoint = "/api/v1/project/create";
+        public string ProjectValidateEndpoint = "/api/v1/project/create-from-template";
+        public string ProjectCreateEndpoint = "/api/v1/project/create-from-template";
 
         private static ApiHelper apiHelper;
         private static readonly object ApiHelperLock = new object();

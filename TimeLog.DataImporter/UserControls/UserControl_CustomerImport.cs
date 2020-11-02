@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Text;
+using System.Linq;
 using System.Windows.Forms;
 using TimeLog.DataImporter.Handlers;
 using TimeLog.DataImporter.TimeLogApi;
 
-namespace TimeLog.DataImporter
+namespace TimeLog.DataImporter.UserControls
 {
     public partial class UserControl_CustomerImport : UserControl
     {
@@ -27,13 +24,16 @@ namespace TimeLog.DataImporter
         private void button_select_customer_file_Click(object sender, EventArgs e)
         {
             dataGridView_customer.DataSource = CustomerHandler.Instance.GetFileContent();
+            dataGridView_customer.Columns.OfType<DataGridViewColumn>().ToList().ForEach(column=>column.Visible=false);
+            
             comboBox_customerName.Items.AddRange(CustomerHandler.Instance._fileColumnHeaders.ToArray());
 
         }
 
-        private void comboBox_customer_name_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox_customerName_SelectedIndexChanged(object sender, EventArgs e)
         {
             var _columnIndex = this.dataGridView_customer.Columns[this.comboBox_customerName.SelectedItem.ToString()].Index;
+            dataGridView_customer.Columns[_columnIndex].Visible = true;
             foreach (DataGridViewRow _row in this.dataGridView_customer.Rows)
             {
                 if (_row.Cells[_columnIndex].Value == null || string.IsNullOrEmpty(_row.Cells[_columnIndex].Value.ToString()) || _row.Cells[_columnIndex].Value.ToString().Equals("Søren Parrot"))
@@ -62,7 +62,7 @@ namespace TimeLog.DataImporter
                 CustomerModel _newCustomer = new CustomerModel();
 
                 //_newCustomer.Name = _row.Cells[this.dataGridView1.Columns[this.comboBox_customer_name.SelectedItem.ToString()].Index].Value.ToString();
-                _newCustomer.Name = _row.Cells[2].Value.ToString();
+                _newCustomer.Name = _row.Cells[0].Value.ToString();
 
                 var _response =  CustomerHandler.Instance.ValidateCustomer(_newCustomer, AuthenticationHandler.Instance._token);
 
@@ -78,7 +78,7 @@ namespace TimeLog.DataImporter
             {
                 this.Invoke((MethodInvoker)(() => _row.DefaultCellStyle.BackColor = Color.LimeGreen));
                 this.Invoke((MethodInvoker)(() => this.textBox_customerImportMessages.AppendText(Environment.NewLine)));
-                this.Invoke((MethodInvoker)(() => this.textBox_customerImportMessages.AppendText("Row " + _row.Index + _response.Message)));
+                this.Invoke((MethodInvoker)(() => this.textBox_customerImportMessages.AppendText("Row " + _row.Index + " - " + _response.Message)));
             }
             else
             {
@@ -107,5 +107,9 @@ namespace TimeLog.DataImporter
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

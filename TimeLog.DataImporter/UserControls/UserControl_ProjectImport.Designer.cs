@@ -1,4 +1,4 @@
-﻿namespace TimeLog.DataImporter
+﻿namespace TimeLog.DataImporter.UserControls
 {
     partial class UserControl_ProjectImport
     {
@@ -40,6 +40,16 @@
             this.button_stop = new System.Windows.Forms.Button();
             this.panel_projectFieldMapping = new System.Windows.Forms.Panel();
             this.groupBox_projectMandatoryFields = new System.Windows.Forms.GroupBox();
+            this.label_projectLegalEntity = new System.Windows.Forms.Label();
+            this.comboBox_projectLegalEntity = new System.Windows.Forms.ComboBox();
+            this.label_projectCurrency = new System.Windows.Forms.Label();
+            this.comboBox_projectCurrency = new System.Windows.Forms.ComboBox();
+            this.label_projectManager = new System.Windows.Forms.Label();
+            this.comboBox_projectManager = new System.Windows.Forms.ComboBox();
+            this.label_projectTemplate = new System.Windows.Forms.Label();
+            this.comboBox_projectTemplate = new System.Windows.Forms.ComboBox();
+            this.label_projectCustomer = new System.Windows.Forms.Label();
+            this.comboBox_projectCustomer = new System.Windows.Forms.ComboBox();
             this.label_projectName = new System.Windows.Forms.Label();
             this.comboBox_projectName = new System.Windows.Forms.ComboBox();
             this.label_projectSetup = new System.Windows.Forms.Label();
@@ -165,14 +175,114 @@
             // 
             // groupBox_projectMandatoryFields
             // 
+            this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectLegalEntity);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectLegalEntity);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectCurrency);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectCurrency);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectManager);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectManager);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectTemplate);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectTemplate);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectCustomer);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectCustomer);
             this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectName);
             this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectName);
             this.groupBox_projectMandatoryFields.Location = new System.Drawing.Point(15, 99);
             this.groupBox_projectMandatoryFields.Name = "groupBox_projectMandatoryFields";
-            this.groupBox_projectMandatoryFields.Size = new System.Drawing.Size(268, 214);
+            this.groupBox_projectMandatoryFields.Size = new System.Drawing.Size(266, 201);
             this.groupBox_projectMandatoryFields.TabIndex = 5;
             this.groupBox_projectMandatoryFields.TabStop = false;
             this.groupBox_projectMandatoryFields.Text = "Mandatory";
+            // 
+            // label_projectLegalEntity
+            // 
+            this.label_projectLegalEntity.AutoSize = true;
+            this.label_projectLegalEntity.Location = new System.Drawing.Point(6, 163);
+            this.label_projectLegalEntity.Name = "label_projectLegalEntity";
+            this.label_projectLegalEntity.Size = new System.Drawing.Size(111, 15);
+            this.label_projectLegalEntity.TabIndex = 1;
+            this.label_projectLegalEntity.Text = "Project Legal Entity:";
+            // 
+            // comboBox_projectLegalEntity
+            // 
+            this.comboBox_projectLegalEntity.FormattingEnabled = true;
+            this.comboBox_projectLegalEntity.Location = new System.Drawing.Point(123, 159);
+            this.comboBox_projectLegalEntity.Name = "comboBox_projectLegalEntity";
+            this.comboBox_projectLegalEntity.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_projectLegalEntity.TabIndex = 3;
+            this.comboBox_projectLegalEntity.SelectedIndexChanged += new System.EventHandler(this.comboBox_projectLegalEntity_SelectedIndexChanged);
+            // 
+            // label_projectCurrency
+            // 
+            this.label_projectCurrency.AutoSize = true;
+            this.label_projectCurrency.Location = new System.Drawing.Point(6, 135);
+            this.label_projectCurrency.Name = "label_projectCurrency";
+            this.label_projectCurrency.Size = new System.Drawing.Size(98, 15);
+            this.label_projectCurrency.TabIndex = 1;
+            this.label_projectCurrency.Text = "Project Currency:";
+            // 
+            // comboBox_projectCurrency
+            // 
+            this.comboBox_projectCurrency.FormattingEnabled = true;
+            this.comboBox_projectCurrency.Location = new System.Drawing.Point(123, 131);
+            this.comboBox_projectCurrency.Name = "comboBox_projectCurrency";
+            this.comboBox_projectCurrency.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_projectCurrency.TabIndex = 3;
+            this.comboBox_projectCurrency.SelectedIndexChanged += new System.EventHandler(this.comboBox_projectCurrency_SelectedIndexChanged);
+            // 
+            // label_projectManager
+            // 
+            this.label_projectManager.AutoSize = true;
+            this.label_projectManager.Location = new System.Drawing.Point(6, 106);
+            this.label_projectManager.Name = "label_projectManager";
+            this.label_projectManager.Size = new System.Drawing.Size(97, 15);
+            this.label_projectManager.TabIndex = 1;
+            this.label_projectManager.Text = "Project Manager:";
+            // 
+            // comboBox_projectManager
+            // 
+            this.comboBox_projectManager.FormattingEnabled = true;
+            this.comboBox_projectManager.Location = new System.Drawing.Point(123, 102);
+            this.comboBox_projectManager.Name = "comboBox_projectManager";
+            this.comboBox_projectManager.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_projectManager.TabIndex = 3;
+            this.comboBox_projectManager.SelectedIndexChanged += new System.EventHandler(this.comboBox_projectManager_SelectedIndexChanged);
+            // 
+            // label_projectTemplate
+            // 
+            this.label_projectTemplate.AutoSize = true;
+            this.label_projectTemplate.Location = new System.Drawing.Point(6, 77);
+            this.label_projectTemplate.Name = "label_projectTemplate";
+            this.label_projectTemplate.Size = new System.Drawing.Size(99, 15);
+            this.label_projectTemplate.TabIndex = 1;
+            this.label_projectTemplate.Text = "Project Template:";
+            // 
+            // comboBox_projectTemplate
+            // 
+            this.comboBox_projectTemplate.FormattingEnabled = true;
+            this.comboBox_projectTemplate.Location = new System.Drawing.Point(123, 73);
+            this.comboBox_projectTemplate.Name = "comboBox_projectTemplate";
+            this.comboBox_projectTemplate.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_projectTemplate.TabIndex = 3;
+            this.comboBox_projectTemplate.SelectedIndexChanged += new System.EventHandler(this.comboBox_projectTemplate_SelectedIndexChanged);
+            // 
+            // label_projectCustomer
+            // 
+            this.label_projectCustomer.AutoSize = true;
+            this.label_projectCustomer.Location = new System.Drawing.Point(6, 48);
+            this.label_projectCustomer.Name = "label_projectCustomer";
+            this.label_projectCustomer.Size = new System.Drawing.Size(62, 15);
+            this.label_projectCustomer.TabIndex = 1;
+            this.label_projectCustomer.Text = "Customer:";
+            // 
+            // comboBox_projectCustomer
+            // 
+            this.comboBox_projectCustomer.FormattingEnabled = true;
+            this.comboBox_projectCustomer.Location = new System.Drawing.Point(123, 44);
+            this.comboBox_projectCustomer.Name = "comboBox_projectCustomer";
+            this.comboBox_projectCustomer.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_projectCustomer.TabIndex = 3;
+            this.comboBox_projectCustomer.SelectedIndexChanged += new System.EventHandler(this.comboBox_projectCustomer_SelectedIndexChanged);
             // 
             // label_projectName
             // 
@@ -186,11 +296,11 @@
             // comboBox_projectName
             // 
             this.comboBox_projectName.FormattingEnabled = true;
-            this.comboBox_projectName.Location = new System.Drawing.Point(107, 15);
+            this.comboBox_projectName.Location = new System.Drawing.Point(123, 15);
             this.comboBox_projectName.Name = "comboBox_projectName";
             this.comboBox_projectName.Size = new System.Drawing.Size(121, 23);
             this.comboBox_projectName.TabIndex = 3;
-            this.comboBox_projectName.SelectedIndexChanged += new System.EventHandler(this.comboBox_project_name_SelectedIndexChanged);
+            this.comboBox_projectName.SelectedIndexChanged += new System.EventHandler(this.comboBox_projectName_SelectedIndexChanged);
             // 
             // label_projectSetup
             // 
@@ -269,5 +379,15 @@
         private System.Windows.Forms.Label label_projectSetup;
         private System.Windows.Forms.Button button_projectSelectFile;
         private System.Windows.Forms.TextBox textBox_projectImportMessages;
+        private System.Windows.Forms.Label label_projectTemplate;
+        private System.Windows.Forms.ComboBox comboBox_projectTemplate;
+        private System.Windows.Forms.Label label_projectCustomer;
+        private System.Windows.Forms.ComboBox comboBox_projectCustomer;
+        private System.Windows.Forms.Label label_projectLegalEntity;
+        private System.Windows.Forms.ComboBox comboBox_projectLegalEntity;
+        private System.Windows.Forms.Label label_projectCurrency;
+        private System.Windows.Forms.ComboBox comboBox_projectCurrency;
+        private System.Windows.Forms.Label label_projectManager;
+        private System.Windows.Forms.ComboBox comboBox_projectManager;
     }
 }

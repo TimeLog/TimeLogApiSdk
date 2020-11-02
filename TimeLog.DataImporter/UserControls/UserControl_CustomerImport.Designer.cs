@@ -1,4 +1,4 @@
-﻿namespace TimeLog.DataImporter
+﻿namespace TimeLog.DataImporter.UserControls
 {
     partial class UserControl_CustomerImport
     {
@@ -190,7 +190,7 @@
             this.comboBox_customerName.Name = "comboBox_customerName";
             this.comboBox_customerName.Size = new System.Drawing.Size(121, 23);
             this.comboBox_customerName.TabIndex = 3;
-            this.comboBox_customerName.SelectedIndexChanged += new System.EventHandler(this.comboBox_customer_name_SelectedIndexChanged);
+            this.comboBox_customerName.SelectedIndexChanged += new System.EventHandler(this.comboBox_customerName_SelectedIndexChanged);
             // 
             // label_customerSetup
             // 

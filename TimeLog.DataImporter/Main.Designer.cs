@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using TimeLog.DataImporter.UserControls;
 
 namespace TimeLog.DataImporter
 {
@@ -35,9 +36,9 @@ namespace TimeLog.DataImporter
             this.tabPage_login = new System.Windows.Forms.TabPage();
             this.userControl_Login1 = new TimeLog.DataImporter.UserControls.UserControl_Login();
             this.tabPage_customer = new System.Windows.Forms.TabPage();
-            this.userControl_CustomerImport1 = new TimeLog.DataImporter.UserControl_CustomerImport();
+            this.userControl_CustomerImport1 = new UserControl_CustomerImport();
             this.tabPage_project = new System.Windows.Forms.TabPage();
-            this.userControl_ProjectImport1 = new TimeLog.DataImporter.UserControl_ProjectImport();
+            this.userControl_ProjectImport1 = new UserControl_ProjectImport();
             this.tabControl1.SuspendLayout();
             this.tabPage_login.SuspendLayout();
             this.tabPage_customer.SuspendLayout();
