@@ -40,5 +40,10 @@ namespace TimeLog.Api.Documentation.Controllers
         {
             return this.View();
         }
+
+        public ActionResult SynchronizingData()
+        {
+            return this.View();
+        }
     }
 }

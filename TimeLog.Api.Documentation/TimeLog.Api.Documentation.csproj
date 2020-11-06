@@ -470,6 +470,7 @@
     <Content Include="Views\DataImport\GenericView.cshtml" />
     <Content Include="Views\DataImport\Index.cshtml" />
     <Content Include="Views\Reporting\PowerBi.cshtml" />
+    <Content Include="Views\Reporting\SynchronizingData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

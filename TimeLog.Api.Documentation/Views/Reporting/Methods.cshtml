@@ -12,14 +12,27 @@
     </p>
     <h3>Endpoint</h3>
     <pre>https://app[x].timelog.com/[account name]/service.asmx</pre>
-    <h3>Methods</h3>
+    <h3 id="methods"><a href="#methods">Methods</a></h3>
     <ul>
         @foreach (var method in Model.Where(m => !m.IsConstructor))
         {
             <li class="icon-arrow_in_circle"><a href="@Url.Action("Method", "Reporting", new { id = method.FullyQuantifiedName.UrlEncode() })">@method.Name</a> - @method.Summary</li>
         }
+    </ul> 
+    <h3 id="data-currently-not-available"><a href="#data-currently-not-available">Data currently not available</a></h3>
+    <p>
+        Unless mentioned in the list above, other data types are currently not available in the reporting API.
+        We do receive questions about other data types, and those will naturally be on our radar for future
+        development. Specifically, we are aware of the request for the following data objects:
+    </p>
+    <ul>
+        <li class="icon-arrow_in_circle">Approval flow data (incl. weekly time sheet statuses)</li>
+        <li class="icon-arrow_in_circle">Contract payments</li>
+        <li class="icon-arrow_in_circle">Salary codes</li>
+        <li class="icon-arrow_in_circle">Absence codes</li>
+        <li class="icon-arrow_in_circle">Expense attachments</li>
     </ul>
-    <h3>Currency</h3>
+    <h3 id="working-with-currencies"><a href="#working-with-currencies">Working with currencies</a></h3>
     <p>
         Please take note that the currency setup follows the rules below unless it's stated explicitly:<br />
     </p>
