@@ -1,69 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.Text;
+using System.Net;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using TimeLog.DataImporter.TimeLogApi;
 
 namespace TimeLog.DataImporter.Handlers
 {
     public class BaseHandler
     {
-        public List<string> _fileColumnHeaders = new List<string>();
+        public List<string> FileColumnHeaders = new List<string>();
+        private readonly List<string> _delimiterList = new List<string>{",",";","|"};
 
-
-         public DataTable GetFileContent()
+        public DataTable GetFileContent(string selectedDelimiter)
         {
             try
             {
                 OpenFileDialog _dialog = new OpenFileDialog();
                 _dialog.ShowDialog();
                 
-                string SourceURl = "";
                 if (_dialog.FileName != "")
                 {
                     if (_dialog.FileName.EndsWith(".csv"))
                     {
                         DataTable _fileData = new DataTable();
-                        _fileData = GetDataTableFromCSVFile(_dialog.FileName);
-                        //if (Convert.ToString(dtNew.Columns[0]).ToLower() != "lookupcode")
-                        //{
-                        //    MessageBox.Show("Invalid Items File");
-                        //    //btnSave.Enabled = false;
-                        //    return;
-                        //}
-
-                        //txtFile.Text = dialog.SafeFileName;
-                        SourceURl = _dialog.FileName;
-                        if (_fileData.Rows != null && _fileData.Rows.ToString() != String.Empty)
+                        _fileData = GetDataTableFromCSVFile(_dialog.FileName, selectedDelimiter);
+                        
+                        if (_fileData != null)
                         {
-                            return _fileData;
+                            if (_fileData.Rows.Count > 0)
+                            {
+                                return _fileData;
+                            }
+
+                            //return this message when the row count is zero
+                            MessageBox.Show("There is no data in this file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-
-                        //foreach (DataGridViewRow row in dataGridView1.Rows)
-                        //{
-                        //    if (Convert.ToString(row.Cells["LookupCode"].Value) == "" || row.Cells["LookupCode"].Value == null || Convert.ToString(row.Cells["ItemName"].Value) == "" || row.Cells["ItemName"].Value == null || Convert.ToString(row.Cells["DeptId"].Value) == "" || row.Cells["DeptId"].Value == null || Convert.ToString(row.Cells["Price"].Value) == "" || row.Cells["Price"].Value == null)
-                        //    {
-                        //        row.DefaultCellStyle.BackColor = Color.Red;
-                        //        inValidItem += 1;
-                        //    }
-                        //    else
-                        //    {
-                        //        ImportedRecord += 1;
-                        //    }
-                        //}
-
-                        if (_fileData.Rows.Count == 0)
-                        {
-                            //btnSave.Enabled = false;
-                            MessageBox.Show("There is no data in this file", "GAUTAM POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                        }
-
                     }
                     else
                     {
-                        MessageBox.Show("Selected File is Invalid, Please Select valid csv file.", "GAUTAM POS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Selected file is invalid, please select a valid CSV file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -71,60 +48,100 @@ namespace TimeLog.DataImporter.Handlers
             {
                 MessageBox.Show("Exception " + ex);
             }
-            return null;
 
+            return null;
         }
 
-        
-
-
-        private DataTable GetDataTableFromCSVFile(string csv_file_path)
+        private DataTable GetDataTableFromCSVFile(string csvFilePath, string selectedDelimiter)
         {
-            DataTable csvData = new DataTable();
+            DataTable _csvData = new DataTable();
+
             try
             {
-                if (csv_file_path.EndsWith(".csv"))
+                if (csvFilePath.EndsWith(".csv"))
                 {
-                    using (Microsoft.VisualBasic.FileIO.TextFieldParser csvReader = new Microsoft.VisualBasic.FileIO.TextFieldParser(csv_file_path))
+                    using Microsoft.VisualBasic.FileIO.TextFieldParser _csvReader = new Microsoft.VisualBasic.FileIO.TextFieldParser(csvFilePath);
+                    _csvReader.SetDelimiters(new string[]
                     {
-                        csvReader.SetDelimiters(new string[]
+                            selectedDelimiter
+                    });
+
+                    string[] _colFields = _csvReader.ReadFields();
+
+                    if (_colFields != null)
+                    {
+                        foreach (string _column in _colFields)
                         {
-                            ";"
-                        });
-                        //csvReader.HasFieldsEnclosedInQuotes = true;
-                        //read column  
-                        string[] colFields = csvReader.ReadFields();
-                        foreach (string column in colFields)
-                        {
-                            DataColumn datacolumn = new DataColumn(column);
-                            datacolumn.AllowDBNull = true;
-                            csvData.Columns.Add(datacolumn);
-                            _fileColumnHeaders.Add(datacolumn.ColumnName.ToString());
+                            DataColumn _dataColumn = new DataColumn(_column)
+                            {
+                                AllowDBNull = true
+                            };
+
+                            _csvData.Columns.Add(_dataColumn);
+                            FileColumnHeaders.Add(_dataColumn.ColumnName);
                         }
 
-                        while (!csvReader.EndOfData)
+                        while (!_csvReader.EndOfData)
                         {
-                            string[] fieldData = csvReader.ReadFields();
-                            for (int i = 0; i < fieldData.Length; i++)
+                            string[] _fieldData = _csvReader.ReadFields();
+
+                            for (int i = 0; i < _fieldData.Length; i++)
                             {
-                                if (fieldData[i] == "")
+                                if (_fieldData[i] == "")
                                 {
-                                    fieldData[i] = null;
+                                    _fieldData[i] = null;
                                 }
                             }
 
-                            csvData.Rows.Add(fieldData);
+                            _csvData.Rows.Add(_fieldData);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Exce " + ex);
+                MessageBox.Show("Exception " + ex);
             }
 
-            return csvData;
+            return _csvData;
         }
 
+        public List<string> GetDelimiterList()
+        {
+            return _delimiterList;
+        }
+
+        public DefaultApiResponse ProcessApiResponseContent(WebException webEx, string responseContent, out BusinessRulesApiResponse businessRulesApiResponse)
+        {
+            DefaultApiResponse _apiResponse = null;
+            businessRulesApiResponse = null;
+
+            if (webEx.Message == "The remote server returned an error: (401) Unauthorized.")
+            {
+                _apiResponse = JsonConvert.DeserializeObject<DefaultApiResponse>(responseContent);
+                _apiResponse.Code = 401;
+            }
+            else
+            {
+                dynamic _apiResponseObject = JsonConvert.DeserializeObject<dynamic>(responseContent);
+
+                if (_apiResponseObject.Code.ToString() == "200")
+                {
+                    _apiResponse = JsonConvert.DeserializeObject<DefaultApiResponse>(responseContent);
+                    _apiResponse.Code = 201;
+                }
+                else if (_apiResponseObject.Code.ToString() == "102")
+                {
+                    businessRulesApiResponse = JsonConvert.DeserializeObject<BusinessRulesApiResponse>(responseContent);
+                    businessRulesApiResponse.Code = 102;
+                }
+                else
+                {
+                    MessageBox.Show(webEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            return _apiResponse;
+        }
     }
 }

@@ -7,14 +7,20 @@ namespace TimeLog.DataImporter.TimeLogApi
 {
     public class ApiHelper
     {
-        public string LocalhostUrl = "http://localhost/tlp";
+        public string LocalhostUrl = "http://localhost/tlptest";
         public string CustomerValidateEndpoint = "/api/v1/customer/validate-new-customer";
         public string CustomerCreateEndpoint = "/api/v1/customer/create";
         //public string ProjectValidateEndpoint = "/api/v1/project/validate-new-project";
         public string ProjectValidateEndpoint = "/api/v1/project/create-from-template";
         public string ProjectCreateEndpoint = "/api/v1/project/create-from-template";
+        public string GetAllCountryEndpoint = "/api/v1/country/get-all?$page=1&$pagesize=300";
+        public string GetAllIndustryEndpoint = "/api/v1/industry/get-all?$page=1&$pagesize=30";
+        public string GetAllCurrencyEndpoint = "/api/v1/currency/active?$page=1&$pagesize=50";
+        public string GetAllCustomerStatusEndpoint = "/api/v1/customerstatus?$page=1&$pagesize=30";
+        public string GetAllEmployeeEndpoint = "/api/v1/user?$page=1&$pagesize=500";
+        public string GetAllPaymentTermEndpoint = "/api/v1/payment-method?$page=1&$pagesize=30";
 
-        private static ApiHelper apiHelper;
+        private static ApiHelper _apiHelper;
         private static readonly object ApiHelperLock = new object();
 
         private ApiHelper()
@@ -27,17 +33,13 @@ namespace TimeLog.DataImporter.TimeLogApi
             {
                 lock (ApiHelperLock)
                 {
-                    return apiHelper ?? (apiHelper = new ApiHelper());
+                    return _apiHelper ??= new ApiHelper();
                 }
             }
         }
 
-
-
-
         public WebClient WebClient(string token)
         {
-          
             var _client = new WebClient();
             _client.Encoding = Encoding.UTF8;
             _client.Headers.Add("Authorization", "Bearer " + token);
@@ -45,8 +47,5 @@ namespace TimeLog.DataImporter.TimeLogApi
             _client.Headers.Add("Content-Type", "application/json");
             return _client;
         }
-
-
-
     }
 }

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TimeLog.DataImporter.TimeLogApi
+namespace TimeLog.DataImporter.TimeLogApi.Model
 {
-    public class CustomerModel
+    public class CustomerCreateModel
     {
-
         /// <summary>
         /// Gets or sets the Name
         /// </summary>

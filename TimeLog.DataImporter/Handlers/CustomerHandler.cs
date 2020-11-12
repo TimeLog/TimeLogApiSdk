@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Net;
-using System.Text;
-using IdentityModel.Client;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 using TimeLog.DataImporter.TimeLogApi;
+using TimeLog.DataImporter.TimeLogApi.Model;
 
 namespace TimeLog.DataImporter.Handlers
 {
@@ -16,40 +15,227 @@ namespace TimeLog.DataImporter.Handlers
         private CustomerHandler()
         {
         }
+
         public static CustomerHandler Instance
         {
-            get
-            {
-                return _instance ?? (_instance = new CustomerHandler());
-            }
+            get { return _instance ??= new CustomerHandler(); }
         }
 
-
-        public ApiResponse ValidateCustomer(CustomerModel customer, string token)
+        public DefaultApiResponse ValidateCustomer(CustomerCreateModel customer, string token, out BusinessRulesApiResponse businessRulesApiResponse)
         {
-            var data = JsonConvert.SerializeObject(customer, Newtonsoft.Json.Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
-
+            var _data = JsonConvert.SerializeObject(customer, Newtonsoft.Json.Formatting.None, 
+                new JsonSerializerSettings {NullValueHandling = NullValueHandling.Ignore});
             var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.CustomerValidateEndpoint;
+            businessRulesApiResponse = null;
 
             try
             {
-                string jsonResult = ApiHelper.Instance.WebClient(token).UploadString(_address, "POST", data);
+                string _jsonResult = ApiHelper.Instance.WebClient(token).UploadString(_address, "POST", _data);
 
-                return new ApiResponse(200,"OK");
+                return new DefaultApiResponse(200, "OK", new string[]{});
             }
-            catch (WebException webex)
+            catch (WebException _webEx)
             {
-                using (StreamReader r = new StreamReader(
-                    webex.Response.GetResponseStream()))
-                {
-                    string _responseContent = r.ReadToEnd();
+                using StreamReader _r = new StreamReader(_webEx.Response.GetResponseStream());
+                string _responseContent = _r.ReadToEnd();
 
-                    var _apiResponse = JsonConvert.DeserializeObject<ApiResponse>(_responseContent);
-                    _apiResponse.Code = 400;
+                return ProcessApiResponseContent(_webEx, _responseContent, out businessRulesApiResponse);
+            }
+        }
+
+        public List<CurrencyReadModel> GetAllCurrency(string token)
+        {
+            var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllCurrencyEndpoint;
+
+            try
+            {
+                string _jsonResult = ApiHelper.Instance.WebClient(token).DownloadString(_address);
+                dynamic _jsonDeserializedObject = JsonConvert.DeserializeObject<dynamic>(_jsonResult);
+
+                if (_jsonDeserializedObject != null && _jsonDeserializedObject.Entities.Count > 0)
+                {
+                    List<CurrencyReadModel> _apiResponse = new List<CurrencyReadModel>();
+
+                    foreach (var _entity in _jsonDeserializedObject.Entities)
+                    {
+                        foreach (var _property in _entity.Properties())
+                        {
+                            _apiResponse.Add(JsonConvert.DeserializeObject<CurrencyReadModel>(_property.Value.ToString()));
+                        }
+                    }
+
                     return _apiResponse;
-                    
                 }
             }
+            catch (WebException _webEx)
+            {
+                MessageBox.Show("Failed to obtain default currency ID list. " + _webEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return null;
+        }
+
+        public List<CountryReadModel> GetAllCountry(string token)
+        {
+            var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllCountryEndpoint;
+
+            try
+            {
+                string _jsonResult = ApiHelper.Instance.WebClient(token).DownloadString(_address);
+                dynamic _jsonDeserializedObject = JsonConvert.DeserializeObject<dynamic>(_jsonResult);
+
+                if (_jsonDeserializedObject != null && _jsonDeserializedObject.Entities.Count > 0)
+                {
+                    List<CountryReadModel> _apiResponse = new List<CountryReadModel>();
+
+                    foreach (var _entity in _jsonDeserializedObject.Entities)
+                    {
+                        foreach (var _property in _entity.Properties())
+                        {
+                            _apiResponse.Add(JsonConvert.DeserializeObject<CountryReadModel>(_property.Value.ToString()));
+                        }
+                    }
+
+                    return _apiResponse;
+                }
+            }
+            catch (WebException _webEx)
+            {
+                MessageBox.Show("Failed to obtain default country ID list. " + _webEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return null;
+        }
+
+        public List<CustomerStatusReadModel> GetAllCustomerStatus(string token)
+        {
+            var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllCustomerStatusEndpoint;
+
+            try
+            {
+                string _jsonResult = ApiHelper.Instance.WebClient(token).DownloadString(_address);
+                dynamic _jsonDeserializedObject = JsonConvert.DeserializeObject<dynamic>(_jsonResult);
+
+                if (_jsonDeserializedObject != null && _jsonDeserializedObject.Entities.Count > 0)
+                {
+                    List<CustomerStatusReadModel> _apiResponse = new List<CustomerStatusReadModel>();
+
+                    foreach (var _entity in _jsonDeserializedObject.Entities)
+                    {
+                        foreach (var _property in _entity.Properties())
+                        {
+                            _apiResponse.Add(JsonConvert.DeserializeObject<CustomerStatusReadModel>(_property.Value.ToString()));
+                        }
+                    }
+
+                    return _apiResponse;
+                }
+            }
+            catch (WebException _webEx)
+            {
+                MessageBox.Show("Failed to obtain default customer status ID list. " + _webEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+            return null;
+        }
+
+        public List<EmployeeReadModel> GetAllEmployee(string token)
+        {
+            var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllEmployeeEndpoint;
+
+            try
+            {
+                string _jsonResult = ApiHelper.Instance.WebClient(token).DownloadString(_address);
+                dynamic _jsonDeserializedObject = JsonConvert.DeserializeObject<dynamic>(_jsonResult);
+
+                if (_jsonDeserializedObject != null && _jsonDeserializedObject.Entities.Count > 0)
+                {
+                    List<EmployeeReadModel> _apiResponse = new List<EmployeeReadModel>();
+
+                    foreach (var _entity in _jsonDeserializedObject.Entities)
+                    {
+                        foreach (var _property in _entity.Properties())
+                        {
+                            if (_property.Name == "Properties")
+                            {
+                                _apiResponse.Add(JsonConvert.DeserializeObject<EmployeeReadModel>(_property.Value.ToString()));
+                            }
+                        }
+                    }
+
+                    return _apiResponse;
+                }
+            }
+            catch (WebException _webEx)
+            {
+                MessageBox.Show("Failed to obtain default primary and secondary KAM ID list. " + _webEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
+            return null;
+        }
+
+        public List<IndustryReadModel> GetAllIndustry(string token)
+        {
+            var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllIndustryEndpoint;
+
+            try
+            {
+                string _jsonResult = ApiHelper.Instance.WebClient(token).DownloadString(_address);
+                dynamic _jsonDeserializedObject = JsonConvert.DeserializeObject<dynamic>(_jsonResult);
+
+                if (_jsonDeserializedObject != null && _jsonDeserializedObject.Entities.Count > 0)
+                {
+                    List<IndustryReadModel> _apiResponse = new List<IndustryReadModel>();
+
+                    foreach (var _entity in _jsonDeserializedObject.Entities)
+                    {
+                        foreach (var _property in _entity.Properties())
+                        {
+                            _apiResponse.Add(JsonConvert.DeserializeObject<IndustryReadModel>(_property.Value.ToString()));
+                        }
+                    }
+
+                    return _apiResponse;
+                }
+            }
+            catch (WebException _webEx)
+            {
+                MessageBox.Show("Failed to obtain default industry ID list. " + _webEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+            return null;
+        }
+
+        public List<PaymentTermReadModel> GetAllPaymentTerm(string token)
+        {
+            var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllPaymentTermEndpoint;
+
+            try
+            {
+                string _jsonResult = ApiHelper.Instance.WebClient(token).DownloadString(_address);
+                dynamic _jsonDeserializedObject = JsonConvert.DeserializeObject<dynamic>(_jsonResult);
+
+                if (_jsonDeserializedObject != null && _jsonDeserializedObject.Entities.Count > 0)
+                {
+                    List<PaymentTermReadModel> _apiResponse = new List<PaymentTermReadModel>();
+
+                    foreach (var _entity in _jsonDeserializedObject.Entities)
+                    {
+                        foreach (var _property in _entity.Properties())
+                        {
+                            _apiResponse.Add(JsonConvert.DeserializeObject<PaymentTermReadModel>(_property.Value.ToString()));
+                        }
+                    }
+
+                    return _apiResponse;
+                }
+            }
+            catch (WebException _webEx)
+            {
+                MessageBox.Show("Failed to obtain default payment term ID list. " + _webEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return null;
         }
     }
 }

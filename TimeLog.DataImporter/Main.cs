@@ -27,38 +27,6 @@ namespace TimeLog.DataImporter
         {
         }
 
-
-        
-
-
-      
-
-        //private void button_selectProjectFile_Click(object sender, EventArgs e)
-        //{
-        //    dataGridView1.DataSource = CustomerHandler.Instance.GetFileContent();
-        //    comboBox_projectName.Items.AddRange(ProjectHandler.Instance._fileColumnHeaders.ToArray());
-
-        //}
-
-
-       
-
-        //private void comboBox_projectName_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    var _columnIndex = this.dataGridView1.Columns[this.comboBox_projectName.SelectedItem.ToString()].Index;
-        //    foreach (DataGridViewRow _row in this.dataGridView1.Rows)
-        //    {
-        //        if (_row.Cells[_columnIndex].Value == null || string.IsNullOrEmpty(_row.Cells[_columnIndex].Value.ToString()) || _row.Cells[_columnIndex].Value.ToString().Equals("Søren Parrot"))
-        //        {
-        //            _row.Cells[_columnIndex].Style.BackColor = Color.Red;
-        //        }
-                
-        //    }
-        //}
-
-       
-
-       
         private void tabPage_login_Click(object sender, EventArgs e)
         {
 

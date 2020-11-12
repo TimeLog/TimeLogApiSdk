@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TimeLog.DataImporter.TimeLogApi
+namespace TimeLog.DataImporter.TimeLogApi.Model
 {
-    public class ProjectModel
+    public class ProjectCreateModel
     {
-         /// <summary>
+        /// <summary>
         /// Gets or sets the project name
         /// </summary>
         /// /// <value>

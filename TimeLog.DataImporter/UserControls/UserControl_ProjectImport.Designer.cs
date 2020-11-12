@@ -39,6 +39,10 @@
             this.button_validate = new System.Windows.Forms.Button();
             this.button_stop = new System.Windows.Forms.Button();
             this.panel_projectFieldMapping = new System.Windows.Forms.Panel();
+            this.label_sample = new System.Windows.Forms.Label();
+            this.comboBox_sampleNonMandatory = new System.Windows.Forms.ComboBox();
+            this.label_delimiter = new System.Windows.Forms.Label();
+            this.comboBox_delimiter = new System.Windows.Forms.ComboBox();
             this.groupBox_projectMandatoryFields = new System.Windows.Forms.GroupBox();
             this.label_projectLegalEntity = new System.Windows.Forms.Label();
             this.comboBox_projectLegalEntity = new System.Windows.Forms.ComboBox();
@@ -164,6 +168,10 @@
             // 
             // panel_projectFieldMapping
             // 
+            this.panel_projectFieldMapping.Controls.Add(this.label_sample);
+            this.panel_projectFieldMapping.Controls.Add(this.comboBox_sampleNonMandatory);
+            this.panel_projectFieldMapping.Controls.Add(this.label_delimiter);
+            this.panel_projectFieldMapping.Controls.Add(this.comboBox_delimiter);
             this.panel_projectFieldMapping.Controls.Add(this.groupBox_projectMandatoryFields);
             this.panel_projectFieldMapping.Controls.Add(this.label_projectSetup);
             this.panel_projectFieldMapping.Controls.Add(this.button_projectSelectFile);
@@ -172,6 +180,41 @@
             this.panel_projectFieldMapping.Name = "panel_projectFieldMapping";
             this.panel_projectFieldMapping.Size = new System.Drawing.Size(1006, 345);
             this.panel_projectFieldMapping.TabIndex = 13;
+            // 
+            // label_sample
+            // 
+            this.label_sample.AutoSize = true;
+            this.label_sample.Location = new System.Drawing.Point(315, 102);
+            this.label_sample.Name = "label_sample";
+            this.label_sample.Size = new System.Drawing.Size(126, 15);
+            this.label_sample.TabIndex = 1;
+            this.label_sample.Text = "sampleNonMandatory";
+            // 
+            // comboBox_sampleNonMandatory
+            // 
+            this.comboBox_sampleNonMandatory.FormattingEnabled = true;
+            this.comboBox_sampleNonMandatory.Location = new System.Drawing.Point(447, 99);
+            this.comboBox_sampleNonMandatory.Name = "comboBox_sampleNonMandatory";
+            this.comboBox_sampleNonMandatory.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_sampleNonMandatory.TabIndex = 7;
+            this.comboBox_sampleNonMandatory.SelectedIndexChanged += new System.EventHandler(this.comboBox_sampleNonMandatory_SelectedIndexChanged);
+            // 
+            // label_delimiter
+            // 
+            this.label_delimiter.AutoSize = true;
+            this.label_delimiter.Location = new System.Drawing.Point(26, 70);
+            this.label_delimiter.Name = "label_delimiter";
+            this.label_delimiter.Size = new System.Drawing.Size(55, 15);
+            this.label_delimiter.TabIndex = 1;
+            this.label_delimiter.Text = "Delimiter";
+            // 
+            // comboBox_delimiter
+            // 
+            this.comboBox_delimiter.FormattingEnabled = true;
+            this.comboBox_delimiter.Location = new System.Drawing.Point(87, 67);
+            this.comboBox_delimiter.Name = "comboBox_delimiter";
+            this.comboBox_delimiter.Size = new System.Drawing.Size(74, 23);
+            this.comboBox_delimiter.TabIndex = 6;
             // 
             // groupBox_projectMandatoryFields
             // 
@@ -187,7 +230,7 @@
             this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectCustomer);
             this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectName);
             this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectName);
-            this.groupBox_projectMandatoryFields.Location = new System.Drawing.Point(15, 99);
+            this.groupBox_projectMandatoryFields.Location = new System.Drawing.Point(13, 127);
             this.groupBox_projectMandatoryFields.Name = "groupBox_projectMandatoryFields";
             this.groupBox_projectMandatoryFields.Size = new System.Drawing.Size(266, 201);
             this.groupBox_projectMandatoryFields.TabIndex = 5;
@@ -253,7 +296,7 @@
             this.label_projectTemplate.AutoSize = true;
             this.label_projectTemplate.Location = new System.Drawing.Point(6, 77);
             this.label_projectTemplate.Name = "label_projectTemplate";
-            this.label_projectTemplate.Size = new System.Drawing.Size(99, 15);
+            this.label_projectTemplate.Size = new System.Drawing.Size(98, 15);
             this.label_projectTemplate.TabIndex = 1;
             this.label_projectTemplate.Text = "Project Template:";
             // 
@@ -314,7 +357,7 @@
             // 
             // button_projectSelectFile
             // 
-            this.button_projectSelectFile.Location = new System.Drawing.Point(11, 54);
+            this.button_projectSelectFile.Location = new System.Drawing.Point(19, 98);
             this.button_projectSelectFile.Name = "button_projectSelectFile";
             this.button_projectSelectFile.Size = new System.Drawing.Size(75, 23);
             this.button_projectSelectFile.TabIndex = 4;
@@ -389,5 +432,9 @@
         private System.Windows.Forms.ComboBox comboBox_projectCurrency;
         private System.Windows.Forms.Label label_projectManager;
         private System.Windows.Forms.ComboBox comboBox_projectManager;
+        private System.Windows.Forms.Label label_delimiter;
+        private System.Windows.Forms.ComboBox comboBox_delimiter;
+        private System.Windows.Forms.Label label_sample;
+        private System.Windows.Forms.ComboBox comboBox_sampleNonMandatory;
     }
 }

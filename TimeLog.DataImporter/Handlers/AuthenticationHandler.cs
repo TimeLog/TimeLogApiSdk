@@ -18,10 +18,10 @@ namespace TimeLog.DataImporter.Handlers
         {
             var options = new OidcClientOptions
             {
-                Authority = "http://192.168.1.100/login",
+                Authority = "http://10.50.6.61/tlplogin",
 
-                ClientId = "coldemo",
-                ClientSecret = "coldemo",
+                ClientId = "postman",
+                ClientSecret = "postman",
                 Scope = "openid profile tlp",
                 RedirectUri = "com.timelog:/oauthredirect",
 
@@ -56,7 +56,7 @@ namespace TimeLog.DataImporter.Handlers
         {
             get
             {
-                return _instance ?? (_instance = new AuthenticationHandler());
+                return _instance ??= new AuthenticationHandler();
             }
         }
 
