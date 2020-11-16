@@ -43,6 +43,28 @@ namespace TimeLog.DataImporter.Handlers
             }
         }
 
+        public DefaultApiResponse ImportCustomer(CustomerCreateModel customer, string token, out BusinessRulesApiResponse businessRulesApiResponse)
+        {
+            var _data = JsonConvert.SerializeObject(customer, Newtonsoft.Json.Formatting.None,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.CustomerCreateEndpoint;
+            businessRulesApiResponse = null;
+
+            try
+            {
+                string _jsonResult = ApiHelper.Instance.WebClient(token).UploadString(_address, "POST", _data);
+
+                return new DefaultApiResponse(200, "OK", new string[] { });
+            }
+            catch (WebException _webEx)
+            {
+                using StreamReader _r = new StreamReader(_webEx.Response.GetResponseStream());
+                string _responseContent = _r.ReadToEnd();
+
+                return ProcessApiResponseContent(_webEx, _responseContent, out businessRulesApiResponse);
+            }
+        }
+
         public List<CurrencyReadModel> GetAllCurrency(string token)
         {
             var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllCurrencyEndpoint;

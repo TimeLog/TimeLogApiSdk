@@ -143,5 +143,100 @@ namespace TimeLog.DataImporter.Handlers
 
             return _apiResponse;
         }
+
+        public string CheckAndGetString(object columnValue)
+        {
+            return columnValue.ToString();
+        }
+
+        public bool CheckAndGetBoolean(string columnName, object columnValue)
+        {
+            var _value = columnValue.ToString();
+
+            if (bool.TryParse(_value, out var _result))
+            {
+                return _result;
+            }
+
+            if (_value == "1")
+            {
+                return true;
+            }
+
+            if (_value == "0")
+            {
+                return false;
+            }
+
+            throw new FormatException("String format cannot be converted to boolean for column [" + columnName + "]. Please recheck input.");
+        }
+
+        public int CheckAndGetInteger(string columnName, object columnValue)
+        {
+            try
+            {
+                if (columnValue != DBNull.Value)
+                {
+                    return Convert.ToInt32(columnValue);
+                }
+
+                return 0;
+            }
+            catch (Exception)
+            {
+                throw new FormatException("String format cannot be converted to integer for column [" + columnName + "]. Please recheck input.");
+            }
+        }
+
+        public int? CheckAndGetNullableInteger(string columnName, object columnValue)
+        {
+            try
+            {
+                if (columnValue == DBNull.Value | columnValue.ToString() == "")
+                {
+                    return null;
+                }
+
+                return Convert.ToInt32(columnValue);
+            }
+            catch (Exception)
+            {
+                throw new FormatException("String format cannot be converted to integer for column [" + columnName + "]. Please recheck input.");
+            }
+        }
+
+        public double CheckAndGetDouble(string columnName, object columnValue)
+        {
+            try
+            {
+                if (columnValue != DBNull.Value)
+                {
+                    return Convert.ToDouble(columnValue);
+                }
+
+                return 0;
+            }
+            catch (Exception)
+            {
+                throw new FormatException("String format cannot be converted to double for column [" + columnName + "]. Please recheck input.");
+            }
+        }
+
+        public DateTime CheckAndGetDate(string columnName, object columnValue)
+        {
+            try
+            {
+                if (columnValue != DBNull.Value)
+                {
+                    return Convert.ToDateTime(columnValue);
+                }
+
+                return DateTime.Now;
+            }
+            catch (Exception)
+            {
+                throw new FormatException("String format cannot be converted to datetime for column [" + columnName + "]. Please recheck input.");
+            }
+        }
     }
 }

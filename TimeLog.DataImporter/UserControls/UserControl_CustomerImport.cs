@@ -14,6 +14,8 @@ namespace TimeLog.DataImporter.UserControls
     {
         private DataTable _customerTable;
         private DataTable _fileContent;
+        private Button _senderButton;
+        private bool _isRowValid = true;
 
         private static readonly Dictionary<int, string> MandatoryFields = new Dictionary<int, string>
         {
@@ -70,8 +72,8 @@ namespace TimeLog.DataImporter.UserControls
         private readonly string _VATPercentage = "VAT Percentage";
 
         //default value lists
-        private static readonly List<string> ExpenseIsBillableList = new List<string> { "true", "false" };
-        private static readonly List<string> MileageIsBillableList = new List<string> { "true", "false" };
+        private static readonly List<string> ExpenseIsBillableList = new List<string> {"true", "false"};
+        private static readonly List<string> MileageIsBillableList = new List<string> {"true", "false"};
         private List<string> _VATPercentageList;
 
         //default value lists from API 
@@ -81,7 +83,7 @@ namespace TimeLog.DataImporter.UserControls
         private List<KeyValuePair<int, string>> _primaryKAMIDList;
         private List<KeyValuePair<int, string>> _secondaryKAMIDList;
         private List<KeyValuePair<int, string>> _industryIDList;
-        private List<KeyValuePair<int, string>> _paymentTermIDList;   // not yet added, to be implemented
+        private List<KeyValuePair<int, string>> _paymentTermIDList; // not yet added, to be implemented
 
         public UserControl_CustomerImport()
         {
@@ -90,6 +92,7 @@ namespace TimeLog.DataImporter.UserControls
             AddRowNumberToDataTable();
             InitializeCustomerDataTable();
             dataGridView_customer.DataSource = _customerTable;
+            button_import.Enabled = false;
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -124,6 +127,7 @@ namespace TimeLog.DataImporter.UserControls
                 textBox_customerImportMessages.Text = string.Empty;
                 ClearAndResetAllCheckBoxes();
                 ClearAndResetAllComboBoxes();
+                Invoke((MethodInvoker) (() => button_import.Enabled = false));
 
                 if (dataGridView_customer.RowCount > 1)
                 {
@@ -147,12 +151,19 @@ namespace TimeLog.DataImporter.UserControls
 
         private void button_validate_Click(object sender, EventArgs e)
         {
+            _senderButton = (Button) sender;
             WorkerFetcher.RunWorkerAsync();
-
         }
+
         private void button_stop_Click(object sender, EventArgs e)
         {
             WorkerFetcher.CancelAsync();
+        }
+
+        private void button_import_Click(object sender, EventArgs e)
+        {
+            _senderButton = (Button) sender;
+            WorkerFetcher.RunWorkerAsync();
         }
 
         private void button_clear_Click(object sender, EventArgs e)
@@ -161,6 +172,7 @@ namespace TimeLog.DataImporter.UserControls
             textBox_customerImportMessages.Text = string.Empty;
             ClearAndResetAllCheckBoxes();
             ClearAndResetAllComboBoxes();
+            Invoke((MethodInvoker) (() => button_import.Enabled = false));
 
             dataGridView_customer.DataSource = null;
             InitializeCustomerDataTable();
@@ -173,7 +185,7 @@ namespace TimeLog.DataImporter.UserControls
             {
                 try
                 {
-                    bool _isRowValid = true;
+                    _isRowValid = true;
 
                     foreach (DataGridViewRow _row in dataGridView_customer.Rows)
                     {
@@ -187,128 +199,126 @@ namespace TimeLog.DataImporter.UserControls
                             CustomerCreateModel _newCustomer = new CustomerCreateModel
                             {
                                 Name = (dataGridView_customer.Columns[_customerName] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_customerName].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_customerName].Index].Value) : string.Empty,
                                 CurrencyID = (dataGridView_customer.Columns[_currencyID] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_currencyID].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_currencyID].Index].Value) : 0) : 0,
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_currencyID, _row.Cells[dataGridView_customer.Columns[_currencyID].Index].Value) : 0,
                                 CustomerStatusID = (dataGridView_customer.Columns[_customerStatusID] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_customerStatusID].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_customerStatusID].Index].Value) : 0) : 0,
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_customerStatusID, _row.Cells[dataGridView_customer.Columns[_customerStatusID].Index].Value) : 0,
                                 CountryID = (dataGridView_customer.Columns[_countryID] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_countryID].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_countryID].Index].Value) : 0) : 0,
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_countryID, _row.Cells[dataGridView_customer.Columns[_countryID].Index].Value) : 0,
                                 CustomerNo = (dataGridView_customer.Columns[_customerNo] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_customerNo].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_customerNo].Index].Value) : string.Empty,
                                 NickName = (dataGridView_customer.Columns[_nickname] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_nickname].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_nickname].Index].Value) : string.Empty,
                                 PrimaryKAMID = (dataGridView_customer.Columns[_primaryKAMID] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_primaryKAMID].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_primaryKAMID].Index].Value) : (int?) null) : null,
+                                    ? CustomerHandler.Instance.CheckAndGetNullableInteger(_primaryKAMID, _row.Cells[dataGridView_customer.Columns[_primaryKAMID].Index].Value) : null,
                                 SecondaryKAMID = (dataGridView_customer.Columns[_secondaryKAMID] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_secondaryKAMID].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_secondaryKAMID].Index].Value) : (int?) null) : null,
+                                    ? CustomerHandler.Instance.CheckAndGetNullableInteger(_secondaryKAMID, _row.Cells[dataGridView_customer.Columns[_secondaryKAMID].Index].Value) : null,
                                 CustomerSince = (dataGridView_customer.Columns[_customerSince] != null)
-                                    ? Convert.ToDateTime(_row.Cells[dataGridView_customer.Columns[_customerSince].Index].Value) : DateTime.Now,
-                                IndustryID = (dataGridView_customer.Columns[_industryID] != null) 
-                                    ? (_row.Cells[dataGridView_customer.Columns[_industryID].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_industryID].Index].Value) : (int?) null) : null,
-                                Phone = (dataGridView_customer.Columns[_phoneNo] != null) 
-                                    ? _row.Cells[dataGridView_customer.Columns[_phoneNo].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetDate(_customerSince, _row.Cells[dataGridView_customer.Columns[_customerSince].Index].Value) : DateTime.Now,
+                                IndustryID = (dataGridView_customer.Columns[_industryID] != null)
+                                    ? CustomerHandler.Instance.CheckAndGetNullableInteger(_industryID, _row.Cells[dataGridView_customer.Columns[_industryID].Index].Value) : null,
+                                Phone = (dataGridView_customer.Columns[_phoneNo] != null)
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_phoneNo].Index].Value) : string.Empty,
                                 Fax = (dataGridView_customer.Columns[_faxNo] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_faxNo].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_faxNo].Index].Value) : string.Empty,
                                 Email = (dataGridView_customer.Columns[_email] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_email].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_email].Index].Value) : string.Empty,
                                 Website = (dataGridView_customer.Columns[_website] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_website].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_website].Index].Value) : string.Empty,
                                 Address = (dataGridView_customer.Columns[_address] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_address].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_address].Index].Value) : string.Empty,
                                 Address2 = (dataGridView_customer.Columns[_address2] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_address2].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_address2].Index].Value) : string.Empty,
                                 Address3 = (dataGridView_customer.Columns[_address3] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_address3].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_address3].Index].Value) : string.Empty,
                                 ZipCode = (dataGridView_customer.Columns[_zipCode] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_zipCode].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_zipCode].Index].Value) : string.Empty,
                                 City = (dataGridView_customer.Columns[_city] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_city].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_city].Index].Value) : string.Empty,
                                 State = (dataGridView_customer.Columns[_state] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_state].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_state].Index].Value) : string.Empty,
                                 UseEanNo = (dataGridView_customer.Columns[_useEanNo] != null) &&
-                                           Convert.ToBoolean(_row.Cells[dataGridView_customer.Columns[_useEanNo].Index].Value),
+                                           CustomerHandler.Instance.CheckAndGetBoolean(_useEanNo, _row.Cells[dataGridView_customer.Columns[_useEanNo].Index].Value),
                                 EanNo = (dataGridView_customer.Columns[_eanNo] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_eanNo].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_eanNo].Index].Value) : string.Empty,
                                 OrganizationNo = (dataGridView_customer.Columns[_organizationNo] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_organizationNo].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_organizationNo].Index].Value) : string.Empty,
                                 VatNo = (dataGridView_customer.Columns[_VATNo] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_VATNo].Index].Value.ToString() : string.Empty,
-                                UseInvoicingAddress = (dataGridView_customer.Columns[_useEanNo] != null) &&
-                                                      Convert.ToBoolean(_row.Cells[dataGridView_customer.Columns[_useInvoicingAddress].Index].Value),
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_VATNo].Index].Value) : string.Empty,
+                                UseInvoicingAddress = (dataGridView_customer.Columns[_useInvoicingAddress] != null) &&
+                                            CustomerHandler.Instance.CheckAndGetBoolean(_useInvoicingAddress, _row.Cells[dataGridView_customer.Columns[_useInvoicingAddress].Index].Value),
                                 InvoicingAddress = (dataGridView_customer.Columns[_invoicingAddress] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_invoicingAddress].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_invoicingAddress].Index].Value) : string.Empty,
                                 InvoicingAddress2 = (dataGridView_customer.Columns[_invoicingAddress2] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_invoicingAddress2].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_invoicingAddress2].Index].Value) : string.Empty,
                                 InvoicingAddress3 = (dataGridView_customer.Columns[_invoicingAddress3] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_invoicingAddress3].Index].Value.ToString() : string.Empty,
-                                InvoicingAddressZipCode =
-                                    (dataGridView_customer.Columns[_invoicingAddressZipCode] != null)
-                                        ? _row.Cells[dataGridView_customer.Columns[_invoicingAddressZipCode].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_invoicingAddress3].Index].Value) : string.Empty,
+                                InvoicingAddressZipCode = (dataGridView_customer.Columns[_invoicingAddressZipCode] != null)
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_invoicingAddressZipCode].Index].Value) : string.Empty,
                                 InvoicingAddressCity = (dataGridView_customer.Columns[_invoicingAddressCity] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_invoicingAddressCity].Index].Value.ToString() : string.Empty,
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_invoicingAddressCity].Index].Value) : string.Empty,
                                 InvoicingAddressState = (dataGridView_customer.Columns[_invoicingAddressState] != null)
-                                    ? _row.Cells[dataGridView_customer.Columns[_invoicingAddressState].Index].Value.ToString() : string.Empty,
-                                InvoicingAddressCountryID =
-                                    (dataGridView_customer.Columns[_invoicingAddressCountryID] != null)
-                                        ? (_row.Cells[dataGridView_customer.Columns[_invoicingAddressCountryID].Index].Value != DBNull.Value
-                                            ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_invoicingAddressCountryID].Index].Value) : 0) : 0,
-                                DefaultMileageDistance =
-                                    (dataGridView_customer.Columns[_defaultMileageDistance] != null)
-                                        ? (_row.Cells[dataGridView_customer.Columns[_defaultMileageDistance].Index].Value != DBNull.Value
-                                            ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_defaultMileageDistance].Index].Value) : 0) : 0,
-                                ExpenseIsBillable = (dataGridView_customer.Columns[_useEanNo] != null) &&
-                                                    Convert.ToBoolean(_row.Cells[dataGridView_customer.Columns[_expenseIsBillable].Index].Value),
-                                MileageIsBillable = (dataGridView_customer.Columns[_useEanNo] != null) &&
-                                                    Convert.ToBoolean(_row.Cells[dataGridView_customer.Columns[_mileageIsBillable].Index].Value),
-                                DefaultDistIsMaxBillable = (dataGridView_customer.Columns[_useEanNo] != null) &&
-                                                           Convert.ToBoolean(_row.Cells[dataGridView_customer.Columns[_defaultDistIsMaxBillable].Index].Value),
+                                    ? CustomerHandler.Instance.CheckAndGetString(_row.Cells[dataGridView_customer.Columns[_invoicingAddressState].Index].Value) : string.Empty,
+                                InvoicingAddressCountryID = (dataGridView_customer.Columns[_invoicingAddressCountryID] != null)
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_invoicingAddressCountryID, _row.Cells[dataGridView_customer.Columns[_invoicingAddressCountryID].Index].Value) : 0,
+                                DefaultMileageDistance = (dataGridView_customer.Columns[_defaultMileageDistance] != null)
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_defaultMileageDistance, _row.Cells[dataGridView_customer.Columns[_defaultMileageDistance].Index].Value) : 0,
+                                ExpenseIsBillable = (dataGridView_customer.Columns[_expenseIsBillable] != null) &&
+                                            CustomerHandler.Instance.CheckAndGetBoolean(_expenseIsBillable, _row.Cells[dataGridView_customer.Columns[_expenseIsBillable].Index].Value),
+                                MileageIsBillable = (dataGridView_customer.Columns[_mileageIsBillable] != null) &&
+                                            CustomerHandler.Instance.CheckAndGetBoolean(_mileageIsBillable, _row.Cells[dataGridView_customer.Columns[_mileageIsBillable].Index].Value),
+                                DefaultDistIsMaxBillable = (dataGridView_customer.Columns[_defaultDistIsMaxBillable] != null) &&
+                                            CustomerHandler.Instance.CheckAndGetBoolean(_defaultDistIsMaxBillable, _row.Cells[dataGridView_customer.Columns[_defaultDistIsMaxBillable].Index].Value),
                                 ContactID = (dataGridView_customer.Columns[_contactID] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_contactID].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_contactID].Index].Value) : 0) : 0,
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_contactID, _row.Cells[dataGridView_customer.Columns[_contactID].Index].Value) : 0,
                                 InvoiceAddressToUse = (dataGridView_customer.Columns[_invoiceAddressToUse] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_invoiceAddressToUse].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_invoiceAddressToUse].Index].Value) : 0) : 0,
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_invoiceAddressToUse, _row.Cells[dataGridView_customer.Columns[_invoiceAddressToUse].Index].Value) : 0,
                                 InternalReferenceID = (dataGridView_customer.Columns[_internalReferenceID] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_internalReferenceID].Index].Value !=
-                                       DBNull.Value ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_internalReferenceID].Index].Value) : 0) : 0,
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_internalReferenceID, _row.Cells[dataGridView_customer.Columns[_internalReferenceID].Index].Value) : 0,
                                 CustomerReferenceID = (dataGridView_customer.Columns[_customerReferenceID] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_customerReferenceID].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_customerReferenceID].Index].Value) : 0) : 0,
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_customerReferenceID, _row.Cells[dataGridView_customer.Columns[_customerReferenceID].Index].Value) : 0,
                                 PaymentTermID = (dataGridView_customer.Columns[_paymentTermID] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_paymentTermID].Index].Value != DBNull.Value
-                                        ? Convert.ToInt32(_row.Cells[dataGridView_customer.Columns[_paymentTermID].Index].Value) : 0) : 0,
+                                    ? CustomerHandler.Instance.CheckAndGetInteger(_paymentTermID, _row.Cells[dataGridView_customer.Columns[_paymentTermID].Index].Value) : 0,
                                 DiscountPercentage = (dataGridView_customer.Columns[_discountPercentage] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_discountPercentage].Index].Value != DBNull.Value 
-                                        ? Convert.ToDouble(_row.Cells[dataGridView_customer.Columns[_discountPercentage].Index].Value) : 0) : 0,
-                                CalculateVat = (dataGridView_customer.Columns[_useEanNo] != null) &&
-                                               Convert.ToBoolean(_row.Cells[dataGridView_customer.Columns[_calculateVAT].Index].Value),
+                                    ? CustomerHandler.Instance.CheckAndGetDouble(_discountPercentage, _row.Cells[dataGridView_customer.Columns[_discountPercentage].Index].Value) : 0,
+                                CalculateVat = (dataGridView_customer.Columns[_calculateVAT] != null) &&
+                                            CustomerHandler.Instance.CheckAndGetBoolean(_calculateVAT, _row.Cells[dataGridView_customer.Columns[_calculateVAT].Index].Value),
                                 VatPercentage = (dataGridView_customer.Columns[_VATPercentage] != null)
-                                    ? (_row.Cells[dataGridView_customer.Columns[_VATPercentage].Index].Value != DBNull.Value
-                                        ? Convert.ToDouble(_row.Cells[dataGridView_customer.Columns[_VATPercentage].Index].Value) : 0) : 0
+                                    ? CustomerHandler.Instance.CheckAndGetDouble(_VATPercentage, _row.Cells[dataGridView_customer.Columns[_VATPercentage].Index].Value) : 0
                             };
 
-                            var _defaultApiResponse = CustomerHandler.Instance.ValidateCustomer(_newCustomer, 
-                                AuthenticationHandler.Instance._token, out var _businessRulesApiResponse);
+                            if (_senderButton.Name == button_validate.Name)
+                            {
+                                var _defaultApiResponse = CustomerHandler.Instance.ValidateCustomer(_newCustomer,
+                                    AuthenticationHandler.Instance._token, out var _businessRulesApiResponse);
 
-                            HandleApiResponse(_defaultApiResponse, _row, _isRowValid, _businessRulesApiResponse);
+                                HandleApiResponse(_defaultApiResponse, _row, _businessRulesApiResponse);
+                            }
+                            else
+                            {
+                                var _defaultApiResponse = CustomerHandler.Instance.ImportCustomer(_newCustomer,
+                                    AuthenticationHandler.Instance._token, out var _businessRulesApiResponse);
+
+                                HandleApiResponse(_defaultApiResponse, _row, _businessRulesApiResponse);
+
+                                _isRowValid = false;
+                            }
                         }
                     }
 
-                    if (_isRowValid == true)
+                    if (_isRowValid)
                     {
-                        //call the enable import button
+                        Invoke((MethodInvoker) (() => button_import.Enabled = true));
+                    }
+                    else
+                    {
+                        Invoke((MethodInvoker) (() => button_import.Enabled = false));
                     }
                 }
                 catch (FormatException _ex)
                 {
-                    MessageBox.Show("Invalid data type. Please recheck mapping selection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(_ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 //catch (Exception _ex)
                 //{
@@ -317,44 +327,47 @@ namespace TimeLog.DataImporter.UserControls
             }
         }
 
-        private void HandleApiResponse(DefaultApiResponse defaultResponse, DataGridViewRow row, bool isRowValid, BusinessRulesApiResponse businessRulesResponse)
+        #region Helper methods
+
+        private void HandleApiResponse(DefaultApiResponse defaultResponse, DataGridViewRow row, BusinessRulesApiResponse businessRulesResponse)
         {
             if (defaultResponse != null)
             {
                 if (defaultResponse.Code == 200)
                 {
-                    Invoke((MethodInvoker) (() => row.DefaultCellStyle.BackColor = Color.LimeGreen));
-                    Invoke((MethodInvoker) (() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
-                    Invoke((MethodInvoker) (() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1) + " - " + defaultResponse.Message)));
+                    Invoke((MethodInvoker)(() => row.DefaultCellStyle.BackColor = Color.LimeGreen));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1) + " - " + defaultResponse.Message)));
                 }
                 else if (defaultResponse.Code == 401)
                 {
-                    Invoke((MethodInvoker) (() => row.DefaultCellStyle.BackColor = Color.Red));
-                    Invoke((MethodInvoker) (() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
-                    Invoke((MethodInvoker) (() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1) + " - " + defaultResponse.Message)));
-                    isRowValid = false;
+                    Invoke((MethodInvoker)(() => row.DefaultCellStyle.BackColor = Color.Red));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1) + " - " + defaultResponse.Message)));
+                    _isRowValid = false;
                 }
                 else if (defaultResponse.Code == 201)
                 {
-                    Invoke((MethodInvoker) (() => row.DefaultCellStyle.BackColor = Color.Red));
-                    Invoke((MethodInvoker) (() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
-                    Invoke((MethodInvoker) (() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1) + " - " + defaultResponse.Message + " Details: " + string.Join(" ", defaultResponse.Details))));
-                    isRowValid = false;
+                    Invoke((MethodInvoker)(() => row.DefaultCellStyle.BackColor = Color.Red));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1)
+                       + " - " + defaultResponse.Message + " Details: " + string.Join(" ", defaultResponse.Details))));
+                    _isRowValid = false;
                 }
             }
             else
             {
                 if (businessRulesResponse.Code == 102)
                 {
-                    Invoke((MethodInvoker) (() => row.DefaultCellStyle.BackColor = Color.Red));
-                    Invoke((MethodInvoker) (() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
-                    Invoke((MethodInvoker) (() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1) + " - " + businessRulesResponse.Message + " Details: " + string.Join(" ", businessRulesResponse.Details.Select(x => x.Message)))));
-                    isRowValid = false;
+                    Invoke((MethodInvoker)(() => row.DefaultCellStyle.BackColor = Color.Red));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1)
+                       + " - " + businessRulesResponse.Message + " Details: "
+                       + string.Join(" ", businessRulesResponse.Details.Select(x => x.Message)))));
+                    _isRowValid = false;
                 }
             }
         }
-
-        #region Helper methods
 
         private void AddFileColumnHeaderToComboBox(object[] fileColumnHeaderArray)
         {
@@ -408,7 +421,8 @@ namespace TimeLog.DataImporter.UserControls
         {
             for (int i = 0; i < _fileContent.Rows.Count; i++)
             {
-                Invoke((MethodInvoker) (() => _customerTable.Rows[i][tableColumnIndex] = _fileContent.Rows[i][fileColumnIndex]));
+                Invoke((MethodInvoker) (() =>
+                    _customerTable.Rows[i][tableColumnIndex] = _fileContent.Rows[i][fileColumnIndex]));
             }
         }
 
@@ -432,7 +446,8 @@ namespace TimeLog.DataImporter.UserControls
         {
             foreach (DataGridViewRow _row in dataGridView_customer.Rows)
             {
-                if (_row.Cells[columnIndex].Value == null || string.IsNullOrEmpty(_row.Cells[columnIndex].Value.ToString()))
+                if (_row.Cells[columnIndex].Value == null ||
+                    string.IsNullOrEmpty(_row.Cells[columnIndex].Value.ToString()))
                 {
                     if (_row.DataBoundItem != null)
                     {
@@ -612,7 +627,8 @@ namespace TimeLog.DataImporter.UserControls
 
                 foreach (var _customerStatus in _apiResponse)
                 {
-                    _customerStatusIDList.Add(new KeyValuePair<int, string>(_customerStatus.CustomerStatusID, _customerStatus.Name));
+                    _customerStatusIDList.Add(new KeyValuePair<int, string>(_customerStatus.CustomerStatusID,
+                        _customerStatus.Name));
                 }
             }
         }
@@ -642,7 +658,8 @@ namespace TimeLog.DataImporter.UserControls
 
                 foreach (var _secondaryKAM in _apiResponse)
                 {
-                    _secondaryKAMIDList.Add(new KeyValuePair<int, string>(_secondaryKAM.UserID, _secondaryKAM.Initials));
+                    _secondaryKAMIDList.Add(new KeyValuePair<int, string>(_secondaryKAM.UserID,
+                        _secondaryKAM.Initials));
                 }
             }
         }
@@ -672,7 +689,8 @@ namespace TimeLog.DataImporter.UserControls
 
                 foreach (var _paymentTerm in _apiResponse)
                 {
-                    _paymentTermIDList.Add(new KeyValuePair<int, string>(_paymentTerm.PaymentMethodID, _paymentTerm.Name));
+                    _paymentTermIDList.Add(new KeyValuePair<int, string>(_paymentTerm.PaymentMethodID,
+                        _paymentTerm.Name));
                 }
             }
         }
@@ -690,7 +708,7 @@ namespace TimeLog.DataImporter.UserControls
             {
                 foreach (var _currency in _currencyIDList)
                 {
-                    comboBox_currencyID.Items.Add(new { _currency.Key, _currency.Value });
+                    comboBox_currencyID.Items.Add(new {_currency.Key, _currency.Value});
                 }
             }
         }
@@ -718,7 +736,7 @@ namespace TimeLog.DataImporter.UserControls
             {
                 foreach (var _customerStatus in _customerStatusIDList)
                 {
-                    comboBox_customerStatusID.Items.Add(new { _customerStatus.Key, _customerStatus.Value });
+                    comboBox_customerStatusID.Items.Add(new {_customerStatus.Key, _customerStatus.Value});
                 }
             }
         }
@@ -732,7 +750,7 @@ namespace TimeLog.DataImporter.UserControls
             {
                 foreach (var _primaryKAM in _primaryKAMIDList)
                 {
-                    comboBox_primaryKAMID.Items.Add(new { _primaryKAM.Key, _primaryKAM.Value });
+                    comboBox_primaryKAMID.Items.Add(new {_primaryKAM.Key, _primaryKAM.Value});
                 }
             }
         }
@@ -746,7 +764,7 @@ namespace TimeLog.DataImporter.UserControls
             {
                 foreach (var _secondaryKAM in _secondaryKAMIDList)
                 {
-                    comboBox_secondaryKAMID.Items.Add(new { _secondaryKAM.Key, _secondaryKAM.Value });
+                    comboBox_secondaryKAMID.Items.Add(new {_secondaryKAM.Key, _secondaryKAM.Value});
                 }
             }
         }
@@ -760,7 +778,7 @@ namespace TimeLog.DataImporter.UserControls
             {
                 foreach (var _industry in _industryIDList)
                 {
-                    comboBox_industryID.Items.Add(new { _industry.Key, _industry.Value });
+                    comboBox_industryID.Items.Add(new {_industry.Key, _industry.Value});
                 }
             }
         }
@@ -774,7 +792,7 @@ namespace TimeLog.DataImporter.UserControls
             {
                 foreach (var _paymentTerm in _paymentTermIDList)
                 {
-                    comboBox_paymentTermID.Items.Add(new { _paymentTerm.Key, _paymentTerm.Value });
+                    comboBox_paymentTermID.Items.Add(new {_paymentTerm.Key, _paymentTerm.Value});
                 }
             }
         }
@@ -787,11 +805,11 @@ namespace TimeLog.DataImporter.UserControls
         {
             var _columnIndex = _fileContent.Columns.IndexOf(comboBox_customerName.SelectedItem.ToString());
 
-            var _tableColumnIndex = _customerTable.Columns.IndexOf(_customerName); ;
+            var _tableColumnIndex = _customerTable.Columns.IndexOf(_customerName);
 
             ClearColumn(_tableColumnIndex);
 
-            MapFileContentToTable(_tableColumnIndex,_columnIndex);
+            MapFileContentToTable(_tableColumnIndex, _columnIndex);
 
             CheckCellsForNullOrEmpty(_tableColumnIndex);
         }
@@ -1576,7 +1594,8 @@ namespace TimeLog.DataImporter.UserControls
             }
             else
             {
-                comboBox_customerStatusID.Items.AddRange(CustomerHandler.Instance.FileColumnHeaders.Cast<object>().ToArray());
+                comboBox_customerStatusID.Items.AddRange(CustomerHandler.Instance.FileColumnHeaders.Cast<object>()
+                    .ToArray());
             }
 
             var _tableColumnIndex = _customerTable.Columns.IndexOf(_customerStatusID);
@@ -1638,7 +1657,8 @@ namespace TimeLog.DataImporter.UserControls
             }
             else
             {
-                comboBox_primaryKAMID.Items.AddRange(CustomerHandler.Instance.FileColumnHeaders.Cast<object>().ToArray());
+                comboBox_primaryKAMID.Items.AddRange(
+                    CustomerHandler.Instance.FileColumnHeaders.Cast<object>().ToArray());
             }
 
             var _tableColumnIndex = _customerTable.Columns.IndexOf(_primaryKAMID);
@@ -1669,7 +1689,8 @@ namespace TimeLog.DataImporter.UserControls
             }
             else
             {
-                comboBox_secondaryKAMID.Items.AddRange(CustomerHandler.Instance.FileColumnHeaders.Cast<object>().ToArray());
+                comboBox_secondaryKAMID.Items.AddRange(CustomerHandler.Instance.FileColumnHeaders.Cast<object>()
+                    .ToArray());
             }
 
             var _tableColumnIndex = _customerTable.Columns.IndexOf(_secondaryKAMID);
@@ -1774,7 +1795,8 @@ namespace TimeLog.DataImporter.UserControls
             }
             else
             {
-                comboBox_paymentTermID.Items.AddRange(CustomerHandler.Instance.FileColumnHeaders.Cast<object>().ToArray());
+                comboBox_paymentTermID.Items.AddRange(CustomerHandler.Instance.FileColumnHeaders.Cast<object>()
+                    .ToArray());
             }
 
             var _tableColumnIndex = _customerTable.Columns.IndexOf(_paymentTermID);
@@ -1816,7 +1838,7 @@ namespace TimeLog.DataImporter.UserControls
                 CheckCellsForNullOrEmpty(_tableColumnIndex);
             }
         }
-    }
 
-    #endregion
+        #endregion
+    }
 }

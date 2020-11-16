@@ -229,6 +229,7 @@
             this.button_import.TabIndex = 7;
             this.button_import.Text = "Import";
             this.button_import.UseVisualStyleBackColor = true;
+            this.button_import.Click += new System.EventHandler(this.button_import_Click);
             // 
             // button_validate
             // 
