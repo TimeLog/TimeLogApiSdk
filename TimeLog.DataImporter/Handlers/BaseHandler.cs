@@ -5,6 +5,7 @@ using System.Net;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using TimeLog.DataImporter.TimeLogApi;
+using TimeLog.DataImporter.TimeLogApi.Model;
 
 namespace TimeLog.DataImporter.Handlers
 {
@@ -12,6 +13,15 @@ namespace TimeLog.DataImporter.Handlers
     {
         public List<string> FileColumnHeaders = new List<string>();
         private readonly List<string> _delimiterList = new List<string>{",",";","|"};
+
+        // The state of expanding or collapsing panel
+        public enum ExpandState
+        {
+            Expanded,
+            Expanding,
+            Collapsing,
+            Collapsed,
+        }
 
         public DataTable GetFileContent(string selectedDelimiter)
         {
@@ -111,6 +121,38 @@ namespace TimeLog.DataImporter.Handlers
             return _delimiterList;
         }
 
+        public List<CurrencyReadModel> GetAllCurrency(string token)
+        {
+            var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllCurrencyEndpoint;
+
+            try
+            {
+                string _jsonResult = ApiHelper.Instance.WebClient(token).DownloadString(_address);
+                dynamic _jsonDeserializedObject = JsonConvert.DeserializeObject<dynamic>(_jsonResult);
+
+                if (_jsonDeserializedObject != null && _jsonDeserializedObject.Entities.Count > 0)
+                {
+                    List<CurrencyReadModel> _apiResponse = new List<CurrencyReadModel>();
+
+                    foreach (var _entity in _jsonDeserializedObject.Entities)
+                    {
+                        foreach (var _property in _entity.Properties())
+                        {
+                            _apiResponse.Add(JsonConvert.DeserializeObject<CurrencyReadModel>(_property.Value.ToString()));
+                        }
+                    }
+
+                    return _apiResponse;
+                }
+            }
+            catch (WebException _webEx)
+            {
+                MessageBox.Show("Failed to obtain default currency ID list. " + _webEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return null;
+        }
+
         public DefaultApiResponse ProcessApiResponseContent(WebException webEx, string responseContent, out BusinessRulesApiResponse businessRulesApiResponse)
         {
             DefaultApiResponse _apiResponse = null;
@@ -153,22 +195,27 @@ namespace TimeLog.DataImporter.Handlers
         {
             var _value = columnValue.ToString();
 
-            if (bool.TryParse(_value, out var _result))
+            if (_value != "")
             {
-                return _result;
+                if (bool.TryParse(_value, out var _result))
+                {
+                    return _result;
+                }
+
+                if (_value == "1")
+                {
+                    return true;
+                }
+
+                if (_value == "0")
+                {
+                    return false;
+                }
+
+                throw new FormatException("String format cannot be converted to boolean for column [" + columnName + "]. Please recheck input.");
             }
 
-            if (_value == "1")
-            {
-                return true;
-            }
-
-            if (_value == "0")
-            {
-                return false;
-            }
-
-            throw new FormatException("String format cannot be converted to boolean for column [" + columnName + "]. Please recheck input.");
+            return false;
         }
 
         public int CheckAndGetInteger(string columnName, object columnValue)

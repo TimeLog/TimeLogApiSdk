@@ -65,38 +65,6 @@ namespace TimeLog.DataImporter.Handlers
             }
         }
 
-        public List<CurrencyReadModel> GetAllCurrency(string token)
-        {
-            var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllCurrencyEndpoint;
-
-            try
-            {
-                string _jsonResult = ApiHelper.Instance.WebClient(token).DownloadString(_address);
-                dynamic _jsonDeserializedObject = JsonConvert.DeserializeObject<dynamic>(_jsonResult);
-
-                if (_jsonDeserializedObject != null && _jsonDeserializedObject.Entities.Count > 0)
-                {
-                    List<CurrencyReadModel> _apiResponse = new List<CurrencyReadModel>();
-
-                    foreach (var _entity in _jsonDeserializedObject.Entities)
-                    {
-                        foreach (var _property in _entity.Properties())
-                        {
-                            _apiResponse.Add(JsonConvert.DeserializeObject<CurrencyReadModel>(_property.Value.ToString()));
-                        }
-                    }
-
-                    return _apiResponse;
-                }
-            }
-            catch (WebException _webEx)
-            {
-                MessageBox.Show("Failed to obtain default currency ID list. " + _webEx.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            return null;
-        }
-
         public List<CountryReadModel> GetAllCountry(string token)
         {
             var _address = ApiHelper.Instance.LocalhostUrl + ApiHelper.Instance.GetAllCountryEndpoint;

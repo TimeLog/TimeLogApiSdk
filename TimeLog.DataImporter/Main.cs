@@ -22,14 +22,8 @@ namespace TimeLog.DataImporter
             InitializeComponent();
         }
 
-
         private void Main_Load(object sender, EventArgs e)
         {
-        }
-
-        private void tabPage_login_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)

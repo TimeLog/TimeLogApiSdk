@@ -16,6 +16,7 @@ namespace TimeLog.DataImporter.UserControls
         private DataTable _fileContent;
         private Button _senderButton;
         private bool _isRowValid = true;
+        private int _errorRowCount;
 
         private static readonly Dictionary<int, string> MandatoryFields = new Dictionary<int, string>
         {
@@ -85,10 +86,19 @@ namespace TimeLog.DataImporter.UserControls
         private List<KeyValuePair<int, string>> _industryIDList;
         private List<KeyValuePair<int, string>> _paymentTermIDList; // not yet added, to be implemented
 
+        //expanding panels' current states, expand panels, expand buttons
+        private BaseHandler.ExpandState[] _expandStates;
+        private Panel[] _expandPanels;
+        private Button[] _expandButtons;
+
+        //set the number of pixels expanded per timer Tick
+        private const int ExpansionPerTick = 7;
+
         public UserControl_CustomerImport()
         {
             InitializeComponent();
             InitializeDelimiterComboBox();
+            InitializeExpandCollapsePanels();
             AddRowNumberToDataTable();
             InitializeCustomerDataTable();
             dataGridView_customer.DataSource = _customerTable;
@@ -98,6 +108,43 @@ namespace TimeLog.DataImporter.UserControls
         private void UserControl1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void InitializeExpandCollapsePanels()
+        {
+            _expandStates = new[]
+            {
+                BaseHandler.ExpandState.Expanded,
+                BaseHandler.ExpandState.Expanded,
+                BaseHandler.ExpandState.Expanded,
+                BaseHandler.ExpandState.Expanded,
+                BaseHandler.ExpandState.Expanded,
+                BaseHandler.ExpandState.Expanded,
+            };
+            _expandPanels = new[]
+            {
+                panel_customerDetails,
+                panel_contactDetails,
+                panel_invoiceAddress,
+                panel_financeCompanyInfo,
+                panel_defaultInvoiceSettings,
+                panel_incoiceExternalCosts
+            };
+            _expandButtons = new[]
+            {
+                button_customerDetails,
+                button_contactDetails,
+                button_invoiceAddress,
+                button_financeCompanyInfo,
+                button_defaultInvoiceSettings,
+                button_invoiceExternalCosts
+            };
+
+            for (int i = 0; i < _expandButtons.Length; i++)
+            {
+                _expandButtons[i].Tag = i;
+                _expandButtons[i].BackgroundImage = Properties.Resources.upload;
+            }
         }
 
         private void InitializeDelimiterComboBox()
@@ -151,6 +198,7 @@ namespace TimeLog.DataImporter.UserControls
 
         private void button_validate_Click(object sender, EventArgs e)
         {
+            textBox_customerImportMessages.Text = string.Empty;
             _senderButton = (Button) sender;
             WorkerFetcher.RunWorkerAsync();
         }
@@ -162,6 +210,7 @@ namespace TimeLog.DataImporter.UserControls
 
         private void button_import_Click(object sender, EventArgs e)
         {
+            textBox_customerImportMessages.Text = string.Empty;
             _senderButton = (Button) sender;
             WorkerFetcher.RunWorkerAsync();
         }
@@ -179,14 +228,106 @@ namespace TimeLog.DataImporter.UserControls
             dataGridView_customer.DataSource = _customerTable;
         }
 
+        private void textBox_customerImportMessages_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                var _position = textBox_customerImportMessages.GetCharIndexFromPosition(e.Location);
+                var _lineNo = textBox_customerImportMessages.GetLineFromCharIndex(_position) - 1;
+
+                for (int i = 0; i < dataGridView_customer.Rows.Count - 1; i++)
+                {
+                    if (i == _lineNo)
+                    {
+                        Invoke((MethodInvoker)(() => dataGridView_customer.Rows[i].Selected = true));
+                        dataGridView_customer.FirstDisplayedScrollingRowIndex = i;
+                        dataGridView_customer.Focus();
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void button_expand_Click(object sender, EventArgs e)
+        {
+            Button _button = sender as Button;
+            int _index = (int)_button.Tag;
+
+            // Get this panel's current expand state and set its new state
+            BaseHandler.ExpandState _oldState = _expandStates[_index];
+
+            if (_oldState == BaseHandler.ExpandState.Collapsed || _oldState == BaseHandler.ExpandState.Collapsing)
+            {
+                _expandStates[_index] = BaseHandler.ExpandState.Expanding;
+                _expandButtons[_index].BackgroundImage = Properties.Resources.upload;
+            }
+            else
+            {
+                _expandStates[_index] = BaseHandler.ExpandState.Collapsing;
+                _expandButtons[_index].BackgroundImage = Properties.Resources.download;
+            }
+
+            tmrExpand.Enabled = true;
+        }
+
+        private void tmrExpand_Tick(object sender, EventArgs e)
+        {
+            bool _notDone = false;
+
+            for (int i = 0; i < _expandPanels.Length; i++)
+            {
+                Panel _panel = _expandPanels[i];
+                int _newHeight = _panel.Height;
+
+                if (_expandStates[i] == BaseHandler.ExpandState.Expanding)
+                {
+                    _newHeight = _panel.Height + ExpansionPerTick;
+
+                    if (_newHeight <= _panel.MaximumSize.Height)
+                    {
+                        _newHeight = _panel.MaximumSize.Height;
+                    }
+                    else
+                    {
+                        _notDone = true;
+                    }
+                }
+                else if (_expandStates[i] == BaseHandler.ExpandState.Collapsing)
+                {
+                    _newHeight = _panel.Height - ExpansionPerTick;
+
+                    if (_newHeight <= _panel.MinimumSize.Height)
+                    {
+                        _newHeight = _panel.MinimumSize.Height;
+                    }
+                    else
+                    {
+                        _notDone = true;
+                    }
+                }
+
+                _panel.Height = _newHeight;
+            }
+
+            // If we are done, disable the timer
+            tmrExpand.Enabled = _notDone;
+        }
+
         private void WorkerFetcherDoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             if (dataGridView_customer != null && dataGridView_customer.RowCount > 1)
             {
+                _isRowValid = true;
+                _errorRowCount = 0;
+
+                //while validating, deactivate other buttons
+                Invoke((MethodInvoker)(() => button_validate.Enabled = false));
+                Invoke((MethodInvoker)(() => button_import.Enabled = false));
+                Invoke((MethodInvoker)(() => button_clear.Enabled = false));
+                Invoke((MethodInvoker)(() => button_customerSelectFile.Enabled = false));
+
                 try
                 {
-                    _isRowValid = true;
-
                     foreach (DataGridViewRow _row in dataGridView_customer.Rows)
                     {
                         if (WorkerFetcher.CancellationPending)
@@ -307,13 +448,36 @@ namespace TimeLog.DataImporter.UserControls
                         }
                     }
 
-                    if (_isRowValid)
+                    //show error row count at the end
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine + Environment.NewLine)));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Invalid data input row count: " + _errorRowCount)));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine + Environment.NewLine)));
+
+                    //display success message after import / validation is done
+                    if (_errorRowCount == 0)
                     {
-                        Invoke((MethodInvoker) (() => button_import.Enabled = true));
+                        if (_senderButton.Name == button_validate.Name)
+                        {
+                            Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Validation completed successfully with no error. You may press the Import button to start importing data right away.")));
+                        }
+                        else
+                        {
+                            Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Data import completed successfully with no error. Excellent!")));
+                        }
                     }
                     else
                     {
-                        Invoke((MethodInvoker) (() => button_import.Enabled = false));
+                        Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Validation completed successfully with " + _errorRowCount + " error(s). You may recheck and modify the invalid input data based on the validation results above and then press Validate button again.")));
+                    }
+
+                    //enable import button when there is no error in validation
+                    if (_isRowValid)
+                    {
+                        Invoke((MethodInvoker)(() => button_import.Enabled = true));
+                    }
+                    else
+                    {
+                        Invoke((MethodInvoker)(() => button_import.Enabled = false));
                     }
                 }
                 catch (FormatException _ex)
@@ -324,6 +488,11 @@ namespace TimeLog.DataImporter.UserControls
                 //{
                 //    MessageBox.Show(_ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 //}
+
+                //reactivate buttons after work is done
+                Invoke((MethodInvoker)(() => button_validate.Enabled = true));
+                Invoke((MethodInvoker)(() => button_clear.Enabled = true));
+                Invoke((MethodInvoker)(() => button_customerSelectFile.Enabled = true));
             }
         }
 
@@ -344,6 +513,7 @@ namespace TimeLog.DataImporter.UserControls
                     Invoke((MethodInvoker)(() => row.DefaultCellStyle.BackColor = Color.Red));
                     Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
                     Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1) + " - " + defaultResponse.Message)));
+                    _errorRowCount++;
                     _isRowValid = false;
                 }
                 else if (defaultResponse.Code == 201)
@@ -351,7 +521,8 @@ namespace TimeLog.DataImporter.UserControls
                     Invoke((MethodInvoker)(() => row.DefaultCellStyle.BackColor = Color.Red));
                     Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
                     Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1)
-                       + " - " + defaultResponse.Message + " Details: " + string.Join(" ", defaultResponse.Details))));
+                       + " - " + defaultResponse.Message + " Details: " + string.Join("  ", defaultResponse.Details))));
+                    _errorRowCount++;
                     _isRowValid = false;
                 }
             }
@@ -363,7 +534,8 @@ namespace TimeLog.DataImporter.UserControls
                     Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
                     Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1)
                        + " - " + businessRulesResponse.Message + " Details: "
-                       + string.Join(" ", businessRulesResponse.Details.Select(x => x.Message)))));
+                       + string.Join("  ", businessRulesResponse.Details.Select(x => x.Message)))));
+                    _errorRowCount++;
                     _isRowValid = false;
                 }
             }
@@ -421,9 +593,12 @@ namespace TimeLog.DataImporter.UserControls
         {
             for (int i = 0; i < _fileContent.Rows.Count; i++)
             {
-                Invoke((MethodInvoker) (() =>
-                    _customerTable.Rows[i][tableColumnIndex] = _fileContent.Rows[i][fileColumnIndex]));
+                Invoke((MethodInvoker) (() => _customerTable.Rows[i][tableColumnIndex] = _fileContent.Rows[i][fileColumnIndex]));
             }
+
+            dataGridView_customer.Rows[0].Cells[tableColumnIndex].Selected = true;
+            dataGridView_customer.FirstDisplayedScrollingColumnIndex = tableColumnIndex;
+            dataGridView_customer.Focus();
         }
 
         private void MapDefaultValueToTable(int tableColumnIndex, string defaultValue)
@@ -432,6 +607,10 @@ namespace TimeLog.DataImporter.UserControls
             {
                 Invoke((MethodInvoker) (() => _customerTable.Rows[i][tableColumnIndex] = defaultValue));
             }
+
+            dataGridView_customer.Rows[0].Cells[tableColumnIndex].Selected = true;
+            dataGridView_customer.FirstDisplayedScrollingColumnIndex = tableColumnIndex;
+            dataGridView_customer.Focus();
         }
 
         private void CheckAndAddColumn(string columnName)
@@ -1838,6 +2017,7 @@ namespace TimeLog.DataImporter.UserControls
                 CheckCellsForNullOrEmpty(_tableColumnIndex);
             }
         }
+
 
         #endregion
     }

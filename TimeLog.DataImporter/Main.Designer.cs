@@ -39,10 +39,13 @@ namespace TimeLog.DataImporter
             this.userControl_CustomerImport1 = new UserControl_CustomerImport();
             this.tabPage_project = new System.Windows.Forms.TabPage();
             this.userControl_ProjectImport1 = new UserControl_ProjectImport();
+            this.tabPage_help = new System.Windows.Forms.TabPage();
+            this.userControl_Help1 = new UserControl_Help();
             this.tabControl1.SuspendLayout();
             this.tabPage_login.SuspendLayout();
             this.tabPage_customer.SuspendLayout();
             this.tabPage_project.SuspendLayout();
+            this.tabPage_help.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -50,13 +53,14 @@ namespace TimeLog.DataImporter
             this.tabControl1.Controls.Add(this.tabPage_login);
             this.tabControl1.Controls.Add(this.tabPage_customer);
             this.tabControl1.Controls.Add(this.tabPage_project);
+            this.tabControl1.Controls.Add(this.tabPage_help);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 2;
+            this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1006, 942);
-            this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage_login
@@ -70,7 +74,6 @@ namespace TimeLog.DataImporter
             this.tabPage_login.TabIndex = 0;
             this.tabPage_login.Text = "Login";
             this.tabPage_login.UseVisualStyleBackColor = true;
-            this.tabPage_login.Click += new System.EventHandler(this.tabPage_login_Click);
             // 
             // userControl_Login1
             // 
@@ -98,7 +101,7 @@ namespace TimeLog.DataImporter
             this.userControl_CustomerImport1.Location = new System.Drawing.Point(3, 3);
             this.userControl_CustomerImport1.Name = "userControl_CustomerImport1";
             this.userControl_CustomerImport1.Size = new System.Drawing.Size(992, 908);
-            this.userControl_CustomerImport1.TabIndex = 0;
+            this.userControl_CustomerImport1.TabIndex = 1;
             // 
             // tabPage_project
             // 
@@ -108,7 +111,7 @@ namespace TimeLog.DataImporter
             this.tabPage_project.Name = "tabPage_project";
             this.tabPage_project.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage_project.Size = new System.Drawing.Size(998, 914);
-            this.tabPage_project.TabIndex = 1;
+            this.tabPage_project.TabIndex = 2;
             this.tabPage_project.Text = "Project";
             this.tabPage_project.UseVisualStyleBackColor = true;
             // 
@@ -118,7 +121,27 @@ namespace TimeLog.DataImporter
             this.userControl_ProjectImport1.Location = new System.Drawing.Point(3, 3);
             this.userControl_ProjectImport1.Name = "userControl_ProjectImport1";
             this.userControl_ProjectImport1.Size = new System.Drawing.Size(992, 908);
-            this.userControl_ProjectImport1.TabIndex = 0;
+            this.userControl_ProjectImport1.TabIndex = 2;
+            // 
+            // tabPage_help
+            // 
+            this.tabPage_help.AutoScroll = true;
+            this.tabPage_help.Controls.Add(this.userControl_Help1);
+            this.tabPage_help.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_help.Name = "tabPage_help";
+            this.tabPage_help.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_help.Size = new System.Drawing.Size(998, 914);
+            this.tabPage_help.TabIndex = 3;
+            this.tabPage_help.Text = "Help";
+            this.tabPage_help.UseVisualStyleBackColor = true;
+            // 
+            // userControl_Help1
+            // 
+            this.userControl_Help1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Help1.Location = new System.Drawing.Point(3, 3);
+            this.userControl_Help1.Name = "userControl_Help1";
+            this.userControl_Help1.Size = new System.Drawing.Size(992, 908);
+            this.userControl_Help1.TabIndex = 3;
             // 
             // Main
             // 
@@ -129,30 +152,27 @@ namespace TimeLog.DataImporter
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
-            this.Text = "TimeLog Dataimporter";
+            this.Text = "TimeLog Data Importer";
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage_login.ResumeLayout(false);
             this.tabPage_customer.ResumeLayout(false);
             this.tabPage_project.ResumeLayout(false);
+            this.tabPage_help.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-
-
-
-       
-
         private TabControl tabControl1;
         private TabPage tabPage_login;
         private TabPage tabPage_customer;
         private TabPage tabPage_project;
-        private SplitContainer splitContainer_tabs;
+        private TabPage tabPage_help;
         private UserControl_CustomerImport userControl_CustomerImport1;
-        private UserControls.UserControl_Login userControl_Login1;
+        private UserControl_Login userControl_Login1;
         private UserControl_ProjectImport userControl_ProjectImport1;
+        private UserControl_Help userControl_Help1;
     }
 }

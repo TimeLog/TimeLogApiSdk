@@ -13,6 +13,7 @@ namespace TimeLog.DataImporter.UserControls
     {
         public UserControl_Login()
         {
+            BackgroundImage = Properties.Resources.baggrund_min;
             InitializeComponent();
         }
 

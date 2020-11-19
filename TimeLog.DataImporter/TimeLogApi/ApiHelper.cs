@@ -10,8 +10,7 @@ namespace TimeLog.DataImporter.TimeLogApi
         public string LocalhostUrl = "http://localhost/tlptest";
         public string CustomerValidateEndpoint = "/api/v1/customer/validate-new-customer";
         public string CustomerCreateEndpoint = "/api/v1/customer/create";
-        //public string ProjectValidateEndpoint = "/api/v1/project/validate-new-project";
-        public string ProjectValidateEndpoint = "/api/v1/project/create-from-template";
+        public string ProjectValidateEndpoint = "/api/v1/project/validate-create-from-template";
         public string ProjectCreateEndpoint = "/api/v1/project/create-from-template";
         public string GetAllCountryEndpoint = "/api/v1/country/get-all?$page=1&$pagesize=300";
         public string GetAllIndustryEndpoint = "/api/v1/industry/get-all?$page=1&$pagesize=30";
