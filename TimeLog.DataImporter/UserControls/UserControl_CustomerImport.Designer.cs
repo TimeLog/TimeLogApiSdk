@@ -1432,6 +1432,7 @@ namespace TimeLog.DataImporter.UserControls
             this.checkBox_defaultExpenseIsBillable.Size = new System.Drawing.Size(70, 21);
             this.checkBox_defaultExpenseIsBillable.TabIndex = 5;
             this.checkBox_defaultExpenseIsBillable.Text = "Default";
+            this.defaultToolTip.SetToolTip(this.checkBox_defaultExpenseIsBillable, "Set default values for all rows of a particular column field");
             this.checkBox_defaultExpenseIsBillable.UseVisualStyleBackColor = true;
             this.checkBox_defaultExpenseIsBillable.CheckedChanged += new System.EventHandler(this.checkBox_defaultExpenseIsBillable_CheckedChanged);
             // 
@@ -1443,6 +1444,7 @@ namespace TimeLog.DataImporter.UserControls
             this.checkBox_defaultMileageIsBillable.Size = new System.Drawing.Size(70, 21);
             this.checkBox_defaultMileageIsBillable.TabIndex = 4;
             this.checkBox_defaultMileageIsBillable.Text = "Default";
+            this.defaultToolTip.SetToolTip(this.checkBox_defaultMileageIsBillable, "Set default values for all rows of a particular column field");
             this.checkBox_defaultMileageIsBillable.UseVisualStyleBackColor = true;
             this.checkBox_defaultMileageIsBillable.CheckedChanged += new System.EventHandler(this.checkBox_defaultMileageIsBillable_CheckedChanged);
             // 
@@ -1685,7 +1687,7 @@ namespace TimeLog.DataImporter.UserControls
             this.button_customerSelectFile.Size = new System.Drawing.Size(80, 29);
             this.button_customerSelectFile.TabIndex = 4;
             this.button_customerSelectFile.Text = "Select File";
-            this.defaultToolTip.SetToolTip(this.button_customerSelectFile, "Select csv input file");
+            this.defaultToolTip.SetToolTip(this.button_customerSelectFile, "Select input CSV file");
             this.button_customerSelectFile.UseVisualStyleBackColor = false;
             this.button_customerSelectFile.Click += new System.EventHandler(this.button_select_customer_file_Click);
             // 

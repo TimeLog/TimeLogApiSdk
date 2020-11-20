@@ -28,64 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Glossary", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(" 1. Select the delimiter type used in the desired CSV file from the delimiter lis" +
+            System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Glossary", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(" 1. Select the delimiter type used in the desired CSV file from the delimiter lis" +
         "t.");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(" 2. Press \"Select File\" to choose the desired CSV file to be imported. File of ot" +
+            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem(" 2. Press \"Select File\" to choose the desired CSV file to be imported. File of ot" +
         "her extension types will not be accepted.");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(" 3. Map earn neccessary column of the file content to the columns in the data tab" +
+            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem(" 3. Map earn neccessary column of the file content to the columns in the data tab" +
         "le below by choosing from the drop down list of each column.");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(" 4. After mapping, press \"Validate\" to validate the mapped input data. The valida" +
+            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem(" 4. After mapping, press \"Validate\" to validate the mapped input data. The valida" +
         "tion results will be shown in the center container.");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(" 5. If there is error in the mapped input data, the invalid data input row count " +
+            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem(" 5. If there is error in the mapped input data, the invalid data input row count " +
         "will not be zero.");
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(" 6. The user has to recheck and modify the input data by referring to the center " +
+            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem(" 6. The user has to recheck and modify the input data by referring to the center " +
         "validation results container and then repeat Step 4.");
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(" 7. If the validation passes without any error, the user can press the \"Import\" b" +
+            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem(" 7. If the validation passes without any error, the user can press the \"Import\" b" +
         "utton to start the data import process.");
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Glossary", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(" Customer > Import customer data from CSV file");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(" Project > Import project data from CSV file");
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(" Delimiter > The separator used in the CSV file to separate each field");
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(" Select File > Select a CSV data source file ");
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(" Reset All > Reset all the data in the input area and data table below");
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(" Validate > Validate the input data mapped into the data table");
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("  ");
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(" Import > Import input data (will be disabled if validation is not done properly)" +
+            System.Windows.Forms.ListViewGroup listViewGroup4 = new System.Windows.Forms.ListViewGroup("Glossary", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem(" Customer > Import customer data from CSV file");
+            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem(" Project > Import project data from CSV file");
+            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem(" Delimiter > The separator used in the CSV file to separate each field");
+            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem46 = new System.Windows.Forms.ListViewItem(" Select File > Select a CSV data source file ");
+            System.Windows.Forms.ListViewItem listViewItem47 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem48 = new System.Windows.Forms.ListViewItem(" Reset All > Reset all the data in the input area and data table below");
+            System.Windows.Forms.ListViewItem listViewItem49 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem50 = new System.Windows.Forms.ListViewItem(" Validate > Validate the input data mapped into the data table");
+            System.Windows.Forms.ListViewItem listViewItem51 = new System.Windows.Forms.ListViewItem("  ");
+            System.Windows.Forms.ListViewItem listViewItem52 = new System.Windows.Forms.ListViewItem(" Import > Import input data (will be disabled if validation is not done properly)" +
         "");
-            this.panel_projectFieldMapping = new System.Windows.Forms.Panel();
+            this.panel_helpPage = new System.Windows.Forms.Panel();
             this.listView_instruction = new System.Windows.Forms.ListView();
             this.label_instruction = new System.Windows.Forms.Label();
             this.label_glossary = new System.Windows.Forms.Label();
             this.listView_glossary = new System.Windows.Forms.ListView();
             this.label_helpPage = new System.Windows.Forms.Label();
-            this.panel_projectFieldMapping.SuspendLayout();
+            this.panel_helpPage.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel_projectFieldMapping
+            // panel_helpPage
             // 
-            this.panel_projectFieldMapping.AutoScroll = true;
-            this.panel_projectFieldMapping.Controls.Add(this.listView_instruction);
-            this.panel_projectFieldMapping.Controls.Add(this.label_instruction);
-            this.panel_projectFieldMapping.Controls.Add(this.label_glossary);
-            this.panel_projectFieldMapping.Controls.Add(this.listView_glossary);
-            this.panel_projectFieldMapping.Controls.Add(this.label_helpPage);
-            this.panel_projectFieldMapping.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_projectFieldMapping.Location = new System.Drawing.Point(0, 0);
-            this.panel_projectFieldMapping.Name = "panel_projectFieldMapping";
-            this.panel_projectFieldMapping.Size = new System.Drawing.Size(1006, 942);
-            this.panel_projectFieldMapping.TabIndex = 13;
+            this.panel_helpPage.AutoScroll = true;
+            this.panel_helpPage.Controls.Add(this.listView_instruction);
+            this.panel_helpPage.Controls.Add(this.label_instruction);
+            this.panel_helpPage.Controls.Add(this.label_glossary);
+            this.panel_helpPage.Controls.Add(this.listView_glossary);
+            this.panel_helpPage.Controls.Add(this.label_helpPage);
+            this.panel_helpPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_helpPage.Location = new System.Drawing.Point(0, 0);
+            this.panel_helpPage.Name = "panel_helpPage";
+            this.panel_helpPage.Size = new System.Drawing.Size(1006, 942);
+            this.panel_helpPage.TabIndex = 13;
             // 
             // listView_instruction
             // 
@@ -96,37 +96,37 @@
             this.listView_instruction.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.listView_instruction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.listView_instruction.FullRowSelect = true;
-            listViewGroup1.Header = "Glossary";
-            listViewGroup1.Name = "listViewGroup_glossary";
+            listViewGroup3.Header = "Glossary";
+            listViewGroup3.Name = "listViewGroup_glossary";
             this.listView_instruction.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
+            listViewGroup3});
             this.listView_instruction.HideSelection = false;
-            listViewItem2.IndentCount = 1;
-            listViewItem3.IndentCount = 2;
-            listViewItem4.IndentCount = 3;
-            listViewItem5.IndentCount = 4;
-            listViewItem6.IndentCount = 5;
-            listViewItem7.IndentCount = 6;
-            listViewItem8.IndentCount = 7;
-            listViewItem9.IndentCount = 8;
-            listViewItem10.IndentCount = 9;
-            listViewItem11.IndentCount = 10;
-            listViewItem12.IndentCount = 11;
-            listViewItem13.IndentCount = 12;
+            listViewItem28.IndentCount = 1;
+            listViewItem29.IndentCount = 2;
+            listViewItem30.IndentCount = 3;
+            listViewItem31.IndentCount = 4;
+            listViewItem32.IndentCount = 5;
+            listViewItem33.IndentCount = 6;
+            listViewItem34.IndentCount = 7;
+            listViewItem35.IndentCount = 8;
+            listViewItem36.IndentCount = 9;
+            listViewItem37.IndentCount = 10;
+            listViewItem38.IndentCount = 11;
+            listViewItem39.IndentCount = 12;
             this.listView_instruction.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12,
-            listViewItem13});
+            listViewItem27,
+            listViewItem28,
+            listViewItem29,
+            listViewItem30,
+            listViewItem31,
+            listViewItem32,
+            listViewItem33,
+            listViewItem34,
+            listViewItem35,
+            listViewItem36,
+            listViewItem37,
+            listViewItem38,
+            listViewItem39});
             this.listView_instruction.Location = new System.Drawing.Point(13, 475);
             this.listView_instruction.MultiSelect = false;
             this.listView_instruction.Name = "listView_instruction";
@@ -169,37 +169,37 @@
             this.listView_glossary.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.listView_glossary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.listView_glossary.FullRowSelect = true;
-            listViewGroup2.Header = "Glossary";
-            listViewGroup2.Name = "listViewGroup_glossary";
+            listViewGroup4.Header = "Glossary";
+            listViewGroup4.Name = "listViewGroup_glossary";
             this.listView_glossary.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup2});
+            listViewGroup4});
             this.listView_glossary.HideSelection = false;
-            listViewItem15.IndentCount = 1;
-            listViewItem16.IndentCount = 2;
-            listViewItem17.IndentCount = 3;
-            listViewItem18.IndentCount = 4;
-            listViewItem19.IndentCount = 5;
-            listViewItem20.IndentCount = 6;
-            listViewItem21.IndentCount = 7;
-            listViewItem22.IndentCount = 8;
-            listViewItem23.IndentCount = 9;
-            listViewItem24.IndentCount = 10;
-            listViewItem25.IndentCount = 11;
-            listViewItem26.IndentCount = 12;
+            listViewItem41.IndentCount = 1;
+            listViewItem42.IndentCount = 2;
+            listViewItem43.IndentCount = 3;
+            listViewItem44.IndentCount = 4;
+            listViewItem45.IndentCount = 5;
+            listViewItem46.IndentCount = 6;
+            listViewItem47.IndentCount = 7;
+            listViewItem48.IndentCount = 8;
+            listViewItem49.IndentCount = 9;
+            listViewItem50.IndentCount = 10;
+            listViewItem51.IndentCount = 11;
+            listViewItem52.IndentCount = 12;
             this.listView_glossary.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem14,
-            listViewItem15,
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25,
-            listViewItem26});
+            listViewItem40,
+            listViewItem41,
+            listViewItem42,
+            listViewItem43,
+            listViewItem44,
+            listViewItem45,
+            listViewItem46,
+            listViewItem47,
+            listViewItem48,
+            listViewItem49,
+            listViewItem50,
+            listViewItem51,
+            listViewItem52});
             this.listView_glossary.Location = new System.Drawing.Point(13, 113);
             this.listView_glossary.MultiSelect = false;
             this.listView_glossary.Name = "listView_glossary";
@@ -224,19 +224,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel_projectFieldMapping);
+            this.Controls.Add(this.panel_helpPage);
             this.Name = "UserControl_Help";
             this.Size = new System.Drawing.Size(1006, 942);
             this.Load += new System.EventHandler(this.UserControl1_Load);
-            this.panel_projectFieldMapping.ResumeLayout(false);
-            this.panel_projectFieldMapping.PerformLayout();
+            this.panel_helpPage.ResumeLayout(false);
+            this.panel_helpPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel_projectFieldMapping;
+        private System.Windows.Forms.Panel panel_helpPage;
         private System.Windows.Forms.Label label_helpPage;
         private System.Windows.Forms.Label label_glossary;
         private System.Windows.Forms.ListView listView_glossary;

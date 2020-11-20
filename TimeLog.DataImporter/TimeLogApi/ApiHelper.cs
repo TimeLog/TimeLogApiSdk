@@ -13,11 +13,15 @@ namespace TimeLog.DataImporter.TimeLogApi
         public string ProjectValidateEndpoint = "/api/v1/project/validate-create-from-template";
         public string ProjectCreateEndpoint = "/api/v1/project/create-from-template";
         public string GetAllCountryEndpoint = "/api/v1/country/get-all?$page=1&$pagesize=300";
-        public string GetAllIndustryEndpoint = "/api/v1/industry/get-all?$page=1&$pagesize=30";
-        public string GetAllCurrencyEndpoint = "/api/v1/currency/active?$page=1&$pagesize=50";
+        public string GetAllIndustryEndpoint = "/api/v1/industry/get-all?$page=1&$pagesize=50";
+        public string GetAllCurrencyEndpoint = "/api/v1/currency/active?$page=1&$pagesize=300";
         public string GetAllCustomerStatusEndpoint = "/api/v1/customerstatus?$page=1&$pagesize=30";
         public string GetAllEmployeeEndpoint = "/api/v1/user?$page=1&$pagesize=500";
-        public string GetAllPaymentTermEndpoint = "/api/v1/payment-method?$page=1&$pagesize=30";
+        public string GetAllPaymentTermEndpoint = "/api/v1/payment-method?$page=1&$pagesize=30";  //endpoint coming soon, no payment term yet
+        public string GetAllProjectTemplateEndpoint = "/api/v1/project-template/get-all?$page=1&$pagesize=500";
+        public string GetAllLegalEntityEndpoint = "/api/v1/LegalEntity?$page=1&$pagesize=500";
+        public string GetAllProjectTypeEndpoint = "/api/v1/ProjectType?$page=1&$pagesize=500";
+        public string GetAllProjectCategoryEndpoint = "/api/v1/ProjectCategory?$page=1&$pagesize=500";
 
         private static ApiHelper _apiHelper;
         private static readonly object ApiHelperLock = new object();

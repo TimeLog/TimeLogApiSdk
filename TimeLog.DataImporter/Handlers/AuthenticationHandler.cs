@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
 using IdentityModel.Client;
 using IdentityModel.OidcClient;
 
@@ -9,26 +7,21 @@ namespace TimeLog.DataImporter.Handlers
     public class AuthenticationHandler
     {
         private OidcClient _oidcClient;
-        public string _token = string.Empty;
-
+        public string Token = string.Empty;
 
         private static AuthenticationHandler _instance;
 
         private AuthenticationHandler()
         {
-            var options = new OidcClientOptions
+            var _options = new OidcClientOptions
             {
                 Authority = "http://10.50.6.61/tlplogin",
-
                 ClientId = "postman",
                 ClientSecret = "postman",
                 Scope = "openid profile tlp",
                 RedirectUri = "com.timelog:/oauthredirect",
-
                 ResponseMode = OidcClientOptions.AuthorizeResponseMode.Redirect,
                 Flow = OidcClientOptions.AuthenticationFlow.AuthorizationCode,
-
-
                 Policy = new Policy { Discovery = new DiscoveryPolicy { RequireHttps = false } },
                 Browser = new WinFormsWebView()
             };
@@ -50,7 +43,7 @@ namespace TimeLog.DataImporter.Handlers
             //};
 
 
-            _oidcClient = new OidcClient(options);
+            _oidcClient = new OidcClient(_options);
         }
         public static AuthenticationHandler Instance
         {
@@ -60,10 +53,12 @@ namespace TimeLog.DataImporter.Handlers
             }
         }
 
-        public async void Authenticate()
+        public async Task<string> Authenticate()
         {
-            var result = await _oidcClient.LoginAsync();
-            _token = result.AccessToken;
+            var _result = await _oidcClient.LoginAsync();
+            Token = _result.AccessToken;
+
+            return Token;
         }
     }
 }

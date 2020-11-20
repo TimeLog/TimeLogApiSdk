@@ -47,15 +47,12 @@
             this.panel_NonMandatoryFields = new System.Windows.Forms.Panel();
             this.checkBox_defaultProjectCategoryID = new System.Windows.Forms.CheckBox();
             this.label_projectNo = new System.Windows.Forms.Label();
-            this.checkBox_defaultProjectTypeID = new System.Windows.Forms.CheckBox();
             this.comboBox_projectNo = new System.Windows.Forms.ComboBox();
             this.label_projectCategoryID = new System.Windows.Forms.Label();
             this.comboBox_description = new System.Windows.Forms.ComboBox();
             this.comboBox_projectCategoryID = new System.Windows.Forms.ComboBox();
             this.label_description = new System.Windows.Forms.Label();
-            this.label_projectTypeID = new System.Windows.Forms.Label();
             this.comboBox_projectStartDate = new System.Windows.Forms.ComboBox();
-            this.comboBox_projectTypeID = new System.Windows.Forms.ComboBox();
             this.label_projectStartDate = new System.Windows.Forms.Label();
             this.label_projectEndDate = new System.Windows.Forms.Label();
             this.comboBox_projectEndDate = new System.Windows.Forms.ComboBox();
@@ -64,14 +61,17 @@
             this.groupBox_projectMandatoryFields = new System.Windows.Forms.GroupBox();
             this.checkBox_defaultLegalEntityID = new System.Windows.Forms.CheckBox();
             this.checkBox_defaultProjectTemplateID = new System.Windows.Forms.CheckBox();
+            this.checkBox_defaultProjectTypeID = new System.Windows.Forms.CheckBox();
             this.checkBox_defaultCurrencyID = new System.Windows.Forms.CheckBox();
             this.label_projectLegalEntityID = new System.Windows.Forms.Label();
             this.comboBox_projectLegalEntityID = new System.Windows.Forms.ComboBox();
             this.label_projectCurrencyID = new System.Windows.Forms.Label();
+            this.label_projectTypeID = new System.Windows.Forms.Label();
             this.comboBox_projectCurrencyID = new System.Windows.Forms.ComboBox();
             this.label_projectManagerID = new System.Windows.Forms.Label();
             this.comboBox_projectManagerID = new System.Windows.Forms.ComboBox();
             this.label_projectTemplateID = new System.Windows.Forms.Label();
+            this.comboBox_projectTypeID = new System.Windows.Forms.ComboBox();
             this.comboBox_projectTemplateID = new System.Windows.Forms.ComboBox();
             this.label_projectCustomerID = new System.Windows.Forms.Label();
             this.comboBox_projectCustomerID = new System.Windows.Forms.ComboBox();
@@ -80,6 +80,7 @@
             this.label_projectSetup = new System.Windows.Forms.Label();
             this.button_projectSelectFile = new System.Windows.Forms.Button();
             this.tmrExpand = new System.Windows.Forms.Timer(this.components);
+            this.defaultToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panel_projectDataTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_project)).BeginInit();
             this.panel_projectMessage.SuspendLayout();
@@ -143,6 +144,8 @@
             this.textBox_projectImportMessages.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox_projectImportMessages.Size = new System.Drawing.Size(1006, 184);
             this.textBox_projectImportMessages.TabIndex = 0;
+            this.defaultToolTip.SetToolTip(this.textBox_projectImportMessages, "Validation or import status");
+            this.textBox_projectImportMessages.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox_projectImportMessages_MouseClick);
             // 
             // panel_projectButtons
             // 
@@ -171,6 +174,7 @@
             this.button_clear.Size = new System.Drawing.Size(80, 29);
             this.button_clear.TabIndex = 12;
             this.button_clear.Text = "Reset All";
+            this.defaultToolTip.SetToolTip(this.button_clear, "Reset all file input above and data table below");
             this.button_clear.UseVisualStyleBackColor = false;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
@@ -187,6 +191,7 @@
             this.button_import.Size = new System.Drawing.Size(80, 29);
             this.button_import.TabIndex = 7;
             this.button_import.Text = "Import";
+            this.defaultToolTip.SetToolTip(this.button_import, "Import all data");
             this.button_import.UseVisualStyleBackColor = false;
             this.button_import.Click += new System.EventHandler(this.button_import_Click);
             // 
@@ -203,6 +208,7 @@
             this.button_validate.Size = new System.Drawing.Size(80, 29);
             this.button_validate.TabIndex = 8;
             this.button_validate.Text = "Validate";
+            this.defaultToolTip.SetToolTip(this.button_validate, "Validate data input before importing data");
             this.button_validate.UseVisualStyleBackColor = false;
             this.button_validate.Click += new System.EventHandler(this.button_validate_Click);
             // 
@@ -219,6 +225,7 @@
             this.button_stop.Size = new System.Drawing.Size(80, 29);
             this.button_stop.TabIndex = 11;
             this.button_stop.Text = "Stop";
+            this.defaultToolTip.SetToolTip(this.button_stop, "Stop validation or import");
             this.button_stop.UseVisualStyleBackColor = false;
             this.button_stop.Click += new System.EventHandler(this.button_stop_Click);
             // 
@@ -243,9 +250,9 @@
             // 
             this.flowLayoutPanel_nonMandatoryFields.Controls.Add(this.panel_NonMandatoryButton);
             this.flowLayoutPanel_nonMandatoryFields.Controls.Add(this.panel_NonMandatoryFields);
-            this.flowLayoutPanel_nonMandatoryFields.Location = new System.Drawing.Point(586, 67);
+            this.flowLayoutPanel_nonMandatoryFields.Location = new System.Drawing.Point(589, 60);
             this.flowLayoutPanel_nonMandatoryFields.Name = "flowLayoutPanel_nonMandatoryFields";
-            this.flowLayoutPanel_nonMandatoryFields.Size = new System.Drawing.Size(372, 242);
+            this.flowLayoutPanel_nonMandatoryFields.Size = new System.Drawing.Size(372, 208);
             this.flowLayoutPanel_nonMandatoryFields.TabIndex = 7;
             // 
             // panel_NonMandatoryButton
@@ -287,33 +294,31 @@
             this.panel_NonMandatoryFields.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_NonMandatoryFields.Controls.Add(this.checkBox_defaultProjectCategoryID);
             this.panel_NonMandatoryFields.Controls.Add(this.label_projectNo);
-            this.panel_NonMandatoryFields.Controls.Add(this.checkBox_defaultProjectTypeID);
             this.panel_NonMandatoryFields.Controls.Add(this.comboBox_projectNo);
             this.panel_NonMandatoryFields.Controls.Add(this.label_projectCategoryID);
             this.panel_NonMandatoryFields.Controls.Add(this.comboBox_description);
             this.panel_NonMandatoryFields.Controls.Add(this.comboBox_projectCategoryID);
             this.panel_NonMandatoryFields.Controls.Add(this.label_description);
-            this.panel_NonMandatoryFields.Controls.Add(this.label_projectTypeID);
             this.panel_NonMandatoryFields.Controls.Add(this.comboBox_projectStartDate);
-            this.panel_NonMandatoryFields.Controls.Add(this.comboBox_projectTypeID);
             this.panel_NonMandatoryFields.Controls.Add(this.label_projectStartDate);
             this.panel_NonMandatoryFields.Controls.Add(this.label_projectEndDate);
             this.panel_NonMandatoryFields.Controls.Add(this.comboBox_projectEndDate);
             this.panel_NonMandatoryFields.Location = new System.Drawing.Point(3, 41);
-            this.panel_NonMandatoryFields.MaximumSize = new System.Drawing.Size(363, 194);
+            this.panel_NonMandatoryFields.MaximumSize = new System.Drawing.Size(363, 163);
             this.panel_NonMandatoryFields.MinimumSize = new System.Drawing.Size(363, 0);
             this.panel_NonMandatoryFields.Name = "panel_NonMandatoryFields";
-            this.panel_NonMandatoryFields.Size = new System.Drawing.Size(363, 194);
+            this.panel_NonMandatoryFields.Size = new System.Drawing.Size(363, 163);
             this.panel_NonMandatoryFields.TabIndex = 1;
             // 
             // checkBox_defaultProjectCategoryID
             // 
             this.checkBox_defaultProjectCategoryID.AutoSize = true;
-            this.checkBox_defaultProjectCategoryID.Location = new System.Drawing.Point(288, 164);
+            this.checkBox_defaultProjectCategoryID.Location = new System.Drawing.Point(288, 133);
             this.checkBox_defaultProjectCategoryID.Name = "checkBox_defaultProjectCategoryID";
             this.checkBox_defaultProjectCategoryID.Size = new System.Drawing.Size(70, 21);
             this.checkBox_defaultProjectCategoryID.TabIndex = 5;
             this.checkBox_defaultProjectCategoryID.Text = "Default";
+            this.defaultToolTip.SetToolTip(this.checkBox_defaultProjectCategoryID, "Set default values for all rows of a particular column field");
             this.checkBox_defaultProjectCategoryID.UseVisualStyleBackColor = true;
             this.checkBox_defaultProjectCategoryID.CheckedChanged += new System.EventHandler(this.checkBox_defaultProjectCategoryID_CheckedChanged);
             // 
@@ -325,17 +330,6 @@
             this.label_projectNo.Size = new System.Drawing.Size(72, 17);
             this.label_projectNo.TabIndex = 1;
             this.label_projectNo.Text = "Project No";
-            // 
-            // checkBox_defaultProjectTypeID
-            // 
-            this.checkBox_defaultProjectTypeID.AutoSize = true;
-            this.checkBox_defaultProjectTypeID.Location = new System.Drawing.Point(288, 133);
-            this.checkBox_defaultProjectTypeID.Name = "checkBox_defaultProjectTypeID";
-            this.checkBox_defaultProjectTypeID.Size = new System.Drawing.Size(70, 21);
-            this.checkBox_defaultProjectTypeID.TabIndex = 4;
-            this.checkBox_defaultProjectTypeID.Text = "Default";
-            this.checkBox_defaultProjectTypeID.UseVisualStyleBackColor = true;
-            this.checkBox_defaultProjectTypeID.CheckedChanged += new System.EventHandler(this.checkBox_defaultProjectTypeID_CheckedChanged);
             // 
             // comboBox_projectNo
             // 
@@ -349,7 +343,7 @@
             // label_projectCategoryID
             // 
             this.label_projectCategoryID.AutoSize = true;
-            this.label_projectCategoryID.Location = new System.Drawing.Point(10, 165);
+            this.label_projectCategoryID.Location = new System.Drawing.Point(10, 134);
             this.label_projectCategoryID.Name = "label_projectCategoryID";
             this.label_projectCategoryID.Size = new System.Drawing.Size(127, 17);
             this.label_projectCategoryID.TabIndex = 1;
@@ -367,7 +361,7 @@
             // comboBox_projectCategoryID
             // 
             this.comboBox_projectCategoryID.FormattingEnabled = true;
-            this.comboBox_projectCategoryID.Location = new System.Drawing.Point(143, 162);
+            this.comboBox_projectCategoryID.Location = new System.Drawing.Point(143, 131);
             this.comboBox_projectCategoryID.Name = "comboBox_projectCategoryID";
             this.comboBox_projectCategoryID.Size = new System.Drawing.Size(139, 25);
             this.comboBox_projectCategoryID.TabIndex = 3;
@@ -382,15 +376,6 @@
             this.label_description.TabIndex = 1;
             this.label_description.Text = "Description";
             // 
-            // label_projectTypeID
-            // 
-            this.label_projectTypeID.AutoSize = true;
-            this.label_projectTypeID.Location = new System.Drawing.Point(10, 134);
-            this.label_projectTypeID.Name = "label_projectTypeID";
-            this.label_projectTypeID.Size = new System.Drawing.Size(99, 17);
-            this.label_projectTypeID.TabIndex = 1;
-            this.label_projectTypeID.Text = "Project Type ID";
-            // 
             // comboBox_projectStartDate
             // 
             this.comboBox_projectStartDate.FormattingEnabled = true;
@@ -399,15 +384,6 @@
             this.comboBox_projectStartDate.Size = new System.Drawing.Size(139, 25);
             this.comboBox_projectStartDate.TabIndex = 3;
             this.comboBox_projectStartDate.SelectedIndexChanged += new System.EventHandler(this.comboBox_projectStartDate_SelectedIndexChanged);
-            // 
-            // comboBox_projectTypeID
-            // 
-            this.comboBox_projectTypeID.FormattingEnabled = true;
-            this.comboBox_projectTypeID.Location = new System.Drawing.Point(143, 131);
-            this.comboBox_projectTypeID.Name = "comboBox_projectTypeID";
-            this.comboBox_projectTypeID.Size = new System.Drawing.Size(139, 25);
-            this.comboBox_projectTypeID.TabIndex = 3;
-            this.comboBox_projectTypeID.SelectedIndexChanged += new System.EventHandler(this.comboBox_projectTypeID_SelectedIndexChanged);
             // 
             // label_projectStartDate
             // 
@@ -457,22 +433,25 @@
             // 
             this.groupBox_projectMandatoryFields.Controls.Add(this.checkBox_defaultLegalEntityID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.checkBox_defaultProjectTemplateID);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.checkBox_defaultProjectTypeID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.checkBox_defaultCurrencyID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectLegalEntityID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectLegalEntityID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectCurrencyID);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectTypeID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectCurrencyID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectManagerID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectManagerID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectTemplateID);
+            this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectTypeID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectTemplateID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectCustomerID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectCustomerID);
             this.groupBox_projectMandatoryFields.Controls.Add(this.label_projectName);
             this.groupBox_projectMandatoryFields.Controls.Add(this.comboBox_projectName);
-            this.groupBox_projectMandatoryFields.Location = new System.Drawing.Point(185, 78);
+            this.groupBox_projectMandatoryFields.Location = new System.Drawing.Point(184, 62);
             this.groupBox_projectMandatoryFields.Name = "groupBox_projectMandatoryFields";
-            this.groupBox_projectMandatoryFields.Size = new System.Drawing.Size(358, 227);
+            this.groupBox_projectMandatoryFields.Size = new System.Drawing.Size(358, 245);
             this.groupBox_projectMandatoryFields.TabIndex = 5;
             this.groupBox_projectMandatoryFields.TabStop = false;
             this.groupBox_projectMandatoryFields.Text = "Mandatory";
@@ -480,40 +459,55 @@
             // checkBox_defaultLegalEntityID
             // 
             this.checkBox_defaultLegalEntityID.AutoSize = true;
-            this.checkBox_defaultLegalEntityID.Location = new System.Drawing.Point(283, 185);
+            this.checkBox_defaultLegalEntityID.Location = new System.Drawing.Point(283, 181);
             this.checkBox_defaultLegalEntityID.Name = "checkBox_defaultLegalEntityID";
             this.checkBox_defaultLegalEntityID.Size = new System.Drawing.Size(70, 21);
             this.checkBox_defaultLegalEntityID.TabIndex = 6;
             this.checkBox_defaultLegalEntityID.Text = "Default";
+            this.defaultToolTip.SetToolTip(this.checkBox_defaultLegalEntityID, "Set default values for all rows of a particular column field");
             this.checkBox_defaultLegalEntityID.UseVisualStyleBackColor = true;
             this.checkBox_defaultLegalEntityID.CheckedChanged += new System.EventHandler(this.checkBox_defaultLegalEntityID_CheckedChanged);
             // 
             // checkBox_defaultProjectTemplateID
             // 
             this.checkBox_defaultProjectTemplateID.AutoSize = true;
-            this.checkBox_defaultProjectTemplateID.Location = new System.Drawing.Point(283, 92);
+            this.checkBox_defaultProjectTemplateID.Location = new System.Drawing.Point(283, 88);
             this.checkBox_defaultProjectTemplateID.Name = "checkBox_defaultProjectTemplateID";
             this.checkBox_defaultProjectTemplateID.Size = new System.Drawing.Size(70, 21);
             this.checkBox_defaultProjectTemplateID.TabIndex = 5;
             this.checkBox_defaultProjectTemplateID.Text = "Default";
+            this.defaultToolTip.SetToolTip(this.checkBox_defaultProjectTemplateID, "Set default values for all rows of a particular column field");
             this.checkBox_defaultProjectTemplateID.UseVisualStyleBackColor = true;
             this.checkBox_defaultProjectTemplateID.CheckedChanged += new System.EventHandler(this.checkBox_defaultProjectTemplateID_CheckedChanged);
+            // 
+            // checkBox_defaultProjectTypeID
+            // 
+            this.checkBox_defaultProjectTypeID.AutoSize = true;
+            this.checkBox_defaultProjectTypeID.Location = new System.Drawing.Point(283, 212);
+            this.checkBox_defaultProjectTypeID.Name = "checkBox_defaultProjectTypeID";
+            this.checkBox_defaultProjectTypeID.Size = new System.Drawing.Size(70, 21);
+            this.checkBox_defaultProjectTypeID.TabIndex = 4;
+            this.checkBox_defaultProjectTypeID.Text = "Default";
+            this.defaultToolTip.SetToolTip(this.checkBox_defaultProjectTypeID, "Set default values for all rows of a particular column field");
+            this.checkBox_defaultProjectTypeID.UseVisualStyleBackColor = true;
+            this.checkBox_defaultProjectTypeID.CheckedChanged += new System.EventHandler(this.checkBox_defaultProjectTypeID_CheckedChanged);
             // 
             // checkBox_defaultCurrencyID
             // 
             this.checkBox_defaultCurrencyID.AutoSize = true;
-            this.checkBox_defaultCurrencyID.Location = new System.Drawing.Point(283, 154);
+            this.checkBox_defaultCurrencyID.Location = new System.Drawing.Point(283, 150);
             this.checkBox_defaultCurrencyID.Name = "checkBox_defaultCurrencyID";
             this.checkBox_defaultCurrencyID.Size = new System.Drawing.Size(70, 21);
             this.checkBox_defaultCurrencyID.TabIndex = 4;
             this.checkBox_defaultCurrencyID.Text = "Default";
+            this.defaultToolTip.SetToolTip(this.checkBox_defaultCurrencyID, "Set default values for all rows of a particular column field");
             this.checkBox_defaultCurrencyID.UseVisualStyleBackColor = true;
             this.checkBox_defaultCurrencyID.CheckedChanged += new System.EventHandler(this.checkBox_defaultCurrencyID_CheckedChanged);
             // 
             // label_projectLegalEntityID
             // 
             this.label_projectLegalEntityID.AutoSize = true;
-            this.label_projectLegalEntityID.Location = new System.Drawing.Point(6, 186);
+            this.label_projectLegalEntityID.Location = new System.Drawing.Point(6, 182);
             this.label_projectLegalEntityID.Name = "label_projectLegalEntityID";
             this.label_projectLegalEntityID.Size = new System.Drawing.Size(95, 17);
             this.label_projectLegalEntityID.TabIndex = 1;
@@ -522,7 +516,7 @@
             // comboBox_projectLegalEntityID
             // 
             this.comboBox_projectLegalEntityID.FormattingEnabled = true;
-            this.comboBox_projectLegalEntityID.Location = new System.Drawing.Point(138, 183);
+            this.comboBox_projectLegalEntityID.Location = new System.Drawing.Point(138, 179);
             this.comboBox_projectLegalEntityID.Name = "comboBox_projectLegalEntityID";
             this.comboBox_projectLegalEntityID.Size = new System.Drawing.Size(139, 25);
             this.comboBox_projectLegalEntityID.TabIndex = 3;
@@ -531,16 +525,25 @@
             // label_projectCurrencyID
             // 
             this.label_projectCurrencyID.AutoSize = true;
-            this.label_projectCurrencyID.Location = new System.Drawing.Point(6, 155);
+            this.label_projectCurrencyID.Location = new System.Drawing.Point(6, 151);
             this.label_projectCurrencyID.Name = "label_projectCurrencyID";
             this.label_projectCurrencyID.Size = new System.Drawing.Size(79, 17);
             this.label_projectCurrencyID.TabIndex = 1;
             this.label_projectCurrencyID.Text = "Currency ID";
             // 
+            // label_projectTypeID
+            // 
+            this.label_projectTypeID.AutoSize = true;
+            this.label_projectTypeID.Location = new System.Drawing.Point(6, 213);
+            this.label_projectTypeID.Name = "label_projectTypeID";
+            this.label_projectTypeID.Size = new System.Drawing.Size(99, 17);
+            this.label_projectTypeID.TabIndex = 1;
+            this.label_projectTypeID.Text = "Project Type ID";
+            // 
             // comboBox_projectCurrencyID
             // 
             this.comboBox_projectCurrencyID.FormattingEnabled = true;
-            this.comboBox_projectCurrencyID.Location = new System.Drawing.Point(138, 152);
+            this.comboBox_projectCurrencyID.Location = new System.Drawing.Point(138, 148);
             this.comboBox_projectCurrencyID.Name = "comboBox_projectCurrencyID";
             this.comboBox_projectCurrencyID.Size = new System.Drawing.Size(139, 25);
             this.comboBox_projectCurrencyID.TabIndex = 3;
@@ -549,7 +552,7 @@
             // label_projectManagerID
             // 
             this.label_projectManagerID.AutoSize = true;
-            this.label_projectManagerID.Location = new System.Drawing.Point(6, 124);
+            this.label_projectManagerID.Location = new System.Drawing.Point(6, 120);
             this.label_projectManagerID.Name = "label_projectManagerID";
             this.label_projectManagerID.Size = new System.Drawing.Size(125, 17);
             this.label_projectManagerID.TabIndex = 1;
@@ -558,7 +561,7 @@
             // comboBox_projectManagerID
             // 
             this.comboBox_projectManagerID.FormattingEnabled = true;
-            this.comboBox_projectManagerID.Location = new System.Drawing.Point(138, 121);
+            this.comboBox_projectManagerID.Location = new System.Drawing.Point(138, 117);
             this.comboBox_projectManagerID.Name = "comboBox_projectManagerID";
             this.comboBox_projectManagerID.Size = new System.Drawing.Size(139, 25);
             this.comboBox_projectManagerID.TabIndex = 3;
@@ -567,16 +570,25 @@
             // label_projectTemplateID
             // 
             this.label_projectTemplateID.AutoSize = true;
-            this.label_projectTemplateID.Location = new System.Drawing.Point(6, 93);
+            this.label_projectTemplateID.Location = new System.Drawing.Point(6, 89);
             this.label_projectTemplateID.Name = "label_projectTemplateID";
             this.label_projectTemplateID.Size = new System.Drawing.Size(126, 17);
             this.label_projectTemplateID.TabIndex = 1;
             this.label_projectTemplateID.Text = "Project Template ID";
             // 
+            // comboBox_projectTypeID
+            // 
+            this.comboBox_projectTypeID.FormattingEnabled = true;
+            this.comboBox_projectTypeID.Location = new System.Drawing.Point(138, 210);
+            this.comboBox_projectTypeID.Name = "comboBox_projectTypeID";
+            this.comboBox_projectTypeID.Size = new System.Drawing.Size(139, 25);
+            this.comboBox_projectTypeID.TabIndex = 3;
+            this.comboBox_projectTypeID.SelectedIndexChanged += new System.EventHandler(this.comboBox_projectTypeID_SelectedIndexChanged);
+            // 
             // comboBox_projectTemplateID
             // 
             this.comboBox_projectTemplateID.FormattingEnabled = true;
-            this.comboBox_projectTemplateID.Location = new System.Drawing.Point(138, 90);
+            this.comboBox_projectTemplateID.Location = new System.Drawing.Point(138, 86);
             this.comboBox_projectTemplateID.Name = "comboBox_projectTemplateID";
             this.comboBox_projectTemplateID.Size = new System.Drawing.Size(139, 25);
             this.comboBox_projectTemplateID.TabIndex = 3;
@@ -585,7 +597,7 @@
             // label_projectCustomerID
             // 
             this.label_projectCustomerID.AutoSize = true;
-            this.label_projectCustomerID.Location = new System.Drawing.Point(6, 62);
+            this.label_projectCustomerID.Location = new System.Drawing.Point(6, 58);
             this.label_projectCustomerID.Name = "label_projectCustomerID";
             this.label_projectCustomerID.Size = new System.Drawing.Size(84, 17);
             this.label_projectCustomerID.TabIndex = 1;
@@ -594,7 +606,7 @@
             // comboBox_projectCustomerID
             // 
             this.comboBox_projectCustomerID.FormattingEnabled = true;
-            this.comboBox_projectCustomerID.Location = new System.Drawing.Point(138, 59);
+            this.comboBox_projectCustomerID.Location = new System.Drawing.Point(138, 55);
             this.comboBox_projectCustomerID.Name = "comboBox_projectCustomerID";
             this.comboBox_projectCustomerID.Size = new System.Drawing.Size(139, 25);
             this.comboBox_projectCustomerID.TabIndex = 3;
@@ -603,7 +615,7 @@
             // label_projectName
             // 
             this.label_projectName.AutoSize = true;
-            this.label_projectName.Location = new System.Drawing.Point(6, 31);
+            this.label_projectName.Location = new System.Drawing.Point(6, 27);
             this.label_projectName.Name = "label_projectName";
             this.label_projectName.Size = new System.Drawing.Size(90, 17);
             this.label_projectName.TabIndex = 1;
@@ -612,7 +624,7 @@
             // comboBox_projectName
             // 
             this.comboBox_projectName.FormattingEnabled = true;
-            this.comboBox_projectName.Location = new System.Drawing.Point(138, 28);
+            this.comboBox_projectName.Location = new System.Drawing.Point(138, 24);
             this.comboBox_projectName.Name = "comboBox_projectName";
             this.comboBox_projectName.Size = new System.Drawing.Size(139, 25);
             this.comboBox_projectName.TabIndex = 3;
@@ -641,6 +653,7 @@
             this.button_projectSelectFile.Size = new System.Drawing.Size(80, 29);
             this.button_projectSelectFile.TabIndex = 4;
             this.button_projectSelectFile.Text = "Select File";
+            this.defaultToolTip.SetToolTip(this.button_projectSelectFile, "Select input CSV file");
             this.button_projectSelectFile.UseVisualStyleBackColor = false;
             this.button_projectSelectFile.Click += new System.EventHandler(this.button_select_project_file_Click);
             // 
@@ -648,6 +661,10 @@
             // 
             this.tmrExpand.Interval = 10;
             this.tmrExpand.Tick += new System.EventHandler(this.tmrExpand_Tick);
+            // 
+            // defaultToolTip
+            // 
+            this.defaultToolTip.ShowAlways = true;
             // 
             // UserControl_ProjectImport
             // 
@@ -746,5 +763,6 @@
         private System.Windows.Forms.Label label_nonMandatoryFields;
         private System.Windows.Forms.Button button_expandNonMandatory;
         private System.Windows.Forms.Timer tmrExpand;
+        private System.Windows.Forms.ToolTip defaultToolTip;
     }
 }

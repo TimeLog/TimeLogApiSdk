@@ -12,6 +12,8 @@ namespace TimeLog.DataImporter.UserControls
 {
     public partial class UserControl_CustomerImport : UserControl
     {
+        #region Variable declarations
+
         private DataTable _customerTable;
         private DataTable _fileContent;
         private Button _senderButton;
@@ -94,6 +96,8 @@ namespace TimeLog.DataImporter.UserControls
         //set the number of pixels expanded per timer Tick
         private const int ExpansionPerTick = 7;
 
+        #endregion
+
         public UserControl_CustomerImport()
         {
             InitializeComponent();
@@ -109,6 +113,8 @@ namespace TimeLog.DataImporter.UserControls
         {
 
         }
+
+        #region Initialization methods
 
         private void InitializeExpandCollapsePanels()
         {
@@ -162,6 +168,10 @@ namespace TimeLog.DataImporter.UserControls
                 _customerTable.Columns.Add(_mandatoryField.Value);
             }
         }
+
+        #endregion
+
+        #region Functionalities implementations
 
         private void button_select_customer_file_Click(object sender, EventArgs e)
         {
@@ -432,14 +442,14 @@ namespace TimeLog.DataImporter.UserControls
                             if (_senderButton.Name == button_validate.Name)
                             {
                                 var _defaultApiResponse = CustomerHandler.Instance.ValidateCustomer(_newCustomer,
-                                    AuthenticationHandler.Instance._token, out var _businessRulesApiResponse);
+                                    AuthenticationHandler.Instance.Token, out var _businessRulesApiResponse);
 
                                 HandleApiResponse(_defaultApiResponse, _row, _businessRulesApiResponse);
                             }
                             else
                             {
                                 var _defaultApiResponse = CustomerHandler.Instance.ImportCustomer(_newCustomer,
-                                    AuthenticationHandler.Instance._token, out var _businessRulesApiResponse);
+                                    AuthenticationHandler.Instance.Token, out var _businessRulesApiResponse);
 
                                 HandleApiResponse(_defaultApiResponse, _row, _businessRulesApiResponse);
 
@@ -467,7 +477,7 @@ namespace TimeLog.DataImporter.UserControls
                     }
                     else
                     {
-                        Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Validation completed successfully with " + _errorRowCount + " error(s). You may recheck and modify the invalid input data based on the validation results above and then press Validate button again.")));
+                        Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Validation completed successfully with " + _errorRowCount + " error(s). You may modify the invalid input data based on the validation results above and then press Validate button again.")));
                     }
 
                     //enable import button when there is no error in validation
@@ -484,10 +494,10 @@ namespace TimeLog.DataImporter.UserControls
                 {
                     MessageBox.Show(_ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                //catch (Exception _ex)
-                //{
-                //    MessageBox.Show(_ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
+                catch (Exception _ex)
+                {
+                    MessageBox.Show(_ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
                 //reactivate buttons after work is done
                 Invoke((MethodInvoker)(() => button_validate.Enabled = true));
@@ -495,6 +505,8 @@ namespace TimeLog.DataImporter.UserControls
                 Invoke((MethodInvoker)(() => button_customerSelectFile.Enabled = true));
             }
         }
+
+        #endregion
 
         #region Helper methods
 
@@ -768,7 +780,7 @@ namespace TimeLog.DataImporter.UserControls
 
         private void GetAllCurrencyFromApi()
         {
-            var _apiResponse = CustomerHandler.Instance.GetAllCurrency(AuthenticationHandler.Instance._token);
+            var _apiResponse = CustomerHandler.Instance.GetAllCurrency(AuthenticationHandler.Instance.Token);
 
             if (_apiResponse != null)
             {
@@ -783,7 +795,7 @@ namespace TimeLog.DataImporter.UserControls
 
         private void GetAllCountryFromApi()
         {
-            var _apiResponse = CustomerHandler.Instance.GetAllCountry(AuthenticationHandler.Instance._token);
+            var _apiResponse = CustomerHandler.Instance.GetAllCountry(AuthenticationHandler.Instance.Token);
 
             if (_apiResponse != null)
             {
@@ -798,7 +810,7 @@ namespace TimeLog.DataImporter.UserControls
 
         private void GetAllCustomerStatusFromApi()
         {
-            var _apiResponse = CustomerHandler.Instance.GetAllCustomerStatus(AuthenticationHandler.Instance._token);
+            var _apiResponse = CustomerHandler.Instance.GetAllCustomerStatus(AuthenticationHandler.Instance.Token);
 
             if (_apiResponse != null)
             {
@@ -814,7 +826,7 @@ namespace TimeLog.DataImporter.UserControls
 
         private void GetAllPrimaryKAMFromApi()
         {
-            var _apiResponse = CustomerHandler.Instance.GetAllEmployee(AuthenticationHandler.Instance._token);
+            var _apiResponse = CustomerHandler.Instance.GetAllEmployee(AuthenticationHandler.Instance.Token);
 
             if (_apiResponse != null)
             {
@@ -829,7 +841,7 @@ namespace TimeLog.DataImporter.UserControls
 
         private void GetAllSecondaryKAMFromApi()
         {
-            var _apiResponse = CustomerHandler.Instance.GetAllEmployee(AuthenticationHandler.Instance._token);
+            var _apiResponse = CustomerHandler.Instance.GetAllEmployee(AuthenticationHandler.Instance.Token);
 
             if (_apiResponse != null)
             {
@@ -845,7 +857,7 @@ namespace TimeLog.DataImporter.UserControls
 
         private void GetAllIndustryFromApi()
         {
-            var _apiResponse = CustomerHandler.Instance.GetAllIndustry(AuthenticationHandler.Instance._token);
+            var _apiResponse = CustomerHandler.Instance.GetAllIndustry(AuthenticationHandler.Instance.Token);
 
             if (_apiResponse != null)
             {
@@ -860,7 +872,7 @@ namespace TimeLog.DataImporter.UserControls
 
         private void GetAllPaymentTermFromApi()
         {
-            var _apiResponse = CustomerHandler.Instance.GetAllPaymentTerm(AuthenticationHandler.Instance._token);
+            var _apiResponse = CustomerHandler.Instance.GetAllPaymentTerm(AuthenticationHandler.Instance.Token);
 
             if (_apiResponse != null)
             {
@@ -1724,7 +1736,7 @@ namespace TimeLog.DataImporter.UserControls
 
         #endregion
 
-        #region Checkbox implementation
+        #region Checkbox implementations
 
         private void checkBox_defaultCurrencyID_CheckedChanged(object sender, EventArgs e)
         {

@@ -222,7 +222,7 @@ namespace TimeLog.DataImporter.Handlers
         {
             try
             {
-                if (columnValue != DBNull.Value)
+                if (columnValue != DBNull.Value && columnValue.ToString() != "")
                 {
                     return Convert.ToInt32(columnValue);
                 }

@@ -12,10 +12,13 @@ namespace TimeLog.DataImporter.UserControls
 {
     public partial class UserControl_ProjectImport : UserControl
     {
+        #region Variable declarations
+
         private DataTable _projectTable;
         private DataTable _fileContent;
         private Button _senderButton;
         private bool _isRowValid = true;
+        private int _errorRowCount;
 
         private static readonly Dictionary<int, string> MandatoryFields = new Dictionary<int, string>
         {
@@ -24,7 +27,8 @@ namespace TimeLog.DataImporter.UserControls
             {2, "Project Template ID"},
             {3, "Project Manager ID"},
             {4, "Currency ID"},
-            {5, "Legal Entity ID"}
+            {5, "Legal Entity ID"},
+            {6, "Project Type ID"}
         };
 
         //all column header variables
@@ -56,6 +60,8 @@ namespace TimeLog.DataImporter.UserControls
         //set the number of pixels expanded per timer Tick
         private const int ExpansionPerTick = 7;
 
+        #endregion
+
         public UserControl_ProjectImport()
         {
             InitializeComponent();
@@ -71,6 +77,8 @@ namespace TimeLog.DataImporter.UserControls
         {
           
         }
+
+        #region Initialization methods
 
         private void InitializeExpandCollapsePanels()
         {
@@ -109,6 +117,10 @@ namespace TimeLog.DataImporter.UserControls
                 _projectTable.Columns.Add(_mandatoryField.Value);
             }
         }
+
+        #endregion
+
+        #region Functionalities implementations
 
         private void button_select_project_file_Click(object sender, EventArgs e)
         {
@@ -173,6 +185,26 @@ namespace TimeLog.DataImporter.UserControls
             dataGridView_project.DataSource = null;
             InitializeProjectDataTable();
             dataGridView_project.DataSource = _projectTable;
+        }
+
+        private void textBox_projectImportMessages_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                var _position = textBox_projectImportMessages.GetCharIndexFromPosition(e.Location);
+                var _lineNo = textBox_projectImportMessages.GetLineFromCharIndex(_position) - 1;
+
+                for (int i = 0; i < dataGridView_project.Rows.Count - 1; i++)
+                {
+                    if (i == _lineNo)
+                    {
+                        Invoke((MethodInvoker)(() => dataGridView_project.Rows[i].Selected = true));
+                        dataGridView_project.FirstDisplayedScrollingRowIndex = i;
+                        dataGridView_project.Focus();
+                        break;
+                    }
+                }
+            }
         }
 
         private void button_expand_Click(object sender, EventArgs e)
@@ -244,10 +276,17 @@ namespace TimeLog.DataImporter.UserControls
         {
             if (dataGridView_project != null && dataGridView_project.RowCount > 1)
             {
+                _isRowValid = true;
+                _errorRowCount = 0;
+
+                //while validating, deactivate other buttons
+                Invoke((MethodInvoker)(() => button_validate.Enabled = false));
+                Invoke((MethodInvoker)(() => button_import.Enabled = false));
+                Invoke((MethodInvoker)(() => button_clear.Enabled = false));
+                Invoke((MethodInvoker)(() => button_projectSelectFile.Enabled = false));
+
                 try
                 {
-                    _isRowValid = true;
-
                     foreach (DataGridViewRow _row in dataGridView_project.Rows)
                     {
                         if (WorkerFetcher.CancellationPending)
@@ -288,14 +327,14 @@ namespace TimeLog.DataImporter.UserControls
                             if (_senderButton.Name == button_validate.Name)
                             {
                                 var _defaultApiResponse = ProjectHandler.Instance.ValidateProject(_newProject,
-                                    AuthenticationHandler.Instance._token, out var _businessRulesApiResponse);
+                                    AuthenticationHandler.Instance.Token, out var _businessRulesApiResponse);
 
                                 HandleApiResponse(_defaultApiResponse, _row, _businessRulesApiResponse);
                             }
                             else
                             {
                                 var _defaultApiResponse = ProjectHandler.Instance.ImportProject(_newProject,
-                                    AuthenticationHandler.Instance._token, out var _businessRulesApiResponse);
+                                    AuthenticationHandler.Instance.Token, out var _businessRulesApiResponse);
 
                                 HandleApiResponse(_defaultApiResponse, _row, _businessRulesApiResponse);
 
@@ -304,6 +343,29 @@ namespace TimeLog.DataImporter.UserControls
                         }
                     }
 
+                    //show error row count at the end
+                    Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText(Environment.NewLine + Environment.NewLine)));
+                    Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText("Invalid data input row count: " + _errorRowCount)));
+                    Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText(Environment.NewLine + Environment.NewLine)));
+
+                    //display success message after import / validation is done
+                    if (_errorRowCount == 0)
+                    {
+                        if (_senderButton.Name == button_validate.Name)
+                        {
+                            Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText("Validation completed successfully with no error. You may press the Import button to start importing data right away.")));
+                        }
+                        else
+                        {
+                            Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText("Data import completed successfully with no error. Excellent!")));
+                        }
+                    }
+                    else
+                    {
+                        Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText("Validation completed successfully with " + _errorRowCount + " error(s). You may modify the invalid input data based on the validation results above and then press Validate button again.")));
+                    }
+
+                    //enable import button when there is no error in validation
                     if (_isRowValid)
                     {
                         Invoke((MethodInvoker)(() => button_import.Enabled = true));
@@ -317,12 +379,19 @@ namespace TimeLog.DataImporter.UserControls
                 {
                     MessageBox.Show(_ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                //catch (Exception _ex)
-                //{
-                //    MessageBox.Show(_ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //}
+                catch (Exception _ex)
+                {
+                    MessageBox.Show(_ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                //reactivate buttons after work is done
+                Invoke((MethodInvoker)(() => button_validate.Enabled = true));
+                Invoke((MethodInvoker)(() => button_clear.Enabled = true));
+                Invoke((MethodInvoker)(() => button_projectSelectFile.Enabled = true));
             }
         }
+
+        #endregion
 
         #region Helper methods
 
@@ -341,6 +410,7 @@ namespace TimeLog.DataImporter.UserControls
                     Invoke((MethodInvoker)(() => row.DefaultCellStyle.BackColor = Color.Red));
                     Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText(Environment.NewLine)));
                     Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText("Row " + (row.Index + 1) + " - " + defaultResponse.Message)));
+                    _errorRowCount++;
                     _isRowValid = false;
                 }
                 else if (defaultResponse.Code == 201)
@@ -349,6 +419,7 @@ namespace TimeLog.DataImporter.UserControls
                     Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText(Environment.NewLine)));
                     Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText("Row " + (row.Index + 1)
                        + " - " + defaultResponse.Message + " Details: " + string.Join("  ", defaultResponse.Details))));
+                    _errorRowCount++;
                     _isRowValid = false;
                 }
             }
@@ -361,6 +432,7 @@ namespace TimeLog.DataImporter.UserControls
                     Invoke((MethodInvoker)(() => textBox_projectImportMessages.AppendText("Row " + (row.Index + 1)
                        + " - " + businessRulesResponse.Message + " Details: "
                        + string.Join(".  ", businessRulesResponse.Details.Select(x => x.Message)))));
+                    _errorRowCount++;
                     _isRowValid = false;
                 }
             }
@@ -388,6 +460,10 @@ namespace TimeLog.DataImporter.UserControls
             {
                 Invoke((MethodInvoker)(() => _projectTable.Rows[i][tableColumnIndex] = _fileContent.Rows[i][fileColumnIndex]));
             }
+
+            dataGridView_project.Rows[0].Cells[tableColumnIndex].Selected = true;
+            dataGridView_project.FirstDisplayedScrollingColumnIndex = tableColumnIndex;
+            dataGridView_project.Focus();
         }
 
         private void MapDefaultValueToTable(int tableColumnIndex, string defaultValue)
@@ -396,6 +472,10 @@ namespace TimeLog.DataImporter.UserControls
             {
                 Invoke((MethodInvoker)(() => _projectTable.Rows[i][tableColumnIndex] = defaultValue));
             }
+
+            dataGridView_project.Rows[0].Cells[tableColumnIndex].Selected = true;
+            dataGridView_project.FirstDisplayedScrollingColumnIndex = tableColumnIndex;
+            dataGridView_project.Focus();
         }
 
         private void CheckAndAddColumn(string columnName)
@@ -468,7 +548,11 @@ namespace TimeLog.DataImporter.UserControls
 
         private void ClearAndResetAllCheckBoxes()
         {
+            checkBox_defaultProjectTemplateID.Checked = false;
             checkBox_defaultCurrencyID.Checked = false;
+            checkBox_defaultLegalEntityID.Checked = false;
+            checkBox_defaultProjectTypeID.Checked = false;
+            checkBox_defaultProjectCategoryID.Checked = false;
         }
 
         #endregion
@@ -477,22 +561,22 @@ namespace TimeLog.DataImporter.UserControls
 
         private void GetAllProjectTemplateFromApi()
         {
-            //var _apiResponse = ProjectHandler.Instance.GetAllProjectTemplate(AuthenticationHandler.Instance._token);
+            var _apiResponse = ProjectHandler.Instance.GetAllProjectTemplate(AuthenticationHandler.Instance.Token);
 
-            //if (_apiResponse != null)
-            //{
-            //    _projectTemplateIDList = new List<KeyValuePair<int, string>>();
+            if (_apiResponse != null)
+            {
+                _projectTemplateIDList = new List<KeyValuePair<int, string>>();
 
-            //    foreach (var _projectTemplate in _apiResponse)
-            //    {
-            //        _projectTemplateIDList.Add(new KeyValuePair<int, string>(_projectTemplate.ID, _projectTemplate.Name));
-            //    }
-            //}
+                foreach (var _projectTemplate in _apiResponse)
+                {
+                    _projectTemplateIDList.Add(new KeyValuePair<int, string>(_projectTemplate.ProjectTemplateID, _projectTemplate.ProjectTemplateName));
+                }
+            }
         }
 
         private void GetAllCurrencyFromApi()
         {
-            var _apiResponse = ProjectHandler.Instance.GetAllCurrency(AuthenticationHandler.Instance._token);
+            var _apiResponse = ProjectHandler.Instance.GetAllCurrency(AuthenticationHandler.Instance.Token);
 
             if (_apiResponse != null)
             {
@@ -507,47 +591,47 @@ namespace TimeLog.DataImporter.UserControls
 
         private void GetAllLegalEntityFromApi()
         {
-            //var _apiResponse = ProjectHandler.Instance.GetAllLegalEntity(AuthenticationHandler.Instance._token);
+            var _apiResponse = ProjectHandler.Instance.GetAllLegalEntity(AuthenticationHandler.Instance.Token);
 
-            //if (_apiResponse != null)
-            //{
-            //    _legalEntityIDList = new List<KeyValuePair<int, string>>();
+            if (_apiResponse != null)
+            {
+                _legalEntityIDList = new List<KeyValuePair<int, string>>();
 
-            //    foreach (var _legalEntity in _apiResponse)
-            //    {
-            //        _currencyIDList.Add(new KeyValuePair<int, string>(_legalEntity.ID, _legalEntity.Name));
-            //    }
-            //}
+                foreach (var _legalEntity in _apiResponse)
+                {
+                    _legalEntityIDList.Add(new KeyValuePair<int, string>(_legalEntity.LegalEntityID, _legalEntity.Name));
+                }
+            }
         }
 
         private void GetAllProjectTypeFromApi()
         {
-            //var _apiResponse = ProjectHandler.Instance.GetAllProjectType(AuthenticationHandler.Instance._token);
+            var _apiResponse = ProjectHandler.Instance.GetAllProjectType(AuthenticationHandler.Instance.Token);
 
-            //if (_apiResponse != null)
-            //{
-            //    _projectTypeIDList = new List<KeyValuePair<int, string>>();
+            if (_apiResponse != null)
+            {
+                _projectTypeIDList = new List<KeyValuePair<int, string>>();
 
-            //    foreach (var _projectType in _apiResponse)
-            //    {
-            //        _projectTypeIDList.Add(new KeyValuePair<int, string>(_projectType.ID, _projectType.Name));
-            //    }
-            //}
+                foreach (var _projectType in _apiResponse)
+                {
+                    _projectTypeIDList.Add(new KeyValuePair<int, string>(_projectType.ProjectTypeID, _projectType.Name));
+                }
+            }
         }
 
         private void GetAllProjectCategoryFromApi()
         {
-            //var _apiResponse = ProjectHandler.Instance.GetAllProjectCategory(AuthenticationHandler.Instance._token);
+            var _apiResponse = ProjectHandler.Instance.GetAllProjectCategory(AuthenticationHandler.Instance.Token);
 
-            //if (_apiResponse != null)
-            //{
-            //    _projectCategoryIDList = new List<KeyValuePair<int, string>>();
+            if (_apiResponse != null)
+            {
+                _projectCategoryIDList = new List<KeyValuePair<int, string>>();
 
-            //    foreach (var _projectCategory in _apiResponse)
-            //    {
-            //        _projectCategoryIDList.Add(new KeyValuePair<int, string>(_projectCategory.ID, _projectCategory.Name));
-            //    }
-            //}
+                foreach (var _projectCategory in _apiResponse)
+                {
+                    _projectCategoryIDList.Add(new KeyValuePair<int, string>(_projectCategory.ProjectCategoryID, _projectCategory.Name));
+                }
+            }
         }
 
         #endregion
@@ -656,13 +740,22 @@ namespace TimeLog.DataImporter.UserControls
 
         private void comboBox_projectTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var _columnIndex = _fileContent.Columns.IndexOf(comboBox_projectTemplateID.SelectedItem.ToString());
-
             var _tableColumnIndex = _projectTable.Columns.IndexOf(_projectTemplateID);
 
             ClearColumn(_tableColumnIndex);
 
-            MapFileContentToTable(_tableColumnIndex, _columnIndex);
+            if (!checkBox_defaultProjectTemplateID.Checked)
+            {
+                var _columnIndex = _fileContent.Columns.IndexOf(comboBox_projectTemplateID.SelectedItem.ToString());
+
+                MapFileContentToTable(_tableColumnIndex, _columnIndex);
+            }
+            else
+            {
+                var _defaultValue = (comboBox_projectTemplateID.SelectedItem as dynamic).Key.ToString();
+
+                MapDefaultValueToTable(_tableColumnIndex, _defaultValue);
+            }
 
             CheckCellsForNullOrEmpty(_tableColumnIndex);
         }
@@ -704,13 +797,22 @@ namespace TimeLog.DataImporter.UserControls
 
         private void comboBox_projectLegalEntity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var _columnIndex = _fileContent.Columns.IndexOf(comboBox_projectLegalEntityID.SelectedItem.ToString());
-
             var _tableColumnIndex = _projectTable.Columns.IndexOf(_legalEntityID);
 
             ClearColumn(_tableColumnIndex);
 
-            MapFileContentToTable(_tableColumnIndex, _columnIndex);
+            if (!checkBox_defaultLegalEntityID.Checked)
+            {
+                var _columnIndex = _fileContent.Columns.IndexOf(comboBox_projectLegalEntityID.SelectedItem.ToString());
+
+                MapFileContentToTable(_tableColumnIndex, _columnIndex);
+            }
+            else
+            {
+                var _defaultValue = (comboBox_projectLegalEntityID.SelectedItem as dynamic).Key.ToString();
+
+                MapDefaultValueToTable(_tableColumnIndex, _defaultValue);
+            }
 
             CheckCellsForNullOrEmpty(_tableColumnIndex);
         }
@@ -777,37 +879,53 @@ namespace TimeLog.DataImporter.UserControls
 
         private void comboBox_projectTypeID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var _columnIndex = _fileContent.Columns.IndexOf(comboBox_projectTypeID.SelectedItem.ToString());
-
-            CheckAndAddColumn(_projectTypeID);
-
             var _tableColumnIndex = _projectTable.Columns.IndexOf(_projectTypeID);
 
             ClearColumn(_tableColumnIndex);
 
-            MapFileContentToTable(_tableColumnIndex, _columnIndex);
+            if (!checkBox_defaultProjectTypeID.Checked)
+            {
+                var _columnIndex = _fileContent.Columns.IndexOf(comboBox_projectTypeID.SelectedItem.ToString());
+
+                MapFileContentToTable(_tableColumnIndex, _columnIndex);
+            }
+            else
+            {
+                var _defaultValue = (comboBox_projectTypeID.SelectedItem as dynamic).Key.ToString();
+
+                MapDefaultValueToTable(_tableColumnIndex, _defaultValue);
+            }
 
             CheckCellsForNullOrEmpty(_tableColumnIndex);
         }
 
         private void comboBox_projectCategoryID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var _columnIndex = _fileContent.Columns.IndexOf(comboBox_projectCategoryID.SelectedItem.ToString());
-
             CheckAndAddColumn(_projectCategoryID);
 
             var _tableColumnIndex = _projectTable.Columns.IndexOf(_projectCategoryID);
 
             ClearColumn(_tableColumnIndex);
 
-            MapFileContentToTable(_tableColumnIndex, _columnIndex);
+            if (!checkBox_defaultProjectCategoryID.Checked)
+            {
+                var _columnIndex = _fileContent.Columns.IndexOf(comboBox_projectCategoryID.SelectedItem.ToString());
+
+                MapFileContentToTable(_tableColumnIndex, _columnIndex);
+            }
+            else
+            {
+                var _defaultValue = (comboBox_projectCategoryID.SelectedItem as dynamic).Key.ToString();
+
+                MapDefaultValueToTable(_tableColumnIndex, _defaultValue);
+            }
 
             CheckCellsForNullOrEmpty(_tableColumnIndex);
         }
 
         #endregion
 
-        #region Checkbox implementation
+        #region Checkbox implementations
 
         private void checkBox_defaultCurrencyID_CheckedChanged(object sender, EventArgs e)
         {
