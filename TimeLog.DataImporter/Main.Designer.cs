@@ -39,10 +39,13 @@ namespace TimeLog.DataImporter
             this.userControl_ProjectImport1 = new UserControl_ProjectImport();
             this.tabPage_help = new System.Windows.Forms.TabPage();
             this.userControl_Help1 = new UserControl_Help();
+            this.tabPage_logout = new System.Windows.Forms.TabPage();
+            this.userControl_Logout1 = new UserControl_Logout();
             this.tabControl1.SuspendLayout();
             this.tabPage_customer.SuspendLayout();
             this.tabPage_project.SuspendLayout();
             this.tabPage_help.SuspendLayout();
+            this.tabPage_logout.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -50,6 +53,7 @@ namespace TimeLog.DataImporter
             this.tabControl1.Controls.Add(this.tabPage_customer);
             this.tabControl1.Controls.Add(this.tabPage_project);
             this.tabControl1.Controls.Add(this.tabPage_help);
+            this.tabControl1.Controls.Add(this.tabPage_logout);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Multiline = true;
@@ -119,6 +123,26 @@ namespace TimeLog.DataImporter
             this.userControl_Help1.Size = new System.Drawing.Size(992, 908);
             this.userControl_Help1.TabIndex = 0;
             // 
+            // tabPage_logout
+            // 
+            this.tabPage_logout.AutoScroll = true;
+            this.tabPage_logout.Controls.Add(this.userControl_Logout1);
+            this.tabPage_logout.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_logout.Name = "tabPage_logout";
+            this.tabPage_logout.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_logout.Size = new System.Drawing.Size(998, 914);
+            this.tabPage_logout.TabIndex = 3;
+            this.tabPage_logout.Text = "Logout";
+            this.tabPage_help.UseVisualStyleBackColor = true;
+            // 
+            // userControl_Logout1
+            // 
+            this.userControl_Logout1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userControl_Logout1.Location = new System.Drawing.Point(3, 3);
+            this.userControl_Logout1.Name = "userControl_Logout1";
+            this.userControl_Logout1.Size = new System.Drawing.Size(992, 908);
+            this.userControl_Logout1.TabIndex = 0;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -134,6 +158,7 @@ namespace TimeLog.DataImporter
             this.tabPage_customer.ResumeLayout(false);
             this.tabPage_project.ResumeLayout(false);
             this.tabPage_help.ResumeLayout(false);
+            this.tabPage_logout.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -144,8 +169,10 @@ namespace TimeLog.DataImporter
         public TabPage tabPage_customer;
         public TabPage tabPage_project;
         public TabPage tabPage_help;
+        public TabPage tabPage_logout;
         public UserControl_CustomerImport userControl_CustomerImport1;
         public UserControl_ProjectImport userControl_ProjectImport1;
         public UserControl_Help userControl_Help1;
+        public UserControl_Logout userControl_Logout1;
     }
 }

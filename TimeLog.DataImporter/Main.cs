@@ -5,7 +5,6 @@ namespace TimeLog.DataImporter
 {
     public partial class Main : Form
     {
-
         public Main()
         {
             InitializeComponent();

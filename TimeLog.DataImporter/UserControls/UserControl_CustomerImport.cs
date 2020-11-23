@@ -439,16 +439,18 @@ namespace TimeLog.DataImporter.UserControls
                                     ? CustomerHandler.Instance.CheckAndGetDouble(_VATPercentage, _row.Cells[dataGridView_customer.Columns[_VATPercentage].Index].Value) : 0
                             };
 
+                            DefaultApiResponse _defaultApiResponse;
+
                             if (_senderButton.Name == button_validate.Name)
                             {
-                                var _defaultApiResponse = CustomerHandler.Instance.ValidateCustomer(_newCustomer,
+                                _defaultApiResponse = CustomerHandler.Instance.ValidateCustomer(_newCustomer,
                                     AuthenticationHandler.Instance.Token, out var _businessRulesApiResponse);
 
                                 HandleApiResponse(_defaultApiResponse, _row, _businessRulesApiResponse);
                             }
                             else
                             {
-                                var _defaultApiResponse = CustomerHandler.Instance.ImportCustomer(_newCustomer,
+                                _defaultApiResponse = CustomerHandler.Instance.ImportCustomer(_newCustomer,
                                     AuthenticationHandler.Instance.Token, out var _businessRulesApiResponse);
 
                                 HandleApiResponse(_defaultApiResponse, _row, _businessRulesApiResponse);
@@ -477,7 +479,7 @@ namespace TimeLog.DataImporter.UserControls
                     }
                     else
                     {
-                        Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Validation completed successfully with " + _errorRowCount + " error(s). You may modify the invalid input data based on the validation results above and then press Validate button again.")));
+                        Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Validation completed successfully with " + _errorRowCount + " error(s). You may modify the invalid input data and then press Validate button again.")));
                     }
 
                     //enable import button when there is no error in validation
@@ -527,6 +529,8 @@ namespace TimeLog.DataImporter.UserControls
                     Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1) + " - " + defaultResponse.Message)));
                     _errorRowCount++;
                     _isRowValid = false;
+                    //return to login page if token has expired
+                    RedirectToLoginPage();
                 }
                 else if (defaultResponse.Code == 201)
                 {
@@ -534,6 +538,14 @@ namespace TimeLog.DataImporter.UserControls
                     Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
                     Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1)
                        + " - " + defaultResponse.Message + " Details: " + string.Join("  ", defaultResponse.Details))));
+                    _errorRowCount++;
+                    _isRowValid = false;
+                }
+                else if (defaultResponse.Code == 500)
+                {
+                    Invoke((MethodInvoker)(() => row.DefaultCellStyle.BackColor = Color.Red));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText(Environment.NewLine)));
+                    Invoke((MethodInvoker)(() => textBox_customerImportMessages.AppendText("Row " + (row.Index + 1) + " - " + defaultResponse.Message)));
                     _errorRowCount++;
                     _isRowValid = false;
                 }
@@ -551,6 +563,16 @@ namespace TimeLog.DataImporter.UserControls
                     _isRowValid = false;
                 }
             }
+        }
+
+        private void RedirectToLoginPage()
+        {
+            MessageBox.Show("Authentication token has expired. You will be redirected to the Login page to login again.",
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            WorkerFetcher.CancelAsync();
+            Invoke((MethodInvoker)(() => Login.MainForm.Hide()));
+            Invoke((MethodInvoker)(() => Program.LoginForm.Show()));
         }
 
         private void AddFileColumnHeaderToComboBox(object[] fileColumnHeaderArray)

@@ -33,9 +33,14 @@ namespace TimeLog.DataImporter.Handlers
 
             try
             {
-                string _jsonResult = ApiHelper.Instance.WebClient(token).UploadString(_address, "POST", _data);
+                var _jsonResult = ApiHelper.Instance.WebClient(token).UploadString(_address, "POST", _data);
 
-                return new DefaultApiResponse(200, "OK", new string[] { });
+                if (_jsonResult == "null")
+                {
+                    return new DefaultApiResponse(200, "OK", new string[] { });
+                }
+
+                return new DefaultApiResponse(500, "Internal Application Error: Fail to Validate Project", new string[] { });
             }
             catch (WebException _webEx)
             {
@@ -55,9 +60,14 @@ namespace TimeLog.DataImporter.Handlers
 
             try
             {
-                string _jsonResult = ApiHelper.Instance.WebClient(token).UploadString(_address, "POST", _data);
+                var _jsonResult = ApiHelper.Instance.WebClient(token).UploadString(_address, "POST", _data);
 
-                return new DefaultApiResponse(200, "OK", new string[] { });
+                if (_jsonResult == "null")
+                {
+                    return new DefaultApiResponse(200, "OK", new string[] { });
+                }
+
+                return new DefaultApiResponse(500, "Internal Application Error: Fail to Import Project", new string[] { });
             }
             catch (WebException _webEx)
             {

@@ -5,6 +5,8 @@ namespace TimeLog.DataImporter
 {
     static class Program
     {
+        public static Login LoginForm;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -13,7 +15,10 @@ namespace TimeLog.DataImporter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+
+            LoginForm ??= new Login();
+
+            Application.Run(LoginForm);
         }
     }
 }

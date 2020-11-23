@@ -45,7 +45,7 @@
             this.panel_login.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.panel_login.Location = new System.Drawing.Point(0, 0);
             this.panel_login.Name = "panel_login";
-            this.panel_login.Size = new System.Drawing.Size(1006, 942);
+            this.panel_login.Size = new System.Drawing.Size(990, 903);
             this.panel_login.TabIndex = 0;
             // 
             // label_loginText
@@ -54,7 +54,7 @@
             this.label_loginText.BackColor = System.Drawing.Color.Transparent;
             this.label_loginText.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_loginText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label_loginText.Location = new System.Drawing.Point(223, 329);
+            this.label_loginText.Location = new System.Drawing.Point(217, 329);
             this.label_loginText.Name = "label_loginText";
             this.label_loginText.Size = new System.Drawing.Size(573, 25);
             this.label_loginText.TabIndex = 2;
@@ -66,7 +66,7 @@
             this.label_login.BackColor = System.Drawing.Color.Transparent;
             this.label_login.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label_login.Location = new System.Drawing.Point(189, 182);
+            this.label_login.Location = new System.Drawing.Point(183, 182);
             this.label_login.Name = "label_login";
             this.label_login.Size = new System.Drawing.Size(648, 50);
             this.label_login.TabIndex = 1;
@@ -80,7 +80,7 @@
             this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_login.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_login.ForeColor = System.Drawing.Color.White;
-            this.button_login.Location = new System.Drawing.Point(418, 364);
+            this.button_login.Location = new System.Drawing.Point(412, 364);
             this.button_login.Margin = new System.Windows.Forms.Padding(10);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(174, 39);
@@ -89,18 +89,19 @@
             this.button_login.UseVisualStyleBackColor = false;
             this.button_login.Click += new System.EventHandler(this.LoginButton_Click);
             // 
-            // UserControl_Login
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Size = new System.Drawing.Size(1006, 942);
+            this.ClientSize = new System.Drawing.Size(990, 903);
             this.Controls.Add(this.panel_login);
-            this.Name = "Login";
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Login";
             this.Text = "TimeLog Data Importer";
             this.panel_login.ResumeLayout(false);
             this.panel_login.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion

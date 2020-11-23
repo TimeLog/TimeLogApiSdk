@@ -6,6 +6,8 @@ namespace TimeLog.DataImporter
 {
     public partial class Login : Form
     {
+        public static Main MainForm;
+
         public Login()
         {
             InitializeComponent();
@@ -19,9 +21,14 @@ namespace TimeLog.DataImporter
             if (!string.IsNullOrEmpty(_token))
             {
                 Hide();
-                var _mainForm = new Main();
-                _mainForm.Closed += (s, args) => this.Close();
-                _mainForm.Show();
+
+                if (MainForm == null)
+                {
+                    MainForm = new Main();
+                    MainForm.Closed += (s, args) => Close();
+                }
+
+                MainForm.Show();
             }
         }
     }

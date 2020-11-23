@@ -57,8 +57,14 @@ namespace TimeLog.DataImporter.Handlers
         {
             var _result = await _oidcClient.LoginAsync();
             Token = _result.AccessToken;
-
+            //_result.RefreshToken;  //need to implement auto refresh token
             return Token;
+        }
+
+        public async Task<string> Logout()
+        {
+            var _result = await _oidcClient.LogoutAsync();
+            return _result.Error;
         }
     }
 }
