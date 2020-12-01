@@ -44,6 +44,7 @@
   <tlp:InvHours>0.0000</tlp:InvHours>
   <tlp:InvAmount>0.0000</tlp:InvAmount>
   <tlp:CostAmount>1100.0000</tlp:CostAmount>
+  <tlp:CostAmountCurrency>1100.0000</tlp:CostAmountCurrency>
   <tlp:InvoiceStatus>0</tlp:InvoiceStatus>
   <tlp:BillableStatus>1</tlp:BillableStatus>
   <tlp:IsBillable>1</tlp:IsBillable>

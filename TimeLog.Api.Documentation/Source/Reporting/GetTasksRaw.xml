@@ -16,6 +16,7 @@
     <tlp:IsParent>0</tlp:IsParent>
     <tlp:BudgetHours>100.0000</tlp:BudgetHours>
     <tlp:BudgetAmount>15000.0000</tlp:BudgetAmount>
+    <tlp:BudgetAmountCurrency>15000.000</tlp:BudgetAmountCurrency>
     <tlp:IsFixedPrice>1</tlp:IsFixedPrice>
     <tlp:StartDate>2018-07-20T00:00:00</tlp:StartDate>
     <tlp:EndDate>2018-10-19T00:00:00</tlp:EndDate>
@@ -41,6 +42,7 @@
     <tlp:IsParent>0</tlp:IsParent>
     <tlp:BudgetHours>100.0000</tlp:BudgetHours>
     <tlp:BudgetAmount>15000.0000</tlp:BudgetAmount>
+    <tlp:BudgetAmountCurrency>15000.000</tlp:BudgetAmountCurrency>
     <tlp:IsFixedPrice>1</tlp:IsFixedPrice>
     <tlp:StartDate>2018-07-20T00:00:00</tlp:StartDate>
     <tlp:EndDate>2018-10-19T00:00:00</tlp:EndDate>

@@ -554,6 +554,23 @@
             <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_2.EmployeeHeader"/>
             <returns>Details of the new employee</returns>
         </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_3.IRecurringProjectProductFutureInstanceReportingApiAdapter">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_3.IRecurringProjectProductFutureInstanceReportingApiAdapter.DomainToApi(TimeLog.TLP.Recurring.IRecurringProjectProductFutureInstanceReportingApiReadModel)">
+            <summary>
+            Converts a readModel object to an API object
+            </summary>
+            <param name="readModel">The readModel object</param>
+            <returns>API object</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_3.RecurringProjectProductFutureInstanceReportingApiAdapter">
+            <summary>
+            RecurringProjectProductFutureInstanceReportingApiAdapter for API
+            </summary>
+        </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_3.ContractAdapter">
             <summary>
             Contractadapter for API
@@ -710,6 +727,36 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns></returns>
         </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetRecurringProductSaleList(System.Int32,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Get future instances of recurring product sale
+            </summary>
+            <param name="projectID"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.UpdateProductCostPriceAndDelegate(TimeLog.TLP.API.Proxy.Financial.V1_3.Product,System.Boolean,System.DateTime,System.Boolean,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Update the cost price of the product object and delegate the change to its associated products
+            </summary>
+            <param name="product">Product details (Product)--></param>
+            <param name="updateRelatedProductSale">Set to true to update the associated products--></param>
+            <param name="changeDate">Start date to change--></param>
+            <param name="updateLockedRegistrations">Set to true to update the invoiced products and the products in closed accounting period</param>
+            <param name="source">Interface source number, in most cases use 0 (int)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetProductList(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Get a list of products based on status
+            </summary>
+            <param name="status">Status of the product (All = -1; Inactive = 0; Active = 1)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>An array of product objects</returns>
+        </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_3.FinancialServiceSecure">
             <summary>
             Financial service for pricelists, currencies and services
@@ -772,6 +819,18 @@
             The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_3.LegalEntity"/>.
             </returns>
         </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_3.IProductAdapter">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_3.IProductAdapter.DomainToApi(TimeLog.TLP.Expenses.Product.IProduct)">
+            <summary>
+            Converts a domain object to an API object
+            </summary>
+            <param name="domain">The domain object</param>
+            <returns>API object</returns>
+        </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_3.IPaymentAdapter">
             <summary>
             TODO: Update summary.
@@ -831,6 +890,11 @@
             <returns>
             The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_3.LegalEntity"/>.
             </returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_3.ProductAdapter">
+            <summary>
+            Productadapter for API
+            </summary>
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_3.PaymentAdapter">
             <summary>
@@ -5334,6 +5398,13 @@
             The <see cref="T:TimeLog.TLP.ProjectManagement.IAllocation"/>.
             </returns>
         </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.IAllocationAdapter.ValidateContractHourlyRateOnAllocation(System.Int32,TimeLog.TLP.ProjectManagement.IAllocation)">
+            <summary>
+            validates if an id is a valid contract hourly rate id for an allocation
+            </summary>
+            <param name="contractHourlyRateID">the contract hourly rate id to validate</param>
+            <param name="allocation">the allocation</param>
+        </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.IProjectAdapter">
             <summary>
             The ProjectAdapter interface.
@@ -5989,30 +6060,37 @@
             <returns>A list of work units in a flat format</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetWorkChangesPaged(System.String,System.DateTime,System.DateTime,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
-            <summary>
-            Gets a paged list of work unit changes in a flat format including all details.
-            Note that this feed includes all changes and the change log is only available 
-            for the last 3 months. No log data is available before January 1st 2014. 
-            </summary>
-            <param name="initials">Provide initials to only get work units from one employee, otherwise use an empty string (string)</param>
-            <param name="registrationStartDate">Date of registration to start fetching work units from (DateTime)</param>
-            <param name="registrationEndDate">Date of registration to fetching work units to (DateTime)</param>
-            <param name="changeStartDate">Date of change to start fetching work units from (DateTime)</param>
-            <param name="changeEndDate">Date of change to fetching work units to (DateTime)</param>
-            <param name="page">Page to get results from (int)</param>
-            <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
-            <param name="token">Security token associated with the request (SecurityToken)</param>
-            <remarks>
-            <para>For deleted work units, only the data action
-            and the work unit guid is available. This is also true for creation or update actions
-            with a later delete action. Read them in ascending order by action date.</para>
-            <para>Example: If today is Jan 6th and a user adds a new registration for work carried out on Jan 3rd.
-            Then Jan 6th is the change-date and Jan 3rd is the registration-date. If the user edits the same registration
-            on Jan 7th, then both changes will be returned (if both are within the change-date-interval).</para>
-            <para>Security requirements: System administrator</para>
-            </remarks>
-            <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat"/>
-            <returns>A list of work units in a flat format</returns>
+             <summary>
+             Gets a paged list of work unit changes in a flat format including all details.
+             Note that this feed includes all changes and the change log is only available 
+             for the last 3 months. No log data is available before January 1st 2014. 
+             </summary>
+             <param name="initials">Provide initials to only get work units from one employee, otherwise use an empty string (string)</param>
+             <param name="registrationStartDate">Date of registration to start fetching work units from (DateTime)</param>
+             <param name="registrationEndDate">Date of registration to fetching work units to (DateTime)</param>
+             <param name="changeStartDate">Date of change to start fetching work units from (DateTime)</param>
+             <param name="changeEndDate">Date of change to fetching work units to (DateTime)</param>
+             <param name="page">Page to get results from (int)</param>
+             <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
+             <param name="token">Security token associated with the request (SecurityToken)</param>
+             <remarks>
+             For deleted work units, only the data action and the work unit guid is available. This is also true for creation or update actions with a later delete action. Read them in ascending order by action date.
+            
+             Example: If today is Jan 6th and a user adds a new registration for work carried out on Jan 3rd. Then Jan 6th is the change-date and Jan 3rd is the registration-date. If the user edits the same registration on Jan 7th, then both changes will be returned (if both are within the change-date-interval).
+            
+             Security requirements: System administrator
+            
+             ApprovalStatus can have one of the following values:
+             - NotSpecified (0)
+             - EmployeeManagerRejected (1)
+             - EmployeeManagerRejectedAndResolved (2)
+             - EmployeeManagerApproved (3)
+             - ProjectManagerRejected (4)
+             - ProjectManagerRejectedAndResolved (5)
+             - ProjectManagerApproved (6)
+             </remarks>
+             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat"/>
+             <returns>A list of work units in a flat format</returns>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetProjectTasksPaged(System.Guid,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
@@ -6041,6 +6119,26 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat"/>
             <returns>A list of work units in a flat format</returns>
+            <remarks>
+            ApprovalStatus can have one of the following values:
+            - NotSpecified (0)
+            - EmployeeManagerRejected (1)
+            - EmployeeManagerRejectedAndResolved (2)
+            - EmployeeManagerApproved (3)
+            - ProjectManagerRejected (4)
+            - ProjectManagerRejectedAndResolved (5)
+            - ProjectManagerApproved (6)
+            </remarks>
+        </member>
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ChangeAllocationsHourlyRate(System.Int32,System.Int32,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Recalculates the financial values of the registrations belonging to an allocation, given a start date
+            </summary>
+            <param name="allocationId">The allocation identifier to recalculate the financial values</param>
+            <param name="contractHourlyRateID">The identifier of the new hourly rate</param>
+            <param name="startDate">The date when the recalculation should be done for the registrations</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns></returns>
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementServiceSecure">
             <summary>

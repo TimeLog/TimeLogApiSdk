@@ -181,6 +181,66 @@
             Gets or sets the contracttype
             </summary>
         </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.ProductID">
+            <summary>
+            Get or set the identifier for the product
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.GUID">
+            <summary>
+            Get or set the GUID for the product
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.Name">
+            <summary>
+            Get or set the name of the product 
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.ProductNumber">
+            <summary>
+            Get or set the product number
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.CostPerUnit">
+            <summary>
+            Get or set the cost per unit
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.CostCurrencyID">
+            <summary>
+            Get or set the cost currency identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.CostCurrencyISO">
+            <summary>
+            Get or set the cost currency ISO
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.SalesPricePerUnit">
+            <summary>
+            Get or set the sales price per unit
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.UnitType">
+            <summary>
+            Get or set the unit type
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.IsActive">
+            <summary>
+            Get or set the status of the product
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.SupplierID">
+            <summary>
+            Get or set the supplier identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Product.LegalEntityID">
+            <summary>
+            Get or set the legal entity identifier (0 for all legal entities)
+            </summary>
+        </member>
         <member name="P:TimeLog.TLP.API.Proxy.Financial.V1_3.Payment.PaymentID">
             <summary>
             Get or sets the identifier for the payment
@@ -4026,6 +4086,97 @@
             </summary>
             <returns>A list of RequestParameter objects</returns>
         </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.AbsenceCodeGuid">
+            <summary>
+            Gets or sets the identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.Code">
+            <summary>
+            Gets or sets the absence code number
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.CodeForSalaryIntegration">
+            <summary>
+            Gets or sets the absence code used in salary integrations
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.Description">
+            <summary>
+            Gets or sets the description
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.FlexPositiveFactor">
+            <summary>
+            Gets or sets the flex factor
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.IsActive">
+            <summary>
+            Gets or sets a value indicating whether the absence code is active
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.IsTransferredToSalaryIntegration">
+            <summary>
+            Gets or sets a value indicating whether the absence should be transferred to a salary integration
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.Name">
+            <summary>
+            Gets or sets the name
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.SalaryAccountFactor">
+            <summary>
+            Gets or sets the factor the absence registrations must represent on the salary account
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.SalaryAccountFactorEffect">
+            <summary>
+            Gets or sets the effect of absence registration on the salary account for this absence code. [Substracts (-1), Adds (1)]
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.SalaryAccountID">
+            <summary>
+            Gets or sets the related salary account identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.TimeTrackingFormat">
+            <summary>
+            Gets or sets the TimeTrackingFormat [Hours (0), FullDay (1), HalfDay (2), YesNo (3), Count (4)]
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.AbsenceCodeID">
+            <summary>
+            Gets or sets the absence code identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.AbsenceCodeTypeID">
+            <summary>
+            Gets or sets the absence code type identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.DeductCapacity">
+            <summary>
+            Gets or sets a value indicating whether absence of this code deducts from employee capacity
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.IsPublicVisible">
+            <summary>
+            Gets or sets a value indicating whether this absence code is available for everyone
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.RequireApproval">
+            <summary>
+            Gets or sets a value indicating whether absence registered on this absence code needs approval
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Salary.V1_1.AbsenceCode.GetRequestParameters">
+            <summary>
+            Summarizes the object
+            </summary>
+            <returns>A list of RequestParameter objects</returns>
+        </member>
         <member name="T:TimeLog.TLP.API.Proxy.Salary.V1_1.Allowance">
             <summary>
             Represents an allowance legislation
@@ -4153,7 +4304,7 @@
         </member>
         <member name="M:TimeLog.TLP.API.Proxy.Salary.V1_1.Salary.GetRequestParameters">
             <summary>
-            Sumarizes the object
+            Summarizes the object
             </summary>
             <returns>A list of RequestParameter objects</returns>
         </member>

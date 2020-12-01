@@ -34,6 +34,7 @@
       <xsd:element name="TaskCategory" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="BudgetHours" type="xsd:decimal" />
       <xsd:element name="BudgetAmount" type="xsd:decimal" />
+      <xsd:element name="BudgetAmountCurrency" type="xsd:decimal" />
       <xsd:element name="IsFixedPrice" type="xsd:boolean" />
       <xsd:element name="StartDate" type="xsd:dateTime" />
       <xsd:element name="EndDate" type="xsd:dateTime" />

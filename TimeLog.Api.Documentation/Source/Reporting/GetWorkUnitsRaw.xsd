@@ -61,6 +61,7 @@
       <xsd:element name="InvHours" type="xsd:decimal" /><!-- InvHours deprecated, use BARHours instead -->
       <xsd:element name="InvAmount" type="xsd:decimal" /><!-- InvAmount deprecated, use BARAmount instead -->
       <xsd:element name="CostAmount" type="xsd:decimal" />
+      <xsd:element name="CostAmountCurrency" type="xsd:decimal" />
       <xsd:element name="InvoiceStatus" type="xsd:short" />
       <xsd:element name="BillableStatus" type="xsd:short" />
       <xsd:element name="IsBillable" type="xsd:boolean" />
