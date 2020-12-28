@@ -26,8 +26,10 @@
     <tlp:Comment>Contacts need data</tlp:Comment>
     <tlp:AccountManagerID>10</tlp:AccountManagerID>
     <tlp:AccountManagerFullName>Paul M Weiss</tlp:AccountManagerFullName>
+    <tlp:AccountManagerInitials>PMW</tlp:AccountManagerInitials>
     <tlp:SecondaryAccountManagerID>12</tlp:SecondaryAccountManagerID>
     <tlp:SecondaryAccountManagerFullName>Paul Summerson</tlp:SecondaryAccountManagerFullName>
+    <tlp:SecondaryAccountManagerInitials>PS</tlp:SecondaryAccountManagerInitials>
     <tlp:IndustryID>6</tlp:IndustryID>
     <tlp:IndustryName>Software Company</tlp:IndustryName>
     <tlp:CustomerSince>2011-08-12</tlp:CustomerSince>
