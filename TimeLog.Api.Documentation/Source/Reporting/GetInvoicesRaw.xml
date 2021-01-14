@@ -45,5 +45,6 @@
     <tlp:CustomerReference></tlp:CustomerReference>
     <tlp:ExternalInvoiceStatus>Draft</tlp:ExternalInvoiceStatus>
     <tlp:RelatesToInvoiceID>276</tlp:RelatesToInvoiceID>
+    <tlp:InvoiceTemplateID>1</tlp:InvoiceTemplateID>
   </tlp:Invoice>
 </tlp:Invoices>
