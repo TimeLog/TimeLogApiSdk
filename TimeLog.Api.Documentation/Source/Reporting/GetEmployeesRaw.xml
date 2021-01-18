@@ -27,5 +27,6 @@
     <tlp:EmployeeNo>12345</tlp:EmployeeNo>
     <tlp:Username>SYSTEM</tlp:Username>
     <tlp:CostPrice>1200.00</tlp:CostPrice>
+    <tlp:LegalEntityID>1</tlp:LegalEntityID>
 	</tlp:Employee>
 </tlp:Employees>
