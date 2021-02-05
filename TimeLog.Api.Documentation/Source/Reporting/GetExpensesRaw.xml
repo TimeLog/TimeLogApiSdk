@@ -37,5 +37,6 @@
     <tlp:ApprovedStatus>1</tlp:ApprovedStatus>
     <tlp:IsControlled>1</tlp:IsControlled>
     <tlp:IsPaid>1</tlp:IsPaid>
+    <tlp:Created>2021-02-04T08:56:24.287</tlp:Created>
   </tlp:Expense>
 </tlp:Expenses>

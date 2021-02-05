@@ -18,24 +18,25 @@
 
   <xsd:complexType name="SalaryAccountEmployeePostingRaw_Type">
     <xsd:sequence>
-      <xsd:element name="EmployeeUserID" type="xsd:integer" />
-      <xsd:element name="EmployeeUsername" type="xsd:string" />
-      <xsd:element name="EmployeeNo" type="xsd:string" />
-      <xsd:element name="SalaryAccountID" type="xsd:integer" />
-      <xsd:element name="SalaryAccountName" type="xsd:string" />
-      <xsd:element name="Date" type="xsd:dateTime" />
-      <xsd:element name="Hours" type="xsd:decimal" />
-      <xsd:element name="TotalHours" type="xsd:decimal" />
-      <xsd:element name="Factor" type="xsd:decimal" />
-      <xsd:element name="PostingType" type="xsd:integer" />
-      <xsd:element name="Minutes" type="xsd:integer" />
-      <xsd:element name="TotalMinutes" type="xsd:decimal" />
-      <xsd:element name="Days" type="xsd:decimal" />
-      <xsd:element name="TotalDays" type="xsd:decimal" />
-      <xsd:element name="CommentToManager" type="xsd:string" />
-      <xsd:element name="CommentToEmployee" type="xsd:string" />
-      <xsd:element name="Created" type="xsd:dateTime" />
-      <xsd:element name="CreatedBy" type="xsd:integer" />
+      <xsd:element name="EmployeeUserID" type="xsd:integer" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="EmployeeUsername" type="xsd:string" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="EmployeeNo" type="xsd:string" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="SalaryAccountID" type="xsd:integer" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="SalaryAccountName" type="xsd:string" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="Date" type="xsd:dateTime" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="EntityType" type="xsd:integer" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="Hours" type="xsd:decimal" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="TotalHours" type="xsd:decimal" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="Factor" type="xsd:decimal" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="PostingType" type="xsd:integer" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="Minutes" type="xsd:integer" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="TotalMinutes" type="xsd:decimal" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="Days" type="xsd:decimal" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="TotalDays" type="xsd:decimal" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="CommentToManager" type="xsd:string" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="CommentToEmployee" type="xsd:string" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="Created" type="xsd:dateTime" minOccurs="1" maxOccurs="1"  />
+      <xsd:element name="CreatedBy" type="xsd:integer" minOccurs="1" maxOccurs="1"  />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
     <xsd:attribute name="GUID" type="xsd:string" use="required" />

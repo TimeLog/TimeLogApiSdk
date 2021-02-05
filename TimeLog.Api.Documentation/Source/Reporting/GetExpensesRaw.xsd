@@ -49,8 +49,9 @@
       <xsd:element name="InvAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ProfitRatio" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ApprovedStatus" type="xsd:Integer" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="IsControlled" type="xsd:boolean" />
-      <xsd:element name="IsPaid" type="xsd:boolean" />
+      <xsd:element name="IsControlled" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="IsPaid" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="Created" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
     </xsd:sequence>
 
   </xsd:complexType>

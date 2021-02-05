@@ -4,26 +4,25 @@
             targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
             elementFormDefault="qualified"
             attributeFormDefault="unqualified">
-	<xsd:element name="NormHours" >
+	<xsd:element name="WorkingHours" >
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="NormHour" type="tlp:NormHoursRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+				<xsd:element name="WorkingHour" type="tlp:WorkingHour_Type" minOccurs="0" maxOccurs="unbounded" />
 			</xsd:sequence>
 		</xsd:complexType>
-		<xsd:key name="NormHour_Key">
-			<xsd:selector xpath=".//tlp:NormHour" />
+		<xsd:key name="WorkingHour_Key">
+			<xsd:selector xpath=".//tlp:WorkingHour" />
 			<xsd:field xpath="@ID" />
 		</xsd:key>
 	</xsd:element>
 
-	<xsd:complexType name="NormHoursRaw_Type">
+	<xsd:complexType name="WorkingHour_Type">
 		<xsd:sequence>
-			<xsd:element name="Workdate" type="xsd:datetime" />
-			<xsd:element name="NormHours" type="xsd:decimal" />
-			<xsd:element name="Overtime" type="xsd:decimal" />
-      <xsd:element name="EmployeeID" type="xsd:positiveInteger" />
-      <xsd:element name="EmployeeFirstName" type="xsd:string" />
-      <xsd:element name="EmployeeLastName" type="xsd:string" />    
+			<xsd:element name="Date" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Hours" type="xsd:decimal" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="EmployeeID" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="EmployeeFirstName" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="EmployeeLastName" type="xsd:string" minOccurs="1" maxOccurs="1" />    
     </xsd:sequence>
 		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
 	</xsd:complexType>
