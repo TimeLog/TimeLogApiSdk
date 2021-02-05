@@ -53,5 +53,6 @@
     <tlp:CurrencyISOCode>DKK</tlp:CurrencyISOCode>
     <tlp:CurrencyRate>100.0000</tlp:CurrencyRate>
     <tlp:IsMultiCustomerProject>0</tlp:IsMultiCustomerProject>
+    <tlp:LegalEntityID>1</tlp:LegalEntityID>
   </tlp:Project>
 </tlp:Projects>

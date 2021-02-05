@@ -67,6 +67,7 @@
       <xsd:element name="CurrencyISOCode" type="xsd:string" />
       <xsd:element name="CurrencyRate" type="xsd:decimal" />
       <xsd:element name="IsMultiCustomerProject" type="xsd:boolean" />
+      <xsd:element name="LegalEntityID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
     <xsd:attribute name="GUID" type="xsd:string" use="required" />
