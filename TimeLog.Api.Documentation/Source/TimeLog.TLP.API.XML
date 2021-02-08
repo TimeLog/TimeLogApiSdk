@@ -3652,6 +3652,17 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A credit note matching the identifier</returns>
         </member>
+	    <member name="M:TimeLog.TLP.API.Invoicing.V1_1.InvoicingService.GetCreditNotesModifiedInPeriodPaged(System.DateTime, System.DateTime, System.Int32, System.Int32, TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+		    <summary>
+			    Gets 1 or more credit notes based on start - and end date
+		    </summary>
+		    <param name="startDate">Start date of period (DateTime)</param>
+		    <param name="endDate">End date of period (DateTime)</param>
+		    <param name="page">Page in result (int)</param>
+		    <param name="pageSize">PageSize to be returned (int)</param>
+		    <param name="token">Security token associated with the request (SecurityToken)</param>
+		    <returns>1 or more credit notes matching the identifier</returns>
+	    </member>
         <member name="M:TimeLog.TLP.API.Invoicing.V1_1.InvoicingService.MarkInvoiceAsChecked(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Marks a booked invoice as checked, usually because it has been paid
