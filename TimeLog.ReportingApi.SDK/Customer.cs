@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace TimeLog.ReportingApi.SDK
 {
@@ -13,13 +14,7 @@ namespace TimeLog.ReportingApi.SDK
         /// Gets the default parameter value for filtering for all customers
         /// </summary>
         [XmlIgnore]
-        public static int All
-        {
-            get
-            {
-                return 0;
-            }
-        }
+        public static int All => 0;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Customer"/> class.
@@ -50,6 +45,21 @@ namespace TimeLog.ReportingApi.SDK
             this.VATNo = string.Empty;
             this.WebPage = string.Empty;
             this.ZipCode = string.Empty;
+            this.CustomerGUID = Guid.Empty;
+            this.EanNo = string.Empty;
+            this.InvoiceTemplateID = -1;
+            this.AccountManagerInitials = string.Empty;
+            this.SecondaryAccountManagerID = -1;
+            this.SecondaryAccountManagerFullName = string.Empty;
+            this.SecondaryAccountManagerInitials = string.Empty;
+            this.CustomerSince = DateTime.MinValue;
+            this.RegistrationNumber = string.Empty;
+            this.CreatedAt = DateTime.MinValue;
+            this.CreatedByEmployeeID = -1;
+            this.CreatedByEmployeeInitials = string.Empty;
+            this.LastModifiedAt = DateTime.MinValue;
+            this.LastModifiedByEmployeeID = -1;
+            this.LastModifiedByEmployeeInitials = string.Empty;
         }
 
         /// <summary>
@@ -83,12 +93,32 @@ namespace TimeLog.ReportingApi.SDK
             this.VATNo = node.GetStringSafe("tlp:VATNo", namespaceManager);
             this.WebPage = node.GetStringSafe("tlp:WebPage", namespaceManager);
             this.ZipCode = node.GetStringSafe("tlp:ZipCode", namespaceManager);
+            this.CustomerGUID = Guid.Parse(node.Attributes["GUID"].InnerText);
+            this.EanNo = node.GetStringSafe("tlp:EanNo", namespaceManager);
+            this.InvoiceTemplateID = node.GetIntSafe("tlp:InvoiceTemplateID", namespaceManager);
+            this.AccountManagerInitials = node.GetStringSafe("tlp:AccountManagerInitials", namespaceManager);
+            this.SecondaryAccountManagerID = node.GetIntSafe("tlp:SecondaryAccountManagerID", namespaceManager);
+            this.SecondaryAccountManagerFullName = node.GetStringSafe("tlp:SecondaryAccountManagerFullName", namespaceManager);
+            this.SecondaryAccountManagerInitials = node.GetStringSafe("tlp:SecondaryAccountManagerInitials", namespaceManager);
+            this.CustomerSince = node.GetDateTimeSafe("tlp:CustomerSince", namespaceManager);
+            this.RegistrationNumber = node.GetStringSafe("tlp:RegistrationNumber", namespaceManager);
+            this.CreatedAt = node.GetDateTimeSafe("tlp:CreatedAt", namespaceManager);
+            this.CreatedByEmployeeID = node.GetIntSafe("tlp:CreatedByEmployeeId", namespaceManager);
+            this.CreatedByEmployeeInitials = node.GetStringSafe("tlp:CreatedBy", namespaceManager);
+            this.LastModifiedAt = node.GetDateTimeSafe("tlp:LastModifiedAt", namespaceManager);
+            this.LastModifiedByEmployeeID = node.GetIntSafe("tlp:LastModifiedByEmployeeId", namespaceManager);
+            this.LastModifiedByEmployeeInitials = node.GetStringSafe("tlp:LastModifiedBy", namespaceManager);
         }
 
         /// <summary>
         /// Gets or sets the id.
         /// </summary>
         public int Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the GUID. 
+        /// </summary>
+        public Guid CustomerGUID { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -204,5 +234,75 @@ namespace TimeLog.ReportingApi.SDK
         /// Gets or sets the industry name.
         /// </summary>
         public string IndustryName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the EAN number.
+        /// </summary>
+        public string EanNo { get; set; }
+
+        /// <summary>
+        /// Gets or sets the invoice template identifier. 
+        /// </summary>
+        public int InvoiceTemplateID { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account manager initials. 
+        /// </summary>
+        public string AccountManagerInitials { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account manager identifier.
+        /// </summary>
+        public int SecondaryAccountManagerID { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account manager full name. 
+        /// </summary>
+        public string SecondaryAccountManagerFullName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the account manager initials.
+        /// </summary>
+        public string SecondaryAccountManagerInitials { get; set; }
+
+        /// <summary>
+        /// Gets or sets the customer since date. 
+        /// </summary>
+        public DateTime CustomerSince { get; set; }
+
+        /// <summary>
+        /// Gets or sets the registration number. 
+        /// </summary>
+        public string RegistrationNumber { get; set; }
+
+        /// <summary>
+        /// Gets or sets the created date.
+        /// </summary>
+        public DateTime CreatedAt { get; set; }
+
+        /// <summary>
+        /// Gets or sets the employee identifier who created this customer.
+        /// </summary>
+        public int CreatedByEmployeeID { get; set; }
+
+        /// <summary>
+        /// Gets or sets the employee initials who created this customer.
+        /// </summary>
+        public string CreatedByEmployeeInitials { get; set; }
+
+        /// <summary>
+        /// Gets or sets the last modified date. 
+        /// </summary>
+        public DateTime LastModifiedAt { get; set; }
+
+        /// <summary>
+        /// Gets or sets the employee identifier who last modified this customer. 
+        /// </summary>
+        public int LastModifiedByEmployeeID { get; set; }
+
+        /// <summary>
+        /// Gets or sets the employee initials who last modified this customer. 
+        /// </summary>
+        public string LastModifiedByEmployeeInitials { get; set; }
     }
 }
