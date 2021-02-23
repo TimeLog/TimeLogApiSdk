@@ -228,6 +228,11 @@
             Gets or sets the id.
             </summary>
         </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.CustomerGUID">
+            <summary>
+            Gets or sets the GUID. 
+            </summary>
+        </member>
         <member name="P:TimeLog.ReportingApi.SDK.Customer.Name">
             <summary>
             Gets or sets the name.
@@ -341,6 +346,76 @@
         <member name="P:TimeLog.ReportingApi.SDK.Customer.IndustryName">
             <summary>
             Gets or sets the industry name.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.EanNo">
+            <summary>
+            Gets or sets the EAN number.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.InvoiceTemplateID">
+            <summary>
+            Gets or sets the invoice template identifier. 
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.AccountManagerInitials">
+            <summary>
+            Gets or sets the account manager initials. 
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.SecondaryAccountManagerID">
+            <summary>
+            Gets or sets the account manager identifier.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.SecondaryAccountManagerFullName">
+            <summary>
+            Gets or sets the account manager full name. 
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.SecondaryAccountManagerInitials">
+            <summary>
+            Gets or sets the account manager initials.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.CustomerSince">
+            <summary>
+            Gets or sets the customer since date. 
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.RegistrationNumber">
+            <summary>
+            Gets or sets the registration number. 
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.CreatedAt">
+            <summary>
+            Gets or sets the created date.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.CreatedByEmployeeID">
+            <summary>
+            Gets or sets the employee identifier who created this customer.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.CreatedByEmployeeInitials">
+            <summary>
+            Gets or sets the employee initials who created this customer.
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.LastModifiedAt">
+            <summary>
+            Gets or sets the last modified date. 
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.LastModifiedByEmployeeID">
+            <summary>
+            Gets or sets the employee identifier who last modified this customer. 
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingApi.SDK.Customer.LastModifiedByEmployeeInitials">
+            <summary>
+            Gets or sets the employee initials who last modified this customer. 
             </summary>
         </member>
         <member name="P:TimeLog.ReportingApi.SDK.SubOpportunity.Id">
