@@ -93,7 +93,7 @@ namespace TimeLog.ReportingApi.SDK
             this.VATNo = node.GetStringSafe("tlp:VATNo", namespaceManager);
             this.WebPage = node.GetStringSafe("tlp:WebPage", namespaceManager);
             this.ZipCode = node.GetStringSafe("tlp:ZipCode", namespaceManager);
-            this.CustomerGUID = Guid.Parse(node.Attributes["ID"].InnerText);
+            this.CustomerGUID = Guid.Parse(node.Attributes["GUID"].InnerText);
             this.EanNo = node.GetStringSafe("tlp:EanNo", namespaceManager);
             this.InvoiceTemplateID = node.GetIntSafe("tlp:InvoiceTemplateID", namespaceManager);
             this.AccountManagerInitials = node.GetStringSafe("tlp:AccountManagerInitials", namespaceManager);
