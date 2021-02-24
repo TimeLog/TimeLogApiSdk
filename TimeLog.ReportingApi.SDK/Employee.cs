@@ -23,7 +23,7 @@ namespace TimeLog.ReportingApi.SDK
             this.EmployeeNo = string.Empty;
             this.EmployeeTypeId = -1;
             this.EmployeeTypeName = string.Empty;
-            this.EmployeeUserId = -1;
+            this.EmployeeUserID = -1;
             this.FirstName = string.Empty;
             this.FullName = string.Empty;
             this.HiredDate = DateTime.Now;
@@ -52,7 +52,7 @@ namespace TimeLog.ReportingApi.SDK
             this.EmployeeNo = node.GetStringSafe("tlp:EmployeeNo", namespaceManager);            
             this.EmployeeTypeId = node.GetIntSafe("tlp:EmployeeTypeId", namespaceManager);            
             this.EmployeeTypeName = node.GetStringSafe("tlp:EmployeeTypeName", namespaceManager);            
-            this.EmployeeUserId = node.GetIntSafe("tlp:EmployeeUserId", namespaceManager);            
+            this.EmployeeUserID = node.GetIntSafe("tlp:EmployeeUserID", namespaceManager);            
             this.FirstName = node.GetStringSafe("tlp:FirstName", namespaceManager);            
             this.FullName = node.GetStringSafe("tlp:FullName", namespaceManager);            
             this.HiredDate = node.GetDateTimeSafe("tlp:HiredDate", namespaceManager);            
@@ -81,7 +81,7 @@ namespace TimeLog.ReportingApi.SDK
 
         public int Id { get; set; }
 
-        public int EmployeeUserId { get; set; }
+        public int EmployeeUserID { get; set; }
 
         public string FirstName { get; set; }
         
