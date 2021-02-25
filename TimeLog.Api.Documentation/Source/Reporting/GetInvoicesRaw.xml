@@ -46,5 +46,6 @@
     <tlp:ExternalInvoiceStatus>Draft</tlp:ExternalInvoiceStatus>
     <tlp:RelatesToInvoiceID>276</tlp:RelatesToInvoiceID>
     <tlp:InvoiceTemplateID>1</tlp:InvoiceTemplateID>
+    <tlp:LegalEntityID>1</tlp:LegalEntityID>
   </tlp:Invoice>
 </tlp:Invoices>
