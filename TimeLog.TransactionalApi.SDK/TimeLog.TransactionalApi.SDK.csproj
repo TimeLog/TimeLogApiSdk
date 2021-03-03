@@ -118,9 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\CrmService\CRMService.wsdl" />
-    <None Include="Service References\CrmService\CRMService1.wsdl" />
-    <None Include="Service References\CrmService\CRMService2.wsdl" />
+    <None Include="Service References\CrmService\CRMService3.wsdl" />
+    <None Include="Service References\CrmService\CRMService31.wsdl" />
+    <None Include="Service References\CrmService\CRMService32.wsdl" />
     <None Include="Service References\CrmService\TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -608,9 +608,6 @@
     <None Include="Service References\SecurityService\SecurityServiceSecure1.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CrmService\CRMService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\FinancialService\FinancialService.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -648,6 +645,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrmService\CRMService1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

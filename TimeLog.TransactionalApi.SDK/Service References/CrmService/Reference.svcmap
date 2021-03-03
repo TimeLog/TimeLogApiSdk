@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/tlp/WebServices/CRM/V1_4/CRMService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CRMService.disco" MetadataType="Disco" ID="6dbdec13-3f0d-414a-9b70-acd8de6d41d3" SourceId="1" SourceUrl="http://localhost/tlp/WebServices/CRM/V1_4/CRMService.svc?disco" />
-    <MetadataFile FileName="CRMService.wsdl" MetadataType="Wsdl" ID="43a21961-6a66-4453-ae36-9b94c5918ac9" SourceId="1" SourceUrl="http://localhost/tlp/WebServices/CRM/V1_4/CRMService.svc?wsdl=wsdl1" />
-    <MetadataFile FileName="CRMService1.wsdl" MetadataType="Wsdl" ID="f8f1af6b-6a55-4eb6-9f4c-9ce2139ac848" SourceId="1" SourceUrl="http://localhost/tlp/WebServices/CRM/V1_4/CRMService.svc?wsdl" />
-    <MetadataFile FileName="CRMService2.wsdl" MetadataType="Wsdl" ID="d35cb535-663d-4ce6-9456-3bb303ebd32a" SourceId="1" SourceUrl="http://localhost/tlp/WebServices/CRM/V1_4/CRMService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CRMService3.wsdl" MetadataType="Wsdl" ID="f02d6fe6-8dab-42f6-837c-2c0e8549f810" SourceId="1" SourceUrl="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CRMService31.wsdl" MetadataType="Wsdl" ID="d8635d6e-30a6-48a1-91a8-6f5f13376479" SourceId="1" SourceUrl="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc?wsdl" />
+    <MetadataFile FileName="CRMService1.disco" MetadataType="Disco" ID="c172a77c-2bcb-40ea-8551-ed1961668200" SourceId="1" SourceUrl="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc?disco" />
+    <MetadataFile FileName="CRMService32.wsdl" MetadataType="Wsdl" ID="dc7c27dc-1e73-46c4-a8f6-23d5118290f7" SourceId="1" SourceUrl="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc?wsdl=wsdl1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

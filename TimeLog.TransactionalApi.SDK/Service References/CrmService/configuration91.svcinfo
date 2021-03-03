@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="3Gvxz38LivXhT+n11p5w2KXdsEk=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="9SAoNEUT+4VsVTOBjxoUsDZps4Ozw29O49kThNHQLFQ=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICRMService2">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICRMService1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ICRMService2</serializedValue>
+          <serializedValue>BasicHttpBinding_ICRMService1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ICRMService" contract="CrmService.ICRMService" bindingType="basicHttpBinding" address="http://localhost/tlp/WebServices/CRM/V1_4/CRMService.svc" bindingConfiguration="BasicHttpBinding_ICRMService2">
+    <endpoint name="BasicHttpBinding_ICRMService" contract="CrmService.ICRMService" bindingType="basicHttpBinding" address="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc" bindingConfiguration="BasicHttpBinding_ICRMService1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost/tlp/WebServices/CRM/V1_4/CRMService.svc</serializedValue>
+          <serializedValue>http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -124,7 +124,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ICRMService2</serializedValue>
+          <serializedValue>BasicHttpBinding_ICRMService1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>CrmService.ICRMService</serializedValue>

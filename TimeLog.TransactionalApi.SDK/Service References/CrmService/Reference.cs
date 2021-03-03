@@ -415,6 +415,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBaseExtended", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ExternalSystemContext))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Contact))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Customer))]
     public partial class APIBaseExtended : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
@@ -710,7 +711,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ExternalSystemContext", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ExternalSystemContext : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class ExternalSystemContext : TimeLog.TransactionalApi.SDK.CrmService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SystemNameField;
@@ -1121,6 +1122,9 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private string OrganizationNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KAM2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails DetailsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -1514,6 +1518,19 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=30)]
+        public string KAM2 {
+            get {
+                return this.KAM2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KAM2Field, value) != true)) {
+                    this.KAM2Field = value;
+                    this.RaisePropertyChanged("KAM2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=31)]
         public TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails Details {
             get {
                 return this.DetailsField;
@@ -1925,6 +1942,9 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         IsShownInLeads = 8,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        IsMultiCustomerProjects = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         All = 15,
     }
     
@@ -2185,6 +2205,9 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader KAMField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader KAM2Field;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -2243,6 +2266,19 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
                 if ((object.ReferenceEquals(this.KAMField, value) != true)) {
                     this.KAMField = value;
                     this.RaisePropertyChanged("KAM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader KAM2 {
+            get {
+                return this.KAM2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KAM2Field, value) != true)) {
+                    this.KAM2Field = value;
+                    this.RaisePropertyChanged("KAM2");
                 }
             }
         }
@@ -2355,7 +2391,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         ETCEmployee = 31,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ProjectTemplateHeader = 32,
+        ProjectTemplate = 32,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Event = 33,
@@ -2364,7 +2400,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         InvoiceableTravelExpense = 34,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InvoiceableInstallment = 35,
+        Payment = 35,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Employee = 36,
@@ -2593,9 +2629,6 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         PageProperty = 111,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UserSetting = 112,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         MainSearchResultItem = 113,
@@ -2859,9 +2892,6 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         ProjectFinancialsContext = 202,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GenericBudget = 201,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
         GenericBudgetValue = 204,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -2872,6 +2902,120 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ProjectSubContractDropdown = 206,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeRegistrationWorkflow = 207,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryPeriod = 208,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GenericBudget = 209,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectSubContractCustomer = 210,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PaymentBudgetPeriod = 211,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectForecastTotal = 212,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoicingPotential = 213,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PriceGroupBasic = 214,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractTeamMember = 215,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Agent = 216,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaskSearchDenormalized = 217,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AllocationSearchDenormalized = 218,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeTracker = 219,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeExpense = 220,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectExpense = 221,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UIExpandedDomain = 222,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableFinancialPosting = 223,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceablePendingBookingDataRaw = 224,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TransferEmployeeExpense = 225,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RecurringDomainPlan = 226,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RecurringTaskAllocationBudgetInstance = 227,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RecurringMilestoneInstance = 228,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntercompanyInvoice = 229,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalesShare = 230,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalesShareSalesPerson = 231,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaskPlanTemplate = 232,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MileageRatePeriod = 233,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MileageRegistration = 234,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectProduct = 235,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RecurringProjectProductInstance = 236,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserPreviewFeatureValue = 237,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SiteFeatureValue = 238,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeReimbursementPosting = 239,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MileageRegistrationFinancialData = 240,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractHourlyRate = 241,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractHourlyRateIndexationHistory = 242,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AnalyticsTrigger = 243,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryRule = 244,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,
