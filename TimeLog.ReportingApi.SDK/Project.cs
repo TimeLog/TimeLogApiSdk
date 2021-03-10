@@ -262,6 +262,7 @@ namespace TimeLog.ReportingApi.SDK
         /// <summary>
         /// Gets or sets the related project number
         /// </summary>
+        [XmlNodeName("No")]
         public string ProjectNo { get; set; }
     }
 }
