@@ -1,31 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
-            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
-            elementFormDefault="qualified"
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4" 
+            elementFormDefault="qualified" 
             attributeFormDefault="unqualified">
-	<xsd:element name="EmployeeNormHours" >
-		<xsd:complexType>
-			<xsd:sequence>
-				<xsd:element name="EmployeeNormHour" type="tlp:EmployeeNormHoursRaw_Type" minOccurs="0" maxOccurs="unbounded" />
-			</xsd:sequence>
-		</xsd:complexType>
-		<xsd:key name="EmployeeNormHour_Key">
-			<xsd:selector xpath=".//tlp:EmployeeNormHour" />
-			<xsd:field xpath="@ID" />
-		</xsd:key>
-	</xsd:element>
-
-	<xsd:complexType name="EmployeeNormHoursRaw_Type">
-		<xsd:sequence>
-			<xsd:element name="Workdate" type="xsd:dateTime" />
-			<xsd:element name="NormHours" type="xsd:decimal" />
-			<xsd:element name="Overtime" type="xsd:decimal" />
+  <xsd:element name="EmployeeNormalWorkingTimes">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="EmployeeNormalWorkingTime" type="tlp:EmployeeNormalWorkingTimeRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="EmployeeNormalWorkingTime_Key">
+      <xsd:selector xpath=".//tlp:EmployeeNormalWorkingTime" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="EmployeeNormalWorkingTimeRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="Weekday" type="xsd:positiveInteger" />
+      <xsd:element name="Name" type="xsd:string" />
+      <xsd:element name="WorkingHours" type="xsd:float" />
       <xsd:element name="EmployeeID" type="xsd:positiveInteger" />
       <xsd:element name="EmployeeFirstName" type="xsd:string" />
-      <xsd:element name="EmployeeLastName" type="xsd:string" />      
+      <xsd:element name="EmployeeLastName" type="xsd:string" />
     </xsd:sequence>
-		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
-	</xsd:complexType>
-
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+  </xsd:complexType>
 </xsd:schema>
