@@ -47,7 +47,7 @@ namespace TimeLog.ReportingApi.SDK
             this.ProjectStatusName = string.Empty;
             this.ContactFullName = string.Empty;
             this.ContactEmail = string.Empty;
-            this.ProjectNo = String.Empty;
+            this.No = String.Empty;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace TimeLog.ReportingApi.SDK
             this.ProjectStatusName = node.GetStringSafe("tlp:ProjectStatusName", namespaceManager);
             this.ContactFullName = node.GetStringSafe("tlp:ContactFullName", namespaceManager);
             this.ContactEmail = node.GetStringSafe("tlp:ContactEmail", namespaceManager);
-            this.ProjectNo = node.GetStringSafe("tlp:No", namespaceManager);
+            this.No = node.GetStringSafe("tlp:No", namespaceManager);
         }
 
 
@@ -262,6 +262,6 @@ namespace TimeLog.ReportingApi.SDK
         /// <summary>
         /// Gets or sets the related project number
         /// </summary>
-        public string ProjectNo { get; set; }
+        public string No { get; set; }
     }
 }
