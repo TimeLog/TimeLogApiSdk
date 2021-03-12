@@ -67,7 +67,9 @@ namespace TimeLog.ReportingApi.SDK
             this.Title = node.GetStringSafe("tlp:Title", namespaceManager);
             this.Username = node.GetStringSafe("tlp:Username", namespaceManager);            
             this.WorkWeek = node.GetStringSafe("tlp:WorkWeek", namespaceManager);            
-            this.ZipCode = node.GetStringSafe("tlp:ZipCode", namespaceManager);            
+            this.ZipCode = node.GetStringSafe("tlp:ZipCode", namespaceManager);        
+            this.ApprovalManagerUserID = node.GetIntSafe("tlp:ApprovalManagerUserID", namespaceManager);
+            this.ApprovalManagerEmployeeID = node.GetIntSafe("tlp:ApprovalManagerEmployeeID", namespaceManager);
         }
 
         public static int All
@@ -128,5 +130,9 @@ namespace TimeLog.ReportingApi.SDK
         public string Username { get; set; }
 
         public float CostPrice { get; set; }
+
+        public int ApprovalManagerUserID { get; set; }
+
+        public int ApprovalManagerEmployeeID { get; set; }
     }
 }
