@@ -266,12 +266,8 @@ namespace TimeLog.ReportingApi.Exporter
                                 var _cells = new List<string>();
                                 foreach (var _propertyInfo in _headers)
                                 {
-                                    var _propertyName = Attribute.IsDefined(_propertyInfo, typeof(XmlNodeName))
-                                        ? _propertyInfo.GetCustomAttribute<XmlNodeName>().Name.ToLower()
-                                        : _propertyInfo.Name.ToLower();
-
-                                    var _elementvalue = _childElement.Elements().FirstOrDefault(e => e.Name.LocalName.ToLower() == _propertyName);
-                                    var _attributevalue = _childElement.Attributes().FirstOrDefault(e => e.Name.LocalName.ToLower() == _propertyName);
+                                    var _elementvalue = _childElement.Elements().FirstOrDefault(e => e.Name.LocalName.ToLower() == _propertyInfo.Name.ToLower());
+                                    var _attributevalue = _childElement.Attributes().FirstOrDefault(e => e.Name.LocalName.ToLower() == _propertyInfo.Name.ToLower());
 
                                     // Did any element or attribute fit?
                                     if (_elementvalue != null)
