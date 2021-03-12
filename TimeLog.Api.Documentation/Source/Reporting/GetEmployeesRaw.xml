@@ -28,5 +28,7 @@
     <tlp:Username>SYSTEM</tlp:Username>
     <tlp:CostPrice>1200.00</tlp:CostPrice>
     <tlp:LegalEntityID>1</tlp:LegalEntityID>
+    <tlp:ApprovalManagerUserID>1</tlp:ApprovalManagerUserID>
+    <tlp:ApprovalManagerEmployeeID>16</tlp:ApprovalManagerEmployeeID>
 	</tlp:Employee>
 </tlp:Employees>
