@@ -615,7 +615,7 @@
             Gets or sets the email of the customer contact
             </summary>
         </member>
-        <member name="P:TimeLog.ReportingApi.SDK.Project.ProjectNo">
+        <member name="P:TimeLog.ReportingApi.SDK.Project.No">
             <summary>
             Gets or sets the related project number
             </summary>
