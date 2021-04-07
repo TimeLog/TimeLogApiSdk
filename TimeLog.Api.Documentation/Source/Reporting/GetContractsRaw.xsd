@@ -26,6 +26,8 @@
       <xsd:element name="OrderDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
       <xsd:element name="StartDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
       <xsd:element name="EndDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
+	  <xsd:element name="ContractTypeID" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1" />
+	  <xsd:element name="ContractTypeName" type="xsd:string" minOccurs="1" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="optional" />
     <xsd:attribute name="GUID" type="xsd:string" use="optional" />
