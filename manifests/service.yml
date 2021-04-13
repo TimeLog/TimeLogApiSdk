@@ -9,4 +9,4 @@ spec:
     ports:
     - port: 80
     selector:
-        app: apidocumentation
+        app: apidocumentationapp
