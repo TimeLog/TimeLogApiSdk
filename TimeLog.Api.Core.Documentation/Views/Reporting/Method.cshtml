@@ -24,16 +24,16 @@
     {
         <p>@Model.Returns</p>
     }
-    @if (!string.IsNullOrWhiteSpace(Model.GetReportingExample()))
+    @if (!string.IsNullOrWhiteSpace(Model.OutputExample))
     {
         <h3>Result Example</h3>
-        <pre>@Model.GetReportingExample()</pre>
+        <pre>@Model.OutputExample</pre>
     }
-    @if (!string.IsNullOrWhiteSpace(Model.GetReportingSchema()))
+    @if (!string.IsNullOrWhiteSpace(Model.OutputSchema))
     {
         <h3>Result Schema</h3>
-        <pre>@Model.GetReportingSchema()</pre>
-        <p><a href="@Url.Content("~/Source/Reporting/" + Model.Name + ".xsd")">Download the XSD</a></p>
+        <pre>@Model.OutputSchema</pre>
+        <p><a href="@Url.Content("~/Reporting/" + Model.Name + ".xsd")">Download the XSD</a></p>
     }
 
     @if (!string.IsNullOrWhiteSpace(Model.Remarks))

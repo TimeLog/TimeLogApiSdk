@@ -15,41 +15,41 @@ namespace TimeLog.Api.Core.Documentation.Controllers
         // GET: Reporting
         public ActionResult Index()
         {
-            return this.View();
+            return View();
         }
         public ActionResult GettingStarted()
         {
-            return this.View();
+            return View();
         }
 
         public ActionResult Security()
         {
-            return this.View();
+            return View();
         }
 
         public ActionResult Methods()
         {
-            return this.View(_reportingManager.GetMethods());
+            return View(_reportingManager.GetMethods());
         }
 
         public ActionResult Method(string id)
         {
-            return this.View(_reportingManager.GetMethod(id));
+            return View(_reportingManager.GetMethod(id));
         }
 
         public ActionResult EnumerableTypes()
         {
-            return this.View();
+            return View();
         }
 
         public ActionResult PowerBi()
         {
-            return this.View();
+            return View();
         }
 
         public ActionResult SynchronizingData()
         {
-            return this.View();
+            return View();
         }
     }
 }

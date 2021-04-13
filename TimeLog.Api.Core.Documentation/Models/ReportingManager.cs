@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace TimeLog.Api.Core.Documentation.Models
 {
     public class ReportingManager : IReportingManager
     {
-        private readonly IWebHostEnvironment _environment;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly DocumentationHelper _helper;
 
-        public ReportingManager(IWebHostEnvironment environment)
+        public ReportingManager(IWebHostEnvironment webHostEnvironment)
         {
-            _environment = environment;
-            var _filePath = Path.Combine(environment.ContentRootPath, "Source/TimeLog.TLP.WebAppCode.XML");
+            _webHostEnvironment = webHostEnvironment;
+            
+            var _filePath = Path.Combine(webHostEnvironment.WebRootPath, "Source/TimeLog.TLP.WebAppCode.xml");
             _helper = new DocumentationHelper(_filePath);
         }
 
-        
-        
         public string GetReportingExample(MethodDoc doc)
         {
-            var _filePath = Path.Combine(_environment.ContentRootPath, "Source/Reporting/" + doc.Name + ".xml");
+            var _filePath = Path.Combine(_webHostEnvironment.WebRootPath, "Reporting/" + doc.Name + ".xml");
             FileInfo _fileInfo = new FileInfo(_filePath);
             return _fileInfo.Exists ? File.ReadAllText(_filePath) : string.Empty;
         }
         
         public string GetReportingSchema(MethodDoc doc)
         {
-            var _filePath = Path.Combine(_environment.ContentRootPath, "Source/Reporting/" + doc.Name + ".xsd");
+            var _filePath = Path.Combine(_webHostEnvironment.WebRootPath, "Reporting/" + doc.Name + ".xsd");
             FileInfo _fileInfo = new FileInfo(_filePath);
             return _fileInfo.Exists ? File.ReadAllText(_filePath) : string.Empty;
         }
@@ -47,7 +47,9 @@ namespace TimeLog.Api.Core.Documentation.Models
 
         public MethodDoc GetMethod(string methodFullName)
         {
-            return _helper.Methods.FirstOrDefault(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
+            var _result = _helper.Methods.First(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
+            _result.InitializeReportingExampleAndSchema(_webHostEnvironment.WebRootPath);
+            return _result;
         }
     }
 }

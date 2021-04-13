@@ -35,6 +35,10 @@ namespace TimeLog.Api.Core.Documentation.Models
 
         public IList<MethodException> Exceptions { get; set; }
 
+        public string OutputExample { get; private set; }
+
+        public string OutputSchema { get; private set; }
+
         public MethodDoc()
         {
             Name = string.Empty;
@@ -45,18 +49,24 @@ namespace TimeLog.Api.Core.Documentation.Models
             Permission = string.Empty;
             Returns = string.Empty;
             SeeAlso = new List<TypeDoc>();
+
+            OutputExample = string.Empty;
+            OutputSchema = string.Empty;
         }
-        
-        public string GetReportingExample()
+
+        public void InitializeReportingExampleAndSchema(string webRootPath)
         {
-            FileInfo fi = new FileInfo(AppDomain.CurrentDomain..Server.MapPath("~/Source/Reporting/" + doc.Name + ".xml"));
-            return fi.Exists ? File.ReadAllText(HttpContext.Current.Server.MapPath("~/Source/Reporting/" + doc.Name + ".xml")) : string.Empty;
-        }
-        
-        public string GetReportingSchema()
-        {
-            FileInfo fi = new FileInfo(HttpContext.Current.Server.MapPath("~/Source/Reporting/" + doc.Name + ".xsd"));
-            return fi.Exists ? File.ReadAllText(HttpContext.Current.Server.MapPath("~/Source/Reporting/" + doc.Name + ".xsd")) : string.Empty;
+            FileInfo _outputExampleInfo = new FileInfo(Path.Combine(webRootPath, "Reporting/" + Name + ".xml"));
+            if (_outputExampleInfo.Exists)
+            {
+                OutputExample = File.ReadAllText(_outputExampleInfo.FullName);
+            }
+            
+            FileInfo _fileInfo = new FileInfo(Path.Combine(webRootPath, "Reporting/" + Name + ".xsd"));
+            if (_fileInfo.Exists)
+            {
+                OutputSchema = File.ReadAllText(_fileInfo.FullName);
+            }
         }
 
         public MethodDoc(TypeDoc parent, XElement element)
