@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: apidocumentationapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apidocumentationapp
+  template:
+    metadata:
+      labels:
+        app: apidocumentationapp 
+    spec:
+      containers:
+        - name: apidocumentationapp 
+          image: timelogregistry.azurecr.io/apidocumentationapp
+          ports:
+          - containerPort: 80
