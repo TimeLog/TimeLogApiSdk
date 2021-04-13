@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Enumerable types";
+}
+
+<article class="article">
+
+    <h1>@ViewBag.Title</h1>
+    <h2>
+        Following enumerable data types are used various places in the Reporting API.
+        This page lists how to translate these numbers into text.
+    </h2>
+
+    <h3>Approved Status</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Time sheet open (0)</li>
+        <li class="icon-arrow_in_circle">Time sheet closed (10)</li>
+        <li class="icon-arrow_in_circle">Approved by project manager (20)</li>
+        <li class="icon-arrow_in_circle">Approved by department manager (30)</li>
+    </ul>
+    <h3>Contract (Model) Type</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Time Material Basic (1)</li>
+        <li class="icon-arrow_in_circle">Fixed Price Basic (2)</li>
+        <li class="icon-arrow_in_circle">Time Material Account End Balancing (3)</li>
+        <li class="icon-arrow_in_circle">Time Material Account Periodic Balancing (4)</li>
+        <li class="icon-arrow_in_circle">Prepaid Services (5)</li>
+        <li class="icon-arrow_in_circle">Revenue Request Per Task (6)</li>
+        <li class="icon-arrow_in_circle">Continuous Service (7)</li>
+        <li class="icon-arrow_in_circle">Continuous Item Invoicing (8)</li>
+    </ul>
+
+    <h3>Invoice Line Unit Type</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Undefined (0)</li>
+        <li class="icon-arrow_in_circle">Hours (1)</li>
+        <li class="icon-arrow_in_circle">Minutes (2)</li>
+        <li class="icon-arrow_in_circle">Days (3)</li>
+        <li class="icon-arrow_in_circle">Km (4)</li>
+        <li class="icon-arrow_in_circle">Pieces (6)</li>
+        <li class="icon-arrow_in_circle">Liters (7)</li>
+        <li class="icon-arrow_in_circle">Meters (8)</li>
+        <li class="icon-arrow_in_circle">Kilograms (9)</li>
+    </ul>
+    <h3>Invoice Status</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Draft (0)</li>
+        <li class="icon-arrow_in_circle">Booked (1)</li>
+        <li class="icon-arrow_in_circle">Overdue (2)</li>
+        <li class="icon-arrow_in_circle">Payed/Checked (3)</li>
+    </ul>
+    <h3>Invoice Type</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Invoice (1)</li>
+        <li class="icon-arrow_in_circle">Credit Note (2)</li>
+        <li class="icon-arrow_in_circle">Reminder (3)</li>
+        <li class="icon-arrow_in_circle">Voucher (4)</li>
+    </ul>
+    <h3>Project Contract Status</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Quotation (1)</li>
+        <li class="icon-arrow_in_circle">Active (2)</li>
+        <li class="icon-arrow_in_circle">Completed (3)</li>
+        <li class="icon-arrow_in_circle">Cancelled (4)</li>
+    </ul>
+    <h3>Registration Type</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Raw Invoiceable (0)</li>
+        <li class="icon-arrow_in_circle">Work Unit (2)</li>
+        <li class="icon-arrow_in_circle">Disbursement (3)</li>
+        <li class="icon-arrow_in_circle">Travel Expense (4)</li>
+        <li class="icon-arrow_in_circle">Support Unit (5)</li>
+        <li class="icon-arrow_in_circle">Installment (6)</li>
+        <li class="icon-arrow_in_circle">Support Contract (7)</li>
+        <li class="icon-arrow_in_circle">Rounding (8)</li>
+        <li class="icon-arrow_in_circle">Currency Difference (9)</li>
+    </ul>
+    <h3>Resource Hardbooking Type</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Manual (0)</li>
+        <li class="icon-arrow_in_circle">Outlook (1)</li>
+    </ul>
+    <h3>Task Status</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Not Started (0)</li>
+        <li class="icon-arrow_in_circle">In Progress (1)</li>
+        <li class="icon-arrow_in_circle">On Hold (2)</li>
+        <li class="icon-arrow_in_circle">Completed (3)</li>
+        <li class="icon-arrow_in_circle">Cancelled (4)</li>
+    </ul>
+    <h3>Work Unit Billable Status</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Non-billable registration on billable task with hourly rate of zero (-3)</li>
+        <li class="icon-arrow_in_circle">Billable registration on non-billable task (-2)</li>
+        <li class="icon-arrow_in_circle">Non-billable registration on non-billable task (-1)</li>
+        <li class="icon-arrow_in_circle">billable registration on billable task (1)</li>
+        <li class="icon-arrow_in_circle">Non-billable registration on billable task (2)</li>
+    </ul>
+    <h3>Work Unit Invoice Status</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Not booked or invoiced (0)</li>
+        <li class="icon-arrow_in_circle">Added to voucher (1)</li>
+        <li class="icon-arrow_in_circle">Added to invoice (2)</li>
+    </ul>
+    <h3>Entity Type</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">TimeRegistration (147)</li>
+        <li class="icon-arrow_in_circle">AbsenceCode (149)</li>
+        <li class="icon-arrow_in_circle">EmployeeProjection (154)</li>
+    </ul>
+    <h3>Posting Type</h3>
+    <ul>
+        <li class="icon-arrow_in_circle">Automatic (0)</li>
+        <li class="icon-arrow_in_circle">Manual (1)</li>
+        <li class="icon-arrow_in_circle">BalanceMovedFrom (2)</li>
+        <li class="icon-arrow_in_circle">BalanceMovedTo (3)</li>
+        <li class="icon-arrow_in_circle">Reset (4)</li>
+        <li class="icon-arrow_in_circle">SalaryTime (5)</li>
+    </ul>
+</article>

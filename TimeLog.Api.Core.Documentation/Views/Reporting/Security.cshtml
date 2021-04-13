@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Security";
+}
+
+<article class="article">
+
+    <h1>@ViewBag.Title</h1>
+    <h2>
+        The Reporting API security is a combination of SSL encryption, activation, a unique site code 
+        and credentials.
+    </h2>
+    <p>
+        Even though SSL is not required, TimeLog highly recommends it for all interactions with the API.
+        Each method in the Reporting API needs to be explicitly enabled in the TimeLog System
+        Administration by a user with the appropriate system administrator privileges.
+    </p>
+    <p>
+        Each TimeLog site has its own unique SiteCode required on all requests. You may request
+        a the SiteCode from the System Administration inside TimeLog, or request it directly
+        at <a href="mailto:support@timelog.com">support@timelog.com</a>.
+    </p>
+    <p>
+        Additional, each TimeLog site can define one set of Reporting API credentials that are
+        also required for each request.
+    </p>
+
+</article>
