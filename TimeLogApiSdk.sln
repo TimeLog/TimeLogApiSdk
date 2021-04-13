@@ -17,6 +17,7 @@ ProjectSection(SolutionItems) = preProject
 	run_docker_image.ps1 = run_docker_image.ps1
 	manifests\deployment.yml = manifests\deployment.yml
 	manifests\service.yml = manifests\service.yml
+	azure-pipelines.yml = azure-pipelines.yml
 EndProjectSection
 EndProject
 Global
