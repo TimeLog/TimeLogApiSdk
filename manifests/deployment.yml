@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: apidocumentationapp
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -20,8 +20,8 @@ spec:
               memory: 128Mi
               cpu: 200m
             limits:
-              memory: 24000Mi
-              cpu: 4000m
+              memory: 2400Mi
+              cpu: 400m
           ports:
           - containerPort: 80
           env:
