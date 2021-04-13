@@ -38,6 +38,7 @@
       <xsd:element name="PaymentMethod" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="PaymentMethodID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Comment" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ApprovedStatus" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Billable" type="xsd:unsignedInt" minOccurs="0" maxOccurs="1" />
       <xsd:element name="EmployeeFirstName" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="EmployeeLastName" type="xsd:string" minOccurs="0" maxOccurs="1" />
@@ -48,9 +49,8 @@
       <xsd:element name="EstimatedAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="InvAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ProfitRatio" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="ApprovedStatus" type="xsd:Integer" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="IsControlled" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
-      <xsd:element name="IsPaid" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="InvoiceLineID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="SupplierInvoiceNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Created" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
     </xsd:sequence>
 

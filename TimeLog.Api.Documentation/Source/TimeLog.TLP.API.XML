@@ -554,29 +554,29 @@
             <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_2.EmployeeHeader"/>
             <returns>Details of the new employee</returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.IRecurringProjectProductFutureInstanceReportingApiAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.IRecurringProjectProductFutureInstanceReportingApiAdapter">
             <summary>
             TODO: Update summary.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.IRecurringProjectProductFutureInstanceReportingApiAdapter.DomainToApi(TimeLog.TLP.Recurring.IRecurringProjectProductFutureInstanceReportingApiReadModel)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.IRecurringProjectProductFutureInstanceReportingApiAdapter.DomainToApi(TimeLog.TLP.Recurring.IRecurringProjectProductFutureInstanceReportingApiReadModel)">
             <summary>
             Converts a readModel object to an API object
             </summary>
             <param name="readModel">The readModel object</param>
             <returns>API object</returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.RecurringProjectProductFutureInstanceReportingApiAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.RecurringProjectProductFutureInstanceReportingApiAdapter">
             <summary>
             RecurringProjectProductFutureInstanceReportingApiAdapter for API
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.ContractAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.ContractAdapter">
             <summary>
             Contractadapter for API
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.FinancialService">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.FinancialService">
             <summary>
             Financial service for pricelists, currencies and services (<strong>released October 2015</strong>) 
             </summary>
@@ -585,25 +585,25 @@
             SSL: https://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialServiceSecure.svc
             </remarks>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.#ctor(System.Boolean)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.#ctor(System.Boolean)">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.Financial.V1_3.FinancialService"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.Financial.V1_4.FinancialService"/> class.
             </summary>
             <param name="isSecure">Select to use SSL or not</param>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.#ctor">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.#ctor">
             <summary>
-            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.Financial.V1_3.FinancialService"/> class from being created.
+            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.Financial.V1_4.FinancialService"/> class from being created.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetLegalEntities(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetLegalEntities(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets the price lists available
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An array of PriceList objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetLegalEntitiesByCurrency(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetLegalEntitiesByCurrency(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets price lists based on the currencies they hold
             </summary>
@@ -611,7 +611,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An array of PriceList objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetLegalEntitiesByName(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetLegalEntitiesByName(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets price lists based on the name, commonly only one price list is returned.
             </summary>
@@ -619,7 +619,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An array of PriceList objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetPriceGroups(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetPriceGroups(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets price groups associated with a price list
             </summary>
@@ -627,7 +627,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An array of PriceGroup objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetHourlyRates(System.String,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetHourlyRates(System.String,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a simple list of available hourly rates.
             </summary>
@@ -636,7 +636,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of strings</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetNewStandardHourlyRates(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetNewStandardHourlyRates(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Get new standard hourly rate setup property.
             </summary>
@@ -644,7 +644,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of hourly rate with default values according to the number of available price groups</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetNewCustomerHourlyRates(System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetNewCustomerHourlyRates(System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Get new hourly rate setup property for a customer (price list).
             </summary>
@@ -653,7 +653,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An hourly rate with default values according to the number of available price groups</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetProductNumbers(System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetProductNumbers(System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Get available product no list.
             </summary>
@@ -662,7 +662,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of product numbers</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.CreateCustomerPriceList(System.Int32,System.Int32,System.Collections.Generic.List{System.Int32},TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.CreateCustomerPriceList(System.Int32,System.Int32,System.Collections.Generic.List{System.Int32},TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Create new customer price list
             </summary>
@@ -672,7 +672,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>New created customer price list with hourly rates</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.CreateStandardHourlyRate(System.Int32,System.String,System.Collections.Generic.IEnumerable{TimeLog.TLP.API.Proxy.Financial.V1_3.HourlyRate},TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.CreateStandardHourlyRate(System.Int32,System.String,System.Collections.Generic.IEnumerable{TimeLog.TLP.API.Proxy.Financial.V1_4.HourlyRate},TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Create new standard hourly rate 
             </summary>
@@ -682,7 +682,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>New created customer price list with hourly rates</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.CreateCustomerHourlyRate(System.Int32,System.Int32,System.String,System.Collections.Generic.IEnumerable{TimeLog.TLP.API.Proxy.Financial.V1_3.HourlyRate},TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.CreateCustomerHourlyRate(System.Int32,System.Int32,System.String,System.Collections.Generic.IEnumerable{TimeLog.TLP.API.Proxy.Financial.V1_4.HourlyRate},TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Create new standard hourly rate 
             </summary>
@@ -693,14 +693,14 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>New created customer price list with hourly rates</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetEmployeeCostRates(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetEmployeeCostRates(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a simple list of available cost prices
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of strings</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetContractList(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetContractList(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets the contracts avaialable on a project
             </summary>
@@ -708,7 +708,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An array of Contract objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetPaymentList(System.Int32,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetPaymentList(System.Int32,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets the payments on a contract in a period
             </summary>
@@ -718,7 +718,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An array of Contract objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.UpdatePaymentQuantity(TimeLog.TLP.API.Proxy.Financial.V1_3.Payment,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.UpdatePaymentQuantity(TimeLog.TLP.API.Proxy.Financial.V1_4.Payment,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Saves the changes made to the payment object
             </summary>
@@ -727,7 +727,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns></returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetRecurringProductSaleList(System.Int32,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetRecurringProductSaleList(System.Int32,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Get future instances of recurring product sale
             </summary>
@@ -737,7 +737,7 @@
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.UpdateProductCostPriceAndDelegate(TimeLog.TLP.API.Proxy.Financial.V1_3.Product,System.Boolean,System.DateTime,System.Boolean,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.UpdateProductCostPriceAndDelegate(TimeLog.TLP.API.Proxy.Financial.V1_4.Product,System.Boolean,System.DateTime,System.Boolean,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Update the cost price of the product object and delegate the change to its associated products
             </summary>
@@ -749,7 +749,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns></returns>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.GetProductList(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialService.GetProductList(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Get a list of products based on status
             </summary>
@@ -757,58 +757,58 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>An array of product objects</returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.FinancialServiceSecure">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.FinancialServiceSecure">
             <summary>
             Financial service for pricelists, currencies and services
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialServiceSecure.#ctor">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.FinancialServiceSecure.#ctor">
             <summary>
-            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.Financial.V1_3.FinancialServiceSecure"/> class from being created.
+            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.Financial.V1_4.FinancialServiceSecure"/> class from being created.
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.IContractAdapter">
-            <summary>
-            TODO: Update summary.
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.IContractAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ProjectSubContracts.IProjectSubContract{TimeLog.TLP.ProjectManagement.ContractModels.IContractModel})">
-            <summary>
-            Converts a domain object to an API object
-            </summary>
-            <param name="domain">The domain object</param>
-            <returns>API object</returns>
-        </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.IEmployeeCostRateAdapter">
-            <summary>
-            Converts employee cost rates from domain to API
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.IEmployeeCostRateAdapter.DomainToApi(TimeLog.TLP.Invoicing.EmployeeCostRates.IEmployeeCostRate)">
-            <summary>
-            Converts a domain object to an API object
-            </summary>
-            <param name="domain">The domain object</param>
-            <returns>API object</returns>
-        </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.IHourlyRateAdapter">
-            <summary>
-            Converts employee cost rates from domain to API
-            </summary>
-        </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.IHourlyRateAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IHourlyRate)">
-            <summary>
-            Converts a domain object to an API object
-            </summary>
-            <param name="domain">The domain object</param>
-            <returns>API object</returns>
-        </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.ILegalEntityAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.IContractAdapter">
             <summary>
             TODO: Update summary.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.ILegalEntityAdapter.DomainToApi(TimeLog.TLP.Organisation.ILegalEntity)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.IContractAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ProjectSubContracts.IProjectSubContract{TimeLog.TLP.ProjectManagement.ContractModels.IContractModel})">
+            <summary>
+            Converts a domain object to an API object
+            </summary>
+            <param name="domain">The domain object</param>
+            <returns>API object</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.IEmployeeCostRateAdapter">
+            <summary>
+            Converts employee cost rates from domain to API
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.IEmployeeCostRateAdapter.DomainToApi(TimeLog.TLP.Invoicing.EmployeeCostRates.IEmployeeCostRate)">
+            <summary>
+            Converts a domain object to an API object
+            </summary>
+            <param name="domain">The domain object</param>
+            <returns>API object</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.IHourlyRateAdapter">
+            <summary>
+            Converts employee cost rates from domain to API
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.IHourlyRateAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IHourlyRate)">
+            <summary>
+            Converts a domain object to an API object
+            </summary>
+            <param name="domain">The domain object</param>
+            <returns>API object</returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.ILegalEntityAdapter">
+            <summary>
+            TODO: Update summary.
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.ILegalEntityAdapter.DomainToApi(TimeLog.TLP.Organisation.ILegalEntity)">
             <summary>
             The domain to api.
             </summary>
@@ -816,39 +816,39 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_3.LegalEntity"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_4.LegalEntity"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.IProductAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.IProductAdapter">
             <summary>
             TODO: Update summary.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.IProductAdapter.DomainToApi(TimeLog.TLP.Expenses.Product.IProduct)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.IProductAdapter.DomainToApi(TimeLog.TLP.Expenses.Product.IProduct)">
             <summary>
             Converts a domain object to an API object
             </summary>
             <param name="domain">The domain object</param>
             <returns>API object</returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.IPaymentAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.IPaymentAdapter">
             <summary>
             TODO: Update summary.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.IPaymentAdapter.DomainToApi(TimeLog.TLP.Invoicing.Invoiceable.IPayment)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.IPaymentAdapter.DomainToApi(TimeLog.TLP.Invoicing.Invoiceable.IPayment)">
             <summary>
             Converts a domain object to an API object
             </summary>
             <param name="domain">The domain object</param>
             <returns>API object</returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.IPriceGroupAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.IPriceGroupAdapter">
             <summary>
             Adapter interface for translating price groups
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.IPriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceGroup)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.IPriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceGroup)">
             <summary>
             Converts a domain object to an API object
             </summary>
@@ -859,12 +859,12 @@
             API object
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.IServiceAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.IServiceAdapter">
             <summary>
             The ServiceAdapter interface.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.IServiceAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IService)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.IServiceAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IService)">
             <summary>
             The domain to api.
             </summary>
@@ -872,15 +872,15 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_3.Service"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_4.Service"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.LegalEntityAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.LegalEntityAdapter">
             <summary>
             TODO: Update summary.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.LegalEntityAdapter.DomainToApi(TimeLog.TLP.Organisation.ILegalEntity)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.LegalEntityAdapter.DomainToApi(TimeLog.TLP.Organisation.ILegalEntity)">
             <summary>
             The domain to api.
             </summary>
@@ -888,25 +888,25 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_3.LegalEntity"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_4.LegalEntity"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.ProductAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.ProductAdapter">
             <summary>
             Productadapter for API
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.PaymentAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.PaymentAdapter">
             <summary>
             Paymentadapter for API
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.PriceGroupAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.PriceGroupAdapter">
             <summary>
             Unit_Price group adapter for API
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.PriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceGroup)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.PriceGroupAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IPriceGroup)">
             <summary>
             The domain to api.
             </summary>
@@ -917,12 +917,12 @@
             The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_2.PriceGroup"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.Financial.V1_3.ServiceAdapter">
+        <member name="T:TimeLog.TLP.API.Financial.V1_4.ServiceAdapter">
             <summary>
             The service adapter.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.Financial.V1_3.ServiceAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IService)">
+        <member name="M:TimeLog.TLP.API.Financial.V1_4.ServiceAdapter.DomainToApi(TimeLog.TLP.Invoicing.HourlyRates.IService)">
             <summary>
             The domain to api.
             </summary>
@@ -930,7 +930,7 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_3.Service"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.Financial.V1_4.Service"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_2.ContractAdapter">
@@ -940,7 +940,7 @@
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_2.FinancialService">
             <summary>
-            Financial service for pricelists, currencies and services (<strong>released October 2015</strong>) 
+            Financial service for pricelists, currencies and services (<strong>released October 2015</strong>) - OBSOLETE
             </summary>
             <remarks>
             Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialService.svc
