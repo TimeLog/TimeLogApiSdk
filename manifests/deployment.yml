@@ -1,0 +1,29 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: apidocumentation
+spec:
+  selector:
+    matchLabels:
+      app: apidocumentationapp
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: apidocumentationapp
+    spec:
+      containers:
+        - name: apidocumentationapp
+          image: timelogregistry.azurecr.io/apidocumentationapp:latest
+          resources:
+            requests:
+              memory: 128Mi
+              cpu: 200m
+            limits:
+              memory: 24000Mi
+              cpu: 4000m
+          ports:
+          - containerPort: 80
+          env:
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "aks"

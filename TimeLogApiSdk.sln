@@ -15,6 +15,8 @@ ProjectSection(SolutionItems) = preProject
 	build_docker_image.ps1 = build_docker_image.ps1
 	Dockerfile = Dockerfile
 	run_docker_image.ps1 = run_docker_image.ps1
+	manifests\deployment.yml = manifests\deployment.yml
+	manifests\service.yml = manifests\service.yml
 EndProjectSection
 EndProject
 Global
