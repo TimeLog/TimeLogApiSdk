@@ -11,12 +11,12 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '$(dockerRegistryServiceConnection)'
+  # dockerRegistryServiceConnection: '$(dockerRegistryServiceConnection)'
   imageRepository: 'apidocumentationapp'
-  containerRegistry: '$(containerRegistry)'
+  #containerRegistry: '$(containerRegistry)'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: '$(imagePullSecret)'
+  #imagePullSecret: '$(imagePullSecret)'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
