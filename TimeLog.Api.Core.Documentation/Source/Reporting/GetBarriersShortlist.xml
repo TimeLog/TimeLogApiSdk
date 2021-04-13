@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Barriers xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/BarriersShortlist.xsd">
+  <tlp:Barrier ID="14">
+    <BarrierGUID>656de119-8b4d-4091-a73b-a5dfc104d9c4</BarrierGUID>
+    <BarrierName>Price</BarrierName>
+    <IsActive>1</IsActive>
+   </tlp:Barrier>
+</tlp:Barriers>

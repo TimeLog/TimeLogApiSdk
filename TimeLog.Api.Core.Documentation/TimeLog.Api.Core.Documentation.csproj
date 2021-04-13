@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.4" />
+      <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -38,7 +39,233 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Pages" />
       <Folder Include="wwwroot\lib" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Source\Financial\NAV-ChangeObjects1.png" />
+      <Content Include="Source\Financial\NAV-ChangeObjects2.png" />
+      <Content Include="Source\Financial\NAV-ChangeObjects3.png" />
+      <Content Include="Source\Financial\NAV-ChangeObjects4.png" />
+      <Content Include="Source\Financial\NAV-ChangeObjects5.png" />
+      <Content Include="Source\Financial\NAV-InstallCoreDll.png" />
+      <Content Include="Source\Financial\NAV-InstallObjects1.PNG" />
+      <Content Include="Source\Financial\NAV-InstallObjects2.PNG" />
+      <Content Include="Source\Financial\NAV-JobQueue.png" />
+      <Content Include="Source\Financial\NAV-WebServices.png" />
+      <Content Include="Source\PowerBI\timelog-reporting-api-power-bi-01.png" />
+      <Content Include="Source\PowerBI\timelog-reporting-api-power-bi-02.png" />
+      <Content Include="Source\PowerBI\timelog-reporting-api-power-bi-03.png" />
+      <Content Include="Source\PowerBI\timelog-reporting-api-power-bi-04.png" />
+      <Content Include="Source\PowerBI\timelog-reporting-api-power-bi-05.png" />
+      <Content Include="Source\PowerBI\timelog-reporting-api-power-bi-06.png" />
+      <Content Include="Source\PowerBI\timelog-reporting-api-power-bi-07.png" />
+      <Content Include="Source\README.md" />
+      <Content Include="Source\Reporting\GetAllocationsRaw.xml" />
+      <Content Include="Source\Reporting\GetAllocationsRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetBarriersShortlist.xml" />
+      <Content Include="Source\Reporting\GetBarriersShortlist.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetContactsRaw.xml" />
+      <Content Include="Source\Reporting\GetContactsRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetContactsShortList.xml" />
+      <Content Include="Source\Reporting\GetContactsShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetContractCustomersRaw.xml" />
+      <Content Include="Source\Reporting\GetContractsRaw.xml" />
+      <Content Include="Source\Reporting\GetContractsRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetCountriesShortList.xml" />
+      <Content Include="Source\Reporting\GetCountriesShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetCustomersRaw.xml" />
+      <Content Include="Source\Reporting\GetCustomersRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetCustomersShortList.xml" />
+      <Content Include="Source\Reporting\GetCustomersShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetCustomerStatusShortList.xml" />
+      <Content Include="Source\Reporting\GetCustomerStatusShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetDepartmentsShortlist.xml" />
+      <Content Include="Source\Reporting\GetDepartmentsShortlist.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetEmployeeNormalWorkingHoursRaw.xml" />
+      <Content Include="Source\Reporting\GetEmployeeNormalWorkingHoursRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetEmployeesRaw.xml" />
+      <Content Include="Source\Reporting\GetEmployeesRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetEmployeesShortList.xml" />
+      <Content Include="Source\Reporting\GetEmployeesShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetEventsRaw.xml" />
+      <Content Include="Source\Reporting\GetEventsRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetEventTypesRaw.xml" />
+      <Content Include="Source\Reporting\GetEventTypesRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetExpensesRaw.xml" />
+      <Content Include="Source\Reporting\GetExpensesRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetFlexTimeRaw.xml" />
+      <Content Include="Source\Reporting\GetFlexTimeRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetHardBookingsRaw.xml" />
+      <Content Include="Source\Reporting\GetHardbookingsRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetHourlyRatesRaw.xml" />
+      <Content Include="Source\Reporting\GetIndustriesShortList.xml" />
+      <Content Include="Source\Reporting\GetIndustriesShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetInvoiceLineDetailsRaw.xml" />
+      <Content Include="Source\Reporting\GetInvoiceLineDetailsRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetInvoiceLinesRaw.xml" />
+      <Content Include="Source\Reporting\GetInvoiceLinesRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetInvoicesRaw.xml" />
+      <Content Include="Source\Reporting\GetInvoicesRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetLegalEntitiesRaw.xml" />
+      <Content Include="Source\Reporting\GetMileageRaw.xml" />
+      <Content Include="Source\Reporting\GetMileageRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetMilestonesRaw.xml" />
+      <Content Include="Source\Reporting\GetMilestonesRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetMilestoneTypesRaw.xml" />
+      <Content Include="Source\Reporting\GetMilestoneTypesRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetOpportunitiesRaw.xml" />
+      <Content Include="Source\Reporting\GetOpportunitiesRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetOpportunityStatusShortlist.xml" />
+      <Content Include="Source\Reporting\GetOpportunityStatusShortlist.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetOpportunityTypesShortlist.xml" />
+      <Content Include="Source\Reporting\GetOpportunityTypesShortlist.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetPriceGroupsRaw.xml" />
+      <Content Include="Source\Reporting\GetProjectCategoriesShortList.xml" />
+      <Content Include="Source\Reporting\GetProjectCategoriesShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetProjectsRaw.xml" />
+      <Content Include="Source\Reporting\GetProjectsRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetProjectsShortList.xml" />
+      <Content Include="Source\Reporting\GetProjectsShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetProjectTypesShortList.xml" />
+      <Content Include="Source\Reporting\GetProjectTypesShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetSalaryAccountEmployeePostingsRaw.xml" />
+      <Content Include="Source\Reporting\GetSalaryAccountsRaw.xml" />
+      <Content Include="Source\Reporting\GetSubOpportunitiesRaw.xml" />
+      <Content Include="Source\Reporting\GetSubOpportunitiesRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetSupportCaseRaw.xml" />
+      <Content Include="Source\Reporting\GetSupportCaseRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetSupportContractRaw.xml" />
+      <Content Include="Source\Reporting\GetSupportContractRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetSupportJournalRaw.xml" />
+      <Content Include="Source\Reporting\GetSupportJournalRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetSupportTypesShortList.xml" />
+      <Content Include="Source\Reporting\GetSupportTypesShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetTasksRaw.xml" />
+      <Content Include="Source\Reporting\GetTasksRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetTasksShortList.xml" />
+      <Content Include="Source\Reporting\GetTasksShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetTaskTypesShortList.xml" />
+      <Content Include="Source\Reporting\GetTaskTypesShortList.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetTimeOffRegistrationsRaw.xml" />
+      <Content Include="Source\Reporting\GetTimeOffRegistrationsRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetWorkingHoursRaw.xml" />
+      <Content Include="Source\Reporting\GetWorkingHoursRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\Reporting\GetWorkUnitsRaw.xml" />
+      <Content Include="Source\Reporting\GetWorkUnitsRaw.xsd">
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="Source\TimeLog.Financial.Architecture.png" />
+      <Content Include="Source\TimeLog.Financial.Architecture.xml" />
+      <Content Include="Source\TimeLog.TLP.API.Proxy.xml" />
+      <Content Include="Source\TimeLog.TLP.API.XML" />
+      <Content Include="Source\TimeLog.TLP.WebAppCode.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Source\Reporting\GetHourlyRatesRaw.xsd">
+        <SubType>Designer</SubType>
+      </None>
+      <None Update="Source\Reporting\GetLegalEntitiesRaw.xsd">
+        <SubType>Designer</SubType>
+      </None>
+      <None Update="Source\Reporting\GetPriceGroupsRaw.xsd">
+        <SubType>Designer</SubType>
+      </None>
+      <None Update="Source\Reporting\GetSalaryAccountEmployeePostingsRaw.xsd">
+        <SubType>Designer</SubType>
+      </None>
+      <None Update="Source\Reporting\GetSalaryAccountsRaw.xsd">
+        <SubType>Designer</SubType>
+      </None>
+      <None Update="Source\Reporting\GetContractCustomersRaw.xsd">
+        <SubType>Designer</SubType>
+      </None>
     </ItemGroup>
 
 </Project>

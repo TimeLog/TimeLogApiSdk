@@ -1,0 +1,46 @@
+﻿@model TimeLog.Api.Core.Documentation.Models.MethodDoc
+@{
+    ViewBag.Title = Model.Name + " - Method Details";
+}
+
+<article class="article">
+
+    <p><a href="@Url.Action("Methods")">Back to @Model.Parent.Name.SplitOnUppercase()</a></p>
+    <h2>Method Details for @Model.Name.</h2>
+    <p>@Model.Summary</p>
+    <h3>Definition</h3>
+    <pre>@Model.FullName</pre>
+    <h3>Parameters</h3>
+    <ul>
+        @foreach (var param in Model.Params)
+        {
+            <li class="icon-arrow_in_circle">
+                @param.Name <span class="text-selection">@param.Type</span> @param.Description
+            </li>
+        }
+    </ul>
+    <h3>Returns</h3>
+    @if (!string.IsNullOrWhiteSpace(Model.Returns))
+    {
+        <p>@Model.Returns</p>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.GetReportingExample()))
+    {
+        <h3>Result Example</h3>
+        <pre>@Model.GetReportingExample()</pre>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.GetReportingSchema()))
+    {
+        <h3>Result Schema</h3>
+        <pre>@Model.GetReportingSchema()</pre>
+        <p><a href="@Url.Content("~/Source/Reporting/" + Model.Name + ".xsd")">Download the XSD</a></p>
+    }
+
+    @if (!string.IsNullOrWhiteSpace(Model.Remarks))
+    {
+        <h3>Returns</h3>
+        <p>@Model.Remarks</p>
+    }
+
+
+</article>

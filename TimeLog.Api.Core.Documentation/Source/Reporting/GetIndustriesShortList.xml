@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Industries xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/IndustriesShortList.xsd">
+  <tlp:Industry ID="343">
+    <tlp:Name>Architect</tlp:Name>
+  </tlp:Industry>
+  <tlp:Industry ID="340">
+    <tlp:Name>Consultant</tlp:Name>
+  </tlp:Industry>
+  <tlp:Industry ID="338">
+    <tlp:Name>IT</tlp:Name>
+  </tlp:Industry>  
+  <tlp:Industry ID="342">
+    <tlp:Name>Public administration</tlp:Name>
+  </tlp:Industry>
+  <tlp:Industry ID="341">
+    <tlp:Name>PR/Media</tlp:Name>
+  </tlp:Industry>
+  <tlp:Industry ID="339">
+    <tlp:Name>Webbureau</tlp:Name>
+  </tlp:Industry>
+</tlp:Industries>

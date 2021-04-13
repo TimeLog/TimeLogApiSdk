@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Opportunities xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4">
+  <tlp:Opportunity ID="1499">
+    <tlp:CustomerID>669</tlp:CustomerID>
+    <tlp:CustomerName>Volvo AB</tlp:CustomerName>
+    <tlp:ContactID>4</tlp:ContactID>
+    <tlp:ContactName>Karolina Nielson</tlp:ContactName>
+    <tlp:Subject>Project Management Course</tlp:Subject>
+    <tlp:OpportunityTypeID>1</tlp:OpportunityTypeID>
+    <tlp:OpportunityTypeName>Management</tlp:OpportunityTypeName>
+    <tlp:EmployeeID>373</tlp:EmployeeID>
+    <tlp:EmployeeName>Lars Olsen</tlp:EmployeeName>
+    <tlp:BarrierID>;3;</tlp:BarrierID>
+    <tlp:Potential>4.800000000000000e+004</tlp:Potential>
+    <tlp:ForecastRate>100</tlp:ForecastRate>
+    <tlp:Description>30 hours, April</tlp:Description>
+    <tlp:Created>2016-12-09T16:51:20</tlp:Created>
+    <tlp:Createdby>373</tlp:Createdby>
+    <tlp:LastModified>2017-01-20T10:15:06</tlp:LastModified>
+    <tlp:LastModifiedBy>373</tlp:LastModifiedBy>
+    <tlp:QuotationSent>2016-12-09T00:00:00</tlp:QuotationSent>
+    <tlp:Quotation></tlp:Quotation>
+    <tlp:CurrencyID>28</tlp:CurrencyID>
+    <tlp:CurrencyISOCode>SEK</tlp:CurrencyISOCode>
+  </tlp:Opportunity>
+</tlp:Opportunities>

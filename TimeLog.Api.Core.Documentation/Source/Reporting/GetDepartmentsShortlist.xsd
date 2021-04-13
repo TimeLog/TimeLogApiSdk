@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="Departments">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Department" type="tlp:DepartmentShort_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="Department_Key">
+      <xsd:selector xpath=".//tlp:Department" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="DepartmentShort_Type">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string" />
+      <xsd:element name="ParentID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="IsActive" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="DepartmentNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="DepartmentManagerUserID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="DepartmentManagerInitials" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="DepartmentManagerFullName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
+  </xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:EventTypes xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/EventTypesRaw.xsd">
+  <tlp:EventType ID="3">
+    <tlp:GUID>93F0E57C-9828-E411-A4E6-0050569403FB</tlp:GUID>
+    <tlp:EventTypeName>20. Send material</tlp:EventTypeName>
+    <tlp:IsActive>0</tlp:IsActive>
+  </tlp:EventType>
+</tlp:EventTypes>

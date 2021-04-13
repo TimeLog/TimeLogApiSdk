@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:FlexTimes  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/FlexTimesRaw.xsd" >
+  <tlp:FlexTime>
+    <tlp:Date>2017-06-28T00:00:00</tlp:Date>
+    <tlp:FlexTime>-7.400</tlp:FlexTime>
+    <tlp:EmployeeUserID>1</tlp:EmployeeUserID>
+    <tlp:EmployeeInitials>gha</tlp:EmployeeInitials>
+    <tlp:EmployeeFullName>Gilli Haraldsen</tlp:EmployeeFullName>
+    <tlp:DepartmentID>1</tlp:DepartmentID>
+    <tlp:Department>TimeLog A/S</tlp:Department>
+    <tlp:Type>Flex</tlp:Type>
+    <tlp:Description>Comment</tlp:Description>
+  </tlp:FlexTime>
+</tlp:FlexTimes>

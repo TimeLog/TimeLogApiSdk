@@ -1,0 +1,58 @@
+﻿@model IEnumerable<TimeLog.Api.Core.Documentation.Models.MethodDoc>
+@{
+    ViewBag.Title = "Reporting API Methods";
+}
+
+<article class="article">
+    <h1>@ViewBag.Title</h1>
+    <h2>This page specifies all the available methods.</h2>
+    <p>
+        The Reporting API is not versioned. New methods and additional fields might be added over time.
+        However, method and fields will normally not be removed or modified.
+    </p>
+    <h3>Endpoint</h3>
+    <pre>https://app[x].timelog.com/[account name]/service.asmx</pre>
+    <h3 id="methods"><a href="#methods">Methods</a></h3>
+    <ul>
+        @foreach (var method in Model.Where(m => !m.IsConstructor))
+        {
+            <li class="icon-arrow_in_circle"><a href="@Url.Action("Method", "Reporting", new { id = method.FullyQuantifiedName.UrlEncode() })">@method.Name</a> - @method.Summary</li>
+        }
+    </ul> 
+    <h3 id="data-currently-not-available"><a href="#data-currently-not-available">Data currently not available</a></h3>
+    <p>
+        Unless mentioned in the list above, other data types are currently not available in the reporting API.
+        We do receive questions about other data types, and those will naturally be on our radar for future
+        development. Specifically, we are aware of the request for the following data objects:
+    </p>
+    <ul>
+        <li class="icon-arrow_in_circle">Approval flow data (incl. weekly time sheet statuses)</li>
+        <li class="icon-arrow_in_circle">Contract payments</li>
+        <li class="icon-arrow_in_circle">Salary codes</li>
+        <li class="icon-arrow_in_circle">Absence codes</li>
+        <li class="icon-arrow_in_circle">Expense attachments</li>
+    </ul>
+    <h3 id="working-with-currencies"><a href="#working-with-currencies">Working with currencies</a></h3>
+    <p>
+        Please take note that the currency setup follows the rules below unless it's stated explicitly:<br />
+    </p>
+    <table class="setting_table" style="width: 100%">
+        <tr>
+            <td style="width: 40%">Properties for amounts ending with <em>SystemCurrency</em></td>
+            <td>System currency</td>
+        </tr>
+        <tr>
+            <td>Properties for amounts ending with <em>Currency</em></td>
+            <td>
+                Project currency (e.g. cost, amount, sales price)<br />
+                Invoice currency (e.g. amount)
+            </td>
+        </tr>
+        <tr>
+            <td>Properties for amounts without explicit definition</td>
+            <td>System currency</td>
+        </tr>
+    </table>
+
+</article>
+

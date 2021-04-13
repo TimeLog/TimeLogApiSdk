@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="Contacts">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Contact" type="tlp:ContactShort_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="Contact_Key">
+      <xsd:selector xpath=".//tlp:Contact" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="ContactShort_Type">
+    <xsd:sequence>
+      <xsd:element name="FullName" type="xsd:string" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
+  </xsd:complexType>
+</xsd:schema>

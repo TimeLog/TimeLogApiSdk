@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TimeOffRegistrations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="TimeOffRegistration">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeID" type="xs:positiveInteger" />
+              <xs:element name="EmployeeInitials" type="xs:string" />
+              <xs:element name="EmployeeFirstName" type="xs:string" />
+              <xs:element name="EmployeeLastName" type="xs:string" />
+              <xs:element name="TimeOffCode" type="xs:unsignedByte" />
+              <xs:element name="TimeOffName" type="xs:string" />
+              <xs:element name="Date" type="xs:dateTime" />
+              <xs:element name="RegHours" type="xs:float" />
+              <xs:element name="CreatedAt" type="xs:dateTime" />
+              <xs:element name="CreatedByEmployeeId" type="xs:positiveInteger" />
+              <xs:element name="CreatedBy" type="xs:string" />
+              <xs:element name="LastModifiedAt" type="xs:dateTime" />
+              <xs:element name="LastModifiedByEmployeeId" type="xs:positiveInteger" />
+              <xs:element name="LastModifiedBy" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="ID" type="xs:positiveInteger" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

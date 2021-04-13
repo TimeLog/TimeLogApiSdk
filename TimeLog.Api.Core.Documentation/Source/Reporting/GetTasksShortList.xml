@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Tasks
+  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/TasksShortList.xsd">
+  <tlp:Task ID="123">
+    <tlp:Name>Marketing </tlp:Name>
+    <tlp:ProjectID>12</tlp:ProjectID>
+    <tlp:Status>0</tlp:Status>
+    <tlp:IsParent>1</tlp:IsParent>
+  </tlp:Task>
+  <tlp:Task ID="127">
+    <tlp:Name>Kampagne </tlp:Name>
+    <tlp:ProjectID>12</tlp:ProjectID>
+    <tlp:Status>0</tlp:Status>
+    <tlp:ParentID>123</tlp:ParentID>
+    <tlp:IsParent>0</tlp:IsParent>
+  </tlp:Task>
+  <tlp:Task ID="399">
+    <tlp:Name>Website </tlp:Name>
+    <tlp:ProjectID>12</tlp:ProjectID>
+    <tlp:Status>0</tlp:Status>
+    <tlp:ParentID>123</tlp:ParentID>
+    <tlp:IsParent>0</tlp:IsParent>
+  </tlp:Task>
+  <tlp:Task ID="264">
+    <tlp:Name>NTI-Expo 2002 </tlp:Name>
+    <tlp:ProjectID>12</tlp:ProjectID>
+    <tlp:Status>0</tlp:Status>
+    <tlp:ParentID>123</tlp:ParentID>
+    <tlp:IsParent>0</tlp:IsParent>
+  </tlp:Task>
+</tlp:Tasks>

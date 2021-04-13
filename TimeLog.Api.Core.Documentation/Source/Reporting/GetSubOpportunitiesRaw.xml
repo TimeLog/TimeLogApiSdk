@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:SubOpportunities xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4">
+  <tlp:SubOpportunity ID="3">
+    <tlp:OpportunityID>1</tlp:OpportunityID>
+    <tlp:OpportunitySubject>Project management course</tlp:OpportunitySubject>
+    <tlp:Name>Startup project</tlp:Name>
+    <tlp:OpportunityTypeID>1</tlp:OpportunityTypeID>
+    <tlp:OpportunityTypeName>Consultancy</tlp:OpportunityTypeName>
+    <tlp:OpportunityStatusID>5</tlp:OpportunityStatusID>
+    <tlp:OpportunityStatusName>Order received</tlp:OpportunityStatusName>
+    <tlp:ForecastAmount>4.800000000000000e+004</tlp:ForecastAmount>
+    <tlp:ForecastRate>100</tlp:ForecastRate>
+    <tlp:Date>2017-03-15T00:00:00</tlp:Date>
+    <tlp:Created>2016-12-09T16:53:14</tlp:Created>
+    <tlp:Createdby>373</tlp:Createdby>
+    <tlp:LastModified>2017-01-20T10:15:07</tlp:LastModified>
+    <tlp:LastModifiedBy>373</tlp:LastModifiedBy>
+  </tlp:SubOpportunity>
+</tlp:SubOpportunities>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Milestones xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/MilestonesRaw.xsd">
+  <tlp:Milestone ID="1499">
+    <MilestoneTypeID>13</MilestoneTypeID>
+    <ProjectID>102</ProjectID>
+    <ProjectName>EMI - Presale (leads)</ProjectName>
+    <Date>2015-04-01T00:00:00</Date>
+    <ResponsibleEmployeeID>312</ResponsibleEmployeeID>
+    <ResponsibleEmployeeName>Peter Andersen</ResponsibleEmployeeName>
+    <Text>Complete integration of NAV</Text>
+    <Completed>0</Completed>
+    <WBSNo>3</WBSNo>
+    <SortOrder>5</SortOrder>
+  </tlp:Milestone>
+</tlp:Milestones>

@@ -28,286 +28,240 @@
 </nav>
 
 <nav id="site-nav" class="main-nav" aria-label="Primary navigation">
-<div class="logo">
-    <a href="/">TimeLog</a>
-</div>
+    <div class="logo">
+        <a href="/">TimeLog</a>
+    </div>
 
-<div class="navigation">
-<div class="mega-menu-container">
-<ul id="nav-items" class="top-level">
-<li class="top-level__item mega-menu">
-    <a class="top-level__link " href="@Url.Action("Index", "GettingStarted")">
-        <span class="link-text">Getting Started</span>
-        <i class="fal fa-angle-down angle-icon"></i>
-    </a>
-    <div class="mega-menu-content">
-        <div class="mega-menu-content-inner">
-            <div class="mega-menu-column">
-                <ul class="mega-menu-links">
-                    <li>
-                        <a href="@Url.Action("Restrictions", "GettingStarted")">
-                            <i class="icon fal fa-cogs"></i>
-                            <span>API policy and restrictions</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("DataModel", "GettingStarted")">
-                            <i class="icon fal fa-handshake-alt"></i>
-                            <span>Our data model</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="mega-menu-column"></div>
-            <div class="mega-menu-image-container">
-            </div>
+    <div class="navigation">
+        <div class="mega-menu-container">
+            <ul id="nav-items" class="top-level">
+                <li class="top-level__item mega-menu">
+                    <a class="top-level__link " href="@Url.Action("Index", "Home")">
+                        <span class="link-text">Overview</span>
+                        <i class="fal fa-angle-down angle-icon"></i>
+                    </a>
+                    <div class="mega-menu-content">
+                        <div class="mega-menu-content-inner">
+                            <div class="mega-menu-column">
+                                <ul class="mega-menu-links">
+                                    <li>
+                                        <a href="@Url.Action("Restrictions", "GettingStarted")">
+                                            <i class="icon fal fa-cogs"></i>
+                                            <span>API policy and restrictions</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("DataModel", "GettingStarted")">
+                                            <i class="icon fal fa-cogs"></i>
+                                            <span>Our data model</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("EnumerableTypes", "Reporting")">
+                                            <i class="icon fal fa-abacus"></i>
+                                            <span>Enumerable Types</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column"></div>
+                            <div class="mega-menu-image-container">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-level__item mega-menu">
+                    <a class="top-level__link " href="@Url.Action("Index", "Rest")">
+                        <span class="link-text">REST API</span>
+                        <i class="fal fa-angle-down angle-icon"></i>
+                    </a>
+                    <div class="mega-menu-content">
+                        <div class="mega-menu-content-inner">
+                            <div class="mega-menu-column">
+                                <ul class="mega-menu-links">
+                                    <li>
+                                        <a href="@Url.Action("GettingStarted", "Rest")">
+                                            <i class="icon fal fa-rabbit-fast"></i>
+                                            <span>Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://newlogin.timelog.com/documentation">
+                                            <i class="icon fal fa-tasks"></i>
+                                            <span>Authenticating with the API</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Services", "Rest")">
+                                            <i class="icon fal fa-project-diagram"></i>
+                                            <span>Services</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column"></div>
+                            <div class="mega-menu-image-container">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-level__item mega-menu">
+                    <a class="top-level__link " href="@Url.Action("Index", "Transactional")">
+                        <span class="link-text">Transactional API</span>
+                        <i class="fal fa-angle-down angle-icon"></i>
+
+                    </a>
+                    <div class="mega-menu-content">
+                        <div class="mega-menu-content-inner">
+                            <div class="mega-menu-column">
+                                <ul class="mega-menu-links">
+                                    <li>
+                                        <a href="@Url.Action("GettingStarted", "Transactional")">
+                                            <i class="icon fal fa-rabbit-fast"></i>
+                                            <span>Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Security", "Transactional")">
+                                            <i class="icon fal fa-tasks"></i>
+                                            <span>Security</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Services", "Transactional")">
+                                            <i class="icon fal fa-project-diagram"></i>
+                                            <span>Services</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("ExternalSystems", "Transactional")">
+                                            <i class="icon fal fa-handshake-alt"></i>
+                                            <span>External Systems</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column"></div>
+                            <div class="mega-menu-image-container"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-level__item mega-menu">
+                    <a class="top-level__link" href="@Url.Action("Index", "Reporting")">
+                        <span class="link-text">Reporting API</span>
+                        <i class="fal fa-angle-down angle-icon"></i>
+                    </a>
+                    <div class="mega-menu-content">
+                        <div class="mega-menu-content-inner">
+                            <div class="mega-menu-column">
+                                <ul class="mega-menu-links">
+                                    <li>
+                                        <a href="@Url.Action("GettingStarted", "Reporting")">
+                                            <i class="icon fal fa-rabbit-fast"></i>
+                                            <span>Getting Started</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Security", "Reporting")">
+                                            <i class="icon fal fa-tasks"></i>
+                                            <span>Security</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Methods", "Reporting")">
+                                            <i class="icon fal fa-project-diagram"></i>
+                                            <span>Methods</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("PowerBI", "Reporting")">
+                                            <i class="icon fal fa-tachometer-fast"></i>
+                                            <span>Power BI</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("SynchronizingData", "Reporting")">
+                                            <i class="icon fal fa-abacus"></i>
+                                            <span>Synchronizing Data</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="mega-menu-column"></div>
+                            <div class="mega-menu-image-container"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="top-level__item mega-menu">
+                    <a class="top-level__link" href="@Url.Action("Index", "FinancialIntegration")">
+                        <span class="link-text">Financial Integrations</span>
+                        <i class="fal fa-angle-down angle-icon"></i>
+                    </a>
+                    <div class="mega-menu-content">
+                        <div class="mega-menu-content-inner">
+                            <div class="mega-menu-column">
+                                <ul class="mega-menu-links">
+                                    <li>
+                                        <a href="@Url.Action("Security", "FinancialIntegration")">
+                                            <i class="icon fal fa-tasks"></i>
+                                            <span>Security</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Economic", "FinancialIntegration")">
+                                            <i class="icon fal fa-file-invoice-dollar"></i>
+                                            <span>E-conomic</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("ExactOnline", "FinancialIntegration")">
+                                            <i class="icon fal fa-file-invoice-dollar"></i>
+                                            <span>Exact Online</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Fortnox", "FinancialIntegration")">
+                                            <i class="icon fal fa-file-invoice-dollar"></i>
+                                            <span>Fortnox</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("BjornLunden", "FinancialIntegration")">
+                                            <i class="icon fal fa-file-invoice-dollar"></i>
+                                            <span>Björn Lundén</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("DynamicsNav", "FinancialIntegration")">
+                                            <i class="icon fal fa-file-invoice-dollar"></i>
+                                            <span>Microsoft Dynamics NAV</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Dinero", "FinancialIntegration")">
+                                            <i class="icon fal fa-file-invoice-dollar"></i>
+                                            <span>Dinero</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Uniconta", "FinancialIntegration")">
+                                            <i class="icon fal fa-file-invoice-dollar"></i>
+                                            <span>Uniconta</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+            
+                            <div class="mega-menu-column"></div>
+                            <div class="mega-menu-image-container"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
-</li>
-<li class="top-level__item mega-menu">
-    <a class="top-level__link " href="@Url.Action("Index", "Rest")">
-        <span class="link-text">REST API</span>
-        <i class="fal fa-angle-down angle-icon"></i>
-    </a>
-    <div class="mega-menu-content">
-        <div class="mega-menu-content-inner">
-            <div class="mega-menu-column">
-                <ul class="mega-menu-links">
-                    <li>
-                        <a href="@Url.Action("Introduction", "Rest")">
-                            <i class="icon fal fa-cogs"></i>
-                            <span>API policy and restrictions</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://newlogin.timelog.com/documentation">
-                            <i class="icon fal fa-cogs"></i>
-                            <span>Authenticating with the API</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Services", "Rest")">
-                            <i class="icon fal fa-handshake-alt"></i>
-                            <span>Services</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="mega-menu-column"></div>
-            <div class="mega-menu-image-container">
-            </div>
-        </div>
-    </div>
-</li>
-<li class="top-level__item mega-menu">
-    <a class="top-level__link " href="@Url.Action("Index", "Transactional")">
-        <span class="link-text">Transactional API</span>
-        <i class="fal fa-angle-down angle-icon"></i>
-
-    </a>
-    <div class="mega-menu-content">
-        <div class="mega-menu-content-inner">
-            <div class="mega-menu-column">
-                <ul class="mega-menu-links">
-                    <li>
-                        <a href="@Url.Action("Introduction", "Rest")">
-                            <i class="icon fal fa-cogs"></i>
-                            <span>API policy and restrictions</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://newlogin.timelog.com/documentation">
-                            <i class="icon fal fa-cogs"></i>
-                            <span>Authenticating with the API</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="@Url.Action("Services", "Rest")">
-                            <i class="icon fal fa-handshake-alt"></i>
-                            <span>Services</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="mega-menu-column"></div>
-            <div class="mega-menu-image-container">
-            </div>
-        </div>
-    </div>
-</li>
-<li class="top-level__item mega-menu">
-    <a class="top-level__link " href="@Url.Action("Index", "Reporting")">
-        <span class="link-text">Reporting API</span>
-        <i class="fal fa-angle-down angle-icon"></i>
-    </a>
-    <div class="mega-menu-content">
-        <div class="mega-menu-content-inner">
-            <div class="mega-menu-column">
-                <h2 class="mega-menu-column__header">Industry solutions</h2>
-                <ul class="mega-menu-links">
-                    <li>
-                        <a href="/en/why/the-consultancy/">
-                            <i class="icon fal fa-user"></i>
-                            <span>Consultancies</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/the-it-company/">
-                            <i class="icon fal fa-desktop-alt"></i>
-                            <span>IT companies</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/consultant-engineers/">
-                            <i class="icon fal fa-user-hard-hat"></i>
-                            <span>Consultant engineers</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/auditors/">
-                            <i class="icon fal fa-abacus"></i>
-                            <span>Auditors and bookkeepers</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/public-organisations/">
-                            <i class="icon fal fa-landmark"></i>
-                            <span>Public organisations</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/the-global-organisation/">
-                            <i class="icon fal fa-globe-africa"></i>
-                            <span>Global organisations</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/pr-and-marketing-agencies/">
-                            <i class="icon fal fa-megaphone"></i>
-                            <span>PR and marketing agencies</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="mega-menu-column">
-                <h2 class="mega-menu-column__header">Who is using TimeLog?</h2>
-                <ul class="mega-menu-links">
-                    <li>
-                        <a href="/en/why/project-member/">
-                            <i class="icon fal fa-tasks"></i>
-                            <span>Consultant</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/project-manager/">
-                            <i class="icon fal fa-tasks-alt"></i>
-                            <span>Project manager</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/resource-coordinator/">
-                            <i class="icon fal fa-map-marker-alt"></i>
-                            <span>Resource coordinator</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/bookkeeper/">
-                            <i class="icon fal fa-book-alt"></i>
-                            <span>Bookkeeper</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/chief-financial-officer/">
-                            <i class="icon fal fa-tachometer-fast"></i>
-                            <span>CFO</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/why/ceo/">
-                            <i class="icon fal fa-user-tie"></i>
-                            <span>CEO</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</li>
-<li class="top-level__item mega-menu">
-    <a class="top-level__link ">
-        <span class="link-text">Financial Integrations</span>
-        <i class="fal fa-angle-down angle-icon"></i>
-    </a>
-    <div class="mega-menu-content">
-        <div class="mega-menu-content-inner">
-            <div class="mega-menu-column">
-                <ul class="mega-menu-links">
-                    <li class="bold">
-                        <a href="/en/articles/">
-                            <i class="icon fal fa-book-alt"></i>
-                            <span>Blog</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/events/power-sessions/">
-                            <i class="icon fal fa-lightbulb-on"></i>
-                            <span>Power Sessions</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/events/webinars/">
-                            <i class="icon fal fa-desktop-alt"></i>
-                            <span>Webinars</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/events/timelog-vip-user-group/">
-                            <i class="icon fal fa-megaphone"></i>
-                            <span>VIP user groups</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/en/events/online-workshops/">
-                            <i class="icon fal fa-users-class"></i>
-                            <span>Online workshops</span>
-                        </a>
-                    </li>
-                    <li class="bold">
-                        <a href="/en/event-list/">
-                            <i class="icon fal fa-arrow-circle-right"></i>
-                            <span>View all events </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="mega-menu-image-container">
-                <!--HubSpot Call-to-Action Code -->
-                <span class="hs-cta-wrapper" id="hs-cta-wrapper-8f8cca44-bce3-44d1-b4e3-a08e02654e6d">
-                    <span class="hs-cta-node hs-cta-8f8cca44-bce3-44d1-b4e3-a08e02654e6d" id="hs-cta-8f8cca44-bce3-44d1-b4e3-a08e02654e6d">
-                        <!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]-->
-                        <a href="http://cta-redirect.hubspot.com/cta/redirect/2029862/8f8cca44-bce3-44d1-b4e3-a08e02654e6d">
-                            <img class="hs-cta-img" id="hs-cta-img-8f8cca44-bce3-44d1-b4e3-a08e02654e6d" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/2029862/8f8cca44-bce3-44d1-b4e3-a08e02654e6d.png" alt="Click here to see our sample offer!"/>
-                        </a>
-                    </span>
-                    <script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script>
-                    <script type="text/javascript">
-                              hbspt.cta.load(2029862, '8f8cca44-bce3-44d1-b4e3-a08e02654e6d', {});
-                            </script>
-                </span>
-                <!-- end HubSpot Call-to-Action Code -->
-            </div>
-        </div>
-    </div>
-</li>
-
-</ul>
-</div>
-</div>
 </nav>
 </div>
 </div>
-
-
 </header>
