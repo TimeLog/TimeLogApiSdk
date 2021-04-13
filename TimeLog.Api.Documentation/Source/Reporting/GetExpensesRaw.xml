@@ -24,6 +24,7 @@
     <tlp:PaymentMethod>Creditcard</tlp:PaymentMethod>
     <tlp:PaymentMethodID>160</tlp:PaymentMethodID>
     <tlp:Comment>Hotel when visiting customer</tlp:Comment>
+    <tlp:ApprovedStatus>30</tlp:ApprovedStatus>
     <tlp:Billable>0</tlp:Billable>
     <tlp:EmployeeFirstName>Peter</tlp:EmployeeFirstName>
     <tlp:EmployeeLastName>Nielsen</tlp:EmployeeLastName>
@@ -32,11 +33,10 @@
     <tlp:UserID>39</tlp:UserID>
     <tlp:RegAmount>1278.7600</tlp:RegAmount>
     <tlp:EstimatedAmount>1278.7600</tlp:EstimatedAmount>
-    <tlp:ProfitRatio>0.0000</tlp:ProfitRatio>
     <tlp:InvAmount>1278.7600</tlp:InvAmount>
-    <tlp:ApprovedStatus>1</tlp:ApprovedStatus>
-    <tlp:IsControlled>1</tlp:IsControlled>
-    <tlp:IsPaid>1</tlp:IsPaid>
+    <tlp:ProfitRatio>0.0000</tlp:ProfitRatio>
+    <tlp:InvoiceLineID>100</tlp:InvoiceLineID>
+    <tlp:SupplierInvoiceNo>12345</tlp:SupplierInvoiceNo>
     <tlp:Created>2021-02-04T08:56:24.287</tlp:Created>
   </tlp:Expense>
 </tlp:Expenses>
