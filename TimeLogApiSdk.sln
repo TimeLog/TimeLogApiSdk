@@ -18,6 +18,7 @@ ProjectSection(SolutionItems) = preProject
 	manifests\deployment.yml = manifests\deployment.yml
 	manifests\service.yml = manifests\service.yml
 	azure-pipelines.yml = azure-pipelines.yml
+	manifests\nginx-ingress.yml = manifests\nginx-ingress.yml
 EndProjectSection
 EndProject
 Global
