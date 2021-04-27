@@ -183,7 +183,7 @@ TimeLog.TLP.WebAppCode
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetFlexTimeRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime)">
  <summary>
- Gets a list of flex registrations and flex adjustments.
+   Gets a list of flex registrations and flex adjustments. Kept for legacy purposes, use GetSalaryAccountEmployeePostingsRaw instead
  </summary>
  <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
