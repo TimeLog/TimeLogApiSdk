@@ -151,6 +151,13 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
         System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetProjectCategoriesShortListResponse> GetProjectCategoriesShortListAsync(TimeLog.ReportingApi.Core.SDK.ReportingService.GetProjectCategoriesShortListRequest request);
         
         // CODEGEN: Generating message contract since element name siteCode from namespace http://www.timelog.com/ws/tlp/v4_4 is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSalesSplitsRaw", ReplyAction="*")]
+        TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawResponse GetSalesSplitsRaw(TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSalesSplitsRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawResponse> GetSalesSplitsRawAsync(TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequest request);
+        
+        // CODEGEN: Generating message contract since element name siteCode from namespace http://www.timelog.com/ws/tlp/v4_4 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoicesRaw", ReplyAction="*")]
         TimeLog.ReportingApi.Core.SDK.ReportingService.GetInvoicesRawResponse GetInvoicesRaw(TimeLog.ReportingApi.Core.SDK.ReportingService.GetInvoicesRawRequest request);
         
@@ -380,6 +387,13 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSalaryAccountEmployeePostingsRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalaryAccountEmployeePostingsRawResponse> GetSalaryAccountEmployeePostingsRawAsync(TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalaryAccountEmployeePostingsRawRequest request);
+        
+        // CODEGEN: Generating message contract since element name siteCode from namespace http://www.timelog.com/ws/tlp/v4_4 is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetIntercompanyInvoicesRaw", ReplyAction="*")]
+        TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawResponse GetIntercompanyInvoicesRaw(TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetIntercompanyInvoicesRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawResponse> GetIntercompanyInvoicesRawAsync(TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2306,6 +2320,110 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetSalesSplitsRawRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSalesSplitsRaw", Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
+        public TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequestBody Body;
+        
+        public GetSalesSplitsRawRequest()
+        {
+        }
+        
+        public GetSalesSplitsRawRequest(TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4")]
+    public partial class GetSalesSplitsRawRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string siteCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string apiID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string apiPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int projectID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int status;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int customerID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int projectManagerID;
+        
+        public GetSalesSplitsRawRequestBody()
+        {
+        }
+        
+        public GetSalesSplitsRawRequestBody(string siteCode, string apiID, string apiPassword, int projectID, int status, int customerID, int projectManagerID)
+        {
+            this.siteCode = siteCode;
+            this.apiID = apiID;
+            this.apiPassword = apiPassword;
+            this.projectID = projectID;
+            this.status = status;
+            this.customerID = customerID;
+            this.projectManagerID = projectManagerID;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetSalesSplitsRawResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSalesSplitsRawResponse", Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
+        public TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawResponseBody Body;
+        
+        public GetSalesSplitsRawResponse()
+        {
+        }
+        
+        public GetSalesSplitsRawResponse(TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4")]
+    public partial class GetSalesSplitsRawResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Xml.XmlElement GetSalesSplitsRawResult;
+        
+        public GetSalesSplitsRawResponseBody()
+        {
+        }
+        
+        public GetSalesSplitsRawResponseBody(System.Xml.XmlElement GetSalesSplitsRawResult)
+        {
+            this.GetSalesSplitsRawResult = GetSalesSplitsRawResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetInvoicesRawRequest
     {
         
@@ -3265,7 +3383,7 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
         public string endDate;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public int selfPayment;
+        public System.Nullable<bool> selfPayment;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
         public int travelCarID;
@@ -3277,7 +3395,7 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
         {
         }
         
-        public GetMileageRawRequestBody(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, string startDate, string endDate, int selfPayment, int travelCarID, int transportRateID)
+        public GetMileageRawRequestBody(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, string startDate, string endDate, System.Nullable<bool> selfPayment, int travelCarID, int transportRateID)
         {
             this.siteCode = siteCode;
             this.apiID = apiID;
@@ -5586,6 +5704,118 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetIntercompanyInvoicesRawRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetIntercompanyInvoicesRaw", Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
+        public TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequestBody Body;
+        
+        public GetIntercompanyInvoicesRawRequest()
+        {
+        }
+        
+        public GetIntercompanyInvoicesRawRequest(TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4")]
+    public partial class GetIntercompanyInvoicesRawRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string siteCode;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string apiID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string apiPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int senderID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int recipientID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int accountManagerID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public int projectManagerID;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public System.DateTime fromDate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public System.DateTime toDate;
+        
+        public GetIntercompanyInvoicesRawRequestBody()
+        {
+        }
+        
+        public GetIntercompanyInvoicesRawRequestBody(string siteCode, string apiID, string apiPassword, int senderID, int recipientID, int accountManagerID, int projectManagerID, System.DateTime fromDate, System.DateTime toDate)
+        {
+            this.siteCode = siteCode;
+            this.apiID = apiID;
+            this.apiPassword = apiPassword;
+            this.senderID = senderID;
+            this.recipientID = recipientID;
+            this.accountManagerID = accountManagerID;
+            this.projectManagerID = projectManagerID;
+            this.fromDate = fromDate;
+            this.toDate = toDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetIntercompanyInvoicesRawResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetIntercompanyInvoicesRawResponse", Namespace="http://www.timelog.com/ws/tlp/v4_4", Order=0)]
+        public TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawResponseBody Body;
+        
+        public GetIntercompanyInvoicesRawResponse()
+        {
+        }
+        
+        public GetIntercompanyInvoicesRawResponse(TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4")]
+    public partial class GetIntercompanyInvoicesRawResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public System.Xml.XmlElement GetIntercompanyInvoicesRawResult;
+        
+        public GetIntercompanyInvoicesRawResponseBody()
+        {
+        }
+        
+        public GetIntercompanyInvoicesRawResponseBody(System.Xml.XmlElement GetIntercompanyInvoicesRawResult)
+        {
+            this.GetIntercompanyInvoicesRawResult = GetIntercompanyInvoicesRawResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiceSoapChannel : TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap, System.ServiceModel.IClientChannel
     {
@@ -6372,6 +6602,47 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawResponse TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap.GetSalesSplitsRaw(TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequest request)
+        {
+            return base.Channel.GetSalesSplitsRaw(request);
+        }
+        
+        public System.Xml.XmlElement GetSalesSplitsRaw(string siteCode, string apiID, string apiPassword, int projectID, int status, int customerID, int projectManagerID)
+        {
+            TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequest inValue = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequest();
+            inValue.Body = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequestBody();
+            inValue.Body.siteCode = siteCode;
+            inValue.Body.apiID = apiID;
+            inValue.Body.apiPassword = apiPassword;
+            inValue.Body.projectID = projectID;
+            inValue.Body.status = status;
+            inValue.Body.customerID = customerID;
+            inValue.Body.projectManagerID = projectManagerID;
+            TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawResponse retVal = ((TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap)(this)).GetSalesSplitsRaw(inValue);
+            return retVal.Body.GetSalesSplitsRawResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawResponse> TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap.GetSalesSplitsRawAsync(TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequest request)
+        {
+            return base.Channel.GetSalesSplitsRawAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawResponse> GetSalesSplitsRawAsync(string siteCode, string apiID, string apiPassword, int projectID, int status, int customerID, int projectManagerID)
+        {
+            TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequest inValue = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequest();
+            inValue.Body = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetSalesSplitsRawRequestBody();
+            inValue.Body.siteCode = siteCode;
+            inValue.Body.apiID = apiID;
+            inValue.Body.apiPassword = apiPassword;
+            inValue.Body.projectID = projectID;
+            inValue.Body.status = status;
+            inValue.Body.customerID = customerID;
+            inValue.Body.projectManagerID = projectManagerID;
+            return ((TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap)(this)).GetSalesSplitsRawAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TimeLog.ReportingApi.Core.SDK.ReportingService.GetInvoicesRawResponse TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap.GetInvoicesRaw(TimeLog.ReportingApi.Core.SDK.ReportingService.GetInvoicesRawRequest request)
         {
             return base.Channel.GetInvoicesRaw(request);
@@ -6732,7 +7003,7 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
             return base.Channel.GetMileageRaw(request);
         }
         
-        public System.Xml.XmlElement GetMileageRaw(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, string startDate, string endDate, int selfPayment, int travelCarID, int transportRateID)
+        public System.Xml.XmlElement GetMileageRaw(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, string startDate, string endDate, System.Nullable<bool> selfPayment, int travelCarID, int transportRateID)
         {
             TimeLog.ReportingApi.Core.SDK.ReportingService.GetMileageRawRequest inValue = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetMileageRawRequest();
             inValue.Body = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetMileageRawRequestBody();
@@ -6758,7 +7029,7 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
             return base.Channel.GetMileageRawAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetMileageRawResponse> GetMileageRawAsync(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, string startDate, string endDate, int selfPayment, int travelCarID, int transportRateID)
+        public System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetMileageRawResponse> GetMileageRawAsync(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int employeeID, int departmentID, string startDate, string endDate, System.Nullable<bool> selfPayment, int travelCarID, int transportRateID)
         {
             TimeLog.ReportingApi.Core.SDK.ReportingService.GetMileageRawRequest inValue = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetMileageRawRequest();
             inValue.Body = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetMileageRawRequestBody();
@@ -7648,6 +7919,51 @@ namespace TimeLog.ReportingApi.Core.SDK.ReportingService
             inValue.Body.FromDate = FromDate;
             inValue.Body.ToDate = ToDate;
             return ((TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap)(this)).GetSalaryAccountEmployeePostingsRawAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawResponse TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap.GetIntercompanyInvoicesRaw(TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequest request)
+        {
+            return base.Channel.GetIntercompanyInvoicesRaw(request);
+        }
+        
+        public System.Xml.XmlElement GetIntercompanyInvoicesRaw(string siteCode, string apiID, string apiPassword, int senderID, int recipientID, int accountManagerID, int projectManagerID, System.DateTime fromDate, System.DateTime toDate)
+        {
+            TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequest inValue = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequest();
+            inValue.Body = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequestBody();
+            inValue.Body.siteCode = siteCode;
+            inValue.Body.apiID = apiID;
+            inValue.Body.apiPassword = apiPassword;
+            inValue.Body.senderID = senderID;
+            inValue.Body.recipientID = recipientID;
+            inValue.Body.accountManagerID = accountManagerID;
+            inValue.Body.projectManagerID = projectManagerID;
+            inValue.Body.fromDate = fromDate;
+            inValue.Body.toDate = toDate;
+            TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawResponse retVal = ((TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap)(this)).GetIntercompanyInvoicesRaw(inValue);
+            return retVal.Body.GetIntercompanyInvoicesRawResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawResponse> TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap.GetIntercompanyInvoicesRawAsync(TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequest request)
+        {
+            return base.Channel.GetIntercompanyInvoicesRawAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawResponse> GetIntercompanyInvoicesRawAsync(string siteCode, string apiID, string apiPassword, int senderID, int recipientID, int accountManagerID, int projectManagerID, System.DateTime fromDate, System.DateTime toDate)
+        {
+            TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequest inValue = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequest();
+            inValue.Body = new TimeLog.ReportingApi.Core.SDK.ReportingService.GetIntercompanyInvoicesRawRequestBody();
+            inValue.Body.siteCode = siteCode;
+            inValue.Body.apiID = apiID;
+            inValue.Body.apiPassword = apiPassword;
+            inValue.Body.senderID = senderID;
+            inValue.Body.recipientID = recipientID;
+            inValue.Body.accountManagerID = accountManagerID;
+            inValue.Body.projectManagerID = projectManagerID;
+            inValue.Body.fromDate = fromDate;
+            inValue.Body.toDate = toDate;
+            return ((TimeLog.ReportingApi.Core.SDK.ReportingService.ServiceSoap)(this)).GetIntercompanyInvoicesRawAsync(inValue);
         }
     }
 }

@@ -14,14 +14,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <WCFMetadata Include="Service References" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <WCFMetadataStorage Include="Service References\ReportingService" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Include="App.config" />
       <None Include="Service References\ReportingService\ReportingService.svcmap">
         <Generator>WCF Proxy Generator</Generator>
@@ -71,6 +63,14 @@
     <ItemGroup>
       <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
       <PackageReference Include="System.ServiceModel.Http" Version="4.8.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <WCFMetadata Include="Service References" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <WCFMetadataStorage Include="Service References\ReportingService" />
     </ItemGroup>
 
 </Project>

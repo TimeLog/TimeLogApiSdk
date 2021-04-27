@@ -482,6 +482,32 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetSalesSplitsRaw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="projectID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="customerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="projectManagerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSalesSplitsRawResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSalesSplitsRawResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetInvoicesRaw">
         <s:complexType>
           <s:sequence>
@@ -721,7 +747,7 @@
             <s:element minOccurs="1" maxOccurs="1" name="departmentID" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="selfPayment" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="selfPayment" nillable="true" type="s:boolean" />
             <s:element minOccurs="1" maxOccurs="1" name="travelCarID" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="transportRateID" type="s:int" />
           </s:sequence>
@@ -1297,6 +1323,34 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetIntercompanyInvoicesRaw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="senderID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="recipientID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="accountManagerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="projectManagerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="toDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIntercompanyInvoicesRawResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIntercompanyInvoicesRawResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="boolean" type="s:boolean" />
     </s:schema>
   </wsdl:types>
@@ -1413,6 +1467,12 @@
   </wsdl:message>
   <wsdl:message name="GetProjectCategoriesShortListSoapOut">
     <wsdl:part name="parameters" element="tns:GetProjectCategoriesShortListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesSplitsRawSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSalesSplitsRaw" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesSplitsRawSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSalesSplitsRawResponse" />
   </wsdl:message>
   <wsdl:message name="GetInvoicesRawSoapIn">
     <wsdl:part name="parameters" element="tns:GetInvoicesRaw" />
@@ -1611,6 +1671,12 @@
   </wsdl:message>
   <wsdl:message name="GetSalaryAccountEmployeePostingsRawSoapOut">
     <wsdl:part name="parameters" element="tns:GetSalaryAccountEmployeePostingsRawResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIntercompanyInvoicesRawSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIntercompanyInvoicesRaw" />
+  </wsdl:message>
+  <wsdl:message name="GetIntercompanyInvoicesRawSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIntercompanyInvoicesRawResponse" />
   </wsdl:message>
   <wsdl:message name="GetWorkUnitsRawHttpGetIn">
     <wsdl:part name="siteCode" type="s:string" />
@@ -1826,6 +1892,18 @@
   <wsdl:message name="GetProjectCategoriesShortListHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
+  <wsdl:message name="GetSalesSplitsRawHttpGetIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="projectID" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="customerID" type="s:string" />
+    <wsdl:part name="projectManagerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesSplitsRawHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
   <wsdl:message name="GetInvoicesRawHttpGetIn">
     <wsdl:part name="siteCode" type="s:string" />
     <wsdl:part name="apiID" type="s:string" />
@@ -1925,23 +2003,6 @@
     <wsdl:part name="status" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetMilestoneTypesRawHttpGetOut">
-    <wsdl:part name="Body" />
-  </wsdl:message>
-  <wsdl:message name="GetMileageRawHttpGetIn">
-    <wsdl:part name="siteCode" type="s:string" />
-    <wsdl:part name="apiID" type="s:string" />
-    <wsdl:part name="apiPassword" type="s:string" />
-    <wsdl:part name="customerID" type="s:string" />
-    <wsdl:part name="projectID" type="s:string" />
-    <wsdl:part name="employeeID" type="s:string" />
-    <wsdl:part name="departmentID" type="s:string" />
-    <wsdl:part name="startDate" type="s:string" />
-    <wsdl:part name="endDate" type="s:string" />
-    <wsdl:part name="selfPayment" type="s:string" />
-    <wsdl:part name="travelCarID" type="s:string" />
-    <wsdl:part name="transportRateID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="GetMileageRawHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetOpportunitiesRawHttpGetIn">
@@ -2185,6 +2246,20 @@
   <wsdl:message name="GetSalaryAccountEmployeePostingsRawHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
+  <wsdl:message name="GetIntercompanyInvoicesRawHttpGetIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="senderID" type="s:string" />
+    <wsdl:part name="recipientID" type="s:string" />
+    <wsdl:part name="accountManagerID" type="s:string" />
+    <wsdl:part name="projectManagerID" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIntercompanyInvoicesRawHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
   <wsdl:message name="GetWorkUnitsRawHttpPostIn">
     <wsdl:part name="siteCode" type="s:string" />
     <wsdl:part name="apiID" type="s:string" />
@@ -2399,6 +2474,18 @@
   <wsdl:message name="GetProjectCategoriesShortListHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
+  <wsdl:message name="GetSalesSplitsRawHttpPostIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="projectID" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="customerID" type="s:string" />
+    <wsdl:part name="projectManagerID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSalesSplitsRawHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
   <wsdl:message name="GetInvoicesRawHttpPostIn">
     <wsdl:part name="siteCode" type="s:string" />
     <wsdl:part name="apiID" type="s:string" />
@@ -2498,23 +2585,6 @@
     <wsdl:part name="status" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetMilestoneTypesRawHttpPostOut">
-    <wsdl:part name="Body" />
-  </wsdl:message>
-  <wsdl:message name="GetMileageRawHttpPostIn">
-    <wsdl:part name="siteCode" type="s:string" />
-    <wsdl:part name="apiID" type="s:string" />
-    <wsdl:part name="apiPassword" type="s:string" />
-    <wsdl:part name="customerID" type="s:string" />
-    <wsdl:part name="projectID" type="s:string" />
-    <wsdl:part name="employeeID" type="s:string" />
-    <wsdl:part name="departmentID" type="s:string" />
-    <wsdl:part name="startDate" type="s:string" />
-    <wsdl:part name="endDate" type="s:string" />
-    <wsdl:part name="selfPayment" type="s:string" />
-    <wsdl:part name="travelCarID" type="s:string" />
-    <wsdl:part name="transportRateID" type="s:string" />
-  </wsdl:message>
-  <wsdl:message name="GetMileageRawHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetOpportunitiesRawHttpPostIn">
@@ -2758,6 +2828,20 @@
   <wsdl:message name="GetSalaryAccountEmployeePostingsRawHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
+  <wsdl:message name="GetIntercompanyInvoicesRawHttpPostIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="senderID" type="s:string" />
+    <wsdl:part name="recipientID" type="s:string" />
+    <wsdl:part name="accountManagerID" type="s:string" />
+    <wsdl:part name="projectManagerID" type="s:string" />
+    <wsdl:part name="fromDate" type="s:string" />
+    <wsdl:part name="toDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIntercompanyInvoicesRawHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
     <wsdl:operation name="GetWorkUnitsRaw">
       <wsdl:input message="tns:GetWorkUnitsRawSoapIn" />
@@ -2834,6 +2918,10 @@
     <wsdl:operation name="GetProjectCategoriesShortList">
       <wsdl:input message="tns:GetProjectCategoriesShortListSoapIn" />
       <wsdl:output message="tns:GetProjectCategoriesShortListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesSplitsRaw">
+      <wsdl:input message="tns:GetSalesSplitsRawSoapIn" />
+      <wsdl:output message="tns:GetSalesSplitsRawSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetInvoicesRaw">
       <wsdl:input message="tns:GetInvoicesRawSoapIn" />
@@ -2967,6 +3055,10 @@
       <wsdl:input message="tns:GetSalaryAccountEmployeePostingsRawSoapIn" />
       <wsdl:output message="tns:GetSalaryAccountEmployeePostingsRawSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetIntercompanyInvoicesRaw">
+      <wsdl:input message="tns:GetIntercompanyInvoicesRawSoapIn" />
+      <wsdl:output message="tns:GetIntercompanyInvoicesRawSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpGet">
     <wsdl:operation name="GetWorkUnitsRaw">
@@ -3045,6 +3137,10 @@
       <wsdl:input message="tns:GetProjectCategoriesShortListHttpGetIn" />
       <wsdl:output message="tns:GetProjectCategoriesShortListHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetSalesSplitsRaw">
+      <wsdl:input message="tns:GetSalesSplitsRawHttpGetIn" />
+      <wsdl:output message="tns:GetSalesSplitsRawHttpGetOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetInvoicesRaw">
       <wsdl:input message="tns:GetInvoicesRawHttpGetIn" />
       <wsdl:output message="tns:GetInvoicesRawHttpGetOut" />
@@ -3080,10 +3176,6 @@
     <wsdl:operation name="GetMilestoneTypesRaw">
       <wsdl:input message="tns:GetMilestoneTypesRawHttpGetIn" />
       <wsdl:output message="tns:GetMilestoneTypesRawHttpGetOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetMileageRaw">
-      <wsdl:input message="tns:GetMileageRawHttpGetIn" />
-      <wsdl:output message="tns:GetMileageRawHttpGetOut" />
     </wsdl:operation>
     <wsdl:operation name="GetOpportunitiesRaw">
       <wsdl:input message="tns:GetOpportunitiesRawHttpGetIn" />
@@ -3177,6 +3269,10 @@
       <wsdl:input message="tns:GetSalaryAccountEmployeePostingsRawHttpGetIn" />
       <wsdl:output message="tns:GetSalaryAccountEmployeePostingsRawHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetIntercompanyInvoicesRaw">
+      <wsdl:input message="tns:GetIntercompanyInvoicesRawHttpGetIn" />
+      <wsdl:output message="tns:GetIntercompanyInvoicesRawHttpGetOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpPost">
     <wsdl:operation name="GetWorkUnitsRaw">
@@ -3255,6 +3351,10 @@
       <wsdl:input message="tns:GetProjectCategoriesShortListHttpPostIn" />
       <wsdl:output message="tns:GetProjectCategoriesShortListHttpPostOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetSalesSplitsRaw">
+      <wsdl:input message="tns:GetSalesSplitsRawHttpPostIn" />
+      <wsdl:output message="tns:GetSalesSplitsRawHttpPostOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetInvoicesRaw">
       <wsdl:input message="tns:GetInvoicesRawHttpPostIn" />
       <wsdl:output message="tns:GetInvoicesRawHttpPostOut" />
@@ -3290,10 +3390,6 @@
     <wsdl:operation name="GetMilestoneTypesRaw">
       <wsdl:input message="tns:GetMilestoneTypesRawHttpPostIn" />
       <wsdl:output message="tns:GetMilestoneTypesRawHttpPostOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetMileageRaw">
-      <wsdl:input message="tns:GetMileageRawHttpPostIn" />
-      <wsdl:output message="tns:GetMileageRawHttpPostOut" />
     </wsdl:operation>
     <wsdl:operation name="GetOpportunitiesRaw">
       <wsdl:input message="tns:GetOpportunitiesRawHttpPostIn" />
@@ -3386,6 +3482,10 @@
     <wsdl:operation name="GetSalaryAccountEmployeePostingsRaw">
       <wsdl:input message="tns:GetSalaryAccountEmployeePostingsRawHttpPostIn" />
       <wsdl:output message="tns:GetSalaryAccountEmployeePostingsRawHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIntercompanyInvoicesRaw">
+      <wsdl:input message="tns:GetIntercompanyInvoicesRawHttpPostIn" />
+      <wsdl:output message="tns:GetIntercompanyInvoicesRawHttpPostOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
@@ -3554,6 +3654,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetProjectCategoriesShortList">
       <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetProjectCategoriesShortList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesSplitsRaw">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetSalesSplitsRaw" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3858,6 +3967,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetIntercompanyInvoicesRaw">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetIntercompanyInvoicesRaw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -4025,6 +4143,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetProjectCategoriesShortList">
       <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetProjectCategoriesShortList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesSplitsRaw">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetSalesSplitsRaw" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4329,6 +4456,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetIntercompanyInvoicesRaw">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetIntercompanyInvoicesRaw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
     <http:binding verb="GET" />
@@ -4503,6 +4639,15 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetSalesSplitsRaw">
+      <http:operation location="/GetSalesSplitsRaw" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetInvoicesRaw">
       <http:operation location="/GetInvoicesRaw" />
       <wsdl:input>
@@ -4577,15 +4722,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetMilestoneTypesRaw">
       <http:operation location="/GetMilestoneTypesRaw" />
-      <wsdl:input>
-        <http:urlEncoded />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:content part="Body" type="text/xml" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMileageRaw">
-      <http:operation location="/GetMileageRaw" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -4793,6 +4929,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSalaryAccountEmployeePostingsRaw">
       <http:operation location="/GetSalaryAccountEmployeePostingsRaw" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntercompanyInvoicesRaw">
+      <http:operation location="/GetIntercompanyInvoicesRaw" />
       <wsdl:input>
         <http:urlEncoded />
       </wsdl:input>
@@ -4974,6 +5119,15 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetSalesSplitsRaw">
+      <http:operation location="/GetSalesSplitsRaw" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetInvoicesRaw">
       <http:operation location="/GetInvoicesRaw" />
       <wsdl:input>
@@ -5048,15 +5202,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetMilestoneTypesRaw">
       <http:operation location="/GetMilestoneTypesRaw" />
-      <wsdl:input>
-        <mime:content type="application/x-www-form-urlencoded" />
-      </wsdl:input>
-      <wsdl:output>
-        <mime:content part="Body" type="text/xml" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetMileageRaw">
-      <http:operation location="/GetMileageRaw" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>
@@ -5271,19 +5416,28 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetIntercompanyInvoicesRaw">
+      <http:operation location="/GetIntercompanyInvoicesRaw" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
-      <soap:address location="https://app5.timelog.com/soxdemo/service.asmx" />
+      <soap:address location="https://app5.timelog.com/mercuri/service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
-      <soap12:address location="https://app5.timelog.com/soxdemo/service.asmx" />
+      <soap12:address location="https://app5.timelog.com/mercuri/service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
-      <http:address location="https://app5.timelog.com/soxdemo/service.asmx" />
+      <http:address location="https://app5.timelog.com/mercuri/service.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
-      <http:address location="https://app5.timelog.com/soxdemo/service.asmx" />
+      <http:address location="https://app5.timelog.com/mercuri/service.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
