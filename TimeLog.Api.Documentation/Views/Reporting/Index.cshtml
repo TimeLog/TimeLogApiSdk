@@ -24,4 +24,17 @@
         Take care to apply your own policies if you are exposing the data in a data
         warehouse or other business intelligence tools.
     </p>
+
+    <h2 id="status-codes">Status codes</h2>
+    <p>
+        The reporting will (starting from end May 2021) return specific HTTP 
+        status codes related to the result. The result body will remain unchanged and will
+        in many cases provide additional information. Possible status responses:
+    </p>
+    <ul class="arrows">
+        <li>200 OK - request successful</li>
+        <li>204 No Content - the result of the request is empty</li>
+        <li>400 Bad Request - covers both issues with input parameters, but possibly also internal errors</li>
+        <li>401 Unauthorized - the Site ID, API ID and API password combination is invalid</li>
+    </ul>
 </article>
