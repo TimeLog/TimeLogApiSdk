@@ -2,10 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
     name: apidocumentationapp
-    annotations:
-      service.beta.kubernetes.io/azure-dns-label-name: api-timelog-com
 spec:
-    type: LoadBalancer
+    type: ClusterIP
     ports:
     - port: 80
     selector:
