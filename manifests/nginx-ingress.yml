@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - stagingapi.timelog.com
+        - api.timelog.com
       secretName: tls-secret
   rules:
-    - host: stagingapi.timelog.com
+    - host: api.timelog.com
       http:
         paths:
           - path: /(.*)
