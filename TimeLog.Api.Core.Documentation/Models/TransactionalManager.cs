@@ -5,13 +5,15 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace TimeLog.Api.Core.Documentation.Models
 {
-    public class TransactionalManager
+    public class TransactionalManager : ITransactionalManager
     {
+        private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly DocumentationHelper _helper;
 
-        public TransactionalManager(IWebHostEnvironment environment)
+        public TransactionalManager(IWebHostEnvironment webHostEnvironment)
         {
-            var _filePath = Path.Combine(environment.ContentRootPath, "Source/TimeLog.TLP.API.XML");
+            _webHostEnvironment = webHostEnvironment;
+            var _filePath = Path.Combine(webHostEnvironment.WebRootPath, "Source/TimeLog.TLP.API.XML");
             _helper = new DocumentationHelper(_filePath);
         }
 

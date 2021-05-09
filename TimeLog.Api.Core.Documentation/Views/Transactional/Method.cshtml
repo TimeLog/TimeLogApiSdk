@@ -5,7 +5,7 @@
 
 <article class="article">
 
-    <p><a href="@Url.Action("Methods")">Back to @Model.Parent.Name.SplitOnUppercase()</a></p>
+    <p><a href="@Url.Action("Service", new { id = Model.Parent.FullName.UrlEncode()})">Back to @Model.Parent.Name.SplitOnUppercase()</a></p>
     <h2>Method Details for @Model.Name.</h2>
     <p>@Model.Summary</p>
     <h3>Parameters</h3>
@@ -17,27 +17,15 @@
             </li>
         }
     </ul>
-    <h3>Returns</h3>
     @if (!string.IsNullOrWhiteSpace(Model.Returns))
     {
+        <h3>Returns</h3>
         <p>@Model.Returns</p>
     }
-    @if (!string.IsNullOrWhiteSpace(Model.OutputExample))
-    {
-        <h3>Result Example</h3>
-        <pre>@Model.OutputExample</pre>
-    }
-    @if (!string.IsNullOrWhiteSpace(Model.OutputSchema))
-    {
-        <h3>Result Schema</h3>
-        <pre>@Model.OutputSchema</pre>
-        <p><a href="@Url.Content("~/Reporting/" + Model.Name + ".xsd")">Download the XSD</a></p>
-    }
-
     @if (!string.IsNullOrWhiteSpace(Model.Remarks))
     {
-        <h3>Returns</h3>
-        <p>@Model.Remarks</p>
+        <h3>Remarks</h3>
+        <p>@Html.Raw(Model.Remarks.Trim('\n').Replace("\n", "<br />"))</p>
     }
 
 

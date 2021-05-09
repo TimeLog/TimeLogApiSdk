@@ -22,11 +22,6 @@ namespace TimeLog.Api.Core.Documentation.Controllers
             return View();
         }
 
-        public ActionResult Security()
-        {
-            return View();
-        }
-
         public ActionResult Methods()
         {
             return View(_reportingManager.GetMethods());

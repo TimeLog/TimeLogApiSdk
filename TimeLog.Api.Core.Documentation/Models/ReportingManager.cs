@@ -20,20 +20,6 @@ namespace TimeLog.Api.Core.Documentation.Models
             _helper = new DocumentationHelper(_filePath);
         }
 
-        public string GetReportingExample(MethodDoc doc)
-        {
-            var _filePath = Path.Combine(_webHostEnvironment.WebRootPath, "Reporting/" + doc.Name + ".xml");
-            FileInfo _fileInfo = new FileInfo(_filePath);
-            return _fileInfo.Exists ? File.ReadAllText(_filePath) : string.Empty;
-        }
-        
-        public string GetReportingSchema(MethodDoc doc)
-        {
-            var _filePath = Path.Combine(_webHostEnvironment.WebRootPath, "Reporting/" + doc.Name + ".xsd");
-            FileInfo _fileInfo = new FileInfo(_filePath);
-            return _fileInfo.Exists ? File.ReadAllText(_filePath) : string.Empty;
-        }
-        
         public IEnumerable<MethodDoc> GetMethods()
         {
             var _doc = _helper.Types.FirstOrDefault(t => t.FullName == "TimeLog.TLP.WebAppCode.Service");

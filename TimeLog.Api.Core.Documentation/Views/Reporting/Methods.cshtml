@@ -10,6 +10,11 @@
         The Reporting API is not versioned. New methods and additional fields might be added over time.
         However, method and fields will normally not be removed or modified.
     </p>
+    <div style="border-left: 10px solid #e84895;
+            font-weight: bold;
+            padding: 5px 10px;">
+            Be aware that we will be blocking HTTP GET usage of the Reporting API shortly due to security concerns. Please use the HTTP POST option.
+        </div>
     <h3>Endpoint</h3>
     <pre>https://app[x].timelog.com/[account name]/service.asmx</pre>
     <h3 id="methods"><a href="#methods">Methods</a></h3>
@@ -32,27 +37,6 @@
         <li class="icon-arrow_in_circle">Absence codes</li>
         <li class="icon-arrow_in_circle">Expense attachments</li>
     </ul>
-    <h3 id="working-with-currencies"><a href="#working-with-currencies">Working with currencies</a></h3>
-    <p>
-        Please take note that the currency setup follows the rules below unless it's stated explicitly:<br />
-    </p>
-    <table class="setting_table" style="width: 100%">
-        <tr>
-            <td style="width: 40%">Properties for amounts ending with <em>SystemCurrency</em></td>
-            <td>System currency</td>
-        </tr>
-        <tr>
-            <td>Properties for amounts ending with <em>Currency</em></td>
-            <td>
-                Project currency (e.g. cost, amount, sales price)<br />
-                Invoice currency (e.g. amount)
-            </td>
-        </tr>
-        <tr>
-            <td>Properties for amounts without explicit definition</td>
-            <td>System currency</td>
-        </tr>
-    </table>
 
 </article>
 

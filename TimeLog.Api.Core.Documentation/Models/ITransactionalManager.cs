@@ -2,9 +2,11 @@
 
 namespace TimeLog.Api.Core.Documentation.Models
 {
-    public interface IReportingManager
+    public interface ITransactionalManager
     {
-        IEnumerable<MethodDoc> GetMethods();
+        IEnumerable<TypeDoc> GetServices();
+        
+        TypeDoc GetService(string typeFullName);
         
         MethodDoc GetMethod(string methodFullName);
     }

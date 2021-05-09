@@ -1,0 +1,64 @@
+﻿@using TimeLog.Api.Core.Documentation
+@using TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers.Core
+@model TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers.RestMethodDoc
+@{
+    ViewBag.Title = Model.Name + " - Method Details";
+}
+
+@helper RenderModel(RestRefSchema refSchema)
+{
+    if (!string.IsNullOrEmpty(refSchema.Value))
+     {
+         <ul class="signature-nav m-t-s" data-tab>
+             <li><a href="javascript:void(0)">Model</a></li>
+             <li><a href="javascript:void(0)">Example Value</a></li>
+         </ul>
+         <ul class="m-t-s">
+             @foreach (var _properties in refSchema.Definition.RestProperties)
+             {
+                 <li class="icon-arrow_in_circle">
+                     <span>@_properties.Name</span>
+                     <span class="text-selection">@_properties.Type.Value</span>
+                     <span>@_properties.Description</span>
+                 </li>
+             }
+         </ul>
+         <pre style="display: none">@refSchema.Definition.ToHtmlString()</pre>
+     }
+}
+
+<article class="article">
+    <p>
+        <a href="@Url.Action("Service", new { id = Model.Parent.Name.UrlEncode() })">Back to @Model.Parent.Name.SplitOnUppercase()</a>
+    </p>
+    <h2 class="@Model.MethodType.ToLower()">
+        <span class="badge">@Model.MethodType</span>
+        Method Details for @Model.Name.
+    </h2>
+    <p>@Model.Summary</p>
+    <h3>Definition</h3>
+    <pre>@Model.FullName</pre>
+    <h3>Parameters</h3>
+    <ul>
+        @foreach (var _param in Model.Params)
+        {
+            <li class="icon-arrow_in_circle">
+                @_param.Name <span class="text-selection">@_param.Type.Value</span> @_param.Description
+                @RenderModel(_param.RefSchema)
+            </li>
+        }
+    </ul>
+    @if (Model.Responses.Any())
+    {
+        <h3>Returns</h3>
+        <ul>
+            @foreach (var _response in Model.Responses)
+            {
+                <li class="icon-arrow_in_circle">
+                    <span class="text-selection">[@(_response.Code)]</span> @_response.Description
+                    @RenderModel(_response.SchemaRestRef)
+                </li>
+            }
+        </ul>
+    }
+</article>
