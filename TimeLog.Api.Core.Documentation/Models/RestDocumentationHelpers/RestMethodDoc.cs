@@ -34,7 +34,7 @@ namespace TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers
             FullName = $"http://app[x].timelog.com/[account name]{action.Name}";
             Name = action.OperationId.Replace($"{action.Tags[0]}_", "");
             Summary = action.Summary;
-            MethodType = action.MethodType;
+            MethodType = action.MethodType.ToUpper();
             Parent = restTypeDoc;
             Params = MapToMethodParam(action.Parameters);
             Responses = action.Responses.OrderBy(x => x.Code).ToList();

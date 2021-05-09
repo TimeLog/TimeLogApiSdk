@@ -58,7 +58,8 @@ namespace TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers.Core
                         _result.Add(_restProperty.Name, DateTime.Now.Date);
                         break;
                     case "object":
-                        _result.Add(_restProperty.Name, BuildObjectFromProperties(_restProperty.RefSchema.Definition.RestProperties));
+                        if (_restProperty.RefSchema.Definition != null)
+                            _result.Add(_restProperty.Name, BuildObjectFromProperties(_restProperty.RefSchema.Definition.RestProperties));
                         break;
                     default:
                         _result.Add(_restProperty.Name, string.Empty);

@@ -6,8 +6,8 @@ namespace TimeLog.Api.Core.Documentation.Models
     {
         IEnumerable<TypeDoc> GetServices();
         
-        TypeDoc GetService(string typeFullName);
+        TypeDoc? GetService(string typeFullName);
         
-        MethodDoc GetMethod(string methodFullName);
+        MethodDoc? GetMethod(string methodFullName);
     }
 }

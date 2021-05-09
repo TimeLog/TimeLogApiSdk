@@ -5,7 +5,7 @@
 <nav class="site-links" aria-label="Secondary navigation">
     <ul class="top-nav">
         <li class="hidden-mobile">
-            <a href="/en/contact/">Contact</a>
+            <a href="https://timelog.com/en/contact/">Contact</a>
         </li>
 
         <li class="hidden-mobile">
@@ -45,13 +45,13 @@
                             <div class="mega-menu-column">
                                 <ul class="mega-menu-links">
                                     <li>
-                                        <a href="@Url.Action("Restrictions", "GettingStarted")">
+                                        <a href="@Url.Action("Restrictions", "Home")">
                                             <i class="icon fal fa-cogs"></i>
                                             <span>API policy and restrictions</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="@Url.Action("DataModel", "GettingStarted")">
+                                        <a href="@Url.Action("DataModel", "Home")">
                                             <i class="icon fal fa-cogs"></i>
                                             <span>Our data model</span>
                                         </a>
@@ -79,12 +79,12 @@
                         <div class="mega-menu-content-inner">
                             <div class="mega-menu-column">
                                 <ul class="mega-menu-links">
-                                    <li>
-                                        <a href="@Url.Action("GettingStarted", "Rest")">
-                                            <i class="icon fal fa-rabbit-fast"></i>
-                                            <span>Getting Started</span>
-                                        </a>
-                                    </li>
+                                    @* <li> *@
+                                    @*     <a href="@Url.Action("GettingStarted", "Rest")"> *@
+                                    @*         <i class="icon fal fa-rabbit-fast"></i> *@
+                                    @*         <span>Getting Started</span> *@
+                                    @*     </a> *@
+                                    @* </li> *@
                                     <li>
                                         <a href="https://newlogin.timelog.com/documentation">
                                             <i class="icon fal fa-tasks"></i>
@@ -203,9 +203,9 @@
                             <div class="mega-menu-column">
                                 <ul class="mega-menu-links">
                                     <li>
-                                        <a href="@Url.Action("Security", "FinancialIntegration")">
+                                        <a href="@Url.Action("MiddlewareSecurity", "FinancialIntegration")">
                                             <i class="icon fal fa-tasks"></i>
-                                            <span>Security</span>
+                                            <span>Middleware Security</span>
                                         </a>
                                     </li>
                                     <li>

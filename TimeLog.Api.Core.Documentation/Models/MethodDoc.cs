@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Microsoft.AspNetCore.Http;
 
 namespace TimeLog.Api.Core.Documentation.Models
 {
@@ -13,27 +12,27 @@ namespace TimeLog.Api.Core.Documentation.Models
 
         public string FullyQuantifiedName { get; }
 
-        public string FullName { get; set; }
+        public string FullName { get; }
 
-        public string Summary { get; set; }
+        public string Summary { get; }
 
-        public string Example { get; set; }
+        public string Example { get; }
 
-        public string Permission { get; set; }
+        public string Permission { get; }
 
-        public string Returns { get; set; }
+        public string Returns { get; }
 
-        public string Remarks { get; set; }
+        public string Remarks { get; }
 
-        public bool IsConstructor { get; set; }
+        public bool IsConstructor { get; }
 
-        public TypeDoc Parent { get; set; }
+        public TypeDoc? Parent { get; }
 
-        public IList<TypeDoc> SeeAlso { get; set; }
+        public IList<TypeDoc> SeeAlso { get; }
 
-        public IList<MethodParam> Params { get; set; }
+        public IList<MethodParam> Params { get; }
 
-        public IList<MethodException> Exceptions { get; set; }
+        public IList<MethodException> Exceptions { get; }
 
         public string OutputExample { get; private set; }
 
@@ -50,19 +49,23 @@ namespace TimeLog.Api.Core.Documentation.Models
             Returns = string.Empty;
             SeeAlso = new List<TypeDoc>();
 
+            FullyQuantifiedName = string.Empty;
+            FullName = string.Empty;
+            Remarks = string.Empty;
+
             OutputExample = string.Empty;
             OutputSchema = string.Empty;
         }
 
         public void InitializeReportingExampleAndSchema(string webRootPath)
         {
-            FileInfo _outputExampleInfo = new FileInfo(Path.Combine(webRootPath, "Reporting/" + Name + ".xml"));
+            FileInfo _outputExampleInfo = new(Path.Combine(webRootPath, "Reporting/" + Name + ".xml"));
             if (_outputExampleInfo.Exists)
             {
                 OutputExample = File.ReadAllText(_outputExampleInfo.FullName);
             }
             
-            FileInfo _fileInfo = new FileInfo(Path.Combine(webRootPath, "Reporting/" + Name + ".xsd"));
+            FileInfo _fileInfo = new(Path.Combine(webRootPath, "Reporting/" + Name + ".xsd"));
             if (_fileInfo.Exists)
             {
                 OutputSchema = File.ReadAllText(_fileInfo.FullName);
@@ -77,12 +80,12 @@ namespace TimeLog.Api.Core.Documentation.Models
             var _attribute = element.Attribute("name")?.Value ?? string.Empty;
             FullName = _attribute.Replace("M:", string.Empty);
 
-            var _firstParentesis = _attribute.IndexOf('(');
-            if (_firstParentesis < 0) _firstParentesis = _attribute.Length - 1;
+            var _firstParenthesis = _attribute.IndexOf('(');
+            if (_firstParenthesis < 0) _firstParenthesis = _attribute.Length - 1;
 
-            var _lastDot = _attribute.LastIndexOf('.', _firstParentesis);
-            Name = _attribute.Substring(_lastDot + 1, _firstParentesis - _lastDot - 1);
-            FullyQuantifiedName = _attribute.Substring(0, _firstParentesis).Replace("M:", string.Empty);
+            var _lastDot = _attribute.LastIndexOf('.', _firstParenthesis);
+            Name = _attribute.Substring(_lastDot + 1, _firstParenthesis - _lastDot - 1);
+            FullyQuantifiedName = _attribute.Substring(0, _firstParenthesis).Replace("M:", string.Empty);
 
             IsConstructor = Name.StartsWith("#");
 
@@ -119,11 +122,11 @@ namespace TimeLog.Api.Core.Documentation.Models
             //    }
             //}
 
-            _firstParentesis = FullName.IndexOf('(');
-            var _parameterTypeList = _firstParentesis > 0
+            _firstParenthesis = FullName.IndexOf('(');
+            var _parameterTypeList = _firstParenthesis > 0
                 ? FullName.Substring(
-                    _firstParentesis + 1,
-                    FullName.LastIndexOf(")", StringComparison.Ordinal) - _firstParentesis - 1).Split(',')
+                    _firstParenthesis + 1,
+                    FullName.LastIndexOf(")", StringComparison.Ordinal) - _firstParenthesis - 1).Split(',')
                 : new string[] { };
             var _parameterIndex = 0;
 

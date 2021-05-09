@@ -26,6 +26,7 @@ namespace TimeLog.Api.Core.Documentation
         {
             services.AddSingleton<IReportingManager, ReportingManager>();
             services.AddSingleton<ITransactionalManager, TransactionalManager>();
+            services.AddSingleton<IRestManager, RestManager>();
             
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }

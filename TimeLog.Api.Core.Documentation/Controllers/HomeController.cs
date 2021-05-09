@@ -27,6 +27,16 @@ namespace TimeLog.Api.Core.Documentation.Controllers
         {
             return View();
         }
+        
+        public ActionResult Restrictions()
+        {
+            return View();
+        }
+
+        public ActionResult DataModel()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

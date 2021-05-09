@@ -20,7 +20,7 @@ namespace TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers
 
         #region Constructor
 
-        public RestTypeDoc(string name, RestInfo restInfo, RestTag tag, IReadOnlyList<RestAction> restActions)
+        public RestTypeDoc(string name, RestInfo restInfo, RestTag? tag, IReadOnlyList<RestAction> restActions)
         {
             Version = restInfo.Version.Replace("v", "");
             Name = name;
@@ -30,8 +30,7 @@ namespace TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers
                 .ThenBy(x => x.Name)
                 .ToList();
 
-            if (tag != null)
-                Description = tag.Description;
+            Description = tag != null ? tag.Description : string.Empty;
         }
 
         #endregion

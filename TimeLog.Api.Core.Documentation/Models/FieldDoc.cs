@@ -6,6 +6,11 @@ namespace TimeLog.Api.Core.Documentation.Models
     {
         public FieldDoc(XElement element)
         {
+            Name = string.Empty;
+            FullName = string.Empty;
+            Summary = string.Empty;
+            Example = string.Empty;
+            
             var _attribute = element.Attribute("name");
             if (_attribute != null)
             {

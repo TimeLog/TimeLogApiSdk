@@ -1,0 +1,26 @@
+﻿@using TimeLog.Api.Core.Documentation
+@model IEnumerable<TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers.RestTypeDoc>
+@{
+    ViewBag.Title = "Services";
+}
+
+<article class="article">
+    <h1>@ViewBag.Title</h1>
+    <h2>This page specifies all the available services</h2>
+    <p>
+        Each of the services is version and we promise only to add stuff (and fix bugs) on existing versions. If something
+        is going away or a name is changed, we will publish a new version. We promise to keep any of our services
+        alive for at least three years from release.
+    </p>
+    <ul>
+        @foreach (var _service in Model.OrderBy(s => s.Name))
+        {
+            <li class="icon-arrow_in_circle">
+                <a href="@Url.Action("Service", "Rest", new { id = _service.Name.UrlEncode() })">
+                    @_service.Name.SplitOnUppercase()
+                </a>
+                <span class="text-selection">Version @_service.Version</span> - @_service.Description
+            </li>
+        }
+    </ul>
+</article>

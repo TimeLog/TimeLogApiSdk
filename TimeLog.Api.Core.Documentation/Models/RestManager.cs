@@ -11,9 +11,9 @@ namespace TimeLog.Api.Core.Documentation.Models
     {
         private readonly RestDocumentationHelper _restDocHelper;
 
-        private RestManager(IWebHostEnvironment environment)
+        public RestManager(IWebHostEnvironment webHostEnvironment)
         {
-            var _filePath = Path.Combine(environment.ContentRootPath, "Source/TimeLog.REST.API.json");
+            var _filePath = Path.Combine(webHostEnvironment.WebRootPath, "Source/TimeLog.REST.API.json");
             _restDocHelper = new RestDocumentationHelper(_filePath);
         }
 

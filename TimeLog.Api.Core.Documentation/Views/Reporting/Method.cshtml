@@ -5,7 +5,10 @@
 
 <article class="article">
 
-    <p><a href="@Url.Action("Methods")">Back to @Model.Parent.Name.SplitOnUppercase()</a></p>
+    @if (Model.Parent != null)
+    {
+        <p><a href="@Url.Action("Methods")">Back to @Model.Parent.Name.SplitOnUppercase()</a></p>
+    }
     <h2>Method Details for @Model.Name.</h2>
     <p>@Model.Summary</p>
     <h3>Parameters</h3>

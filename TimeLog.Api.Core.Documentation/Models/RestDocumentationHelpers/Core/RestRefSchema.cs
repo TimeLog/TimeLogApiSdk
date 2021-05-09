@@ -8,20 +8,20 @@ namespace TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers.Core
     /// </summary>
     public class RestRefSchema
     {
-        private readonly IEnumerable<RestDefinition> _definitions;
-        private string Value { get; }
+        private readonly IEnumerable<RestDefinition>? _definitions;
+        public string? Value { get; }
 
-        public RestDefinition Definition
+        public RestDefinition? Definition
         {
             get
             {
-                return _definitions.FirstOrDefault(x => x.Name == Value);
+                return _definitions?.FirstOrDefault(x => x.Name == Value);
             }
         }
 
         #region Constructor
 
-        public RestRefSchema(string url, IEnumerable<RestDefinition> definitions)
+        public RestRefSchema(string url, IEnumerable<RestDefinition>? definitions)
         {
             _definitions = definitions;
             if (!string.IsNullOrEmpty(url))
