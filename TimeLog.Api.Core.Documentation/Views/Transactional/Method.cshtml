@@ -1,0 +1,36 @@
+﻿@model TimeLog.Api.Core.Documentation.Models.MethodDoc
+@{
+    ViewBag.Title = Model.Name + " - Method Details";
+}
+
+<article class="article">
+
+    @if (Model.Parent != null)
+    {
+        <p><a href="@Url.Action("Service", new {id = Model.Parent.FullName.UrlEncode()})">Back to @Model.Parent.Name.SplitOnUppercase()</a></p>
+    }
+    
+    <h2>Method Details for @Model.Name.</h2>
+    <p>@Model.Summary</p>
+    <h3>Parameters</h3>
+    <ul>
+        @foreach (var _param in Model.Params)
+        {
+            <li class="icon-arrow_in_circle">
+                @_param.Name <span class="text-selection">@_param.Type</span> @_param.Description
+            </li>
+        }
+    </ul>
+    @if (!string.IsNullOrWhiteSpace(Model.Returns))
+    {
+        <h3>Returns</h3>
+        <p>@Model.Returns</p>
+    }
+    @if (!string.IsNullOrWhiteSpace(Model.Remarks))
+    {
+        <h3>Remarks</h3>
+        <p>@Html.Raw(Model.Remarks.Trim('\n').Replace("\n", "<br />"))</p>
+    }
+
+
+</article>

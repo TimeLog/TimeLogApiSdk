@@ -4,24 +4,10 @@ Use this SDK for interacting with the TimeLog APIs.
 
 This source can also work as templates for your own projects. 
 
-See http://api.timelog.com for more documentation about the APIs.
+See [https://api.timelog.com](https://api.timelog.com) for more documentation about the APIs.
 
-Please be aware that TimeLog has multiple APIs available and the authentication differs.
-
-- Reporting API
-    - Use for pulling data for reporting purposes
-    - Only read-access is available
-    - Server-to-server service user only
-- Transactional API
-    - Use for transactional purposes
-    - Reading and writing data is available for selected data types
-    - Server-to-server employee user only
-    - Coordinator role available (add data for other users)
-- REST API
-    - Use for employee-centered registration purposes
-    - Reading and writing data is available for selected data types
-    - Employee-specific-token only
-    - Coordinator role not available
+Please be aware that TimeLog has multiple APIs available and the authentication differs. 
+Refer to the definition of the [3 flavors of access](https://api.timelog.com#3-flavor-of-access)
 
 ## Support
 
@@ -44,22 +30,10 @@ The list below is a quick rundown of the directories in this repository.
 
 ### TimeLog Reporting API
 
-Use the reporting API to fetch big data sets from TimeLog for use in third party reporting systems.
-
-For the reporting API you will need the SiteCode for your TimeLog site as well as ApiId and ApiPassword. Find the information in "System administration" > "Integrations and API" > "Reporting API settings".
-
-Use the Deploy\TimeLog.ReportingApi.SDK.dll for scaffolding classes for initialization and authentication.
-
-**Recommended usage**
-
-In order to replicate TimeLog data to your datawarehouse or similar we recommend the following procedure to ensure consistent data without heavy API usage:
-
-- Every quarter fetch and sync the full data set in batches by month
-- Every month fetch and sync the last 3 months of data
-- Every week fetch and sync the last 4 weeks of data
-- Every day fetch and sync the last 7 days of data
-
-Note that you might need to adjust the intervals and periods to fit the data diciplin in your TimeLog instance.
+- [Getting Started](https://api.timelog.com/reporting/gettingstarted)
+- [List of methods](https://api.timelog.com/reporting/methods)
+- [Using PowerBI with TimeLog](https://api.timelog.com/reporting/powerbi)
+- [Synchronizing data](https://api.timelog.com/reporting/synchronizingdata)
 
 ### TimeLog Transactional API
 

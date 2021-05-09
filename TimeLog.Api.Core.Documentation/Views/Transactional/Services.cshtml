@@ -1,0 +1,20 @@
+﻿@model IEnumerable<TimeLog.Api.Core.Documentation.Models.TypeDoc>
+@{
+    ViewBag.Title = "Services";
+}
+
+<article class="article">
+    <h1>@ViewBag.Title</h1>
+    <h2 class="">This page specifies all the available services</h2>
+    <p>
+        Each of the services is version and we promise only to add stuff (and fix bugs) on existing versions. If something
+        is going away or a name is changed, we will publish a new version. We promise to keep any of our services
+        alive for at least three years from release.
+    </p>
+    <ul>
+        @foreach (var _doc in Model.Where(doc => !doc.Summary.Contains("OBSOLETE")).OrderBy(doc => doc.FullName))
+        {
+            <li class="icon-arrow_in_circle"><a href="@Url.Action("Service", "Transactional", new { id = _doc.FullName.UrlEncode() })">@_doc.Name.SplitOnUppercase()</a> <span class="text-selection">Version @_doc.Version()</span> @_doc.Summary</li>
+        }
+    </ul>
+</article>

@@ -4,17 +4,23 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.TransactionalApi.SDK", "TimeLog.TransactionalApi.SDK\TimeLog.TransactionalApi.SDK.csproj", "{A1D54CAF-4BCB-43FB-917C-4F392C76A0E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.ApiConsoleApp", "TimeLog.ApiConsoleApp\TimeLog.ApiConsoleApp.csproj", "{07666C53-3FDF-400C-B337-FA7F9DE1EA49}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.ReportingApi.SDK", "TimeLog.ReportingApi.SDK\TimeLog.ReportingApi.SDK.csproj", "{BB65DA9A-999B-4EEB-B236-3CB45140C7B7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.ReportingApi.Exporter", "TimeLog.ReportingApi.Exporter\TimeLog.ReportingApi.Exporter.csproj", "{F947B785-F249-492E-98E4-E23B95828C99}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.Api.Documentation", "TimeLog.Api.Documentation\TimeLog.Api.Documentation.csproj", "{5A484ED7-6249-4B14-B9D4-32F1BB47127C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.Library", "TimeLog.Library\TimeLog.Library.csproj", "{0ABB99CF-54EC-4415-9675-25096E7FC01E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.ReportingApi.Core.SDK", "TimeLog.ReportingApi.Core.SDK\TimeLog.ReportingApi.Core.SDK.csproj", "{53219388-6844-4E6C-B1C2-5FFC37CC61AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.Api.Core.Documentation", "TimeLog.Api.Core.Documentation\TimeLog.Api.Core.Documentation.csproj", "{74B60695-BE4A-4696-B5E4-1A6AFA249A7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{BF95C1DC-2943-450D-BFA8-97BEB0349D0D}"
+ProjectSection(SolutionItems) = preProject
+	build_docker_image.ps1 = build_docker_image.ps1
+	Dockerfile = Dockerfile
+	run_docker_image.ps1 = run_docker_image.ps1
+	manifests\deployment.yml = manifests\deployment.yml
+	manifests\service.yml = manifests\service.yml
+	azure-pipelines.yml = azure-pipelines.yml
+	manifests\nginx-ingress.yml = manifests\nginx-ingress.yml
+	README.md = README.md
+EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,22 +32,6 @@ Global
 		{A1D54CAF-4BCB-43FB-917C-4F392C76A0E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1D54CAF-4BCB-43FB-917C-4F392C76A0E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1D54CAF-4BCB-43FB-917C-4F392C76A0E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07666C53-3FDF-400C-B337-FA7F9DE1EA49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07666C53-3FDF-400C-B337-FA7F9DE1EA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07666C53-3FDF-400C-B337-FA7F9DE1EA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07666C53-3FDF-400C-B337-FA7F9DE1EA49}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB65DA9A-999B-4EEB-B236-3CB45140C7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB65DA9A-999B-4EEB-B236-3CB45140C7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB65DA9A-999B-4EEB-B236-3CB45140C7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB65DA9A-999B-4EEB-B236-3CB45140C7B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F947B785-F249-492E-98E4-E23B95828C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F947B785-F249-492E-98E4-E23B95828C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F947B785-F249-492E-98E4-E23B95828C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F947B785-F249-492E-98E4-E23B95828C99}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A484ED7-6249-4B14-B9D4-32F1BB47127C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A484ED7-6249-4B14-B9D4-32F1BB47127C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A484ED7-6249-4B14-B9D4-32F1BB47127C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A484ED7-6249-4B14-B9D4-32F1BB47127C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0ABB99CF-54EC-4415-9675-25096E7FC01E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0ABB99CF-54EC-4415-9675-25096E7FC01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0ABB99CF-54EC-4415-9675-25096E7FC01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,6 +40,10 @@ Global
 		{53219388-6844-4E6C-B1C2-5FFC37CC61AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53219388-6844-4E6C-B1C2-5FFC37CC61AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53219388-6844-4E6C-B1C2-5FFC37CC61AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74B60695-BE4A-4696-B5E4-1A6AFA249A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B60695-BE4A-4696-B5E4-1A6AFA249A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B60695-BE4A-4696-B5E4-1A6AFA249A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B60695-BE4A-4696-B5E4-1A6AFA249A7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

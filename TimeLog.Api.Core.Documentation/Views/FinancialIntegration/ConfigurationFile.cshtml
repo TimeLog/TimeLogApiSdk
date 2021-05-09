@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Financial Integrations - Configuration File";
+}
+
+<article class="article">
+
+    <h1>Configuration File Documentation</h1>
+    <h2>
+        Some settings can be changed in the settings file (TimeLog.Financial.Host.Settings.xml) that is part of the financial host middleware.
+        These settings should only be changed after consulting a TimeLog Integration Specialist.
+    </h2>
+
+    <table style="width: 100%;" class="setting_table">
+        <colgroup>
+            <col style="width: 30%" />
+            <col style="width: 20%" />
+            <col />
+        </colgroup>
+        <tbody>
+            <tr class="tablespacer">
+                <td>Host specific settings</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>HostDebugMode</td>
+                <td>1</td>
+                <td>A value indicating whether the host allows access to debug methods in the host web interfaces. (0 or 1)</td>
+            </tr>
+            <tr>
+                <td>HostSystemName</td>
+                <td>Default Financial System</td>
+                <td>The default name of the integration to be shown in TimeLog</td>
+            </tr>
+            <tr>
+                <td>HostNextOutgoingTransactionId</td>
+                <td>1000</td>
+                <td>The next transaction id used for requests to TimeLog. Do not change manually</td>
+            </tr>
+            <tr class="tablespacer">
+                <td>Transfer settings</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>TransferDefaultCustomerStatus</td>
+                <td>Empty</td>
+                <td>The default TimeLog customer status. Used when transferring new customers to TimeLog</td>
+            </tr>
+            <tr>
+                <td>TransferUseExpenseHandler</td>
+                <td>0</td>
+                <td>A value indicating whether to keep track of expenses in the middleware. Required for Visma (0 or 1)</td>
+            </tr>
+            <tr>
+                <td>TransferDefaultVatPercent</td>
+                <td>25</td>
+                <td>The default VAT percent. Used when transferring new customers to TimeLog</td>
+            </tr>
+            <tr>
+                <td>TransferDefaultCountry</td>
+                <td>DK</td>
+                <td>The default country ISO code. Used when transferring new customers to TimeLog</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</article>

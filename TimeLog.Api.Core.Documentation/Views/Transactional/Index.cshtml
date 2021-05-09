@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Transactional API - Introduction";
+}
+
+<article class="article">
+    <h1>Introduction to the Transactional API</h1>
+    <p>
+        TimeLog API is built on Microsoft Windows Communication Foundation or WCF. It exposes a set of
+        web services that can be accessed through the SOAP protocol. The API is exposed through a number of 
+        namespace specific web services. Each web service is responsible for servicing methods to interact 
+        with the object model within the namespace. E.g. the Security web Service will expose methods needed 
+        to authenticate API users.
+    </p>
+    <p>
+        The API is grouped into modules that will activate the methods needed to support a given area of work. 
+        E.g. the time registration module will activate a number of methods in the ProjectManagement web services 
+        but not necessarily all of them. This will allow you to limit the access to the API to a minimum and 
+        thereby limiting the data exposed through the API.
+    </p>
+    <h3>
+        Data Object Structure
+    </h3>
+    <p>
+        The API exposes the domain objects of TimeLog. Often when interacting with domain objects 
+        you need meta data on the objects such as main information on parent objects, details about dimensions 
+        or status etc. E.g. when working with time registrations (WorkUnit object) you might like to know 
+        which customer, project or task the time is tracked on. If the API contained only raw domain objects 
+        you would have to load each of these objects through calls to the API. TimeLog API provides 
+        a details section with every domain object - the Details-property. This property contains a compressed
+        set of data of relevant meta data. Some of the data in the details property is encapsulated in "header"
+        objects. Header objects is the essential data of the full object. So in the WorkUnit object (time 
+        registration) details section you will find a CustomerHeader object which gives you the most important
+        information on the customer to be displayed with the work unit, saving you from requesting the customer
+        through the API.
+    </p>
+    <h3>
+        API Support Policy
+    </h3>
+    <p>
+        TimeLog guarantees solutions build on a given version of the TimeLog API will work three years
+        from the release of that specific version. E.g. CRM Service v1.3 was released December 2014 and will be
+        supported at least until December 2017.
+    </p>
+    <p>
+        If a solution is upgraded from one version of the API to a newer version, no guarantee is given that the 
+        solution will still work. TimeLog will provide updated documentation for new versions of the API.
+    </p>
+</article>

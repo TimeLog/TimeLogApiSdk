@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Reporting API - Introduction";
+}
+
+<article class="article">
+    <h1>Introduction to the Reporting API</h1>
+
+    <p>
+        The Reporting API is based on standard web technologies, web services and XML.
+        Use the Reporting API to extract from TimeLog into intranets, extranets,
+        business reporting tools, applications etc.
+    </p>
+    <p>
+        The idea behind the Reporting API is to give access to as much of the TimeLog
+        Project data models as possible in a easy to use XML format. The origin of the
+        API goes way back in the history of TimeLog, so we will extend on it on
+        a per-request basis for new fields and data types. Please get in touch, if you
+        think we lack some information in the various methods.
+    </p>
+    <h3 id="security">
+        <a href="#security">Security</a>
+    </h3>
+    <p>
+        Be aware that no security policies on user access will be applied to any of the
+        methods in the Reporting API. The Reporting API is for flat data extractions.
+        Take care to apply your own policies if you are exposing the data in a data
+        warehouse or other business intelligence tools.
+    </p>
+    <h3 id="getting-data">
+        <a href="#getting-data">Getting data</a>
+    </h3>
+
+    <p>For the complete list of data point available, please @Html.ActionLink("refer to the list of methods", "Methods").</p>
+
+    <p>Also take note that we have a @Html.ActionLink("quick guide for using PowerBI with TimeLog", "PowerBI").</p>
+
+    <p>If you need to interact with a dataware house or similar, please have a look at the @Html.ActionLink("synchronizing data", "SynchronizingData") page.</p>
+
+    <h3 id="usage-limits">
+        <a href="#usage-limits">Usage limits</a>
+    </h3>
+
+    <p>
+        We continuously monitor API usage and usage patterns to avoid single customers causing heavy load
+        and degraded performance for other customers.
+    </p>
+
+    <p>Currently, we do not have hard limits.</p>
+
+    <p>
+        We encourage our customers and their partners to use our API responsibly. We will reach out to the 
+        employee tagged as "TimeLog Responsible" within the system before taking actions that limits the use of the API.
+    </p>
+
+    <h3 id="working-with-currencies">
+        <a href="#working-with-currencies">Working with currencies</a>
+    </h3>
+    <p>
+        Please take note that the currency setup follows the rules below unless it's stated explicitly:<br/>
+    </p>
+    <table class="setting_table">
+        <tr>
+            <td>Properties for amounts ending with <em>SystemCurrency</em></td>
+            <td>System currency</td>
+        </tr>
+        <tr>
+            <td>Properties for amounts ending with <em>Currency</em></td>
+            <td>
+                Project currency (e.g. cost, amount, sales price)<br/>
+                Invoice currency (e.g. amount)
+            </td>
+        </tr>
+        <tr>
+            <td>Properties for amounts without explicit definition</td>
+            <td>System currency</td>
+        </tr>
+    </table>
+    <h3 id="status-codes">
+        <a href="#status-codes">Status codes</a>
+    </h3>
+    <p>
+        The reporting will (starting from end May 2021) return specific HTTP
+        status codes related to the result. The result body will remain unchanged and will
+        in many cases provide additional information. Possible status responses:
+    </p>
+    <ul class="arrows">
+        <li>200 OK - request successful</li>
+        <li>204 No Content - the result of the request is empty</li>
+        <li>400 Bad Request - covers both issues with input parameters, but possibly also internal errors</li>
+        <li>401 Unauthorized - the Site ID, API ID and API password combination is invalid</li>
+    </ul>
+</article>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Expenses 
+  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/EventTypesRaw.xsd">
+  <tlp:Expense ID="51789">
+    <tlp:CustomerName>Global People Inc</tlp:CustomerName>
+    <tlp:CustomerNo>037</tlp:CustomerNo>
+    <tlp:CustomerID>700</tlp:CustomerID>
+    <tlp:ProjectName>Implementation 2018</tlp:ProjectName>
+    <tlp:ProjectNo>2003-0002.04.0003</tlp:ProjectNo>
+    <tlp:ProjectID>14</tlp:ProjectID>
+    <tlp:ContractName>Time and Material</tlp:ContractName>
+    <tlp:ContractID>12</tlp:ContractID>
+    <tlp:ExpenseType>Hotel</tlp:ExpenseType>
+    <tlp:ExpenseTypeID>234</tlp:ExpenseTypeID>
+    <tlp:SupplierCustomerName>SAS</tlp:SupplierCustomerName>
+    <tlp:SupplierCustomerID>815</tlp:SupplierCustomerID>
+    <tlp:Date>2018-04-30T00:00:00</tlp:Date>
+    <tlp:Amount>1445.0000</tlp:Amount>
+    <tlp:VAT>166.2400</tlp:VAT>
+    <tlp:CurrencyABB>DKK</tlp:CurrencyABB>
+    <tlp:CurrencyRate>100.0000</tlp:CurrencyRate>
+    <tlp:PaymentMethod>Creditcard</tlp:PaymentMethod>
+    <tlp:PaymentMethodID>160</tlp:PaymentMethodID>
+    <tlp:Comment>Hotel when visiting customer</tlp:Comment>
+    <tlp:Billable>0</tlp:Billable>
+    <tlp:EmployeeFirstName>Peter</tlp:EmployeeFirstName>
+    <tlp:EmployeeLastName>Nielsen</tlp:EmployeeLastName>
+    <tlp:EmployeeInitials>pni</tlp:EmployeeInitials>
+    <tlp:EmployeeID>411</tlp:EmployeeID>
+    <tlp:UserID>39</tlp:UserID>
+    <tlp:RegAmount>1278.7600</tlp:RegAmount>
+    <tlp:EstimatedAmount>1278.7600</tlp:EstimatedAmount>
+    <tlp:ProfitRatio>0.0000</tlp:ProfitRatio>
+    <tlp:InvAmount>1278.7600</tlp:InvAmount>
+    <tlp:ApprovedStatus>1</tlp:ApprovedStatus>
+    <tlp:IsControlled>1</tlp:IsControlled>
+    <tlp:IsPaid>1</tlp:IsPaid>
+    <tlp:Created>2021-02-04T08:56:24.287</tlp:Created>
+  </tlp:Expense>
+</tlp:Expenses>
