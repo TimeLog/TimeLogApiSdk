@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <EnableDefaultItems>false</EnableDefaultItems>
+        <Deterministic>false</Deterministic>
         <PostBuildEvent>copy /y $(TargetDir)*.dll $(SolutionDir)Deploy
                 copy /y $(TargetDir)*.xml $(SolutionDir)Deploy
                 copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>

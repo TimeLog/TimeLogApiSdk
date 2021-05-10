@@ -15,6 +15,7 @@
   </xsd:element>
   <xsd:complexType name="ContactRaw_Type">
     <xsd:sequence>
+      <xsd:element name="Salutation" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="FirstName" type="xsd:string" />
       <xsd:element name="LastName" type="xsd:string" />
       <xsd:element name="FullName" type="xsd:string" />
@@ -31,7 +32,9 @@
       <xsd:element name="ZipCode" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="City" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="State" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Birthday" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Country" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Comment" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="AccountManagerID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="AccountManagerFullName" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="CreatedAt" type="xsd:dateTime" />
@@ -40,6 +43,8 @@
       <xsd:element name="LastModifiedAt" type="xsd:dateTime" />
       <xsd:element name="LastModifiedByEmployeeId" type="xsd:positiveInteger" />
       <xsd:element name="LastModifiedBy" type="xsd:string" />
+      <xsd:element name="IsActive" type="xsd:boolean" />
+      <xsd:element name="Department" type="xsd:string" minOccurs="0" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
   </xsd:complexType>
