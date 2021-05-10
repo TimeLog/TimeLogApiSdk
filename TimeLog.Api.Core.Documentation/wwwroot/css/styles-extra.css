@@ -16,3 +16,8 @@
     width: 50%;
     padding: 2px 5px;
 }
+
+.small-screen-menu__link {
+    border: 0;
+    background-color: transparent;
+}
