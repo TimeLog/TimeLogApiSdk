@@ -5,6 +5,8 @@
 trigger:
 - master
 
+pr: none
+
 resources:
 - repo: self
 
