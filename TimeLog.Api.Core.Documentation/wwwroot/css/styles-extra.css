@@ -21,3 +21,11 @@
     border: 0;
     background-color: transparent;
 }
+
+.mapping_table {
+    font-size: 0.7em;
+}
+
+.mapping_table tr {
+    border-bottom: 1px solid #000;
+}
