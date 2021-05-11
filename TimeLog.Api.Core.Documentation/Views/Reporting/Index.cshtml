@@ -1,9 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Reporting API - Introduction";
+    ViewBag.Title = "Introduction to the Reporting API";
 }
 
 <article class="article">
-    <h1>Introduction to the Reporting API</h1>
+    <h1>@ViewBag.Title</h1>
 
     <p>
         The Reporting API is based on standard web technologies, web services and XML.
@@ -85,8 +85,13 @@
     </p>
     <ul class="arrows">
         <li>200 OK - request successful</li>
-        <li>204 No Content - the result of the request is empty</li>
-        <li>400 Bad Request - covers both issues with input parameters, but possibly also internal errors</li>
         <li>401 Unauthorized - the Site ID, API ID and API password combination is invalid</li>
+        <li>500 Internal Server Error - covers both issues with input parameters, but possibly also internal errors</li>
     </ul>
+    <p>
+        Take note, that a 200 OK may contain empty result indicated by the attribute "resultEmpty".
+    </p>
+    <pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+    &lt;tlp:Tasks resultEmpty="true" xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"&gt;
+&lt;/tlp:Tasks&gt;</pre>
 </article>

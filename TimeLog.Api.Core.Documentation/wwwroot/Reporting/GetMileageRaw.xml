@@ -5,8 +5,10 @@
   <tlp:Mileage ID="1499">
     <CustomerName>TimeLog A/S</CustomerName>
     <CustomerNo>102</CustomerNo>
+    <CustomerID>4312</CustomerID>
     <ProjectName>EMI - Presale (leads)</ProjectName>
     <ProjectNo>800</ProjectNo>
+    <ProjectID>123</ProjectID>
     <EmployeeFirstName>Peter</EmployeeFirstName>
     <EmployeeLastName>Andersen</EmployeeLastName>
     <EmployeeFullName>Peter Andersen</EmployeeFullName>
