@@ -31,9 +31,9 @@ namespace TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers
             }
 
             var _fileDoc = JsonConvert.DeserializeObject<JObject>(_fileJsonText);
-            var _restDoc = GetRestDoc(_fileDoc);
-
             Definitions = GetDefinitions(_fileDoc).ToList();
+
+            var _restDoc = GetRestDoc(_fileDoc);
             Types = MapToTypeDoc(_restDoc);
             Methods = GenerateMethodDocs();
         }
@@ -67,7 +67,7 @@ namespace TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers
                                 property.Name,
                                 (string) property.Value["format"],
                                 (string) property.Value["type"],
-                                new RestRefSchema((string) property.Value["$ref"], null),
+                                new RestRefSchema((string) property.Value["$ref"], Definitions),
                                 (string) property.Value["description"]
                             ))
                             .OrderBy(x => x.Name)
@@ -113,29 +113,29 @@ namespace TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers
                                         (string) action.Value["summary"],
                                         (string) action.Value["operationId"],
                                         ((JArray) action.Value["parameters"])
-                                        .OfType<JObject>()
-                                        .Select(parameter => new RestParameter(
-                                            (string) parameter.GetValue("name"),
-                                            (string) parameter.GetValue("description"),
-                                            (string) parameter.GetValue("type"),
-                                            (string) parameter.GetValue("format"),
-                                            (string) parameter.GetValue("default"),
-                                            new RestRefSchema((string) parameter.SelectToken("schema.$ref"), null)
-                                        ))
-                                        .ToList(),
+                                            .OfType<JObject>()
+                                            .Select(parameter => new RestParameter(
+                                                (string) parameter.GetValue("name"),
+                                                (string) parameter.GetValue("description"),
+                                                (string) parameter.GetValue("type"),
+                                                (string) parameter.GetValue("format"),
+                                                (string) parameter.GetValue("default"),
+                                                new RestRefSchema((string) parameter.SelectToken("schema.$ref"), Definitions)
+                                            ))
+                                            .ToList(),
                                         ((JObject) action.Value["responses"])
-                                        .Properties()
-                                        .Select(responseToken =>
-                                        {
-                                            var _tokenValue = (JObject) responseToken.Value;
+                                            .Properties()
+                                            .Select(responseToken =>
+                                            {
+                                                var _tokenValue = (JObject) responseToken.Value;
 
-                                            return new RestResponse(
-                                                responseToken.Name,
-                                                (string) _tokenValue["description"],
-                                                new RestRefSchema((string) _tokenValue.SelectToken("schema.$ref"), null)
-                                            );
-                                        })
-                                        .ToList()
+                                                return new RestResponse(
+                                                    responseToken.Name,
+                                                    (string) _tokenValue["description"],
+                                                    new RestRefSchema((string) _tokenValue.SelectToken("schema.$ref"), Definitions)
+                                                );
+                                            })
+                                            .ToList()
                                     );
                                 }).ToList()
                         );
