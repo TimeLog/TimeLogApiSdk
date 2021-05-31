@@ -146,6 +146,11 @@
             Gets or sets key account manager initials, full Employeeheader is located in Details
             </summary>
         </member>
+        <member name="P:TimeLog.TLP.API.Proxy.CRM.V1_4.Customer.KAM2">
+            <summary>
+            Gets or sets key account manager initials, full Employeeheader is located in Details
+            </summary>
+        </member>
         <member name="P:TimeLog.TLP.API.Proxy.CRM.V1_3.Customer.KAM">
             <summary>
             Gets or sets key account manager initials, full Employeeheader is located in Details
@@ -2898,6 +2903,16 @@
         <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat.EmployeeInternalId">
             <summary>
             Gets or sets the employee internal identifier (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat.UserId">
+            <summary>
+            Gets or sets the user identifier (int)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat.UserGuid">
+            <summary>
+            Gets or sets the user identifier (guid)
             </summary>
         </member>
         <member name="P:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat.EmployeeDepartmentGuid">

@@ -581,8 +581,7 @@
             Financial service for pricelists, currencies and services (<strong>released October 2015</strong>) 
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Financial.V1_3.FinancialService.#ctor(System.Boolean)">
@@ -940,11 +939,10 @@
         </member>
         <member name="T:TimeLog.TLP.API.Financial.V1_2.FinancialService">
             <summary>
-            Financial service for pricelists, currencies and services (<strong>released October 2015</strong>) 
+            Financial service for pricelists, currencies and services (<strong>released October 2015</strong>) - OBSOLETE 
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Financial.V1_2.FinancialService.#ctor(System.Boolean)">
@@ -1246,8 +1244,7 @@
             Financial service for pricelists, currencies and services (<strong>released October 2015</strong>) - OBSOLETE 
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Financial/V1_1/FinancialServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Financial.V1_1.FinancialService.#ctor(System.Boolean)">
@@ -1474,8 +1471,7 @@
             Financial service for price lists, currencies and services (released February 2014) - OBSOLETE 
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Financial/V1_0/FinancialService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Financial/V1_0/FinancialServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Financial/V1_0/FinancialServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Financial.V1_0.FinancialService.#ctor(System.Boolean)">
@@ -1742,8 +1738,7 @@
             Service for handling CRM requests in TimeLog (released December 2014)
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_4.CRMService.#ctor(System.Boolean)">
@@ -2432,8 +2427,7 @@
             Service for handling CRM requests in TimeLog (released December 2014) - OBSOLETE
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_3.CRMService.#ctor(System.Boolean)">
@@ -2992,8 +2986,7 @@
             OBSOLETE Service for handling CRM requests in TimeLog
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_1/CRMService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_1/CRMServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/CRM/V1_1/CRMServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_1.CRMService.GetCustomerByID(System.Int32,TimeLog.TLP.API.Proxy.Security.V1_1.SecurityToken)">
@@ -3134,8 +3127,7 @@
             Service for handling CRM requests in TimeLog (released March 2013) - OBSOLETE
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_2/CRMService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_2/CRMServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/CRM/V1_2/CRMServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.CRM.V1_2.CRMService.#ctor(System.Boolean)">
@@ -3313,8 +3305,7 @@
             Service for handling custom fields in TimeLog (beta as of July 2014) - OBSOLETE
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/CRM/V1_3/CRMServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.CustomField.V1_0.CustomFieldService.#ctor(System.Boolean)">
@@ -3364,8 +3355,7 @@
             Service for handling expense requests in TimeLog (released July 2013)
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Expenses/V1_0/ExpensesService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Expenses.V1_0.ExpensesService.#ctor(System.Boolean)">
@@ -3432,8 +3422,7 @@
             Service for handling help desk actions in TimeLog (released May 2014) - OBSOLETE
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/HelpDesk/V1_6/HelpDeskService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/HelpDesk/V1_0/HelpDeskServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/HelpDesk/V1_0/HelpDeskServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.HelpDesk.V1_6.HelpDeskService.#ctor(System.Boolean)">
@@ -3602,8 +3591,7 @@
             Service for handling invoicing in TimeLog (released August 2013) 
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Invoicing/V1_0/InvoicingService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Invoicing.V1_1.InvoicingService.#ctor(System.Boolean)">
@@ -3652,17 +3640,6 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A credit note matching the identifier</returns>
         </member>
-	    <member name="M:TimeLog.TLP.API.Invoicing.V1_1.InvoicingService.GetCreditNotesModifiedInPeriodPaged(System.DateTime, System.DateTime, System.Int32, System.Int32, TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
-		    <summary>
-			    Gets 1 or more credit notes based on start - and end date
-		    </summary>
-		    <param name="startDate">Start date of period (DateTime)</param>
-		    <param name="endDate">End date of period (DateTime)</param>
-		    <param name="page">Page in result (int)</param>
-		    <param name="pageSize">PageSize to be returned (int)</param>
-		    <param name="token">Security token associated with the request (SecurityToken)</param>
-		    <returns>1 or more credit notes matching the identifier</returns>
-	    </member>
         <member name="M:TimeLog.TLP.API.Invoicing.V1_1.InvoicingService.MarkInvoiceAsChecked(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Marks a booked invoice as checked, usually because it has been paid
@@ -3689,6 +3666,17 @@
             <param name="systemName">Name of the external system (string)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A invoice matching the external key</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Invoicing.V1_1.InvoicingService.GetCreditNotesModifiedInPeriodPaged(System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets credit notes modified in specified period
+            </summary>
+            <param name="startDate">Start date of the period (DateTime)</param>
+            <param name="endDate">End date of the period (DateTime)</param>
+            <param name="page">Page (Integer)</param>
+            <param name="pageSize">Page size (Integer)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>Gets credit notes modified in specified period</returns>
         </member>
         <member name="T:TimeLog.TLP.API.Invoicing.V1_1.InvoicingServiceSecure">
             <summary>
@@ -3724,8 +3712,7 @@
             Service for handling invoicing in TimeLog (released August 2013) - OBSOLETE
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Invoicing/V1_0/InvoicingService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Invoicing/V1_0/InvoicingServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Invoicing.V1_0.InvoicingService.#ctor(System.Boolean)">
@@ -3833,8 +3820,7 @@
             Exposes methods needed to handle organizational data through the API (released March 2015) 
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Organisation/V1_6/OrganisationService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_6/OrganisationServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_6/OrganisationServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_7.OrganisationService.#ctor(System.Boolean)">
@@ -4127,8 +4113,7 @@
             Exposes methods needed to handle organizational data through the API (released March 2015) - OBSOLETE 
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Organisation/V1_6/OrganisationService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_6/OrganisationServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_6/OrganisationServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_6.OrganisationService.#ctor(System.Boolean)">
@@ -4539,8 +4524,7 @@
             Exposes methods needed to handle organizational data through the API (released February 2014) - OBSOLETE 
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Organisation/V1_5/OrganisationService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_5/OrganisationServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_5/OrganisationServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_5.OrganisationService.#ctor(System.Boolean)">
@@ -4941,8 +4925,7 @@
             Service for handling projects and time registrations in TimeLog (released April 2013) - OBSOLETE
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_4/ProjectManagementService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_4/ProjectManagementServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_4/ProjectManagementServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_4.ProjectManagementService.#ctor(System.Boolean)">
@@ -5126,8 +5109,7 @@
             Service for handling projects and time registrations in TimeLog (released January 2014) - OBSOLETE
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_5/ProjectManagementService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_5/ProjectManagementServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_5/ProjectManagementServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_5.ProjectManagementService.#ctor(System.Boolean)">
@@ -5648,8 +5630,7 @@
             Service for handling projects and time registrations in TimeLog (released Nov 2017)
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_7/ProjectManagementService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.#ctor(System.Boolean)">
@@ -6092,13 +6073,10 @@
              Security requirements: System administrator
             
              ApprovalStatus can have one of the following values:
-             - NotSpecified (0)
-             - EmployeeManagerRejected (1)
-             - EmployeeManagerRejectedAndResolved (2)
-             - EmployeeManagerApproved (3)
-             - ProjectManagerRejected (4)
-             - ProjectManagerRejectedAndResolved (5)
-             - ProjectManagerApproved (6)
+             - Time sheet open (0)
+             - Time sheet closed (10)
+             - Approved by project manager (20)
+             - Approved by department manager (30)
              </remarks>
              <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat"/>
              <returns>A list of work units in a flat format</returns>
@@ -6132,13 +6110,10 @@
             <returns>A list of work units in a flat format</returns>
             <remarks>
             ApprovalStatus can have one of the following values:
-            - NotSpecified (0)
-            - EmployeeManagerRejected (1)
-            - EmployeeManagerRejectedAndResolved (2)
-            - EmployeeManagerApproved (3)
-            - ProjectManagerRejected (4)
-            - ProjectManagerRejectedAndResolved (5)
-            - ProjectManagerApproved (6)
+            - Time sheet open (0)
+            - Time sheet closed (10)
+            - Approved by project manager (20)
+            - Approved by department manager (30)
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ChangeAllocationsHourlyRate(System.Int32,System.Int32,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -6691,8 +6666,7 @@
             Service for handling projects and time registrations in TimeLog (released May 2014) - OBSOLETE
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_6/ProjectManagementService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_6/ProjectManagementServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.ProjectManagement.V1_6.ProjectManagementService.#ctor(System.Boolean)">
@@ -7485,11 +7459,10 @@
         </member>
         <member name="T:TimeLog.TLP.API.Salary.V1_0.SalaryService">
             <summary>
-            Service for handling salary requests in TimeLog (released January 2014) 
+            Service for handling salary requests in TimeLog (released January 2014) - OBSOLETE  
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Salary/V1_0/SalaryService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Salary/V1_0/SalaryServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Salary/V1_0/SalaryServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Salary.V1_0.SalaryService.#ctor(System.Boolean)">
@@ -7535,6 +7508,14 @@
             Service for handling salary requests in TimeLog)
             </summary>
         </member>
+        <member name="T:TimeLog.TLP.API.Salary.V1_1.SalaryService">
+            <summary>
+            Service for handling salary requests in TimeLog (released February 2017) 
+            </summary>
+            <remarks>
+            https://app[x].timelog.com/[account name]/WebServices/Salary/V1_1/SalaryServiceSecure.svc
+            </remarks>
+        </member>
         <member name="M:TimeLog.TLP.API.Salary.V1_1.SalaryService.#ctor(System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeLog.TLP.API.Salary.V1_1.SalaryService"/> class.
@@ -7555,14 +7536,21 @@
             </summary>
             <param name="salaryCodeStatus">Active, Inactive, or All</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <returns>A Salary object</returns>
+            <returns>A list of Salary objects</returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Salary.V1_1.SalaryService.GetAllAbsenceCodes(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of all absence codes
+            </summary>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <returns>A list of AbsenceCode objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Salary.V1_1.SalaryService.GetHolidayCalendars(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a simple list of available holiday calendars
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="N:TimeLog.TLP.HolidayCalendar"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Salary.V1_1.HolidayCalendar"/>
             <returns>A list of HolidayCalendar objects</returns>
         </member>
         <member name="M:TimeLog.TLP.API.Salary.V1_1.SalaryService.GetNormalWorkweeks(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
@@ -7570,7 +7558,7 @@
             Gets a simple list of available normal working times
             </summary>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="!:Proxy.Salary.V1_1.NormalWorkweek"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.Salary.V1_1.NormalWorkingTime"/>
             <returns>A list of NormalWorkweek objects</returns>
         </member>
         <member name="T:TimeLog.TLP.API.Salary.V1_1.SalaryServiceSecure">
@@ -7583,8 +7571,7 @@
             Service for authentication in TimeLog (released September 2013) 
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Security/V1_2/SecurityService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Security/V1_2/SecurityServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Security/V1_2/SecurityServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Security.V1_2.SecurityService.GetToken(System.String,System.String)">
@@ -7674,8 +7661,7 @@
             Exposes methods needed to handle transaction logging through the API (released June 2013)
             </summary>
             <remarks>
-            Unencrypted: http://app[x].timelog.com/[account name]/WebServices/Transaction/V1_0/TransactionService.svc
-            SSL: https://app[x].timelog.com/[account name]/WebServices/Transaction/V1_0/TransactionServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Transaction/V1_0/TransactionServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Transaction.V1_0.TransactionService.#ctor(System.Boolean)">
