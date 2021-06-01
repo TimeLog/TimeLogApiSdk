@@ -19,10 +19,10 @@
   <xsd:complexType name="Expense_Type">
     <xsd:sequence>
       <xsd:element name="CustomerName" type="xsd:string" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="CustomerNumber" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="CustomerID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ProjectName" type="xsd:string" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="ProjectNumber" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ProjectNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ProjectID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ContractName" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ContractID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
@@ -32,12 +32,14 @@
       <xsd:element name="SupplierCustomerID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Date" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Amount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="AmountSystemCurrency" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="VAT" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="CurrencyABB" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="CurrencyRate" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="PaymentMethod" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="PaymentMethodID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Comment" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ApprovedStatus" type="xsd:integer" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Billable" type="xsd:unsignedInt" minOccurs="0" maxOccurs="1" />
       <xsd:element name="EmployeeFirstName" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="EmployeeLastName" type="xsd:string" minOccurs="0" maxOccurs="1" />
@@ -45,12 +47,14 @@
       <xsd:element name="EmployeeID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="UserID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
       <xsd:element name="RegAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RegAmountCurrency" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="EstimatedAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="EstimatedAmountCurrency" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="InvAmount" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="InvAmountCurrency" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
       <xsd:element name="ProfitRatio" type="xsd:decimal" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="ApprovedStatus" type="xsd:Integer" minOccurs="0" maxOccurs="1" />
-      <xsd:element name="IsControlled" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
-      <xsd:element name="IsPaid" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="InvoiceLineId" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="SupplierInvoiceNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
       <xsd:element name="Created" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
     </xsd:sequence>
 

@@ -48,6 +48,7 @@
     <tlp:ProjectStatusName>Ongoing</tlp:ProjectStatusName>
     <tlp:ContactFullName>Peter Smith</tlp:ContactFullName>
     <tlp:ContactEmail>PS@timelog.com</tlp:ContactEmail>
+    <tlp:InternalProject>0</tlp:InternalProject>
     <tlp:PONumber>PO15386</tlp:PONumber>
     <tlp:ProjectStage>Idea</tlp:ProjectStage>
     <tlp:CurrencyISOCode>DKK</tlp:CurrencyISOCode>

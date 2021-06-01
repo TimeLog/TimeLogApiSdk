@@ -4,39 +4,38 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/EventTypesRaw.xsd">
   <tlp:Expense ID="51789">
-    <tlp:CustomerName>Global People Inc</tlp:CustomerName>
-    <tlp:CustomerNo>037</tlp:CustomerNo>
-    <tlp:CustomerID>700</tlp:CustomerID>
-    <tlp:ProjectName>Implementation 2018</tlp:ProjectName>
-    <tlp:ProjectNo>2003-0002.04.0003</tlp:ProjectNo>
-    <tlp:ProjectID>14</tlp:ProjectID>
-    <tlp:ContractName>Time and Material</tlp:ContractName>
-    <tlp:ContractID>12</tlp:ContractID>
-    <tlp:ExpenseType>Hotel</tlp:ExpenseType>
-    <tlp:ExpenseTypeID>234</tlp:ExpenseTypeID>
-    <tlp:SupplierCustomerName>SAS</tlp:SupplierCustomerName>
-    <tlp:SupplierCustomerID>815</tlp:SupplierCustomerID>
-    <tlp:Date>2018-04-30T00:00:00</tlp:Date>
-    <tlp:Amount>1445.0000</tlp:Amount>
-    <tlp:VAT>166.2400</tlp:VAT>
-    <tlp:CurrencyABB>DKK</tlp:CurrencyABB>
+    <tlp:CustomerName>Name_Customer1614</tlp:CustomerName>
+    <tlp:CustomerNo>Number</tlp:CustomerNo>
+    <tlp:CustomerID>758</tlp:CustomerID>
+    <tlp:ProjectName>My Project</tlp:ProjectName>
+    <tlp:ProjectNo>My Number</tlp:ProjectNo>
+    <tlp:ProjectID>6462</tlp:ProjectID>
+    <tlp:ContractName>Time &amp; material - Standard contract</tlp:ContractName>
+    <tlp:ContractID>11163</tlp:ContractID>
+    <tlp:ExpenseType>Book</tlp:ExpenseType>
+    <tlp:ExpenseTypeID>246</tlp:ExpenseTypeID>
+    <tlp:SupplierCustomerName>Name_Customer1291</tlp:SupplierCustomerName>
+    <tlp:SupplierCustomerID>3408</tlp:SupplierCustomerID>
+    <tlp:Date>2021-06-01T00:00:00</tlp:Date>
+    <tlp:Amount>1000.0000</tlp:Amount>
+    <tlp:AmountSystemCurrency>97.6800</tlp:AmountSystemCurrency>
+    <tlp:VAT>0.0000</tlp:VAT>
+    <tlp:CurrencyABB>SEK</tlp:CurrencyABB>
     <tlp:CurrencyRate>100.0000</tlp:CurrencyRate>
-    <tlp:PaymentMethod>Creditcard</tlp:PaymentMethod>
-    <tlp:PaymentMethodID>160</tlp:PaymentMethodID>
-    <tlp:Comment>Hotel when visiting customer</tlp:Comment>
+    <tlp:PaymentMethod>Company card</tlp:PaymentMethod>
+    <tlp:PaymentMethodID>161</tlp:PaymentMethodID>
+    <tlp:ApprovedStatus>25</tlp:ApprovedStatus>
     <tlp:Billable>0</tlp:Billable>
-    <tlp:EmployeeFirstName>Peter</tlp:EmployeeFirstName>
-    <tlp:EmployeeLastName>Nielsen</tlp:EmployeeLastName>
-    <tlp:EmployeeInitials>pni</tlp:EmployeeInitials>
-    <tlp:EmployeeID>411</tlp:EmployeeID>
-    <tlp:UserID>39</tlp:UserID>
-    <tlp:RegAmount>1278.7600</tlp:RegAmount>
-    <tlp:EstimatedAmount>1278.7600</tlp:EstimatedAmount>
+    <tlp:EmployeeFirstName>FirstName_Admin1</tlp:EmployeeFirstName>
+    <tlp:EmployeeLastName>LastName</tlp:EmployeeLastName>
+    <tlp:EmployeeInitials>Initials_Admin1</tlp:EmployeeInitials>
+    <tlp:EmployeeID>373</tlp:EmployeeID>
+    <tlp:UserID>1</tlp:UserID>
+    <tlp:RegAmount>97.6800</tlp:RegAmount>
+    <tlp:RegAmountCurrency>1000.0000</tlp:RegAmountCurrency>
+    <tlp:EstimatedAmount>0.0000</tlp:EstimatedAmount>
+    <tlp:EstimatedAmountCurrency>0.0000</tlp:EstimatedAmountCurrency>
     <tlp:ProfitRatio>0.0000</tlp:ProfitRatio>
-    <tlp:InvAmount>1278.7600</tlp:InvAmount>
-    <tlp:ApprovedStatus>1</tlp:ApprovedStatus>
-    <tlp:IsControlled>1</tlp:IsControlled>
-    <tlp:IsPaid>1</tlp:IsPaid>
-    <tlp:Created>2021-02-04T08:56:24.287</tlp:Created>
+    <tlp:Created>2021-06-01T14:26:54.877</tlp:Created>
   </tlp:Expense>
 </tlp:Expenses>

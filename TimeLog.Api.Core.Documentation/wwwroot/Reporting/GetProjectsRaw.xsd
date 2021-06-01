@@ -36,6 +36,9 @@
       <xsd:element name="AccountManagerID" type="xsd:positiveInteger" />
       <xsd:element name="AccountManagerInitials" type="xsd:string" />
       <xsd:element name="AccountManagerFullName" type="xsd:string" />
+      <xsd:element name="PartnerID" type="xsd:positiveInteger" />
+      <xsd:element name="PartnerInitials" type="xsd:string" />
+      <xsd:element name="PartnerFullName" type="xsd:string" />
       <xsd:element name="ProjectTypeID" type="xsd:positiveInteger" />
       <xsd:element name="ProjectTypeName" type="xsd:string" />
       <xsd:element name="ProjectCategoryID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
@@ -53,6 +56,7 @@
       <xsd:element name="BudgetHoursTimeAndMaterial" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
       <xsd:element name="BudgetAmount" type="xsd:decimal" />
       <xsd:element name="BudgetHours" type="xsd:decimal" />
+      <xsd:element name="ForecastPercent" type="xsd:decimal" />
       <xsd:element name="CreatedAt" type="xsd:dateTime" />
       <xsd:element name="CreatedByEmployeeId" type="xsd:positiveInteger" />
       <xsd:element name="CreatedBy" type="xsd:string" />
@@ -60,8 +64,10 @@
       <xsd:element name="LastModifiedByEmployeeId" type="xsd:positiveInteger" />
       <xsd:element name="LastModifiedBy" type="xsd:string" />
       <xsd:element name="ProjectStatusName" type="xsd:string" />
+      <xsd:element name="ContactID" type="xsd:positiveInteger" />
       <xsd:element name="ContactFullName" type="xsd:string" />
       <xsd:element name="ContactEmail" type="xsd:string" />
+      <xsd:element name="InternalProject" type="xsd:boolean" />
       <xsd:element name="PONumber" type="xsd:string" />
       <xsd:element name="ProjectStage" type="xsd:string" />
       <xsd:element name="CurrencyISOCode" type="xsd:string" />
