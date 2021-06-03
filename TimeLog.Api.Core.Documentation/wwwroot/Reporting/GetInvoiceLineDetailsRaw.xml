@@ -22,6 +22,10 @@
     <tlp:TaskName>Supportbehandling</tlp:TaskName>
     <tlp:RegistrationID>532425</tlp:RegistrationID>
     <tlp:UnitType>1</tlp:UnitType>
+    <tlp:ProjectID>376</tlp:ProjectID>
+    <tlp:ProjectName>ARTO2</tlp:ProjectName>
+    <tlp:ContractID>2919</tlp:ContractID>
+    <tlp:ContractModelType>7</tlp:ContractModelType>
   </tlp:InvoiceLineDetail>
   <tlp:InvoiceLineDetail ID="1001089">
     <tlp:InvoiceLineID>145352</tlp:InvoiceLineID>
@@ -42,5 +46,9 @@
     <tlp:TaskName>Supportbehandling</tlp:TaskName>
     <tlp:RegistrationID>532461</tlp:RegistrationID>
     <tlp:UnitType>1</tlp:UnitType>
+    <tlp:ProjectID>376</tlp:ProjectID>
+    <tlp:ProjectName>ARTO2</tlp:ProjectName>
+    <tlp:ContractID>2919</tlp:ContractID>
+    <tlp:ContractModelType>7</tlp:ContractModelType>
   </tlp:InvoiceLineDetail>
 </tlp:InvoiceLineDetails>
