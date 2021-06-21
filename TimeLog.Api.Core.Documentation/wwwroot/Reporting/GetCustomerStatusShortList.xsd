@@ -18,7 +18,10 @@
 
   <xsd:complexType name="CustomerStatusShort_Type">
     <xsd:sequence>
-      <xsd:element name="Name" type="xsd:string" />
+      <xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="CustomerStatusType" type="xsd:integer" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="IsDefault" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="IsActive" type="xsd:boolean" minOccurs="1" maxOccurs="1" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
   </xsd:complexType>

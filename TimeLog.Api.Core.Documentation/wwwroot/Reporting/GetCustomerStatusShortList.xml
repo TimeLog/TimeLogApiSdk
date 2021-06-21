@@ -4,35 +4,68 @@
                       xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/CustomerStatusesShortList.xsd">
   <tlp:CustomerStatus ID="13">
     <tlp:Name>10. Suspect</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="29">
     <tlp:Name>15. Prospect</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="7">
     <tlp:Name>20. Lead</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="30">
     <tlp:Name>25. Qualified Lead</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="31">
     <tlp:Name>30. Hot Lead</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="1">
     <tlp:Name>50. Customer</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="28">
     <tlp:Name>70. Compeditor</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="5">
     <tlp:Name>80.  Vendor</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="10">
     <tlp:Name>85. Partner</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="2">
     <tlp:Name>95. Supplier</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
   <tlp:CustomerStatus ID="12">
     <tlp:Name>98. Previous customer</tlp:Name>
+    <tlp:CustomerStatusType>1</tlp:CustomerStatusType>
+    <tlp:IsDefault>1</tlp:IsDefault>
+    <tlp:IsActive>1</tlp:IsActive>
   </tlp:CustomerStatus>
 </tlp:CustomerStatuses>
