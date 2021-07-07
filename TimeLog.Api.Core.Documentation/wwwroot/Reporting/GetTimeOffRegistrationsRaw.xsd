@@ -12,6 +12,8 @@
               <xs:element name="EmployeeLastName" type="xs:string" />
               <xs:element name="TimeOffCode" type="xs:unsignedByte" />
               <xs:element name="TimeOffName" type="xs:string" />
+              <xs:element name="AbsenceCodeType" type="xs:positiveInteger" minOccurs="0" />
+              <xs:element name="AbsenceCodeTypeName" type="xs:string" minOccurs="0" />
               <xs:element name="Date" type="xs:dateTime" />
               <xs:element name="RegHours" type="xs:float" />
               <xs:element name="CreatedAt" type="xs:dateTime" />

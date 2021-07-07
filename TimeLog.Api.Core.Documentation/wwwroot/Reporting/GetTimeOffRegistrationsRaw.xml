@@ -7,6 +7,8 @@
     <tlp:EmployeeLastName>Doe</tlp:EmployeeLastName>
     <tlp:TimeOffCode>70</tlp:TimeOffCode>
     <tlp:TimeOffName>Afspadsering</tlp:TimeOffName>
+    <tlp:AbsenceCodeType>2</tlp:AbsenceCodeType>
+    <tlp:AbsenceCodeTypeName>Vacation</tlp:AbsenceCodeTypeName>
     <tlp:Date>2018-10-29T00:00:00</tlp:Date>
     <tlp:RegHours>3.000000000000000e+000</tlp:RegHours>
     <tlp:CreatedAt>2018-10-30T09:59:22.3200000</tlp:CreatedAt>
