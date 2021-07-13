@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="Groups" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="GroupUnit" type="tlp:GroupUnitsRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="Event_Key">
+      <xsd:selector xpath=".//tlp:GroupUnit" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="GroupUnitsRaw_Type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="GroupUnit">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="ContactID" type="xsd:integer" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="CustomerID" type="xsd:integer" />
+            <xsd:element name="GroupID" type="xsd:integer" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="ValueID" type="xsd:integer" />
+            <xsd:element name="Value" type="xsd:string" />
+          </xsd:sequence>
+          <xsd:attribute name="ID" type="xsd:integer" use="required" />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+</xsd:schema>

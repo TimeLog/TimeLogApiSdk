@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tlp:GroupUnits xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4">
+  <tlp:GroupUnit ID="1">
+    <tlp:CustomerID>716</tlp:CustomerID>
+    <tlp:GroupID>2</tlp:GroupID>
+    <tlp:Value>Jason</tlp:Value>
+  </tlp:GroupUnit>
+  <tlp:GroupUnit ID="2">
+    <tlp:CustomerID>716</tlp:CustomerID>
+    <tlp:GroupID>1</tlp:GroupID>
+    <tlp:ValueID>1</tlp:ValueID>
+    <tlp:Value>Very good friend</tlp:Value>
+  </tlp:GroupUnit>
+  <tlp:GroupUnit ID="3">
+    <tlp:ContactID>120</tlp:ContactID>
+    <tlp:GroupID>3</tlp:GroupID>
+    <tlp:ValueID>3</tlp:ValueID>
+    <tlp:Value>Yes</tlp:Value>
+  </tlp:GroupUnit>
+</tlp:GroupUnits>

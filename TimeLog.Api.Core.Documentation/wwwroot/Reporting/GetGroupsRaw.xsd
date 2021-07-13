@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="Groups" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Group" type="tlp:GroupsRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="Event_Key">
+      <xsd:selector xpath=".//tlp:Group" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="GroupsRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string" />
+      <xsd:element name="Type" type="xsd:integer" />
+      <xsd:element name="InputType" type="xsd:integer" />
+      <xsd:element name="IsActive" type="xsd:integer" />
+      <xsd:element minOccurs="0" name="Values">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="Value">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="Name" type="xsd:string" />
+                  <xsd:element name="IsDefault" type="xsd:boolean" />
+                </xsd:sequence>
+                <xsd:attribute name="ID" type="xsd:integer" use="required" />
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:integer" use="required" />
+  </xsd:complexType>
+
+</xsd:schema>
