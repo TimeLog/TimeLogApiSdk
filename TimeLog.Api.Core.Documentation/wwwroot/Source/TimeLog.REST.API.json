@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "v1",
-    "title": "Timelog Web API version 1 (BETA)",
-    "description": "This documentation is in BETA release, we'll update the API without prior notice."
+    "title": "Timelog Web API version 1",
+    "description": ""
   },
   "host": "localhost",
   "basePath": "/tlp/api",
@@ -63,7 +63,7 @@
           "500": {
             "description": "Request to GetByStatus has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -111,7 +111,7 @@
           "500": {
             "description": "Request to GetRecentlyRegistered has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -168,7 +168,7 @@
           "500": {
             "description": "Request to CreateTimeTracker has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -387,7 +387,7 @@
           "500": {
             "description": "Request to GetHomeAndWork has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -443,7 +443,7 @@
           "500": {
             "description": "Request to Search has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -491,7 +491,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -542,7 +542,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -597,7 +597,7 @@
           "500": {
             "description": "Request to Update has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -652,7 +652,7 @@
           "500": {
             "description": "Request to Create has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -708,7 +708,7 @@
           "500": {
             "description": "Request to GetById has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -761,7 +761,7 @@
           "500": {
             "description": "Request to Delete has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -812,7 +812,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -867,7 +867,7 @@
           "500": {
             "description": "Request to Update has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -922,7 +922,7 @@
           "500": {
             "description": "Request to Create has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -978,7 +978,7 @@
           "500": {
             "description": "Request to GetByID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1029,7 +1029,7 @@
           "500": {
             "description": "Request to Delete has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1077,7 +1077,7 @@
           "500": {
             "description": "Request to GetDefault has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1133,7 +1133,7 @@
           "500": {
             "description": "Request to GetByID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1189,7 +1189,7 @@
           "500": {
             "description": "Request to GetAllByContractID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1237,7 +1237,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1285,7 +1285,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1333,7 +1333,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1401,7 +1401,7 @@
           "500": {
             "description": "Request to GetByStatus has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1449,7 +1449,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1505,7 +1505,7 @@
           "500": {
             "description": "Request to GetByID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1569,7 +1569,7 @@
           "500": {
             "description": "Request to SearchForTimeTracking has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1633,7 +1633,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1694,7 +1694,7 @@
           "500": {
             "description": "Request to SearchForExpenseTravelRegistrationOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1862,7 +1862,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -1878,7 +1878,7 @@
         ]
       }
     },
-    "/v{version}/Department": {
+    "/v{version}/department": {
       "get": {
         "tags": [
           "Department"
@@ -1910,7 +1910,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2469,7 +2469,7 @@
           "500": {
             "description": "Request to GetByDate has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2533,7 +2533,7 @@
           "500": {
             "description": "Request to GetByDateRange has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2597,7 +2597,7 @@
           "500": {
             "description": "Request to GetInPeriod has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2645,7 +2645,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2713,7 +2713,7 @@
           "500": {
             "description": "Request to GetByStatus has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2770,7 +2770,7 @@
           "500": {
             "description": "Request to Update has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2818,7 +2818,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2866,7 +2866,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2914,7 +2914,7 @@
           "500": {
             "description": "Request to GetDefaultHourlyRates has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -2962,7 +2962,7 @@
           "500": {
             "description": "Request to Index has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -3010,7 +3010,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -3026,7 +3026,7 @@
         ]
       }
     },
-    "/v{version}/LegalEntity": {
+    "/v{version}/legal-entity": {
       "get": {
         "tags": [
           "LegalEntity"
@@ -3058,7 +3058,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -3162,7 +3162,7 @@
           "500": {
             "description": "Request to GetByID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -3497,7 +3497,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -3609,7 +3609,7 @@
           "500": {
             "description": "Request to GetAllByContractID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -3789,7 +3789,7 @@
           "500": {
             "description": "Request to GetByStatus has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -3837,7 +3837,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -3885,7 +3885,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4005,7 +4005,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4043,7 +4043,7 @@
             "description": "Create project information",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModelBase"
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModel"
             }
           },
           {
@@ -4059,7 +4059,7 @@
           "200": {
             "description": "Project is created",
             "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModelBase"
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModel"
             }
           },
           "500": {
@@ -4087,7 +4087,7 @@
           "Project"
         ],
         "summary": "Validate new customer",
-        "operationId": "Project_ValidateNewCustomer",
+        "operationId": "Project_ValidateNewProject",
         "consumes": [
           "application/json",
           "text/json"
@@ -4102,7 +4102,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModelBase"
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModel"
             }
           },
           {
@@ -4118,7 +4118,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModelBase"
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModel"
             }
           },
           "500": {
@@ -4172,7 +4172,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4284,7 +4284,7 @@
           "500": {
             "description": "Request to GetAllByProjectID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4355,6 +4355,63 @@
         ]
       }
     },
+    "/v{version}/project-expense/validate-project-expense": {
+      "post": {
+        "tags": [
+          "ProjectExpense"
+        ],
+        "summary": "Validate project expense for project",
+        "operationId": "ProjectExpense_ValidateProjectExpense",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "createModel",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.ProjectExpense.ProjectExpenseApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Project expense was validated successfully"
+          },
+          "500": {
+            "description": "Project expense could not be validated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/project-header/search-for-time-tracking": {
       "get": {
         "tags": [
@@ -4403,7 +4460,7 @@
           "500": {
             "description": "Request to SearchForTimeTracking has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4467,7 +4524,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4539,7 +4596,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingByCustomerID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4603,7 +4660,7 @@
           "500": {
             "description": "Request to SearchForExpenseTravelRegistrationOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4675,7 +4732,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingByCustomerIDOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4747,7 +4804,7 @@
           "500": {
             "description": "Request to SearchForExpenseTravelRegistrationByCustomerIDOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -4912,7 +4969,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5024,7 +5081,7 @@
           "500": {
             "description": "Request to GetAllByProjectID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5137,6 +5194,63 @@
           },
           "500": {
             "description": "Contract could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/contract/validate-prepaid-services-contract": {
+      "post": {
+        "tags": [
+          "ProjectSubContract"
+        ],
+        "summary": "Create Prepaid Services contract for a specified project",
+        "operationId": "ProjectSubContract_PrepaidServicesContractValidate",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "contractModel",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectSubContract.PrepaidServicesContractApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contract was validated successfully"
+          },
+          "500": {
+            "description": "Contract could not be validated",
             "schema": {
               "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
@@ -5268,6 +5382,177 @@
         ]
       }
     },
+    "/v{version}/contract/validate-fixed-price-basic-contract": {
+      "post": {
+        "tags": [
+          "ProjectSubContract"
+        ],
+        "summary": "Create Fixed Price Basic contract for a specified project",
+        "operationId": "ProjectSubContract_FixedPriceBasicContractValidate",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "contractModel",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectSubContract.FixedPriceBasicContractApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contract was validated successfully"
+          },
+          "500": {
+            "description": "Contract could not be validated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/contract/validate-task-driven-revenue-contract": {
+      "post": {
+        "tags": [
+          "ProjectSubContract"
+        ],
+        "summary": "Create Task Driven Revenue contract for a specified project",
+        "operationId": "ProjectSubContract_TaskDrivenRevenueContractValidate",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "contractModel",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectSubContract.TaskDrivenRevenueContractApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contract was validated successfully"
+          },
+          "500": {
+            "description": "Contract could not be validated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/contract/validate-time-material-basic-contract": {
+      "post": {
+        "tags": [
+          "ProjectSubContract"
+        ],
+        "summary": "Validate Time and Material Basic contract for a specified project",
+        "operationId": "ProjectSubContract_TimeMaterialBasicContractValidate",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "contractModel",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectSubContract.TimeMaterialBasicContractApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contract was validated successfully"
+          },
+          "500": {
+            "description": "Contract could not be validated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/contract/create-time-material-account-end-balancing-contract": {
       "post": {
         "tags": [
@@ -5325,6 +5610,63 @@
         ]
       }
     },
+    "/v{version}/contract/validate-time-material-account-end-balancing-contract": {
+      "post": {
+        "tags": [
+          "ProjectSubContract"
+        ],
+        "summary": "Create Time and Material Account with End Balancing contract for a specified project",
+        "operationId": "ProjectSubContract_TimeMaterialAccountEndBalancingContractValidate",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "contractModel",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectSubContract.TimeMaterialAccountEndBalancingContractApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contract was validated successfully"
+          },
+          "500": {
+            "description": "Contract could not be validated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/project-template/get-all": {
       "get": {
         "tags": [
@@ -5357,7 +5699,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5405,7 +5747,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5453,7 +5795,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5508,7 +5850,7 @@
           "500": {
             "description": "Request to Create has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5575,7 +5917,7 @@
           "500": {
             "description": "Request to Delete has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5623,7 +5965,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5680,7 +6022,7 @@
           "500": {
             "description": "Request to Update has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5792,7 +6134,7 @@
           "500": {
             "description": "Request to GetAllByProjectID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5895,7 +6237,7 @@
           "500": {
             "description": "Request to GetRecentlyRegistered has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -5951,7 +6293,7 @@
           "500": {
             "description": "Request to GetTravelTimeTaskForTimeTrackingByProjectID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6015,7 +6357,7 @@
           "500": {
             "description": "Request to SearchByProject has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6079,7 +6421,7 @@
           "500": {
             "description": "Request to SearchByCustomer has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6143,7 +6485,7 @@
           "500": {
             "description": "Request to SearchForTimeTracking has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6207,7 +6549,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6279,7 +6621,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingByProjectID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6351,7 +6693,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingByCustomerID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6423,7 +6765,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingByProjectIdOrderByTravelTimeTask has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6495,7 +6837,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingByProjectIDOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6567,7 +6909,7 @@
           "500": {
             "description": "Request to SearchForTimeTrackingByCustomerIDOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6786,7 +7128,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6842,7 +7184,7 @@
           "500": {
             "description": "Request to GetByID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -6967,6 +7309,60 @@
         ]
       }
     },
+    "/v{version}/time-registration/import": {
+      "post": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Import time registration.",
+        "operationId": "TimeRegistration_ImportTimeregistration",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationImportApiCreateModel",
+            "in": "body",
+            "description": "The time registration import API create model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationImportApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time registration was created from import"
+          },
+          "500": {
+            "description": "Time registration could not be imported"
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/time-registration/update-time": {
       "post": {
         "tags": [
@@ -7062,8 +7458,62 @@
           "500": {
             "description": "Request to CreateTimeTracker has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration/validate-import": {
+      "post": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Import time registration.",
+        "operationId": "TimeRegistration_ValidateImportTimeregistration",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationImportApiCreateModel",
+            "in": "body",
+            "description": "The time registration import API create model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationImportApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time registration was validated from import"
+          },
+          "500": {
+            "description": "Time registration could not be validated"
           },
           "401": {
             "description": "Invalid authentication token"
@@ -7118,60 +7568,6 @@
           },
           "500": {
             "description": "Time registration does not exist"
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
-    "/v{version}/time-registration/import-timeregistration": {
-      "post": {
-        "tags": [
-          "TimeRegistration"
-        ],
-        "summary": "Import time registration.",
-        "operationId": "TimeRegistration_ImportTimeregistration",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "timeRegistrationImportApiCreateModel",
-            "in": "body",
-            "description": "The time registration import API create model.",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationImportApiCreateModel"
-            }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Time registration was created from import"
-          },
-          "500": {
-            "description": "Time registration could not be imported"
           },
           "401": {
             "description": "Invalid authentication token"
@@ -7294,60 +7690,6 @@
         ]
       }
     },
-    "/v{version}/time-registration/validate-import-timeregistration": {
-      "post": {
-        "tags": [
-          "TimeRegistration"
-        ],
-        "summary": "Import time registration.",
-        "operationId": "TimeRegistration_ValidateImportTimeregistration",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "timeRegistrationImportApiCreateModel",
-            "in": "body",
-            "description": "The time registration import API create model.",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationImportApiCreateModel"
-            }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Time registration was validated from import"
-          },
-          "500": {
-            "description": "Time registration could not be validated"
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
     "/v{version}/time-registration/stop-time-tracker/{timeTrackerId}": {
       "post": {
         "tags": [
@@ -7388,7 +7730,7 @@
           "500": {
             "description": "Request to StopTimeTracker has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7494,7 +7836,7 @@
           "500": {
             "description": "Request to GetByDate has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7558,7 +7900,7 @@
           "500": {
             "description": "Request to GetByDateRange has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7606,7 +7948,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7664,7 +8006,7 @@
           "500": {
             "description": "Request to Update has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7722,7 +8064,7 @@
           "500": {
             "description": "Request to Create has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7778,7 +8120,7 @@
           "500": {
             "description": "Request to GetByID has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7829,7 +8171,7 @@
           "500": {
             "description": "Request to Delete has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7877,7 +8219,7 @@
           "500": {
             "description": "Request to GetUserActiveTimeTracking has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7934,7 +8276,7 @@
           "500": {
             "description": "Request to StartTimeTrackerForTask has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -7991,7 +8333,7 @@
           "500": {
             "description": "Request to StartTimeTrackerForAbsence has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -8111,7 +8453,7 @@
           "500": {
             "description": "Request to GetByDate has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -8175,7 +8517,7 @@
           "500": {
             "description": "Request to GetByDateOrderByRecentRegistration has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -8223,7 +8565,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -8271,7 +8613,7 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -8326,7 +8668,7 @@
           "500": {
             "description": "Request to Update has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -8374,7 +8716,7 @@
           "500": {
             "description": "Request to GetCurrentUser has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -8646,7 +8988,73 @@
           "500": {
             "description": "Request to GetAll has failed",
             "schema": {
-              "$ref": "TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/workload/book": {
+      "post": {
+        "tags": [
+          "Workload"
+        ],
+        "summary": "Books a workload",
+        "operationId": "Workload_BookWorkload",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Workload.WorkloadApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Booking was created successfully"
+          },
+          "202": {
+            "description": "Message was received, booking will be created shortly"
+          },
+          "400": {
+            "description": "Booking could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "500": {
+            "description": "Booking could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
           },
           "401": {
@@ -9386,6 +9794,11 @@
         "DefaultMileageDistance": {
           "format": "int32",
           "description": "Gets or sets the default mileage",
+          "type": "integer"
+        },
+        "CustomerStatusID": {
+          "format": "int32",
+          "description": "Gets or sets the customer status ID",
           "type": "integer"
         }
       }
@@ -10572,7 +10985,12 @@
             413,
             414,
             415,
-            416
+            416,
+            417,
+            418,
+            419,
+            420,
+            421
           ],
           "type": "integer"
         },
@@ -10897,6 +11315,7 @@
             58,
             59,
             60,
+            61,
             98,
             99
           ],
@@ -10968,6 +11387,7 @@
             58,
             59,
             60,
+            61,
             98,
             99
           ],
@@ -11558,7 +11978,7 @@
         }
       }
     },
-    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModelBase": {
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModel": {
       "type": "object",
       "properties": {
         "Name": {
@@ -11616,6 +12036,21 @@
         "LegalEntityID": {
           "format": "int32",
           "description": "Gets or sets the legal entity ID",
+          "type": "integer"
+        },
+        "DepartmentID": {
+          "format": "int32",
+          "description": "Gets or sets the department ID",
+          "type": "integer"
+        },
+        "AccountManagerID": {
+          "format": "int32",
+          "description": "Gets or sets the account manager ID",
+          "type": "integer"
+        },
+        "PartnerID": {
+          "format": "int32",
+          "description": "Gets or sets the partner ID",
           "type": "integer"
         }
       }
@@ -12166,6 +12601,13 @@
         "IsDefaultExpenses": {
           "description": "Gets or sets whether the expenses are default",
           "type": "boolean"
+        },
+        "ContractTypeID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ContractTypeName": {
+          "type": "string"
         }
       }
     },
@@ -12176,10 +12618,14 @@
           "description": "Gets or sets whether the hourly rate is fixed",
           "type": "boolean"
         },
-        "HourlyRateServiceID": {
-          "format": "int32",
-          "description": "Gets or sets the hourly rate ID",
-          "type": "integer"
+        "HourlyRatePrice": {
+          "format": "double",
+          "description": "Gets or sets the hourly rate price",
+          "type": "number"
+        },
+        "HourlyRateName": {
+          "description": "Gets or sets the hourly rate name",
+          "type": "string"
         },
         "ProjectID": {
           "format": "int32",
@@ -12232,6 +12678,11 @@
         "IsDefaultExpenses": {
           "description": "Gets or sets whether the expenses are default",
           "type": "boolean"
+        },
+        "ContractTypeID": {
+          "format": "int32",
+          "description": "Gets or sets the contract type ID",
+          "type": "integer"
         }
       }
     },
@@ -12327,6 +12778,11 @@
         "IsDefaultExpenses": {
           "description": "Gets or sets whether the expenses are default",
           "type": "boolean"
+        },
+        "ContractTypeID": {
+          "format": "int32",
+          "description": "Gets or sets the contract type ID",
+          "type": "integer"
         }
       }
     },
@@ -12422,6 +12878,11 @@
         "IsDefaultExpenses": {
           "description": "Gets or sets whether the expenses are default",
           "type": "boolean"
+        },
+        "ContractTypeID": {
+          "format": "int32",
+          "description": "Gets or sets the contract type ID",
+          "type": "integer"
         }
       }
     },
@@ -12493,6 +12954,11 @@
         "IsDefaultExpenses": {
           "description": "Gets or sets whether the expenses are default",
           "type": "boolean"
+        },
+        "ContractTypeID": {
+          "format": "int32",
+          "description": "Gets or sets the contract type ID",
+          "type": "integer"
         }
       }
     },
@@ -12564,6 +13030,11 @@
         "IsDefaultExpenses": {
           "description": "Gets or sets whether the expenses are default",
           "type": "boolean"
+        },
+        "ContractTypeID": {
+          "format": "int32",
+          "description": "Gets or sets the contract type ID",
+          "type": "integer"
         }
       }
     },
@@ -13536,7 +14007,8 @@
             241,
             242,
             243,
-            244
+            244,
+            245
           ],
           "type": "integer"
         },
@@ -13713,6 +14185,7 @@
             58,
             59,
             60,
+            61,
             98,
             99
           ],
@@ -13784,6 +14257,7 @@
             58,
             59,
             60,
+            61,
             98,
             99
           ],
@@ -13992,6 +14466,97 @@
         }
       }
     },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationImportApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "TaskID": {
+          "format": "int32",
+          "description": "Gets or sets the task identifier.",
+          "type": "integer"
+        },
+        "ProjectID": {
+          "format": "int32",
+          "description": "Gets or sets the project identifier.",
+          "type": "integer"
+        },
+        "ContractID": {
+          "format": "int32",
+          "description": "Gets or sets the contract identifier.",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "description": "Gets or sets the user identifier.",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "description": "Gets or sets the date.",
+          "type": "string"
+        },
+        "Hours": {
+          "format": "double",
+          "description": "Gets or sets the hours.",
+          "type": "number"
+        },
+        "GroupType": {
+          "format": "int32",
+          "description": "Gets or sets the type of the group.",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer"
+        },
+        "AbsenceCodeID": {
+          "format": "int32",
+          "description": "Gets or sets the type of the group.",
+          "type": "integer"
+        },
+        "Billable": {
+          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiCreateModel} is billable.",
+          "type": "boolean"
+        },
+        "Comment": {
+          "description": "Gets or sets the comment.",
+          "type": "string"
+        },
+        "AdditionalComment": {
+          "description": "Gets or sets the additional comment.",
+          "type": "string"
+        },
+        "BillableHours": {
+          "format": "double",
+          "description": "Gets or sets the billable hours.",
+          "type": "number"
+        },
+        "MonthlyPeriod": {
+          "type": "string"
+        },
+        "HourlyRate": {
+          "format": "double",
+          "description": "Gets or sets the hourly rate.",
+          "type": "number"
+        },
+        "HourlyRateName": {
+          "description": "Gets or sets the hourly rate name.",
+          "type": "string"
+        },
+        "CostPrice": {
+          "format": "double",
+          "description": "Gets or sets the cost price.",
+          "type": "number"
+        },
+        "CostPriceName": {
+          "description": "Gets or sets the cost price name.",
+          "type": "string"
+        }
+      }
+    },
     "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiUpdateTimeModel": {
       "type": "object",
       "properties": {
@@ -14092,92 +14657,6 @@
         "Date": {
           "format": "date-time",
           "description": "Gets or sets the date of the time registration.",
-          "type": "string"
-        }
-      }
-    },
-    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationImportApiCreateModel": {
-      "type": "object",
-      "properties": {
-        "TaskID": {
-          "format": "int32",
-          "description": "Gets or sets the task identifier.",
-          "type": "integer"
-        },
-        "ProjectID": {
-          "format": "int32",
-          "description": "Gets or sets the project identifier.",
-          "type": "integer"
-        },
-        "ContractID": {
-          "format": "int32",
-          "description": "Gets or sets the contract identifier.",
-          "type": "integer"
-        },
-        "UserID": {
-          "format": "int32",
-          "description": "Gets or sets the user identifier.",
-          "type": "integer"
-        },
-        "Date": {
-          "format": "date-time",
-          "description": "Gets or sets the date.",
-          "type": "string"
-        },
-        "Hours": {
-          "format": "double",
-          "description": "Gets or sets the hours.",
-          "type": "number"
-        },
-        "GroupType": {
-          "format": "int32",
-          "description": "Gets or sets the type of the group.",
-          "enum": [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6
-          ],
-          "type": "integer"
-        },
-        "Billable": {
-          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistration.TimeRegistrationApiCreateModel} is billable.",
-          "type": "boolean"
-        },
-        "Comment": {
-          "description": "Gets or sets the comment.",
-          "type": "string"
-        },
-        "AdditionalComment": {
-          "description": "Gets or sets the additional comment.",
-          "type": "string"
-        },
-        "BillableHours": {
-          "format": "double",
-          "description": "Gets or sets the billable hours.",
-          "type": "number"
-        },
-        "MonthlyPeriod": {
-          "type": "string"
-        },
-        "HourlyRate": {
-          "format": "double",
-          "description": "Gets or sets the hourly rate.",
-          "type": "number"
-        },
-        "HourlyRateName": {
-          "description": "Gets or sets the hourly rate name.",
-          "type": "string"
-        },
-        "CostPrice": {
-          "format": "double",
-          "description": "Gets or sets the cost price.",
-          "type": "number"
-        },
-        "CostPriceName": {
-          "description": "Gets or sets the cost price name.",
           "type": "string"
         }
       }
@@ -14563,7 +15042,8 @@
             241,
             242,
             243,
-            244
+            244,
+            245
           ],
           "type": "integer"
         },
@@ -14879,7 +15359,8 @@
             241,
             242,
             243,
-            244
+            244,
+            245
           ],
           "type": "integer"
         },
@@ -15325,9 +15806,14 @@
           "description": "Gets or sets the stage of the preview feature",
           "enum": [
             1,
-            2
+            2,
+            3
           ],
           "type": "integer"
+        },
+        "ReleaseNumber": {
+          "description": "Gets or sets the release number of the preview feature",
+          "type": "string"
         }
       }
     },
@@ -15466,9 +15952,46 @@
           "type": "string"
         }
       }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.Workload.WorkloadApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "StartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EndDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "Hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "EmployeeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TaskId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
     }
   },
   "tags": [
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Employees.Controllers.WorkloadController[WorkloadController]",
+      "description": "Service for handling bookings in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Employees.Controllers.EmployeeTypeController[EmployeeTypeController]",
+      "description": "Service for handling employee types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Employees.Controllers.NormalWorkingTimeController[NormalWorkingTimeController]",
+      "description": "Service for handling normal working time in TimeLog."
+    },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Common.Controllers.UnitTypeController[UnitTypeController]",
       "description": "Service for handling unit types in TimeLog."
@@ -15496,14 +16019,6 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.CRM.Controllers.CustomerController[CustomerController]",
       "description": "Service for handling customer in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Employees.Controllers.EmployeeTypeController[EmployeeTypeController]",
-      "description": "Service for handling employee types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Employees.Controllers.NormalWorkingTimeController[NormalWorkingTimeController]",
-      "description": "Service for handling normal working time in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Expenses.Controllers.ProductController[ProductController]",
@@ -15580,6 +16095,10 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectSubContractController[ProjectSubContractController]",
       "description": "Service for handling contracts in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.AllocationController[AllocationController]",
+      "description": "Service for handling salary account employee posting in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskTypeController[TaskTypeController]",
