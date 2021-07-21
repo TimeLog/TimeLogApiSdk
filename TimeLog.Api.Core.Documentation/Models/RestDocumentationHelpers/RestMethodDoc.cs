@@ -31,7 +31,7 @@ namespace TimeLog.Api.Core.Documentation.Models.RestDocumentationHelpers
         public RestMethodDoc(RestTypeDoc restTypeDoc, RestAction action)
         {
             OperationId = action.OperationId;
-            FullName = $"http://app[x].timelog.com/[account name]{action.Name}";
+            FullName = $"https://app[x].timelog.com/[account name]/api{action.Name}";
             Name = action.OperationId.Replace($"{action.Tags[0]}_", "");
             Summary = action.Summary;
             MethodType = action.MethodType.ToUpper();
