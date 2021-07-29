@@ -49,9 +49,9 @@
         <h3>(1/5) Install NAV Objects</h3>
         <p>Install the objects from the FOB file provided by TimeLog.</p>
         <p>In the NAV Development Environment go to "File" > "Import...", select the FOB file og click "Open"</p>
-        <a href="@Url.Content("~/Source/Financial/NAV-InstallObjects1.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-InstallObjects1.png")" /></a>
+        <a href="@Url.Content("~/Financial/NAV-InstallObjects1.png")" target="_blank"><img src="@Url.Content("~/Financial/NAV-InstallObjects1.png")" /></a>
         <p>Review the import and make changes accordingly. Notify the TimeLog Integration Specialist if object numbers have to be relocated to not overwrite existing objects.</p>
-        <a href="@Url.Content("~/Source/Financial/NAV-InstallObjects2.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-InstallObjects2.png")" /></a>
+        <a href="@Url.Content("~/Financial/NAV-InstallObjects2.png")" target="_blank"><img src="@Url.Content("~/Financial/NAV-InstallObjects2.png")" /></a>
 
         <h3>(2/5) Modify Standard NAV Objects</h3>
         <p>The following standard NAV tables need to be changed manually:</p>
@@ -66,37 +66,37 @@
         <ol>
             <li>
                 Add history item to file change log<br />
-                <a href="@Url.Content("~/Source/Financial/NAV-ChangeObjects1.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-ChangeObjects1.png")" /></a>
+                <a href="@Url.Content("~/Financial/NAV-ChangeObjects1.png")" target="_blank"><img src="@Url.Content("~/Financial/NAV-ChangeObjects1.png")" /></a>
             </li>
             <li>
                 Add additional global variables to the table<br />
-                <a href="@Url.Content("~/Source/Financial/NAV-ChangeObjects2.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-ChangeObjects2.png")" /></a>
+                <a href="@Url.Content("~/Financial/NAV-ChangeObjects2.png")" target="_blank"><img src="@Url.Content("~/Financial/NAV-ChangeObjects2.png")" /></a>
             </li>
             <li>
                 Create a new function to the table<br />
-                <a href="@Url.Content("~/Source/Financial/NAV-ChangeObjects3.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-ChangeObjects3.png")" /></a>
+                <a href="@Url.Content("~/Financial/NAV-ChangeObjects3.png")" target="_blank"><img src="@Url.Content("~/Financial/NAV-ChangeObjects3.png")" /></a>
             </li>
             <li>
                 Add following lines to the OnInsert function<br />
-                <a href="@Url.Content("~/Source/Financial/NAV-ChangeObjects4.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-ChangeObjects4.png")" /></a>
+                <a href="@Url.Content("~/Financial/NAV-ChangeObjects4.png")" target="_blank"><img src="@Url.Content("~/Financial/NAV-ChangeObjects4.png")" /></a>
             </li>
             <li>
                 Add following lines to the OnModify function<br />
-                <a href="@Url.Content("~/Source/Financial/NAV-ChangeObjects5.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-ChangeObjects5.png")" /></a>
+                <a href="@Url.Content("~/Financial/NAV-ChangeObjects5.png")" target="_blank"><img src="@Url.Content("~/Financial/NAV-ChangeObjects5.png")" /></a>
             </li>
         </ol>
 
         <h3>(3/5) Install TimeLog.FinancialHost.Core.dll</h3>
-        <a href="@Url.Content("~/Source/Financial/NAV-InstallCoreDll.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-InstallCoreDll.png")" /></a>
+        <a href="@Url.Content("~/Financial/NAV-InstallCoreDll.png")" target="_blank"><img src="@Url.Content("~/Financial/NAV-InstallCoreDll.png")" /></a>
 
         <h3>(4/5) Setup job queue entry</h3>
         <p>This job processes the queue of changes made in NAV and transfers them to TimeLog.</p>
-        <a href="@Url.Content("~/Source/Financial/NAV-JobQueue.png")" target="_blank"><img src="@Url.Content("~/Source/Financial/NAV-JobQueue.png")" /></a>
+        <a href="@Url.Content("~/Financial/NAV-JobQueue.png")" target="_blank"><img src="@Url.Content("~/Financial/NAV-JobQueue.png")" /></a>
 
         <h3>(5/5) Setup Web Services</h3>
         <p>These services are used by the FinancialHost middleware to fetch data from NAV as well as insert to NAV.</p>
         <p><em>Pay close attention to the naming. The default name suggested by NAV is not always the correct one.</em></p>
-        <a href="@Url.Content("~/Content/NAV/nav-web-services-setup.jpg")" target="_blank"><img src="@Url.Content("~/Content/NAV/nav-web-services-setup.jpg")" /></a>
+        <a href="@Url.Content("~/Content/NAV/NAV-setup-web-services.png")" target="_blank"><img src="@Url.Content("~/Content/NAV/NAV-setup-web-services.png")" /></a>
 
         @*<h3>Connection Configuration (TimeLog Integration Specialist)</h3>*@
     </article>
