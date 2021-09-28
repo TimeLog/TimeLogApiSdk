@@ -45,6 +45,7 @@
             <xsd:element name="TravelSelfPayment" type="xsd:boolean"/>
             <xsd:element name="TransportRateAmount" type="xsd:decimal"/>
             <xsd:element name="TransportRate" type="xsd:string"/>
+            <xsd:element name="IsBillable" type="xsd:boolean"/>
         </xsd:sequence>
         <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"/>
     </xsd:complexType>

@@ -30,5 +30,6 @@
     <TravelSelfPayment>1</TravelSelfPayment>
     <TransportRateAmount>3.70</TransportRateAmount>
     <TransportRate>DK-2015</TransportRate>
+    <IsBillable>1</IsBillable>
   </tlp:Mileage>
 </tlp:Mileages>
