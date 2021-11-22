@@ -28,6 +28,8 @@
     <tlp:LastModifiedByEmployeeId>373</tlp:LastModifiedByEmployeeId>
     <tlp:LastModifiedBy>gha</tlp:LastModifiedBy>
     <tlp:IsBillable>1</tlp:IsBillable>
+    <tlp:AllocatedRevenueAmount>0.0000</tlp:AllocatedRevenueAmount>
+    <tlp:AllocatedRevenueAmountCurrency>0.0000</tlp:AllocatedRevenueAmountCurrency>
   </tlp:Task>
   <tlp:Task ID="11" GUID="40B27545-D724-47DB-848B-DA284612BEC8">
     <tlp:Name>TDR - Fixed price task</tlp:Name>
@@ -54,6 +56,8 @@
     <tlp:LastModifiedByEmployeeId>373</tlp:LastModifiedByEmployeeId>
     <tlp:LastModifiedBy>gha</tlp:LastModifiedBy>
     <tlp:IsBillable>1</tlp:IsBillable>
+    <tlp:AllocatedRevenueAmount>0.0000</tlp:AllocatedRevenueAmount>
+    <tlp:AllocatedRevenueAmountCurrency>0.0000</tlp:AllocatedRevenueAmountCurrency>
   </tlp:Task>
   <tlp:Task ID="6" GUID="22727194-B3B6-4B9D-A67C-F3287EC6BCC2">
     <tlp:Name>Prepaid</tlp:Name>
@@ -79,5 +83,7 @@
     <tlp:LastModifiedByEmployeeId>373</tlp:LastModifiedByEmployeeId>
     <tlp:LastModifiedBy>gha</tlp:LastModifiedBy>
     <tlp:IsBillable>1</tlp:IsBillable>
+    <tlp:AllocatedRevenueAmount>0.0000</tlp:AllocatedRevenueAmount>
+    <tlp:AllocatedRevenueAmountCurrency>0.0000</tlp:AllocatedRevenueAmountCurrency>
   </tlp:Task>
 </tlp:Tasks>

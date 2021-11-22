@@ -46,6 +46,8 @@
       <xsd:element name="LastModifiedByEmployeeId" type="xsd:positiveInteger" />
       <xsd:element name="LastModifiedBy" type="xsd:string" />
       <xsd:element name="IsBillable" type="xsd:boolean" />
+      <xsd:element name="AllocatedRevenueAmount" type="xsd:decimal" />
+      <xsd:element name="AllocatedRevenueAmountCurrency" type="xsd:decimal" />
     </xsd:sequence>
     <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"/>
     <xsd:attribute name="GUID" type="xsd:string" use="required"/>
