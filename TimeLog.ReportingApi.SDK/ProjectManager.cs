@@ -1,13 +1,6 @@
-﻿namespace TimeLog.ReportingApi.SDK
+﻿namespace TimeLog.ReportingAPI.SDK;
+
+public class ProjectManager
 {
-    public class ProjectManager
-    {
-        public static int All
-        {
-            get
-            {
-                return 0;
-            }
-        }
-    }
+    public static int All => 0;
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Customers xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/CustomersShortList.xsd">
+  <tlp:Customer ID="3308">
+    <tlp:Name>Microsoft</tlp:Name>
+    <tlp:No>07.2626</tlp:No>
+  </tlp:Customer>
+  <tlp:Customer ID="3309">
+    <tlp:Name>Oracle</tlp:Name>
+    <tlp:No>07.2626</tlp:No>
+  </tlp:Customer>
+  <tlp:Customer ID="3310">
+    <tlp:Name>Sun Microsystems</tlp:Name>
+    <tlp:No>07.2626</tlp:No>
+  </tlp:Customer>
+</tlp:Customers>

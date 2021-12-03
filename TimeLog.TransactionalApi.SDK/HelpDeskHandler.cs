@@ -1,44 +1,36 @@
-﻿
-namespace TimeLog.TransactionalApi.SDK
+﻿using System;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using TimeLog.TransactionalAPI.SDK.HelpDeskService;
+using TimeLog.TransactionalAPI.SDK.RawHelper;
+
+namespace TimeLog.TransactionalAPI.SDK
 {
-    using System;
-    using System.ServiceModel;
-    using System.ServiceModel.Channels;
-
-    using HelpDeskService;
-    using RawHelper;
-
     /// <summary>
-    /// Handler of functionality related to the HelpDesk service
+    ///     Handler of functionality related to the HelpDesk service
     /// </summary>
     public class HelpDeskHandler : IDisposable
     {
         private static HelpDeskHandler _instance;
-        private HelpDeskServiceClient _helpDeskClient;
 
-        private bool _collectRawRequestResponse;
+        private bool collectRawRequestResponse;
+        private HelpDeskServiceClient helpDeskClient;
 
         /// <summary>
-        /// Prevents a default instance of the <see cref="HelpDeskHandler"/> class from being created.
+        ///     Prevents a default instance of the <see cref="HelpDeskHandler" /> class from being created.
         /// </summary>
         private HelpDeskHandler()
         {
-            this._collectRawRequestResponse = false;
+            collectRawRequestResponse = false;
         }
 
         /// <summary>
-        /// Gets the singleton instance of the <see cref="HelpDeskHandler"/>.
+        ///     Gets the singleton instance of the <see cref="HelpDeskHandler" />.
         /// </summary>
-        public static HelpDeskHandler Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new HelpDeskHandler());
-            }
-        }
+        public static HelpDeskHandler Instance => _instance ?? (_instance = new HelpDeskHandler());
 
         /// <summary>
-        /// Gets the uri associated with the HelpDesk service.
+        ///     Gets the uri associated with the HelpDesk service.
         /// </summary>
         public string HelpDeskServiceUrl
         {
@@ -54,57 +46,49 @@ namespace TimeLog.TransactionalApi.SDK
         }
 
         /// <summary>
-        /// Gets the HelpDesk token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+        ///     Gets the HelpDesk token for use in other methods. Makes use of SecurityHandler.Instance.Token.
         /// </summary>
-        public SecurityToken Token
-        {
-            get
+        public SecurityToken Token =>
+            new SecurityToken
             {
-                return new SecurityToken
-                       {
-                           Expires = SecurityHandler.Instance.Token.Expires,
-                           Hash = SecurityHandler.Instance.Token.Hash,
-                           Initials = SecurityHandler.Instance.Token.Initials
-                       };
-            }
-        }
+                Expires = SecurityHandler.Instance.Token.Expires,
+                Hash = SecurityHandler.Instance.Token.Hash,
+                Initials = SecurityHandler.Instance.Token.Initials
+            };
 
         /// <summary>
-        /// Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+        ///     Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
         /// </summary>
         public bool CollectRawRequestResponse
         {
-            get
-            {
-                return this._collectRawRequestResponse;
-            }
+            get => collectRawRequestResponse;
 
             set
             {
-                this._collectRawRequestResponse = value;
-                this._helpDeskClient = null;
+                collectRawRequestResponse = value;
+                helpDeskClient = null;
             }
         }
 
         /// <summary>
-        /// Gets the active HelpDesk client
+        ///     Gets the active HelpDesk client
         /// </summary>
         public HelpDeskServiceClient HelpDeskClient
         {
             get
             {
-                if (this._helpDeskClient == null)
+                if (helpDeskClient == null)
                 {
                     var endpoint = new EndpointAddress(HelpDeskServiceUrl);
-                    if (this.CollectRawRequestResponse)
+                    if (CollectRawRequestResponse)
                     {
                         var binding = new CustomBinding();
-                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        var encoding = new RawMessageEncodingBindingElement {MessageVersion = MessageVersion.Soap11};
                         binding.Elements.Add(encoding);
-                        binding.Elements.Add(this.HelpDeskServiceUrl.Contains("https")
+                        binding.Elements.Add(HelpDeskServiceUrl.Contains("https")
                             ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                             : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                        this._helpDeskClient = new HelpDeskServiceClient(binding, endpoint);
+                        helpDeskClient = new HelpDeskServiceClient(binding, endpoint);
                     }
                     else
                     {
@@ -113,24 +97,24 @@ namespace TimeLog.TransactionalApi.SDK
                             MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize
                         };
 
-                        if (this.HelpDeskServiceUrl.Contains("https"))
+                        if (HelpDeskServiceUrl.Contains("https"))
                         {
                             binding.Security.Mode = BasicHttpSecurityMode.Transport;
                         }
 
-                        this._helpDeskClient = new HelpDeskServiceClient(binding, endpoint);
+                        helpDeskClient = new HelpDeskServiceClient(binding, endpoint);
                     }
 
-                    this._helpDeskClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                    helpDeskClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
                 }
 
-                return this._helpDeskClient;
+                return helpDeskClient;
             }
         }
 
         void IDisposable.Dispose()
         {
-            this._helpDeskClient = null;
+            helpDeskClient = null;
             _instance = null;
         }
     }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+	<xsd:element name="Invoices">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Invoice" type="tlp:InvoiceRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+    <xsd:key name="Invoice_Key">
+      <xsd:selector xpath=".//tlp:Invoice" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+	<xsd:complexType name="InvoiceRaw_Type">
+		<xsd:sequence>
+			<xsd:element name="InvoiceNumber" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Header" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Text" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="InvoiceDate" type="xsd:dateTime" />
+      <xsd:element name="DueDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Amount" type="xsd:decimal" />
+      <xsd:element name="AmountSystemCurrency" type="xsd:decimal" />
+      <xsd:element name="Status" type="xsd:unsignedByte" />
+      <xsd:element name="Type" type="xsd:unsignedByte" />
+      <xsd:element name="CustomerID" type="xsd:positiveInteger" />
+      <xsd:element name="CustomerName" type="xsd:string" />
+      <xsd:element name="CustomerNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerAddress1" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerAddress2" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerAddress3" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerZipCode" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerCity" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerState" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerCountry" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerCountryID" type="xsd:positiveInteger" />
+      <xsd:element name="PaymentTermID" type="xsd:positiveInteger" />
+      <xsd:element name="PaymentTermText" type="xsd:string" />
+      <xsd:element name="CurrencyAbb" type="xsd:string" />
+      <xsd:element name="CurrencyRate" type="xsd:decimal" />
+      <xsd:element name="DefaultVAT" type="xsd:decimal" />
+      <xsd:element name="AddVAT" type="xsd:boolean" />
+      <xsd:element name="NetAmount" type="xsd:decimal" />
+      <xsd:element name="NetAmountSystemCurrency" type="xsd:decimal" />
+      <xsd:element name="VATIncluded" type="xsd:decimal" />
+      <xsd:element name="VATIncludedSystemCurrency" type="xsd:decimal" />
+      <xsd:element name="ProjectID" type="xsd:positiveInteger" />
+      <xsd:element name="ProjectNo" type="xsd:string" />
+      <xsd:element name="PurchaseNo" type="xsd:string" />
+      <xsd:element name="ContactFullName" type="xsd:string" />
+      <xsd:element name="DepartmentID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="DepartmentTree" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ExternalInvoiceNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CustomerReference" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="ExternalInvoiceStatus" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="RelatesToInvoiceID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" /><!-- Voucher reference for invoice -->
+      <xsd:element name="InternalNote" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="LegalEntityID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="InvoiceTemplateID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="IsIgnoredWhenTransfer" type="xsd:boolean" />
+      <xsd:element name="IsReadyForInvoicing" type="xsd:boolean" />
+    </xsd:sequence>
+		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
+	</xsd:complexType>
+  
+</xsd:schema>

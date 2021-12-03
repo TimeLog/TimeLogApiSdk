@@ -1,43 +1,36 @@
-﻿namespace TimeLog.TransactionalApi.SDK
+﻿using System;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using TimeLog.TransactionalAPI.SDK.CrmService;
+using TimeLog.TransactionalAPI.SDK.RawHelper;
+
+namespace TimeLog.TransactionalAPI.SDK
 {
-    using System;
-    using System.ServiceModel;
-    using System.ServiceModel.Channels;
-
-    using CrmService;
-    using RawHelper;
-
     /// <summary>
-    /// Handler of functionality related to the CRM service
+    ///     Handler of functionality related to the CRM service
     /// </summary>
-    public class CrmHandler : IDisposable
+    public class CRMHandler : IDisposable
     {
-        private static CrmHandler _instance;
-        private CRMServiceClient _crmClient;
+        private static CRMHandler _instance;
 
-        private bool _collectRawRequestResponse;
+        private bool collectRawRequestResponse;
+        private CRMServiceClient crmClient;
 
         /// <summary>
-        /// Prevents a default instance of the <see cref="CrmHandler"/> class from being created.
+        ///     Prevents a default instance of the <see cref="CRMHandler" /> class from being created.
         /// </summary>
-        private CrmHandler()
+        private CRMHandler()
         {
-            this._collectRawRequestResponse = false;
+            collectRawRequestResponse = false;
         }
 
         /// <summary>
-        /// Gets the singleton instance of the <see cref="CrmHandler"/>.
+        ///     Gets the singleton instance of the <see cref="CRMHandler" />.
         /// </summary>
-        public static CrmHandler Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new CrmHandler());
-            }
-        }
+        public static CRMHandler Instance => _instance ?? (_instance = new CRMHandler());
 
         /// <summary>
-        /// Gets the uri associated with the CRM service.
+        ///     Gets the uri associated with the CRM service.
         /// </summary>
         public string CrmServiceUrl
         {
@@ -53,57 +46,49 @@
         }
 
         /// <summary>
-        /// Gets the CRM token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+        ///     Gets the CRM token for use in other methods. Makes use of SecurityHandler.Instance.Token.
         /// </summary>
-        public SecurityToken Token
-        {
-            get
+        public SecurityToken Token =>
+            new SecurityToken
             {
-                return new SecurityToken
-                       {
-                           Expires = SecurityHandler.Instance.Token.Expires,
-                           Hash = SecurityHandler.Instance.Token.Hash,
-                           Initials = SecurityHandler.Instance.Token.Initials
-                       };
-            }
-        }
+                Expires = SecurityHandler.Instance.Token.Expires,
+                Hash = SecurityHandler.Instance.Token.Hash,
+                Initials = SecurityHandler.Instance.Token.Initials
+            };
 
         /// <summary>
-        /// Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+        ///     Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
         /// </summary>
         public bool CollectRawRequestResponse
         {
-            get
-            {
-                return this._collectRawRequestResponse;
-            }
+            get => collectRawRequestResponse;
 
             set
             {
-                this._collectRawRequestResponse = value;
-                this._crmClient = null;
+                collectRawRequestResponse = value;
+                crmClient = null;
             }
         }
 
         /// <summary>
-        /// Gets the active CRM client
+        ///     Gets the active CRM client
         /// </summary>
         public CRMServiceClient CrmClient
         {
             get
             {
-                if (this._crmClient == null)
+                if (crmClient == null)
                 {
-                    var endpoint = new EndpointAddress(this.CrmServiceUrl);
-                    if (this.CollectRawRequestResponse)
+                    var endpoint = new EndpointAddress(CrmServiceUrl);
+                    if (CollectRawRequestResponse)
                     {
                         var binding = new CustomBinding();
                         var encoding = new RawMessageEncodingBindingElement {MessageVersion = MessageVersion.Soap11};
                         binding.Elements.Add(encoding);
-                        binding.Elements.Add(this.CrmServiceUrl.Contains("https")
+                        binding.Elements.Add(CrmServiceUrl.Contains("https")
                             ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                             : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                        this._crmClient = new CRMServiceClient(binding, endpoint);
+                        crmClient = new CRMServiceClient(binding, endpoint);
                     }
                     else
                     {
@@ -112,24 +97,24 @@
                             MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize
                         };
 
-                        if (this.CrmServiceUrl.Contains("https"))
+                        if (CrmServiceUrl.Contains("https"))
                         {
                             binding.Security.Mode = BasicHttpSecurityMode.Transport;
                         }
 
-                        this._crmClient = new CRMServiceClient(binding, endpoint);
+                        crmClient = new CRMServiceClient(binding, endpoint);
                     }
 
-                    this._crmClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                    crmClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
                 }
 
-                return this._crmClient;
+                return crmClient;
             }
         }
 
         public void Dispose()
         {
-            this._crmClient = null;
+            crmClient = null;
             _instance = null;
         }
     }

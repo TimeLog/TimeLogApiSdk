@@ -1,0 +1,84 @@
+﻿@using TimeLog.Api.Documentation
+@model TimeLog.Api.Documentation.Models.RestDocumentationHelpers.RestMethodDoc
+@{
+    ViewBag.Title = Model.Name + " - Method Details";
+}
+
+<article class="article">
+    <p>
+        <a href="@Url.Action("Service", new {id = Model.Parent.Name.UrlEncode()})">Back to @Model.Parent.Name.SplitOnUppercase()</a>
+    </p>
+    <h2 class="@Model.MethodType.ToLower()">
+        <span class="badge">@Model.MethodType</span>
+        Method Details for @Model.Name.
+    </h2>
+    <p>@Model.Summary</p>
+    <h3>Definition</h3>
+    <pre>@Model.FullName</pre>
+    <h3>Parameters</h3>
+    <ul>
+        @foreach (var _param in Model.Params)
+        {
+            <li class="icon-arrow_in_circle">
+                @_param.Name <span class="text-selection">@_param.Type.Value</span> @_param.Description
+                @if (_param.RefSchema.Definition != null)
+                {
+                    <ul class="signature-nav m-t-s" data-tab>
+                        <li>
+                            <a href="javascript:void(0)">Model</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Example Value</a>
+                        </li>
+                    </ul>
+                    <ul class="m-t-s">
+                        @foreach (var _property in _param.RefSchema.Definition.RestProperties)
+                        {
+                            <li class="icon-arrow_in_circle">
+                                <span>@_property.Name</span>
+                                <span class="text-selection">@_property.Type.Value</span>
+                                <span>@_property.Description</span>
+                            </li>
+                        }
+                    </ul>
+                    <pre style="display: none">@_param.RefSchema.Definition.ToHtmlString()</pre>
+                }
+
+            </li>
+        }
+    </ul>
+    @if (Model.Responses.Any())
+    {
+        <h3>Returns</h3>
+        <ul>
+            @foreach (var _response in Model.Responses)
+            {
+                <li class="icon-arrow_in_circle">
+                    <span class="text-selection">[@(_response.Code)]</span> @_response.Description
+                    @if (_response.SchemaRestRef.Definition != null)
+                    {
+                        <ul class="signature-nav m-t-s" data-tab>
+                            <li>
+                                <a href="javascript:void(0)">Model</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Example Value</a>
+                            </li>
+                        </ul>
+                        <ul class="m-t-s">
+                            @foreach (var _property in _response.SchemaRestRef.Definition.RestProperties)
+                            {
+                                <li class="icon-arrow_in_circle">
+                                    <span>@_property.Name</span>
+                                    <span class="text-selection">@_property.Type.Value</span>
+                                    <span>@_property.Description</span>
+                                </li>
+                            }
+                        </ul>
+                        <pre style="display: none">@_response.SchemaRestRef.Definition.ToHtmlString()</pre>
+                    }
+                </li>
+            }
+        </ul>
+    }
+</article>

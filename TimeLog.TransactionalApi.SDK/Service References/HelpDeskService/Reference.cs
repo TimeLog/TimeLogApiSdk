@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
+namespace TimeLog.TransactionalAPI.SDK.HelpDeskService {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,21 +17,21 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Post))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.EmployeeHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.SupportType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.CustomerHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIBaseExtended))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.CustomField))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfSupportType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfServiceContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.EmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.SupportType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomerHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomField))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfSupportType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfServiceContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken))]
     public partial class APIBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -61,7 +61,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Post", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
-    public partial class Post : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class Post : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -94,7 +94,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private bool IsCustomerPostField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.PostDetails DetailsField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.PostDetails DetailsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
@@ -227,7 +227,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.PostDetails Details {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.PostDetails Details {
             get {
                 return this.DetailsField;
             }
@@ -244,7 +244,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeHeader", Namespace="http://www.timelog.com/api/tlp/v1_5")]
     [System.SerializableAttribute()]
-    public partial class EmployeeHeader : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class EmployeeHeader : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -363,7 +363,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SupportType", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
-    public partial class SupportType : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class SupportType : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -434,7 +434,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceContract", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
-    public partial class ServiceContract : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class ServiceContract : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -491,7 +491,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private bool IsAutomaticallyRenewedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContractDetails DetailsField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContractDetails DetailsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
@@ -728,7 +728,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContractDetails Details {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContractDetails Details {
             get {
                 return this.DetailsField;
             }
@@ -745,7 +745,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerHeader", Namespace="http://api.timelog.com/services/crm/1_2")]
     [System.SerializableAttribute()]
-    public partial class CustomerHeader : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class CustomerHeader : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -816,22 +816,22 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfTicket", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfTicket : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class ResponseOfTicket : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -843,7 +843,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket[] Return {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket[] Return {
             get {
                 return this.ReturnField;
             }
@@ -869,7 +869,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -882,7 +882,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -895,7 +895,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -951,26 +951,27 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBaseExtended", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket))]
-    public partial class APIBaseExtended : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket))]
+    public partial class APIBaseExtended : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.DataAction ActionField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.DataAction ActionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsCustomFieldsLoadedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.CustomField[] CustomFieldsField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomField[] CustomFieldsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsExternalKeysLoadedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.ExternalSystemContext[] ExternalKeysField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.ExternalSystemContext[] ExternalKeysField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.DataAction Action {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.DataAction Action {
             get {
                 return this.ActionField;
             }
@@ -996,7 +997,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.CustomField[] CustomFields {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomField[] CustomFields {
             get {
                 return this.CustomFieldsField;
             }
@@ -1022,7 +1023,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ExternalSystemContext[] ExternalKeys {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ExternalSystemContext[] ExternalKeys {
             get {
                 return this.ExternalKeysField;
             }
@@ -1039,42 +1040,42 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomField", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.DomainType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Post[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Post))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.PostDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.SupportType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.SupportType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContract[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContractDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIBaseExtended))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ExternalSystemContext[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.RequestParameter[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.RequestParameter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfSupportType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfServiceContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.DataAction))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.CustomField[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ValueOption[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ValueOption))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.DataTypeEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ValidateModelEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessageSeverity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.EmployeeHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.CustomerHeader))]
-    public partial class CustomField : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.DomainType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.PostDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.SupportType[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.SupportType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContract[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContractDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ExternalSystemContext[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.RequestParameter[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.RequestParameter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfSupportType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfServiceContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.DataAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomField[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ValueOption[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ValueOption))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.DataTypeEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ValidateModelEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessageSeverity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.EmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomerHeader))]
+    public partial class CustomField : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SectionLabelField;
@@ -1089,13 +1090,13 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private string IdentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.DomainType DomainTypeField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.DomainType DomainTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.DataTypeEnum DataTypeField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.DataTypeEnum DataTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.ValueOption[] DataValuesField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.ValueOption[] DataValuesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private object ValueField;
@@ -1104,7 +1105,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private int SortOrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.ValidateModelEnum ValidationModelField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.ValidateModelEnum ValidationModelField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string SectionLabel {
@@ -1159,7 +1160,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.DomainType DomainType {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.DomainType DomainType {
             get {
                 return this.DomainTypeField;
             }
@@ -1172,7 +1173,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.DataTypeEnum DataType {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.DataTypeEnum DataType {
             get {
                 return this.DataTypeField;
             }
@@ -1185,7 +1186,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ValueOption[] DataValues {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ValueOption[] DataValues {
             get {
                 return this.DataValuesField;
             }
@@ -1224,7 +1225,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ValidateModelEnum ValidationModel {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ValidateModelEnum ValidationModel {
             get {
                 return this.ValidationModelField;
             }
@@ -1241,7 +1242,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ExternalSystemContext", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ExternalSystemContext : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class ExternalSystemContext : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SystemNameField;
@@ -1280,7 +1281,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Ticket", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
-    public partial class Ticket : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBaseExtended {
+    public partial class Ticket : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -1607,10 +1608,10 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class Request : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class Request : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.RequestParameter[] ParametersField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.RequestParameter[] ParametersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ServiceClassField;
@@ -1619,7 +1620,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private string MethodNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.RequestParameter[] Parameters {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.RequestParameter[] Parameters {
             get {
                 return this.ParametersField;
             }
@@ -1662,22 +1663,22 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfPost", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfPost : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class ResponseOfPost : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.Post[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.Post[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -1689,7 +1690,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.Post[] Return {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.Post[] Return {
             get {
                 return this.ReturnField;
             }
@@ -1715,7 +1716,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -1728,7 +1729,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -1741,7 +1742,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -1797,22 +1798,22 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfSupportType", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfSupportType : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class ResponseOfSupportType : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.SupportType[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.SupportType[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -1824,7 +1825,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.SupportType[] Return {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.SupportType[] Return {
             get {
                 return this.ReturnField;
             }
@@ -1850,7 +1851,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -1863,7 +1864,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -1876,7 +1877,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -1932,22 +1933,22 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfServiceContract", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfServiceContract : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class ResponseOfServiceContract : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContract[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContract[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -1959,7 +1960,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContract[] Return {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContract[] Return {
             get {
                 return this.ReturnField;
             }
@@ -1985,7 +1986,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -1998,7 +1999,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -2011,7 +2012,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -2067,7 +2068,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SecurityToken", Namespace="http://www.timelog.com/api/tlp/v1_3")]
     [System.SerializableAttribute()]
-    public partial class SecurityToken : TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase {
+    public partial class SecurityToken : TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase {
         
         private string InitialsField;
         
@@ -2125,7 +2126,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.EmployeeHeader EmployeeField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.EmployeeHeader EmployeeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2138,7 +2139,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.EmployeeHeader Employee {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.EmployeeHeader Employee {
             get {
                 return this.EmployeeField;
             }
@@ -2170,10 +2171,10 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.CustomerHeader CustomerField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomerHeader CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.EmployeeHeader OwnerField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.EmployeeHeader OwnerField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2186,7 +2187,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.CustomerHeader Customer {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomerHeader Customer {
             get {
                 return this.CustomerField;
             }
@@ -2199,7 +2200,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.EmployeeHeader Owner {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.EmployeeHeader Owner {
             get {
                 return this.OwnerField;
             }
@@ -2251,7 +2252,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessageSeverity SeverityField;
+        private TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessageSeverity SeverityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -2280,7 +2281,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessageSeverity Severity {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessageSeverity Severity {
             get {
                 return this.SeverityField;
             }
@@ -2436,7 +2437,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         ETCEmployee = 31,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ProjectTemplateHeader = 32,
+        ProjectTemplate = 32,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Event = 33,
@@ -2445,7 +2446,7 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         InvoiceableTravelExpense = 34,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InvoiceableInstallment = 35,
+        Payment = 35,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Employee = 36,
@@ -2674,9 +2675,6 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         PageProperty = 111,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UserSetting = 112,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         MainSearchResultItem = 113,
@@ -2940,9 +2938,6 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         ProjectFinancialsContext = 202,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        GenericBudget = 201,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
         GenericBudgetValue = 204,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -2953,6 +2948,132 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ProjectSubContractDropdown = 206,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeRegistrationWorkflow = 207,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryPeriod = 208,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        GenericBudget = 209,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectSubContractCustomer = 210,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PaymentBudgetPeriod = 211,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectForecastTotal = 212,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoicingPotential = 213,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PriceGroupBasic = 214,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractTeamMember = 215,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Agent = 216,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaskSearchDenormalized = 217,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AllocationSearchDenormalized = 218,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TimeTracker = 219,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeExpense = 220,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectExpense = 221,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UIExpandedDomain = 222,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceableFinancialPosting = 223,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoiceablePendingBookingDataRaw = 224,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TransferEmployeeExpense = 225,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RecurringDomainPlan = 226,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RecurringTaskAllocationBudgetInstance = 227,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RecurringMilestoneInstance = 228,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntercompanyInvoice = 229,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalesShare = 230,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalesShareSalesPerson = 231,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TaskPlanTemplate = 232,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MileageRatePeriod = 233,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MileageRegistration = 234,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectProduct = 235,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RecurringProjectProductInstance = 236,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        UserPreviewFeatureValue = 237,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SiteFeatureValue = 238,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        EmployeeReimbursementPosting = 239,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MileageRegistrationFinancialData = 240,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractHourlyRate = 241,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractHourlyRateIndexationHistory = 242,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        AnalyticsTrigger = 243,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SalaryRule = 244,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractType = 245,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntercompanyExchangeRatePeriod = 246,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntercompanyExchangeRate = 247,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DomainServiceRequest = 248,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,
@@ -3023,41 +3144,41 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ValueOption", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIBase))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ExecutionStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.DomainType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Post[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Post))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.PostDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.SupportType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.SupportType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContract[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ServiceContractDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIBaseExtended))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ExternalSystemContext[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.RequestParameter[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.RequestParameter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessage))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfSupportType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfServiceContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.DataAction))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.CustomField[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.CustomField))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ValueOption[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.DataTypeEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.ValidateModelEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.APIMessageSeverity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.EmployeeHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.HelpDeskService.CustomerHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ExecutionStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.DomainType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.PostDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.SupportType[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.SupportType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContract[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ServiceContractDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ExternalSystemContext[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.RequestParameter[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.RequestParameter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfSupportType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfServiceContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.DataAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomField[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomField))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ValueOption[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.DataTypeEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.ValidateModelEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.APIMessageSeverity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.EmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.HelpDeskService.CustomerHeader))]
     public partial class ValueOption : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -3197,94 +3318,94 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_6)
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveResponse IsAlive(TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveRequest request);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveResponse IsAlive(TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveRequest request);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTicketsPagedRequest", ReplyAction="GetTicketsPagedReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket GetTicketsPaged(int CustomerID, int ResponsibleEmployeeID, int TicketStatusID, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket GetTicketsPaged(int CustomerID, int ResponsibleEmployeeID, int TicketStatusID, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTicketsPagedRequest", ReplyAction="GetTicketsPagedReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> GetTicketsPagedAsync(int CustomerID, int ResponsibleEmployeeID, int TicketStatusID, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> GetTicketsPagedAsync(int CustomerID, int ResponsibleEmployeeID, int TicketStatusID, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTicketByExternalKeyRequest", ReplyAction="GetTicketByExternalKeyReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket GetTicketByExternalKey(string key, string systemName, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket GetTicketByExternalKey(string key, string systemName, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTicketByExternalKeyRequest", ReplyAction="GetTicketByExternalKeyReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> GetTicketByExternalKeyAsync(string key, string systemName, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> GetTicketByExternalKeyAsync(string key, string systemName, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTicketByIDRequest", ReplyAction="GetTicketByIDReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket GetTicketByID(System.Guid ID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket GetTicketByID(System.Guid ID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTicketByIDRequest", ReplyAction="GetTicketByIDReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> GetTicketByIDAsync(System.Guid ID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> GetTicketByIDAsync(System.Guid ID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreateTicketRequest", ReplyAction="CreateTicketReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket CreateTicket(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket CreateTicket(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreateTicketRequest", ReplyAction="CreateTicketReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> CreateTicketAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> CreateTicketAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdateTicketRequest", ReplyAction="UpdateTicketReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket UpdateTicket(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket UpdateTicket(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdateTicketRequest", ReplyAction="UpdateTicketReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> UpdateTicketAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> UpdateTicketAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="ChangeStatusOnTicketRequest", ReplyAction="ChangeStatusOnTicketReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket ChangeStatusOnTicket(System.Guid ID, int targetStatus, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket ChangeStatusOnTicket(System.Guid ID, int targetStatus, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="ChangeStatusOnTicketRequest", ReplyAction="ChangeStatusOnTicketReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> ChangeStatusOnTicketAsync(System.Guid ID, int targetStatus, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> ChangeStatusOnTicketAsync(System.Guid ID, int targetStatus, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="ChangeBillableStatusOnTicketRequest", ReplyAction="ChangeBillableStatusOnTicketReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket ChangeBillableStatusOnTicket(System.Guid ID, bool ticketIsBillable, bool ChangeExistingPosts, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket ChangeBillableStatusOnTicket(System.Guid ID, bool ticketIsBillable, bool ChangeExistingPosts, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="ChangeBillableStatusOnTicketRequest", ReplyAction="ChangeBillableStatusOnTicketReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> ChangeBillableStatusOnTicketAsync(System.Guid ID, bool ticketIsBillable, bool ChangeExistingPosts, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> ChangeBillableStatusOnTicketAsync(System.Guid ID, bool ticketIsBillable, bool ChangeExistingPosts, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="ChangePriorityOnTicketRequest", ReplyAction="ChangePriorityOnTicketReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket ChangePriorityOnTicket(System.Guid ID, int targetPriority, bool calculateDueDate, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket ChangePriorityOnTicket(System.Guid ID, int targetPriority, bool calculateDueDate, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="ChangePriorityOnTicketRequest", ReplyAction="ChangePriorityOnTicketReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> ChangePriorityOnTicketAsync(System.Guid ID, int targetPriority, bool calculateDueDate, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> ChangePriorityOnTicketAsync(System.Guid ID, int targetPriority, bool calculateDueDate, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetPostsForTicketRequest", ReplyAction="GetPostsForTicketReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost GetPostsForTicket(int TicketID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost GetPostsForTicket(int TicketID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetPostsForTicketRequest", ReplyAction="GetPostsForTicketReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost> GetPostsForTicketAsync(int TicketID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost> GetPostsForTicketAsync(int TicketID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreatePostRequest", ReplyAction="CreatePostReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost CreatePost(TimeLog.TransactionalApi.SDK.HelpDeskService.Post post, int TicketID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost CreatePost(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post post, int TicketID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreatePostRequest", ReplyAction="CreatePostReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost> CreatePostAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.Post post, int TicketID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost> CreatePostAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post post, int TicketID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdatePostRequest", ReplyAction="UpdatePostReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost UpdatePost(TimeLog.TransactionalApi.SDK.HelpDeskService.Post post, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost UpdatePost(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post post, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdatePostRequest", ReplyAction="UpdatePostReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost> UpdatePostAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.Post post, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost> UpdatePostAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post post, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="DeletePostRequest", ReplyAction="DeletePosttReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost DeletePost(System.Guid ID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost DeletePost(System.Guid ID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="DeletePostRequest", ReplyAction="DeletePosttReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost> DeletePostAsync(System.Guid ID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost> DeletePostAsync(System.Guid ID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetSupportTypesRequest", ReplyAction="GetSupportTypesReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfSupportType GetSupportTypes(bool includeInactiveSupportTypes, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfSupportType GetSupportTypes(bool includeInactiveSupportTypes, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetSupportTypesRequest", ReplyAction="GetSupportTypesReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfSupportType> GetSupportTypesAsync(bool includeInactiveSupportTypes, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfSupportType> GetSupportTypesAsync(bool includeInactiveSupportTypes, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetServiceContractsForCustomerRequest", ReplyAction="GetServiceContractsForCustomerReponse")]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfServiceContract GetServiceContractsForCustomer(int CustomerID, int ActiveState, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfServiceContract GetServiceContractsForCustomer(int CustomerID, int ActiveState, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetServiceContractsForCustomerRequest", ReplyAction="GetServiceContractsForCustomerReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfServiceContract> GetServiceContractsForCustomerAsync(int CustomerID, int ActiveState, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfServiceContract> GetServiceContractsForCustomerAsync(int CustomerID, int ActiveState, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3315,12 +3436,12 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface HelpDeskServiceChannel : TimeLog.TransactionalApi.SDK.HelpDeskService.HelpDeskService, System.ServiceModel.IClientChannel {
+    public interface HelpDeskServiceChannel : TimeLog.TransactionalAPI.SDK.HelpDeskService.HelpDeskService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class HelpDeskServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalApi.SDK.HelpDeskService.HelpDeskService>, TimeLog.TransactionalApi.SDK.HelpDeskService.HelpDeskService {
+    public partial class HelpDeskServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalAPI.SDK.HelpDeskService.HelpDeskService>, TimeLog.TransactionalAPI.SDK.HelpDeskService.HelpDeskService {
         
         public HelpDeskServiceClient() {
         }
@@ -3342,135 +3463,135 @@ namespace TimeLog.TransactionalApi.SDK.HelpDeskService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveResponse TimeLog.TransactionalApi.SDK.HelpDeskService.HelpDeskService.IsAlive(TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveRequest request) {
+        TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveResponse TimeLog.TransactionalAPI.SDK.HelpDeskService.HelpDeskService.IsAlive(TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveRequest request) {
             return base.Channel.IsAlive(request);
         }
         
         public bool IsAlive() {
-            TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveRequest inValue = new TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveRequest();
-            TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveResponse retVal = ((TimeLog.TransactionalApi.SDK.HelpDeskService.HelpDeskService)(this)).IsAlive(inValue);
+            TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveRequest inValue = new TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveRequest();
+            TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveResponse retVal = ((TimeLog.TransactionalAPI.SDK.HelpDeskService.HelpDeskService)(this)).IsAlive(inValue);
             return retVal.IsAliveResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveResponse> TimeLog.TransactionalApi.SDK.HelpDeskService.HelpDeskService.IsAliveAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveRequest request) {
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveResponse> TimeLog.TransactionalAPI.SDK.HelpDeskService.HelpDeskService.IsAliveAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveRequest request) {
             return base.Channel.IsAliveAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveResponse> IsAliveAsync() {
-            TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveRequest inValue = new TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveRequest();
-            return ((TimeLog.TransactionalApi.SDK.HelpDeskService.HelpDeskService)(this)).IsAliveAsync(inValue);
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveResponse> IsAliveAsync() {
+            TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveRequest inValue = new TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveRequest();
+            return ((TimeLog.TransactionalAPI.SDK.HelpDeskService.HelpDeskService)(this)).IsAliveAsync(inValue);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket GetTicketsPaged(int CustomerID, int ResponsibleEmployeeID, int TicketStatusID, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket GetTicketsPaged(int CustomerID, int ResponsibleEmployeeID, int TicketStatusID, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetTicketsPaged(CustomerID, ResponsibleEmployeeID, TicketStatusID, loadExternalKeys, page, pageSize, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> GetTicketsPagedAsync(int CustomerID, int ResponsibleEmployeeID, int TicketStatusID, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> GetTicketsPagedAsync(int CustomerID, int ResponsibleEmployeeID, int TicketStatusID, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetTicketsPagedAsync(CustomerID, ResponsibleEmployeeID, TicketStatusID, loadExternalKeys, page, pageSize, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket GetTicketByExternalKey(string key, string systemName, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket GetTicketByExternalKey(string key, string systemName, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetTicketByExternalKey(key, systemName, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> GetTicketByExternalKeyAsync(string key, string systemName, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> GetTicketByExternalKeyAsync(string key, string systemName, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetTicketByExternalKeyAsync(key, systemName, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket GetTicketByID(System.Guid ID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket GetTicketByID(System.Guid ID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetTicketByID(ID, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> GetTicketByIDAsync(System.Guid ID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> GetTicketByIDAsync(System.Guid ID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetTicketByIDAsync(ID, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket CreateTicket(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket CreateTicket(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.CreateTicket(ticket, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> CreateTicketAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> CreateTicketAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.CreateTicketAsync(ticket, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket UpdateTicket(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket UpdateTicket(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.UpdateTicket(ticket, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> UpdateTicketAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> UpdateTicketAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.Ticket ticket, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.UpdateTicketAsync(ticket, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket ChangeStatusOnTicket(System.Guid ID, int targetStatus, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket ChangeStatusOnTicket(System.Guid ID, int targetStatus, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.ChangeStatusOnTicket(ID, targetStatus, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> ChangeStatusOnTicketAsync(System.Guid ID, int targetStatus, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> ChangeStatusOnTicketAsync(System.Guid ID, int targetStatus, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.ChangeStatusOnTicketAsync(ID, targetStatus, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket ChangeBillableStatusOnTicket(System.Guid ID, bool ticketIsBillable, bool ChangeExistingPosts, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket ChangeBillableStatusOnTicket(System.Guid ID, bool ticketIsBillable, bool ChangeExistingPosts, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.ChangeBillableStatusOnTicket(ID, ticketIsBillable, ChangeExistingPosts, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> ChangeBillableStatusOnTicketAsync(System.Guid ID, bool ticketIsBillable, bool ChangeExistingPosts, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> ChangeBillableStatusOnTicketAsync(System.Guid ID, bool ticketIsBillable, bool ChangeExistingPosts, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.ChangeBillableStatusOnTicketAsync(ID, ticketIsBillable, ChangeExistingPosts, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket ChangePriorityOnTicket(System.Guid ID, int targetPriority, bool calculateDueDate, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket ChangePriorityOnTicket(System.Guid ID, int targetPriority, bool calculateDueDate, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.ChangePriorityOnTicket(ID, targetPriority, calculateDueDate, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket> ChangePriorityOnTicketAsync(System.Guid ID, int targetPriority, bool calculateDueDate, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket> ChangePriorityOnTicketAsync(System.Guid ID, int targetPriority, bool calculateDueDate, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.ChangePriorityOnTicketAsync(ID, targetPriority, calculateDueDate, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost GetPostsForTicket(int TicketID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost GetPostsForTicket(int TicketID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetPostsForTicket(TicketID, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost> GetPostsForTicketAsync(int TicketID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost> GetPostsForTicketAsync(int TicketID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetPostsForTicketAsync(TicketID, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost CreatePost(TimeLog.TransactionalApi.SDK.HelpDeskService.Post post, int TicketID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost CreatePost(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post post, int TicketID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.CreatePost(post, TicketID, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost> CreatePostAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.Post post, int TicketID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost> CreatePostAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post post, int TicketID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.CreatePostAsync(post, TicketID, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost UpdatePost(TimeLog.TransactionalApi.SDK.HelpDeskService.Post post, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost UpdatePost(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post post, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.UpdatePost(post, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost> UpdatePostAsync(TimeLog.TransactionalApi.SDK.HelpDeskService.Post post, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost> UpdatePostAsync(TimeLog.TransactionalAPI.SDK.HelpDeskService.Post post, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.UpdatePostAsync(post, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost DeletePost(System.Guid ID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost DeletePost(System.Guid ID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.DeletePost(ID, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost> DeletePostAsync(System.Guid ID, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost> DeletePostAsync(System.Guid ID, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.DeletePostAsync(ID, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfSupportType GetSupportTypes(bool includeInactiveSupportTypes, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfSupportType GetSupportTypes(bool includeInactiveSupportTypes, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetSupportTypes(includeInactiveSupportTypes, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfSupportType> GetSupportTypesAsync(bool includeInactiveSupportTypes, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfSupportType> GetSupportTypesAsync(bool includeInactiveSupportTypes, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetSupportTypesAsync(includeInactiveSupportTypes, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfServiceContract GetServiceContractsForCustomer(int CustomerID, int ActiveState, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfServiceContract GetServiceContractsForCustomer(int CustomerID, int ActiveState, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetServiceContractsForCustomer(CustomerID, ActiveState, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfServiceContract> GetServiceContractsForCustomerAsync(int CustomerID, int ActiveState, TimeLog.TransactionalApi.SDK.HelpDeskService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfServiceContract> GetServiceContractsForCustomerAsync(int CustomerID, int ActiveState, TimeLog.TransactionalAPI.SDK.HelpDeskService.SecurityToken token) {
             return base.Channel.GetServiceContractsForCustomerAsync(CustomerID, ActiveState, token);
         }
     }

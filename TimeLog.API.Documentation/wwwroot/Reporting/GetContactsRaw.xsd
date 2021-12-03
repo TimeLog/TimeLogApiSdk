@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xsd:element name="Contacts">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Contact" type="tlp:ContactRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="Contact_Key">
+      <xsd:selector xpath=".//tlp:Contact" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+  <xsd:complexType name="ContactRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="Salutation" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="FirstName" type="xsd:string" />
+      <xsd:element name="LastName" type="xsd:string" />
+      <xsd:element name="FullName" type="xsd:string" />
+      <xsd:element name="CustomerID" type="xsd:positiveInteger" />
+      <xsd:element name="CustomerName" type="xsd:string" />
+      <xsd:element name="CustomerNo" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Title" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Phone" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Mobile" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="PrivatePhone" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Email" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Address1" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Address2" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ZipCode" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="City" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="State" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Birthday" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Country" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Comment" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="AccountManagerID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="AccountManagerFullName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="CreatedAt" type="xsd:dateTime" />
+      <xsd:element name="CreatedByEmployeeId" type="xsd:positiveInteger" />
+      <xsd:element name="CreatedBy" type="xsd:string" />
+      <xsd:element name="LastModifiedAt" type="xsd:dateTime" />
+      <xsd:element name="LastModifiedByEmployeeId" type="xsd:positiveInteger" />
+      <xsd:element name="LastModifiedBy" type="xsd:string" />
+      <xsd:element name="IsActive" type="xsd:boolean" />
+      <xsd:element name="Department" type="xsd:string" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required"></xsd:attribute>
+  </xsd:complexType>
+</xsd:schema>

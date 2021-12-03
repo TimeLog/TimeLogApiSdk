@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="debf9ccf-764e-4042-a430-cabaca0292b2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="debf9ccf-764e-4042-a430-cabaca0292b2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app3.timelog.com/local/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="OrganisationServiceSecure.disco" MetadataType="Disco" ID="7d8ba613-71fe-4f20-bc95-38b9272270f5" SourceId="1" SourceUrl="https://app3.timelog.com/local/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc?disco" />
-    <MetadataFile FileName="OrganisationServiceSecure.wsdl" MetadataType="Wsdl" ID="43c235b3-008b-46b8-b8ec-f4963c04225e" SourceId="1" SourceUrl="https://app3.timelog.com/local/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="OrganisationServiceSecure1.disco" MetadataType="Disco" ID="ff1be2b1-4012-43d9-a54d-7d1dfad406ab" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc?disco" />
+    <MetadataFile FileName="OrganisationServiceSecure1.wsdl" MetadataType="Wsdl" ID="530accd9-d928-445b-b4c9-d414be914383" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

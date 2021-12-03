@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://api.timelog.com/services/customfield/1_0" elementFormDefault="qualified" targetNamespace="http://api.timelog.com/services/customfield/1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Invoicing/V1_1/InvoicingServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:complexType name="ArrayOfCustomField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomField" nillable="true" type="tns:CustomField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomField" nillable="true" type="tns:ArrayOfCustomField" />
+  <xs:complexType name="CustomField">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.timelog.com/api/tlp/v1_2" base="q1:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SectionLabel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SectionIdent" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ident" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="DomainType" type="q2:DomainType" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" minOccurs="0" name="DataType" type="q3:DataTypeEnum" />
+          <xs:element minOccurs="0" name="DataValues" nillable="true" type="tns:ArrayOfValueOption" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" minOccurs="0" name="ValidationModel" type="q4:ValidateModelEnum" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CustomField" nillable="true" type="tns:CustomField" />
+  <xs:complexType name="ArrayOfValueOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ValueOption" nillable="true" type="tns:ValueOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfValueOption" nillable="true" type="tns:ArrayOfValueOption" />
+  <xs:complexType name="ValueOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SortOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValueOption" nillable="true" type="tns:ValueOption" />
+</xs:schema>

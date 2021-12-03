@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="EfUfKwySAn6aCVRjmKGl5ORrcVE=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="pYDk3OkH3091bK53/X/A4wYjWSF4iilLFcYe0WMv1zI=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ExpenseService2">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ExpenseService1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ExpenseService2</serializedValue>
+          <serializedValue>BasicHttpBinding_ExpenseService1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ExpenseService2" contract="ExpenseService.ExpenseService" bindingType="basicHttpBinding" address="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc" bindingConfiguration="BasicHttpBinding_ExpenseService2">
+    <endpoint name="BasicHttpBinding_ExpenseService1" contract="ExpenseService.ExpenseService" bindingType="basicHttpBinding" address="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc" bindingConfiguration="BasicHttpBinding_ExpenseService1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc</serializedValue>
+          <serializedValue>https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -124,7 +124,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ExpenseService2</serializedValue>
+          <serializedValue>BasicHttpBinding_ExpenseService1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>ExpenseService.ExpenseService</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ExpenseService2</serializedValue>
+          <serializedValue>BasicHttpBinding_ExpenseService1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

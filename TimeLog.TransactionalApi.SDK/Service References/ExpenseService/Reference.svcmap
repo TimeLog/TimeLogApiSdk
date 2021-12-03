@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc8af7be-8868-4a19-b572-6db254126adb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="dc8af7be-8868-4a19-b572-6db254126adb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,20 +19,22 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ExpensesServiceSecure2.wsdl" MetadataType="Wsdl" ID="efe0ad29-aa2c-4f2a-9628-81c8d57fb064" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl" />
-    <MetadataFile FileName="ExpensesServiceSecure8.xsd" MetadataType="Schema" ID="4dbc8fbd-5977-422e-831d-5d377a532aac" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd7" />
-    <MetadataFile FileName="ExpensesServiceSecure81.xsd" MetadataType="Schema" ID="b400e44e-d8c0-4eed-9923-e8edffa897ee" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd1" />
-    <MetadataFile FileName="ExpensesServiceSecure82.xsd" MetadataType="Schema" ID="d69fa04a-2d62-46e2-8f16-57832f8981e3" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd5" />
-    <MetadataFile FileName="ExpensesServiceSecure1.disco" MetadataType="Disco" ID="5300aa91-f35b-4930-a7b4-6ca244e86dd6" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?disco" />
-    <MetadataFile FileName="ExpensesServiceSecure83.xsd" MetadataType="Schema" ID="e289172d-84f8-465f-beb1-912af343bd8f" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd0" />
-    <MetadataFile FileName="ExpensesServiceSecure84.xsd" MetadataType="Schema" ID="3582cb77-9551-4b0d-9c82-132b3be1cd57" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd6" />
-    <MetadataFile FileName="ExpensesServiceSecure21.wsdl" MetadataType="Wsdl" ID="aef1b69d-81bc-44a8-a98e-b9e8775f40a6" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ExpensesServiceSecure85.xsd" MetadataType="Schema" ID="96d9d0cd-9406-4076-b746-2fd133beb628" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd3" />
-    <MetadataFile FileName="ExpensesServiceSecure86.xsd" MetadataType="Schema" ID="f03023ea-5aef-48ab-a9fc-cf7386bdde74" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd2" />
-    <MetadataFile FileName="ExpensesServiceSecure87.xsd" MetadataType="Schema" ID="fb3cc26b-6094-4c9d-adc4-54add68869f4" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd4" />
+    <MetadataFile FileName="ExpensesServiceSecure.wsdl" MetadataType="Wsdl" ID="662483ab-dee6-4e35-8990-77dbb253c766" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="ExpensesServiceSecure.xsd" MetadataType="Schema" ID="59f02683-41f2-4b40-aef6-49770f72b3ac" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd5" />
+    <MetadataFile FileName="ExpensesServiceSecure1.xsd" MetadataType="Schema" ID="59c34e82-c65b-49f6-9958-bcdd3c5eff06" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd4" />
+    <MetadataFile FileName="ExpensesServiceSecure2.xsd" MetadataType="Schema" ID="bf2df583-e607-4fd9-a57f-c92d82f75ac7" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd7" />
+    <MetadataFile FileName="ExpensesServiceSecure3.xsd" MetadataType="Schema" ID="64477318-a08e-47fd-8d63-d3d84763fefa" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd6" />
+    <MetadataFile FileName="ExpensesServiceSecure4.xsd" MetadataType="Schema" ID="59076bde-a5d9-4f71-a031-8f7e8fbda320" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExpensesServiceSecure5.xsd" MetadataType="Schema" ID="79e735b7-f384-463e-b942-7c90dadf6802" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExpensesServiceSecure6.xsd" MetadataType="Schema" ID="86748378-63a4-4dd7-b82d-ecd30e920462" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd3" />
+    <MetadataFile FileName="ExpensesServiceSecure7.xsd" MetadataType="Schema" ID="fa80c47e-865f-443f-9697-596573d08b23" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExpensesServiceSecure.disco" MetadataType="Disco" ID="e61910cb-af08-42d6-bbbf-84217fb6a28e" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?disco" />
+    <MetadataFile FileName="ExpensesServiceSecure1.wsdl" MetadataType="Wsdl" ID="70a416f1-9c8c-418c-8fa5-8fd2269fb697" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ExpensesServiceSecure8.xsd" MetadataType="Schema" ID="6ee3a90a-d1e4-44b8-a414-440ade643ac5" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd9" />
+    <MetadataFile FileName="ExpensesServiceSecure9.xsd" MetadataType="Schema" ID="7570e716-3522-4d6a-a963-2a7f8cd0b11b" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Expenses/V1_0/ExpensesServiceSecure.svc?xsd=xsd8" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Departments  
+	xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/DepartmentsShortList.xsd" >
+	<tlp:Department ID="5">
+		<tlp:Name>Sales</tlp:Name>
+    <tlp:IsActive>1</tlp:IsActive>
+    <tlp:DepartmentNo>123</tlp:DepartmentNo>
+    <tlp:DepartmentManagerUserID>85</tlp:DepartmentManagerUserID>
+    <tlp:DepartmentManagerInitials>SJE</tlp:DepartmentManagerInitials>
+    <tlp:DepartmentManagerFullName>Steen Jensen</tlp:DepartmentManagerFullName>
+	</tlp:Department>
+	<tlp:Department ID="26">
+		<tlp:Name>Administration</tlp:Name>
+		<tlp:ParentID>5</tlp:ParentID>
+    <tlp:IsActive>1</tlp:IsActive>
+    <tlp:DepartmentNo>222</tlp:DepartmentNo>
+    <tlp:DepartmentManagerUserID>85</tlp:DepartmentManagerUserID>
+    <tlp:DepartmentManagerInitials>SJE</tlp:DepartmentManagerInitials>
+    <tlp:DepartmentManagerFullName>Steen Jensen</tlp:DepartmentManagerFullName>
+	</tlp:Department>
+	<tlp:Department ID="24">
+		<tlp:Name>Marketing</tlp:Name>
+		<tlp:ParentID>5</tlp:ParentID>
+    <tlp:IsActive>1</tlp:IsActive>
+    <tlp:DepartmentNo>221</tlp:DepartmentNo>
+    <tlp:DepartmentManagerUserID>85</tlp:DepartmentManagerUserID>
+    <tlp:DepartmentManagerInitials>SJE</tlp:DepartmentManagerInitials>
+    <tlp:DepartmentManagerFullName>Steen Jensen</tlp:DepartmentManagerFullName>
+	</tlp:Department>
+  <tlp:Department ID="25">
+    <tlp:Name>Research and Development</tlp:Name>
+    <tlp:ParentID>5</tlp:ParentID>
+    <tlp:IsActive>1</tlp:IsActive>
+    <tlp:DepartmentNo>400</tlp:DepartmentNo>
+    <tlp:DepartmentManagerUserID>85</tlp:DepartmentManagerUserID>
+    <tlp:DepartmentManagerInitials>SJE</tlp:DepartmentManagerInitials>
+    <tlp:DepartmentManagerFullName>Steen Jensen</tlp:DepartmentManagerFullName>
+  </tlp:Department>
+</tlp:Departments>

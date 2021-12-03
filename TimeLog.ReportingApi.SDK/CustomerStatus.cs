@@ -1,13 +1,6 @@
-﻿namespace TimeLog.ReportingApi.SDK
+﻿namespace TimeLog.ReportingAPI.SDK;
+
+public class CustomerStatus
 {
-    public class CustomerStatus
-    {
-        public static int All
-        {
-            get
-            {
-                return -1;
-            }
-        }
-    }
+    public static int All => -1;
 }

@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Countries xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/CountriesShortList.xsd">
+    <tlp:Country ID="1">
+      <tlp:Name>Afghanistan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="2">
+      <tlp:Name>Albania</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="3">
+      <tlp:Name>Algeria</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="4">
+      <tlp:Name>Andorra</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="5">
+      <tlp:Name>Angola</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="6">
+      <tlp:Name>Anguilla</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="7">
+      <tlp:Name>Antarctica</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="8">
+      <tlp:Name>Antigua and Barbuda</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="9">
+      <tlp:Name>Argentina</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="10">
+      <tlp:Name>Armenia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="11">
+      <tlp:Name>Aruba</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="12">
+      <tlp:Name>Aserbajdsjan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="13">
+      <tlp:Name>Australia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="235">
+      <tlp:Name>Austria</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="14">
+      <tlp:Name>Bahamas</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="15">
+      <tlp:Name>Bahrain</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="16">
+      <tlp:Name>Baker Island</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="17">
+      <tlp:Name>Bangladesh</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="18">
+      <tlp:Name>Barbados</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="19">
+      <tlp:Name>Belgium</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="20">
+      <tlp:Name>Belize</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="21">
+      <tlp:Name>Benin</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="22">
+      <tlp:Name>Bermuda</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="23">
+      <tlp:Name>Bhutan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="24">
+      <tlp:Name>Bolivia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="25">
+      <tlp:Name>Bosnia Herzegovina</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="26">
+      <tlp:Name>Botswana</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="27">
+      <tlp:Name>Bouvet Island</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="28">
+      <tlp:Name>Brazil</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="31">
+      <tlp:Name>Brunei</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="32">
+      <tlp:Name>Bulgaria</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="33">
+      <tlp:Name>Burkina Faso</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="34">
+      <tlp:Name>Burma (Myanmar)</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="35">
+      <tlp:Name>Burundi</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="36">
+      <tlp:Name>Cambodia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="37">
+      <tlp:Name>Cameroon</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="38">
+      <tlp:Name>Canada</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="39">
+      <tlp:Name>Cape Verde</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="42">
+      <tlp:Name>Chad</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="43">
+      <tlp:Name>Chile</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="110">
+      <tlp:Name>China</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="107">
+      <tlp:Name>Christmas Island</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="45">
+      <tlp:Name>Colombia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="46">
+      <tlp:Name>Comoros</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="47">
+      <tlp:Name>Congo</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="49">
+      <tlp:Name>Costa Rica</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="112">
+      <tlp:Name>Croatia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="50">
+      <tlp:Name>Cuba</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="51">
+      <tlp:Name>Cyprus</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="207">
+      <tlp:Name>Czech</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="52">
+      <tlp:Name>Denmark</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="54">
+      <tlp:Name>Djibouti</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="55">
+      <tlp:Name>Dominica</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="236">
+      <tlp:Name>East Timor</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="57">
+      <tlp:Name>Ecuador</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="58">
+      <tlp:Name>Egypt</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="59">
+      <tlp:Name>El Salvador</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="234">
+      <tlp:Name>Equatorial Guinea</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="61">
+      <tlp:Name>Eritrea</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="62">
+      <tlp:Name>Estonia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="63">
+      <tlp:Name>Ethiopia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="65">
+      <tlp:Name>Fiji</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="67">
+      <tlp:Name>Finland</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="69">
+      <tlp:Name>France</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="72">
+      <tlp:Name>French Guiana</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="70">
+      <tlp:Name>French Polynesia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="74">
+      <tlp:Name>Gabon</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="75">
+      <tlp:Name>Gambia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="76">
+      <tlp:Name>Georgia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="217">
+      <tlp:Name>Germany</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="77">
+      <tlp:Name>Ghana</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="78">
+      <tlp:Name>Gibraltar</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="195">
+      <tlp:Name>Great Britain</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="80">
+      <tlp:Name>Greece</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="81">
+      <tlp:Name>Greenland</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="79">
+      <tlp:Name>Grenada</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="82">
+      <tlp:Name>Guadeloupe</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="83">
+      <tlp:Name>Guam</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="84">
+      <tlp:Name>Guatemala</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="85">
+      <tlp:Name>Guinea</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="86">
+      <tlp:Name>Guinea-Bissau</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="87">
+      <tlp:Name>Guyana</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="88">
+      <tlp:Name>Haiti</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="91">
+      <tlp:Name>Honduras</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="92">
+      <tlp:Name>Hong Kong</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="221">
+      <tlp:Name>Hungary</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="99">
+      <tlp:Name>Iceland</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="94">
+      <tlp:Name>India</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="95">
+      <tlp:Name>Indonesia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="97">
+      <tlp:Name>Iran</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="96">
+      <tlp:Name>Iraq</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="98">
+      <tlp:Name>Ireland</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="100">
+      <tlp:Name>Israel</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="101">
+      <tlp:Name>Italy</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="102">
+      <tlp:Name>Jamaica</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="103">
+      <tlp:Name>Jan Mayen</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="104">
+      <tlp:Name>Japan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="105">
+      <tlp:Name>Jordan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="108">
+      <tlp:Name>Kasakhstan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="109">
+      <tlp:Name>Kenya</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="111">
+      <tlp:Name>Kiribati</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="113">
+      <tlp:Name>Kuwait</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="114">
+      <tlp:Name>Kyrgyzstan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="115">
+      <tlp:Name>Laos</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="117">
+      <tlp:Name>Latvia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="118">
+      <tlp:Name>Lebanon</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="116">
+      <tlp:Name>Lesotho</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="119">
+      <tlp:Name>Liberia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="120">
+      <tlp:Name>Libya</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="121">
+      <tlp:Name>Liechtenstein</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="122">
+      <tlp:Name>Lithuania</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="123">
+      <tlp:Name>Luxembourg</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="124">
+      <tlp:Name>Macau</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="125">
+      <tlp:Name>Madagascar</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="126">
+      <tlp:Name>Malawi</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="127">
+      <tlp:Name>Malaysia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="129">
+      <tlp:Name>Mali</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="130">
+      <tlp:Name>Malta</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="133">
+      <tlp:Name>Martinique</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="135">
+      <tlp:Name>Mauritius</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="136">
+      <tlp:Name>Mayotte</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="137">
+      <tlp:Name>Mexico</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="139">
+      <tlp:Name>Moldavia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="140">
+      <tlp:Name>Monaco</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="141">
+      <tlp:Name>Mongolia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="142">
+      <tlp:Name>Montserrat</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="131">
+      <tlp:Name>Morocco</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="143">
+      <tlp:Name>Mozambique</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="144">
+      <tlp:Name>Namibia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="145">
+      <tlp:Name>Nauru</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="147">
+      <tlp:Name>Nepal</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="90">
+      <tlp:Name>Netherlands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="157">
+      <tlp:Name>New Caledonia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="148">
+      <tlp:Name>New Zealand</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="149">
+      <tlp:Name>Nicaragua</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="150">
+      <tlp:Name>Niger</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="151">
+      <tlp:Name>Nigeria</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="152">
+      <tlp:Name>Niue</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="155">
+      <tlp:Name>Norfolk Island</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="153">
+      <tlp:Name>North Korea</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="156">
+      <tlp:Name>Norway</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="158">
+      <tlp:Name>Oman</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="159">
+      <tlp:Name>Pakistan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="160">
+      <tlp:Name>Palau</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="237">
+      <tlp:Name>Palenstine</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="161">
+      <tlp:Name>Panama</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="162">
+      <tlp:Name>Papua New Guinea</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="163">
+      <tlp:Name>Paraguay</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="164">
+      <tlp:Name>Peru</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="165">
+      <tlp:Name>Pitcairn</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="166">
+      <tlp:Name>Poland</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="167">
+      <tlp:Name>Portugal</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="168">
+      <tlp:Name>Puerto Rico</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="169">
+      <tlp:Name>Qatar</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="170">
+      <tlp:Name>Reunion</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="171">
+      <tlp:Name>Rumania</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="172">
+      <tlp:Name>Russia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="173">
+      <tlp:Name>Rwanda</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="174">
+      <tlp:Name>Saint Helena</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="175">
+      <tlp:Name>Saint Kitts and Nevis</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="176">
+      <tlp:Name>Saint Lucia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="177">
+      <tlp:Name>Saint Pierre and Miquelon</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="178">
+      <tlp:Name>Saint Vincent and the Grenadines</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="180">
+      <tlp:Name>Samoa</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="182">
+      <tlp:Name>San Marino</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="183">
+      <tlp:Name>Sao Tome and Principe</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="184">
+      <tlp:Name>Saudi Arabia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="186">
+      <tlp:Name>Senegal</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="187">
+      <tlp:Name>Seychell</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="188">
+      <tlp:Name>Sierra Leone</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="189">
+      <tlp:Name>Singapore</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="190">
+      <tlp:Name>Slovakia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="191">
+      <tlp:Name>Slovenia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="192">
+      <tlp:Name>Somalia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="200">
+      <tlp:Name>South Africa</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="201">
+      <tlp:Name>South Korea</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="193">
+      <tlp:Name>Spain</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="194">
+      <tlp:Name>Sri Lanka</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="196">
+      <tlp:Name>Sudan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="197">
+      <tlp:Name>Surinam</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="199">
+      <tlp:Name>Swaziland</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="198">
+      <tlp:Name>Sweden</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="185">
+      <tlp:Name>Switzerland</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="202">
+      <tlp:Name>Syria</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="203">
+      <tlp:Name>Tadsjikistan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="204">
+      <tlp:Name>Taiwan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="205">
+      <tlp:Name>Tanzania</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="206">
+      <tlp:Name>Thailand</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="53">
+      <tlp:Name>the American Virgin Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="29">
+      <tlp:Name>the British Virgin Isles</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="40">
+      <tlp:Name>the Cayman Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="44">
+      <tlp:Name>the Coco Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="48">
+      <tlp:Name>the Cook Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="146">
+      <tlp:Name>The Dutch Antilles</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="64">
+      <tlp:Name>the Falkland Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="73">
+      <tlp:Name>the Faroe Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="138">
+      <tlp:Name>the Federated States of Micronesia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="89">
+      <tlp:Name>the Heard-and McDonalds Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="60">
+      <tlp:Name>the Ivory Coast</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="128">
+      <tlp:Name>the Maldives</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="132">
+      <tlp:Name>the Marshall Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="154">
+      <tlp:Name>the Northern Marianas</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="66">
+      <tlp:Name>the Philippines</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="56">
+      <tlp:Name>the Republic of Dominican</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="179">
+      <tlp:Name>the Salomon Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="229">
+      <tlp:Name>the Wallis and Futuna Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="208">
+      <tlp:Name>Togo</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="209">
+      <tlp:Name>Tokelau</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="210">
+      <tlp:Name>Tonga</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="211">
+      <tlp:Name>Trinidad and Tobago</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="212">
+      <tlp:Name>Tunisia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="216">
+      <tlp:Name>Turkey</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="213">
+      <tlp:Name>Turkmenistan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="214">
+      <tlp:Name>Turks- and Caicos Islands</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="215">
+      <tlp:Name>Tuvalu</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="219">
+      <tlp:Name>Uganda</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="220">
+      <tlp:Name>Ukraine</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="68">
+      <tlp:Name>United Arab Emirates</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="222">
+      <tlp:Name>Uruguay</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="218">
+      <tlp:Name>USA</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="223">
+      <tlp:Name>Usbekistan</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="224">
+      <tlp:Name>Vanuatu</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="225">
+      <tlp:Name>Vatican State</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="226">
+      <tlp:Name>Venezuela</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="228">
+      <tlp:Name>Vietnam</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="227">
+      <tlp:Name>West Sahara</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="93">
+      <tlp:Name>White Russia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="230">
+      <tlp:Name>Yemen</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="106">
+      <tlp:Name>Yugoslavia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="231">
+      <tlp:Name>Zaire</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="232">
+      <tlp:Name>Zambia</tlp:Name>
+    </tlp:Country>
+    <tlp:Country ID="233">
+      <tlp:Name>Zimbabwe</tlp:Name>
+    </tlp:Country>
+  </tlp:Countries>

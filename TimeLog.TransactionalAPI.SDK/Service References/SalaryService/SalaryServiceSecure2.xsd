@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Salary/V1_1/SalaryServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="SalaryCodeSystemTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NormalWorkingTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProjectTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SalaryCodeSystemTypes" nillable="true" type="tns:SalaryCodeSystemTypes" />
+  <xs:simpleType name="SalaryAccountFactorEffectTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Substract">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Add" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SalaryAccountFactorEffectTypes" nillable="true" type="tns:SalaryAccountFactorEffectTypes" />
+  <xs:simpleType name="TimeTrackingFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hours" />
+      <xs:enumeration value="FullDay" />
+      <xs:enumeration value="HalfDay" />
+      <xs:enumeration value="YesNo" />
+      <xs:enumeration value="Count" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TimeTrackingFormat" nillable="true" type="tns:TimeTrackingFormat" />
+  <xs:simpleType name="SalarySpecificationTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SalaryTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Supplement">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PaidOut">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SalarySpecificationTypes" nillable="true" type="tns:SalarySpecificationTypes" />
+</xs:schema>

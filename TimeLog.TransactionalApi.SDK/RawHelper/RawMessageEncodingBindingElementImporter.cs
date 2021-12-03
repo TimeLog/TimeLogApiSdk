@@ -1,17 +1,17 @@
-﻿namespace TimeLog.TransactionalApi.SDK.RawHelper
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ServiceModel.Description;
-    using System.Xml;
+﻿using System;
+using System.Collections.Generic;
+using System.ServiceModel.Description;
+using System.Xml;
 
+namespace TimeLog.TransactionalAPI.SDK.RawHelper
+{
     /// <summary>
-    /// The raw message encoding binding element importer.
+    ///     The raw message encoding binding element importer.
     /// </summary>
     public class RawMessageEncodingBindingElementImporter : IPolicyImportExtension
     {
         /// <summary>
-        /// The import policy.
+        ///     The import policy.
         /// </summary>
         /// <param name="importer">The importer.</param>
         /// <param name="context">The context.</param>
@@ -19,18 +19,19 @@
         {
             if (importer == null)
             {
-                throw new ArgumentNullException("importer");
+                throw new ArgumentNullException(nameof(importer));
             }
 
             if (context == null)
             {
-                throw new ArgumentNullException("context");
+                throw new ArgumentNullException(nameof(context));
             }
 
             ICollection<XmlElement> assertions = context.GetBindingAssertions();
-            foreach (XmlElement assertion in assertions)
+            foreach (var assertion in assertions)
             {
-                if ((assertion.NamespaceURI == RawMessageEncodingPolicyConstants.RawEncodingNamespace) && (assertion.LocalName == RawMessageEncodingPolicyConstants.RawEncodingName))
+                if (assertion.NamespaceURI == RawMessageEncodingPolicyConstants.RawEncodingNamespace &&
+                    assertion.LocalName == RawMessageEncodingPolicyConstants.RawEncodingName)
                 {
                     assertions.Remove(assertion);
                     context.BindingElements.Add(new RawMessageEncodingBindingElement());

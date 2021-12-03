@@ -1,43 +1,36 @@
-﻿namespace TimeLog.TransactionalApi.SDK
+﻿using System;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using TimeLog.TransactionalAPI.SDK.RawHelper;
+using TimeLog.TransactionalAPI.SDK.SalaryService;
+
+namespace TimeLog.TransactionalAPI.SDK
 {
-    using System;
-    using System.ServiceModel;
-    using System.ServiceModel.Channels;
-
-    using SalaryService;
-    using RawHelper;
-
     /// <summary>
-    /// Handler of functionality related to the salary service
+    ///     Handler of functionality related to the salary service
     /// </summary>
     public class SalaryHandler : IDisposable
     {
         private static SalaryHandler _instance;
-        private SalaryServiceClient _salaryClient;
 
-        private bool _collectRawRequestResponse;
+        private bool collectRawRequestResponse;
+        private SalaryServiceClient salaryClient;
 
         /// <summary>
-        /// Prevents a default instance of the <see cref="SalaryHandler"/> class from being created.
+        ///     Prevents a default instance of the <see cref="SalaryHandler" /> class from being created.
         /// </summary>
         private SalaryHandler()
         {
-            this._collectRawRequestResponse = false;
+            collectRawRequestResponse = false;
         }
 
         /// <summary>
-        /// Gets the singleton instance of the <see cref="SalaryHandler"/>.
+        ///     Gets the singleton instance of the <see cref="SalaryHandler" />.
         /// </summary>
-        public static SalaryHandler Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new SalaryHandler());
-            }
-        }
+        public static SalaryHandler Instance => _instance ?? (_instance = new SalaryHandler());
 
         /// <summary>
-        /// Gets the uri associated with the salary service.
+        ///     Gets the uri associated with the salary service.
         /// </summary>
         public string SalaryServiceUrl
         {
@@ -53,57 +46,49 @@
         }
 
         /// <summary>
-        /// Gets the salary token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+        ///     Gets the salary token for use in other methods. Makes use of SecurityHandler.Instance.Token.
         /// </summary>
-        public SecurityToken Token
-        {
-            get
+        public SecurityToken Token =>
+            new SecurityToken
             {
-                return new SecurityToken
-                       {
-                           Expires = SecurityHandler.Instance.Token.Expires,
-                           Hash = SecurityHandler.Instance.Token.Hash,
-                           Initials = SecurityHandler.Instance.Token.Initials
-                       };
-            }
-        }
+                Expires = SecurityHandler.Instance.Token.Expires,
+                Hash = SecurityHandler.Instance.Token.Hash,
+                Initials = SecurityHandler.Instance.Token.Initials
+            };
 
         /// <summary>
-        /// Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+        ///     Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
         /// </summary>
         public bool CollectRawRequestResponse
         {
-            get
-            {
-                return this._collectRawRequestResponse;
-            }
+            get => collectRawRequestResponse;
 
             set
             {
-                this._collectRawRequestResponse = value;
-                this._salaryClient = null;
+                collectRawRequestResponse = value;
+                salaryClient = null;
             }
         }
 
         /// <summary>
-        /// Gets the active salary client
+        ///     Gets the active salary client
         /// </summary>
         public SalaryServiceClient SalaryClient
         {
             get
             {
-                if (this._salaryClient == null)
+                if (salaryClient == null)
                 {
                     var endpoint = new EndpointAddress(SalaryServiceUrl);
-                    if (this.CollectRawRequestResponse)
+                    if (CollectRawRequestResponse)
                     {
                         var binding = new CustomBinding();
-                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        var encoding = new RawMessageEncodingBindingElement {MessageVersion = MessageVersion.Soap11};
                         binding.Elements.Add(encoding);
-                        binding.Elements.Add(this.SalaryServiceUrl.Contains("https")
+                        binding.Elements.Add(SalaryServiceUrl.Contains("https")
                             ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                             : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                        this._salaryClient = new SalaryServiceClient(binding, endpoint);
+                        salaryClient = new SalaryServiceClient(binding, endpoint);
                     }
                     else
                     {
@@ -112,24 +97,24 @@
                             MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize
                         };
 
-                        if (this.SalaryServiceUrl.Contains("https"))
+                        if (SalaryServiceUrl.Contains("https"))
                         {
                             binding.Security.Mode = BasicHttpSecurityMode.Transport;
                         }
 
-                        this._salaryClient = new SalaryServiceClient(binding, endpoint);
+                        salaryClient = new SalaryServiceClient(binding, endpoint);
                     }
 
-                    this._salaryClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                    salaryClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
                 }
 
-                return this._salaryClient;
+                return salaryClient;
             }
         }
 
         void IDisposable.Dispose()
         {
-            this._salaryClient = null;
+            salaryClient = null;
             _instance = null;
         }
     }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeLog.TransactionalApi.SDK.ExpenseService {
+namespace TimeLog.TransactionalAPI.SDK.ExpenseService {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,14 +17,14 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.ExpenseService.Expense))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.ExpenseService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfPaymentMethod))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.ExpenseService.PaymentMethod))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpenseType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ExpenseService.Expense))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ExpenseService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfPaymentMethod))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ExpenseService.PaymentMethod))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpenseType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken))]
     public partial class APIBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -54,22 +54,22 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfExpense", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfExpense : TimeLog.TransactionalApi.SDK.ExpenseService.APIBase {
+    public partial class ResponseOfExpense : TimeLog.TransactionalAPI.SDK.ExpenseService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.Expense[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.Expense[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -81,7 +81,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.Expense[] Return {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.Expense[] Return {
             get {
                 return this.ReturnField;
             }
@@ -107,7 +107,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -120,7 +120,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -133,7 +133,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -189,7 +189,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Expense", Namespace="http://api.timelog.com/services/expense/1_0")]
     [System.SerializableAttribute()]
-    public partial class Expense : TimeLog.TransactionalApi.SDK.ExpenseService.APIBase {
+    public partial class Expense : TimeLog.TransactionalAPI.SDK.ExpenseService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -244,6 +244,12 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmployeeNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseCategories CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Uri[] ImageUrlListField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid ID {
@@ -478,16 +484,42 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseCategories Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((this.CategoryField.Equals(value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public System.Uri[] ImageUrlList {
+            get {
+                return this.ImageUrlListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageUrlListField, value) != true)) {
+                    this.ImageUrlListField = value;
+                    this.RaisePropertyChanged("ImageUrlList");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class Request : TimeLog.TransactionalApi.SDK.ExpenseService.APIBase {
+    public partial class Request : TimeLog.TransactionalAPI.SDK.ExpenseService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.RequestParameter[] ParametersField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.RequestParameter[] ParametersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ServiceClassField;
@@ -496,7 +528,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         private string MethodNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.RequestParameter[] Parameters {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.RequestParameter[] Parameters {
             get {
                 return this.ParametersField;
             }
@@ -539,22 +571,22 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfPaymentMethod", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfPaymentMethod : TimeLog.TransactionalApi.SDK.ExpenseService.APIBase {
+    public partial class ResponseOfPaymentMethod : TimeLog.TransactionalAPI.SDK.ExpenseService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.PaymentMethod[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.PaymentMethod[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -566,7 +598,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.PaymentMethod[] Return {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.PaymentMethod[] Return {
             get {
                 return this.ReturnField;
             }
@@ -592,7 +624,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -605,7 +637,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -618,7 +650,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -674,7 +706,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PaymentMethod", Namespace="http://api.timelog.com/services/expense/1_0")]
     [System.SerializableAttribute()]
-    public partial class PaymentMethod : TimeLog.TransactionalApi.SDK.ExpenseService.APIBase {
+    public partial class PaymentMethod : TimeLog.TransactionalAPI.SDK.ExpenseService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -729,22 +761,22 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfExpenseType", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfExpenseType : TimeLog.TransactionalApi.SDK.ExpenseService.APIBase {
+    public partial class ResponseOfExpenseType : TimeLog.TransactionalAPI.SDK.ExpenseService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseType[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseType[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -756,7 +788,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseType[] Return {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseType[] Return {
             get {
                 return this.ReturnField;
             }
@@ -782,7 +814,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -795,7 +827,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -808,7 +840,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -864,7 +896,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ExpenseType", Namespace="http://api.timelog.com/services/expense/1_0")]
     [System.SerializableAttribute()]
-    public partial class ExpenseType : TimeLog.TransactionalApi.SDK.ExpenseService.APIBase {
+    public partial class ExpenseType : TimeLog.TransactionalAPI.SDK.ExpenseService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -935,7 +967,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SecurityToken", Namespace="http://www.timelog.com/api/tlp/v1_3")]
     [System.SerializableAttribute()]
-    public partial class SecurityToken : TimeLog.TransactionalApi.SDK.ExpenseService.APIBase {
+    public partial class SecurityToken : TimeLog.TransactionalAPI.SDK.ExpenseService.APIBase {
         
         private string InitialsField;
         
@@ -1013,7 +1045,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.ExpenseService.APIMessageSeverity SeverityField;
+        private TimeLog.TransactionalAPI.SDK.ExpenseService.APIMessageSeverity SeverityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -1042,7 +1074,7 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.ExpenseService.APIMessageSeverity Severity {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.APIMessageSeverity Severity {
             get {
                 return this.SeverityField;
             }
@@ -1075,6 +1107,17 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExpenseCategories", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Expenses")]
+    public enum ExpenseCategories : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Employee = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Project = 1,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1158,40 +1201,40 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_0)
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
-        TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveResponse IsAlive(TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveRequest request);
+        TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveResponse IsAlive(TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveRequest request);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetExpensesByEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetExpensesByEmployeeResponse")]
-        TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense GetExpensesByEmployee(string initials, System.DateTime from, System.DateTime to, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense GetExpensesByEmployee(string initials, System.DateTime from, System.DateTime to, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetExpensesByEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetExpensesByEmployeeResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense> GetExpensesByEmployeeAsync(string initials, System.DateTime from, System.DateTime to, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense> GetExpensesByEmployeeAsync(string initials, System.DateTime from, System.DateTime to, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/InsertExpense", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/InsertExpenseResponse")]
-        TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense InsertExpense(TimeLog.TransactionalApi.SDK.ExpenseService.Expense expense, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense InsertExpense(TimeLog.TransactionalAPI.SDK.ExpenseService.Expense expense, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/InsertExpense", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/InsertExpenseResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense> InsertExpenseAsync(TimeLog.TransactionalApi.SDK.ExpenseService.Expense expense, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense> InsertExpenseAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.Expense expense, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/UpdateExpense", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/UpdateExpenseResponse")]
-        TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense UpdateExpense(TimeLog.TransactionalApi.SDK.ExpenseService.Expense expense, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense UpdateExpense(TimeLog.TransactionalAPI.SDK.ExpenseService.Expense expense, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/UpdateExpense", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/UpdateExpenseResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense> UpdateExpenseAsync(TimeLog.TransactionalApi.SDK.ExpenseService.Expense expense, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense> UpdateExpenseAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.Expense expense, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetPaymentMethods", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetPaymentMethodsResponse")]
-        TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfPaymentMethod GetPaymentMethods(TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfPaymentMethod GetPaymentMethods(TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetPaymentMethods", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetPaymentMethodsResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfPaymentMethod> GetPaymentMethodsAsync(TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfPaymentMethod> GetPaymentMethodsAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetExpenseTypes", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetExpenseTypesResponse")]
-        TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpenseType GetExpenseTypes(TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpenseType GetExpenseTypes(TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetExpenseTypes", ReplyAction="http://www.timelog.com/api/tlp/v1_0/ExpenseService/GetExpenseTypesResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpenseType> GetExpenseTypesAsync(TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpenseType> GetExpenseTypesAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1222,12 +1265,12 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ExpenseServiceChannel : TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseService, System.ServiceModel.IClientChannel {
+    public interface ExpenseServiceChannel : TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ExpenseServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseService>, TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseService {
+    public partial class ExpenseServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseService>, TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseService {
         
         public ExpenseServiceClient() {
         }
@@ -1249,63 +1292,63 @@ namespace TimeLog.TransactionalApi.SDK.ExpenseService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveResponse TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseService.IsAlive(TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveRequest request) {
+        TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveResponse TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseService.IsAlive(TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveRequest request) {
             return base.Channel.IsAlive(request);
         }
         
         public bool IsAlive() {
-            TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveRequest inValue = new TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveRequest();
-            TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveResponse retVal = ((TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseService)(this)).IsAlive(inValue);
+            TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveRequest inValue = new TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveRequest();
+            TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveResponse retVal = ((TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseService)(this)).IsAlive(inValue);
             return retVal.IsAliveResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveResponse> TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseService.IsAliveAsync(TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveRequest request) {
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveResponse> TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseService.IsAliveAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveRequest request) {
             return base.Channel.IsAliveAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveResponse> IsAliveAsync() {
-            TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveRequest inValue = new TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveRequest();
-            return ((TimeLog.TransactionalApi.SDK.ExpenseService.ExpenseService)(this)).IsAliveAsync(inValue);
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveResponse> IsAliveAsync() {
+            TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveRequest inValue = new TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveRequest();
+            return ((TimeLog.TransactionalAPI.SDK.ExpenseService.ExpenseService)(this)).IsAliveAsync(inValue);
         }
         
-        public TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense GetExpensesByEmployee(string initials, System.DateTime from, System.DateTime to, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense GetExpensesByEmployee(string initials, System.DateTime from, System.DateTime to, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.GetExpensesByEmployee(initials, from, to, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense> GetExpensesByEmployeeAsync(string initials, System.DateTime from, System.DateTime to, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense> GetExpensesByEmployeeAsync(string initials, System.DateTime from, System.DateTime to, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.GetExpensesByEmployeeAsync(initials, from, to, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense InsertExpense(TimeLog.TransactionalApi.SDK.ExpenseService.Expense expense, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense InsertExpense(TimeLog.TransactionalAPI.SDK.ExpenseService.Expense expense, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.InsertExpense(expense, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense> InsertExpenseAsync(TimeLog.TransactionalApi.SDK.ExpenseService.Expense expense, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense> InsertExpenseAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.Expense expense, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.InsertExpenseAsync(expense, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense UpdateExpense(TimeLog.TransactionalApi.SDK.ExpenseService.Expense expense, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense UpdateExpense(TimeLog.TransactionalAPI.SDK.ExpenseService.Expense expense, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.UpdateExpense(expense, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense> UpdateExpenseAsync(TimeLog.TransactionalApi.SDK.ExpenseService.Expense expense, TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense> UpdateExpenseAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.Expense expense, TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.UpdateExpenseAsync(expense, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfPaymentMethod GetPaymentMethods(TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfPaymentMethod GetPaymentMethods(TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.GetPaymentMethods(token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfPaymentMethod> GetPaymentMethodsAsync(TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfPaymentMethod> GetPaymentMethodsAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.GetPaymentMethodsAsync(token);
         }
         
-        public TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpenseType GetExpenseTypes(TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpenseType GetExpenseTypes(TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.GetExpenseTypes(token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpenseType> GetExpenseTypesAsync(TimeLog.TransactionalApi.SDK.ExpenseService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpenseType> GetExpenseTypesAsync(TimeLog.TransactionalAPI.SDK.ExpenseService.SecurityToken token) {
             return base.Channel.GetExpenseTypesAsync(token);
         }
     }

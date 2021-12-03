@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7f1adb4f-5c77-4137-a3fc-050f6005549e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="7f1adb4f-5c77-4137-a3fc-050f6005549e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app4.timelog.com/610patchreference/WebServices/Security/V1_2/SecurityServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app8.timelog.com/610patchreference/WebServices/Security/V1_2/SecurityServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SecurityServiceSecure1.disco" MetadataType="Disco" ID="b7615c29-6a85-480b-9059-7dbcbb48c0d1" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Security/V1_2/SecurityServiceSecure.svc?disco" />
-    <MetadataFile FileName="SecurityServiceSecure1.wsdl" MetadataType="Wsdl" ID="3d20a9cc-ca08-451c-8174-fc8078f89b76" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/Security/V1_2/SecurityServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="SecurityServiceSecure.wsdl" MetadataType="Wsdl" ID="2b14b173-002e-46e9-acd8-8b8e1df1ea94" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Security/V1_2/SecurityServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="SecurityServiceSecure.disco" MetadataType="Disco" ID="fc17a9e6-6cea-428c-ad32-38bde086a658" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/Security/V1_2/SecurityServiceSecure.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+	<xsd:element name="Milestones" >
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Milestone" type="tlp:MilestonesRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+		<xsd:key name="Milestone_Key">
+			<xsd:selector xpath=".//tlp:Milestone" />
+			<xsd:field xpath="@ID" />
+		</xsd:key>
+	</xsd:element>
+
+	<xsd:complexType name="MilestonesRaw_Type">
+		<xsd:sequence>
+			<xsd:element name="MilestoneTypeID" type="xsd:string" />
+			<xsd:element name="ProjectID" type="xsd:string" />
+			<xsd:element name="ProjectName" type="xsd:string" />
+      <xsd:element name="Date" type="xsd:dateTime" />
+      <xsd:element name="ResponsibleEmployeeID" type="xsd:string" />
+      <xsd:element name="ResponsibleEmployeeName" type="xsd:string" />
+      <xsd:element name="Text" type="xsd:string" />
+      <xsd:element name="Completed" type="xsd:string" />
+      <xsd:element name="WBSNo" type="xsd:dateTime" />
+      <xsd:element name="SortOrder" type="xsd:dateTime" />
+     </xsd:sequence>
+		<xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+	</xsd:complexType>
+
+</xsd:schema>

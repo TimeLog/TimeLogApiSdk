@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="154efd6e-b49f-4b38-89ad-91de1550992f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="154efd6e-b49f-4b38-89ad-91de1550992f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app4.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app8.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HelpDeskServiceSecure1.disco" MetadataType="Disco" ID="d2bf45d1-5eee-4052-9f70-38454c115aa3" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?disco" />
-    <MetadataFile FileName="HelpDeskServiceSecure2.wsdl" MetadataType="Wsdl" ID="c2ccd280-768f-4757-a5c8-531aeb02eb39" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?wsdl" />
-    <MetadataFile FileName="HelpDeskServiceSecure21.wsdl" MetadataType="Wsdl" ID="51e4dbda-e9b8-4a44-835c-2c729789ecb4" SourceId="1" SourceUrl="https://app4.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="HelpDeskServiceSecure.wsdl" MetadataType="Wsdl" ID="726d8a55-245d-40c4-9cda-283f83c539bc" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="HelpDeskServiceSecure1.wsdl" MetadataType="Wsdl" ID="47a26eb3-58ef-4bd4-bc57-8d2b91a34776" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="HelpDeskServiceSecure.disco" MetadataType="Disco" ID="874ebd37-e04c-40c1-aa38-0c3baa968008" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

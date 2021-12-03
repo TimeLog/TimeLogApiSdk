@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:HourlyRates xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/HourlyRatesRaw.xsd">
+	<tlp:HourlyRate ID="384" GUID="E261EF9F-1532-E611-80E1-005056B220E2">
+		<tlp:Name>Secretary</tlp:Name>
+		<tlp:Amount>80.0000</tlp:Amount>
+		<tlp:CurrencyISO>EUR</tlp:CurrencyISO>
+		<tlp:IsActive>1</tlp:IsActive>
+		<tlp:PriceGroupID>1</tlp:PriceGroupID>
+		<tlp:PriceGroupName>Denmark</tlp:PriceGroupName>
+	</tlp:HourlyRate>
+	<tlp:HourlyRate ID="385" GUID="E361EF9F-1532-E611-80E1-005056B220E2">
+		<tlp:Name>Consultant</tlp:Name>
+		<tlp:Amount>150.0000</tlp:Amount>
+		<tlp:CurrencyISO>EUR</tlp:CurrencyISO>
+		<tlp:IsActive>1</tlp:IsActive>
+		<tlp:PriceGroupID>1</tlp:PriceGroupID>
+		<tlp:PriceGroupName>Denmark</tlp:PriceGroupName>
+	</tlp:HourlyRate>
+	<tlp:HourlyRate ID="391" GUID="FBBF9B30-7697-413B-A1F1-A56285BEE1C8">
+		<tlp:Name>TimeLog Internal</tlp:Name>
+		<tlp:Amount>0.0000</tlp:Amount>
+		<tlp:CurrencyISO>USD</tlp:CurrencyISO>
+		<tlp:IsActive>1</tlp:IsActive>
+		<tlp:PriceGroupID>3</tlp:PriceGroupID>
+		<tlp:PriceGroupName>USD</tlp:PriceGroupName>
+	</tlp:HourlyRate>
+	<tlp:HourlyRate ID="397" GUID="0A8DB770-7547-4C92-8F74-A99700E40E32">
+		<tlp:Name>customer</tlp:Name>
+		<tlp:Amount>0.0000</tlp:Amount>
+		<tlp:CurrencyISO>USD</tlp:CurrencyISO>
+		<tlp:IsActive>1</tlp:IsActive>
+		<tlp:PriceGroupID>5</tlp:PriceGroupID>
+		<tlp:PriceGroupName>USD</tlp:PriceGroupName>
+		<tlp:CustomerID>672</tlp:CustomerID>
+		<tlp:CustomerName>Inscale</tlp:CustomerName>
+	</tlp:HourlyRate>
+</tlp:HourlyRates>

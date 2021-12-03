@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeLog.TransactionalApi.SDK.SecurityService {
+namespace TimeLog.TransactionalAPI.SDK.SecurityService {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,13 +17,13 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SecurityService.TimeRegistrationSettings))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SecurityService.User))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SecurityService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfTimeRegistrationSettings))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfUser))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfSecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.SecurityService.TimeRegistrationSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.SecurityService.User))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.SecurityService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfTimeRegistrationSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfUser))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfSecurityToken))]
     public partial class APIBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -53,7 +53,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SecurityToken", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.SerializableAttribute()]
-    public partial class SecurityToken : TimeLog.TransactionalApi.SDK.SecurityService.APIBase {
+    public partial class SecurityToken : TimeLog.TransactionalAPI.SDK.SecurityService.APIBase {
         
         private string InitialsField;
         
@@ -105,7 +105,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TimeRegistrationSettings", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.SerializableAttribute()]
-    public partial class TimeRegistrationSettings : TimeLog.TransactionalApi.SDK.SecurityService.APIBase {
+    public partial class TimeRegistrationSettings : TimeLog.TransactionalAPI.SDK.SecurityService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool UseCaseSensetiveLoginField;
@@ -166,6 +166,15 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool LimitTrackerSearchToProjectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MaxReceivedMessageSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TrackerRequiredSpaceBeforeIncreaseStorageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TrackerIncreaseStorageQuotaField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool UseCaseSensetiveLogin {
@@ -426,13 +435,52 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public int MaxReceivedMessageSize {
+            get {
+                return this.MaxReceivedMessageSizeField;
+            }
+            set {
+                if ((this.MaxReceivedMessageSizeField.Equals(value) != true)) {
+                    this.MaxReceivedMessageSizeField = value;
+                    this.RaisePropertyChanged("MaxReceivedMessageSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+        public int TrackerRequiredSpaceBeforeIncreaseStorage {
+            get {
+                return this.TrackerRequiredSpaceBeforeIncreaseStorageField;
+            }
+            set {
+                if ((this.TrackerRequiredSpaceBeforeIncreaseStorageField.Equals(value) != true)) {
+                    this.TrackerRequiredSpaceBeforeIncreaseStorageField = value;
+                    this.RaisePropertyChanged("TrackerRequiredSpaceBeforeIncreaseStorage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+        public int TrackerIncreaseStorageQuota {
+            get {
+                return this.TrackerIncreaseStorageQuotaField;
+            }
+            set {
+                if ((this.TrackerIncreaseStorageQuotaField.Equals(value) != true)) {
+                    this.TrackerIncreaseStorageQuotaField = value;
+                    this.RaisePropertyChanged("TrackerIncreaseStorageQuota");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.SerializableAttribute()]
-    public partial class User : TimeLog.TransactionalApi.SDK.SecurityService.APIBase {
+    public partial class User : TimeLog.TransactionalAPI.SDK.SecurityService.APIBase {
         
         private int IDField;
         
@@ -444,7 +492,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         
         private int LanguageIDField;
         
-        private TimeLog.TransactionalApi.SDK.SecurityService.RoleTypes[] RolesField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.RoleTypes[] RolesField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public int ID {
@@ -512,7 +560,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.RoleTypes[] Roles {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.RoleTypes[] Roles {
             get {
                 return this.RolesField;
             }
@@ -529,10 +577,10 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://www.timelog.com/api/tlp/v1_1")]
     [System.SerializableAttribute()]
-    public partial class Request : TimeLog.TransactionalApi.SDK.SecurityService.APIBase {
+    public partial class Request : TimeLog.TransactionalAPI.SDK.SecurityService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.RequestParameter[] ParametersField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.RequestParameter[] ParametersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ServiceClassField;
@@ -541,7 +589,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         private string MethodNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.SecurityService.RequestParameter[] Parameters {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.RequestParameter[] Parameters {
             get {
                 return this.ParametersField;
             }
@@ -584,28 +632,28 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfTimeRegistrationSettings", Namespace="http://www.timelog.com/api/tlp/v1_1")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfTimeRegistrationSettings : TimeLog.TransactionalApi.SDK.SecurityService.APIBase {
+    public partial class ResponseOfTimeRegistrationSettings : TimeLog.TransactionalAPI.SDK.SecurityService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.TimeRegistrationSettings[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.TimeRegistrationSettings[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.SecurityService.TimeRegistrationSettings[] Return {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.TimeRegistrationSettings[] Return {
             get {
                 return this.ReturnField;
             }
@@ -631,7 +679,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -644,7 +692,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -657,7 +705,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -687,28 +735,28 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfUser", Namespace="http://www.timelog.com/api/tlp/v1_1")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfUser : TimeLog.TransactionalApi.SDK.SecurityService.APIBase {
+    public partial class ResponseOfUser : TimeLog.TransactionalAPI.SDK.SecurityService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.User[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.User[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.SecurityService.User[] Return {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.User[] Return {
             get {
                 return this.ReturnField;
             }
@@ -734,7 +782,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -747,7 +795,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -760,7 +808,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -790,28 +838,28 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfSecurityToken", Namespace="http://www.timelog.com/api/tlp/v1_1")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfSecurityToken : TimeLog.TransactionalApi.SDK.SecurityService.APIBase {
+    public partial class ResponseOfSecurityToken : TimeLog.TransactionalAPI.SDK.SecurityService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken[] Return {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken[] Return {
             get {
                 return this.ReturnField;
             }
@@ -837,7 +885,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -850,7 +898,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -863,7 +911,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.SecurityService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -919,7 +967,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.SecurityService.APIMessageSeverity SeverityField;
+        private TimeLog.TransactionalAPI.SDK.SecurityService.APIMessageSeverity SeverityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -948,7 +996,7 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.SecurityService.APIMessageSeverity Severity {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.APIMessageSeverity Severity {
             get {
                 return this.SeverityField;
             }
@@ -1140,31 +1188,31 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
         System.Threading.Tasks.Task<bool> IsAliveAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTokenRequest", ReplyAction="GetTokenReponse")]
-        TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfSecurityToken GetToken(string user, string password);
+        TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfSecurityToken GetToken(string user, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTokenRequest", ReplyAction="GetTokenReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfSecurityToken> GetTokenAsync(string user, string password);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfSecurityToken> GetTokenAsync(string user, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTimeRegistrationSettingsRequest", ReplyAction="GetTimeRegistrationSettingsReponse")]
-        TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfTimeRegistrationSettings GetTimeRegistrationSettings(TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfTimeRegistrationSettings GetTimeRegistrationSettings(TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTimeRegistrationSettingsRequest", ReplyAction="GetTimeRegistrationSettingsReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfTimeRegistrationSettings> GetTimeRegistrationSettingsAsync(TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfTimeRegistrationSettings> GetTimeRegistrationSettingsAsync(TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetUserRequest", ReplyAction="GetUserReponse")]
-        TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfUser GetUser(TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfUser GetUser(TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetUserRequest", ReplyAction="GetUserReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfUser> GetUserAsync(TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfUser> GetUserAsync(TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken token);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface SecurityServiceChannel : TimeLog.TransactionalApi.SDK.SecurityService.SecurityService, System.ServiceModel.IClientChannel {
+    public interface SecurityServiceChannel : TimeLog.TransactionalAPI.SDK.SecurityService.SecurityService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SecurityServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalApi.SDK.SecurityService.SecurityService>, TimeLog.TransactionalApi.SDK.SecurityService.SecurityService {
+    public partial class SecurityServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalAPI.SDK.SecurityService.SecurityService>, TimeLog.TransactionalAPI.SDK.SecurityService.SecurityService {
         
         public SecurityServiceClient() {
         }
@@ -1193,27 +1241,27 @@ namespace TimeLog.TransactionalApi.SDK.SecurityService {
             return base.Channel.IsAliveAsync();
         }
         
-        public TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfSecurityToken GetToken(string user, string password) {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfSecurityToken GetToken(string user, string password) {
             return base.Channel.GetToken(user, password);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfSecurityToken> GetTokenAsync(string user, string password) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfSecurityToken> GetTokenAsync(string user, string password) {
             return base.Channel.GetTokenAsync(user, password);
         }
         
-        public TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfTimeRegistrationSettings GetTimeRegistrationSettings(TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfTimeRegistrationSettings GetTimeRegistrationSettings(TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken token) {
             return base.Channel.GetTimeRegistrationSettings(token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfTimeRegistrationSettings> GetTimeRegistrationSettingsAsync(TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfTimeRegistrationSettings> GetTimeRegistrationSettingsAsync(TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken token) {
             return base.Channel.GetTimeRegistrationSettingsAsync(token);
         }
         
-        public TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfUser GetUser(TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfUser GetUser(TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken token) {
             return base.Channel.GetUser(token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfUser> GetUserAsync(TimeLog.TransactionalApi.SDK.SecurityService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfUser> GetUserAsync(TimeLog.TransactionalAPI.SDK.SecurityService.SecurityToken token) {
             return base.Channel.GetUserAsync(token);
         }
     }

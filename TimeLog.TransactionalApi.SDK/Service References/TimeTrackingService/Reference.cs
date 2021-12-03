@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
+namespace TimeLog.TransactionalAPI.SDK.TimeTrackingService {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,22 +17,22 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TaskHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ProjectHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomerHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomField))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBaseExtended))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroup))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Ticket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Salary))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDelta))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TaskHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ProjectHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomerHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomField))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroup))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Ticket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Salary))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDelta))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken))]
     public partial class APIBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -62,7 +62,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TaskHeader", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
-    public partial class TaskHeader : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    public partial class TaskHeader : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -181,7 +181,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ProjectHeader", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
-    public partial class ProjectHeader : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    public partial class ProjectHeader : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -332,7 +332,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerHeader", Namespace="http://api.timelog.com/services/crm/1_3")]
     [System.SerializableAttribute()]
-    public partial class CustomerHeader : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    public partial class CustomerHeader : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -403,48 +403,48 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomField", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroup[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroup))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingItem[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDelta[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDelta))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TaskHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ProjectHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Ticket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ExecutionStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.DomainType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.SalaryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.CalculationMethod))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.DataTypeEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ValidateModelEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomerHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroup[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroup))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDelta[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDelta))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TaskHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ProjectHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Ticket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExecutionStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.DomainType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SalaryType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.CalculationMethod))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.DataTypeEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ValidateModelEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomerHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.DataAction))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessageSeverity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomField[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ValueOption[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ValueOption))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBaseExtended))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ExternalSystemContext[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.RequestParameter[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.RequestParameter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Salary))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken))]
-    public partial class CustomField : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.DataAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessageSeverity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomField[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ValueOption[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ValueOption))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExternalSystemContext[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.RequestParameter[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.RequestParameter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Salary))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken))]
+    public partial class CustomField : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SectionLabelField;
@@ -459,13 +459,13 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private string IdentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.DomainType DomainTypeField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.DomainType DomainTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.DataTypeEnum DataTypeField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.DataTypeEnum DataTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.ValueOption[] DataValuesField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.ValueOption[] DataValuesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private object ValueField;
@@ -474,7 +474,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private int SortOrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.ValidateModelEnum ValidationModelField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.ValidateModelEnum ValidationModelField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string SectionLabel {
@@ -529,7 +529,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.DomainType DomainType {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.DomainType DomainType {
             get {
                 return this.DomainTypeField;
             }
@@ -542,7 +542,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.DataTypeEnum DataType {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.DataTypeEnum DataType {
             get {
                 return this.DataTypeField;
             }
@@ -555,7 +555,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ValueOption[] DataValues {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ValueOption[] DataValues {
             get {
                 return this.DataValuesField;
             }
@@ -594,7 +594,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ValidateModelEnum ValidationModel {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ValidateModelEnum ValidationModel {
             get {
                 return this.ValidationModelField;
             }
@@ -611,22 +611,22 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfTimeRegistration", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfTimeRegistration : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    public partial class ResponseOfTimeRegistration : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -638,7 +638,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration[] Return {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration[] Return {
             get {
                 return this.ReturnField;
             }
@@ -664,7 +664,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -677,7 +677,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -690,7 +690,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -746,30 +746,30 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBaseExtended", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroup))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Ticket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDelta))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration))]
-    public partial class APIBaseExtended : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroup))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Ticket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDelta))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration))]
+    public partial class APIBaseExtended : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.DataAction ActionField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.DataAction ActionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsCustomFieldsLoadedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomField[] CustomFieldsField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomField[] CustomFieldsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsExternalKeysLoadedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.ExternalSystemContext[] ExternalKeysField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExternalSystemContext[] ExternalKeysField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.DataAction Action {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.DataAction Action {
             get {
                 return this.ActionField;
             }
@@ -795,7 +795,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomField[] CustomFields {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomField[] CustomFields {
             get {
                 return this.CustomFieldsField;
             }
@@ -821,7 +821,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ExternalSystemContext[] ExternalKeys {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExternalSystemContext[] ExternalKeys {
             get {
                 return this.ExternalKeysField;
             }
@@ -838,7 +838,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ExternalSystemContext", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ExternalSystemContext : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBaseExtended {
+    public partial class ExternalSystemContext : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SystemNameField;
@@ -877,16 +877,16 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TimeTrackingGroup", Namespace="http://www.timelog.com/api/tlp/v1")]
     [System.SerializableAttribute()]
-    public partial class TimeTrackingGroup : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBaseExtended {
+    public partial class TimeTrackingGroup : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupDetails DetailsField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupDetails DetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingItem[] ItemsField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingItem[] ItemsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Name {
@@ -902,7 +902,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupDetails Details {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupDetails Details {
             get {
                 return this.DetailsField;
             }
@@ -915,7 +915,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingItem[] Items {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingItem[] Items {
             get {
                 return this.ItemsField;
             }
@@ -932,7 +932,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Ticket", Namespace="http://www.timelog.com/api/tlp/v1_6")]
     [System.SerializableAttribute()]
-    public partial class Ticket : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBaseExtended {
+    public partial class Ticket : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -1259,7 +1259,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Salary", Namespace="http://api.timelog.com/services/salary/1_0")]
     [System.SerializableAttribute()]
-    public partial class Salary : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    public partial class Salary : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SalaryCodeNoField;
@@ -1271,10 +1271,10 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.SalaryType SalaryTypeField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.SalaryType SalaryTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.CalculationMethod CalculationMethodField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.CalculationMethod CalculationMethodField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double FlexFactorField;
@@ -1334,7 +1334,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.SalaryType SalaryType {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.SalaryType SalaryType {
             get {
                 return this.SalaryTypeField;
             }
@@ -1347,7 +1347,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.CalculationMethod CalculationMethod {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.CalculationMethod CalculationMethod {
             get {
                 return this.CalculationMethodField;
             }
@@ -1442,7 +1442,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TimeRegistrationDelta", Namespace="http://www.timelog.com/api/tlp/v1")]
     [System.SerializableAttribute()]
-    public partial class TimeRegistrationDelta : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBaseExtended {
+    public partial class TimeRegistrationDelta : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -1469,10 +1469,10 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private int TimeTrackingItemIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupType TimeTrackingGroupTypeField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupType TimeTrackingGroupTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDetails TimeRegistrationDetailsField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDetails TimeRegistrationDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double DeltaField;
@@ -1588,7 +1588,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupType TimeTrackingGroupType {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupType TimeTrackingGroupType {
             get {
                 return this.TimeTrackingGroupTypeField;
             }
@@ -1601,7 +1601,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDetails TimeRegistrationDetails {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDetails TimeRegistrationDetails {
             get {
                 return this.TimeRegistrationDetailsField;
             }
@@ -1657,7 +1657,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TimeRegistration", Namespace="http://www.timelog.com/api/tlp/v1")]
     [System.SerializableAttribute()]
-    public partial class TimeRegistration : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBaseExtended {
+    public partial class TimeRegistration : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid IDField;
@@ -1684,10 +1684,10 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private int TimeTrackingItemIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupType TimeTrackingGroupTypeField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupType TimeTrackingGroupTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDetails TimeRegistrationDetailsField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDetails TimeRegistrationDetailsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> LastModifiedField;
@@ -1797,7 +1797,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupType TimeTrackingGroupType {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupType TimeTrackingGroupType {
             get {
                 return this.TimeTrackingGroupTypeField;
             }
@@ -1810,7 +1810,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDetails TimeRegistrationDetails {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDetails TimeRegistrationDetails {
             get {
                 return this.TimeRegistrationDetailsField;
             }
@@ -1840,10 +1840,10 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class Request : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    public partial class Request : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.RequestParameter[] ParametersField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.RequestParameter[] ParametersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ServiceClassField;
@@ -1852,7 +1852,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private string MethodNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.RequestParameter[] Parameters {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.RequestParameter[] Parameters {
             get {
                 return this.ParametersField;
             }
@@ -1895,22 +1895,22 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfTimeTrackingGroup", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfTimeTrackingGroup : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    public partial class ResponseOfTimeTrackingGroup : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroup[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroup[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -1922,7 +1922,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroup[] Return {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroup[] Return {
             get {
                 return this.ReturnField;
             }
@@ -1948,7 +1948,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -1961,7 +1961,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -1974,7 +1974,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -2030,22 +2030,22 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfTimeRegistrationDelta", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfTimeRegistrationDelta : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    public partial class ResponseOfTimeRegistrationDelta : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDelta[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDelta[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -2057,7 +2057,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDelta[] Return {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDelta[] Return {
             get {
                 return this.ReturnField;
             }
@@ -2083,7 +2083,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -2096,7 +2096,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -2109,7 +2109,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -2165,7 +2165,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SecurityToken", Namespace="http://www.timelog.com/api/tlp/v1_3")]
     [System.SerializableAttribute()]
-    public partial class SecurityToken : TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase {
+    public partial class SecurityToken : TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase {
         
         private string InitialsField;
         
@@ -2223,19 +2223,19 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TaskHeader TaskField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TaskHeader TaskField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.ProjectHeader ProjectHeaderField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.ProjectHeader ProjectHeaderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomerHeader CustomerHeaderField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomerHeader CustomerHeaderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.Ticket TicketField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.Ticket TicketField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.Salary SalaryCodeField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.Salary SalaryCodeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2248,7 +2248,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TaskHeader Task {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TaskHeader Task {
             get {
                 return this.TaskField;
             }
@@ -2261,7 +2261,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ProjectHeader ProjectHeader {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ProjectHeader ProjectHeader {
             get {
                 return this.ProjectHeaderField;
             }
@@ -2274,7 +2274,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomerHeader CustomerHeader {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomerHeader CustomerHeader {
             get {
                 return this.CustomerHeaderField;
             }
@@ -2287,7 +2287,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.Ticket Ticket {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.Ticket Ticket {
             get {
                 return this.TicketField;
             }
@@ -2300,7 +2300,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.Salary SalaryCode {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.Salary SalaryCode {
             get {
                 return this.SalaryCodeField;
             }
@@ -2332,19 +2332,19 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.TaskHeader TaskField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.TaskHeader TaskField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.ProjectHeader ProjectHeaderField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.ProjectHeader ProjectHeaderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomerHeader CustomerHeaderField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomerHeader CustomerHeaderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.Ticket TicketField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.Ticket TicketField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.Salary SalaryCodeField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.Salary SalaryCodeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2357,7 +2357,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.TaskHeader Task {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.TaskHeader Task {
             get {
                 return this.TaskField;
             }
@@ -2370,7 +2370,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ProjectHeader ProjectHeader {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ProjectHeader ProjectHeader {
             get {
                 return this.ProjectHeaderField;
             }
@@ -2383,7 +2383,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomerHeader CustomerHeader {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomerHeader CustomerHeader {
             get {
                 return this.CustomerHeaderField;
             }
@@ -2396,7 +2396,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.Ticket Ticket {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.Ticket Ticket {
             get {
                 return this.TicketField;
             }
@@ -2409,7 +2409,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.Salary SalaryCode {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.Salary SalaryCode {
             get {
                 return this.SalaryCodeField;
             }
@@ -3505,47 +3505,47 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ValueOption", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroup[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroup))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingItem[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingItem))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDelta[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistrationDelta))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TaskHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ProjectHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Ticket))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ExecutionStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.DomainType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.SalaryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.CalculationMethod))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.DataTypeEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ValidateModelEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomerHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingGroupType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroup[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroup))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingItem[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingItem))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDelta[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistrationDelta))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TaskHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ProjectHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Ticket))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExecutionStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.DomainType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SalaryType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.CalculationMethod))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.DataTypeEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ValidateModelEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomerHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingGroupType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(string[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.DataAction))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessageSeverity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomField[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.CustomField))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ValueOption[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBaseExtended))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ExternalSystemContext[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.RequestParameter[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.RequestParameter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessage))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.Salary))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.APIBase))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.DataAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessageSeverity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomField[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.CustomField))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ValueOption[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExternalSystemContext[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.RequestParameter[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.RequestParameter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.Salary))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIBase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken))]
     public partial class ValueOption : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -3693,7 +3693,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessageSeverity SeverityField;
+        private TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessageSeverity SeverityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -3722,7 +3722,7 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.APIMessageSeverity Severity {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.APIMessageSeverity Severity {
             get {
                 return this.SeverityField;
             }
@@ -3763,64 +3763,64 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_0)
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
-        TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveResponse IsAlive(TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveRequest request);
+        TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveResponse IsAlive(TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveRequest request);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/DeleteTimeRegistrationByE" +
             "xternalKey", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/DeleteTimeRegistrationByE" +
             "xternalKeyResponse")]
-        TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration DeleteTimeRegistrationByExternalKey(string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration DeleteTimeRegistrationByExternalKey(string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/DeleteTimeRegistrationByE" +
             "xternalKey", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/DeleteTimeRegistrationByE" +
             "xternalKeyResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration> DeleteTimeRegistrationByExternalKeyAsync(string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration> DeleteTimeRegistrationByExternalKeyAsync(string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeRegistrationByExte" +
             "rnalKey", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeRegistrationByExte" +
             "rnalKeyResponse")]
-        TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration GetTimeRegistrationByExternalKey(string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration GetTimeRegistrationByExternalKey(string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeRegistrationByExte" +
             "rnalKey", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeRegistrationByExte" +
             "rnalKeyResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration> GetTimeRegistrationByExternalKeyAsync(string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration> GetTimeRegistrationByExternalKeyAsync(string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeTrackingItems", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeTrackingItemsRespo" +
             "nse")]
-        TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup GetTimeTrackingItems(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup GetTimeTrackingItems(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeTrackingItems", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeTrackingItemsRespo" +
             "nse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup> GetTimeTrackingItemsAsync(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup> GetTimeTrackingItemsAsync(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/SaveTimeRegistrationByExt" +
             "ernalKey", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/SaveTimeRegistrationByExt" +
             "ernalKeyResponse")]
-        TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration SaveTimeRegistrationByExternalKey(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration registration, string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration SaveTimeRegistrationByExternalKey(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration registration, string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/SaveTimeRegistrationByExt" +
             "ernalKey", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/SaveTimeRegistrationByExt" +
             "ernalKeyResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration> SaveTimeRegistrationByExternalKeyAsync(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration registration, string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration> SaveTimeRegistrationByExternalKeyAsync(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration registration, string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetOTTVersion", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetOTTVersionResponse")]
-        string GetOTTVersion(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        string GetOTTVersion(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetOTTVersion", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetOTTVersionResponse")]
-        System.Threading.Tasks.Task<string> GetOTTVersionAsync(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token);
+        System.Threading.Tasks.Task<string> GetOTTVersionAsync(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeRegistrationsModif" +
             "iedInPeriodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeRegistrationsModif" +
             "iedInPeriodPagedResponse")]
-        TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta GetTimeRegistrationsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token, bool includeExternalKeys, string externalSystemName);
+        TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta GetTimeRegistrationsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token, bool includeExternalKeys, string externalSystemName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeRegistrationsModif" +
             "iedInPeriodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_0/TimeTrackingService/GetTimeRegistrationsModif" +
             "iedInPeriodPagedResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta> GetTimeRegistrationsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token, bool includeExternalKeys, string externalSystemName);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta> GetTimeRegistrationsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token, bool includeExternalKeys, string externalSystemName);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3851,12 +3851,12 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface TimeTrackingServiceChannel : TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingService, System.ServiceModel.IClientChannel {
+    public interface TimeTrackingServiceChannel : TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TimeTrackingServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingService>, TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingService {
+    public partial class TimeTrackingServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingService>, TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingService {
         
         public TimeTrackingServiceClient() {
         }
@@ -3878,71 +3878,71 @@ namespace TimeLog.TransactionalApi.SDK.TimeTrackingService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveResponse TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingService.IsAlive(TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveRequest request) {
+        TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveResponse TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingService.IsAlive(TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveRequest request) {
             return base.Channel.IsAlive(request);
         }
         
         public bool IsAlive() {
-            TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveRequest inValue = new TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveRequest();
-            TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveResponse retVal = ((TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingService)(this)).IsAlive(inValue);
+            TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveRequest inValue = new TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveRequest();
+            TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveResponse retVal = ((TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingService)(this)).IsAlive(inValue);
             return retVal.IsAliveResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveResponse> TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingService.IsAliveAsync(TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveRequest request) {
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveResponse> TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingService.IsAliveAsync(TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveRequest request) {
             return base.Channel.IsAliveAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveResponse> IsAliveAsync() {
-            TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveRequest inValue = new TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveRequest();
-            return ((TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeTrackingService)(this)).IsAliveAsync(inValue);
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveResponse> IsAliveAsync() {
+            TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveRequest inValue = new TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveRequest();
+            return ((TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeTrackingService)(this)).IsAliveAsync(inValue);
         }
         
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration DeleteTimeRegistrationByExternalKey(string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration DeleteTimeRegistrationByExternalKey(string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.DeleteTimeRegistrationByExternalKey(externalKey, externalSystemName, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration> DeleteTimeRegistrationByExternalKeyAsync(string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration> DeleteTimeRegistrationByExternalKeyAsync(string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.DeleteTimeRegistrationByExternalKeyAsync(externalKey, externalSystemName, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration GetTimeRegistrationByExternalKey(string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration GetTimeRegistrationByExternalKey(string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.GetTimeRegistrationByExternalKey(externalKey, externalSystemName, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration> GetTimeRegistrationByExternalKeyAsync(string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration> GetTimeRegistrationByExternalKeyAsync(string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.GetTimeRegistrationByExternalKeyAsync(externalKey, externalSystemName, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup GetTimeTrackingItems(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup GetTimeTrackingItems(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.GetTimeTrackingItems(token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup> GetTimeTrackingItemsAsync(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup> GetTimeTrackingItemsAsync(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.GetTimeTrackingItemsAsync(token);
         }
         
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration SaveTimeRegistrationByExternalKey(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration registration, string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration SaveTimeRegistrationByExternalKey(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration registration, string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.SaveTimeRegistrationByExternalKey(registration, externalKey, externalSystemName, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration> SaveTimeRegistrationByExternalKeyAsync(TimeLog.TransactionalApi.SDK.TimeTrackingService.TimeRegistration registration, string externalKey, string externalSystemName, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration> SaveTimeRegistrationByExternalKeyAsync(TimeLog.TransactionalAPI.SDK.TimeTrackingService.TimeRegistration registration, string externalKey, string externalSystemName, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.SaveTimeRegistrationByExternalKeyAsync(registration, externalKey, externalSystemName, token);
         }
         
-        public string GetOTTVersion(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public string GetOTTVersion(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.GetOTTVersion(token);
         }
         
-        public System.Threading.Tasks.Task<string> GetOTTVersionAsync(TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token) {
+        public System.Threading.Tasks.Task<string> GetOTTVersionAsync(TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token) {
             return base.Channel.GetOTTVersionAsync(token);
         }
         
-        public TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta GetTimeRegistrationsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token, bool includeExternalKeys, string externalSystemName) {
+        public TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta GetTimeRegistrationsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token, bool includeExternalKeys, string externalSystemName) {
             return base.Channel.GetTimeRegistrationsModifiedInPeriodPaged(startDate, endDate, page, pageSize, token, includeExternalKeys, externalSystemName);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta> GetTimeRegistrationsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalApi.SDK.TimeTrackingService.SecurityToken token, bool includeExternalKeys, string externalSystemName) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta> GetTimeRegistrationsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.TimeTrackingService.SecurityToken token, bool includeExternalKeys, string externalSystemName) {
             return base.Channel.GetTimeRegistrationsModifiedInPeriodPagedAsync(startDate, endDate, page, pageSize, token, includeExternalKeys, externalSystemName);
         }
     }

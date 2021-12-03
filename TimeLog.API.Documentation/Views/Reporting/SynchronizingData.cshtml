@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Synchronizing TimeLog data with your data warehouse";
+}
+
+<article class="article">
+
+    <h1>@ViewBag.Title</h1>
+    <h2>
+        With the reporting API you are able to synchronize most of the TimeLog data objects into your
+        data warehouse or similar for further processing.
+    </h2>
+    <p>
+        This page will guide you through the basic setup for a single TimeLog resource. In order to generate
+        more comprehensive reports based on more TimeLog resources, we recommend that you find a consultant
+        with expertise in Microsoft Power BI.
+    </p>
+
+    <h3 id="recommended-usage"><a href="#recommended-usage">Recommended usage</a></h3>
+
+    <p>
+        In order to replicate TimeLog data (specifically time registrations) to your data warehouse or similar
+        we recommend the following procedure to ensure consistent data without heavy API usage:
+    </p>
+
+    <ul>
+        <li class="icon-arrow_in_circle">Every quarter fetch and sync the full data set in batches by month</li>
+        <li class="icon-arrow_in_circle">Every month fetch and sync the last 3 months of data</li>
+        <li class="icon-arrow_in_circle">Every week fetch and sync the last 4 weeks of data</li>
+        <li class="icon-arrow_in_circle">Every day fetch and sync the last 7 days of data</li>
+    </ul>
+
+    <p>Note that you might need to adjust the intervals and periods to fit the data discipline in your TimeLog instance.</p>
+
+    <h3 id="usage"><a href="#usage">Usage limits</a></h3>
+    
+    <p><a href="@Url.ActionLink("Index")#usage-limits">Please refer to our usage limits section</a></p>
+
+    <h3 id="alternative-for-time-registrations"><a href="#alternative-for-time-registrations">Alternative for time registrations</a></h3>
+    <p>
+        Another possibility for synchronization of time registrations is to use the <em>GetWorkChangesPaged</em>-method within the
+        latest <em>ProjectManagementService</em> in the <a href="@Url.Action("Services", "Transactional")">transactional API</a>.
+    </p>
+
+
+</article>

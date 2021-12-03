@@ -7,8 +7,8 @@
     <ProjectGuid>{A1D54CAF-4BCB-43FB-917C-4F392C76A0E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TimeLog.TransactionalApi.SDK</RootNamespace>
-    <AssemblyName>TimeLog.TransactionalApi.SDK</AssemblyName>
+    <RootNamespace>TimeLog.TransactionalAPI.SDK</RootNamespace>
+    <AssemblyName>TimeLog.TransactionalAPI.SDK</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\TimeLog.TransactionalApi.SDK.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\TimeLog.TransactionalAPI.SDK.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -55,7 +55,7 @@
     </Compile>
     <Compile Include="TimeTrackingHandler.cs" />
     <Compile Include="SalaryHandler.cs" />
-    <Compile Include="CrmHandler.cs" />
+    <Compile Include="CRMHandler.cs" />
     <Compile Include="InvoicingHandler.cs" />
     <Compile Include="ProjectManagementHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,319 +118,330 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Service References\CrmService\CRMService3.wsdl" />
-    <None Include="Service References\CrmService\CRMService31.wsdl" />
-    <None Include="Service References\CrmService\CRMService32.wsdl" />
-    <None Include="Service References\CrmService\TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse.datasource">
+    <None Include="Service References\CrmService\CRMServiceSecure.wsdl" />
+    <None Include="Service References\CrmService\CRMServiceSecure1.wsdl" />
+    <None Include="Service References\CrmService\TimeLog.TransactionalAPI.SDK.CrmService.IsAliveResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CrmService\TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact.datasource">
+    <None Include="Service References\CrmService\TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CrmService\TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer.datasource">
+    <None Include="Service References\CrmService\TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\CrmService\TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus.datasource">
+    <None Include="Service References\CrmService\TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomerStatus1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure2.wsdl" />
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure21.wsdl" />
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure.wsdl" />
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure1.wsdl" />
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure7.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ExpenseService\ExpensesServiceSecure8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure81.xsd">
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure9.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure82.xsd">
+    <None Include="Service References\ExpenseService\TimeLog.TransactionalAPI.SDK.ExpenseService.IsAliveResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExpenseService\TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpense1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExpenseService\TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfExpenseType1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExpenseService\TimeLog.TransactionalAPI.SDK.ExpenseService.ResponseOfPaymentMethod1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\FinancialServiceSecure.wsdl" />
+    <None Include="Service References\FinancialService\FinancialServiceSecure.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure83.xsd">
+    <None Include="Service References\FinancialService\FinancialServiceSecure1.wsdl" />
+    <None Include="Service References\FinancialService\FinancialServiceSecure1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure84.xsd">
+    <None Include="Service References\FinancialService\FinancialServiceSecure2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure85.xsd">
+    <None Include="Service References\FinancialService\FinancialServiceSecure3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure86.xsd">
+    <None Include="Service References\FinancialService\FinancialServiceSecure4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure87.xsd">
+    <None Include="Service References\FinancialService\FinancialServiceSecure5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.IsAliveResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpense.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfExpenseType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ExpenseService\TimeLog.TransactionalApi.SDK.ExpenseService.ResponseOfPaymentMethod.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FinancialService\FinancialService.wsdl" />
-    <None Include="Service References\FinancialService\FinancialService.xsd">
+    <None Include="Service References\FinancialService\FinancialServiceSecure6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FinancialService\FinancialService1.wsdl" />
-    <None Include="Service References\FinancialService\FinancialService1.xsd">
+    <None Include="Service References\FinancialService\TimeLog.TransactionalAPI.SDK.FinancialService.IsAliveResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerInvoiceSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfEmployeeCostRate1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfLegalEntity1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPayment1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FinancialService\TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPriceGroup1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\HelpDeskServiceSecure.wsdl" />
+    <None Include="Service References\HelpDeskService\HelpDeskServiceSecure1.wsdl" />
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalAPI.SDK.HelpDeskService.IsAliveResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfPost1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfServiceContract1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfSupportType1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HelpDeskService\TimeLog.TransactionalAPI.SDK.HelpDeskService.ResponseOfTicket1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure1.wsdl" />
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FinancialService\FinancialService2.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure121.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FinancialService\FinancialService3.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure1210.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FinancialService\FinancialService4.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure1211.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FinancialService\FinancialService5.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure122.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FinancialService\FinancialService6.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure123.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.IsAliveResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfContract.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfEmployeeCostRate.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfHourlyRate.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfLegalEntity.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfPayment.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\FinancialService\TimeLog.TransactionalApi.SDK.FinancialService.ResponseOfPriceGroup.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HelpDeskService\HelpDeskServiceSecure2.wsdl" />
-    <None Include="Service References\HelpDeskService\HelpDeskServiceSecure21.wsdl" />
-    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.IsAliveResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfPost.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfServiceContract.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfSupportType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\HelpDeskService\TimeLog.TransactionalApi.SDK.HelpDeskService.ResponseOfTicket.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure.wsdl" />
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure124.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure1.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure125.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure10.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure126.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure11.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure127.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure2.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure128.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure3.xsd">
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure129.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure6.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure7.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure8.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure9.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.IsAliveResponse.datasource">
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalAPI.SDK.InvoicingService.IsAliveResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfCreditNote.datasource">
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalAPI.SDK.InvoicingService.ResponseOfCreditNote1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfCreditNoteWithExternalKey.datasource">
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalAPI.SDK.InvoicingService.ResponseOfCreditNoteWithExternalKey1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoice.datasource">
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalAPI.SDK.InvoicingService.ResponseOfInvoice1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceSpecification.datasource">
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalAPI.SDK.InvoicingService.ResponseOfInvoiceSpecification1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\InvoicingService\TimeLog.TransactionalApi.SDK.InvoicingService.ResponseOfInvoiceWithExternalKey.datasource">
+    <None Include="Service References\InvoicingService\TimeLog.TransactionalAPI.SDK.InvoicingService.ResponseOfInvoiceWithExternalKey1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\OrganisationService\OrganisationServiceSecure.wsdl" />
-    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.IsAliveResponse.datasource">
+    <None Include="Service References\OrganisationService\OrganisationServiceSecure1.wsdl" />
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalAPI.SDK.OrganisationService.IsAliveResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfDepartment.datasource">
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfDepartment1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployee.datasource">
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfEmployee1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfEmployeeHeader.datasource">
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfEmployeeHeader1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfLegalEntity.datasource">
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfLegalEntity1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfModuleType.datasource">
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfModuleType1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\OrganisationService\TimeLog.TransactionalApi.SDK.OrganisationService.ResponseOfRole.datasource">
+    <None Include="Service References\OrganisationService\TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfRole1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.wsdl" />
-    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure1.wsdl" />
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure2.wsdl" />
     <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure21.wsdl" />
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfAllocation.datasource">
+    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure22.wsdl" />
+    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure23.wsdl" />
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfAllocation1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfProject.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfTask.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfTask1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.BatchResponseOfWorkUnit.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfWorkUnit1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.GetTaskByIDResponse.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.GetTaskByIDResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.IsAliveResponse.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.IsAliveResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfAllocation.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfAllocation1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfProject.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfProjectHeader.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectHeader1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfProjectTaskFlat.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectTaskFlat1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfTask.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfWorkUnit.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnit1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfWorkUnitFlat.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlat1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalApi.SDK.ProjectManagementService.ResponseOfWorkUnitFlatExternal.datasource">
+    <None Include="Service References\ProjectManagementService\TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlatExternal1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure.wsdl" />
+    <None Include="Service References\SalaryService\SalaryServiceSecure.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SalaryService\SalaryServiceSecure1.wsdl" />
+    <None Include="Service References\SalaryService\SalaryServiceSecure1.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SalaryService\SalaryServiceSecure10.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure101.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure1010.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure1011.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure1012.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure102.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure103.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure104.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure6.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure105.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure7.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure106.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure8.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure107.xsd">
+    <None Include="Service References\SalaryService\SalaryServiceSecure9.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure108.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure109.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SalaryService\SalaryServiceSecure2.wsdl" />
-    <None Include="Service References\SalaryService\SalaryServiceSecure21.wsdl" />
-    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.IsAliveResponse.datasource">
+    <None Include="Service References\SalaryService\TimeLog.TransactionalAPI.SDK.SalaryService.IsAliveResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfAllowance.datasource">
+    <None Include="Service References\SalaryService\TimeLog.TransactionalAPI.SDK.SalaryService.ResponseOfAbsenceCode.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfHolidayCalendar.datasource">
+    <None Include="Service References\SalaryService\TimeLog.TransactionalAPI.SDK.SalaryService.ResponseOfAllowance1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfNormalWorkingTime.datasource">
+    <None Include="Service References\SalaryService\TimeLog.TransactionalAPI.SDK.SalaryService.ResponseOfHolidayCalendar1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SalaryService\TimeLog.TransactionalApi.SDK.SalaryService.ResponseOfSalary.datasource">
+    <None Include="Service References\SalaryService\TimeLog.TransactionalAPI.SDK.SalaryService.ResponseOfNormalWorkingTime1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SecurityService\SecurityServiceSecure1.wsdl" />
-    <None Include="Service References\SecurityService\TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfSecurityToken.datasource">
+    <None Include="Service References\SalaryService\TimeLog.TransactionalAPI.SDK.SalaryService.ResponseOfSalary1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SecurityService\TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfTimeRegistrationSettings.datasource">
+    <None Include="Service References\SecurityService\SecurityServiceSecure.wsdl" />
+    <None Include="Service References\SecurityService\TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfSecurityToken1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\SecurityService\TimeLog.TransactionalApi.SDK.SecurityService.ResponseOfUser.datasource">
+    <None Include="Service References\SecurityService\TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfTimeRegistrationSettings1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalApi.SDK.TimeTrackingService.IsAliveResponse.datasource">
+    <None Include="Service References\SecurityService\TimeLog.TransactionalAPI.SDK.SecurityService.ResponseOfUser1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistration.datasource">
+    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalAPI.SDK.TimeTrackingService.IsAliveResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta.datasource">
+    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistration1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalApi.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup.datasource">
+    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeRegistrationDelta1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TimeTrackingService\TimeLog.TransactionalAPI.SDK.TimeTrackingService.ResponseOfTimeTrackingGroup1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TimeTrackingService\TimeTrackingService.wsdl" />
@@ -596,21 +607,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ExpenseService\ExpensesServiceSecure1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\HelpDeskService\HelpDeskServiceSecure1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SalaryService\SalaryServiceSecure1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SecurityService\SecurityServiceSecure1.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\FinancialService\FinancialService.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\FinancialService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -621,9 +617,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\InvoicingService\InvoicingServiceSecure.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\TimeTrackingService\configuration91.svcinfo" />
@@ -641,13 +634,31 @@
     <None Include="Service References\TimeTrackingService\TimeTrackingService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\OrganisationService\OrganisationServiceSecure.disco" />
+    <None Include="Service References\SecurityService\SecurityServiceSecure.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure.disco" />
+    <None Include="Service References\SalaryService\SalaryServiceSecure.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\CrmService\CRMService1.disco" />
+    <None Include="Service References\ProjectManagementService\ProjectManagementServiceSecure11.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\OrganisationService\OrganisationServiceSecure1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InvoicingService\InvoicingServiceSecure1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HelpDeskService\HelpDeskServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\FinancialService\FinancialServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExpenseService\ExpensesServiceSecure.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CrmService\CRMServiceSecure.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

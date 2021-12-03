@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ce628486-8fe7-4914-9394-7e6392eb924e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="ce628486-8fe7-4914-9394-7e6392eb924e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app8.timelog.com/610patchreference/WebServices/CRM/V1_4/CRMServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CRMService3.wsdl" MetadataType="Wsdl" ID="f02d6fe6-8dab-42f6-837c-2c0e8549f810" SourceId="1" SourceUrl="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="CRMService31.wsdl" MetadataType="Wsdl" ID="d8635d6e-30a6-48a1-91a8-6f5f13376479" SourceId="1" SourceUrl="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc?wsdl" />
-    <MetadataFile FileName="CRMService1.disco" MetadataType="Disco" ID="c172a77c-2bcb-40ea-8551-ed1961668200" SourceId="1" SourceUrl="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc?disco" />
-    <MetadataFile FileName="CRMService32.wsdl" MetadataType="Wsdl" ID="dc7c27dc-1e73-46c4-a8f6-23d5118290f7" SourceId="1" SourceUrl="http://localhost/timelog/WebServices/CRM/V1_4/CRMService.svc?wsdl=wsdl1" />
+    <MetadataFile FileName="CRMServiceSecure.wsdl" MetadataType="Wsdl" ID="4bae37bd-7018-4e9e-ae57-67d65bc4689b" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/CRM/V1_4/CRMServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="CRMServiceSecure.disco" MetadataType="Disco" ID="bb68f3bb-550a-48e9-8f42-e0bf58e6cfa8" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/CRM/V1_4/CRMServiceSecure.svc?disco" />
+    <MetadataFile FileName="CRMServiceSecure1.wsdl" MetadataType="Wsdl" ID="e504d6aa-2a8d-472c-b870-50a74f8691df" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/CRM/V1_4/CRMServiceSecure.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

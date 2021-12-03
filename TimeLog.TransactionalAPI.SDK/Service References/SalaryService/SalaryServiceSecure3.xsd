@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://api.timelog.com/services/salary/1_1" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://api.timelog.com/services/salary/1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Salary/V1_1/SalaryServiceSecure.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Salary/V1_1/SalaryServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Salary/V1_1/SalaryServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:complexType name="ArrayOfSalary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Salary" nillable="true" type="tns:Salary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSalary" nillable="true" type="tns:ArrayOfSalary" />
+  <xs:complexType name="Salary">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.timelog.com/api/tlp/v1_2" base="q1:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary" minOccurs="0" name="SalaryCodeSystemType" type="q2:SalaryCodeSystemTypes" />
+          <xs:element minOccurs="0" name="SalaryAccountFactor" type="xs:double" />
+          <xs:element minOccurs="0" name="FlexPositiveFactor" type="xs:double" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary" minOccurs="0" name="SalaryAccountFactorEffect" type="q3:SalaryAccountFactorEffectTypes" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SalaryCodeID" type="xs:int" />
+          <xs:element minOccurs="0" name="IsSystemSalaryCode" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SalaryCodeGuid" type="ser:guid" />
+          <xs:element minOccurs="0" name="SalaryAccountID" type="xs:int" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary" minOccurs="0" name="TimeTrackingFormat" type="q4:TimeTrackingFormat" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary" minOccurs="0" name="SalarySpecificationType" type="q5:SalarySpecificationTypes" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Salary" nillable="true" type="tns:Salary" />
+  <xs:complexType name="ArrayOfAbsenceCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AbsenceCode" nillable="true" type="tns:AbsenceCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAbsenceCode" nillable="true" type="tns:ArrayOfAbsenceCode" />
+  <xs:complexType name="AbsenceCode">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://www.timelog.com/api/tlp/v1_2" base="q6:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AbsenceCodeGuid" type="ser:guid" />
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CodeForSalaryIntegration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FlexPositiveFactor" type="xs:double" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsTransferredToSalaryIntegration" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalaryAccountFactor" type="xs:double" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary" minOccurs="0" name="SalaryAccountFactorEffect" type="q7:SalaryAccountFactorEffectTypes" />
+          <xs:element minOccurs="0" name="SalaryAccountID" type="xs:int" />
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Salary" minOccurs="0" name="TimeTrackingFormat" type="q8:TimeTrackingFormat" />
+          <xs:element minOccurs="0" name="AbsenceCodeID" type="xs:int" />
+          <xs:element minOccurs="0" name="AbsenceCodeTypeID" type="xs:int" />
+          <xs:element minOccurs="0" name="DeductCapacity" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPublicVisible" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RequireApproval" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AbsenceCode" nillable="true" type="tns:AbsenceCode" />
+</xs:schema>

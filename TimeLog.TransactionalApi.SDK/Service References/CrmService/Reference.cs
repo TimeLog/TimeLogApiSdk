@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TimeLog.TransactionalApi.SDK.CrmService {
+namespace TimeLog.TransactionalAPI.SDK.CrmService {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,20 +17,20 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ContactHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Industry))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIBaseExtended))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomField))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Contact))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Customer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ContactHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Industry))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomField))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Contact))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Customer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomerStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken))]
     public partial class APIBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -60,7 +60,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ContactHeader", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
-    public partial class ContactHeader : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class ContactHeader : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid GUIDField;
@@ -115,7 +115,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerStatus", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
-    public partial class CustomerStatus : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class CustomerStatus : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -124,7 +124,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.CustomerStatusType TypeField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatusType TypeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ID {
@@ -153,7 +153,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.CrmService.CustomerStatusType Type {
+        public TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatusType Type {
             get {
                 return this.TypeField;
             }
@@ -170,7 +170,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Industry", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
-    public partial class Industry : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class Industry : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -209,7 +209,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerHeader", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
-    public partial class CustomerHeader : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class CustomerHeader : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -280,22 +280,22 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfCustomer", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfCustomer : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class ResponseOfCustomer : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Customer[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Customer[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -307,7 +307,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.CrmService.Customer[] Return {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Customer[] Return {
             get {
                 return this.ReturnField;
             }
@@ -333,7 +333,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.CrmService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -346,7 +346,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.CrmService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -359,7 +359,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.CrmService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.CrmService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -415,28 +415,28 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBaseExtended", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Contact))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Customer))]
-    public partial class APIBaseExtended : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Contact))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Customer))]
+    public partial class APIBaseExtended : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.DataAction ActionField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.DataAction ActionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsCustomFieldsLoadedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.CustomField[] CustomFieldsField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.CustomField[] CustomFieldsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsExternalKeysLoadedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.ExternalSystemContext[] ExternalKeysField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.ExternalSystemContext[] ExternalKeysField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.CrmService.DataAction Action {
+        public TimeLog.TransactionalAPI.SDK.CrmService.DataAction Action {
             get {
                 return this.ActionField;
             }
@@ -462,7 +462,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.CrmService.CustomField[] CustomFields {
+        public TimeLog.TransactionalAPI.SDK.CrmService.CustomField[] CustomFields {
             get {
                 return this.CustomFieldsField;
             }
@@ -488,7 +488,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.CrmService.ExternalSystemContext[] ExternalKeys {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ExternalSystemContext[] ExternalKeys {
             get {
                 return this.ExternalKeysField;
             }
@@ -505,46 +505,46 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomField", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.SecurityToken))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIBase))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ExecutionStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.DomainType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Customer[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Customer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ContactHeader[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ContactHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Industry))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerStatus[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Contact[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Contact))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ContactDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIBaseExtended))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ExternalSystemContext[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Address))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Currency))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.RequestParameter[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.RequestParameter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIMessage[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIMessage))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.DataAction))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomField[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ValueOption[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ValueOption))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.DataTypeEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ValidateModelEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIBase1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIMessageSeverity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerStatusType))]
-    public partial class CustomField : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIBase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ExecutionStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.DomainType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Customer[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Customer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ContactHeader[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ContactHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Industry))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatus[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Contact[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Contact))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ContactDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ExternalSystemContext[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Address))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Currency))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.EmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.RequestParameter[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.RequestParameter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIMessage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIMessage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomerStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.DataAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomField[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ValueOption[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ValueOption))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.DataTypeEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ValidateModelEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIBase1))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIMessageSeverity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatusType))]
+    public partial class CustomField : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SectionLabelField;
@@ -559,13 +559,13 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private string IdentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.DomainType DomainTypeField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.DomainType DomainTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.DataTypeEnum DataTypeField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.DataTypeEnum DataTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.ValueOption[] DataValuesField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.ValueOption[] DataValuesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private object ValueField;
@@ -574,7 +574,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private int SortOrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.ValidateModelEnum ValidationModelField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.ValidateModelEnum ValidationModelField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string SectionLabel {
@@ -629,7 +629,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.CrmService.DomainType DomainType {
+        public TimeLog.TransactionalAPI.SDK.CrmService.DomainType DomainType {
             get {
                 return this.DomainTypeField;
             }
@@ -642,7 +642,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public TimeLog.TransactionalApi.SDK.CrmService.DataTypeEnum DataType {
+        public TimeLog.TransactionalAPI.SDK.CrmService.DataTypeEnum DataType {
             get {
                 return this.DataTypeField;
             }
@@ -655,7 +655,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public TimeLog.TransactionalApi.SDK.CrmService.ValueOption[] DataValues {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ValueOption[] DataValues {
             get {
                 return this.DataValuesField;
             }
@@ -694,7 +694,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public TimeLog.TransactionalApi.SDK.CrmService.ValidateModelEnum ValidationModel {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ValidateModelEnum ValidationModel {
             get {
                 return this.ValidationModelField;
             }
@@ -711,7 +711,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ExternalSystemContext", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ExternalSystemContext : TimeLog.TransactionalApi.SDK.CrmService.APIBaseExtended {
+    public partial class ExternalSystemContext : TimeLog.TransactionalAPI.SDK.CrmService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SystemNameField;
@@ -750,7 +750,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Contact", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
-    public partial class Contact : TimeLog.TransactionalApi.SDK.CrmService.APIBaseExtended {
+    public partial class Contact : TimeLog.TransactionalAPI.SDK.CrmService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid GUIDField;
@@ -774,7 +774,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private string FaxField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Address AddressField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Address AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CommentField;
@@ -801,7 +801,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private string ProfessionalTitle2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.ContactDetails DetailsField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.ContactDetails DetailsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Guid GUID {
@@ -895,7 +895,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public TimeLog.TransactionalApi.SDK.CrmService.Address Address {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Address Address {
             get {
                 return this.AddressField;
             }
@@ -1012,7 +1012,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
-        public TimeLog.TransactionalApi.SDK.CrmService.ContactDetails Details {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ContactDetails Details {
             get {
                 return this.DetailsField;
             }
@@ -1029,7 +1029,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://api.timelog.com/services/crm/1_4")]
     [System.SerializableAttribute()]
-    public partial class Customer : TimeLog.TransactionalApi.SDK.CrmService.APIBaseExtended {
+    public partial class Customer : TimeLog.TransactionalAPI.SDK.CrmService.APIBaseExtended {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -1056,7 +1056,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private double DefaultDiscountPercentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Address AddressField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Address AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FaxField;
@@ -1086,7 +1086,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private string AccountNoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.ContactHeader[] ContactsField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.ContactHeader[] ContactsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string IndustryField;
@@ -1104,7 +1104,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private int PaymentTermIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Address InvoicingAddressField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Address InvoicingAddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string InvoicingNameField;
@@ -1125,7 +1125,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private string KAM2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails DetailsField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.CustomerDetails DetailsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ID {
@@ -1232,7 +1232,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public TimeLog.TransactionalApi.SDK.CrmService.Address Address {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Address Address {
             get {
                 return this.AddressField;
             }
@@ -1362,7 +1362,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
-        public TimeLog.TransactionalApi.SDK.CrmService.ContactHeader[] Contacts {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ContactHeader[] Contacts {
             get {
                 return this.ContactsField;
             }
@@ -1440,7 +1440,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
-        public TimeLog.TransactionalApi.SDK.CrmService.Address InvoicingAddress {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Address InvoicingAddress {
             get {
                 return this.InvoicingAddressField;
             }
@@ -1531,7 +1531,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=31)]
-        public TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails Details {
+        public TimeLog.TransactionalAPI.SDK.CrmService.CustomerDetails Details {
             get {
                 return this.DetailsField;
             }
@@ -1548,10 +1548,10 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class Request : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class Request : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.RequestParameter[] ParametersField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.RequestParameter[] ParametersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ServiceClassField;
@@ -1560,7 +1560,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private string MethodNameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.CrmService.RequestParameter[] Parameters {
+        public TimeLog.TransactionalAPI.SDK.CrmService.RequestParameter[] Parameters {
             get {
                 return this.ParametersField;
             }
@@ -1603,22 +1603,22 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfCustomerStatus", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfCustomerStatus : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class ResponseOfCustomerStatus : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.CustomerStatus[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatus[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -1630,7 +1630,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.CrmService.CustomerStatus[] Return {
+        public TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatus[] Return {
             get {
                 return this.ReturnField;
             }
@@ -1656,7 +1656,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.CrmService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -1669,7 +1669,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.CrmService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -1682,7 +1682,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.CrmService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.CrmService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -1738,22 +1738,22 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfContact", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class ResponseOfContact : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class ResponseOfContact : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Contact[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Contact[] ReturnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReturnTypeDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Request RequestField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Request RequestField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.ExecutionStatus ResponseStateField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.ExecutionStatus ResponseStateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.APIMessage[] MessagesField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.APIMessage[] MessagesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -1765,7 +1765,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.CrmService.Contact[] Return {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Contact[] Return {
             get {
                 return this.ReturnField;
             }
@@ -1791,7 +1791,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.CrmService.Request Request {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Request Request {
             get {
                 return this.RequestField;
             }
@@ -1804,7 +1804,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.CrmService.ExecutionStatus ResponseState {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ExecutionStatus ResponseState {
             get {
                 return this.ResponseStateField;
             }
@@ -1817,7 +1817,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.CrmService.APIMessage[] Messages {
+        public TimeLog.TransactionalAPI.SDK.CrmService.APIMessage[] Messages {
             get {
                 return this.MessagesField;
             }
@@ -1873,7 +1873,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SecurityToken", Namespace="http://www.timelog.com/api/tlp/v1_3")]
     [System.SerializableAttribute()]
-    public partial class SecurityToken : TimeLog.TransactionalApi.SDK.CrmService.APIBase {
+    public partial class SecurityToken : TimeLog.TransactionalAPI.SDK.CrmService.APIBase {
         
         private string InitialsField;
         
@@ -1978,7 +1978,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.APIMessageSeverity SeverityField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.APIMessageSeverity SeverityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ErrorCodeField;
@@ -2007,7 +2007,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.CrmService.APIMessageSeverity Severity {
+        public TimeLog.TransactionalAPI.SDK.CrmService.APIMessageSeverity Severity {
             get {
                 return this.SeverityField;
             }
@@ -2069,7 +2069,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Address", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class Address : TimeLog.TransactionalApi.SDK.CrmService.APIBase1 {
+    public partial class Address : TimeLog.TransactionalAPI.SDK.CrmService.APIBase1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string Address1Field;
@@ -2194,19 +2194,19 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.CustomerStatus StatusField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatus StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Industry IndustryField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Industry IndustryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.Currency CurrencyField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.Currency CurrencyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader KAMField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.EmployeeHeader KAMField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader KAM2Field;
+        private TimeLog.TransactionalAPI.SDK.CrmService.EmployeeHeader KAM2Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2219,7 +2219,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.CrmService.CustomerStatus Status {
+        public TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatus Status {
             get {
                 return this.StatusField;
             }
@@ -2232,7 +2232,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public TimeLog.TransactionalApi.SDK.CrmService.Industry Industry {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Industry Industry {
             get {
                 return this.IndustryField;
             }
@@ -2245,7 +2245,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public TimeLog.TransactionalApi.SDK.CrmService.Currency Currency {
+        public TimeLog.TransactionalAPI.SDK.CrmService.Currency Currency {
             get {
                 return this.CurrencyField;
             }
@@ -2258,7 +2258,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader KAM {
+        public TimeLog.TransactionalAPI.SDK.CrmService.EmployeeHeader KAM {
             get {
                 return this.KAMField;
             }
@@ -2271,7 +2271,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader KAM2 {
+        public TimeLog.TransactionalAPI.SDK.CrmService.EmployeeHeader KAM2 {
             get {
                 return this.KAM2Field;
             }
@@ -3018,6 +3018,18 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         SalaryRule = 244,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContractType = 245,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntercompanyExchangeRatePeriod = 246,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntercompanyExchangeRate = 247,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DomainServiceRequest = 248,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,
     }
     
@@ -3031,10 +3043,10 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader OwnerField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.EmployeeHeader OwnerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private TimeLog.TransactionalApi.SDK.CrmService.CustomerHeader CustomerHeaderField;
+        private TimeLog.TransactionalAPI.SDK.CrmService.CustomerHeader CustomerHeaderField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3047,7 +3059,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader Owner {
+        public TimeLog.TransactionalAPI.SDK.CrmService.EmployeeHeader Owner {
             get {
                 return this.OwnerField;
             }
@@ -3060,7 +3072,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public TimeLog.TransactionalApi.SDK.CrmService.CustomerHeader CustomerHeader {
+        public TimeLog.TransactionalAPI.SDK.CrmService.CustomerHeader CustomerHeader {
             get {
                 return this.CustomerHeaderField;
             }
@@ -3086,7 +3098,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Currency", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class Currency : TimeLog.TransactionalApi.SDK.CrmService.APIBase1 {
+    public partial class Currency : TimeLog.TransactionalAPI.SDK.CrmService.APIBase1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -3173,7 +3185,7 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeHeader", Namespace="http://api.timelog.com")]
     [System.SerializableAttribute()]
-    public partial class EmployeeHeader : TimeLog.TransactionalApi.SDK.CrmService.APIBase1 {
+    public partial class EmployeeHeader : TimeLog.TransactionalAPI.SDK.CrmService.APIBase1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
@@ -3289,45 +3301,45 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ValueOption", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.SecurityToken))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIBase))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ExecutionStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.DomainType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Customer[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Customer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ContactHeader[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ContactHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Industry))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerStatus[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Contact[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Contact))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ContactDetails))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIBaseExtended))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ExternalSystemContext[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ExternalSystemContext))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Address))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Currency))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.RequestParameter[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.RequestParameter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIMessage[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIMessage))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.DataAction))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomField[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomField))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ValueOption[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.DataTypeEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.ValidateModelEnum))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIBase1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.APIMessageSeverity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.CustomerStatusType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIBase))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ExecutionStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.DomainType))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Customer[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Customer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ContactHeader[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ContactHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Industry))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatus[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Contact[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Contact))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ContactDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIBaseExtended))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ExternalSystemContext[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Address))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Currency))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.EmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.RequestParameter[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.RequestParameter))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIMessage[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIMessage))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomerStatus))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.DataAction))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomField[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomField))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ValueOption[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.DataTypeEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.ValidateModelEnum))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIBase1))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.APIMessageSeverity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.CustomerStatusType))]
     public partial class ValueOption : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -3451,9 +3463,9 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Currency))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.EmployeeHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalApi.SDK.CrmService.Address))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Currency))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.EmployeeHeader))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.CrmService.Address))]
     public partial class APIBase1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -3499,120 +3511,120 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://api.timelog.com/services/crm/1_4)
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse IsAlive(TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest request);
+        TimeLog.TransactionalAPI.SDK.CrmService.IsAliveResponse IsAlive(TimeLog.TransactionalAPI.SDK.CrmService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest request);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalAPI.SDK.CrmService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByIDResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomerByID(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomerByID(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByIDResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomerByIDAsync(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomerByIDAsync(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUIDResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomerByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomerByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByGUIDResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomerByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomerByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKey", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKeyRespo" +
             "nse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomerByExternalKey(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomerByExternalKey(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKey", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerByExternalKeyRespo" +
             "nse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomerByExternalKeyAsync(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomerByExternalKeyAsync(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPagedResp" +
             "onse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersByFieldsPaged(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomersByFieldsPaged(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsPagedResp" +
             "onse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersByFieldsPagedAsync(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomersByFieldsPagedAsync(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsForLinkin" +
             "g", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsForLinkin" +
             "gResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersByFieldsForLinking(string customerNumber, string VATNumber, string organisationNumber, string customerName, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomersByFieldsForLinking(string customerNumber, string VATNumber, string organisationNumber, string customerName, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsForLinkin" +
             "g", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByFieldsForLinkin" +
             "gResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersByFieldsForLinkingAsync(string customerNumber, string VATNumber, string organisationNumber, string customerName, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomersByFieldsForLinkingAsync(string customerNumber, string VATNumber, string organisationNumber, string customerName, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePage" +
             "d", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePage" +
             "dResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomersModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePage" +
             "d", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersModifiedSincePage" +
             "dResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomersModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePagedRespon" +
             "se")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersByNamePaged(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomersByNamePaged(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomersByNamePagedRespon" +
             "se")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersByNamePagedAsync(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomersByNamePagedAsync(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomer", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomerResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer InsertCustomer(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer InsertCustomer(TimeLog.TransactionalAPI.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomer", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/InsertCustomerResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> InsertCustomerAsync(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> InsertCustomerAsync(TimeLog.TransactionalAPI.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomer", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomerResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer UpdateCustomer(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer UpdateCustomer(TimeLog.TransactionalAPI.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomer", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateCustomerResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> UpdateCustomerAsync(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> UpdateCustomerAsync(TimeLog.TransactionalAPI.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatuses", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatusesResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus GetCustomerStatuses(TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomerStatus GetCustomerStatuses(TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatuses", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetCustomerStatusesResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus> GetCustomerStatusesAsync(TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomerStatus> GetCustomerStatusesAsync(TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUIDResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact GetContactByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact GetContactByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUID", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactByGUIDResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> GetContactByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> GetContactByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPagedRes" +
             "ponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact GetContactsByCustomerPaged(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact GetContactsByCustomerPaged(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPaged", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsByCustomerPagedRes" +
             "ponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> GetContactsByCustomerPagedAsync(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> GetContactsByCustomerPagedAsync(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePaged" +
             "", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePaged" +
             "Response")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact GetContactsModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact GetContactsModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePaged" +
             "", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/GetContactsModifiedSincePaged" +
             "Response")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> GetContactsModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> GetContactsModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContact", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContactResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact InsertContact(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact InsertContact(TimeLog.TransactionalAPI.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContact", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/InsertContactResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> InsertContactAsync(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> InsertContactAsync(TimeLog.TransactionalAPI.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContact", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContactResponse")]
-        TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact UpdateContact(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact UpdateContact(TimeLog.TransactionalAPI.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContact", ReplyAction="http://api.timelog.com/services/crm/1_4/ICRMService/UpdateContactResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> UpdateContactAsync(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> UpdateContactAsync(TimeLog.TransactionalAPI.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3643,12 +3655,12 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICRMServiceChannel : TimeLog.TransactionalApi.SDK.CrmService.ICRMService, System.ServiceModel.IClientChannel {
+    public interface ICRMServiceChannel : TimeLog.TransactionalAPI.SDK.CrmService.ICRMService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CRMServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalApi.SDK.CrmService.ICRMService>, TimeLog.TransactionalApi.SDK.CrmService.ICRMService {
+    public partial class CRMServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalAPI.SDK.CrmService.ICRMService>, TimeLog.TransactionalAPI.SDK.CrmService.ICRMService {
         
         public CRMServiceClient() {
         }
@@ -3670,143 +3682,143 @@ namespace TimeLog.TransactionalApi.SDK.CrmService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse TimeLog.TransactionalApi.SDK.CrmService.ICRMService.IsAlive(TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest request) {
+        TimeLog.TransactionalAPI.SDK.CrmService.IsAliveResponse TimeLog.TransactionalAPI.SDK.CrmService.ICRMService.IsAlive(TimeLog.TransactionalAPI.SDK.CrmService.IsAliveRequest request) {
             return base.Channel.IsAlive(request);
         }
         
         public bool IsAlive() {
-            TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest inValue = new TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest();
-            TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse retVal = ((TimeLog.TransactionalApi.SDK.CrmService.ICRMService)(this)).IsAlive(inValue);
+            TimeLog.TransactionalAPI.SDK.CrmService.IsAliveRequest inValue = new TimeLog.TransactionalAPI.SDK.CrmService.IsAliveRequest();
+            TimeLog.TransactionalAPI.SDK.CrmService.IsAliveResponse retVal = ((TimeLog.TransactionalAPI.SDK.CrmService.ICRMService)(this)).IsAlive(inValue);
             return retVal.IsAliveResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse> TimeLog.TransactionalApi.SDK.CrmService.ICRMService.IsAliveAsync(TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest request) {
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.IsAliveResponse> TimeLog.TransactionalAPI.SDK.CrmService.ICRMService.IsAliveAsync(TimeLog.TransactionalAPI.SDK.CrmService.IsAliveRequest request) {
             return base.Channel.IsAliveAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.IsAliveResponse> IsAliveAsync() {
-            TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest inValue = new TimeLog.TransactionalApi.SDK.CrmService.IsAliveRequest();
-            return ((TimeLog.TransactionalApi.SDK.CrmService.ICRMService)(this)).IsAliveAsync(inValue);
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.IsAliveResponse> IsAliveAsync() {
+            TimeLog.TransactionalAPI.SDK.CrmService.IsAliveRequest inValue = new TimeLog.TransactionalAPI.SDK.CrmService.IsAliveRequest();
+            return ((TimeLog.TransactionalAPI.SDK.CrmService.ICRMService)(this)).IsAliveAsync(inValue);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomerByID(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomerByID(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomerByID(id, loadCustomFields, loadExternalKeys, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomerByIDAsync(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomerByIDAsync(int id, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomerByIDAsync(id, loadCustomFields, loadExternalKeys, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomerByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomerByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomerByGUID(guid, loadCustomFields, loadExternalKeys, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomerByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomerByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomerByGUIDAsync(guid, loadCustomFields, loadExternalKeys, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomerByExternalKey(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomerByExternalKey(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomerByExternalKey(externalKey, systemName, loadCustomFields, loadExternalKeys, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomerByExternalKeyAsync(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomerByExternalKeyAsync(string externalKey, string systemName, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomerByExternalKeyAsync(externalKey, systemName, loadCustomFields, loadExternalKeys, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersByFieldsPaged(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomersByFieldsPaged(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomersByFieldsPaged(cvr, name, phone, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersByFieldsPagedAsync(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomersByFieldsPagedAsync(string cvr, string name, string phone, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomersByFieldsPagedAsync(cvr, name, phone, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersByFieldsForLinking(string customerNumber, string VATNumber, string organisationNumber, string customerName, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomersByFieldsForLinking(string customerNumber, string VATNumber, string organisationNumber, string customerName, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomersByFieldsForLinking(customerNumber, VATNumber, organisationNumber, customerName, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersByFieldsForLinkingAsync(string customerNumber, string VATNumber, string organisationNumber, string customerName, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomersByFieldsForLinkingAsync(string customerNumber, string VATNumber, string organisationNumber, string customerName, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomersByFieldsForLinkingAsync(customerNumber, VATNumber, organisationNumber, customerName, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomersModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomersModifiedSincePaged(date, includeCustomers, includeSuppliers, includeLeads, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomersModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomersModifiedSincePagedAsync(date, includeCustomers, includeSuppliers, includeLeads, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer GetCustomersByNamePaged(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer GetCustomersByNamePaged(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomersByNamePaged(name, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> GetCustomersByNamePagedAsync(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> GetCustomersByNamePagedAsync(string name, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomersByNamePagedAsync(name, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer InsertCustomer(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer InsertCustomer(TimeLog.TransactionalAPI.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.InsertCustomer(customer, source, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> InsertCustomerAsync(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> InsertCustomerAsync(TimeLog.TransactionalAPI.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.InsertCustomerAsync(customer, source, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer UpdateCustomer(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer UpdateCustomer(TimeLog.TransactionalAPI.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.UpdateCustomer(customer, source, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomer> UpdateCustomerAsync(TimeLog.TransactionalApi.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomer> UpdateCustomerAsync(TimeLog.TransactionalAPI.SDK.CrmService.Customer customer, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.UpdateCustomerAsync(customer, source, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus GetCustomerStatuses(TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomerStatus GetCustomerStatuses(TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomerStatuses(token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfCustomerStatus> GetCustomerStatusesAsync(TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfCustomerStatus> GetCustomerStatusesAsync(TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetCustomerStatusesAsync(token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact GetContactByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact GetContactByGUID(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetContactByGUID(guid, loadCustomFields, loadExternalKeys, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> GetContactByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> GetContactByGUIDAsync(System.Guid guid, bool loadCustomFields, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetContactByGUIDAsync(guid, loadCustomFields, loadExternalKeys, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact GetContactsByCustomerPaged(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact GetContactsByCustomerPaged(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetContactsByCustomerPaged(customerId, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> GetContactsByCustomerPagedAsync(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> GetContactsByCustomerPagedAsync(System.Guid customerId, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetContactsByCustomerPagedAsync(customerId, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact GetContactsModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact GetContactsModifiedSincePaged(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetContactsModifiedSincePaged(date, includeCustomers, includeSuppliers, includeLeads, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> GetContactsModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> GetContactsModifiedSincePagedAsync(System.DateTime date, bool includeCustomers, bool includeSuppliers, bool includeLeads, bool loadCustomFields, bool loadExternalKeys, int page, int pageSize, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.GetContactsModifiedSincePagedAsync(date, includeCustomers, includeSuppliers, includeLeads, loadCustomFields, loadExternalKeys, page, pageSize, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact InsertContact(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact InsertContact(TimeLog.TransactionalAPI.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.InsertContact(contact, source, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> InsertContactAsync(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> InsertContactAsync(TimeLog.TransactionalAPI.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.InsertContactAsync(contact, source, token);
         }
         
-        public TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact UpdateContact(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact UpdateContact(TimeLog.TransactionalAPI.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.UpdateContact(contact, source, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalApi.SDK.CrmService.ResponseOfContact> UpdateContactAsync(TimeLog.TransactionalApi.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalApi.SDK.CrmService.SecurityToken token) {
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.CrmService.ResponseOfContact> UpdateContactAsync(TimeLog.TransactionalAPI.SDK.CrmService.Contact contact, int source, TimeLog.TransactionalAPI.SDK.CrmService.SecurityToken token) {
             return base.Channel.UpdateContactAsync(contact, source, token);
         }
     }

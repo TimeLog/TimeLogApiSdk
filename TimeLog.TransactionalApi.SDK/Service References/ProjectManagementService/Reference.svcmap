@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="977a0a00-5a1c-46dc-bb8c-baedfa0c26fd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="977a0a00-5a1c-46dc-bb8c-baedfa0c26fd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app3.timelog.com/local/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://app8.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ProjectManagementServiceSecure.wsdl" MetadataType="Wsdl" ID="ebb9892c-5871-418f-acd6-73849c17a274" SourceId="1" SourceUrl="https://app3.timelog.com/local/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="ProjectManagementServiceSecure.disco" MetadataType="Disco" ID="15df97e6-075a-494c-84c8-6bf3dbb01e2a" SourceId="1" SourceUrl="https://app3.timelog.com/local/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?disco" />
-    <MetadataFile FileName="ProjectManagementServiceSecure1.wsdl" MetadataType="Wsdl" ID="a030b6e6-31e2-4595-ad2f-9ee86d26b1c5" SourceId="1" SourceUrl="https://app3.timelog.com/local/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="ProjectManagementServiceSecure22.wsdl" MetadataType="Wsdl" ID="0d17344f-8264-43f0-bd8f-085332386504" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="ProjectManagementServiceSecure11.disco" MetadataType="Disco" ID="9cf362ea-b7fc-4454-add3-53f17d893e33" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?disco" />
+    <MetadataFile FileName="ProjectManagementServiceSecure23.wsdl" MetadataType="Wsdl" ID="1bd0f233-208f-484b-b66b-bc1e10c7016e" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc?wsdl=wsdl0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

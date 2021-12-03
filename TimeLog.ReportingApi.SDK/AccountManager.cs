@@ -1,19 +1,12 @@
-﻿namespace TimeLog.ReportingApi.SDK
+﻿namespace TimeLog.ReportingAPI.SDK;
+
+/// <summary>
+///     Placeholder for account manager related constants
+/// </summary>
+public class AccountManager
 {
     /// <summary>
-    /// Placeholder for account manager related constants
+    ///     Gets the default parameter value for filtereing for all account managers
     /// </summary>
-    public class AccountManager
-    {
-        /// <summary>
-        /// Gets the default parameter value for filtereing for all account managers
-        /// </summary>
-        public static int All
-        {
-            get
-            {
-                return 0;
-            }
-        }
-    }
+    public static int All => 0;
 }
