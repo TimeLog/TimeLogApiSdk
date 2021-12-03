@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Globalization;
 using System.ServiceModel;
-using TimeLog.ReportingApi.Core.SDK.ReportingService;
+using TimeLog.ReportingAPI.SDK.ReportingService;
 
 namespace TimeLog.ReportingAPI.SDK;
 
@@ -44,13 +44,15 @@ public class ServiceHandler : IDisposable
     {
         get
         {
-            if (!long.TryParse(ConfigurationManager.AppSettings["TimeLogProjectMaxReceivedMessageSize"],
+            if (!long.TryParse(
+                    ConfigurationManager.AppSettings["TimeLogProjectMaxReceivedMessageSize"],
                     out var maxReceivedMessageSize))
             {
                 maxReceivedMessageSize = 4096000;
             }
 
-            if (!int.TryParse(ConfigurationManager.AppSettings["TimeLogProjectTimeoutInSeconds"],
+            if (!int.TryParse(
+                    ConfigurationManager.AppSettings["TimeLogProjectTimeoutInSeconds"],
                     out var timeOutSeconds))
             {
                 timeOutSeconds = 60;

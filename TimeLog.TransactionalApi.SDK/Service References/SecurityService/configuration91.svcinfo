@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="hIwvNUoSQ0LKJYyluGwP6eEev3jJuxkDK/PHILn6/6M=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="Of73bhGm7VxGVgpJ0zJjbbRcUFzTgwAAv7ePw+1/+ko=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_SecurityService1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_SecurityService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_SecurityService1</serializedValue>
+          <serializedValue>BasicHttpBinding_SecurityService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_SecurityService1" contract="SecurityService.SecurityService" bindingType="basicHttpBinding" address="https://app8.timelog.com/610patchreference/WebServices/Security/V1_2/SecurityServiceSecure.svc" bindingConfiguration="BasicHttpBinding_SecurityService1">
+    <endpoint name="BasicHttpBinding_SecurityService" contract="SecurityService.SecurityService" bindingType="basicHttpBinding" address="https://app8.timelog.com/610patchreference/WebServices/Security/V1_2/SecurityServiceSecure.svc" bindingConfiguration="BasicHttpBinding_SecurityService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>https://app8.timelog.com/610patchreference/WebServices/Security/V1_2/SecurityServiceSecure.svc</serializedValue>
@@ -124,7 +124,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_SecurityService1</serializedValue>
+          <serializedValue>BasicHttpBinding_SecurityService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>SecurityService.SecurityService</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_SecurityService1</serializedValue>
+          <serializedValue>BasicHttpBinding_SecurityService</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

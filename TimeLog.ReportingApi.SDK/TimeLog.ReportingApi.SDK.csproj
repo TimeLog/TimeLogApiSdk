@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="App.config" />
+      <None Include="app.config" />
       <None Include="Service References\ReportingService\ReportingService.svcmap">
         <Generator>WCF Proxy Generator</Generator>
         <LastGenOutput>ReportingService.cs</LastGenOutput>

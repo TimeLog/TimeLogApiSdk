@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.timelog.com/api/tlp/v1" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Registration" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd5" namespace="http://api.timelog.com" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd11" namespace="http://www.timelog.com/api/tlp/v1_6" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd12" namespace="http://api.timelog.com/services/crm/1_3" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd13" namespace="http://api.timelog.com/services/salary/1_0" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd15" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfTimeRegistration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeRegistration" nillable="true" type="tns:TimeRegistration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeRegistration" nillable="true" type="tns:ArrayOfTimeRegistration" />
+  <xs:complexType name="TimeRegistration">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://api.timelog.com" base="q1:APIBaseExtended">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="ser:guid" />
+          <xs:element minOccurs="0" name="StartAt" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndAt" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserDefinedComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsBillable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TimeTrackingItemGUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="TimeTrackingItemID" type="xs:int" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Registration" minOccurs="0" name="TimeTrackingGroupType" type="q2:TimeTrackingGroupType" />
+          <xs:element minOccurs="0" name="TimeRegistrationDetails" nillable="true" type="tns:TimeRegistrationDetails" />
+          <xs:element minOccurs="0" name="LastModified" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TimeRegistration" nillable="true" type="tns:TimeRegistration" />
+  <xs:complexType name="TimeRegistrationDetails">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://www.timelog.com/api/tlp/v1_6" minOccurs="0" name="Task" nillable="true" type="q3:TaskHeader" />
+      <xs:element xmlns:q4="http://www.timelog.com/api/tlp/v1_6" minOccurs="0" name="ProjectHeader" nillable="true" type="q4:ProjectHeader" />
+      <xs:element xmlns:q5="http://api.timelog.com/services/crm/1_3" minOccurs="0" name="CustomerHeader" nillable="true" type="q5:CustomerHeader" />
+      <xs:element xmlns:q6="http://www.timelog.com/api/tlp/v1_6" minOccurs="0" name="Ticket" nillable="true" type="q6:Ticket" />
+      <xs:element xmlns:q7="http://api.timelog.com/services/salary/1_0" minOccurs="0" name="SalaryCode" nillable="true" type="q7:Salary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeRegistrationDetails" nillable="true" type="tns:TimeRegistrationDetails" />
+  <xs:complexType name="ArrayOfTimeTrackingGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeTrackingGroup" nillable="true" type="tns:TimeTrackingGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeTrackingGroup" nillable="true" type="tns:ArrayOfTimeTrackingGroup" />
+  <xs:complexType name="TimeTrackingGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://api.timelog.com" base="q8:APIBaseExtended">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Details" nillable="true" type="tns:TimeTrackingGroupDetails" />
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfTimeTrackingItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TimeTrackingGroup" nillable="true" type="tns:TimeTrackingGroup" />
+  <xs:complexType name="TimeTrackingGroupDetails">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://www.timelog.com/api/tlp/v1_6" minOccurs="0" name="Task" nillable="true" type="q9:TaskHeader" />
+      <xs:element xmlns:q10="http://www.timelog.com/api/tlp/v1_6" minOccurs="0" name="ProjectHeader" nillable="true" type="q10:ProjectHeader" />
+      <xs:element xmlns:q11="http://api.timelog.com/services/crm/1_3" minOccurs="0" name="CustomerHeader" nillable="true" type="q11:CustomerHeader" />
+      <xs:element xmlns:q12="http://www.timelog.com/api/tlp/v1_6" minOccurs="0" name="Ticket" nillable="true" type="q12:Ticket" />
+      <xs:element xmlns:q13="http://api.timelog.com/services/salary/1_0" minOccurs="0" name="SalaryCode" nillable="true" type="q13:Salary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeTrackingGroupDetails" nillable="true" type="tns:TimeTrackingGroupDetails" />
+  <xs:complexType name="ArrayOfTimeTrackingItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeTrackingItem" nillable="true" type="tns:TimeTrackingItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeTrackingItem" nillable="true" type="tns:ArrayOfTimeTrackingItem" />
+  <xs:complexType name="TimeTrackingItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Parents" nillable="true" type="q14:ArrayOfstring" />
+      <xs:element minOccurs="0" name="IsCommentRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShowBillable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUserDefinedFieldRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserDefinedFieldLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsTaskDefaultBillable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAdditionalTextFieldIntegerValueOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUserDefinedFieldVisible" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeTrackingItem" nillable="true" type="tns:TimeTrackingItem" />
+  <xs:complexType name="ArrayOfTimeRegistrationDelta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeRegistrationDelta" nillable="true" type="tns:TimeRegistrationDelta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeRegistrationDelta" nillable="true" type="tns:ArrayOfTimeRegistrationDelta" />
+  <xs:complexType name="TimeRegistrationDelta">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://api.timelog.com" base="q15:APIBaseExtended">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="ser:guid" />
+          <xs:element minOccurs="0" name="StartAt" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndAt" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserDefinedComment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsBillable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TimeTrackingItemGUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="TimeTrackingItemID" type="xs:int" />
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Registration" minOccurs="0" name="TimeTrackingGroupType" type="q16:TimeTrackingGroupType" />
+          <xs:element minOccurs="0" name="TimeRegistrationDetails" nillable="true" type="tns:TimeRegistrationDetails" />
+          <xs:element minOccurs="0" name="Delta" type="xs:double" />
+          <xs:element minOccurs="0" name="DeltaCreatedBy" type="xs:int" />
+          <xs:element minOccurs="0" name="DeltaCreatedAt" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TimeRegistrationDelta" nillable="true" type="tns:TimeRegistrationDelta" />
+</xs:schema>

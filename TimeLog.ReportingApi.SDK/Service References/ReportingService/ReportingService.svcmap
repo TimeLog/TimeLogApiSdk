@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://app5.timelog.com/soxdemo/service.asmx" Protocol="https" SourceId="1" />
+    <MetadataSource Address="https://app8.timelog.com/610patchreference/service.asmx" Protocol="https" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="918e6b76-b5c3-41bc-8fe7-724fb61f3f0c" SourceId="1" SourceUrl="https://app5.timelog.com/soxdemo/service.asmx?wsdl" />
-    <MetadataFile FileName="service.disco" MetadataType="Disco" ID="3fc03352-93c7-4c8d-ac84-a857bdea1e55" SourceId="1" SourceUrl="https://app5.timelog.com/soxdemo/service.asmx?disco" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="918e6b76-b5c3-41bc-8fe7-724fb61f3f0c" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/service.asmx?wsdl" />
+    <MetadataFile FileName="service.disco" MetadataType="Disco" ID="3fc03352-93c7-4c8d-ac84-a857bdea1e55" SourceId="1" SourceUrl="https://app8.timelog.com/610patchreference/service.asmx?disco" />
   </Metadata>
   <Extensions />
 </ReferenceGroup>

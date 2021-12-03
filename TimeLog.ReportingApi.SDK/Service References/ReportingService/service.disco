@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="https://app5.timelog.com/soxdemo/service.asmx?wsdl" docRef="https://app5.timelog.com/soxdemo/service.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="https://app5.timelog.com/soxdemo/service.asmx" xmlns:q1="http://www.timelog.com/ws/tlp/v4_4" binding="q1:ServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="https://app5.timelog.com/soxdemo/service.asmx" xmlns:q2="http://www.timelog.com/ws/tlp/v4_4" binding="q2:ServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+	<contractRef xmlns="http://schemas.xmlsoap.org/disco/scl/" ref="https://app8.timelog.com/610patchreference/service.asmx?wsdl" docRef="https://app8.timelog.com/610patchreference/service.asmx"/>
+	<soap xmlns:q1="http://www.timelog.com/ws/tlp/v4_4" xmlns="http://schemas.xmlsoap.org/disco/soap/" address="https://app8.timelog.com/610patchreference/service.asmx" binding="q1:ServiceSoap"/>
+	<soap xmlns:q2="http://www.timelog.com/ws/tlp/v4_4" xmlns="http://schemas.xmlsoap.org/disco/soap/" address="https://app8.timelog.com/610patchreference/service.asmx" binding="q2:ServiceSoap12"/>
 </discovery>

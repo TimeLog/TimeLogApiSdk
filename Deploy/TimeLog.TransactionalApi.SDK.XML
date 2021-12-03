@@ -214,41 +214,6 @@
                 Gets the active salary client
             </summary>
         </member>
-        <member name="T:TimeLog.TransactionalAPI.SDK.CRMHandler">
-            <summary>
-                Handler of functionality related to the CRM service
-            </summary>
-        </member>
-        <member name="M:TimeLog.TransactionalAPI.SDK.CRMHandler.#ctor">
-            <summary>
-                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.CRMHandler" /> class from being created.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.Instance">
-            <summary>
-                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.CRMHandler" />.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CrmServiceUrl">
-            <summary>
-                Gets the uri associated with the CRM service.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.Token">
-            <summary>
-                Gets the CRM token for use in other methods. Makes use of SecurityHandler.Instance.Token.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CollectRawRequestResponse">
-            <summary>
-                Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CrmClient">
-            <summary>
-                Gets the active CRM client
-            </summary>
-        </member>
         <member name="T:TimeLog.TransactionalAPI.SDK.InvoicingHandler">
             <summary>
                 Handler of functionality related to the invoicing service

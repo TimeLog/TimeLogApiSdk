@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
-using TimeLog.TransactionalAPI.SDK.CrmService;
+using TimeLog.TransactionalAPI.SDK.CRMService;
 using TimeLog.TransactionalAPI.SDK.RawHelper;
 
 namespace TimeLog.TransactionalAPI.SDK
@@ -83,7 +83,7 @@ namespace TimeLog.TransactionalAPI.SDK
                     if (CollectRawRequestResponse)
                     {
                         var binding = new CustomBinding();
-                        var encoding = new RawMessageEncodingBindingElement {MessageVersion = MessageVersion.Soap11};
+                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
                         binding.Elements.Add(encoding);
                         binding.Elements.Add(CrmServiceUrl.Contains("https")
                             ? SettingsHandler.Instance.StandardHttpsTransportBindingElement

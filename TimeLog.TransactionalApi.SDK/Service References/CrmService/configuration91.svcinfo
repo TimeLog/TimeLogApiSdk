@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="tb1QPaHEEkRVVKYpzGhTqO+9QLMkwgIixoROO8SSALo=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="D01GavO6QI8lEwDeZ+qICKHZQ0HpMq6L6u5eYY2ga1E=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICRMService1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICRMService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ICRMService1</serializedValue>
+          <serializedValue>BasicHttpBinding_ICRMService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ICRMService" contract="CrmService.ICRMService" bindingType="basicHttpBinding" address="https://app8.timelog.com/610patchreference/WebServices/CRM/V1_4/CRMServiceSecure.svc" bindingConfiguration="BasicHttpBinding_ICRMService1">
+    <endpoint name="BasicHttpBinding_ICRMService" contract="CRMService.ICRMService" bindingType="basicHttpBinding" address="https://app8.timelog.com/610patchreference/WebServices/CRM/V1_4/CRMServiceSecure.svc" bindingConfiguration="BasicHttpBinding_ICRMService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>https://app8.timelog.com/610patchreference/WebServices/CRM/V1_4/CRMServiceSecure.svc</serializedValue>
@@ -124,10 +124,10 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ICRMService1</serializedValue>
+          <serializedValue>BasicHttpBinding_ICRMService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>CrmService.ICRMService</serializedValue>
+          <serializedValue>CRMService.ICRMService</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

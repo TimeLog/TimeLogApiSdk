@@ -160,307 +160,307 @@
       </xsd:complexType>
       <xsd:element name="User" nillable="true" type="tns:User" />
     </xsd:schema>
-    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1">
-      <xsd:complexType name="APIBase">
-        <xsd:sequence />
-      </xsd:complexType>
-      <xsd:element name="APIBase" nillable="true" type="tns:APIBase" />
-    </xsd:schema>
-    <xsd:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_1" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_1">
-      <xsd:complexType name="ResponseOfSecurityToken">
-        <xsd:annotation>
-          <xsd:appinfo>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="APIBase">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:element name="APIBase" nillable="true" type="tns:APIBase" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_1" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ResponseOfSecurityToken">
+        <xs:annotation>
+          <xs:appinfo>
             <GenericType Name="ResponseOf{0}" Namespace="http://www.timelog.com/api/tlp/v1_1" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
               <GenericParameter Name="SecurityToken" Namespace="http://www.timelog.com/api/tlp/v1_2" />
             </GenericType>
-          </xsd:appinfo>
-        </xsd:annotation>
-        <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q8="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q8:APIBase">
-            <xsd:sequence>
-              <xsd:element xmlns:q9="http://www.timelog.com/api/tlp/v1_2" minOccurs="0" name="Return" nillable="true" type="q9:ArrayOfSecurityToken" />
-              <xsd:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xsd:string" />
-              <xsd:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
-              <xsd:element xmlns:q10="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q10:ExecutionStatus" />
-              <xsd:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
-              <xsd:element minOccurs="0" name="ErrorCode" type="xsd:int" />
-            </xsd:sequence>
-          </xsd:extension>
-        </xsd:complexContent>
-      </xsd:complexType>
-      <xsd:element name="ResponseOfSecurityToken" nillable="true" type="tns:ResponseOfSecurityToken" />
-      <xsd:complexType name="Request">
-        <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q11="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q11:APIBase">
-            <xsd:sequence>
-              <xsd:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfRequestParameter" />
-              <xsd:element minOccurs="0" name="ServiceClass" nillable="true" type="xsd:string" />
-              <xsd:element minOccurs="0" name="MethodName" nillable="true" type="xsd:string" />
-            </xsd:sequence>
-          </xsd:extension>
-        </xsd:complexContent>
-      </xsd:complexType>
-      <xsd:element name="Request" nillable="true" type="tns:Request" />
-      <xsd:complexType name="ArrayOfRequestParameter">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" maxOccurs="unbounded" name="RequestParameter" nillable="true" type="tns:RequestParameter" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:element name="ArrayOfRequestParameter" nillable="true" type="tns:ArrayOfRequestParameter" />
-      <xsd:complexType name="RequestParameter">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" name="Name" nillable="true" type="xsd:string" />
-          <xsd:element minOccurs="0" name="Value" nillable="true" type="xsd:string" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:element name="RequestParameter" nillable="true" type="tns:RequestParameter" />
-      <xsd:complexType name="ArrayOfAPIMessage">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" maxOccurs="unbounded" name="APIMessage" nillable="true" type="tns:APIMessage" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:element name="ArrayOfAPIMessage" nillable="true" type="tns:ArrayOfAPIMessage" />
-      <xsd:complexType name="APIMessage">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" name="Message" nillable="true" type="xsd:string" />
-          <xsd:element xmlns:q12="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" minOccurs="0" name="Severity" type="q12:APIMessageSeverity" />
-          <xsd:element minOccurs="0" name="ErrorCode" type="xsd:int" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:element name="APIMessage" nillable="true" type="tns:APIMessage" />
-      <xsd:complexType name="ResponseOfTimeRegistrationSettings">
-        <xsd:annotation>
-          <xsd:appinfo>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q8:APIBase">
+            <xs:sequence>
+              <xs:element xmlns:q9="http://www.timelog.com/api/tlp/v1_2" minOccurs="0" name="Return" nillable="true" type="q9:ArrayOfSecurityToken" />
+              <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+              <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q10:ExecutionStatus" />
+              <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+              <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ResponseOfSecurityToken" nillable="true" type="tns:ResponseOfSecurityToken" />
+      <xs:complexType name="Request">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q11:APIBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfRequestParameter" />
+              <xs:element minOccurs="0" name="ServiceClass" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Request" nillable="true" type="tns:Request" />
+      <xs:complexType name="ArrayOfRequestParameter">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RequestParameter" nillable="true" type="tns:RequestParameter" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfRequestParameter" nillable="true" type="tns:ArrayOfRequestParameter" />
+      <xs:complexType name="RequestParameter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RequestParameter" nillable="true" type="tns:RequestParameter" />
+      <xs:complexType name="ArrayOfAPIMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="APIMessage" nillable="true" type="tns:APIMessage" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAPIMessage" nillable="true" type="tns:ArrayOfAPIMessage" />
+      <xs:complexType name="APIMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" minOccurs="0" name="Severity" type="q12:APIMessageSeverity" />
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="APIMessage" nillable="true" type="tns:APIMessage" />
+      <xs:complexType name="ResponseOfTimeRegistrationSettings">
+        <xs:annotation>
+          <xs:appinfo>
             <GenericType Name="ResponseOf{0}" Namespace="http://www.timelog.com/api/tlp/v1_1" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
               <GenericParameter Name="TimeRegistrationSettings" Namespace="http://www.timelog.com/api/tlp/v1_2" />
             </GenericType>
-          </xsd:appinfo>
-        </xsd:annotation>
-        <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q13="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q13:APIBase">
-            <xsd:sequence>
-              <xsd:element xmlns:q14="http://www.timelog.com/api/tlp/v1_2" minOccurs="0" name="Return" nillable="true" type="q14:ArrayOfTimeRegistrationSettings" />
-              <xsd:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xsd:string" />
-              <xsd:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
-              <xsd:element xmlns:q15="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q15:ExecutionStatus" />
-              <xsd:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
-              <xsd:element minOccurs="0" name="ErrorCode" type="xsd:int" />
-            </xsd:sequence>
-          </xsd:extension>
-        </xsd:complexContent>
-      </xsd:complexType>
-      <xsd:element name="ResponseOfTimeRegistrationSettings" nillable="true" type="tns:ResponseOfTimeRegistrationSettings" />
-      <xsd:complexType name="ResponseOfUser">
-        <xsd:annotation>
-          <xsd:appinfo>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q13:APIBase">
+            <xs:sequence>
+              <xs:element xmlns:q14="http://www.timelog.com/api/tlp/v1_2" minOccurs="0" name="Return" nillable="true" type="q14:ArrayOfTimeRegistrationSettings" />
+              <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+              <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q15:ExecutionStatus" />
+              <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+              <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ResponseOfTimeRegistrationSettings" nillable="true" type="tns:ResponseOfTimeRegistrationSettings" />
+      <xs:complexType name="ResponseOfUser">
+        <xs:annotation>
+          <xs:appinfo>
             <GenericType Name="ResponseOf{0}" Namespace="http://www.timelog.com/api/tlp/v1_1" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
               <GenericParameter Name="User" Namespace="http://www.timelog.com/api/tlp/v1_2" />
             </GenericType>
-          </xsd:appinfo>
-        </xsd:annotation>
-        <xsd:complexContent mixed="false">
-          <xsd:extension xmlns:q16="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q16:APIBase">
-            <xsd:sequence>
-              <xsd:element xmlns:q17="http://www.timelog.com/api/tlp/v1_2" minOccurs="0" name="Return" nillable="true" type="q17:ArrayOfUser" />
-              <xsd:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xsd:string" />
-              <xsd:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
-              <xsd:element xmlns:q18="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q18:ExecutionStatus" />
-              <xsd:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
-              <xsd:element minOccurs="0" name="ErrorCode" type="xsd:int" />
-            </xsd:sequence>
-          </xsd:extension>
-        </xsd:complexContent>
-      </xsd:complexType>
-      <xsd:element name="ResponseOfUser" nillable="true" type="tns:ResponseOfUser" />
-    </xsd:schema>
-    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common">
-      <xsd:simpleType name="ExecutionStatus">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="NotSet" />
-          <xsd:enumeration value="Success" />
-          <xsd:enumeration value="Invalid" />
-          <xsd:enumeration value="Error" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:element name="ExecutionStatus" nillable="true" type="tns:ExecutionStatus" />
-    </xsd:schema>
-    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0">
-      <xsd:simpleType name="APIMessageSeverity">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="Error" />
-          <xsd:enumeration value="Invalid" />
-          <xsd:enumeration value="Message" />
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:element name="APIMessageSeverity" nillable="true" type="tns:APIMessageSeverity" />
-    </xsd:schema>
-    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Security" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Security">
-      <xsd:complexType name="ArrayOfRoleTypes">
-        <xsd:sequence>
-          <xsd:element minOccurs="0" maxOccurs="unbounded" name="RoleTypes" type="tns:RoleTypes" />
-        </xsd:sequence>
-      </xsd:complexType>
-      <xsd:element name="ArrayOfRoleTypes" nillable="true" type="tns:ArrayOfRoleTypes" />
-      <xsd:simpleType name="RoleTypes">
-        <xsd:restriction base="xsd:string">
-          <xsd:enumeration value="ExternalContractor">
-            <xsd:annotation>
-              <xsd:appinfo>
+          </xs:appinfo>
+        </xs:annotation>
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_1" base="q16:APIBase">
+            <xs:sequence>
+              <xs:element xmlns:q17="http://www.timelog.com/api/tlp/v1_2" minOccurs="0" name="Return" nillable="true" type="q17:ArrayOfUser" />
+              <xs:element minOccurs="0" name="ReturnTypeDescription" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+              <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" minOccurs="0" name="ResponseState" type="q18:ExecutionStatus" />
+              <xs:element minOccurs="0" name="Messages" nillable="true" type="tns:ArrayOfAPIMessage" />
+              <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ResponseOfUser" nillable="true" type="tns:ResponseOfUser" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="ExecutionStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NotSet" />
+          <xs:enumeration value="Success" />
+          <xs:enumeration value="Invalid" />
+          <xs:enumeration value="Error" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="ExecutionStatus" nillable="true" type="tns:ExecutionStatus" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="APIMessageSeverity">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Error" />
+          <xs:enumeration value="Invalid" />
+          <xs:enumeration value="Message" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="APIMessageSeverity" nillable="true" type="tns:APIMessageSeverity" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Security" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Security" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfRoleTypes">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleTypes" type="tns:RoleTypes" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfRoleTypes" nillable="true" type="tns:ArrayOfRoleTypes" />
+      <xs:simpleType name="RoleTypes">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="ExternalContractor">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="ExternalSalesperson">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ExternalSalesperson">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="TeamLeader">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="TeamLeader">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="ProjectMember">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProjectMember">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="SalesPerson">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SalesPerson">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">17</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="ProjectManager">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProjectManager">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="LimitedSectionManager">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="LimitedSectionManager">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">22</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="SectionManager">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SectionManager">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">25</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="Manager">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Manager">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="SystemAdministrator">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SystemAdministrator">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">40</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="UserCRM">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="UserCRM">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">41</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="UserHelpDesk">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="UserHelpDesk">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">42</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="UserSalary">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="UserSalary">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">43</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="SystemAdministration">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="SystemAdministration">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">44</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="ProjectManagement">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProjectManagement">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">45</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="CustomerContacts">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CustomerContacts">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">46</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="TimeTracking">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="TimeTracking">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">47</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="UserCanCreateProject">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="UserCanCreateProject">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">48</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="UserCanEditOwnProjects">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="UserCanEditOwnProjects">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">49</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="UserCanEditAllProjects">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="UserCanEditAllProjects">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">50</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="UserCanEditOwnDepartmentProjects">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="UserCanEditOwnDepartmentProjects">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">51</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-          <xsd:enumeration value="CanBeAllocated">
-            <xsd:annotation>
-              <xsd:appinfo>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CanBeAllocated">
+            <xs:annotation>
+              <xs:appinfo>
                 <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">52</EnumerationValue>
-              </xsd:appinfo>
-            </xsd:annotation>
-          </xsd:enumeration>
-        </xsd:restriction>
-      </xsd:simpleType>
-      <xsd:element name="RoleTypes" nillable="true" type="tns:RoleTypes" />
-    </xsd:schema>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="RoleTypes" nillable="true" type="tns:RoleTypes" />
+    </xs:schema>
     <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="anyType" nillable="true" type="xs:anyType" />
       <xs:element name="anyURI" nillable="true" type="xs:anyURI" />

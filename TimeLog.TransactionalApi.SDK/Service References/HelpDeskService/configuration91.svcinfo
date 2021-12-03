@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="WEY3Bf6hS4SRzBM1ldksEdx8+tR0/KTc3mQhg689C7Q=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="7h4gSZCre7ur+tNS56eVFYRa8ywIB8GKWYtx5a/C0W8=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_HelpDeskService1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_HelpDeskService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_HelpDeskService1</serializedValue>
+          <serializedValue>BasicHttpBinding_HelpDeskService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_HelpDeskService1" contract="HelpDeskService.HelpDeskService" bindingType="basicHttpBinding" address="https://app8.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc" bindingConfiguration="BasicHttpBinding_HelpDeskService1">
+    <endpoint name="BasicHttpBinding_HelpDeskService" contract="HelpDeskService.HelpDeskService" bindingType="basicHttpBinding" address="https://app8.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc" bindingConfiguration="BasicHttpBinding_HelpDeskService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>https://app8.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc</serializedValue>
@@ -124,7 +124,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_HelpDeskService1</serializedValue>
+          <serializedValue>BasicHttpBinding_HelpDeskService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>HelpDeskService.HelpDeskService</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_HelpDeskService1</serializedValue>
+          <serializedValue>BasicHttpBinding_HelpDeskService</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

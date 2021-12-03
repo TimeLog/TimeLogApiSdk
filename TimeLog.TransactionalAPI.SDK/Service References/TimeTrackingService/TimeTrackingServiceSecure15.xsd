@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DataTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="String" />
+      <xs:enumeration value="Integer" />
+      <xs:enumeration value="Float" />
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="List" />
+      <xs:enumeration value="CheckBox" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataTypeEnum" nillable="true" type="tns:DataTypeEnum" />
+  <xs:simpleType name="ValidateModelEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="IsNotEmptyOrWhiteSpace" />
+      <xs:enumeration value="IsPositiveNumber" />
+      <xs:enumeration value="IsNegativeNumber" />
+      <xs:enumeration value="IsEmail" />
+      <xs:enumeration value="IsNotNull" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ValidateModelEnum" nillable="true" type="tns:ValidateModelEnum" />
+</xs:schema>

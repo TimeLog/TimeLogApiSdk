@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="Rv4NdVWtBc0iwHA8McRKCBmKSy895EDsCwoROSS6664=">
+<SavedWcfConfigurationInformation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="9.1" CheckSum="Kv2mSwiRMlvjwQy6NunT1bOhF7fgXL8I1fYj6lcS3qY=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_OrganisationService1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_OrganisationService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_OrganisationService1</serializedValue>
+          <serializedValue>BasicHttpBinding_OrganisationService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_OrganisationService1" contract="OrganisationService.OrganisationService" bindingType="basicHttpBinding" address="https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc" bindingConfiguration="BasicHttpBinding_OrganisationService1">
+    <endpoint name="BasicHttpBinding_OrganisationService" contract="OrganisationService.OrganisationService" bindingType="basicHttpBinding" address="https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc" bindingConfiguration="BasicHttpBinding_OrganisationService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc</serializedValue>
@@ -124,7 +124,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_OrganisationService1</serializedValue>
+          <serializedValue>BasicHttpBinding_OrganisationService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>OrganisationService.OrganisationService</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_OrganisationService1</serializedValue>
+          <serializedValue>BasicHttpBinding_OrganisationService</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

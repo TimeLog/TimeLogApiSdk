@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.timelog.com/api/tlp/v1_6" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.timelog.com/api/tlp/v1_6" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd2" namespace="http://www.timelog.com/api/tlp/v1_2" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc?xsd=xsd5" namespace="http://api.timelog.com" />
+  <xs:complexType name="TaskHeader">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.timelog.com/api/tlp/v1_2" base="q1:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="No" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="WBS" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExternalKey" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskHeader" nillable="true" type="tns:TaskHeader" />
+  <xs:complexType name="ProjectHeader">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://www.timelog.com/api/tlp/v1_2" base="q2:APIBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjectGUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="No" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGeneralProject" type="xs:boolean" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MainContractID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProjectHeader" nillable="true" type="tns:ProjectHeader" />
+  <xs:complexType name="Ticket">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://api.timelog.com" base="q3:APIBaseExtended">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="ser:guid" />
+          <xs:element minOccurs="0" name="TicketID" type="xs:int" />
+          <xs:element minOccurs="0" name="No" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsBillable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TypeID" type="xs:int" />
+          <xs:element minOccurs="0" name="Status" type="xs:int" />
+          <xs:element minOccurs="0" name="ResponsibleEmployeeID" type="xs:int" />
+          <xs:element minOccurs="0" name="AccountManagerID" type="xs:int" />
+          <xs:element minOccurs="0" name="ExternalReference" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Priority" type="xs:int" />
+          <xs:element minOccurs="0" name="DueAt" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DepartmentID" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+          <xs:element minOccurs="0" name="ContactID" type="xs:int" />
+          <xs:element minOccurs="0" name="ServiceContractID" type="xs:int" />
+          <xs:element minOccurs="0" name="ProjectID" type="xs:int" />
+          <xs:element minOccurs="0" name="TaskID" type="xs:int" />
+          <xs:element minOccurs="0" name="Deadline" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Ticket" nillable="true" type="tns:Ticket" />
+</xs:schema>
