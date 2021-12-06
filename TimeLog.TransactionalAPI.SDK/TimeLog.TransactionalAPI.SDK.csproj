@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<Nullable>enable</Nullable>
+	<Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DocumentationFile>bin\Debug\TimeLog.TransactionalAPI.SDK.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CRMService\" />
+    <WCFMetadataStorage Include="Service References\ExpenseService\" />
+    <WCFMetadataStorage Include="Service References\FinancialService\" />
+    <WCFMetadataStorage Include="Service References\InvoicingService\" />
+    <WCFMetadataStorage Include="Service References\OrganisationService\" />
+    <WCFMetadataStorage Include="Service References\ProjectManagementService\" />
+    <WCFMetadataStorage Include="Service References\SalaryService\" />
+    <WCFMetadataStorage Include="Service References\SecurityService\" />
+    <WCFMetadataStorage Include="Service References\HelpDeskService\" />
+    <WCFMetadataStorage Include="Service References\TimeTrackingService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.9.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.9.0" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.9.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.256001">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.9.0" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>copy /y $(TargetDir)*.dll $(SolutionDir)Deploy
+copy /y $(TargetDir)*.xml $(SolutionDir)Deploy</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tlp:Customers xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/CustomersRaw.xsd">
+  <tlp:Customer ID="1933" GUID="b86f7c33-f6a8-41a3-a5db-05422ae34e43">
+    <tlp:Name>Microsoft</tlp:Name>
+    <tlp:NickName>Microsoft</tlp:NickName>
+    <tlp:No>05.1309</tlp:No>
+    <tlp:CustomerStatusID>12</tlp:CustomerStatusID>
+    <tlp:CustomerStatus>New lead</tlp:CustomerStatus>
+    <tlp:Address1>One Microsoft Way</tlp:Address1>
+    <tlp:Address2></tlp:Address2>
+    <tlp:Address3></tlp:Address3>
+    <tlp:ZipCode>WA 98052-6399</tlp:ZipCode>
+    <tlp:City>Redmond</tlp:City>
+    <tlp:State>Washington</tlp:State>
+    <tlp:CountryID>218</tlp:CountryID>
+    <tlp:Country>USA</tlp:Country>
+    <tlp:Phone>+1 999 9999 9999</tlp:Phone>
+    <tlp:Fax>+1 999 9999 9999</tlp:Fax>
+    <tlp:Email>info@microsoft.com</tlp:Email>
+    <tlp:WebPage>www.microsoft.com</tlp:WebPage>
+    <tlp:EanNo>1234567890123</tlp:EanNo>
+    <tlp:InvoiceTemplateID>0</tlp:InvoiceTemplateID>
+    <tlp:VATNo>812780570</tlp:VATNo>
+    <tlp:Comment>Contacts need data</tlp:Comment>
+    <tlp:AccountManagerID>10</tlp:AccountManagerID>
+    <tlp:AccountManagerFullName>Paul M Weiss</tlp:AccountManagerFullName>
+    <tlp:AccountManagerInitials>PMW</tlp:AccountManagerInitials>
+    <tlp:SecondaryAccountManagerID>12</tlp:SecondaryAccountManagerID>
+    <tlp:SecondaryAccountManagerFullName>Paul Summerson</tlp:SecondaryAccountManagerFullName>
+    <tlp:SecondaryAccountManagerInitials>PS</tlp:SecondaryAccountManagerInitials>
+    <tlp:IndustryID>6</tlp:IndustryID>
+    <tlp:IndustryName>Software Company</tlp:IndustryName>
+    <tlp:CustomerSince>2011-08-12</tlp:CustomerSince>
+    <tlp:CreatedAt>2010-04-16T09:35:59</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>417</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>Peter Nielsen</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2010-04-16T09:35:59</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>417</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>Peter Nielsen</tlp:LastModifiedBy>
+  </tlp:Customer>
+</tlp:Customers>

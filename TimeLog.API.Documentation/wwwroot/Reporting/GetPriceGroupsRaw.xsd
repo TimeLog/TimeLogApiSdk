@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="PriceGroups">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="PriceGroup" type="tlp:PriceGroupRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="PriceGroup_Key">
+      <xsd:selector xpath=".//tlp:PriceGroup" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="PriceGroupRaw_Type">
+    <xsd:sequence>
+	  <xsd:element name="Name" type="xsd:string" />
+	  <xsd:element name="LegalEntityID" type="xsd:positiveInteger" />
+	  <xsd:element name="LegalEntityName" type="xsd:string" />
+	  <xsd:element name="CustomerID" type="xsd:positiveInteger" />
+	  <xsd:element name="CustomerName" type="xsd:string" />
+	  <xsd:element name="CurrencyISO" type="xsd:string" />  
+	  <xsd:element name="IsActive" type="xsd:positiveInteger" />
+    </xsd:sequence>
+	<xsd:attribute name="ID" type="xsd:positiveInteger" use="optional" />
+	<xsd:attribute name="GUID" type="xsd:string" use="optional" />
+  </xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Contacts
+  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/ContactsRaw.xsd">
+  <tlp:Contact ID="3353">
+    <tlp:Salutation>Mr.</tlp:Salutation>
+    <tlp:FirstName>John</tlp:FirstName>
+    <tlp:LastName>Smith</tlp:LastName>
+    <tlp:FullName>John Smith</tlp:FullName>
+    <tlp:CustomerID>1</tlp:CustomerID>
+    <tlp:CustomerName>Microsoft</tlp:CustomerName>
+    <tlp:CustomerNo>02.0000</tlp:CustomerNo>
+    <tlp:Title>Sales manager</tlp:Title>
+    <tlp:Phone>+1 9999 9999</tlp:Phone>
+    <tlp:Mobile>+1 9999 9999</tlp:Mobile>
+    <tlp:PrivatePhone>+1 9999 9999</tlp:PrivatePhone>
+    <tlp:Email>j.smith@micorsoft.com</tlp:Email>
+    <tlp:Address1>One Microsoft Way</tlp:Address1>
+    <tlp:Address2>Two Microsoft Way</tlp:Address2>
+    <tlp:ZipCode>WA 98052-6399</tlp:ZipCode>
+    <tlp:City>Redmond</tlp:City>
+    <tlp:State>Washington</tlp:State>
+    <tlp:Birthday>1980-12-01</tlp:Birthday>
+    <tlp:Country>USA</tlp:Country>
+    <tlp:Comment>Note</tlp:Comment>
+    <tlp:AccountManagerID>14</tlp:AccountManagerID>
+    <tlp:AccountManagerFullName>Anders Egede Brandstrup</tlp:AccountManagerFullName>
+    <tlp:CreatedAt>2010-06-12T13:24:52</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>414</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>MHE</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2010-06-12T13:24:52</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>414</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>MHE</tlp:LastModifiedBy>
+    <tlp:IsActive>1</tlp:IsActive>
+    <tlp:Department>Engineering</tlp:Department>
+  </tlp:Contact>
+</tlp:Contacts>

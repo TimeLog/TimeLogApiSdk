@@ -1,0 +1,25 @@
+﻿@using TimeLog.Api.Documentation
+@model TimeLog.Api.Documentation.Models.TypeDoc
+@{
+    ViewBag.Title = Model.Name + " v" + Model.Version() + " - Service Details";
+}
+
+<article class="article">
+    <p><a href="@Url.Action("Services")">Back to services</a></p>
+    <h2>Service Details for @Model.Name.</h2>
+    <p><span class="text-selection">Version @Model.Version()</span></p>
+    <p>@Model.Summary</p>
+    @if (!string.IsNullOrWhiteSpace(Model.Remarks))
+    {
+        <h3>Endpoints</h3>
+        <pre>@string.Join("\n", Model.Remarks.Split(new[] { "\n", ": " }, StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()))</pre>
+    }
+    <h3>Methods</h3>
+    <ul>
+        @foreach (var _method in Model.Methods.Where(m => !m.IsConstructor).OrderBy(m => m.Name))
+        {
+            <li class="icon-arrow_in_circle"><a href="@Url.Action("Method", "Transactional", new { id = _method.FullyQuantifiedName.UrlEncode() })">@_method.Name</a> - @_method.Summary</li>
+        }
+    </ul>
+
+</article>

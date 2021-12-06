@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xsd:element name="Contracts">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Contract" type="tlp:ContractRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="Contract_Key">
+      <xsd:selector xpath=".//tlp:Contract" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="ContractRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="ContractModelType" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="ProjectID" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="ProjectContractStatus" type="xsd:positiveInteger" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="WorkBudgetHours" type="xsd:decimal" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="WorkBudgetAmount" type="xsd:decimal" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="WorkExpenseAmount" type="xsd:decimal" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="WorkTravelAmount" type="xsd:decimal" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="OrderDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="StartDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="EndDate" type="xsd:dateTime" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="optional" />
+    <xsd:attribute name="GUID" type="xsd:string" use="optional" />
+  </xsd:complexType>
+
+</xsd:schema>

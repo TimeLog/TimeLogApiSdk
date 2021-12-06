@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="Projects" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Project" type="tlp:ProjectRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="Project_Key">
+      <xsd:selector xpath=".//tlp:Project" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="ProjectRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="Name" type="xsd:string" />
+      <xsd:element name="No" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="Status" type="xsd:byte" />
+      <xsd:element name="Department" type="xsd:positiveInteger" />
+      <xsd:element name="OrderedByDepartment" type="xsd:positiveInteger" />
+      <xsd:element name="ProjectStartDate" type="xsd:dateTime" />
+      <xsd:element name="ProjectEndDate" type="xsd:dateTime" />
+      <xsd:element name="Link" type="xsd:string" />
+      <xsd:element name="Description" type="xsd:string" />
+      <xsd:element name="CustomerID" type="xsd:positiveInteger" />
+      <xsd:element name="CustomerName" type="xsd:string" />
+      <xsd:element name="CustomerNo" type="xsd:string" minOccurs="0" maxOccurs="1"  />
+      <xsd:element name="PMID" type="xsd:positiveInteger" />
+      <xsd:element name="PMInitials" type="xsd:string" />
+      <xsd:element name="PMFullName" type="xsd:string" />
+      <xsd:element name="AccountManagerID" type="xsd:positiveInteger" />
+      <xsd:element name="AccountManagerInitials" type="xsd:string" />
+      <xsd:element name="AccountManagerFullName" type="xsd:string" />
+      <xsd:element name="PartnerID" type="xsd:positiveInteger" />
+      <xsd:element name="PartnerInitials" type="xsd:string" />
+      <xsd:element name="PartnerFullName" type="xsd:string" />
+      <xsd:element name="ProjectTypeID" type="xsd:positiveInteger" />
+      <xsd:element name="ProjectTypeName" type="xsd:string" />
+      <xsd:element name="ProjectCategoryID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="ProjectCategoryName" type="xsd:string" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="BudgetAmountFixedPriceTasks" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetAmountFixedPriceProject" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetAmountTimeAndMaterial" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetAmountExpenses" type="xsd:decimal" />
+      <xsd:element name="BudgetAmountTravel" type="xsd:decimal" />
+      <xsd:element name="BudgetAmountWorkCurrency" type="xsd:decimal" />
+      <xsd:element name="BudgetAmountExpenseCurrency" type="xsd:decimal" />
+      <xsd:element name="BudgetAmountTravelCurrency" type="xsd:decimal" />
+      <xsd:element name="BudgetHoursFixedPriceTasks" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetHoursFixedPriceProject" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetHoursTimeAndMaterial" type="xsd:decimal" /><!-- OBSOLETE from v6.0.5 -->
+      <xsd:element name="BudgetAmount" type="xsd:decimal" />
+      <xsd:element name="BudgetHours" type="xsd:decimal" />
+      <xsd:element name="ForecastPercent" type="xsd:decimal" />
+      <xsd:element name="CreatedAt" type="xsd:dateTime" />
+      <xsd:element name="CreatedByEmployeeId" type="xsd:positiveInteger" />
+      <xsd:element name="CreatedBy" type="xsd:string" />
+      <xsd:element name="LastModifiedAt" type="xsd:dateTime" />
+      <xsd:element name="LastModifiedByEmployeeId" type="xsd:positiveInteger" />
+      <xsd:element name="LastModifiedBy" type="xsd:string" />
+      <xsd:element name="ProjectStatusName" type="xsd:string" />
+      <xsd:element name="ContactID" type="xsd:positiveInteger" />
+      <xsd:element name="ContactFullName" type="xsd:string" />
+      <xsd:element name="ContactEmail" type="xsd:string" />
+      <xsd:element name="InternalProject" type="xsd:boolean" />
+      <xsd:element name="PONumber" type="xsd:string" />
+      <xsd:element name="ProjectStage" type="xsd:string" />
+      <xsd:element name="CurrencyISOCode" type="xsd:string" />
+      <xsd:element name="CurrencyRate" type="xsd:decimal" />
+      <xsd:element name="IsMultiCustomerProject" type="xsd:boolean" />
+      <xsd:element name="LegalEntityID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+    <xsd:attribute name="GUID" type="xsd:string" use="required" />
+  </xsd:complexType>
+
+</xsd:schema>

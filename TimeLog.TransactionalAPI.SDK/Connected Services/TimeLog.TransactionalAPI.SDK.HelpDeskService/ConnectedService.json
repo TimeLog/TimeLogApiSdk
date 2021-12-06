@@ -1,0 +1,17 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "https://app8.timelog.com/610patchreference/WebServices/HelpDesk/V1_6/HelpDeskServiceSecure.svc"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, TimeLog.TransactionalAPI.SDK.HelpDeskService"
+    ],
+    "sync": true,
+    "targetFramework": "netstandard2.1",
+    "typeReuseMode": "All"
+  }
+}

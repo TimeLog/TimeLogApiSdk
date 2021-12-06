@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "TimeLog Reporting API and Microsoft Power BI";
+}
+
+<article class="article">
+
+    <h1>@ViewBag.Title</h1>
+    <h2>
+        With Microsoft Power BI you are able to generate your own reports based on TimeLog data.
+    </h2>
+    <p>
+        This page will guide you through the basic setup for a single TimeLog resource. In order to generate
+        more comprehensive reports based on more TimeLog resources, we recommend that you find a consultant
+        with expertise in Microsoft Power BI.
+    </p>
+    <p>
+        <strong>
+            TimeLog does not support Microsoft Power BI configuration and modeling. However, we will
+            happily direct you to a company specializing in Microsoft Power BI.
+        </strong>
+    </p>
+    <p>
+        This below example is made in <a href="https://powerbi.microsoft.com/en-us/desktop/">Power BI Desktop</a>.
+    </p> 
+    <h3>Walk-through</h3>
+    <p>Open "Power BI Desktop".</p>
+    <p>Close the welcome screen.</p>
+    <p>
+        <a href="~/PowerBI/timelog-reporting-api-power-bi-01.png"><img src="~/PowerBI/timelog-reporting-api-power-bi-01.png" /></a>
+    </p>
+    <p>Click "Enter data".</p>
+    <p>
+        <a href="~/PowerBI/timelog-reporting-api-power-bi-02.png"><img src="~/PowerBI/timelog-reporting-api-power-bi-02.png" /></a>
+    </p>
+    <p>Click "Edit".</p>
+    <p>
+        <a href="~/PowerBI/timelog-reporting-api-power-bi-03.png"><img src="~/PowerBI/timelog-reporting-api-power-bi-03.png" /></a>
+    </p>
+    <p>Click "Advanced Editor".</p>
+    <p>
+        <a href="~/PowerBI/timelog-reporting-api-power-bi-04.png"><img src="~/PowerBI/timelog-reporting-api-power-bi-04.png" /></a>
+    </p>
+    <p>Paste the following code into the editor.</p>
+    <pre>let
+    PostContents = "siteCode={your site code}&apiID={your api id}&apiPassword={your api password}&employeeID=-1&initials=&departmentID=-1&status=1",
+    GetEmployeesRaw = Web.Contents(
+        "https://app5.timelog.com/soxdemo/service.asmx/GetEmployeesRaw",
+        [
+            Headers=[#"Content-Type"="application/x-www-form-urlencoded"],
+            Content = Text.ToBinary(PostContents)
+        ]
+    ),
+    ImportedXml = Xml.Document(GetEmployeesRaw),
+    #"Removed Other Columns" = Table.SelectColumns(ImportedXml,{"Value"}),
+    #"Expanded Value" = Table.ExpandTableColumn(#"Removed Other Columns", "Value", {"Name", "Namespace", "Value", "Attributes"}, {"Name", "Namespace", "Value.1", "Attributes"}),
+    #"Removed Other Columns1" = Table.SelectColumns(#"Expanded Value",{"Value.1", "Attributes"}),
+    #"Expanded Attributes" = Table.ExpandTableColumn(#"Removed Other Columns1", "Attributes", {"Value"}, {"Value"}),
+    #"Renamed Columns" = Table.RenameColumns(#"Expanded Attributes",{{"Value", "EmployeeID"}}),
+    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"EmployeeID", "Value.1"}),
+    #"Expanded Value.1" = Table.ExpandTableColumn(#"Reordered Columns", "Value.1", {"Name", "Value"}, {"Name", "Value"}),
+    #"Pivoted Column" = Table.Pivot(#"Expanded Value.1", List.Distinct(#"Expanded Value.1"[Name]), "Name", "Value")
+in
+    #"Pivoted Column"
+</pre>
+    <p>Adjust "{your site code}", "{your api id}", "{your api password}" and your site URL.</p>
+    <p>
+        <a href="~/PowerBI/timelog-reporting-api-power-bi-05.png"><img src="~/PowerBI/timelog-reporting-api-power-bi-05.png" /></a>
+    </p>
+    <p>Click "Close & Apply".</p>
+    <p>
+        <a href="~/PowerBI/timelog-reporting-api-power-bi-06.png"><img src="~/PowerBI/timelog-reporting-api-power-bi-06.png" /></a>
+    </p>
+    <p>Now your employee data is available for Power BI.</p>
+    <p>
+        <a href="~/PowerBI/timelog-reporting-api-power-bi-07.png"><img src="~/PowerBI/timelog-reporting-api-power-bi-07.png" /></a>
+    </p>
+
+    <p>
+        Each TimeLog site has its own unique SiteCode required on all requests. You may see
+        the SiteCode from the System Administration inside TimeLog together with the API credentials.
+    </p>
+    <p>
+        Additional, each TimeLog site can define one set of Reporting API credentials that are
+        also required for each request.
+    </p>
+
+</article>
