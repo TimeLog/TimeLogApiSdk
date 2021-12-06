@@ -39,6 +39,11 @@
                 Gets the active CRM client
             </summary>
         </member>
+        <member name="M:TimeLog.TransactionalAPI.SDK.CRMHandler.Dispose">
+            <summary>
+                Dispose
+            </summary>
+        </member>
         <member name="T:TimeLog.TransactionalAPI.SDK.ExpenseHandler">
             <summary>
                 Handler of functionality related to the expense service
@@ -177,6 +182,11 @@
         <member name="P:TimeLog.TransactionalAPI.SDK.InvoicingHandler.InvoicingClient">
             <summary>
                 Gets the active invoicing client
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalAPI.SDK.InvoicingHandler.Dispose">
+            <summary>
+                Dispose
             </summary>
         </member>
         <member name="T:TimeLog.TransactionalAPI.SDK.OrganisationHandler">
@@ -558,6 +568,11 @@
         <member name="P:TimeLog.TransactionalAPI.SDK.SettingsHandler.StandardHttpsTransportBindingElement">
             <summary>
                 Gets a standard https binding
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalAPI.SDK.SettingsHandler.Dispose">
+            <summary>
+                Dispose
             </summary>
         </member>
         <member name="T:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler">

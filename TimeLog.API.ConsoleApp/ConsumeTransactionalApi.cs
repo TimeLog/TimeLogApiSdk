@@ -23,7 +23,7 @@ public class ConsumeTransactionalApi
             var result = ProjectManagementHandler.Instance.ProjectManagementClient.GetWorkPaged(
                 "LCH",
                 new DateTime(2021, 1, 1),
-                new DateTime(2021, 1, 31),
+                new DateTime(2021, 12, 31),
                 1,
                 350,
                 ProjectManagementHandler.Instance.Token);
