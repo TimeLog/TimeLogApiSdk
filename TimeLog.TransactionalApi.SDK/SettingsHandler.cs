@@ -23,7 +23,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the SettingsHandler.
         /// </summary>
-        public static SettingsHandler Instance => _instance ?? (_instance = new SettingsHandler());
+        public static SettingsHandler Instance => _instance ??= new SettingsHandler();
 
         /// <summary>
         ///     Gets the base uri for the TimeLog site read from the
@@ -96,7 +96,6 @@ namespace TimeLog.TransactionalAPI.SDK
             new HttpTransportBindingElement
             {
                 AllowCookies = false,
-                HostNameComparisonMode = HostNameComparisonMode.StrongWildcard,
                 BypassProxyOnLocal = false,
                 MaxBufferSize = (int) MaxReceivedMessageSize,
                 MaxBufferPoolSize = MaxReceivedMessageSize,
@@ -113,7 +112,6 @@ namespace TimeLog.TransactionalAPI.SDK
             new HttpsTransportBindingElement
             {
                 AllowCookies = false,
-                HostNameComparisonMode = HostNameComparisonMode.StrongWildcard,
                 BypassProxyOnLocal = false,
                 MaxBufferSize = (int) MaxReceivedMessageSize,
                 MaxBufferPoolSize = MaxReceivedMessageSize,

@@ -27,7 +27,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="HelpDeskHandler" />.
         /// </summary>
-        public static HelpDeskHandler Instance => _instance ?? (_instance = new HelpDeskHandler());
+        public static HelpDeskHandler Instance => _instance ??= new HelpDeskHandler();
 
         /// <summary>
         ///     Gets the uri associated with the HelpDesk service.

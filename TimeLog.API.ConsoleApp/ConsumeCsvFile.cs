@@ -1,48 +1,42 @@
-﻿namespace TimeLog.ApiConsoleApp
+﻿using System.Reflection;
+using log4net;
+using TimeLog.Library.Data;
+
+namespace TimeLog.ApiConsoleApp;
+
+/// <summary>
+///     Template class for consuming a csv file
+/// </summary>
+public class ConsumeCsvFile
 {
-    using System;
-    using System.IO;
-    using System.Reflection;
+    private static readonly DirectoryInfo? AppPath = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory;
+    private static readonly ILog Logger = LogManager.GetLogger(typeof(ConsumeCsvFile));
 
-    using log4net;
-
-    using TimeLog.Library.Data;
-
-    /// <summary>
-    /// Template class for consuming a csv file
-    /// </summary>
-    public class ConsumeCsvFile
+    public static void Consume()
     {
-        private static readonly DirectoryInfo AppPath = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory;
-        private static readonly ILog Logger = LogManager.GetLogger(typeof(ConsumeCsvFile));
-
-        public static void Consume()
+        try
         {
-            try
+            var csvReader = new CsvReader(AppPath + "\\test.csv") {Splitter = ','};
+            
+            while (csvReader.Read())
             {
-
-                var csvReader = new CsvReader(AppPath + "\\test.csv") {Splitter = ','};
-                while (csvReader.Read())
+                if (Logger.IsDebugEnabled)
                 {
-                    if (Logger.IsDebugEnabled)
-                    {
-                        Logger.DebugFormat(
-                            "Found project \"{0}\" for customer \"{1}\" with period {2} to {3} with a budget of {4} hours ({5})",
-                            csvReader.GetString("ProjectName"),
-                            csvReader.GetString("CustomerName"),
-                            csvReader.GetDateTime("StartDate").ToString("r"),
-                            csvReader.GetDateTime("EndDate").ToString("r"),
-                            csvReader.GetDouble("BudgetHours"),
-                            csvReader.GetString("Comment"));
-                    }
+                    Logger.DebugFormat(
+                        "Found project \"{0}\" for customer \"{1}\" with period {2:r} to {3:r} with a budget of {4} hours ({5})",
+                        csvReader.GetString("ProjectName"),
+                        csvReader.GetString("CustomerName"), csvReader.GetDateTime("StartDate"),
+                        csvReader.GetDateTime("EndDate"),
+                        csvReader.GetDouble("BudgetHours"),
+                        csvReader.GetString("Comment"));
                 }
             }
-            catch (Exception ex)
+        }
+        catch (Exception ex)
+        {
+            if (Logger.IsErrorEnabled)
             {
-                if (Logger.IsErrorEnabled)
-                {
-                    Logger.Error("Failed to read file", ex);
-                }
+                Logger.Error("Failed to read file", ex);
             }
         }
     }

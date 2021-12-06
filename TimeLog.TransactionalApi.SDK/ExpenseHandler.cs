@@ -27,7 +27,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="ExpenseHandler" />.
         /// </summary>
-        public static ExpenseHandler Instance => _instance ?? (_instance = new ExpenseHandler());
+        public static ExpenseHandler Instance => _instance ??= new ExpenseHandler();
 
         /// <summary>
         ///     Gets the uri associated with the expense service.

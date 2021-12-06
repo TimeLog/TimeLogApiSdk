@@ -1,69 +1,65 @@
-﻿using System.Collections.Generic;
+﻿using log4net;
+using TimeLog.TransactionalAPI.SDK;
+using TimeLog.TransactionalAPI.SDK.ProjectManagementService;
 
-namespace TimeLog.ApiConsoleApp
+namespace TimeLog.ApiConsoleApp;
+
+public class GetWorkUnitChangeLog
 {
-    using System;
+    private static readonly ILog Logger = LogManager.GetLogger(typeof(GetWorkUnitChangeLog));
 
-    using log4net;
-
-    using TimeLog.TransactionalApi.SDK;
-    using TimeLog.TransactionalApi.SDK.ProjectManagementService;
-
-    public class GetWorkUnitChangeLog
+    public static void Consume()
     {
-        private static readonly ILog Logger = LogManager.GetLogger(typeof(GetWorkUnitChangeLog));
-
-        public static void Consume()
+        if (SecurityHandler.Instance.TryAuthenticate(out IEnumerable<string> messages))
         {
-            IEnumerable<string> _messages;
-            if (SecurityHandler.Instance.TryAuthenticate(out _messages))
+            if (Logger.IsInfoEnabled)
             {
-                if (Logger.IsInfoEnabled)
-                {
-                    Logger.Info("Sucessfully authenticated on transactional API");
-                }
-
-                int _resultCount = 9999;
-                int _pageIndex = 1;
-
-                while (_resultCount > 0)
-                {
-                    var _result = ProjectManagementHandler.Instance.ProjectManagementClient.GetWorkChangeLogPaged(new DateTime(2018, 12, 20, 0, 0, 0), new DateTime(2018, 12, 21, 23, 59, 59), true, true, true, _pageIndex, 100, ProjectManagementHandler.Instance.Token);
-                    if (_result.ResponseState == ExecutionStatus.Success)
-                    {
-                        Logger.Info("Page " + _pageIndex + " with " + _result.Return.Length + " results");
-                        _resultCount = _result.Return.Length;
-
-                        foreach (var _workUnitFlat in _result.Return)
-                        {
-                            Logger.InfoFormat("On {0} did the employee ({1}) add {2} hours tracked on {3}", _workUnitFlat.ActionDate, _workUnitFlat.EmployeeInitials, _workUnitFlat.Hours, _workUnitFlat.Date);
-                        }
-
-                        _pageIndex = _pageIndex + 1;
-                    }
-                    else
-                    {
-                        foreach (var _apiMessage in _result.Messages)
-                        {
-                            if (Logger.IsErrorEnabled)
-                            {
-                                Logger.Error(_apiMessage.Message);
-                            }
-                        }
-
-                        break;
-                    }
-                }
+                Logger.Info("Sucessfully authenticated on transactional API");
             }
-            else
+
+            var resultCount = 9999;
+            var pageIndex = 1;
+
+            while (resultCount > 0)
             {
-                if (Logger.IsWarnEnabled)
+                var result = ProjectManagementHandler.Instance.ProjectManagementClient.GetWorkChangeLogPaged(
+                    new DateTime(2018, 12, 20, 0, 0, 0), new DateTime(2018, 12, 21, 23, 59, 59), true, true, true,
+                    pageIndex, 100, ProjectManagementHandler.Instance.Token);
+                if (result.ResponseState == ExecutionStatus.Success)
                 {
-                    Logger.Warn("Failed to authenticate to transactional API");
-                    Logger.Warn(string.Join(",", _messages));
+                    Logger.Info("Page " + pageIndex + " with " + result.Return.Length + " results");
+                    resultCount = result.Return.Length;
+
+                    foreach (var workUnitFlat in result.Return)
+                    {
+                        Logger.InfoFormat("On {0} did the employee ({1}) add {2} hours tracked on {3}",
+                            workUnitFlat.ActionDate, workUnitFlat.EmployeeInitials, workUnitFlat.Hours,
+                            workUnitFlat.Date);
+                    }
+
+                    pageIndex = pageIndex + 1;
+                }
+                else
+                {
+                    foreach (var apiMessage in result.Messages)
+                    {
+                        if (Logger.IsErrorEnabled)
+                        {
+                            Logger.Error(apiMessage.Message);
+                        }
+                    }
+
+                    break;
                 }
             }
         }
-
+        else
+        {
+            if (Logger.IsWarnEnabled)
+            {
+                Logger.Warn("Failed to authenticate to transactional API");
+                Logger.Warn(string.Join(",", messages));
+            }
+        }
     }
 }

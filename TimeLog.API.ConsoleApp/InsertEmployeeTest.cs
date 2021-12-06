@@ -1,280 +1,278 @@
-﻿namespace TimeLog.ApiConsoleApp
+﻿using log4net;
+using TimeLog.TransactionalAPI.SDK;
+using TimeLog.TransactionalAPI.SDK.FinancialService;
+using TimeLog.TransactionalAPI.SDK.OrganisationService;
+using TimeLog.TransactionalAPI.SDK.RawHelper;
+using TimeLog.TransactionalAPI.SDK.SalaryService;
+using ExecutionStatus = TimeLog.TransactionalAPI.SDK.OrganisationService.ExecutionStatus;
+
+namespace TimeLog.ApiConsoleApp;
+
+/// <summary>
+///     Template class for consuming the transactional API
+/// </summary>
+public class InsertEmployeeTest
 {
-    using System;
-    using System.Linq;
+    private static readonly ILog Logger = LogManager.GetLogger(typeof(InsertEmployeeTest));
 
-    using log4net;
-
-    using TimeLog.TransactionalApi.SDK;
-    using TimeLog.TransactionalApi.SDK.FinancialService;
-    using TimeLog.TransactionalApi.SDK.OrganisationService;
-    using TimeLog.TransactionalApi.SDK.RawHelper;
-    using TimeLog.TransactionalApi.SDK.SalaryService;
-
-    using ExecutionStatus = TimeLog.TransactionalApi.SDK.OrganisationService.ExecutionStatus;
-
-    /// <summary>
-    /// Template class for consuming the transactional API
-    /// </summary>
-    public class InsertEmployeeTest
+    public static void Consume()
     {
-        private static readonly ILog Logger = LogManager.GetLogger(typeof(InsertEmployeeTest));
+        // For getting the raw XML
+        SecurityHandler.Instance.CollectRawRequestResponse = true;
+        OrganisationHandler.Instance.CollectRawRequestResponse = true;
+        SalaryHandler.Instance.CollectRawRequestResponse = true;
 
-        public static void Consume()
+        if (SecurityHandler.Instance.TryAuthenticate(out var messages))
         {
-            // For getting the raw XML
-            SecurityHandler.Instance.CollectRawRequestResponse = true;
-            OrganisationHandler.Instance.CollectRawRequestResponse = true;
-            SalaryHandler.Instance.CollectRawRequestResponse = true;
-
-            if (SecurityHandler.Instance.TryAuthenticate(out var _messages))
+            RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\TryAuthenticate.txt");
+            if (Logger.IsInfoEnabled)
             {
-                RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\TryAuthenticate.txt");
-                if (Logger.IsInfoEnabled)
+                Logger.Info("Sucessfully authenticated on transactional API");
+            }
+
+            var employeeGuid = Guid.NewGuid();
+            Department? department = null;
+
+            var departmentResult =
+                OrganisationHandler.Instance.OrganisationClient.GetDepartments(OrganisationHandler.Instance.Token);
+
+            foreach (var apiMessage in departmentResult.Messages)
+            {
+                if (Logger.IsDebugEnabled)
                 {
-                    Logger.Info("Sucessfully authenticated on transactional API");
+                    Logger.Debug(apiMessage.Message);
                 }
+            }
 
-                var _employeeGuid = Guid.NewGuid();
-                Department _department = null;
+            if (departmentResult.ResponseState == ExecutionStatus.Success)
+            {
+                department = departmentResult.Return.FirstOrDefault();
+            }
 
-                var _departmentResult = OrganisationHandler.Instance.OrganisationClient.GetDepartments(OrganisationHandler.Instance.Token);
+            if (department == null)
+            {
+                throw new ArgumentException("No department found");
+            }
 
-                foreach (var _apiMessage in _departmentResult.Messages)
+            var normalWorkingTime = GetNormalWorkingTime();
+            var holidayCalendar = GetHolidayCalendar();
+            var allowance = GetAllowance();
+            var hourlyRate = GetHourlyRate();
+            var employeeCostRate = GetEmployeeCostRate();
+
+            var employeeResult = OrganisationHandler.Instance.OrganisationClient.CreateEmployee(
+                employeeGuid,
+                "peter.nielsen@contoso.com",
+                "PN",
+                "Peter",
+                "Nielsen",
+                "007",
+                "peter.nielsen@contoso.com",
+                "Senior Developer",
+                "+45 12345678",
+                "+45 87654321",
+                normalWorkingTime.Name,
+                holidayCalendar.Name,
+                allowance.Name,
+                "Employee",
+                hourlyRate.Name,
+                employeeCostRate.Name,
+                "peter.nielsen",
+                department.ID,
+                OrganisationHandler.Instance.Token);
+
+            RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\InsertEmployee.txt");
+            if (employeeResult.ResponseState == ExecutionStatus.Success)
+            {
+                Logger.Info("Employee created");
+                var employee = employeeResult.Return.FirstOrDefault();
+                if (employee != null)
                 {
-                    if (Logger.IsDebugEnabled)
-                    {
-                        Logger.Debug(_apiMessage.Message);
-                    }
-                }
-
-                if (_departmentResult.ResponseState == ExecutionStatus.Success)
-                {
-                    _department = _departmentResult.Return.FirstOrDefault();
-                }
-
-                if (_department == null)
-                {
-                    throw new ArgumentException("No department found");
-                }
-
-                NormalWorkingTime _normalWorkingTime = GetNormalWorkingTime();
-                HolidayCalendar _holidayCalendar = GetHolidayCalendar();
-                Allowance _allowance = GetAllowance();
-                HourlyRate _hourlyRate = GetHourlyRate();
-                EmployeeCostRate _employeeCostRate = GetEmployeeCostRate();
-
-                var _employeeResult = OrganisationHandler.Instance.OrganisationClient.CreateEmployee(
-                    _employeeGuid,
-                    "peter.nielsen@contoso.com",
-                    "PN",
-                    "Peter",
-                    "Nielsen",
-                    "007",
-                    "peter.nielsen@contoso.com",
-                    "Senior Developer",
-                    "+45 12345678",
-                    "+45 87654321",
-                    _normalWorkingTime.Name,
-                    _holidayCalendar.Name,
-                    _allowance.Name,
-                    "Employee",
-                    _hourlyRate.Name,
-                    _employeeCostRate.Name,
-                    "peter.nielsen",
-                    _department.ID,
-                    OrganisationHandler.Instance.Token);
-
-                RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\InsertEmployee.txt");
-                if (_employeeResult.ResponseState == ExecutionStatus.Success)
-                {
-                    Logger.Info("Employee created");
-                    var _employee = _employeeResult.Return.FirstOrDefault();
-                    if (_employee != null)
-                    {
-                    }
-                    else
-                    {
-                        if (Logger.IsWarnEnabled)
-                        {
-                            Logger.Warn("Employee not created");
-                        }
-                    }
                 }
                 else
                 {
-                    foreach (var _apiMessage in _employeeResult.Messages)
+                    if (Logger.IsWarnEnabled)
                     {
-                        if (Logger.IsErrorEnabled)
-                        {
-                            Logger.Error(_apiMessage.Message);
-                        }
+                        Logger.Warn("Employee not created");
                     }
                 }
             }
             else
             {
-                if (Logger.IsWarnEnabled)
+                foreach (var apiMessage in employeeResult.Messages)
                 {
-                    Logger.Warn("Failed to authenticate to transactional API");
-                    Logger.Warn(string.Join(",", _messages));
+                    if (Logger.IsErrorEnabled)
+                    {
+                        Logger.Error(apiMessage.Message);
+                    }
                 }
             }
         }
-
-        private static EmployeeCostRate GetEmployeeCostRate()
+        else
         {
-            EmployeeCostRate _costPrice = null;
-            var _costPriceResult = FinancialHandler.Instance.FinancialClient.GetEmployeeCostRates(FinancialHandler.Instance.Token);
-
-            foreach (var _apiMessage in _costPriceResult.Messages)
+            if (Logger.IsWarnEnabled)
             {
-                if (Logger.IsDebugEnabled)
-                {
-                    Logger.Debug(_apiMessage.Message);
-                }
+                Logger.Warn("Failed to authenticate to transactional API");
+                Logger.Warn(string.Join(",", messages));
             }
+        }
+    }
 
-            if (_costPriceResult.ResponseState == TransactionalApi.SDK.FinancialService.ExecutionStatus.Success)
-            {
-                _costPrice = _costPriceResult.Return.FirstOrDefault();
-            }
+    private static EmployeeCostRate? GetEmployeeCostRate()
+    {
+        EmployeeCostRate? costPrice = null;
+        var costPriceResult =
+            FinancialHandler.Instance.FinancialClient.GetEmployeeCostRates(FinancialHandler.Instance.Token);
 
-            if (_costPrice == null)
-            {
-                throw new ArgumentException("No employee cost rate found");
-            }
-
+        foreach (var apiMessage in costPriceResult.Messages)
+        {
             if (Logger.IsDebugEnabled)
             {
-                Logger.Debug("Employee cost rate selected: " + _costPrice);
+                Logger.Debug(apiMessage.Message);
             }
-
-            return _costPrice;
         }
 
-        private static HourlyRate GetHourlyRate()
+        if (costPriceResult.ResponseState == TransactionalAPI.SDK.FinancialService.ExecutionStatus.Success)
         {
-            HourlyRate _hourlyRate = null;
-            var _hourlyRateResult = FinancialHandler.Instance.FinancialClient.GetHourlyRates(string.Empty, -1, FinancialHandler.Instance.Token);
+            costPrice = costPriceResult.Return.FirstOrDefault();
+        }
 
-            foreach (var _apiMessage in _hourlyRateResult.Messages)
-            {
-                if (Logger.IsDebugEnabled)
-                {
-                    Logger.Debug(_apiMessage.Message);
-                }
-            }
+        if (costPrice == null)
+        {
+            throw new ArgumentException("No employee cost rate found");
+        }
 
-            if (_hourlyRateResult.ResponseState == TransactionalApi.SDK.FinancialService.ExecutionStatus.Success)
-            {
-                _hourlyRate = _hourlyRateResult.Return.FirstOrDefault();
-            }
+        if (Logger.IsDebugEnabled)
+        {
+            Logger.Debug("Employee cost rate selected: " + costPrice);
+        }
 
-            if (_hourlyRate == null)
-            {
-                throw new ArgumentException("No hourly rate found");
-            }
+        return costPrice;
+    }
 
+    private static HourlyRate? GetHourlyRate()
+    {
+        HourlyRate? hourlyRate = null;
+        var hourlyRateResult =
+            FinancialHandler.Instance.FinancialClient.GetHourlyRates(string.Empty, -1, FinancialHandler.Instance.Token);
+
+        foreach (var apiMessage in hourlyRateResult.Messages)
+        {
             if (Logger.IsDebugEnabled)
             {
-                Logger.Debug("Hourly rate selected: " + _hourlyRate);
+                Logger.Debug(apiMessage.Message);
             }
-
-            return _hourlyRate;
         }
 
-        private static HolidayCalendar GetHolidayCalendar()
+        if (hourlyRateResult.ResponseState == TransactionalAPI.SDK.FinancialService.ExecutionStatus.Success)
         {
-            HolidayCalendar _calendar = null;
-            var _calendarResult = SalaryHandler.Instance.SalaryClient.GetHolidayCalendars(SalaryHandler.Instance.Token);
+            hourlyRate = hourlyRateResult.Return.FirstOrDefault();
+        }
 
-            foreach (var _apiMessage in _calendarResult.Messages)
-            {
-                if (Logger.IsDebugEnabled)
-                {
-                    Logger.Debug(_apiMessage.Message);
-                }
-            }
+        if (hourlyRate == null)
+        {
+            throw new ArgumentException("No hourly rate found");
+        }
 
-            if (_calendarResult.ResponseState == TransactionalApi.SDK.SalaryService.ExecutionStatus.Success)
-            {
-                _calendar = _calendarResult.Return.FirstOrDefault();
-            }
+        if (Logger.IsDebugEnabled)
+        {
+            Logger.Debug("Hourly rate selected: " + hourlyRate);
+        }
 
-            if (_calendar == null)
-            {
-                throw new ArgumentException("No holiday calendar found");
-            }
+        return hourlyRate;
+    }
 
+    private static HolidayCalendar? GetHolidayCalendar()
+    {
+        HolidayCalendar? calendar = null;
+        var calendarResult = SalaryHandler.Instance.SalaryClient.GetHolidayCalendars(SalaryHandler.Instance.Token);
+
+        foreach (var apiMessage in calendarResult.Messages)
+        {
             if (Logger.IsDebugEnabled)
             {
-                Logger.Debug("Calendar selected: " + _calendar.Name);
+                Logger.Debug(apiMessage.Message);
             }
-
-            return _calendar;
         }
 
-        private static Allowance GetAllowance()
+        if (calendarResult.ResponseState == TransactionalAPI.SDK.SalaryService.ExecutionStatus.Success)
         {
-            Allowance _allowance = null;
-            var _allowanceResult = SalaryHandler.Instance.SalaryClient.GetAllowances(SalaryHandler.Instance.Token);
+            calendar = calendarResult.Return.FirstOrDefault();
+        }
 
-            foreach (var _apiMessage in _allowanceResult.Messages)
-            {
-                if (Logger.IsDebugEnabled)
-                {
-                    Logger.Debug(_apiMessage.Message);
-                }
-            }
+        if (calendar == null)
+        {
+            throw new ArgumentException("No holiday calendar found");
+        }
 
-            if (_allowanceResult.ResponseState == TransactionalApi.SDK.SalaryService.ExecutionStatus.Success)
-            {
-                _allowance = _allowanceResult.Return.FirstOrDefault();
-            }
+        if (Logger.IsDebugEnabled)
+        {
+            Logger.Debug("Calendar selected: " + calendar.Name);
+        }
 
-            if (_allowance == null)
-            {
-                throw new ArgumentException("No allowance found");
-            }
+        return calendar;
+    }
 
+    private static Allowance? GetAllowance()
+    {
+        Allowance? allowance = null;
+        var allowanceResult = SalaryHandler.Instance.SalaryClient.GetAllowances(SalaryHandler.Instance.Token);
+
+        foreach (var apiMessage in allowanceResult.Messages)
+        {
             if (Logger.IsDebugEnabled)
             {
-                Logger.Debug("Allowance selected: " + _allowance.Name);
+                Logger.Debug(apiMessage.Message);
             }
-
-            return _allowance;
         }
 
-        private static NormalWorkingTime GetNormalWorkingTime()
+        if (allowanceResult.ResponseState == TransactionalAPI.SDK.SalaryService.ExecutionStatus.Success)
         {
-            NormalWorkingTime _normalWorkingTime = null;
-            var _normalWorkWeeksResult = SalaryHandler.Instance.SalaryClient.GetNormalWorkweeks(SalaryHandler.Instance.Token);
+            allowance = allowanceResult.Return.FirstOrDefault();
+        }
 
-            foreach (var _apiMessage in _normalWorkWeeksResult.Messages)
-            {
-                if (Logger.IsDebugEnabled)
-                {
-                    Logger.Debug(_apiMessage.Message);
-                }
-            }
+        if (allowance == null)
+        {
+            throw new ArgumentException("No allowance found");
+        }
 
-            if (_normalWorkWeeksResult.ResponseState == TransactionalApi.SDK.SalaryService.ExecutionStatus.Success)
-            {
-                _normalWorkingTime = _normalWorkWeeksResult.Return.FirstOrDefault();
-            }
+        if (Logger.IsDebugEnabled)
+        {
+            Logger.Debug("Allowance selected: " + allowance.Name);
+        }
 
-            if (_normalWorkingTime == null)
-            {
-                throw new ArgumentException("No normal working time found");
-            }
+        return allowance;
+    }
 
+    private static NormalWorkingTime? GetNormalWorkingTime()
+    {
+        NormalWorkingTime? normalWorkingTime = null;
+        var normalWorkWeeksResult =
+            SalaryHandler.Instance.SalaryClient.GetNormalWorkweeks(SalaryHandler.Instance.Token);
+
+        foreach (var apiMessage in normalWorkWeeksResult.Messages)
+        {
             if (Logger.IsDebugEnabled)
             {
-                Logger.Debug("Working time selected: " + _normalWorkingTime.Name);
+                Logger.Debug(apiMessage.Message);
             }
-
-            return _normalWorkingTime;
         }
+
+        if (normalWorkWeeksResult.ResponseState == TransactionalAPI.SDK.SalaryService.ExecutionStatus.Success)
+        {
+            normalWorkingTime = normalWorkWeeksResult.Return.FirstOrDefault();
+        }
+
+        if (normalWorkingTime == null)
+        {
+            throw new ArgumentException("No normal working time found");
+        }
+
+        if (Logger.IsDebugEnabled)
+        {
+            Logger.Debug("Working time selected: " + normalWorkingTime.Name);
+        }
+
+        return normalWorkingTime;
     }
 }

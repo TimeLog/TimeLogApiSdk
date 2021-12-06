@@ -27,7 +27,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="TimeTrackingHandler" />.
         /// </summary>
-        public static TimeTrackingHandler Instance => _instance ?? (_instance = new TimeTrackingHandler());
+        public static TimeTrackingHandler Instance => _instance ??= new TimeTrackingHandler();
 
         /// <summary>
         ///     Gets the uri associated with the time tracking service.

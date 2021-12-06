@@ -27,7 +27,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="SalaryHandler" />.
         /// </summary>
-        public static SalaryHandler Instance => _instance ?? (_instance = new SalaryHandler());
+        public static SalaryHandler Instance => _instance ??= new SalaryHandler();
 
         /// <summary>
         ///     Gets the uri associated with the salary service.

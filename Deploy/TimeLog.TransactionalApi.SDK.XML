@@ -4,74 +4,39 @@
         <name>TimeLog.TransactionalAPI.SDK</name>
     </assembly>
     <members>
-        <member name="T:TimeLog.TransactionalAPI.SDK.HelpDeskHandler">
+        <member name="T:TimeLog.TransactionalAPI.SDK.CRMHandler">
             <summary>
-                Handler of functionality related to the HelpDesk service
+                Handler of functionality related to the CRM service
             </summary>
         </member>
-        <member name="M:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.#ctor">
+        <member name="M:TimeLog.TransactionalAPI.SDK.CRMHandler.#ctor">
             <summary>
-                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.HelpDeskHandler" /> class from being created.
+                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.CRMHandler" /> class from being created.
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.Instance">
+        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.Instance">
             <summary>
-                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.HelpDeskHandler" />.
+                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.CRMHandler" />.
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.HelpDeskServiceUrl">
+        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CrmServiceUrl">
             <summary>
-                Gets the uri associated with the HelpDesk service.
+                Gets the uri associated with the CRM service.
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.Token">
+        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.Token">
             <summary>
-                Gets the HelpDesk token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+                Gets the CRM token for use in other methods. Makes use of SecurityHandler.Instance.Token.
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.CollectRawRequestResponse">
+        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CollectRawRequestResponse">
             <summary>
                 Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.HelpDeskClient">
+        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CrmClient">
             <summary>
-                Gets the active HelpDesk client
-            </summary>
-        </member>
-        <member name="T:TimeLog.TransactionalAPI.SDK.OrganisationHandler">
-            <summary>
-                Handler of functionality related to the organisation service
-            </summary>
-        </member>
-        <member name="M:TimeLog.TransactionalAPI.SDK.OrganisationHandler.#ctor">
-            <summary>
-                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.OrganisationHandler" /> class from being created.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.Instance">
-            <summary>
-                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.OrganisationHandler" />.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.OrganisationServiceUrl">
-            <summary>
-                Gets the uri associated with the organisation service.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.Token">
-            <summary>
-                Gets the organisation token for use in other methods. Makes use of SecurityHandler.Instance.Token.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.CollectRawRequestResponse">
-            <summary>
-                Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.OrganisationClient">
-            <summary>
-                Gets the active organisation client
+                Gets the active CRM client
             </summary>
         </member>
         <member name="T:TimeLog.TransactionalAPI.SDK.ExpenseHandler">
@@ -144,74 +109,39 @@
                 Gets the active Financial client
             </summary>
         </member>
-        <member name="T:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler">
+        <member name="T:TimeLog.TransactionalAPI.SDK.HelpDeskHandler">
             <summary>
-                Handler of functionality related to the time tracking service
+                Handler of functionality related to the HelpDesk service
             </summary>
         </member>
-        <member name="M:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.#ctor">
+        <member name="M:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.#ctor">
             <summary>
-                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler" /> class from being created.
+                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.HelpDeskHandler" /> class from being created.
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.Instance">
+        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.Instance">
             <summary>
-                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler" />.
+                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.HelpDeskHandler" />.
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.TimeTrackingServiceUrl">
+        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.HelpDeskServiceUrl">
             <summary>
-                Gets the uri associated with the time tracking service.
+                Gets the uri associated with the HelpDesk service.
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.Token">
+        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.Token">
             <summary>
-                Gets the time tracking token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+                Gets the HelpDesk token for use in other methods. Makes use of SecurityHandler.Instance.Token.
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.CollectRawRequestResponse">
+        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.CollectRawRequestResponse">
             <summary>
                 Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.TimeTrackingClient">
+        <member name="P:TimeLog.TransactionalAPI.SDK.HelpDeskHandler.HelpDeskClient">
             <summary>
-                Gets the active time tracking client
-            </summary>
-        </member>
-        <member name="T:TimeLog.TransactionalAPI.SDK.SalaryHandler">
-            <summary>
-                Handler of functionality related to the salary service
-            </summary>
-        </member>
-        <member name="M:TimeLog.TransactionalAPI.SDK.SalaryHandler.#ctor">
-            <summary>
-                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.SalaryHandler" /> class from being created.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.Instance">
-            <summary>
-                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.SalaryHandler" />.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.SalaryServiceUrl">
-            <summary>
-                Gets the uri associated with the salary service.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.Token">
-            <summary>
-                Gets the salary token for use in other methods. Makes use of SecurityHandler.Instance.Token.
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.CollectRawRequestResponse">
-            <summary>
-                Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.SalaryClient">
-            <summary>
-                Gets the active salary client
+                Gets the active HelpDesk client
             </summary>
         </member>
         <member name="T:TimeLog.TransactionalAPI.SDK.InvoicingHandler">
@@ -247,6 +177,41 @@
         <member name="P:TimeLog.TransactionalAPI.SDK.InvoicingHandler.InvoicingClient">
             <summary>
                 Gets the active invoicing client
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalAPI.SDK.OrganisationHandler">
+            <summary>
+                Handler of functionality related to the organisation service
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalAPI.SDK.OrganisationHandler.#ctor">
+            <summary>
+                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.OrganisationHandler" /> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.Instance">
+            <summary>
+                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.OrganisationHandler" />.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.OrganisationServiceUrl">
+            <summary>
+                Gets the uri associated with the organisation service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.Token">
+            <summary>
+                Gets the organisation token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.CollectRawRequestResponse">
+            <summary>
+                Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.OrganisationHandler.OrganisationClient">
+            <summary>
+                Gets the active organisation client
             </summary>
         </member>
         <member name="T:TimeLog.TransactionalAPI.SDK.ProjectManagementHandler">
@@ -398,29 +363,6 @@
                 Gets or sets the binding element
             </summary>
         </member>
-        <member name="T:TimeLog.TransactionalAPI.SDK.RawHelper.RawMessageEncodingBindingElementImporter">
-            <summary>
-                The raw message encoding binding element importer.
-            </summary>
-        </member>
-        <member name="M:TimeLog.TransactionalAPI.SDK.RawHelper.RawMessageEncodingBindingElementImporter.System#ServiceModel#Description#IPolicyImportExtension#ImportPolicy(System.ServiceModel.Description.MetadataImporter,System.ServiceModel.Description.PolicyConversionContext)">
-            <summary>
-                The import policy.
-            </summary>
-            <param name="importer">The importer.</param>
-            <param name="context">The context.</param>
-        </member>
-        <member name="T:TimeLog.TransactionalAPI.SDK.RawHelper.RawMessageEncodingElement">
-            <summary>
-                This class is necessary to be able to plug in the Raw encoder binding element through a configuration file
-            </summary>
-        </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.RawHelper.RawMessageEncodingElement.InnerMessageEncoding">
-            <summary>
-                Gets or sets the only property we need to configure for our binding element is the type of inner encoder to use.
-                Here, we support text and binary.
-            </summary>
-        </member>
         <member name="T:TimeLog.TransactionalAPI.SDK.RawHelper.RawMessageEncodingPolicyConstants">
             <summary>
                 This is constants for Raw message encoding policy.
@@ -478,6 +420,41 @@
                 Saves the request and response from the latest interaction to a text file
             </summary>
             <param name="path">File to place the file</param>
+        </member>
+        <member name="T:TimeLog.TransactionalAPI.SDK.SalaryHandler">
+            <summary>
+                Handler of functionality related to the salary service
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalAPI.SDK.SalaryHandler.#ctor">
+            <summary>
+                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.SalaryHandler" /> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.Instance">
+            <summary>
+                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.SalaryHandler" />.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.SalaryServiceUrl">
+            <summary>
+                Gets the uri associated with the salary service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.Token">
+            <summary>
+                Gets the salary token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.CollectRawRequestResponse">
+            <summary>
+                Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.SalaryHandler.SalaryClient">
+            <summary>
+                Gets the active salary client
+            </summary>
         </member>
         <member name="T:TimeLog.TransactionalAPI.SDK.SecurityHandler">
             <summary>
@@ -581,6 +558,41 @@
         <member name="P:TimeLog.TransactionalAPI.SDK.SettingsHandler.StandardHttpsTransportBindingElement">
             <summary>
                 Gets a standard https binding
+            </summary>
+        </member>
+        <member name="T:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler">
+            <summary>
+                Handler of functionality related to the time tracking service
+            </summary>
+        </member>
+        <member name="M:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.#ctor">
+            <summary>
+                Prevents a default instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler" /> class from being created.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.Instance">
+            <summary>
+                Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler" />.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.TimeTrackingServiceUrl">
+            <summary>
+                Gets the uri associated with the time tracking service.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.Token">
+            <summary>
+                Gets the time tracking token for use in other methods. Makes use of SecurityHandler.Instance.Token.
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.CollectRawRequestResponse">
+            <summary>
+                Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
+            </summary>
+        </member>
+        <member name="P:TimeLog.TransactionalAPI.SDK.TimeTrackingHandler.TimeTrackingClient">
+            <summary>
+                Gets the active time tracking client
             </summary>
         </member>
     </members>

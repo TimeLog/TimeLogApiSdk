@@ -34,7 +34,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="SecurityHandler" />.
         /// </summary>
-        public static SecurityHandler Instance => _instance ?? (_instance = new SecurityHandler());
+        public static SecurityHandler Instance => _instance ??= new SecurityHandler();
 
         /// <summary>
         ///     Gets the uri associated with the security service.

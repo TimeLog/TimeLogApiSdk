@@ -27,7 +27,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="ProjectManagementHandler" />.
         /// </summary>
-        public static ProjectManagementHandler Instance => _instance ?? (_instance = new ProjectManagementHandler());
+        public static ProjectManagementHandler Instance => _instance ??= new ProjectManagementHandler();
 
         /// <summary>
         ///     Gets the uri associated with the project management service.

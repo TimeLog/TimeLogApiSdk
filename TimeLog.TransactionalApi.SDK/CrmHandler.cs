@@ -27,7 +27,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="CRMHandler" />.
         /// </summary>
-        public static CRMHandler Instance => _instance ?? (_instance = new CRMHandler());
+        public static CRMHandler Instance => _instance ??= new CRMHandler();
 
         /// <summary>
         ///     Gets the uri associated with the CRM service.
@@ -83,7 +83,7 @@ namespace TimeLog.TransactionalAPI.SDK
                     if (CollectRawRequestResponse)
                     {
                         var binding = new CustomBinding();
-                        var encoding = new RawMessageEncodingBindingElement { MessageVersion = MessageVersion.Soap11 };
+                        var encoding = new RawMessageEncodingBindingElement {MessageVersion = MessageVersion.Soap11};
                         binding.Elements.Add(encoding);
                         binding.Elements.Add(CrmServiceUrl.Contains("https")
                             ? SettingsHandler.Instance.StandardHttpsTransportBindingElement

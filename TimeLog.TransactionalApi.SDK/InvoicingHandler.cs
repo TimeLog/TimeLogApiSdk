@@ -27,7 +27,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="InvoicingHandler" />.
         /// </summary>
-        public static InvoicingHandler Instance => _instance ?? (_instance = new InvoicingHandler());
+        public static InvoicingHandler Instance => _instance ??= new InvoicingHandler();
 
         /// <summary>
         ///     Gets the uri associated with the invoicing service.

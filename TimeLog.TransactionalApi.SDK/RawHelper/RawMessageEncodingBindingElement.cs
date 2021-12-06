@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ServiceModel.Channels;
-using System.ServiceModel.Description;
 using System.Xml;
 
 namespace TimeLog.TransactionalAPI.SDK.RawHelper
@@ -8,7 +7,7 @@ namespace TimeLog.TransactionalAPI.SDK.RawHelper
     /// <summary>
     ///     This is the binding element that, when plugged into a custom binding, will enable the Raw encoder
     /// </summary>
-    public sealed class RawMessageEncodingBindingElement : MessageEncodingBindingElement, IPolicyExportExtension
+    public sealed class RawMessageEncodingBindingElement : MessageEncodingBindingElement
     {
         // We will use an inner binding element to store information required for the inner encoder
 
@@ -42,20 +41,6 @@ namespace TimeLog.TransactionalAPI.SDK.RawHelper
             set => InnerMessageEncodingBindingElement.MessageVersion = value;
         }
 
-        void IPolicyExportExtension.ExportPolicy(MetadataExporter exporter, PolicyConversionContext policyContext)
-        {
-            if (policyContext == null)
-            {
-                throw new ArgumentNullException("policyContext");
-            }
-
-            var document = new XmlDocument();
-            policyContext.GetBindingAssertions().Add(document.CreateElement(
-                RawMessageEncodingPolicyConstants.RawEncodingPrefix,
-                RawMessageEncodingPolicyConstants.RawEncodingName,
-                RawMessageEncodingPolicyConstants.RawEncodingNamespace));
-        }
-
         // Main entry point into the encoder binding element. Called by WCF to get the factory that will create the message encoder
         public override MessageEncoderFactory CreateMessageEncoderFactory()
         {
@@ -86,28 +71,6 @@ namespace TimeLog.TransactionalAPI.SDK.RawHelper
 
             context.BindingParameters.Add(this);
             return context.BuildInnerChannelFactory<TChannel>();
-        }
-
-        public override IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext context)
-        {
-            if (context == null)
-            {
-                throw new ArgumentNullException("context");
-            }
-
-            context.BindingParameters.Add(this);
-            return context.BuildInnerChannelListener<TChannel>();
-        }
-
-        public override bool CanBuildChannelListener<TChannel>(BindingContext context)
-        {
-            if (context == null)
-            {
-                throw new ArgumentNullException("context");
-            }
-
-            context.BindingParameters.Add(this);
-            return context.CanBuildInnerChannelListener<TChannel>();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="OrganisationHandler" />.
         /// </summary>
-        public static OrganisationHandler Instance => _instance ?? (_instance = new OrganisationHandler());
+        public static OrganisationHandler Instance => _instance ??= new OrganisationHandler();
 
         /// <summary>
         ///     Gets the uri associated with the organisation service.

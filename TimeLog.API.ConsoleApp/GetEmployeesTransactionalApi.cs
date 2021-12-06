@@ -1,61 +1,57 @@
-﻿using System.Collections.Generic;
+﻿using log4net;
+using TimeLog.TransactionalAPI.SDK;
+using TimeLog.TransactionalAPI.SDK.OrganisationService;
 
-namespace TimeLog.ApiConsoleApp
+namespace TimeLog.ApiConsoleApp;
+
+public class GetEmployeesTransactionalApi
 {
-    using log4net;
+    private static readonly ILog Logger = LogManager.GetLogger(typeof(GetEmployeesTransactionalApi));
 
-    using TimeLog.TransactionalApi.SDK;
-    using TimeLog.TransactionalApi.SDK.OrganisationService;
-
-    public class GetEmployeesTransactionalApi
+    public static void Consume()
     {
-        private static readonly ILog Logger = LogManager.GetLogger(typeof(GetEmployeesTransactionalApi));
-
-        public static void Consume()
+        if (SecurityHandler.Instance.TryAuthenticate(out IEnumerable<string> messages))
         {
-            IEnumerable<string> messages;
-            if (SecurityHandler.Instance.TryAuthenticate(out messages))
+            if (Logger.IsInfoEnabled)
             {
-                if (Logger.IsInfoEnabled)
-                {
-                    Logger.Info("Sucessfully authenticated on transactional API");
-                }
-
-                int resultCount = 9999;
-                int pageIndex = 1;
-
-                while (resultCount > 0)
-                {
-                    var result = OrganisationHandler.Instance.OrganisationClient.GetEmployeesPaged(pageIndex, 100, OrganisationHandler.Instance.Token);
-                    if (result.ResponseState == ExecutionStatus.Success)
-                    {
-                        Logger.Info("Page " + pageIndex + " with " + result.Return.Length + " results");
-                        resultCount = result.Return.Length;
-                        pageIndex = pageIndex + 1;
-                    }
-                    else
-                    {
-                        foreach (var apiMessage in result.Messages)
-                        {
-                            if (Logger.IsErrorEnabled)
-                            {
-                                Logger.Error(apiMessage.Message);
-                            }
-                        }
-
-                        break;
-                    }
-                }
+                Logger.Info("Sucessfully authenticated on transactional API");
             }
-            else
+
+            var resultCount = 9999;
+            var pageIndex = 1;
+
+            while (resultCount > 0)
             {
-                if (Logger.IsWarnEnabled)
+                var result =
+                    OrganisationHandler.Instance.OrganisationClient.GetEmployeesPaged(pageIndex, 100,
+                        OrganisationHandler.Instance.Token);
+                if (result.ResponseState == ExecutionStatus.Success)
                 {
-                    Logger.Warn("Failed to authenticate to transactional API");
-                    Logger.Warn(string.Join(",", messages));
+                    Logger.Info("Page " + pageIndex + " with " + result.Return.Length + " results");
+                    resultCount = result.Return.Length;
+                    pageIndex = pageIndex + 1;
+                }
+                else
+                {
+                    foreach (var apiMessage in result.Messages)
+                    {
+                        if (Logger.IsErrorEnabled)
+                        {
+                            Logger.Error(apiMessage.Message);
+                        }
+                    }
+
+                    break;
                 }
             }
         }
-
+        else
+        {
+            if (Logger.IsWarnEnabled)
+            {
+                Logger.Warn("Failed to authenticate to transactional API");
+                Logger.Warn(string.Join(",", messages));
+            }
+        }
     }
 }

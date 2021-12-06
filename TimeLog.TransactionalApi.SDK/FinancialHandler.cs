@@ -27,7 +27,7 @@ namespace TimeLog.TransactionalAPI.SDK
         /// <summary>
         ///     Gets the singleton instance of the <see cref="FinancialHandler" />.
         /// </summary>
-        public static FinancialHandler Instance => _instance ?? (_instance = new FinancialHandler());
+        public static FinancialHandler Instance => _instance ??= new FinancialHandler();
 
         /// <summary>
         ///     Gets the uri associated with the Financial service.
