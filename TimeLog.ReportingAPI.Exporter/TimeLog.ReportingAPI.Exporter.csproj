@@ -67,7 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="apps.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TimeLog.ReportingApi.SDK\TimeLog.ReportingApi.SDK.csproj">

@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeLog.API.ConsoleApp", "TimeLog.API.ConsoleApp\TimeLog.API.ConsoleApp.csproj", "{07666C53-3FDF-400C-B337-FA7F9DE1EA49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeLog.ReportingAPI.Exporter", "TimeLog.ReportingAPI.Exporter\TimeLog.ReportingAPI.Exporter.csproj", "{F947B785-F249-492E-98E4-E23B95828C99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{07666C53-3FDF-400C-B337-FA7F9DE1EA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07666C53-3FDF-400C-B337-FA7F9DE1EA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07666C53-3FDF-400C-B337-FA7F9DE1EA49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F947B785-F249-492E-98E4-E23B95828C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F947B785-F249-492E-98E4-E23B95828C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F947B785-F249-492E-98E4-E23B95828C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F947B785-F249-492E-98E4-E23B95828C99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
