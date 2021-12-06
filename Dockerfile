@@ -6,7 +6,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["TimeLog.API.Documentation/TimeLog.API.Documentation.csproj", "TimeLog.API.Documentation/"]
-RUN dotnet restore "TimeLog.API.Documentation/TimeLog.Api.Documentation.csproj"
+RUN dotnet restore "TimeLog.API.Documentation/TimeLog.API.Documentation.csproj"
 COPY . .
 WORKDIR "/src/TimeLog.API.Documentation"
 RUN dotnet build "TimeLog.API.Documentation.csproj" -c Release -o /app/build
