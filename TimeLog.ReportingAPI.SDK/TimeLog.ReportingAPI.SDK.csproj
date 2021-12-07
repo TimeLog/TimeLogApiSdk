@@ -5,13 +5,15 @@
         <EnableDefaultItems>false</EnableDefaultItems>
         <Deterministic>false</Deterministic>
         <PostBuildEvent>copy /y $(TargetDir)*.dll $(SolutionDir)Deploy
-                copy /y $(TargetDir)*.xml $(SolutionDir)Deploy
-                copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
+copy /y $(TargetDir)*.xml $(SolutionDir)Deploy
+copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
         <Company>TimeLog A/S</Company>
         <AssemblyVersion>1.0.*</AssemblyVersion>
         <Title>TimeLog.ReportingAPI.SDK</Title>
         <Authors>TimeLog A/S</Authors>
         <Copyright>TimeLog A/S</Copyright>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <DocumentationFile>bin\Debug\TimeLog.ReportingAPI.SDK.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
