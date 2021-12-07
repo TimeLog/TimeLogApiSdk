@@ -22,11 +22,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeLog.ReportingAPI.SDK", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeLog.TransactionalAPI.SDK", "TimeLog.TransactionalAPI.SDK\TimeLog.TransactionalAPI.SDK.csproj", "{A1D54CAF-4BCB-43FB-917C-4F392C76A0E4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B714D9B9-FFB2-441A-929F-BA2C8A2BB8A8}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeLog.API.ConsoleApp", "TimeLog.API.ConsoleApp\TimeLog.API.ConsoleApp.csproj", "{07666C53-3FDF-400C-B337-FA7F9DE1EA49}"
 EndProject
 Global
