@@ -40,7 +40,6 @@
   </ItemGroup>
   <PropertyGroup>
     <PostBuildEvent>copy /y $(TargetDir)*.dll $(SolutionDir)Deploy
-copy /y $(TargetDir)*.xml $(SolutionDir)Deploy
-copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
+copy /y $(TargetDir)*.xml $(SolutionDir)Deploy</PostBuildEvent>
   </PropertyGroup>
 </Project>
