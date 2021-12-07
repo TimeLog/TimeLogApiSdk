@@ -1,13 +1,17 @@
 # TimeLogApiSdk
 
-Use this SDK for interacting with the TimeLog APIs. 
+Use this SDK for interacting with the TimeLog APIs.
 
-This source can also work as templates for your own projects. 
+This source can also work as templates for your own projects.
 
 See [https://api.timelog.com](https://api.timelog.com) for more documentation about the APIs.
 
 Please be aware that TimeLog has multiple APIs available and the authentication differs. 
 Refer to the definition of the [3 flavors of access](https://api.timelog.com#3-flavor-of-access)
+
+## Prerequisite
+
+This SDK is now built using .NET 6, so you will need a .NET 6 compatible IDE to run this project, such as Visual Studio 2022. 
 
 ## Support
 
@@ -22,11 +26,10 @@ For questions and bug reports associated with the SDK and code in this repositor
 The list below is a quick rundown of the directories in this repository.
 
 - Deploy - Download precompiled DLLs of the SDKs
-- TimeLog.Api.Documentation - The documentation website
-- TimeLog.ApiConsoleApp - A sample application for consuming the SDKs
-- TimeLog.ReportingApi.Exporter - A console application to export XML or CSV from the reporting API
-- TimeLog.ReportingApi.SDK - The reporting API SDK source code
-- TimeLog.TransactionalApi.SDK - The transactional API SDK source code
+- TimeLog.API.Documentation - The documentation website
+- TimeLog.API.ConsoleApp - A sample application for consuming the SDKs
+- TimeLog.ReportingAPI.SDK - The reporting API SDK source code
+- TimeLog.TransactionalAPI.SDK - The transactional API SDK source code
 
 ### TimeLog Reporting API
 
