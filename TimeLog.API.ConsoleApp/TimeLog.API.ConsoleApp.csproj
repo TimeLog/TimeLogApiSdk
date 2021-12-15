@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TimeLog.ApiConsoleApp</RootNamespace>
-    <AssemblyName>TimeLog.ApiConsoleApp</AssemblyName>
+    <RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
 	<ImplicitUsings>enable</ImplicitUsings>
 	<Nullable>enable</Nullable>
 	<Deterministic>false</Deterministic>

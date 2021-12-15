@@ -6,7 +6,7 @@ using TimeLog.TransactionalAPI.SDK.RawHelper;
 using TimeLog.TransactionalAPI.SDK.SalaryService;
 using ExecutionStatus = TimeLog.TransactionalAPI.SDK.OrganisationService.ExecutionStatus;
 
-namespace TimeLog.ApiConsoleApp;
+namespace TimeLog.API.ConsoleApp;
 
 /// <summary>
 ///     Template class for consuming the transactional API

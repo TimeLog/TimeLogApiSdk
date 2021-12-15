@@ -2,7 +2,7 @@
 using log4net;
 using TimeLog.Library.Data;
 
-namespace TimeLog.ApiConsoleApp;
+namespace TimeLog.API.ConsoleApp;
 
 /// <summary>
 ///     Template class for consuming a csv file

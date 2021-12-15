@@ -3,7 +3,7 @@ using TimeLog.TransactionalAPI.SDK;
 using TimeLog.TransactionalAPI.SDK.CRMService;
 using TimeLog.TransactionalAPI.SDK.RawHelper;
 
-namespace TimeLog.ApiConsoleApp;
+namespace TimeLog.API.ConsoleApp;
 
 /// <summary>
 ///     Template class for consuming the transactional API

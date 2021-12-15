@@ -2,7 +2,7 @@
 using log4net;
 using TimeLog.ReportingAPI.SDK;
 
-namespace TimeLog.ApiConsoleApp;
+namespace TimeLog.API.ConsoleApp;
 
 /// <summary>
 ///     Template class for consuming the reporting API

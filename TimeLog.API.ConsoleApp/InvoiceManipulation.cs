@@ -2,7 +2,7 @@
 using TimeLog.TransactionalAPI.SDK;
 using TimeLog.TransactionalAPI.SDK.InvoicingService;
 
-namespace TimeLog.ApiConsoleApp;
+namespace TimeLog.API.ConsoleApp;
 
 public class InvoiceManipulation
 {

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using log4net;
 using log4net.Config;
-using TimeLog.ApiConsoleApp;
+using TimeLog.API.ConsoleApp;
 
 var logger = LogManager.GetLogger(typeof(Program));
 var appPath = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory;

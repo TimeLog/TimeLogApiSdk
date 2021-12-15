@@ -2,7 +2,7 @@
 using TimeLog.TransactionalAPI.SDK;
 using TimeLog.TransactionalAPI.SDK.OrganisationService;
 
-namespace TimeLog.ApiConsoleApp;
+namespace TimeLog.API.ConsoleApp;
 
 public class GetEmployeesTransactionalApi
 {

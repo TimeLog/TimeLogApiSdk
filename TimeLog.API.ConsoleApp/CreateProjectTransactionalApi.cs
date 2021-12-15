@@ -5,7 +5,7 @@ using TimeLog.TransactionalAPI.SDK.RawHelper;
 using ExecutionStatus = TimeLog.TransactionalAPI.SDK.CRMService.ExecutionStatus;
 using Task = TimeLog.TransactionalAPI.SDK.ProjectManagementService.Task;
 
-namespace TimeLog.ApiConsoleApp;
+namespace TimeLog.API.ConsoleApp;
 
 /// <summary>
 ///     Template class for consuming the transactional API

@@ -4,7 +4,7 @@ using TimeLog.TransactionalAPI.SDK.ProjectManagementService;
 using TimeLog.TransactionalAPI.SDK.RawHelper;
 using Task = TimeLog.TransactionalAPI.SDK.ProjectManagementService.Task;
 
-namespace TimeLog.ApiConsoleApp;
+namespace TimeLog.API.ConsoleApp;
 
 /// <summary>
 ///     Template class for consuming the transactional API
