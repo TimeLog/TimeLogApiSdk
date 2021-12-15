@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using TimeLog.Api.Documentation.Models;
 
 namespace TimeLog.Api.Documentation.Controllers;

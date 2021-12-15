@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TimeLog.Api.Documentation.Models;
+﻿namespace TimeLog.Api.Documentation.Models;
 
 public class ServiceVersion
 {

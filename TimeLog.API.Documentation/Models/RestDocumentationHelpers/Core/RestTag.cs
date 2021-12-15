@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core;
+﻿namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core;
 
 /// <summary>
 ///     Rest tag structure for swagger 2.0 format.

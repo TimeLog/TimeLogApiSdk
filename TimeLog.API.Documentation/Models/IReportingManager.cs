@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace TimeLog.Api.Documentation.Models;
+﻿namespace TimeLog.Api.Documentation.Models;
 
 public interface IReportingManager
 {

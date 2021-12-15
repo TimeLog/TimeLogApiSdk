@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core;
 
@@ -21,9 +18,9 @@ public class RestDocumentationHelper
         }
 
         var fileDoc = JsonConvert.DeserializeObject<JObject>(fileJsonText);
-        Definitions = GetDefinitions(fileDoc).ToList();
+        Definitions = GetDefinitions(fileDoc!).ToList();
 
-        var restDoc = GetRestDoc(fileDoc);
+        var restDoc = GetRestDoc(fileDoc!);
         Types = MapToTypeDoc(restDoc);
         Methods = GenerateMethodDocs();
     }
@@ -55,20 +52,20 @@ public class RestDocumentationHelper
     private IEnumerable<RestDefinition> GetDefinitions(JObject fileDoc)
     {
         return fileDoc
-            .SelectToken("definitions")
+            .SelectToken("definitions")!
             .OfType<JProperty>()
             .Select(definition =>
                 new RestDefinition(
                     definition.Name,
-                    definition.Value["properties"]
+                    definition.Value["properties"]!
                         .Children()
                         .OfType<JProperty>()
                         .Select(property => new RestProperty(
                             property.Name,
-                            (string) property.Value["format"],
-                            (string) property.Value["type"],
-                            new RestRefSchema((string) property.Value["$ref"], Definitions),
-                            (string) property.Value["description"]
+                            (string) property.Value["format"]!,
+                            (string) property.Value["type"]!,
+                            new RestRefSchema((string) property.Value["$ref"]!, Definitions),
+                            (string) property.Value["description"]!
                         ))
                         .OrderBy(x => x.Name)
                         .ToList()
@@ -82,48 +79,48 @@ public class RestDocumentationHelper
 
         return new RestDoc(
             new RestInfo(
-                (string) infoProperty["version"],
-                (string) infoProperty["title"],
-                (string) infoProperty["description"]
+                (string) infoProperty["version"]!,
+                (string) infoProperty["title"]!,
+                (string) infoProperty["description"]!
             ),
             fileDoc
-                .SelectToken("tags")
+                .SelectToken("tags")!
                 .OfType<JObject>()
                 .Select(x => new RestTag(
-                    x.Value<string>("name"),
-                    x.Value<string>("description")
+                    x.Value<string>("name")!,
+                    x.Value<string>("description")!
                 ))
                 .ToList(),
             fileDoc
-                .SelectToken("paths")
+                .SelectToken("paths")!
                 .Select(path =>
                 {
                     return new RestPath(
                         ((JProperty) path).Name,
-                        path.First.Children()
+                        path.First!.Children()
                             .OfType<JProperty>()
                             .Select(action =>
                             {
                                 return new RestAction(
                                     ((JProperty) path).Name,
                                     action.Name,
-                                    ((JArray) action.Value["tags"])
+                                    ((JArray) action.Value["tags"]!)
                                     .Select(tag => tag.Value<string>())
-                                    .ToArray(),
-                                    (string) action.Value["summary"],
-                                    (string) action.Value["operationId"],
-                                    ((JArray) action.Value["parameters"])
+                                    .ToArray()!,
+                                    (string) action.Value["summary"]!,
+                                    (string) action.Value["operationId"]!,
+                                    ((JArray) action.Value["parameters"]!)
                                     .OfType<JObject>()
                                     .Select(parameter => new RestParameter(
-                                        (string) parameter.GetValue("name"),
-                                        (string) parameter.GetValue("description"),
-                                        (string) parameter.GetValue("type"),
-                                        (string) parameter.GetValue("format"),
-                                        (string) parameter.GetValue("default"),
-                                        new RestRefSchema((string) parameter.SelectToken("schema.$ref"), Definitions)
+                                        (string) parameter.GetValue("name")!,
+                                        (string) parameter.GetValue("description")!,
+                                        (string) parameter.GetValue("type")!,
+                                        (string) parameter.GetValue("format")!,
+                                        (string) parameter.GetValue("default")!,
+                                        new RestRefSchema((string) parameter.SelectToken("schema.$ref")!, Definitions)
                                     ))
                                     .ToList(),
-                                    ((JObject) action.Value["responses"])
+                                    ((JObject) action.Value["responses"]!)
                                     .Properties()
                                     .Select(responseToken =>
                                     {
@@ -131,8 +128,8 @@ public class RestDocumentationHelper
 
                                         return new RestResponse(
                                             responseToken.Name,
-                                            (string) tokenValue["description"],
-                                            new RestRefSchema((string) tokenValue.SelectToken("schema.$ref"),
+                                            (string) tokenValue["description"]!,
+                                            new RestRefSchema((string) tokenValue.SelectToken("schema.$ref")!,
                                                 Definitions)
                                         );
                                     })

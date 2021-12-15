@@ -5,11 +5,11 @@ namespace TimeLog.Api.Documentation.Controllers;
 
 public class ReportingController : Controller
 {
-    private readonly IReportingManager reportingManager;
+    private readonly IReportingManager _reportingManager;
 
     public ReportingController(IReportingManager reportingManager)
     {
-        this.reportingManager = reportingManager;
+        _reportingManager = reportingManager;
     }
 
     // GET: Reporting
@@ -25,12 +25,12 @@ public class ReportingController : Controller
 
     public ActionResult Methods()
     {
-        return View(reportingManager.GetMethods());
+        return View(_reportingManager.GetMethods());
     }
 
     public ActionResult Method(string id)
     {
-        return View(reportingManager.GetMethod(id));
+        return View(_reportingManager.GetMethod(id));
     }
 
     public ActionResult EnumerableTypes()

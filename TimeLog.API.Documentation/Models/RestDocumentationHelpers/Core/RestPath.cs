@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core;
+﻿namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core;
 
 /// <summary>
 ///     Rest path structure for swagger 2.0 format.

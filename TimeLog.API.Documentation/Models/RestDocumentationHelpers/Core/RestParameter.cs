@@ -7,7 +7,12 @@ public class RestParameter
 {
     #region Constructor
 
-    public RestParameter(string name, string description, string type, string format, string @default,
+    public RestParameter(
+        string name, 
+        string description, 
+        string type, 
+        string format, 
+        string @default,
         RestRefSchema schemaRestRef)
     {
         Name = name;

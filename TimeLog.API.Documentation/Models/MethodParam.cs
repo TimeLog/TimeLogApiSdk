@@ -1,5 +1,3 @@
-using System;
-
 namespace TimeLog.Api.Documentation.Models;
 
 public class MethodParam
@@ -15,8 +13,8 @@ public class MethodParam
         }
         else
         {
-            var _lastDot = type.LastIndexOf(".", StringComparison.Ordinal);
-            Type = type.Substring(_lastDot + 1, type.Length - _lastDot - 1);
+            var lastDot = type.LastIndexOf(".", StringComparison.Ordinal);
+            Type = type.Substring(lastDot + 1, type.Length - lastDot - 1);
         }
 
         if (Type.ToLowerInvariant() == "datetime")

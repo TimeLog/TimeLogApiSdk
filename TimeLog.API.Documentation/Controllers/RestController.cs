@@ -5,11 +5,11 @@ namespace TimeLog.Api.Documentation.Controllers;
 
 public class RestController : Controller
 {
-    private readonly IRestManager restManager;
+    private readonly IRestManager _restManager;
 
     public RestController(IRestManager restManager)
     {
-        this.restManager = restManager;
+        _restManager = restManager;
     }
 
     public ActionResult Index()
@@ -19,16 +19,16 @@ public class RestController : Controller
 
     public ActionResult Method(string id)
     {
-        return View(restManager.GetMethod(id));
+        return View(_restManager.GetMethod(id));
     }
 
     public ActionResult Service(string id)
     {
-        return View(restManager.GetService(id));
+        return View(_restManager.GetService(id));
     }
 
     public ActionResult Services()
     {
-        return View(restManager.GetServices());
+        return View(_restManager.GetServices());
     }
 }

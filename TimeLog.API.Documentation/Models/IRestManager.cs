@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TimeLog.Api.Documentation.Models.RestDocumentationHelpers;
+﻿using TimeLog.Api.Documentation.Models.RestDocumentationHelpers;
 using TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core;
 
 namespace TimeLog.Api.Documentation.Models;

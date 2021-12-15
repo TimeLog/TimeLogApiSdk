@@ -5,11 +5,11 @@ namespace TimeLog.Api.Documentation.Controllers;
 
 public class TransactionalController : Controller
 {
-    private readonly ITransactionalManager transactionalManager;
+    private readonly ITransactionalManager _transactionalManager;
 
     public TransactionalController(ITransactionalManager transactionalManager)
     {
-        this.transactionalManager = transactionalManager;
+        _transactionalManager = transactionalManager;
     }
 
     // GET
@@ -35,16 +35,16 @@ public class TransactionalController : Controller
 
     public ActionResult Services()
     {
-        return View(transactionalManager.GetServices());
+        return View(_transactionalManager.GetServices());
     }
 
     public ActionResult Service(string id)
     {
-        return View(transactionalManager.GetService(id));
+        return View(_transactionalManager.GetService(id));
     }
 
     public ActionResult Method(string id)
     {
-        return View(transactionalManager.GetMethod(id));
+        return View(_transactionalManager.GetMethod(id));
     }
 }

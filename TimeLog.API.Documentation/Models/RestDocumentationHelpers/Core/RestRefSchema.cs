@@ -1,20 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core;
+﻿namespace TimeLog.Api.Documentation.Models.RestDocumentationHelpers.Core;
 
 /// <summary>
 ///     Rest ref schema structure for swagger 2.0 format.
 /// </summary>
 public class RestRefSchema
 {
-    private readonly IEnumerable<RestDefinition>? definitions;
+    private readonly IEnumerable<RestDefinition>? _definitions;
 
     #region Constructor
 
     public RestRefSchema(string url, IEnumerable<RestDefinition>? definitions)
     {
-        this.definitions = definitions;
+        this._definitions = definitions;
 
         if (!string.IsNullOrEmpty(url))
         {
@@ -28,6 +25,6 @@ public class RestRefSchema
 
     public RestDefinition? Definition
     {
-        get { return definitions?.FirstOrDefault(x => x.Name == Value); }
+        get { return _definitions?.FirstOrDefault(x => x.Name == Value); }
     }
 }
