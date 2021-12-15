@@ -31,7 +31,7 @@ public class CreateProjectTransactionalApi
 
             // Get a customer
             var customersResult =
-                CRMHandler.Instance.CrmClient.GetCustomersByNamePaged(
+                CRMHandler.Instance.CRMClient.GetCustomersByNamePaged(
                     "Timelog",
                     false,
                     false,

@@ -34,7 +34,7 @@
                 Gets or sets a value indicating whether all raw XML requests should be stored in memory to allow saving them
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CrmClient">
+        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CRMClient">
             <summary>
                 Gets the active CRM client
             </summary>

@@ -78,7 +78,7 @@ public class InsertCustomerTest
             };
 
 
-            var customersResult = CRMHandler.Instance.CrmClient.InsertCustomer(newCustomer, 2,
+            var customersResult = CRMHandler.Instance.CRMClient.InsertCustomer(newCustomer, 2,
                 CRMHandler.Instance.Token);
             RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\InsertCustomer.txt");
             if (customersResult.ResponseState == ExecutionStatus.Success)
@@ -88,7 +88,7 @@ public class InsertCustomerTest
                 if (customer != null)
                 {
                     var contactsResult =
-                        CRMHandler.Instance.CrmClient.InsertContact(newContact, 99, CRMHandler.Instance.Token);
+                        CRMHandler.Instance.CRMClient.InsertContact(newContact, 99, CRMHandler.Instance.Token);
                     RawMessageHelper.Instance.SaveRecentRequestResponsePair("c:\\temp\\InsertContact.txt");
                     if (contactsResult.ResponseState == ExecutionStatus.Success)
                     {

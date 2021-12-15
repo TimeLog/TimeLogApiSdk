@@ -13,15 +13,16 @@ public class CRMHandler : IDisposable
 {
     private static CRMHandler? _instance;
 
-    private bool collectRawRequestResponse;
-    private CRMServiceClient? crmClient;
+    private bool _collectRawRequestResponse;
+
+    private CRMServiceClient? _crmClient;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="CRMHandler" /> class from being created.
     /// </summary>
     private CRMHandler()
     {
-        collectRawRequestResponse = false;
+        _collectRawRequestResponse = false;
     }
 
     /// <summary>
@@ -61,23 +62,23 @@ public class CRMHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            crmClient = null;
+            _collectRawRequestResponse = value;
+            _crmClient = null;
         }
     }
 
     /// <summary>
     ///     Gets the active CRM client
     /// </summary>
-    public CRMServiceClient CrmClient
+    public CRMServiceClient CRMClient
     {
         get
         {
-            if (crmClient == null)
+            if (_crmClient == null)
             {
                 var endpoint = new EndpointAddress(CrmServiceUrl);
                 if (CollectRawRequestResponse)
@@ -88,7 +89,7 @@ public class CRMHandler : IDisposable
                     binding.Elements.Add(CrmServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    crmClient = new CRMServiceClient(binding, endpoint);
+                    _crmClient = new CRMServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -102,13 +103,13 @@ public class CRMHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    crmClient = new CRMServiceClient(binding, endpoint);
+                    _crmClient = new CRMServiceClient(binding, endpoint);
                 }
 
-                crmClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                _crmClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
             }
 
-            return crmClient;
+            return _crmClient;
         }
     }
 
@@ -117,7 +118,7 @@ public class CRMHandler : IDisposable
     /// </summary>
     public void Dispose()
     {
-        crmClient = null;
+        _crmClient = null;
         _instance = null;
     }
 }
