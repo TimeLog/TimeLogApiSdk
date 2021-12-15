@@ -13,15 +13,15 @@ public class TimeTrackingHandler : IDisposable
 {
     private static TimeTrackingHandler? _instance;
 
-    private bool collectRawRequestResponse;
-    private TimeTrackingServiceClient? timeTrackingClient;
+    private bool _collectRawRequestResponse;
+    private TimeTrackingServiceClient? _timeTrackingClient;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="TimeTrackingHandler" /> class from being created.
     /// </summary>
     private TimeTrackingHandler()
     {
-        collectRawRequestResponse = false;
+        _collectRawRequestResponse = false;
     }
 
     /// <summary>
@@ -61,12 +61,12 @@ public class TimeTrackingHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            timeTrackingClient = null;
+            _collectRawRequestResponse = value;
+            _timeTrackingClient = null;
         }
     }
 
@@ -77,7 +77,7 @@ public class TimeTrackingHandler : IDisposable
     {
         get
         {
-            if (timeTrackingClient == null)
+            if (_timeTrackingClient == null)
             {
                 var endpoint = new EndpointAddress(TimeTrackingServiceUrl);
                 if (CollectRawRequestResponse)
@@ -91,7 +91,7 @@ public class TimeTrackingHandler : IDisposable
                     binding.Elements.Add(TimeTrackingServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    timeTrackingClient = new TimeTrackingServiceClient(binding, endpoint);
+                    _timeTrackingClient = new TimeTrackingServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -105,19 +105,19 @@ public class TimeTrackingHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    timeTrackingClient = new TimeTrackingServiceClient(binding, endpoint);
+                    _timeTrackingClient = new TimeTrackingServiceClient(binding, endpoint);
                 }
 
-                timeTrackingClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                _timeTrackingClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
             }
 
-            return timeTrackingClient;
+            return _timeTrackingClient;
         }
     }
 
     void IDisposable.Dispose()
     {
-        timeTrackingClient = null;
+        _timeTrackingClient = null;
         _instance = null;
     }
 }

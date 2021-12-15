@@ -33,7 +33,7 @@ public class CRMHandler : IDisposable
     /// <summary>
     ///     Gets the uri associated with the CRM service.
     /// </summary>
-    public string CrmServiceUrl
+    public string CRMServiceUrl
     {
         get
         {
@@ -80,13 +80,13 @@ public class CRMHandler : IDisposable
         {
             if (_crmClient == null)
             {
-                var endpoint = new EndpointAddress(CrmServiceUrl);
+                var endpoint = new EndpointAddress(CRMServiceUrl);
                 if (CollectRawRequestResponse)
                 {
                     var binding = new CustomBinding();
                     var encoding = new RawMessageEncodingBindingElement {MessageVersion = MessageVersion.Soap11};
                     binding.Elements.Add(encoding);
-                    binding.Elements.Add(CrmServiceUrl.Contains("https")
+                    binding.Elements.Add(CRMServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
                     _crmClient = new CRMServiceClient(binding, endpoint);
@@ -98,7 +98,7 @@ public class CRMHandler : IDisposable
                         MaxReceivedMessageSize = SettingsHandler.Instance.MaxReceivedMessageSize
                     };
 
-                    if (CrmServiceUrl.Contains("https"))
+                    if (CRMServiceUrl.Contains("https"))
                     {
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }

@@ -13,15 +13,15 @@ public class InvoicingHandler : IDisposable
 {
     private static InvoicingHandler? _instance;
 
-    private bool collectRawRequestResponse;
-    private InvoicingServiceClient? invoicingClient;
+    private bool _collectRawRequestResponse;
+    private InvoicingServiceClient? _invoicingClient;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="InvoicingHandler" /> class from being created.
     /// </summary>
     private InvoicingHandler()
     {
-        collectRawRequestResponse = false;
+        _collectRawRequestResponse = false;
     }
 
     /// <summary>
@@ -61,12 +61,12 @@ public class InvoicingHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            invoicingClient = null;
+            _collectRawRequestResponse = value;
+            _invoicingClient = null;
         }
     }
 
@@ -77,7 +77,7 @@ public class InvoicingHandler : IDisposable
     {
         get
         {
-            if (invoicingClient == null)
+            if (_invoicingClient == null)
             {
                 var endpoint = new EndpointAddress(InvoicingServiceUrl);
 
@@ -89,7 +89,7 @@ public class InvoicingHandler : IDisposable
                     binding.Elements.Add(InvoicingServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    invoicingClient = new InvoicingServiceClient(binding, endpoint);
+                    _invoicingClient = new InvoicingServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -103,12 +103,12 @@ public class InvoicingHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    invoicingClient = new InvoicingServiceClient(binding, endpoint);
+                    _invoicingClient = new InvoicingServiceClient(binding, endpoint);
                 }
             }
 
-            invoicingClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
-            return invoicingClient;
+            _invoicingClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+            return _invoicingClient;
         }
     }
 
@@ -117,7 +117,7 @@ public class InvoicingHandler : IDisposable
     /// </summary>
     public void Dispose()
     {
-        invoicingClient = null;
+        _invoicingClient = null;
         _instance = null;
     }
 }

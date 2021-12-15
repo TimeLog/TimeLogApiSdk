@@ -19,7 +19,7 @@
                 Gets the singleton instance of the <see cref="T:TimeLog.TransactionalAPI.SDK.CRMHandler" />.
             </summary>
         </member>
-        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CrmServiceUrl">
+        <member name="P:TimeLog.TransactionalAPI.SDK.CRMHandler.CRMServiceUrl">
             <summary>
                 Gets the uri associated with the CRM service.
             </summary>

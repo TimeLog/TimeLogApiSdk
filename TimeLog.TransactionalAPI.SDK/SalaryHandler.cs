@@ -13,15 +13,15 @@ public class SalaryHandler : IDisposable
 {
     private static SalaryHandler? _instance;
 
-    private bool collectRawRequestResponse;
-    private SalaryServiceClient? salaryClient;
+    private bool _collectRawRequestResponse;
+    private SalaryServiceClient? _salaryClient;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="SalaryHandler" /> class from being created.
     /// </summary>
     private SalaryHandler()
     {
-        collectRawRequestResponse = false;
+        _collectRawRequestResponse = false;
     }
 
     /// <summary>
@@ -61,12 +61,12 @@ public class SalaryHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            salaryClient = null;
+            _collectRawRequestResponse = value;
+            _salaryClient = null;
         }
     }
 
@@ -77,7 +77,7 @@ public class SalaryHandler : IDisposable
     {
         get
         {
-            if (salaryClient == null)
+            if (_salaryClient == null)
             {
                 var endpoint = new EndpointAddress(SalaryServiceUrl);
                 if (CollectRawRequestResponse)
@@ -88,7 +88,7 @@ public class SalaryHandler : IDisposable
                     binding.Elements.Add(SalaryServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    salaryClient = new SalaryServiceClient(binding, endpoint);
+                    _salaryClient = new SalaryServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -102,19 +102,19 @@ public class SalaryHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    salaryClient = new SalaryServiceClient(binding, endpoint);
+                    _salaryClient = new SalaryServiceClient(binding, endpoint);
                 }
 
-                salaryClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                _salaryClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
             }
 
-            return salaryClient;
+            return _salaryClient;
         }
     }
 
     void IDisposable.Dispose()
     {
-        salaryClient = null;
+        _salaryClient = null;
         _instance = null;
     }
 }

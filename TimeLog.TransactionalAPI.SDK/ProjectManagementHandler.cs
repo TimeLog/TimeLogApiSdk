@@ -13,15 +13,15 @@ public class ProjectManagementHandler : IDisposable
 {
     private static ProjectManagementHandler? _instance;
 
-    private bool collectRawRequestResponse;
-    private ProjectManagementServiceClient? projectManagementClient;
+    private bool _collectRawRequestResponse;
+    private ProjectManagementServiceClient? _projectManagementClient;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="ProjectManagementHandler" /> class from being created.
     /// </summary>
     private ProjectManagementHandler()
     {
-        collectRawRequestResponse = false;
+        _collectRawRequestResponse = false;
     }
 
     /// <summary>
@@ -62,12 +62,12 @@ public class ProjectManagementHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            projectManagementClient = null;
+            _collectRawRequestResponse = value;
+            _projectManagementClient = null;
         }
     }
 
@@ -78,7 +78,7 @@ public class ProjectManagementHandler : IDisposable
     {
         get
         {
-            if (projectManagementClient == null)
+            if (_projectManagementClient == null)
             {
                 var endpoint = new EndpointAddress(ProjectManagementServiceUrl);
 
@@ -90,7 +90,7 @@ public class ProjectManagementHandler : IDisposable
                     binding.Elements.Add(ProjectManagementServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
+                    _projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -101,19 +101,19 @@ public class ProjectManagementHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
+                    _projectManagementClient = new ProjectManagementServiceClient(binding, endpoint);
                 }
 
-                projectManagementClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                _projectManagementClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
             }
 
-            return projectManagementClient;
+            return _projectManagementClient;
         }
     }
 
     void IDisposable.Dispose()
     {
-        projectManagementClient = null;
+        _projectManagementClient = null;
         _instance = null;
     }
 }

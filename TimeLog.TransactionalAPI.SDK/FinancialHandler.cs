@@ -13,15 +13,15 @@ public class FinancialHandler : IDisposable
 {
     private static FinancialHandler? _instance;
 
-    private bool collectRawRequestResponse;
-    private FinancialServiceClient? financialClient;
+    private bool _collectRawRequestResponse;
+    private FinancialServiceClient? _financialClient;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="FinancialHandler" /> class from being created.
     /// </summary>
     private FinancialHandler()
     {
-        collectRawRequestResponse = false;
+        _collectRawRequestResponse = false;
     }
 
     /// <summary>
@@ -60,12 +60,12 @@ public class FinancialHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            financialClient = null;
+            _collectRawRequestResponse = value;
+            _financialClient = null;
         }
     }
 
@@ -76,7 +76,7 @@ public class FinancialHandler : IDisposable
     {
         get
         {
-            if (financialClient == null)
+            if (_financialClient == null)
             {
                 var endpoint = new EndpointAddress(FinancialServiceUrl);
                 if (CollectRawRequestResponse)
@@ -87,7 +87,7 @@ public class FinancialHandler : IDisposable
                     binding.Elements.Add(FinancialServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    financialClient = new FinancialServiceClient(binding, endpoint);
+                    _financialClient = new FinancialServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -101,19 +101,19 @@ public class FinancialHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    financialClient = new FinancialServiceClient(binding, endpoint);
+                    _financialClient = new FinancialServiceClient(binding, endpoint);
                 }
 
-                financialClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                _financialClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
             }
 
-            return financialClient;
+            return _financialClient;
         }
     }
 
     void IDisposable.Dispose()
     {
-        financialClient = null;
+        _financialClient = null;
         _instance = null;
     }
 }

@@ -16,18 +16,18 @@ namespace TimeLog.TransactionalAPI.SDK;
 public class SecurityHandler : IDisposable
 {
     private static SecurityHandler? _instance;
-    private readonly Dictionary<string, SecurityToken> cachedTokens;
+    private readonly Dictionary<string, SecurityToken> _cachedTokens;
 
-    private bool collectRawRequestResponse;
-    private SecurityServiceClient? securityClient;
-    private SecurityToken? token;
+    private bool _collectRawRequestResponse;
+    private SecurityServiceClient? _securityClient;
+    private SecurityToken? _token;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="SecurityHandler" /> class from being created.
     /// </summary>
     private SecurityHandler()
     {
-        cachedTokens = new Dictionary<string, SecurityToken>();
+        _cachedTokens = new Dictionary<string, SecurityToken>();
         CollectRawRequestResponse = false;
     }
 
@@ -59,7 +59,7 @@ public class SecurityHandler : IDisposable
     {
         get
         {
-            if (securityClient == null)
+            if (_securityClient == null)
             {
                 var endpoint = new EndpointAddress(SecurityServiceUrl);
 
@@ -71,7 +71,7 @@ public class SecurityHandler : IDisposable
                     binding.Elements.Add(SecurityServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    securityClient = new SecurityServiceClient(binding, endpoint);
+                    _securityClient = new SecurityServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -85,13 +85,13 @@ public class SecurityHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    securityClient = new SecurityServiceClient(binding, endpoint);
+                    _securityClient = new SecurityServiceClient(binding, endpoint);
                 }
 
-                securityClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                _securityClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
             }
 
-            return securityClient;
+            return _securityClient;
         }
     }
 
@@ -103,13 +103,13 @@ public class SecurityHandler : IDisposable
     {
         get
         {
-            if (token == null)
+            if (_token == null)
             {
                 throw new Exception(
                     "Please authenticate using the \"SecurityHandler.Instance.TryAuthenticate\" method before use");
             }
 
-            return token;
+            return _token;
         }
     }
 
@@ -118,13 +118,13 @@ public class SecurityHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            securityClient = null;
-            token = null;
+            _collectRawRequestResponse = value;
+            _securityClient = null;
+            _token = null;
         }
     }
 
@@ -133,8 +133,8 @@ public class SecurityHandler : IDisposable
     /// </summary>
     public void Dispose()
     {
-        securityClient = null;
-        token = null;
+        _securityClient = null;
+        _token = null;
         _instance = null;
     }
 
@@ -176,7 +176,7 @@ public class SecurityHandler : IDisposable
     {
         if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["TimeLogProjectRawTokenHash"]))
         {
-            token = new SecurityToken
+            _token = new SecurityToken
             {
                 Expires = DateTime.ParseExact(ConfigurationManager.AppSettings["TimeLogProjectRawTokenExpires"]!,
                     "yyyyMMddHHmmssK", new CultureInfo("da-DK")),
@@ -189,27 +189,27 @@ public class SecurityHandler : IDisposable
         }
 
         // Reuse the token if we already have it in the cache
-        if (cachedTokens.ContainsKey(username))
+        if (_cachedTokens.ContainsKey(username))
         {
-            token = cachedTokens[username];
+            _token = _cachedTokens[username];
 
             // Check if the token has expired - leave a minute to other code to run
-            if (token.Expires > DateTime.Now.AddMinutes(1))
+            if (_token.Expires > DateTime.Now.AddMinutes(1))
             {
                 messages = new List<string>();
                 return true;
             }
 
-            cachedTokens.Remove(username);
+            _cachedTokens.Remove(username);
         }
 
         var tokenResponse = SecurityClient.GetToken(username, password);
         if (tokenResponse.ResponseState == ExecutionStatus.Success &&
             tokenResponse.Return.Any())
         {
-            token = tokenResponse.Return[0];
+            _token = tokenResponse.Return[0];
 
-            cachedTokens.Add(username, token);
+            _cachedTokens.Add(username, _token);
 
             messages = new List<string>();
             return true;

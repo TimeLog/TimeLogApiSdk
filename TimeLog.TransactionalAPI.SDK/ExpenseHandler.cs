@@ -13,15 +13,15 @@ public class ExpenseHandler : IDisposable
 {
     private static ExpenseHandler? _instance;
 
-    private bool collectRawRequestResponse;
-    private ExpenseServiceClient? expenseClient;
+    private bool _collectRawRequestResponse;
+    private ExpenseServiceClient? _expenseClient;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="ExpenseHandler" /> class from being created.
     /// </summary>
     private ExpenseHandler()
     {
-        collectRawRequestResponse = false;
+        _collectRawRequestResponse = false;
     }
 
     /// <summary>
@@ -61,12 +61,12 @@ public class ExpenseHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            expenseClient = null;
+            _collectRawRequestResponse = value;
+            _expenseClient = null;
         }
     }
 
@@ -77,7 +77,7 @@ public class ExpenseHandler : IDisposable
     {
         get
         {
-            if (expenseClient == null)
+            if (_expenseClient == null)
             {
                 var endpoint = new EndpointAddress(ExpenseServiceUrl);
                 if (CollectRawRequestResponse)
@@ -88,7 +88,7 @@ public class ExpenseHandler : IDisposable
                     binding.Elements.Add(ExpenseServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    expenseClient = new ExpenseServiceClient(binding, endpoint);
+                    _expenseClient = new ExpenseServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -102,19 +102,19 @@ public class ExpenseHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    expenseClient = new ExpenseServiceClient(binding, endpoint);
+                    _expenseClient = new ExpenseServiceClient(binding, endpoint);
                 }
 
-                expenseClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                _expenseClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
             }
 
-            return expenseClient;
+            return _expenseClient;
         }
     }
 
     void IDisposable.Dispose()
     {
-        expenseClient = null;
+        _expenseClient = null;
         _instance = null;
     }
 }

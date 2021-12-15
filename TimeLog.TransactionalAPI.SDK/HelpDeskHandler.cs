@@ -13,15 +13,15 @@ public class HelpDeskHandler : IDisposable
 {
     private static HelpDeskHandler? _instance;
 
-    private bool collectRawRequestResponse;
-    private HelpDeskServiceClient? helpDeskClient;
+    private bool _collectRawRequestResponse;
+    private HelpDeskServiceClient? _helpDeskClient;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="HelpDeskHandler" /> class from being created.
     /// </summary>
     private HelpDeskHandler()
     {
-        collectRawRequestResponse = false;
+        _collectRawRequestResponse = false;
     }
 
     /// <summary>
@@ -61,12 +61,12 @@ public class HelpDeskHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            helpDeskClient = null;
+            _collectRawRequestResponse = value;
+            _helpDeskClient = null;
         }
     }
 
@@ -77,7 +77,7 @@ public class HelpDeskHandler : IDisposable
     {
         get
         {
-            if (helpDeskClient == null)
+            if (_helpDeskClient == null)
             {
                 var endpoint = new EndpointAddress(HelpDeskServiceUrl);
                 if (CollectRawRequestResponse)
@@ -88,7 +88,7 @@ public class HelpDeskHandler : IDisposable
                     binding.Elements.Add(HelpDeskServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    helpDeskClient = new HelpDeskServiceClient(binding, endpoint);
+                    _helpDeskClient = new HelpDeskServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -102,19 +102,19 @@ public class HelpDeskHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    helpDeskClient = new HelpDeskServiceClient(binding, endpoint);
+                    _helpDeskClient = new HelpDeskServiceClient(binding, endpoint);
                 }
 
-                helpDeskClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                _helpDeskClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
             }
 
-            return helpDeskClient;
+            return _helpDeskClient;
         }
     }
 
     void IDisposable.Dispose()
     {
-        helpDeskClient = null;
+        _helpDeskClient = null;
         _instance = null;
     }
 }

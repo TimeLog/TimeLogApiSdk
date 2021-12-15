@@ -13,15 +13,15 @@ public class OrganisationHandler : IDisposable
 {
     private static OrganisationHandler? _instance;
 
-    private bool collectRawRequestResponse;
-    private OrganisationServiceClient? organisationClient;
+    private bool _collectRawRequestResponse;
+    private OrganisationServiceClient? _organisationClient;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="OrganisationHandler" /> class from being created.
     /// </summary>
     private OrganisationHandler()
     {
-        collectRawRequestResponse = false;
+        _collectRawRequestResponse = false;
     }
 
     /// <summary>
@@ -61,12 +61,12 @@ public class OrganisationHandler : IDisposable
     /// </summary>
     public bool CollectRawRequestResponse
     {
-        get => collectRawRequestResponse;
+        get => _collectRawRequestResponse;
 
         set
         {
-            collectRawRequestResponse = value;
-            organisationClient = null;
+            _collectRawRequestResponse = value;
+            _organisationClient = null;
         }
     }
 
@@ -77,7 +77,7 @@ public class OrganisationHandler : IDisposable
     {
         get
         {
-            if (organisationClient == null)
+            if (_organisationClient == null)
             {
                 var endpoint = new EndpointAddress(OrganisationServiceUrl);
                 if (CollectRawRequestResponse)
@@ -88,7 +88,7 @@ public class OrganisationHandler : IDisposable
                     binding.Elements.Add(OrganisationServiceUrl.Contains("https")
                         ? SettingsHandler.Instance.StandardHttpsTransportBindingElement
                         : SettingsHandler.Instance.StandardHttpTransportBindingElement);
-                    organisationClient = new OrganisationServiceClient(binding, endpoint);
+                    _organisationClient = new OrganisationServiceClient(binding, endpoint);
                 }
                 else
                 {
@@ -102,19 +102,19 @@ public class OrganisationHandler : IDisposable
                         binding.Security.Mode = BasicHttpSecurityMode.Transport;
                     }
 
-                    organisationClient = new OrganisationServiceClient(binding, endpoint);
+                    _organisationClient = new OrganisationServiceClient(binding, endpoint);
                 }
 
-                organisationClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
+                _organisationClient.InnerChannel.OperationTimeout = SettingsHandler.Instance.OperationTimeout;
             }
 
-            return organisationClient;
+            return _organisationClient;
         }
     }
 
     void IDisposable.Dispose()
     {
-        organisationClient = null;
+        _organisationClient = null;
         _instance = null;
     }
 }
