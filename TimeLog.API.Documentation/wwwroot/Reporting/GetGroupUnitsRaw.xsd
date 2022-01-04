@@ -10,7 +10,7 @@
         <xsd:element name="GroupUnit" type="tlp:GroupUnitsRaw_Type" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
     </xsd:complexType>
-    <xsd:key name="Event_Key">
+    <xsd:key name="GroupUnit_Key">
       <xsd:selector xpath=".//tlp:GroupUnit" />
       <xsd:field xpath="@ID" />
     </xsd:key>
