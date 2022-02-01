@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Events xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/EventsRaw.xsd">
+  <tlp:Event ID="1">
+    <tlp:EmployeeID>3</tlp:EmployeeID>
+    <tlp:CustomerID>26</tlp:CustomerID>
+    <tlp:EventTypeID>7</tlp:EventTypeID>
+    <tlp:ContactID>448</tlp:ContactID>
+    <tlp:OpportunityID>12</tlp:OpportunityID>
+    <tlp:OpportunitySubject>Hello World</tlp:OpportunitySubject>
+    <tlp:Subject>Presentation of version 2.6</tlp:Subject>
+    <tlp:Description>Goal to get a meeting</tlp:Description>
+    <tlp:Date>2002-09-04T00:00:00</tlp:Date>
+    <tlp:Status>3</tlp:Status>
+  </tlp:Event>
+</tlp:Events>

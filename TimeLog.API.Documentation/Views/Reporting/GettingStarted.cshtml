@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "Getting Started with the Reporting API";
+}
+
+<article class="article">
+
+    <h1>@ViewBag.Title</h1>
+    <h2>Use these steps to get started with fetching data from TimeLog.</h2>
+    <p>
+        Accessing the Reporting API requires a special set of Reporting API credentials and a SiteCode
+        both available in the System Administration in TimeLog. 
+    </p>
+    <p>
+        This guide is using the TimeLog SDK and all example are written in C#. However, the API 
+        does not require .NET for interaction, but the SDK is (as of writing) only available for .NET. 
+    </p>
+    <h3>1. Get URL</h3>
+    <p>
+        Take note of your TimeLog URL in the browser. In most cases, it would follow the pattern below. [X] is 
+        replaced by a number and the [account name] is the same you use for login.
+    </p>
+    <p>
+        https://app[X].timelog.com/[account name]/service.asmx
+    </p>
+    <p>
+        If your TimeLog URL in the browser is https://app.timelog.com, you may retrieve your specific
+        TimeLog URL in <strong>System Administration</strong>,
+        then <strong>Integrations and API</strong> then <strong>Reporting API settings</strong>.
+        You should see a URL with a similar pattern as above, in the section <strong>Your TImeLog API URL</strong>.
+    </p>
+    <h3>2. Get the API credentials</h3>
+    <p>
+        Using a user with the standard system administrator role or similar, click the personal menu 
+        (top right corner), choose <strong>System Administration</strong>,
+        then <strong>Integrations and API</strong> then <strong>Reporting API settings</strong>. 
+    </p>
+    <p>
+        Take note of the Reporting API Site Code and store it. Enter the special Reporting API credentials to use
+        for the API requests. 
+    </p>
+    <h3>3. Test the credentials</h3>
+    <p>
+        You should test your URL and credentials in the browser by navigating to the Reporting API endpoint
+        and finding the method <strong>ValidateCredentials</strong> to execute a request.
+    </p>
+    <h3>4. Setup your project</h3>
+    <p>
+        Create a new .NET project, download the Reporting API DLLs from 
+        <a href="https://github.com/TimeLog/TimeLogApiSdk/tree/master/Deploy" target="_blank">GitHub</a>.
+    </p>
+    <p>
+        Add the DLLs as references in your project.
+    </p>
+    <p>
+        Add the following keys to the appSettings-section in web.config or app.config. And fill them with appropriate values as in step 2.
+    </p>
+    <pre>
+&lt;add key="TimeLogProjectUri" value="" /&gt;
+&lt;add key="TimeLogProjectReportingSiteCode" value="" /&gt;
+&lt;add key="TimeLogProjectReportingApiId" value="" /&gt;
+&lt;add key="TimeLogProjectReportingApiPassword" value="" /&gt;</pre>
+    <p>
+        If you are not using the SDK, instead find the service URLs and add the web service references to your project.
+        You may find the full source code for the .NET SDK on GitHub and copy some of the same constructs
+        to other languages.
+    </p>
+    <h3>5. Prepare the request</h3>
+    <p>
+        In the SDK use the ServiceHandler.Instance.TryAuthenticate-method directly.
+    </p>
+    <pre>
+if (ServiceHandler.Instance.TryAuthenticate())
+{
+    Console.WriteLine("Success");
+}
+else
+{
+    Console.WriteLine("Failed");
+}</pre>
+    <h3>6. Execute other methods</h3>
+    <p>
+        Now you are ready to access other services. Inside the TryAuthenticate construct from step 5.
+    </p>
+    <p>
+        The example below will get a list of customers with key information only (to use for a drop down).
+    </p>
+    <pre>
+var customersRaw = ServiceHandler.Instance.Client.GetCustomersShortList(
+    ServiceHandler.Instance.SiteCode,
+    ServiceHandler.Instance.ApiId,
+    ServiceHandler.Instance.ApiPassword,
+    CustomerStatus.All,
+    AccountManager.All);
+if (customersRaw.OwnerDocument != null)
+{
+    var namespaceManager = new XmlNamespaceManager(customersRaw.OwnerDocument.NameTable);
+    namespaceManager.AddNamespace("tlp", "http://www.timelog.com/XML/Schema/tlp/v4_4");
+    var customers = customersRaw.SelectNodes("tlp:Customer", namespaceManager);
+    if (customers != null)
+    {
+        foreach (XmlNode customer in customers)
+        {
+            var customerName = customer.SelectSingleNode("tlp:Name", namespaceManager);
+            if (customerName != null)
+            {
+                Console.WriteLine(customerName.InnerText);
+            }
+        }
+    }
+}
+else
+{
+    Console.WriteLine("Failed to authenticate to reporting API");
+}</pre>
+    <p>
+        Note that the Reporting API SDK provides strongly typed classes for default parameters. In the
+        example above notice CustomerStatus.All and AccountManager.All which provides the appropriate
+        default value for getting all (in this case) customers back.
+    </p>
+    <h3>7. Get Creative</h3>
+    <p>
+        Now it is time to get creative and use the TimeLog data for analytics, synchronization etc.
+    </p>
+    <p>
+        Get in touch with us for recommendations on usage, and if you have ideas for new methods - or if you encounter bugs.
+    </p>
+</article>

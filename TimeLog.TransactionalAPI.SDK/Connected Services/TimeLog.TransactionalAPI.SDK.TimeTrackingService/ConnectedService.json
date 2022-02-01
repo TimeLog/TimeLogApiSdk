@@ -1,0 +1,17 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "https://app8.timelog.com/610patchreference/WebServices/Registration/V1_0/TimeTrackingServiceSecure.svc"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, TimeLog.TransactionalAPI.SDK.TimeTrackingService"
+    ],
+    "sync": true,
+    "targetFramework": "netstandard2.1",
+    "typeReuseMode": "All"
+  }
+}

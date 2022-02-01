@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:Mileages xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/MileagesRaw.xsd">
+  <tlp:Mileage ID="1499">
+    <CustomerName>TimeLog A/S</CustomerName>
+    <CustomerNo>102</CustomerNo>
+    <CustomerID>4312</CustomerID>
+    <ProjectName>EMI - Presale (leads)</ProjectName>
+    <ProjectNo>800</ProjectNo>
+    <ProjectID>123</ProjectID>
+    <EmployeeFirstName>Peter</EmployeeFirstName>
+    <EmployeeLastName>Andersen</EmployeeLastName>
+    <EmployeeFullName>Peter Andersen</EmployeeFullName>
+    <EmployeeInitials>PAN</EmployeeInitials>
+    <EmployeeID>3</EmployeeID>
+    <EmployeeUserID>4</EmployeeUserID>
+    <TravelStartDate>2015-04-01T00:00:00</TravelStartDate>
+    <TravelEndDate>2015-04-01T00:00:00</TravelEndDate>
+    <TravelPurpose>Kundebesøg (19/3)</TravelPurpose>
+    <TravelDeparture>The office</TravelDeparture>
+    <TravelDestination>Vestre Strandallé 103</TravelDestination>
+    <TravelCostAmount>4.00</TravelCostAmount>
+    <TravelRegAmount>4.00</TravelRegAmount>
+    <TravelInvoicedAmount>0.00</TravelInvoicedAmount>
+    <TravelTripStart>0</TravelTripStart>
+    <TravelTripEnd>0</TravelTripEnd>
+    <TravelKM>12</TravelKM>
+    <TravelForm>Egen Bil</TravelForm>
+    <TravelSelfPayment>1</TravelSelfPayment>
+    <TransportRateAmount>3.70</TransportRateAmount>
+    <TransportRate>DK-2015</TransportRate>
+    <IsBillable>1</IsBillable>
+  </tlp:Mileage>
+</tlp:Mileages>

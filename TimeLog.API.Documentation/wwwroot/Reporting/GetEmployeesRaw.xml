@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tlp:Employees xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/EmployeesRaw.xsd">
+	<tlp:Employee ID="17">
+		<tlp:EmployeeUserId>2</tlp:EmployeeUserId>
+		<tlp:FirstName>John</tlp:FirstName>
+		<tlp:LastName>Doe</tlp:LastName>
+		<tlp:FullName>John Doe</tlp:FullName>
+		<tlp:Initials>JDO</tlp:Initials>
+		<tlp:Title>Code Buster</tlp:Title>
+		<tlp:Email>jdo@timelog.se</tlp:Email>
+		<tlp:Phone>+46 1244 378 47</tlp:Phone>
+		<tlp:Mobile>+46 1234 378 48</tlp:Mobile>
+		<tlp:PrivatePhone>+46 1234 378 49</tlp:PrivatePhone>
+	    <tlp:Address>New street 110</tlp:Address>
+	    <tlp:ZipCode>99 999</tlp:ZipCode>
+	    <tlp:City>Malmö</tlp:City>
+	    <tlp:Status>1</tlp:Status>
+	    <tlp:HiredDate>2011-01-18T00:00:00.000</tlp:HiredDate>
+	    <tlp:TerminatedDate>2015-03-18T00:00:00.000</tlp:TerminatedDate>
+		<tlp:DepartmentNameID>25</tlp:DepartmentNameID>
+		<tlp:DepartmentName>Research and Development</tlp:DepartmentName>
+	    <tlp:WorkWeek>Full time - 37 hours</tlp:WorkWeek>
+	    <tlp:EmployeeTypeId>2</tlp:EmployeeTypeId>
+	    <tlp:EmployeeTypeName>Consultant</tlp:EmployeeTypeName>
+	    <tlp:EmployeeNo>12345</tlp:EmployeeNo>
+	    <tlp:Username>SYSTEM</tlp:Username>
+	    <tlp:CostPrice>1200.00</tlp:CostPrice>
+	    <tlp:LegalEntityID>1</tlp:LegalEntityID>
+	    <tlp:ApprovalManagerUserID>1</tlp:ApprovalManagerUserID>
+	    <tlp:ApprovalManagerEmployeeID>16</tlp:ApprovalManagerEmployeeID>
+	</tlp:Employee>
+</tlp:Employees>

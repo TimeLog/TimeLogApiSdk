@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tlp:EmployeeNormalWorkingTimeHistories xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4">
+	<tlp:EmployeeNormalWorkingTimeHistory ID="13" GUID="7A0A7B21-70E5-445B-A549-4577F0D486A3">
+		<tlp:EmployeeUserID>9</tlp:EmployeeUserID>
+		<tlp:ValidFromDate>2021-08-06T00:00:00</tlp:ValidFromDate>
+		<tlp:NormalWorkingTimeID>1</tlp:NormalWorkingTimeID>
+		<tlp:NormalWorkingTimeGUID>96E86B36-4F7C-4B52-851B-BC4AD62028FA</tlp:NormalWorkingTimeGUID>
+		<tlp:NormalWorkingTimeName>Normal</tlp:NormalWorkingTimeName>
+	</tlp:EmployeeNormalWorkingTimeHistory>
+	<tlp:EmployeeNormalWorkingTimeHistory ID="17" GUID="5C1974CB-A2C3-487F-ABB6-AABD98D18B3E">
+		<tlp:EmployeeUserID>9</tlp:EmployeeUserID>
+		<tlp:ValidFromDate>2021-10-20T00:00:00</tlp:ValidFromDate>
+		<tlp:NormalWorkingTimeID>2</tlp:NormalWorkingTimeID>
+		<tlp:NormalWorkingTimeGUID>6B3B3480-D5B3-4A8E-A22D-19F3B7C0A0BA</tlp:NormalWorkingTimeGUID>
+		<tlp:NormalWorkingTimeName>Part Time</tlp:NormalWorkingTimeName>
+	</tlp:EmployeeNormalWorkingTimeHistory>
+	<tlp:EmployeeNormalWorkingTimeHistory ID="19" GUID="04F6192F-79F4-4B9D-9F18-38D31BC7ABF5">
+		<tlp:EmployeeUserID>9</tlp:EmployeeUserID>
+		<tlp:ValidFromDate>2022-01-04T00:00:00</tlp:ValidFromDate>
+		<tlp:NormalWorkingTimeID>1</tlp:NormalWorkingTimeID>
+		<tlp:NormalWorkingTimeGUID>96E86B36-4F7C-4B52-851B-BC4AD62028FA</tlp:NormalWorkingTimeGUID>
+		<tlp:NormalWorkingTimeName>Normal</tlp:NormalWorkingTimeName>
+	</tlp:EmployeeNormalWorkingTimeHistory>
+	<tlp:EmployeeNormalWorkingTimeHistory ID="20" GUID="3FE6AACD-B553-41BD-AB09-70F2C739E89F">
+		<tlp:EmployeeUserID>9</tlp:EmployeeUserID>
+		<tlp:ValidFromDate>2022-01-31T00:00:00</tlp:ValidFromDate>
+		<tlp:NormalWorkingTimeID>2</tlp:NormalWorkingTimeID>
+		<tlp:NormalWorkingTimeGUID>6B3B3480-D5B3-4A8E-A22D-19F3B7C0A0BA</tlp:NormalWorkingTimeGUID>
+		<tlp:NormalWorkingTimeName>Part Time</tlp:NormalWorkingTimeName>
+	</tlp:EmployeeNormalWorkingTimeHistory>
+</tlp:EmployeeNormalWorkingTimeHistories>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tlp:Groups xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4">
+  <tlp:Group ID="1">
+    <tlp:Name>Is Friend With CEO</tlp:Name>
+    <tlp:Type>1</tlp:Type>
+    <tlp:InputType>1</tlp:InputType>
+    <tlp:IsActive>1</tlp:IsActive>
+    <tlp:Values>
+      <tlp:Value xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" ID="1">
+        <tlp:Name>Very good friend</tlp:Name>
+        <tlp:IsDefault>0</tlp:IsDefault>
+      </tlp:Value>
+      <tlp:Value xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" ID="2">
+        <tlp:Name>Acquaintance</tlp:Name>
+        <tlp:IsDefault>1</tlp:IsDefault>
+      </tlp:Value>
+    </tlp:Values>
+  </tlp:Group>
+  <tlp:Group ID="2">
+    <tlp:Name>CEO Name</tlp:Name>
+    <tlp:Type>1</tlp:Type>
+    <tlp:InputType>2</tlp:InputType>
+    <tlp:IsActive>1</tlp:IsActive>
+  </tlp:Group>
+  <tlp:Group ID="3">
+    <tlp:Name>Knows How To Play Golf</tlp:Name>
+    <tlp:Type>2</tlp:Type>
+    <tlp:InputType>1</tlp:InputType>
+    <tlp:IsActive>1</tlp:IsActive>
+    <tlp:Values>
+      <tlp:Value xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" ID="3">
+        <tlp:Name>Yes</tlp:Name>
+        <tlp:IsDefault>1</tlp:IsDefault>
+      </tlp:Value>
+      <tlp:Value xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4" ID="4">
+        <tlp:Name>No</tlp:Name>
+        <tlp:IsDefault>0</tlp:IsDefault>
+      </tlp:Value>
+    </tlp:Values>
+  </tlp:Group>
+</tlp:Groups>

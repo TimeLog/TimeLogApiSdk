@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="EmployeeNormalWorkingTimeHistories" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="EmployeeNormalWorkingTimeHistory" type="tlp:EmployeeNormalWorkingTimeHistoriesRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="EmployeeNormalWorkingTimeHistory_Key">
+      <xsd:selector xpath=".//tlp:EmployeeNormalWorkingTimeHistory" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="EmployeeNormalWorkingTimeHistoriesRaw_Type">
+    <xsd:sequence>
+      <xsd:element name="EmployeeUserID" type="xsd:integer"/>
+      <xsd:element name="ValidFromDate" type="xsd:dateTime" />
+      <xsd:element name="NormalWorkingTimeID" type="xsd:integer" />
+      <xsd:element name="NormalWorkingTimeGUID" type="xsd:string" />
+      <xsd:element name="NormalWorkingTimeName" type="xsd:string" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:integer" use="required" />
+    <xsd:attribute name="GUID" type="xsd:string" use="required" />
+  </xsd:complexType>
+
+</xsd:schema>

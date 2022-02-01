@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Getting Started with the Transactional API";
+}
+
+<article class="article">
+    <h1>@ViewBag.Title</h1>
+    <h2>Use these steps to get started with exchanging data between TimeLog and other business systems.</h2>
+    <p>
+        Accessing the Transactional API requires normal TimeLog credentials. Currently, no special API user exists.
+        For most usages, the recommendation is to use a system administrator role for all interactions. However, lesser
+        privileges will also work for some requests.
+    </p>
+    <p>
+        This guide is using the TimeLog SDK and all example are written in C#. However, the API does not
+        require .NET for interaction, but the SDK is (as of writing) only available for .NET.
+    </p>
+    <h3>Get URL</h3>
+    <p>
+        Take note of your TimeLog URL in the browser. In most cases, it would follow the pattern below.
+        [X] is replaced by a number and the [account name] is the same you use for login.
+    </p>
+    <p>https://app[X].timelog.com/[account name]</p>
+    <p>
+        If your TimeLog URL in the browser is https://app.timelog.com, you may retrieve your specific
+        TimeLog URL in <strong>System Administration</strong>,
+        then <strong>Integrations and API</strong> then <strong>Transactional API settings</strong>.
+        You should see a URL with a similar pattern as above, in the section <strong>Your TImeLog API URL</strong>.
+    </p>
+    <h3>Get credentials</h3>
+    <p>
+        Obtain certain credentials to use for the API requests. You should test your URL and credentials on the login
+        portal. If they work there, they would work in the API.
+    </p>
+    <h3>Setup your project</h3>
+    <p>
+        Create a new .NET project, download the Transactional API DLLs from
+        <a href="https://github.com/TimeLog/TimeLogApiSdk/tree/master/Deploy" target="_blank">GitHub</a>.
+    </p>
+    <p>
+        Add the DLLs as references in your project.
+    </p>
+    <p>
+        Add the following keys to the appSettings-section in web.config or app.config and fill them
+        with appropriate values as step 2. Use credentials from normal TimeLog users (currently, we 
+        do not have dedicated API users).
+    </p>
+    <pre>
+&lt;add key="TimeLogProjectUri" value="" /&gt;
+&lt;add key="TimeLogProjectTransactionalUsername" value="" /&gt;
+&lt;add key="TimeLogProjectTransactionalPassword" value="" /&gt;</pre>
+    <p>
+        If you are not using the SDK, instead find the service URLs and add the web service references to your project.
+        You may find the full source code for the .NET SDK on GitHub and copy some of the same constructs
+        to other languages.
+    </p>
+    <h3>Obtain a Security Token</h3>
+    <p>
+        In order to access any of the Transactional API services, you need a Security Token that grants you access.
+        The Security Token is obtained through the GetToken-method from the latest @Html.ActionLink("Security Service", "Services").
+    </p>
+    <p>
+        Using the SDK however, you can use the SecurityHandler.Instance.TryAuthenticate-method directly without
+        additional thinking on versions and constructs.
+    </p>
+    <pre>
+IEnumerable&lt;string&gt; messages;
+if (SecurityHandler.Instance.TryAuthenticate(out messages))
+{
+    Console.WriteLine("Success");
+}
+else
+{
+    Console.WriteLine(string.Join(",", messages));
+}</pre>
+    <p>
+        If succesful, the token is automatically cached and will be available from SecurityHandler.Instance.Token.
+    </p>
+    <h3>Execute other Methods</h3>
+    <p>
+        Now you are ready to access other services. Inside the TryAuthenticate construct from step 4, you
+        may execute other methods and for each of the handler available as part of the SDK you will find
+        an appropriate Token property matching the namespace needs.
+    </p>
+    <p>
+        The example below will get all time registrations for the user "tkj".
+    </p>
+    <pre>
+var result = ProjectManagementHandler.Instance.ProjectManagementClient.GetWorkPaged("tkj", new DateTime(2015, 1, 1), new DateTime(2015, 4, 1), 1, 350, ProjectManagementHandler.Instance.Token);
+if (result.ResponseState == ExecutionStatus.Success)
+{
+    foreach (var obj in result.Return)
+    {
+    }
+}
+else
+{
+    foreach (var apiMessage in result.Messages)
+    {
+        Console.WriteLine(apiMessage.Message);
+    }
+}</pre>
+    <h3>Get Creative</h3>
+    <p>
+        Now it is time to get creative and use the TimeLog data or automatically create new TimeLog data
+        based on information in other systems.
+    </p>
+    <p>Get in contact with us for recommendations on usage, and if you have ideas for new methods - or if you encounter bugs.</p>
+</article>
