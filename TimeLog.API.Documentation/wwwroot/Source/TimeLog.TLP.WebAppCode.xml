@@ -756,7 +756,18 @@ TimeLog.TLP.WebAppCode
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetEmployeeNormalWorkingTimeHistoriesRaw(System.String,System.String,System.String,System.Int32,System.Int32)">
  <summary>
- Get a list of normal working time histories
+ Get a list of employee normal working time histories
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="employeeUserID">UserID of specific employee. Set to 0 to get for all employees</param>
+ <param name="employeeStatus">Set to 0 for inactive employees; 1 for active employees; -1 to get all employees</param>
+ <returns>A list of normal working time histories in standard XML document</returns>
+</member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetEmployeeManagerHistoriesRaw(System.String,System.String,System.String,System.Int32,System.Int32)">
+ <summary>
+ Get a list of employee manager histories
  </summary>
  <param name="siteCode">Unique identification for your TimeLog account</param>
  <param name="apiID">The API ID</param>
