@@ -507,6 +507,619 @@
         ]
       }
     },
+    "/v{version}/approval/timesheets/get-status-by-week-of-year": {
+      "get": {
+        "tags": [
+          "ApprovalTimesheet"
+        ],
+        "summary": "Get approval statuses for user",
+        "operationId": "ApprovalTimesheet_GetStatusByWeekOfYear",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeUserId",
+            "in": "query",
+            "description": "The user id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "description": "The year",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "description": "Week of year",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of approval status in a week that belongs to the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetPeriodApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Unable to retrieve approval status for the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/approval/timesheets/get-status-by-dates": {
+      "get": {
+        "tags": [
+          "ApprovalTimesheet"
+        ],
+        "summary": "Get approval statuses for user",
+        "operationId": "ApprovalTimesheet_GetStatusByDates",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeUserId",
+            "in": "query",
+            "description": "The user id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "dates",
+            "in": "query",
+            "description": "List of dates",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "collectionFormat": "multi"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of approval status that belongs to the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetWeekDayApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Unable to retrieve approval status for the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/approval/timesheets/get-status-by-period": {
+      "get": {
+        "tags": [
+          "ApprovalTimesheet"
+        ],
+        "summary": "Get approval statuses for user",
+        "operationId": "ApprovalTimesheet_GetStatusByPeriod",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeUserId",
+            "in": "query",
+            "description": "The user id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Period start date",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "Period end date",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of approval status within a period that belongs to the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetPeriodApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Unable to retrieve approval status for the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/approval/timesheets/get-status-by-period-with-rejected-time-tracking-items": {
+      "get": {
+        "tags": [
+          "ApprovalTimesheet"
+        ],
+        "summary": "Get approval statuses for user",
+        "operationId": "ApprovalTimesheet_GetStatusByPeriodWithRejectedTimeTrackingItems",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeUserId",
+            "in": "query",
+            "description": "The user id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Period start date",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "Period end date",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of approval status within a period that belongs to the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetPeriodApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Unable to retrieve approval status for the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "deprecated": true,
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/approval/timesheets/get-status-range-by-nearby-week-of-year": {
+      "get": {
+        "tags": [
+          "ApprovalTimesheet"
+        ],
+        "summary": "Get approval statuses for user",
+        "operationId": "ApprovalTimesheet_GetStatusRangeByNearbyWeekOfYear",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "employeeUserId",
+            "in": "query",
+            "description": "The user id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "description": "The year",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "description": "Week of year",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "prevCount",
+            "in": "query",
+            "description": "Week count to add before",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nextCount",
+            "in": "query",
+            "description": "Week count to add after",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of approval status in a week that belongs to the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetPeriodApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Unable to retrieve approval status for the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/approval/timesheets/submit-dates": {
+      "post": {
+        "tags": [
+          "ApprovalTimesheet"
+        ],
+        "summary": "Submit list of days for user",
+        "operationId": "ApprovalTimesheet_SubmitDates",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Submit dates model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetSubmitDatesModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Timesheet dates was submitted.",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetWeekDayApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Unable to submit Timesheet dates for the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/approval/timesheets/submit-period": {
+      "post": {
+        "tags": [
+          "ApprovalTimesheet"
+        ],
+        "summary": "Submit range of dates for user",
+        "operationId": "ApprovalTimesheet_SubmitPeriod",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Submit period model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetApiSubmitPeriodModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Timesheet period was submitted.",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetWeekDayApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Unable to submit Timesheet period for the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/approval/timesheets/submit-time-registrations": {
+      "post": {
+        "tags": [
+          "ApprovalTimesheet"
+        ],
+        "summary": "Submit time registrations for user",
+        "operationId": "ApprovalTimesheet_SubmitTimeRegistrations",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Submit time registrations model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetApiSubmitTimeRegistrationsModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time registrations was submitted.",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetWeekDayApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Unable to submit time registrations for the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/approval/timesheets/resubmit-rejected-time-registrations": {
+      "post": {
+        "tags": [
+          "ApprovalTimesheet"
+        ],
+        "summary": "Resubmit rejected time registrations for user",
+        "operationId": "ApprovalTimesheet_ResubmitRejectedTimeRegistrations",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Resubmit rejected time registrations model.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetApiSubmitTimeRegistrationsModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Rejected time registrations was submitted.",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetWeekDayApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Unable to submit time registrations for the user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/barrier": {
       "get": {
         "tags": [
@@ -7852,6 +8465,62 @@
         ]
       }
     },
+    "/v{version}/time-registration-financial-data/get-status-by-date": {
+      "get": {
+        "tags": [
+          "TimeRegistrationFinancialData"
+        ],
+        "summary": "Get the financial data processing status by the given date",
+        "operationId": "TimeRegistrationFinancialData_GetStatusByDate",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Date to select",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Time registration financial data processing status",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistrationFinancialData.TimeRegistrationFinancialDataStatusApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetStatusByDate has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/time-registration-financial-data/get-by-date-range": {
       "get": {
         "tags": [
@@ -7899,6 +8568,70 @@
           },
           "500": {
             "description": "Request to GetByDateRange has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/time-registration-financial-data/get-status-by-date-range": {
+      "get": {
+        "tags": [
+          "TimeRegistrationFinancialData"
+        ],
+        "summary": "Get a list of financial data processing statuses by the given period",
+        "operationId": "TimeRegistrationFinancialData_GetStatusByDateRange",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of time registration financial data processing statuses",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistrationFinancialData.TimeRegistrationFinancialDataStatusApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetStatusByDateRange has failed",
             "schema": {
               "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
@@ -9368,6 +10101,361 @@
         "Description": {
           "description": "Gets or sets the description",
           "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetPeriodApiReadModel": {
+      "type": "object",
+      "properties": {
+        "WeekDays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetWeekDayApiReadModel"
+          }
+        },
+        "PeriodStatus": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer"
+        },
+        "LastRejectedComment": {
+          "type": "string"
+        },
+        "RecentRejectedComment": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetRejectedCommentApiReadModel"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetWeekDayApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ApprovalStatus": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer"
+        },
+        "Hours": {
+          "format": "double",
+          "type": "number"
+        },
+        "Date": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "LastRejectedComment": {
+          "type": "string"
+        },
+        "RecentRejectedComment": {
+          "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetRejectedCommentApiReadModel"
+        },
+        "RejectedRegistrations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel"
+          }
+        },
+        "HasResubmittedRejectedRegistration": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetRejectedCommentApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ManagerName": {
+          "type": "string"
+        },
+        "ManagerComment": {
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "format": "int32",
+          "description": "Gets or sets the customer identifier.",
+          "type": "integer"
+        },
+        "CustomerName": {
+          "description": "Gets or sets the name of the customer.",
+          "type": "string"
+        },
+        "CustomerNo": {
+          "description": "Gets or sets the customer no.",
+          "type": "string"
+        },
+        "ProjectID": {
+          "format": "int32",
+          "description": "Gets or sets the project identifier.",
+          "type": "integer"
+        },
+        "ProjectName": {
+          "description": "Gets or sets the name of the project.",
+          "type": "string"
+        },
+        "ProjectNo": {
+          "description": "Gets or sets the project no.",
+          "type": "string"
+        },
+        "TaskID": {
+          "format": "int32",
+          "description": "Gets or sets the task identifier.",
+          "type": "integer"
+        },
+        "TaskName": {
+          "description": "Gets or sets the name of the task.",
+          "type": "string"
+        },
+        "TaskFullName": {
+          "description": "Gets or sets the full name of the task.",
+          "type": "string"
+        },
+        "IsFixedPrice": {
+          "description": "Gets or sets the is fixed price.",
+          "type": "boolean"
+        },
+        "TaskNo": {
+          "description": "Gets or sets the task no.",
+          "type": "string"
+        },
+        "TaskIsActive": {
+          "description": "Gets or sets the task is active.",
+          "type": "boolean"
+        },
+        "AbsenceCodeID": {
+          "format": "int32",
+          "description": "Gets or sets the absence code identifier.",
+          "type": "integer"
+        },
+        "AbsenceName": {
+          "description": "Gets or sets the name of the absence.",
+          "type": "string"
+        },
+        "AbsenceCode": {
+          "description": "Gets or sets the absence code.",
+          "type": "string"
+        },
+        "AbsenceIsActive": {
+          "description": "Gets or sets the absence is active.",
+          "type": "boolean"
+        },
+        "AdditionalTextIsRequired": {
+          "description": "Gets or sets a value indicating whether [additional text is required].",
+          "type": "boolean"
+        },
+        "DefaultBillable": {
+          "description": "Gets or sets a value indicating whether [default billable].",
+          "type": "boolean"
+        },
+        "IsETCProject": {
+          "description": "Gets or sets a value indicating whether this instance is etc project.",
+          "type": "boolean"
+        },
+        "ShowBillable": {
+          "description": "Gets or sets a value indicating whether [show billable].",
+          "type": "boolean"
+        },
+        "AllocatedHour": {
+          "format": "int32",
+          "description": "Gets or sets the allocated hour.",
+          "type": "integer"
+        },
+        "TimeRegistrationID": {
+          "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
+          "type": "integer"
+        },
+        "EntityID": {
+          "format": "int32",
+          "description": "Gets or sets the entity identifier.",
+          "type": "integer"
+        },
+        "EntityType": {
+          "format": "int32",
+          "description": "Gets or sets the type of the entity.",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "description": "Gets or sets the user identifier.",
+          "type": "integer"
+        },
+        "Created": {
+          "format": "date-time",
+          "description": "Gets or sets the created.",
+          "type": "string"
+        },
+        "CreatedBy": {
+          "format": "int32",
+          "description": "Gets or sets the created by.",
+          "type": "integer"
+        },
+        "LastModified": {
+          "format": "date-time",
+          "description": "Gets or sets the last modified.",
+          "type": "string"
+        },
+        "LastModifiedBy": {
+          "format": "int32",
+          "description": "Gets or sets the last modified by.",
+          "type": "integer"
+        },
+        "IsBillable": {
+          "description": "Gets or sets a value indicating whether this instance is billable.",
+          "type": "boolean"
+        },
+        "Status": {
+          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel} is status.",
+          "type": "boolean"
+        },
+        "Date": {
+          "format": "date-time",
+          "description": "Gets or sets the date.",
+          "type": "string"
+        },
+        "MonthlyPeriod": {
+          "description": "Gets or sets the MonthlyPeriod",
+          "type": "string"
+        },
+        "Comment": {
+          "description": "Gets or sets the comment.",
+          "type": "string"
+        },
+        "Hours": {
+          "format": "double",
+          "description": "Gets or sets the hours.",
+          "type": "number"
+        },
+        "AdditionalTextField": {
+          "description": "Gets or sets the additional text field.",
+          "type": "string"
+        },
+        "InvoiceStatus": {
+          "description": "Gets or sets a value indicating whether [invoice status].",
+          "type": "boolean"
+        },
+        "TimeRegistrationApprovalStatus": {
+          "format": "int32",
+          "description": "Gets or sets a value indicating whether [time registration approval status].",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "type": "integer"
+        },
+        "TimeTrackingFormat": {
+          "format": "int32",
+          "description": "Gets or sets the time tracking format.",
+          "type": "integer"
+        },
+        "Minutes": {
+          "format": "int32",
+          "description": "Gets or sets the minutes.",
+          "type": "integer"
+        },
+        "BillableHours": {
+          "format": "double",
+          "description": "Gets or sets the billable hours.",
+          "type": "number"
+        },
+        "BillableMinutes": {
+          "format": "int32",
+          "description": "Gets or sets the billable minutes.",
+          "type": "integer"
+        },
+        "IsFavourite": {
+          "description": "Gets or sets a value indicating whether this instance is favourite.",
+          "type": "boolean"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetSubmitDatesModel": {
+      "type": "object",
+      "properties": {
+        "Dates": {
+          "description": "List of dates to submit.",
+          "type": "array",
+          "items": {
+            "format": "date-time",
+            "type": "string"
+          }
+        },
+        "Comment": {
+          "description": "Gets or sets the comment",
+          "type": "string"
+        },
+        "EmployeeUserID": {
+          "format": "int32",
+          "description": "Gets or set the user id",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetApiSubmitPeriodModel": {
+      "type": "object",
+      "properties": {
+        "StartDate": {
+          "format": "date-time",
+          "description": "The start date.",
+          "type": "string"
+        },
+        "EndDate": {
+          "format": "date-time",
+          "description": "The end date.",
+          "type": "string"
+        },
+        "Comment": {
+          "description": "Gets or sets the comment",
+          "type": "string"
+        },
+        "EmployeeUserID": {
+          "format": "int32",
+          "description": "Gets or set the user id",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.Timesheet.ApprovalTimesheetApiSubmitTimeRegistrationsModel": {
+      "type": "object",
+      "properties": {
+        "TimeRegistrationIds": {
+          "description": "The time registrations ids to submit.",
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "EmployeeUserID": {
+          "format": "int32",
+          "description": "Gets or set the user id",
+          "type": "integer"
         }
       }
     },
@@ -10990,7 +12078,12 @@
             418,
             419,
             420,
-            421
+            421,
+            422,
+            423,
+            424,
+            425,
+            426
           ],
           "type": "integer"
         },
@@ -11316,6 +12409,7 @@
             59,
             60,
             61,
+            62,
             98,
             99
           ],
@@ -11388,6 +12482,7 @@
             59,
             60,
             61,
+            62,
             98,
             99
           ],
@@ -13454,7 +14549,15 @@
             264,
             265,
             266,
-            267
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275
           ],
           "type": "integer"
         },
@@ -13563,7 +14666,7 @@
         },
         "ProjectSubContractID": {
           "format": "int32",
-          "description": "Gets or sets the project sub contract ID",
+          "description": "Gets or sets the project sub contract ID.\r\nWhen creating a main task, if project sub contract ID is not supplied, the main contract ID of its project will be used.\r\nWhen creating a sub task, if project sub contract ID is not supplied, the contract ID of its parent task will be used.",
           "type": "integer"
         },
         "IsReadyForInvoicing": {
@@ -13730,7 +14833,10 @@
             3,
             4,
             5,
-            6
+            6,
+            7,
+            8,
+            9
           ],
           "type": "integer"
         },
@@ -14008,7 +15114,12 @@
             242,
             243,
             244,
-            245
+            245,
+            246,
+            247,
+            248,
+            249,
+            250
           ],
           "type": "integer"
         },
@@ -14186,6 +15297,7 @@
             59,
             60,
             61,
+            62,
             98,
             99
           ],
@@ -14258,6 +15370,7 @@
             59,
             60,
             61,
+            62,
             98,
             99
           ],
@@ -14775,6 +15888,25 @@
         }
       }
     },
+    "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeRegistrationFinancialData.TimeRegistrationFinancialDataStatusApiReadModel": {
+      "type": "object",
+      "properties": {
+        "UserID": {
+          "format": "int32",
+          "description": "Gets or sets the user identifier.",
+          "type": "integer"
+        },
+        "Date": {
+          "format": "date-time",
+          "description": "Gets or sets the date.",
+          "type": "string"
+        },
+        "Completed": {
+          "description": "Gets or sets whether the financial data has been completely processed.",
+          "type": "boolean"
+        }
+      }
+    },
     "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiReadModel": {
       "type": "object",
       "properties": {
@@ -15043,7 +16175,12 @@
             242,
             243,
             244,
-            245
+            245,
+            246,
+            247,
+            248,
+            249,
+            250
           ],
           "type": "integer"
         },
@@ -15360,7 +16497,12 @@
             242,
             243,
             244,
-            245
+            245,
+            246,
+            247,
+            248,
+            249,
+            250
           ],
           "type": "integer"
         },
@@ -15455,202 +16597,6 @@
           "format": "int32",
           "description": "Gets or sets the minute.",
           "type": "integer"
-        }
-      }
-    },
-    "TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel": {
-      "type": "object",
-      "properties": {
-        "CustomerID": {
-          "format": "int32",
-          "description": "Gets or sets the customer identifier.",
-          "type": "integer"
-        },
-        "CustomerName": {
-          "description": "Gets or sets the name of the customer.",
-          "type": "string"
-        },
-        "CustomerNo": {
-          "description": "Gets or sets the customer no.",
-          "type": "string"
-        },
-        "ProjectID": {
-          "format": "int32",
-          "description": "Gets or sets the project identifier.",
-          "type": "integer"
-        },
-        "ProjectName": {
-          "description": "Gets or sets the name of the project.",
-          "type": "string"
-        },
-        "ProjectNo": {
-          "description": "Gets or sets the project no.",
-          "type": "string"
-        },
-        "TaskID": {
-          "format": "int32",
-          "description": "Gets or sets the task identifier.",
-          "type": "integer"
-        },
-        "TaskName": {
-          "description": "Gets or sets the name of the task.",
-          "type": "string"
-        },
-        "TaskFullName": {
-          "description": "Gets or sets the full name of the task.",
-          "type": "string"
-        },
-        "IsFixedPrice": {
-          "description": "Gets or sets the is fixed price.",
-          "type": "boolean"
-        },
-        "TaskNo": {
-          "description": "Gets or sets the task no.",
-          "type": "string"
-        },
-        "TaskIsActive": {
-          "description": "Gets or sets the task is active.",
-          "type": "boolean"
-        },
-        "AbsenceCodeID": {
-          "format": "int32",
-          "description": "Gets or sets the absence code identifier.",
-          "type": "integer"
-        },
-        "AbsenceName": {
-          "description": "Gets or sets the name of the absence.",
-          "type": "string"
-        },
-        "AbsenceCode": {
-          "description": "Gets or sets the absence code.",
-          "type": "string"
-        },
-        "AbsenceIsActive": {
-          "description": "Gets or sets the absence is active.",
-          "type": "boolean"
-        },
-        "AdditionalTextIsRequired": {
-          "description": "Gets or sets a value indicating whether [additional text is required].",
-          "type": "boolean"
-        },
-        "DefaultBillable": {
-          "description": "Gets or sets a value indicating whether [default billable].",
-          "type": "boolean"
-        },
-        "IsETCProject": {
-          "description": "Gets or sets a value indicating whether this instance is etc project.",
-          "type": "boolean"
-        },
-        "ShowBillable": {
-          "description": "Gets or sets a value indicating whether [show billable].",
-          "type": "boolean"
-        },
-        "AllocatedHour": {
-          "format": "int32",
-          "description": "Gets or sets the allocated hour.",
-          "type": "integer"
-        },
-        "TimeRegistrationID": {
-          "format": "int32",
-          "description": "Gets or sets the time registration identifier.",
-          "type": "integer"
-        },
-        "EntityID": {
-          "format": "int32",
-          "description": "Gets or sets the entity identifier.",
-          "type": "integer"
-        },
-        "EntityType": {
-          "format": "int32",
-          "description": "Gets or sets the type of the entity.",
-          "type": "integer"
-        },
-        "UserID": {
-          "format": "int32",
-          "description": "Gets or sets the user identifier.",
-          "type": "integer"
-        },
-        "Created": {
-          "format": "date-time",
-          "description": "Gets or sets the created.",
-          "type": "string"
-        },
-        "CreatedBy": {
-          "format": "int32",
-          "description": "Gets or sets the created by.",
-          "type": "integer"
-        },
-        "LastModified": {
-          "format": "date-time",
-          "description": "Gets or sets the last modified.",
-          "type": "string"
-        },
-        "LastModifiedBy": {
-          "format": "int32",
-          "description": "Gets or sets the last modified by.",
-          "type": "integer"
-        },
-        "IsBillable": {
-          "description": "Gets or sets a value indicating whether this instance is billable.",
-          "type": "boolean"
-        },
-        "Status": {
-          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel} is status.",
-          "type": "boolean"
-        },
-        "Date": {
-          "format": "date-time",
-          "description": "Gets or sets the date.",
-          "type": "string"
-        },
-        "MonthlyPeriod": {
-          "description": "Gets or sets the MonthlyPeriod",
-          "type": "string"
-        },
-        "Comment": {
-          "description": "Gets or sets the comment.",
-          "type": "string"
-        },
-        "Hours": {
-          "format": "double",
-          "description": "Gets or sets the hours.",
-          "type": "number"
-        },
-        "AdditionalTextField": {
-          "description": "Gets or sets the additional text field.",
-          "type": "string"
-        },
-        "InvoiceStatus": {
-          "description": "Gets or sets a value indicating whether [invoice status].",
-          "type": "boolean"
-        },
-        "TimeRegistrationApprovalStatus": {
-          "description": "Gets or sets a value indicating whether [time registration approval status].",
-          "type": "boolean"
-        },
-        "TimeTrackingFormat": {
-          "format": "int32",
-          "description": "Gets or sets the time tracking format.",
-          "type": "integer"
-        },
-        "Minutes": {
-          "format": "int32",
-          "description": "Gets or sets the minutes.",
-          "type": "integer"
-        },
-        "BillableHours": {
-          "format": "double",
-          "description": "Gets or sets the billable hours.",
-          "type": "number"
-        },
-        "BillableMinutes": {
-          "format": "int32",
-          "description": "Gets or sets the billable minutes.",
-          "type": "integer"
-        },
-        "IsFavourite": {
-          "description": "Gets or sets a value indicating whether this instance is favourite.",
-          "type": "boolean"
         }
       }
     },
@@ -15795,9 +16741,7 @@
           "description": "Gets or sets the preview feature identifier",
           "enum": [
             1,
-            3,
-            4,
-            5
+            4
           ],
           "type": "integer"
         },
@@ -15805,6 +16749,7 @@
           "format": "int32",
           "description": "Gets or sets the stage of the preview feature",
           "enum": [
+            0,
             1,
             2,
             3
@@ -15950,6 +16895,10 @@
         "UserDefinedCommentDataType": {
           "description": "Gets or sets value indicating the data type for user defined comment",
           "type": "string"
+        },
+        "UseTimeRegistrationFinancialDataService": {
+          "description": "Gets or sets value indicating the time registration financial data service is enabled",
+          "type": "boolean"
         }
       }
     },
@@ -15980,6 +16929,10 @@
     }
   },
   "tags": [
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Employees.Controllers.CostSchedulingServiceController[CostSchedulingServiceController]",
+      "description": "Service for handling time registration service requests in TimeLog."
+    },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Employees.Controllers.WorkloadController[WorkloadController]",
       "description": "Service for handling bookings in TimeLog."
@@ -16053,6 +17006,10 @@
       "description": "Service for handling employee expense in TimeLog."
     },
     {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.BusinessCentralController[BusinessCentralController]",
+      "description": "Service for handling change log from Business Central integration in Timelog"
+    },
+    {
       "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.HourlyRateController[HourlyRateController]",
       "description": "Service for handling hourly rates in TimeLog."
     },
@@ -16098,7 +17055,7 @@
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.AllocationController[AllocationController]",
-      "description": "Service for handling salary account employee posting in TimeLog."
+      "description": "Service for handling allocations in TimeLog"
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskTypeController[TaskTypeController]",
@@ -16129,8 +17086,8 @@
       "description": "Service for handling project in TimeLog."
     },
     {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.BusinessCentralController[BusinessCentralController]",
-      "description": "Service for handling change log from Business Central integration in Timelog"
+      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeRegistrationServiceController[TimeRegistrationServiceController]",
+      "description": "Service for handling time registration service requests in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeTrackingItemController[TimeTrackingItemController]",
@@ -16175,6 +17132,18 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Settings.Controllers.BarrierController[BarrierController]",
       "description": "Service for handling barrier in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V2.Index.Controllers.IndexController[IndexController]",
+      "description": "V2 Service for handling index in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V2.Organization.Controllers.UsersController[UsersController]",
+      "description": "Service for handling user in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V2.TimeRegistration.Controllers.TimeTrackerController[TimeTrackerController]",
+      "description": "Service for handling time tracker in TimeLog."
     }
   ]
 }
