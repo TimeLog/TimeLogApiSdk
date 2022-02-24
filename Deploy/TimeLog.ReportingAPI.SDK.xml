@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>TimeLog.ReportingApi.SDK</name>
+        <name>TimeLog.ReportingAPI.SDK</name>
     </assembly>
     <members>
         <member name="T:TimeLog.ReportingAPI.SDK.AccountManager">
