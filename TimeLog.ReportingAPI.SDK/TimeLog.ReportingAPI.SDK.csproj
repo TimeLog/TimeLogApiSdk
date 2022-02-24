@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
@@ -26,19 +26,13 @@ copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
 
     <ItemGroup>
       <None Include="app.config" />
-      <None Include="Service References\ReportingService\ReportingService.svcmap">
-        <Generator>WCF Proxy Generator</Generator>
-        <LastGenOutput>ReportingService.cs</LastGenOutput>
-      </None>
-      <None Include="Service References\ReportingService\ReportingService.webref" />
-      <None Include="Service References\ReportingService\service.disco" />
-      <None Include="Service References\ReportingService\service.wsdl" />
     </ItemGroup>
 
     <ItemGroup>
       <Compile Include="AccountManager.cs" />
       <Compile Include="Allocation.cs" />
       <Compile Include="Barrier.cs" />
+      <Compile Include="Connected Services\TimeLog.ReportingAPI.SDK\Reference.cs" />
       <Compile Include="Contact.cs" />
       <Compile Include="Customer.cs" />
       <Compile Include="CustomerStatus.cs" />
@@ -52,11 +46,6 @@ copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
       <Compile Include="ProjectManager.cs" />
       <Compile Include="ProjectStatus.cs" />
       <Compile Include="ProjectType.cs" />
-      <Compile Include="Service References\ReportingService\ReportingService.cs">
-        <AutoGen>True</AutoGen>
-        <DesignTime>True</DesignTime>
-        <DependentUpon>ReportingService.svcmap</DependentUpon>
-      </Compile>
       <Compile Include="ServiceHandler.cs" />
       <Compile Include="SubOpportunity.cs" />
       <Compile Include="Task.cs" />
@@ -67,13 +56,13 @@ copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
       <Compile Include="XmlNodeExtensions.cs" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Reference Include="System.ServiceModel" />
-    </ItemGroup>
-
-    <ItemGroup>
+	<ItemGroup>
       <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
-      <PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
+      <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.*" />
+      <PackageReference Include="System.ServiceModel.Federation" Version="4.8.*" />
+      <PackageReference Include="System.ServiceModel.Http" Version="4.8.*" />
+      <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.*" />
+      <PackageReference Include="System.ServiceModel.Security" Version="4.8.*" />
     </ItemGroup>
 
 </Project>

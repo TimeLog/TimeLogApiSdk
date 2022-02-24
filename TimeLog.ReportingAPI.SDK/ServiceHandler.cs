@@ -2,7 +2,6 @@
 using System.Configuration;
 using System.Globalization;
 using System.ServiceModel;
-using TimeLog.ReportingAPI.SDK.ReportingService;
 
 namespace TimeLog.ReportingAPI.SDK;
 
@@ -12,7 +11,7 @@ namespace TimeLog.ReportingAPI.SDK;
 public class ServiceHandler : IDisposable
 {
     private static ServiceHandler _instance;
-    private ServiceSoapClient client;
+    private ServiceSoapClient _client;
 
     /// <summary>
     ///     Prevents a default instance of the <see cref="ServiceHandler" /> class from being created.
@@ -135,7 +134,7 @@ public class ServiceHandler : IDisposable
     {
         get
         {
-            if (client == null)
+            if (_client == null)
             {
                 var binding = new BasicHttpBinding
                 {
@@ -153,10 +152,10 @@ public class ServiceHandler : IDisposable
                     binding.Security.Mode = BasicHttpSecurityMode.Transport;
                 }
 
-                client = new ServiceSoapClient(binding, endpoint);
+                _client = new ServiceSoapClient(binding, endpoint);
             }
 
-            return client;
+            return _client;
         }
     }
 
@@ -165,7 +164,7 @@ public class ServiceHandler : IDisposable
     /// </summary>
     public void Dispose()
     {
-        client = null;
+        _client = null;
         _instance = null;
     }
 
