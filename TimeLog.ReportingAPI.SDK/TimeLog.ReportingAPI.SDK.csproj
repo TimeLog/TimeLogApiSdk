@@ -58,11 +58,11 @@ copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
 
 	<ItemGroup>
       <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
-      <PackageReference Include="System.ServiceModel.Duplex" Version="4.8.*" />
-      <PackageReference Include="System.ServiceModel.Federation" Version="4.8.*" />
-      <PackageReference Include="System.ServiceModel.Http" Version="4.8.*" />
-      <PackageReference Include="System.ServiceModel.NetTcp" Version="4.8.*" />
-      <PackageReference Include="System.ServiceModel.Security" Version="4.8.*" />
+      <PackageReference Include="System.ServiceModel.Duplex" Version="4.9.0" />
+      <PackageReference Include="System.ServiceModel.Federation" Version="4.9.0" />
+      <PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
+      <PackageReference Include="System.ServiceModel.NetTcp" Version="4.9.0" />
+      <PackageReference Include="System.ServiceModel.Security" Version="4.9.0" />
     </ItemGroup>
 
 </Project>
