@@ -85,12 +85,6 @@
                         <div class="mega-menu-content-inner">
                             <div class="mega-menu-column">
                                 <ul class="mega-menu-links">
-                                    @* <li> *@
-                                    @*     <a href="@Url.Action("GettingStarted", "Rest")"> *@
-                                    @*         <i class="icon fal fa-rabbit-fast"></i> *@
-                                    @*         <span>Getting Started</span> *@
-                                    @*     </a> *@
-                                    @* </li> *@
                                     <li>
                                         <a href="@Url.Action("Index", "Rest")">
                                             <i class="icon fal fa-megaphone"></i>
@@ -98,7 +92,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://login.timelog.com/documentation">
+                                        <a href="https://login.timelog.com/documentation" target="_blank" rel="noopener">
                                             <i class="icon fal fa-tasks"></i>
                                             <span>Authenticating with the API</span>
                                         </a>
@@ -107,6 +101,12 @@
                                         <a href="@Url.Action("Services", "Rest")">
                                             <i class="icon fal fa-project-diagram"></i>
                                             <span>Services</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Swagger", "Rest")">
+                                            <i class="icon fal fa-project-diagram"></i>
+                                            <span>Swagger Documentation</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -121,7 +121,6 @@
                     <a class="top-level__link " href="@Url.Action("Index", "Transactional")">
                         <span class="link-text">Transactional API</span>
                         <i class="fal fa-angle-down angle-icon"></i>
-
                     </a>
                     <div class="mega-menu-content">
                         <div class="mega-menu-content-inner">

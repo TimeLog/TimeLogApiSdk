@@ -31,4 +31,9 @@ public class RestController : Controller
     {
         return View(_restManager.GetServices());
     }
+
+    public ActionResult Swagger()
+    {
+        return View();
+    }
 }
