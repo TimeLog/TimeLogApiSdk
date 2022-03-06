@@ -20,12 +20,12 @@ public class RestManager : IRestManager
 
     public RestMethodDoc GetMethod(string id)
     {
-        return _restDocHelper.Methods.First(x => x.OperationId.UrlEncode() == id);
+        return _restDocHelper.Methods.First(x => x.OperationId.UrlEncode().ToLowerInvariant() == id.ToLowerInvariant());
     }
 
     public RestTypeDoc GetService(string id)
     {
-        return _restDocHelper.Types.First(x => x.Name.UrlEncode() == id);
+        return _restDocHelper.Types.First(x => x.Name.UrlEncode().ToLowerInvariant() == id.ToLowerInvariant());
     }
 
     public IEnumerable<RestTypeDoc> GetServices()

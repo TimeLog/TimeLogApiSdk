@@ -17,11 +17,11 @@ public class TransactionalManager : ITransactionalManager
 
     public TypeDoc? GetService(string typeFullName)
     {
-        return _helper.Types.FirstOrDefault(t => t.FullName.UrlEncode() == typeFullName);
+        return _helper.Types.FirstOrDefault(t => t.FullName.UrlEncode().ToLowerInvariant() == typeFullName.ToLowerInvariant());
     }
 
     public MethodDoc? GetMethod(string methodFullName)
     {
-        return _helper.Methods.FirstOrDefault(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
+        return _helper.Methods.FirstOrDefault(m => m.FullyQuantifiedName.UrlEncode().ToLowerInvariant() == methodFullName.ToLowerInvariant());
     }
 }

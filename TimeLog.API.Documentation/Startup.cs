@@ -17,8 +17,11 @@ public class Startup
         services.AddSingleton<IReportingManager, ReportingManager>();
         services.AddSingleton<ITransactionalManager, TransactionalManager>();
         services.AddSingleton<IRestManager, RestManager>();
-
         services.AddRazorPages().AddRazorRuntimeCompilation();
+        services.Configure<RouteOptions>(config =>
+        {
+            config.LowercaseUrls = true;
+        });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

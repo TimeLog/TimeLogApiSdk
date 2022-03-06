@@ -26,7 +26,7 @@ public class ReportingManager : IReportingManager
 
     public MethodDoc GetMethod(string methodFullName)
     {
-        var result = _helper.Methods.First(m => m.FullyQuantifiedName.UrlEncode() == methodFullName);
+        var result = _helper.Methods.First(m => m.FullyQuantifiedName.UrlEncode().ToLowerInvariant() == methodFullName.ToLowerInvariant());
         result.InitializeReportingExampleAndSchema(_webHostEnvironment.WebRootPath);
         return result;
     }
