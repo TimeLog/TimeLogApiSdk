@@ -36,7 +36,7 @@
     <PackageReference Include="System.ServiceModel.Http" Version="4.9.0" />
     <PackageReference Include="System.ServiceModel.NetTcp" Version="4.9.0" />
     <PackageReference Include="System.ServiceModel.Federation" Version="4.9.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.4" />
     <PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
   </ItemGroup>
   <ItemGroup>
