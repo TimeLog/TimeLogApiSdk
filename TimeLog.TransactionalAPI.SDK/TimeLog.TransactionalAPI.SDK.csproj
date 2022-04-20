@@ -3,8 +3,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <OutputType>Library</OutputType>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-	<Nullable>enable</Nullable>
-	<Deterministic>false</Deterministic>
+    <Nullable>enable</Nullable>
+    <Deterministic>false</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DocumentationFile>bin\Debug\TimeLog.TransactionalAPI.SDK.xml</DocumentationFile>

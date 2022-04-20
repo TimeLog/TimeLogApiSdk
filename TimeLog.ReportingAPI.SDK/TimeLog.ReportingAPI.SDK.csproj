@@ -56,7 +56,7 @@ copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
       <Compile Include="XmlNodeExtensions.cs" />
     </ItemGroup>
 
-	<ItemGroup>
+    <ItemGroup>
       <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
       <PackageReference Include="System.ServiceModel.Duplex" Version="4.9.0" />
       <PackageReference Include="System.ServiceModel.Federation" Version="4.9.0" />
