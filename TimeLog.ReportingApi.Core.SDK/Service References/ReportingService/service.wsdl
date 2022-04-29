@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://www.timelog.com/ws/tlp/v4_4" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://www.timelog.com/ws/tlp/v4_4" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.timelog.com/ws/tlp/v4_4" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.timelog.com/ws/tlp/v4_4" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://www.timelog.com/ws/tlp/v4_4">
       <s:element name="GetWorkUnitsRaw">
@@ -1351,6 +1351,30 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetEmployeeNormalWorkingTimeHistoriesRaw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apiPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="employeeUserID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="employeeStatus" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeNormalWorkingTimeHistoriesRawResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeNormalWorkingTimeHistoriesRawResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="boolean" type="s:boolean" />
     </s:schema>
   </wsdl:types>
@@ -1677,6 +1701,12 @@
   </wsdl:message>
   <wsdl:message name="GetIntercompanyInvoicesRawSoapOut">
     <wsdl:part name="parameters" element="tns:GetIntercompanyInvoicesRawResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingTimeHistoriesRawSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNormalWorkingTimeHistoriesRaw" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingTimeHistoriesRawSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeNormalWorkingTimeHistoriesRawResponse" />
   </wsdl:message>
   <wsdl:message name="GetWorkUnitsRawHttpGetIn">
     <wsdl:part name="siteCode" type="s:string" />
@@ -2258,6 +2288,16 @@
     <wsdl:part name="toDate" type="s:string" />
   </wsdl:message>
   <wsdl:message name="GetIntercompanyInvoicesRawHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingTimeHistoriesRawHttpGetIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="employeeUserID" type="s:string" />
+    <wsdl:part name="employeeStatus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingTimeHistoriesRawHttpGetOut">
     <wsdl:part name="Body" />
   </wsdl:message>
   <wsdl:message name="GetWorkUnitsRawHttpPostIn">
@@ -2842,6 +2882,16 @@
   <wsdl:message name="GetIntercompanyInvoicesRawHttpPostOut">
     <wsdl:part name="Body" />
   </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingTimeHistoriesRawHttpPostIn">
+    <wsdl:part name="siteCode" type="s:string" />
+    <wsdl:part name="apiID" type="s:string" />
+    <wsdl:part name="apiPassword" type="s:string" />
+    <wsdl:part name="employeeUserID" type="s:string" />
+    <wsdl:part name="employeeStatus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeNormalWorkingTimeHistoriesRawHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
     <wsdl:operation name="GetWorkUnitsRaw">
       <wsdl:input message="tns:GetWorkUnitsRawSoapIn" />
@@ -3059,6 +3109,10 @@
       <wsdl:input message="tns:GetIntercompanyInvoicesRawSoapIn" />
       <wsdl:output message="tns:GetIntercompanyInvoicesRawSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingTimeHistoriesRaw">
+      <wsdl:input message="tns:GetEmployeeNormalWorkingTimeHistoriesRawSoapIn" />
+      <wsdl:output message="tns:GetEmployeeNormalWorkingTimeHistoriesRawSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpGet">
     <wsdl:operation name="GetWorkUnitsRaw">
@@ -3273,6 +3327,10 @@
       <wsdl:input message="tns:GetIntercompanyInvoicesRawHttpGetIn" />
       <wsdl:output message="tns:GetIntercompanyInvoicesRawHttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingTimeHistoriesRaw">
+      <wsdl:input message="tns:GetEmployeeNormalWorkingTimeHistoriesRawHttpGetIn" />
+      <wsdl:output message="tns:GetEmployeeNormalWorkingTimeHistoriesRawHttpGetOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ServiceHttpPost">
     <wsdl:operation name="GetWorkUnitsRaw">
@@ -3486,6 +3544,10 @@
     <wsdl:operation name="GetIntercompanyInvoicesRaw">
       <wsdl:input message="tns:GetIntercompanyInvoicesRawHttpPostIn" />
       <wsdl:output message="tns:GetIntercompanyInvoicesRawHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingTimeHistoriesRaw">
+      <wsdl:input message="tns:GetEmployeeNormalWorkingTimeHistoriesRawHttpPostIn" />
+      <wsdl:output message="tns:GetEmployeeNormalWorkingTimeHistoriesRawHttpPostOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
@@ -3969,6 +4031,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetIntercompanyInvoicesRaw">
       <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetIntercompanyInvoicesRaw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingTimeHistoriesRaw">
+      <soap:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormalWorkingTimeHistoriesRaw" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4465,6 +4536,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingTimeHistoriesRaw">
+      <soap12:operation soapAction="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeNormalWorkingTimeHistoriesRaw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
     <http:binding verb="GET" />
@@ -4945,6 +5025,15 @@
         <mime:content part="Body" type="text/xml" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingTimeHistoriesRaw">
+      <http:operation location="/GetEmployeeNormalWorkingTimeHistoriesRaw" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
     <http:binding verb="POST" />
@@ -5418,6 +5507,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetIntercompanyInvoicesRaw">
       <http:operation location="/GetIntercompanyInvoicesRaw" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeNormalWorkingTimeHistoriesRaw">
+      <http:operation location="/GetEmployeeNormalWorkingTimeHistoriesRaw" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

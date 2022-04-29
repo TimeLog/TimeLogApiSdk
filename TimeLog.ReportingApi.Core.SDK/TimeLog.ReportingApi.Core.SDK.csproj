@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
@@ -11,6 +11,14 @@
         <Title>TimeLog.ReportingApi.Core.SDK</Title>
         <Authors>TimeLog A/S</Authors>
         <Copyright>TimeLog A/S</Copyright>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <Deterministic>False</Deterministic>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <Deterministic>False</Deterministic>
     </PropertyGroup>
 
     <ItemGroup>
