@@ -12,9 +12,6 @@
 
 	<ItemGroup>
 		<Reference Include="System.ServiceModel" />
-		<Reference Include="TimeLog.ReportingApi.Core.SDK">
-		  <HintPath>..\TimeLog.ReportingApi.Core.SDK\bin\Debug\net5.0\TimeLog.ReportingApi.Core.SDK.dll</HintPath>
-		</Reference>
 		<PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
 	</ItemGroup>
 	
@@ -31,6 +28,9 @@
 		<Content Include="readme.txt">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\TimeLog.ReportingAPI.SDK\TimeLog.ReportingAPI.SDK.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Update="Properties\Settings.Designer.cs">

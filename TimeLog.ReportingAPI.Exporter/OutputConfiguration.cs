@@ -1,5 +1,4 @@
-﻿using TimeLog.ReportingApi.Core.SDK;
-
+﻿
 namespace TimeLog.ReportingApi.Exporter
 {
     using System;

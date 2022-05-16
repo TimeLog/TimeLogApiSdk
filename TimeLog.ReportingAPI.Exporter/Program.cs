@@ -10,7 +10,7 @@ namespace TimeLog.ReportingApi.Exporter
     using System.Xml;
     using System.Xml.Linq;
     using System.Xml.Serialization;
-    using TimeLog.ReportingApi.Core.SDK;
+    using TimeLog.ReportingAPI.SDK;
 
     public class Program
     {
@@ -165,7 +165,7 @@ namespace TimeLog.ReportingApi.Exporter
                                     // Allow other namespaces
                                     var _listElementTypeName = _configuration.ListElementType.Contains(",")
                                         ? _configuration.ListElementType
-                                        : _configuration.ListElementType + ",TimeLog.ReportingApi.Core.SDK";
+                                        : _configuration.ListElementType + ",TimeLog.ReportingApi.SDK";
                                     var _listElementType = Type.GetType(_listElementTypeName);
                                     if (_listElementType == null)
                                     {
