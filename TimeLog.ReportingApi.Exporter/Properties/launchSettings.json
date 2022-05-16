@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TimeLog.ReportingAPI.Exporter": {
+      "commandName": "Project",
+      "commandLineArgs": "/e GetWorkUnitsRaw WorkUnits2022_1.csv "
+    }
+  }
+}

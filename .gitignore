@@ -188,3 +188,4 @@ packages/*/*
 appSettings-*.json
 TimeLog.JavaScript.SDK/*.zip
 /.idea
+.vs

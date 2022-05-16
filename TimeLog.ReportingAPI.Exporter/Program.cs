@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Reflection;
-using TimeLog.ReportingApi.SDK;
 
 namespace TimeLog.ReportingApi.Exporter
 {
@@ -8,12 +7,10 @@ namespace TimeLog.ReportingApi.Exporter
     using System.IO;
     using System.Linq;
     using System.Text;
-    using System.Threading;
     using System.Xml;
     using System.Xml.Linq;
     using System.Xml.Serialization;
-
-    using TimeLog.ReportingApi.Exporter.MethodTemplates;
+    using TimeLog.ReportingApi.Core.SDK;
 
     public class Program
     {
@@ -168,7 +165,7 @@ namespace TimeLog.ReportingApi.Exporter
                                     // Allow other namespaces
                                     var _listElementTypeName = _configuration.ListElementType.Contains(",")
                                         ? _configuration.ListElementType
-                                        : _configuration.ListElementType + ",TimeLog.ReportingApi.SDK";
+                                        : _configuration.ListElementType + ",TimeLog.ReportingApi.Core.SDK";
                                     var _listElementType = Type.GetType(_listElementTypeName);
                                     if (_listElementType == null)
                                     {
@@ -245,9 +242,8 @@ namespace TimeLog.ReportingApi.Exporter
                     var _document = XDocument.Parse(rawData.OuterXml);
 
                     var _mainElement = _document.Elements().FirstOrDefault();
-                    bool _firstLine = true;
 
-                    using (TextWriter _writer = new StreamWriter(outputFile.FullName, false, Encoding.GetEncoding(System.Globalization.CultureInfo.CurrentCulture.TextInfo.ANSICodePage)))
+                    using (TextWriter _writer = new StreamWriter(outputFile.FullName, false, Encoding.UTF8))
                     {
                         if (_mainElement != null)
                         {
@@ -272,11 +268,11 @@ namespace TimeLog.ReportingApi.Exporter
                                     // Did any element or attribute fit?
                                     if (_elementvalue != null)
                                     {
-                                        _cells.Add(_elementvalue.Value);
+                                        _cells.Add(_elementvalue.Value.Replace("\"", "\"\""));
                                     }
                                     else if (_attributevalue != null)
                                     {
-                                        _cells.Add(_attributevalue.Value);
+                                        _cells.Add(_attributevalue.Value.Replace("\n", "").Replace("\r", ""));
                                     }
                                     else
                                     {

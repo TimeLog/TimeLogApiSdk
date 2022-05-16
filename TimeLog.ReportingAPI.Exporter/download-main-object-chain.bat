@@ -1,5 +1,1 @@
-TimeLog.ReportingApi.Exporter.exe /e GetCustomersRaw GetCustomersRaw.csv
-TimeLog.ReportingApi.Exporter.exe /e GetProjectsRaw GetProjectsRaw.csv
-TimeLog.ReportingApi.Exporter.exe /e GetTasksRaw GetTasksRaw.csv
-TimeLog.ReportingApi.Exporter.exe /e GetAllocationsRaw GetAllocationsRaw.csv
-TimeLog.ReportingApi.Exporter.exe /e GetWorkUnitsRaw GetWorkUnitsRaw.csv
+TimeLog.ReportingApi.Exporter.exe /e GetWorkUnitsRaw WorkUnits2022_1.csv StartDate="01.02.2022 00:00:00" EndDate="01.03.2022 23:59:59"

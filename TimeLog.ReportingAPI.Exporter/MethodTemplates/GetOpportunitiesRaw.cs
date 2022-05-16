@@ -4,7 +4,7 @@
     using System.Reflection;
     using System.Xml;
 
-    using SDK;
+    using Core.SDK;
 
     public class GetOpportunitiesRaw : IMethod
     {
