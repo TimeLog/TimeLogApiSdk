@@ -3342,6 +3342,285 @@
         ]
       }
     },
+    "/v{version}/external-systems": {
+      "get": {
+        "tags": [
+          "ExternalSystems"
+        ],
+        "summary": "Get all external systems",
+        "operationId": "ExternalSystems_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of external systems",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalSystems.ExternalSystemsApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "ExternalSystems"
+        ],
+        "summary": "Create new external system",
+        "operationId": "ExternalSystems_Create",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "externalSystemCreateModel",
+            "in": "body",
+            "description": "External system create model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalSystems.ExternalSystemsApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External system is created  successfully",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalSystems.ExternalSystemsApiCreateModel"
+            }
+          },
+          "500": {
+            "description": "External system could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/external-systems/{externalSystemID}": {
+      "get": {
+        "tags": [
+          "ExternalSystems"
+        ],
+        "summary": "Get an external system by the external system identifier",
+        "operationId": "ExternalSystems_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "externalSystemID",
+            "in": "path",
+            "description": "External system identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An external system",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalSystems.ExternalSystemsApiReadModel"
+            }
+          },
+          "500": {
+            "description": "External system with the identifier does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "ExternalSystems"
+        ],
+        "summary": "Update external system by external system identifier",
+        "operationId": "ExternalSystems_Update",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "externalSystemID",
+            "in": "path",
+            "description": "External system identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "externalSystemUpdateModel",
+            "in": "body",
+            "description": "External system update model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalSystems.ExternalSystemsApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External system is updated successfully",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalSystems.ExternalSystemsApiUpdateModel"
+            }
+          },
+          "500": {
+            "description": "External system could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "ExternalSystems"
+        ],
+        "summary": "Delete external system by external system identifier",
+        "operationId": "ExternalSystems_Delete",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "externalSystemID",
+            "in": "path",
+            "description": "External system identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External system is deleted successfully"
+          },
+          "500": {
+            "description": "External system could not be deleted",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/feature": {
       "put": {
         "tags": [
@@ -4568,6 +4847,69 @@
             ]
           }
         ]
+      },
+      "put": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Update project by project identifier",
+        "operationId": "Project_Update",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "projectID",
+            "in": "path",
+            "description": "Project identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Update project model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Project was updated successfully"
+          },
+          "500": {
+            "description": "Project could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
       }
     },
     "/v{version}/project/get-all": {
@@ -4617,6 +4959,71 @@
           },
           "500": {
             "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/project/{projectID}/status": {
+      "put": {
+        "tags": [
+          "Project"
+        ],
+        "summary": "Update project status by project identifier",
+        "operationId": "Project_UpdateStatus",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "projectID",
+            "in": "path",
+            "description": "Project identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Update project status model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectStatusApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Project status was updated successfully"
+          },
+          "500": {
+            "description": "Project status could not be updated",
             "schema": {
               "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
@@ -5008,6 +5415,187 @@
           },
           "500": {
             "description": "Project expense could not be validated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/project/{projectID}/external-keys": {
+      "get": {
+        "tags": [
+          "ProjectExternalKeys"
+        ],
+        "summary": "Get external keys by the project identifier",
+        "operationId": "ProjectExternalKeys_GetExternalKeys",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "projectID",
+            "in": "path",
+            "description": "Project identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An external key list",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiReadModel"
+            }
+          },
+          "500": {
+            "description": "External key with the project ID does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "ProjectExternalKeys"
+        ],
+        "summary": "Create or update external key by project identifier",
+        "operationId": "ProjectExternalKeys_UpdateExternalKeys",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "projectID",
+            "in": "path",
+            "description": "Project identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "externalKeysUpdateModel",
+            "in": "body",
+            "description": "External keys update model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External key is updated successfully",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiUpdateModel"
+            }
+          },
+          "500": {
+            "description": "External key could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "ProjectExternalKeys"
+        ],
+        "summary": "Delete external key by project identifier and external system identifier",
+        "operationId": "ProjectExternalKeys_DeleteExternalKeys",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "projectID",
+            "in": "path",
+            "description": "Project identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "externalSystemID",
+            "in": "query",
+            "description": "External system identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External key is deleted successfully"
+          },
+          "500": {
+            "description": "External key could not be deleted",
             "schema": {
               "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
@@ -7709,6 +8297,187 @@
         ]
       }
     },
+    "/v{version}/task/{taskID}/external-keys": {
+      "get": {
+        "tags": [
+          "TaskExternalKeys"
+        ],
+        "summary": "Get external keys by the task identifier",
+        "operationId": "TaskExternalKeys_GetExternalKeys",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "taskID",
+            "in": "path",
+            "description": "Task identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An external key list",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiReadModel"
+            }
+          },
+          "500": {
+            "description": "External key with the task ID does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "TaskExternalKeys"
+        ],
+        "summary": "Create or update external key by task identifier",
+        "operationId": "TaskExternalKeys_UpdateExternalKeys",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "taskID",
+            "in": "path",
+            "description": "Task identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "externalKeysUpdateModel",
+            "in": "body",
+            "description": "External keys update model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External key is updated successfully",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiUpdateModel"
+            }
+          },
+          "500": {
+            "description": "External key could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "TaskExternalKeys"
+        ],
+        "summary": "Delete external key by task identifier and external system identifier",
+        "operationId": "TaskExternalKeys_DeleteExternalKeys",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "taskID",
+            "in": "path",
+            "description": "Task identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "externalSystemID",
+            "in": "query",
+            "description": "External system identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External key is deleted successfully"
+          },
+          "500": {
+            "description": "External key could not be deleted",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/TaskType": {
       "get": {
         "tags": [
@@ -8409,6 +9178,187 @@
         ]
       }
     },
+    "/v{version}/time-registration/{timeRegistrationID}/external-keys": {
+      "get": {
+        "tags": [
+          "TimeRegistrationExternalKeys"
+        ],
+        "summary": "Get external keys by time registration identifier",
+        "operationId": "TimeRegistrationExternalKeys_GetExternalKeys",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationID",
+            "in": "path",
+            "description": "Time registration identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An external key list",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiReadModel"
+            }
+          },
+          "500": {
+            "description": "External key with the time registration ID does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "TimeRegistrationExternalKeys"
+        ],
+        "summary": "Create or update external key by time registration identifier",
+        "operationId": "TimeRegistrationExternalKeys_UpdateExternalKeys",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationID",
+            "in": "path",
+            "description": "Time registration identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "externalKeysUpdateModel",
+            "in": "body",
+            "description": "External keys update model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External key is updated successfully",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiUpdateModel"
+            }
+          },
+          "500": {
+            "description": "External key could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "TimeRegistrationExternalKeys"
+        ],
+        "summary": "Delete external key by time registration identifier and external system identifier",
+        "operationId": "TimeRegistrationExternalKeys_DeleteExternalKeys",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationID",
+            "in": "path",
+            "description": "Time registration identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "externalSystemID",
+            "in": "query",
+            "description": "External system identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "External key is deleted successfully"
+          },
+          "500": {
+            "description": "External key could not be deleted",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/time-registration-financial-data/get-by-date": {
       "get": {
         "tags": [
@@ -8632,6 +9582,94 @@
           },
           "500": {
             "description": "Request to GetStatusByDateRange has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/timesheet-status/weekly": {
+      "get": {
+        "tags": [
+          "TimesheetStatus"
+        ],
+        "summary": "To Get all the weekly timesheet status",
+        "operationId": "TimesheetStatus_WeeklyTimeSheetStatus",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "legalEntityId",
+            "in": "query",
+            "description": "Legal Entity ID to filter (optional)",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "departmentId",
+            "in": "query",
+            "description": "Department ID to filter (optional)",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "approverId",
+            "in": "query",
+            "description": "Approver ID to filter (optional)",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of incomplete milestones before due date",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.TimesheetStatus.TimesheetStatusApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to WeeklyTimeSheetStatus has failed",
             "schema": {
               "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
@@ -10888,6 +11926,14 @@
           "format": "int32",
           "description": "Gets or sets the customer status ID",
           "type": "integer"
+        },
+        "VATNo": {
+          "description": "Gets or sets the VAT No.",
+          "type": "string"
+        },
+        "OrganizationNo": {
+          "description": "Gets or sets the organization no.",
+          "type": "string"
         }
       }
     },
@@ -11650,6 +12696,54 @@
         }
       }
     },
+    "TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalSystems.ExternalSystemsApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "format": "int32",
+          "description": "Gets or sets the identifier.",
+          "type": "integer"
+        },
+        "Name": {
+          "description": "Gets or sets the name.",
+          "type": "string"
+        },
+        "Description": {
+          "description": "Gets or sets the description.",
+          "type": "string"
+        },
+        "IsSystemExternalSystem": {
+          "description": "Gets or sets a value indicating whether this instance is system external system.",
+          "type": "boolean"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalSystems.ExternalSystemsApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "description": "Gets or sets the name.",
+          "type": "string"
+        },
+        "Description": {
+          "description": "Gets or sets the description.",
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalSystems.ExternalSystemsApiUpdateModel": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "description": "Gets or sets the name.",
+          "type": "string"
+        },
+        "Description": {
+          "description": "Gets or sets the description.",
+          "type": "string"
+        }
+      }
+    },
     "TimeLog.TLP.Web.WebApi.V1.Settings.Models.Feature.FeatureApiUpdateModel": {
       "type": "object",
       "properties": {
@@ -12083,7 +13177,12 @@
             423,
             424,
             425,
-            426
+            426,
+            427,
+            428,
+            429,
+            430,
+            431
           ],
           "type": "integer"
         },
@@ -13073,6 +14172,86 @@
         }
       }
     },
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiUpdateModel": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "description": "Gets or sets the project name",
+          "type": "string"
+        },
+        "ProjectNo": {
+          "description": "Gets or sets the project number",
+          "type": "string"
+        },
+        "CustomerID": {
+          "format": "int32",
+          "description": "Gets or sets the customer ID",
+          "type": "integer"
+        },
+        "ContactID": {
+          "format": "int32",
+          "description": "Gets or sets the contact ID",
+          "type": "integer"
+        },
+        "Description": {
+          "description": "Gets or sets the description",
+          "type": "string"
+        },
+        "DepartmentID": {
+          "format": "int32",
+          "description": "Gets or sets the department ID",
+          "type": "integer"
+        },
+        "ProjectManagerID": {
+          "format": "int32",
+          "description": "Gets or sets the project manager ID",
+          "type": "integer"
+        },
+        "AccountManagerID": {
+          "format": "int32",
+          "description": "Gets or sets the account manager ID",
+          "type": "integer"
+        },
+        "PartnerID": {
+          "format": "int32",
+          "description": "Gets or sets the partner ID",
+          "type": "integer"
+        },
+        "ProjectTypeID": {
+          "format": "int32",
+          "description": "Gets or sets the project type ID",
+          "type": "integer"
+        },
+        "ProjectCategoryID": {
+          "format": "int32",
+          "description": "Gets or sets the project category ID",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectStatusApiUpdateModel": {
+      "type": "object",
+      "properties": {
+        "ProjectStatus": {
+          "format": "int32",
+          "description": "Gets or sets the project status",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer"
+        },
+        "AllowTimeTracking": {
+          "description": "Gets or sets a value indicating whether time tracking is allowed.",
+          "type": "boolean"
+        }
+      }
+    },
     "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModel": {
       "type": "object",
       "properties": {
@@ -13437,6 +14616,308 @@
           "format": "double",
           "description": "Gets or sets the profit ratio",
           "type": "number"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ExternalID": {
+          "description": "Gets or sets the external identifier.",
+          "type": "string"
+        },
+        "DomainType": {
+          "format": "int32",
+          "description": "Gets or sets the TimeLog's domain type.",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251
+          ],
+          "type": "integer"
+        },
+        "DomainGuid": {
+          "format": "uuid",
+          "description": "Gets or sets the TimeLog's domain Guid.",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "DomainID": {
+          "format": "int32",
+          "description": "Gets or sets the TimeLog's domain identifier.",
+          "type": "integer"
+        },
+        "ExternalSystemID": {
+          "format": "int32",
+          "description": "Gets or sets the external system identifier.",
+          "type": "integer"
+        },
+        "ExternalSystemName": {
+          "description": "Gets or sets the external system name.",
+          "type": "string"
+        },
+        "IsIgnored": {
+          "description": "Gets or sets a value indicating whether this external key is ignored.",
+          "type": "boolean"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Integration.Models.ExternalKeys.ExternalKeysApiUpdateModel": {
+      "type": "object",
+      "properties": {
+        "ExternalID": {
+          "description": "Gets or sets the external identifier.",
+          "type": "string"
+        },
+        "ExternalSystemID": {
+          "format": "int32",
+          "description": "Gets or sets the external system identifier.",
+          "type": "integer"
         }
       }
     },
@@ -14557,7 +16038,14 @@
             272,
             273,
             274,
-            275
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            281,
+            282
           ],
           "type": "integer"
         },
@@ -15119,7 +16607,8 @@
             247,
             248,
             249,
-            250
+            250,
+            251
           ],
           "type": "integer"
         },
@@ -15907,6 +17396,69 @@
         }
       }
     },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.TimesheetStatus.TimesheetStatusApiReadModel": {
+      "type": "object",
+      "properties": {
+        "Initials": {
+          "type": "string"
+        },
+        "DisplayName": {
+          "type": "string"
+        },
+        "EmployeeUserID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "AggregationType": {
+          "format": "int32",
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "ShowSendEmailRequest": {
+          "type": "boolean"
+        },
+        "ManagerInitials": {
+          "type": "string"
+        },
+        "ManagerDisplayName": {
+          "type": "string"
+        },
+        "EmployeeDepartmentName": {
+          "type": "string"
+        },
+        "Details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.TimesheetStatus.TimesheetStatusDetailsApiReadModel"
+          }
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.TimesheetStatus.TimesheetStatusDetailsApiReadModel": {
+      "type": "object",
+      "properties": {
+        "WeekNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "TimesheetStatus": {
+          "type": "string"
+        },
+        "StartDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "EndDate": {
+          "format": "date-time",
+          "type": "string"
+        }
+      }
+    },
     "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Models.TimeTracker.TimeTrackerApiReadModel": {
       "type": "object",
       "properties": {
@@ -16180,7 +17732,8 @@
             247,
             248,
             249,
-            250
+            250,
+            251
           ],
           "type": "integer"
         },
@@ -16502,7 +18055,8 @@
             247,
             248,
             249,
-            250
+            250,
+            251
           ],
           "type": "integer"
         },
@@ -16741,7 +18295,8 @@
           "description": "Gets or sets the preview feature identifier",
           "enum": [
             1,
-            4
+            4,
+            9
           ],
           "type": "integer"
         },
@@ -16946,6 +18501,82 @@
       "description": "Service for handling normal working time in TimeLog."
     },
     {
+      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeRegistrationExternalKeysController[TimeRegistrationExternalKeysController]",
+      "description": "Service for handling time registration external keys in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeRegistrationController[TimeRegistrationController]",
+      "description": "Service for handling time registration in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeRegistrationFinancialDataController[TimeRegistrationFinancialDataController]",
+      "description": "Service for handling time registration financial data in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeTrackerController[TimeTrackerController]",
+      "description": "Service for handling time tracker in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectExternalKeysController[ProjectExternalKeysController]",
+      "description": "Service for handling project external keys in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskExternalKeysController[TaskExternalKeysController]",
+      "description": "Service for handling task external keys in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.PaymentController[PaymentController]",
+      "description": "Service for handling payments in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectTemplateController[ProjectTemplateController]",
+      "description": "Service for handling project templates in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectSubContractController[ProjectSubContractController]",
+      "description": "Service for handling contracts in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.AllocationController[AllocationController]",
+      "description": "Service for handling allocations in TimeLog"
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskTypeController[TaskTypeController]",
+      "description": "Service for handling task types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectTypeController[ProjectTypeController]",
+      "description": "Service for handling project types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectCategoryController[ProjectCategoryController]",
+      "description": "Service for handling project categories in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ContractModelController[ContractModelController]",
+      "description": "Service for handling contract models in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectHeaderController[ProjectHeaderController]",
+      "description": "Service for handling project header in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskController[TaskController]",
+      "description": "Service for handling task in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectController[ProjectController]",
+      "description": "Service for handling project in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.ExternalSystemsController[ExternalSystemsController]",
+      "description": "Service for handling external systems in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.BusinessCentralController[BusinessCentralController]",
+      "description": "Service for handling change log from Business Central integration in Timelog"
+    },
+    {
       "name": "TimeLog.TLP.Web.WebApi.V1.Common.Controllers.UnitTypeController[UnitTypeController]",
       "description": "Service for handling unit types in TimeLog."
     },
@@ -17006,8 +18637,8 @@
       "description": "Service for handling employee expense in TimeLog."
     },
     {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.BusinessCentralController[BusinessCentralController]",
-      "description": "Service for handling change log from Business Central integration in Timelog"
+      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.CurrencyExchangeServiceController[CurrencyExchangeServiceController]",
+      "description": "Service for handling currency exchange service requests in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.HourlyRateController[HourlyRateController]",
@@ -17042,50 +18673,6 @@
       "description": "Service for handling user in TimeLog."
     },
     {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.PaymentController[PaymentController]",
-      "description": "Service for handling payments in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectTemplateController[ProjectTemplateController]",
-      "description": "Service for handling project templates in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectSubContractController[ProjectSubContractController]",
-      "description": "Service for handling contracts in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.AllocationController[AllocationController]",
-      "description": "Service for handling allocations in TimeLog"
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskTypeController[TaskTypeController]",
-      "description": "Service for handling task types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectTypeController[ProjectTypeController]",
-      "description": "Service for handling project types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectCategoryController[ProjectCategoryController]",
-      "description": "Service for handling project categories in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ContractModelController[ContractModelController]",
-      "description": "Service for handling contract models in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectHeaderController[ProjectHeaderController]",
-      "description": "Service for handling project header in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskController[TaskController]",
-      "description": "Service for handling task in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectController[ProjectController]",
-      "description": "Service for handling project in TimeLog."
-    },
-    {
       "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeRegistrationServiceController[TimeRegistrationServiceController]",
       "description": "Service for handling time registration service requests in TimeLog."
     },
@@ -17096,18 +18683,6 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Index.Controllers.IndexController[IndexController]",
       "description": "Service for handling index in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeRegistrationController[TimeRegistrationController]",
-      "description": "Service for handling time registration in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeRegistrationFinancialDataController[TimeRegistrationFinancialDataController]",
-      "description": "Service for handling time registration financial data in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeTrackerController[TimeTrackerController]",
-      "description": "Service for handling time tracker in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.AbsenceCodeController[AbsenceCodeController]",
@@ -17132,6 +18707,10 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Settings.Controllers.BarrierController[BarrierController]",
       "description": "Service for handling barrier in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V2.Employee.Controllers.ResourcePlannerController[ResourcePlannerController]",
+      "description": "Service for handling bookings in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V2.Index.Controllers.IndexController[IndexController]",
