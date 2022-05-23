@@ -9604,7 +9604,7 @@
         "tags": [
           "TimesheetStatus"
         ],
-        "summary": "To Get all the weekly timesheet status",
+        "summary": "To get all the weekly timesheet status",
         "operationId": "TimesheetStatus_WeeklyTimeSheetStatus",
         "consumes": [],
         "produces": [
@@ -9648,6 +9648,14 @@
             "name": "approverId",
             "in": "query",
             "description": "Approver ID to filter (optional)",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "User ID to filter (optional)",
             "required": false,
             "type": "integer",
             "format": "int32"
