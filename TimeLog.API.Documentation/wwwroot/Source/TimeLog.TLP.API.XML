@@ -5319,35 +5319,35 @@
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "M:TimeLog.TLP.API.ProjectManagement.V1_5.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)" -->
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.AllocationAdapter">
             <summary>
             The allocation adapter.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter._AllocationManager">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.AllocationAdapter._AllocationManager">
             <summary>
             The _ allocation manager.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter._ValidateInitials">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.AllocationAdapter._ValidateInitials">
             <summary>
             The _ validate initials.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter.#ctor">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.AllocationAdapter.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_8.AllocationAdapter"/> class.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter.#ctor(TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.IEmployee})">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.AllocationAdapter.#ctor(TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.IEmployee})">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_8.AllocationAdapter"/> class.
             </summary>
             <param name="validateEmployeeInitials">
             The validate employee initials.
             </param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#ProjectManagement#IAllocation,TimeLog#TLP#API#Proxy#ProjectManagement#V1_7#Allocation}#DomainToApi(TimeLog.TLP.ProjectManagement.IAllocation)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.AllocationAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#ProjectManagement#IAllocation,TimeLog#TLP#API#Proxy#ProjectManagement#V1_7#Allocation}#DomainToApi(TimeLog.TLP.ProjectManagement.IAllocation)">
             <summary>
             The domain to api.
             </summary>
@@ -5355,10 +5355,10 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Allocation"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Allocation"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.AllocationAdapter.TimeLog#TLP#API#ProjectManagement#V1_7#IAllocationAdapter#ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.AllocationAdapter.TimeLog#TLP#API#ProjectManagement#V1_7#IAllocationAdapter#ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
             <summary>
             The api to domain.
             </summary>
@@ -5372,12 +5372,12 @@
             The <see cref="T:TimeLog.TLP.ProjectManagement.IAllocation"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.IAllocationAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.IAllocationAdapter">
             <summary>
             The AllocationAdapter interface.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.IAllocationAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.IAllocationAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Allocation,TimeLog.TLP.ProjectManagement.IAllocation)">
             <summary>
             The api to domain.
             </summary>
@@ -5391,19 +5391,19 @@
             The <see cref="T:TimeLog.TLP.ProjectManagement.IAllocation"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.IAllocationAdapter.ValidateContractHourlyRateOnAllocation(System.Int32,TimeLog.TLP.ProjectManagement.IAllocation)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.IAllocationAdapter.ValidateContractHourlyRateOnAllocation(System.Int32,TimeLog.TLP.ProjectManagement.IAllocation)">
             <summary>
             validates if an id is a valid contract hourly rate id for an allocation
             </summary>
             <param name="contractHourlyRateID">the contract hourly rate id to validate</param>
             <param name="allocation">the allocation</param>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.IProjectAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.IProjectAdapter">
             <summary>
             The ProjectAdapter interface.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.IProjectAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project,TimeLog.TLP.ProjectManagement.IProject)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.IProjectAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Project,TimeLog.TLP.ProjectManagement.IProject)">
             <summary>
             The api to domain.
             </summary>
@@ -5414,7 +5414,7 @@
             The existing project.
             </param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.IProjectAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProject)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.IProjectAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProject)">
             <summary>
             The domain to api.
             </summary>
@@ -5422,15 +5422,15 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Project"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ITaskAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.ITaskAdapter">
             <summary>
             The TaskAdapter interface.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ITaskAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task,TimeLog.TLP.ProjectManagement.ITask)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ITaskAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Task,TimeLog.TLP.ProjectManagement.ITask)">
             <summary>
             The api to domain.
             </summary>
@@ -5444,7 +5444,7 @@
             The <see cref="T:TimeLog.TLP.ProjectManagement.ITask"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ITaskAdapter.DataRowToApi(System.Data.DataRow)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ITaskAdapter.DataRowToApi(System.Data.DataRow)">
             <summary>
             The data row to api.
             </summary>
@@ -5452,15 +5452,15 @@
             The row.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.ProjectTaskFlat"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.ProjectTaskFlat"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.IWorkUnitAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.IWorkUnitAdapter">
             <summary>
             The WorkUnitAdapter interface.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.IWorkUnitAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnit,System.Boolean,TimeLog.TLP.Common.IViolation@)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.IWorkUnitAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnit,System.Boolean,TimeLog.TLP.Common.IViolation@)">
             <summary>
             The api to domain.
             </summary>
@@ -5474,7 +5474,7 @@
             The <see cref="T:TimeLog.TLP.TimeRegistration.ITimeRegistration"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.IWorkUnitAdapter.ApiToDomain(System.Guid)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.IWorkUnitAdapter.ApiToDomain(System.Guid)">
             <summary>
             The api to domain.
             </summary>
@@ -5485,7 +5485,7 @@
             The <see cref="T:TimeLog.TLP.ProjectManagement.IWorkUnit"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.IWorkUnitAdapter.DataRowToApi(System.Data.DataRow)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.IWorkUnitAdapter.DataRowToApi(System.Data.DataRow)">
             <summary>
             The data row to api.
             </summary>
@@ -5493,10 +5493,10 @@
             The row.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnitFlat"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.IWorkUnitAdapter.DataRowExternalToApi(System.Data.DataRow)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.IWorkUnitAdapter.DataRowExternalToApi(System.Data.DataRow)">
             <summary>
             The data row external to api.
             </summary>
@@ -5504,32 +5504,32 @@
             The row.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlatExternal"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnitFlatExternal"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter">
             <summary>
             The project adapter.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter._taskAdapter">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter._taskAdapter">
             <summary>
             The _task adapter.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter._customerAdapter">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter._customerAdapter">
             <summary>
             The _customer adapter.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter._contactAdapter">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter._contactAdapter">
             <summary>
             The _contact adapter.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.ProjectManagement.ITaskHeader,TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.TaskHeader},TimeLog.TLP.API.CRM.V1_2.ICustomerHeaderAdapter,TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.CRM.IContact,TimeLog.TLP.API.Proxy.CRM.V1_2.ContactHeader})">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.ProjectManagement.ITaskHeader,TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.TaskHeader},TimeLog.TLP.API.CRM.V1_2.ICustomerHeaderAdapter,TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.CRM.IContact,TimeLog.TLP.API.Proxy.CRM.V1_2.ContactHeader})">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter"/> class.
             </summary>
             <param name="taskAdapter">
             The task adapter.
@@ -5541,7 +5541,7 @@
             The contact adapter
             </param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProject)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProject)">
             <summary>
             The domain to api.
             </summary>
@@ -5549,10 +5549,10 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Project"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project,TimeLog.TLP.ProjectManagement.IProject)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Project,TimeLog.TLP.ProjectManagement.IProject)">
             <summary>
             The api to domain.
             </summary>
@@ -5565,7 +5565,7 @@
             <exception cref="T:System.NullReferenceException">
             </exception>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.AddTypeNameToApi(TimeLog.TLP.ProjectManagement.IProject,TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter.AddTypeNameToApi(TimeLog.TLP.ProjectManagement.IProject,TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Project)">
             <summary>
             The add type name to api.
             </summary>
@@ -5576,7 +5576,7 @@
             The project.
             </param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.AddCategoryNameToApi(TimeLog.TLP.ProjectManagement.IProject,TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter.AddCategoryNameToApi(TimeLog.TLP.ProjectManagement.IProject,TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Project)">
             <summary>
             The add category name to api.
             </summary>
@@ -5587,7 +5587,7 @@
             The project.
             </param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.GetProjectStageByIDFromName(System.String)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter.GetProjectStageByIDFromName(System.String)">
             <summary>
             The get project stage by id from name.
             </summary>
@@ -5598,7 +5598,7 @@
             The <see cref="T:System.Int32"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectAdapter.EscapeLikeValue(System.String)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectAdapter.EscapeLikeValue(System.String)">
             <summary>
             The escape like value.
             </summary>
@@ -5609,12 +5609,12 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectHeaderAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectHeaderAdapter">
             <summary>
             The project header adapter.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectHeaderAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProjectHeader)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectHeaderAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.IProjectHeader)">
             <summary>
             The domain to api.
             </summary>
@@ -5622,24 +5622,24 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.ProjectHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.ProjectHeader"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService">
             <summary>
             Service for handling projects and time registrations in TimeLog (released Nov 2017)
             </summary>
             <remarks>
-            https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/ProjectManagement/V1_8/ProjectManagementServiceSecure.svc
             </remarks>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.#ctor(System.Boolean)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.#ctor(System.Boolean)">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService"/> class.
             </summary>
             <param name="isSecure">Indicate whether the connection uses SSL</param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.CreateProject(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.CreateProject(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Project,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Create a Project.
             </summary>
@@ -5658,7 +5658,7 @@
             <param name="token"></param>
             <returns>The Project in state after creation in TimeLog {Project}</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.UpdateProject(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Project,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.UpdateProject(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Project,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Update a Project
             </summary>
@@ -5666,7 +5666,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>The updated project object</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetProjectByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetProjectByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a project based on another systems project key (ID)
             </summary>
@@ -5675,7 +5675,7 @@
             <param name="token"></param>
             <returns>The project in the current state including all external keys</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetProjects(System.Int32,System.Int32,System.Boolean,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetProjects(System.Int32,System.Int32,System.Boolean,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Returns a list of project headers.
             </summary>
@@ -5686,7 +5686,7 @@
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetProjectsByCustomer(System.Guid,System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetProjectsByCustomer(System.Guid,System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Returns a list of project headers.
             </summary>
@@ -5696,7 +5696,7 @@
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.DeleteProject(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.DeleteProject(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Deletes the specified Project
             </summary>
@@ -5704,7 +5704,7 @@
             <param name="token"></param>
             <returns>The specified Project in the state before it is deleted</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ProjectChangeStatus(System.Guid,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.ProjectChangeStatus(System.Guid,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Changes the Status of the specified Project
             </summary>
@@ -5713,7 +5713,7 @@
             <param name="token"></param>
             <returns>The specified Project in the state after the Status is changed</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetProjectByID(System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetProjectByID(System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a project based on the project ID
             </summary>
@@ -5722,7 +5722,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A Task object</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.CreateTask(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.CreateTask(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Task,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Creates a Task on the specified Project. The Task is placed as the last item in the WBS-structure of the Project
             </summary>
@@ -5732,7 +5732,7 @@
             <param name="token"></param>
             <returns>The task in the state after it is created</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.CreateSubTask(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.CreateSubTask(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Task,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Creates a Task as a Sub-task to an existing Task. The new Task is placed as the last Sub-task in the WBS-structure of the Parent-task
             </summary>
@@ -5743,7 +5743,7 @@
             <param name="token"></param>
             <returns>The task in the </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.UpdateTask(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.UpdateTask(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Task,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Updates the data properties of the specified Task. 
             </summary>
@@ -5752,7 +5752,7 @@
             <param name="token">Security token of the current user</param>
             <returns>The task in the state after update</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.DeleteTask(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.DeleteTask(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Deletes the specified Task
             </summary>
@@ -5760,7 +5760,7 @@
             <param name="token">Security token of the current user</param>
             <returns>The specified Task in the state before it is deleted</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTaskByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetTaskByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a Task by an External-key
             </summary>
@@ -5769,7 +5769,7 @@
             <param name="token">Security token of the current user</param>
             <returns>The Task in its current state</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ChangeTaskStatus(System.Guid,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.ChangeTaskStatus(System.Guid,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Changes the Status of the specified Task
             </summary>
@@ -5778,7 +5778,7 @@
             <param name="token">Security token of the current user</param>
             <returns>The specified Task in the state after the Status is changed</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ChangeTaskContract(System.Guid,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.ChangeTaskContract(System.Guid,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Changes the contract associated with a task.
             </summary>
@@ -5787,7 +5787,7 @@
             <param name="token">Security token of the current user</param>
             <returns></returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTaskById(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetTaskById(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a task based on the guid
             </summary>
@@ -5795,7 +5795,7 @@
             <param name="token">Security token of the current user</param>
             <returns>A task object</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTasksByProjectId(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetTasksByProjectId(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a list of tasks associated to a project. Only first level tasks are returned, use GetProjectTasksPaged to get all levels.
             </summary>
@@ -5803,7 +5803,7 @@
             <param name="token">Security token of the current user</param>
             <returns>A list fo task objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTasksAllocatedToEmployee(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetTasksAllocatedToEmployee(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a list of tasks allocated to a specific employee
             </summary>
@@ -5811,7 +5811,7 @@
             <param name="token">Security token of the current user</param>
             <returns>A list of tasks the users is allocated to</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTasksBySearchText(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetTasksBySearchText(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a list of tasks based on the search criteria
             </summary>
@@ -5819,7 +5819,7 @@
             <param name="token">Security token of the current user</param>
             <returns>A list of tasks that matches the search criteria</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTasksBySearchTextWithoutFinancial(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetTasksBySearchTextWithoutFinancial(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a list of tasks based on the search criteria- without financial data
             </summary>
@@ -5827,7 +5827,7 @@
             <param name="token">Security token of the current user</param>
             <returns>A list of tasks that matches the search criteria</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.MoveTaskUnderParentTask(System.Int32,TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.MoveTaskUnderParentTask(System.Int32,TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Task,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Move task to another task
             </summary>
@@ -5837,7 +5837,7 @@
             <param name="token">Security token of the current user</param>
             <returns>The specified Task that has been moved</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetEmployeeWork(System.String,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetEmployeeWork(System.String,System.DateTime,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a list of employee registrations within a given timespan
             </summary>
@@ -5848,7 +5848,7 @@
             <see cref="T:TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken"/>
             <returns>A list of employee WorkUnits within the required timespan</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.InsertWork(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnit},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.InsertWork(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnit},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Inserts one or more registrations based on initials and task ID
             </summary>
@@ -5858,7 +5858,7 @@
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits inserted with additional information about task and project</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.UpdateWork(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnit},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.UpdateWork(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnit},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Updates one or more registrations based on initials and task ID
             </summary>
@@ -5868,7 +5868,7 @@
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits updated with additional information about task and project</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.DeleteWork(System.Collections.Generic.List{System.Guid},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.DeleteWork(System.Collections.Generic.List{System.Guid},System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Deletes one or more registrations based on initials and task ID
             </summary>
@@ -5878,7 +5878,7 @@
             <param name="token">Security token of the current user</param>
             <returns>An array of the WorkUnits succesfully deleted</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.AddEmployeeToTask(System.Int32,System.Int32,System.Double,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.AddEmployeeToTask(System.Int32,System.Int32,System.Double,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Adds an employe to a task. This enables the employee to track time on the task.
             </summary>
@@ -5888,7 +5888,7 @@
             <param name="token"></param>
             <returns>Returns an Allocation with date span set to the date span of the Task</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetAllocationsToEmployee(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetAllocationsToEmployee(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a list of allocations for an employee
             </summary>
@@ -5896,7 +5896,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of Allocation objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetAllocationByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetAllocationByExternalKey(System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets an Allocation by an External-Key
             </summary>
@@ -5905,7 +5905,7 @@
             <param name="token"></param>
             <returns>The Allocation in its current state</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.CreateAllocation(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Allocation,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.CreateAllocation(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Allocation,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Creates an allocation for an employee on a task. Use this method to control hourly rate and dates on the allocation
             Dates is only set when Dates on Allocations are activated in the system
@@ -5915,7 +5915,7 @@
             <param name="token"></param>
             <returns>The saved allocation</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.UpdateAllocation(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Allocation,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.UpdateAllocation(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Allocation,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Updates hours allocated, hourly rate, start and end date on the allocation
             Set HourlyRateID to 0 if you do not want to change the hourly rate of the allocation
@@ -5926,7 +5926,7 @@
             <param name="token"></param>
             <returns>Allocation in the state after update</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.DeleteAllocation(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.DeleteAllocation(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Deletes an allocation
             </summary>
@@ -5934,7 +5934,7 @@
             <param name="token"></param>
             <returns>The deleted allocation in it's state before deletion</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.SetAllocationStatus(System.Boolean,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.SetAllocationStatus(System.Boolean,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Sets an allocation to completed or not completed
             </summary>
@@ -5943,7 +5943,7 @@
             <param name="token"></param>
             <returns>The allocation changed in the current state after update</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.CreateAllocations(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Allocation},TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.CreateAllocations(System.Collections.Generic.List{TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Allocation},TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Inserts allocations for an employee to a task
             </summary>
@@ -5951,7 +5951,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of created Allocation objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.CreateProjectFromTemplate(System.String,System.String,System.String,System.String,System.Guid,System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.CreateProjectFromTemplate(System.String,System.String,System.String,System.String,System.Guid,System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Create a project from a project template from customer name
             </summary>
@@ -5975,7 +5975,7 @@
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <returns>The project created based on the template</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.CreateProjectFromTemplate(System.String,System.String,System.String,System.Int32,System.Guid,System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.CreateProjectFromTemplate(System.String,System.String,System.String,System.Int32,System.Guid,System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Create a project from a project template from customer id
             </summary>
@@ -5999,7 +5999,7 @@
             <see cref="T:TimeLog.TLP.SourceInterface"/>
             <returns>The project created based on the template</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTaskByTaskNo(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetTaskByTaskNo(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a list of tasks based on the task number
             </summary>
@@ -6007,7 +6007,7 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A list of Task objects</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetTaskByID(System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetTaskByID(System.Int32,System.Boolean,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a task based on the task ID
             </summary>
@@ -6016,12 +6016,12 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns>A Task object</returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ProjectThenSortOrderComparer">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.ProjectThenSortOrderComparer">
             <summary>
             Sort function that will order list by ProjectName, ProjectNo, ProjectID, TaskSortorder
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetWorkPaged(System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetWorkPaged(System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a paged list of work units in a flat format including all details.
             </summary>
@@ -6031,11 +6031,11 @@
             <param name="page">Page to get results from (int)</param>
             <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnitFlat"/>
             <remarks>Security requirements: System administrator</remarks>
             <returns>A list of work units in a flat format</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetWorkPagedWithExternalIds(System.String,System.Int32,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetWorkPagedWithExternalIds(System.String,System.Int32,System.String,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a paged list of work units in a flat format including all details and external IDs.
             </summary>
@@ -6048,10 +6048,10 @@
             <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <remarks>Security requirements: System administrator</remarks>
-            <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlatExternal"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnitFlatExternal"/>
             <returns>A list of work units in a flat format</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetWorkChangesPaged(System.String,System.DateTime,System.DateTime,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetWorkChangesPaged(System.String,System.DateTime,System.DateTime,System.DateTime,System.DateTime,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
              <summary>
              Gets a paged list of work unit changes in a flat format including all details.
              Note that this feed includes all changes and the change log is only available 
@@ -6078,10 +6078,10 @@
              - Approved by project manager (20)
              - Approved by department manager (30)
              </remarks>
-             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat"/>
+             <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnitFlat"/>
              <returns>A list of work units in a flat format</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetProjectTasksPaged(System.Guid,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetProjectTasksPaged(System.Guid,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a paged list of tasks in a flat format including all details.
             </summary>
@@ -6089,10 +6089,10 @@
             <param name="page">Page to get results from (int)</param>
             <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.ProjectTaskFlat"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.ProjectTaskFlat"/>
             <returns>A list of tasks in a flat format</returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.GetWorkChangeLogPaged(System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.GetWorkChangeLogPaged(System.DateTime,System.DateTime,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Gets a paged list of change logs related to work unit changes in a flat format including 
             all details (if available). Note that this feed includes all changes and the change log 
@@ -6106,7 +6106,7 @@
             <param name="page">Page to get results from (int)</param>
             <param name="pageSize">Number of results per page. Max value: 500. (int)</param>
             <param name="token">Security token associated with the request (SecurityToken)</param>
-            <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat"/>
+            <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnitFlat"/>
             <returns>A list of work units in a flat format</returns>
             <remarks>
             ApprovalStatus can have one of the following values:
@@ -6116,7 +6116,7 @@
             - Approved by department manager (30)
             </remarks>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementService.ChangeAllocationsHourlyRate(System.Int32,System.Int32,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementService.ChangeAllocationsHourlyRate(System.Int32,System.Int32,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
             <summary>
             Recalculates the financial values of the registrations belonging to an allocation, given a start date
             </summary>
@@ -6126,34 +6126,34 @@
             <param name="token">Security token associated with the request (SecurityToken)</param>
             <returns></returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementServiceSecure">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementServiceSecure">
             <summary>
             Service for handling projects and time registrations in TimeLog (released Nov 2017)
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementServiceSecure.#ctor">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementServiceSecure.#ctor">
             <summary>
-            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_7.ProjectManagementServiceSecure"/> class from being created.
+            Prevents a default instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_8.ProjectManagementServiceSecure"/> class from being created.
             </summary>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter">
             <summary>
             The task adapter.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter._projectAdapter">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter._projectAdapter">
             <summary>
             The _project adapter.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter._customerAdapter">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter._customerAdapter">
             <summary>
             The _customer adapter.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.ProjectManagement.IProjectHeader,TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.ProjectHeader},TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.CRM.ICustomerHeader,TimeLog.TLP.API.Proxy.CRM.V1_2.CustomerHeader})">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter.#ctor(TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.ProjectManagement.IProjectHeader,TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.ProjectHeader},TimeLog.TLP.API.Common.V1_0.IAdapter{TimeLog.TLP.CRM.ICustomerHeader,TimeLog.TLP.API.Proxy.CRM.V1_2.CustomerHeader})">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter"/> class.
             </summary>
             <param name="projectAdapter">
             The project adapter.
@@ -6162,7 +6162,7 @@
             The customer adapter.
             </param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ITask)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ITask)">
             <summary>
             The domain to api.
             </summary>
@@ -6170,10 +6170,10 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Task"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.Task,TimeLog.TLP.ProjectManagement.ITask)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.Task,TimeLog.TLP.ProjectManagement.ITask)">
             <summary>
             The api to domain.
             </summary>
@@ -6187,7 +6187,7 @@
             The <see cref="T:TimeLog.TLP.ProjectManagement.ITask"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter.DataRowToApi(System.Data.DataRow)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter.DataRowToApi(System.Data.DataRow)">
             <summary>
             The data row to api.
             </summary>
@@ -6195,10 +6195,10 @@
             The row.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.ProjectTaskFlat"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.ProjectTaskFlat"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter.GetCustomFieldXml(TimeLog.TLP.ProjectManagement.ITask)">
             <summary>
             The get custom field xml.
             </summary>
@@ -6209,7 +6209,7 @@
             The <see cref="T:System.Xml.XmlElement"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.TaskAdapter.AddElement(System.String,System.String,System.Xml.XmlNode)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.TaskAdapter.AddElement(System.String,System.String,System.Xml.XmlNode)">
             <summary>
             The add element.
             </summary>
@@ -6226,12 +6226,12 @@
             The <see cref="T:System.Xml.XmlNode"/>.
             </returns>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.TaskHeaderAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.TaskHeaderAdapter">
             <summary>
             The task header adapter.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.TaskHeaderAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ITaskHeader)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.TaskHeaderAdapter.DomainToApi(TimeLog.TLP.ProjectManagement.ITaskHeader)">
             <summary>
             The domain to api.
             </summary>
@@ -6239,65 +6239,65 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.TaskHeader"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.TaskHeader"/>.
             </returns>
             <exception cref="T:System.Exception">
             </exception>
         </member>
-        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter">
+        <member name="T:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter">
             <summary>
             The work unit adapter.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter._taskManager">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter._taskManager">
             <summary>
             The _task manager.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter._employeeManager">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter._employeeManager">
             <summary>
             The _employee manager.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter._workUnitManager">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter._workUnitManager">
             <summary>
             The _work unit manager.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter._validateInitials">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter._validateInitials">
             <summary>
             The _validate initials.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter._taskHeaderAdapter">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter._taskHeaderAdapter">
             <summary>
             The _task header adapter.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter._projectHeaderAdapter">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter._projectHeaderAdapter">
             <summary>
             The _project header adapter.
             </summary>
         </member>
-        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter._customerHeaderAdapter">
+        <member name="F:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter._customerHeaderAdapter">
             <summary>
             The _customer header adapter.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter.#ctor">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter"/> class.
             </summary>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter.#ctor(TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.IEmployee})">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter.#ctor(TimeLog.TLP.Common.IBusinessRuleReturnType{System.String,TimeLog.TLP.Common.IEmployee})">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter"/> class.
+            Initializes a new instance of the <see cref="T:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter"/> class.
             </summary>
             <param name="validationInitials">
             The validation initials.
             </param>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#TimeRegistration#ITimeRegistration,TimeLog#TLP#API#Proxy#ProjectManagement#V1_7#WorkUnit}#DomainToApi(TimeLog.TLP.TimeRegistration.ITimeRegistration)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter.TimeLog#TLP#API#Common#V1_0#IAdapter{TimeLog#TLP#TimeRegistration#ITimeRegistration,TimeLog#TLP#API#Proxy#ProjectManagement#V1_7#WorkUnit}#DomainToApi(TimeLog.TLP.TimeRegistration.ITimeRegistration)">
             <summary>
             The domain to api.
             </summary>
@@ -6305,12 +6305,12 @@
             The domain.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnit"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnit"/>.
             </returns>
             <exception cref="T:System.Exception">
             </exception>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter.ApiToDomain(System.Guid)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter.ApiToDomain(System.Guid)">
             <summary>
             The api to domain.
             </summary>
@@ -6321,7 +6321,7 @@
             The <see cref="T:TimeLog.TLP.ProjectManagement.IWorkUnit"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnit,System.Boolean,TimeLog.TLP.Common.IViolation@)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter.ApiToDomain(TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnit,System.Boolean,TimeLog.TLP.Common.IViolation@)">
             <summary>
             The api to domain.
             </summary>
@@ -6337,7 +6337,7 @@
             <exception cref="T:System.Exception">
             </exception>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter.GetInitials(System.Int32)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter.GetInitials(System.Int32)">
             <summary>
             The get initials.
             </summary>
@@ -6348,7 +6348,7 @@
             The <see cref="T:System.String"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter.DataRowToApi(System.Data.DataRow)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter.DataRowToApi(System.Data.DataRow)">
             <summary>
             The data row to api.
             </summary>
@@ -6356,10 +6356,10 @@
             The row.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlat"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnitFlat"/>.
             </returns>
         </member>
-        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_7.WorkUnitAdapter.DataRowExternalToApi(System.Data.DataRow)">
+        <member name="M:TimeLog.TLP.API.ProjectManagement.V1_8.WorkUnitAdapter.DataRowExternalToApi(System.Data.DataRow)">
             <summary>
             The data row external to api.
             </summary>
@@ -6367,7 +6367,7 @@
             The row.
             </param>
             <returns>
-            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_7.WorkUnitFlatExternal"/>.
+            The <see cref="T:TimeLog.TLP.API.Proxy.ProjectManagement.V1_8.WorkUnitFlatExternal"/>.
             </returns>
         </member>
         <member name="T:TimeLog.TLP.API.ProjectManagement.V1_6.AllocationAdapter">
