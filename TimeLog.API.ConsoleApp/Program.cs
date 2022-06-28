@@ -18,7 +18,8 @@ try
     }
 
     // Run example classes
-    ConsumeReportingApi.Consume();
+    //ConsumeReportingApi.Consume();
+    UpdateTask.Consume();
     // ConsumeTransactionalApi.Consume();
     // ConsumeCsvFile.Consume();
     // GetEmployeesTransactionalApi.Consume();
