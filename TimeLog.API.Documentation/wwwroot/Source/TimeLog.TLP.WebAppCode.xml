@@ -205,6 +205,20 @@ TimeLog.TLP.WebAppCode
  <param name="accountManagerID">ID of an Employee. Set to 0 to get all customers</param>
  <returns>A list of customer objects in XML format</returns>
 </member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetContractPaymentsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+    <summary>
+      Gets a list of contract payments
+    </summary>
+    <param name="siteCode">Unique identification for your TimeLog account</param>
+    <param name="apiID">The API ID</param>
+    <param name="apiPassword">The API password</param>
+    <param name="projectID">ID of a Project. Set to 0 to get all projects</param>
+    <param name="customerID">ID of specific customer. Set to 0 to get all customers</param>
+    <param name="projectSubContractID">ID of a Project sub contract. Set to 0 to get all project sub contracts</param>
+    <param name="startDate">Start date of the period</param>
+    <param name="endDate">End date of the period</param>
+    <returns>A list of contract customer objects in XML</returns>
+  </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetContractCustomersRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
  <summary>
  Gets a list of contract customers
