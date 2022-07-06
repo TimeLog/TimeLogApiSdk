@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:ContractPayments 
+  xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/ContractPaymentsRaw.xsd">
+  <tlp:ContractPayment ID="23165" GUID="44ACE21C-5809-4D23-8A0F-7041D2DF8E1E">
+    <tlp:InvoiceDate>2011-06-04T00:00:00</tlp:InvoiceDate>
+    <tlp:Rate>0.0000</tlp:Rate>
+    <tlp:RateCurrency>0.0000</tlp:RateCurrency>
+    <tlp:Discount>0.000000000000000e+000</tlp:Discount>
+    <tlp:Quantity>1.000000000000000e+000</tlp:Quantity>
+    <tlp:Name>10. Forberedelse / Efterbehandling</tlp:Name>
+    <tlp:UnitType>0</tlp:UnitType>
+    <tlp:Amount>0.0000</tlp:Amount>
+    <tlp:AmountCurrency>0.0000</tlp:AmountCurrency>
+    <tlp:IsReadyForInvoicing>1</tlp:IsReadyForInvoicing>
+    <tlp:CustomerID>7968</tlp:CustomerID>
+    <tlp:CustomerName>Your Company</tlp:CustomerName>
+    <tlp:ProjectID>2001</tlp:ProjectID>
+    <tlp:ProjectName>Your Sample Project</tlp:ProjectName>
+    <tlp:ProjectSubContractCustomerID>1968</tlp:ProjectSubContractCustomerID>
+    <tlp:CreatedAt>2011-05-25T12:28:55.590</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>3</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>SLU</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2011-05-25T12:28:55.590</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>3</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>SLU</tlp:LastModifiedBy>
+  </tlp:ContractPayment>
+  <tlp:ContractPayment ID="23166" GUID="3FE97EC2-FB84-48FA-A02F-0D4EE1D7B0AA">
+    <tlp:InvoiceDate>2011-06-04T00:00:00</tlp:InvoiceDate>
+    <tlp:Rate>0.0000</tlp:Rate>
+    <tlp:RateCurrency>0.0000</tlp:RateCurrency>
+    <tlp:Discount>0.000000000000000e+000</tlp:Discount>
+    <tlp:Quantity>1.000000000000000e+000</tlp:Quantity>
+    <tlp:Name>15. Rejsetid</tlp:Name>
+    <tlp:UnitType>0</tlp:UnitType>
+    <tlp:Amount>0.0000</tlp:Amount>
+    <tlp:AmountCurrency>0.0000</tlp:AmountCurrency>
+    <tlp:IsReadyForInvoicing>1</tlp:IsReadyForInvoicing>
+    <tlp:CustomerID>7968</tlp:CustomerID>
+    <tlp:CustomerName>Your Company</tlp:CustomerName>
+    <tlp:ProjectID>2001</tlp:ProjectID>
+    <tlp:ProjectName>Your Sample Project</tlp:ProjectName>
+    <tlp:ProjectSubContractCustomerID>1968</tlp:ProjectSubContractCustomerID>
+    <tlp:CreatedAt>2011-05-25T12:28:55.623</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>3</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>SLU</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2011-05-25T12:28:55.623</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>3</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>SLU</tlp:LastModifiedBy>
+  </tlp:ContractPayment>
+  <tlp:ContractPayment ID="23169" GUID="39DB8C32-0132-4F53-BB69-FB1262F534BD">
+    <tlp:InvoiceDate>2011-06-05T00:00:00</tlp:InvoiceDate>
+    <tlp:Rate>20000.0000</tlp:Rate>
+    <tlp:RateCurrency>20000.0000</tlp:RateCurrency>
+    <tlp:Discount>0.000000000000000e+000</tlp:Discount>
+    <tlp:Quantity>1.000000000000000e+000</tlp:Quantity>
+    <tlp:Name>20. Workshop 22-23. Juni</tlp:Name>
+    <tlp:UnitType>0</tlp:UnitType>
+    <tlp:Amount>20000.0000</tlp:Amount>
+    <tlp:AmountCurrency>20000.0000</tlp:AmountCurrency>
+    <tlp:IsReadyForInvoicing>1</tlp:IsReadyForInvoicing>
+    <tlp:CustomerID>7968</tlp:CustomerID>
+    <tlp:CustomerName>Your Company</tlp:CustomerName>
+    <tlp:ProjectID>2001</tlp:ProjectID>
+    <tlp:ProjectName>Your Sample Project</tlp:ProjectName>
+    <tlp:ProjectSubContractCustomerID>1968</tlp:ProjectSubContractCustomerID>
+    <tlp:CreatedAt>2011-05-25T12:30:08.467</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>3</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>SLU</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2011-05-25T12:30:08.513</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>3</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>SLU</tlp:LastModifiedBy>
+  </tlp:ContractPayment>
+  <tlp:ContractPayment ID="23170" GUID="4EB5A35C-645E-4328-B04E-328F85E699AB">
+    <tlp:InvoiceDate>2011-06-09T00:00:00</tlp:InvoiceDate>
+    <tlp:Rate>5000.0000</tlp:Rate>
+    <tlp:RateCurrency>5000.0000</tlp:RateCurrency>
+    <tlp:Discount>0.000000000000000e+000</tlp:Discount>
+    <tlp:Quantity>1.000000000000000e+000</tlp:Quantity>
+    <tlp:Name>25. Teknisk workshop</tlp:Name>
+    <tlp:UnitType>0</tlp:UnitType>
+    <tlp:Amount>5000.0000</tlp:Amount>
+    <tlp:AmountCurrency>5000.0000</tlp:AmountCurrency>
+    <tlp:IsReadyForInvoicing>1</tlp:IsReadyForInvoicing>
+    <tlp:CustomerID>7968</tlp:CustomerID>
+    <tlp:CustomerName>Your Company</tlp:CustomerName>
+    <tlp:ProjectID>2001</tlp:ProjectID>
+    <tlp:ProjectName>Your Sample Project</tlp:ProjectName>
+    <tlp:ProjectSubContractCustomerID>1968</tlp:ProjectSubContractCustomerID>
+    <tlp:CreatedAt>2011-05-25T12:30:08.513</tlp:CreatedAt>
+    <tlp:CreatedByEmployeeId>3</tlp:CreatedByEmployeeId>
+    <tlp:CreatedBy>SLU</tlp:CreatedBy>
+    <tlp:LastModifiedAt>2011-05-25T12:30:08.530</tlp:LastModifiedAt>
+    <tlp:LastModifiedByEmployeeId>3</tlp:LastModifiedByEmployeeId>
+    <tlp:LastModifiedBy>SLU</tlp:LastModifiedBy>
+  </tlp:ContractPayment>
+</tlp:ContractPayments>

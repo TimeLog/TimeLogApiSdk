@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="ContractPayments" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ContractPayment" type="tlp:ContractPaymentRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="ContractPayment_Key">
+      <xsd:selector xpath=".//tlp:ContractPayment" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="ContractPaymentRaw_Type">
+    <xsd:sequence>
+		<xsd:element name="InvoiceDate" type="xsd:dateTime" />
+		<xsd:element name="Rate" type="xsd:decimal" />
+		<xsd:element name="RateCurrency" type="xsd:decimal" />
+		<xsd:element name="Discount" type="xsd:decimal" />
+		<xsd:element name="Quantity" type="xsd:decimal" />
+		<xsd:element name="Name" type="xsd:string" />
+		<xsd:element name="UnitType" type="xsd:integer" />
+		<xsd:element name="Amount" type="xsd:decimal" />
+		<xsd:element name="AmountCurrency" type="xsd:decimal" />
+		<xsd:element name="IsReadyForInvoicing" type="xsd:boolean" />
+		<xsd:element name="CustomerID" type="xsd:integer" />
+		<xsd:element name="CustomerName" type="xsd:string" />
+		<xsd:element name="ProjectID" type="xsd:integer" />
+		<xsd:element name="ProjectName" type="xsd:string" />
+		<xsd:element name="ProjectSubContractCustomerID" type="xsd:integer" />
+		<xsd:element name="CreatedAt" type="xsd:dateTime" />
+		<xsd:element name="CreatedByEmployeeId" type="xsd:integer" />
+		<xsd:element name="CreatedBy" type="xsd:string" />
+		<xsd:element name="LastModifiedAt" type="xsd:dateTime" />
+		<xsd:element name="LastModifiedByEmployeeId" type="xsd:integer" />
+		<xsd:element name="LastModifiedBy" type="xsd:string" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+    <xsd:attribute name="GUID" type="xsd:string" use="required" />
+  </xsd:complexType>
+
+</xsd:schema>
