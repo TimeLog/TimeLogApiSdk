@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="654e7d70-cf0d-41a9-9810-305b697e0194" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="9bac4af9-5bbd-41d6-a002-40a9ad70d1dd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -8,7 +8,9 @@
     <ImportXmlTypes>false</ImportXmlTypes>
     <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
-    <NamespaceMappings />
+    <NamespaceMappings>
+      <NamespaceMapping TargetNamespace="TimeLog.ReportingApi.SDK.Service" ClrNamespace="*" />
+    </NamespaceMappings>
     <CollectionMappings />
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
@@ -19,14 +21,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/tlp/service.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://localhost/tlp/service.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service2.wsdl" MetadataType="Wsdl" ID="3b9759d9-5b8d-431f-8987-70676b86ee84" SourceId="1" SourceUrl="http://localhost/tlp/service.asmx?wsdl" />
-    <MetadataFile FileName="service2.disco" MetadataType="Disco" ID="98c31cfc-1c7a-4e27-9b7a-bf807f266908" SourceId="1" SourceUrl="http://localhost/tlp/service.asmx?disco" />
+    <MetadataFile FileName="service3.wsdl" MetadataType="Wsdl" ID="46371627-0967-495a-9770-5d804f3b99ec" SourceId="1" SourceUrl="https://localhost/tlp/service.asmx?wsdl" />
+    <MetadataFile FileName="service3.disco" MetadataType="Disco" ID="13e39c43-94ef-409e-84be-85b5ab7bc440" SourceId="1" SourceUrl="https://localhost/tlp/service.asmx?disco" />
   </Metadata>
   <Extensions>
-    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
-    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+    <ExtensionFile FileName="configuration911.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration1.svcinfo" Name="configuration.svcinfo" />
   </Extensions>
 </ReferenceGroup>

@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using System.Security;
 
 namespace TimeLog.ReportingApi.SDK
 {

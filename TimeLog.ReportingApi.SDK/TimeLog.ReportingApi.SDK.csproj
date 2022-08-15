@@ -83,6 +83,7 @@
     <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
     <None Include="Service References\ReportingService\service1.wsdl" />
     <None Include="Service References\ReportingService\service2.wsdl" />
+    <None Include="Service References\ReportingService\service3.wsdl" />
     <None Include="Service References\ReportingService\TimeLog.ReportingApi.SDK.ReportingService.GetMileageRawResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -107,6 +108,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ReportingService\service2.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingService\service3.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingService\configuration911.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingService\configuration1.svcinfo" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
