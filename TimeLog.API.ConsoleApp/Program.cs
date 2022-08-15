@@ -19,7 +19,7 @@ try
 
     // Run example classes
     //ConsumeReportingApi.Consume();
-    UpdateTask.Consume();
+    ConsumeWorkUnitReportingApi.Consume();
     // ConsumeTransactionalApi.Consume();
     // ConsumeCsvFile.Consume();
     // GetEmployeesTransactionalApi.Consume();
