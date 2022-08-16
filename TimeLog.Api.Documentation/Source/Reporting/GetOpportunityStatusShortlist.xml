@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<tlp:OpportunityStatus xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/OpportunityStatusShortlist.xsd">
-  <tlp:OpportunityStatus ID="1499">
-    <Name>Cancelled</Name>
-    </tlp:OpportunityStatus>
-</tlp:OpportunityStatus>

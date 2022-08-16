@@ -1,26 +1,26 @@
-﻿namespace TimeLog.Library.Data
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.IO;
-    using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
 
+namespace TimeLog.Library.Data
+{
     /// <summary>
-    /// Reads from a CSV file
+    ///     Reads from a CSV file
     /// </summary>
     /// <remarks>
-    /// Usage:
-    /// var csv = new CsvReader(@"C:\test.csv");
-    /// while (csv.Read())
-    /// {
+    ///     Usage:
+    ///     var csv = new CsvReader(@"C:\test.csv");
+    ///     while (csv.Read())
+    ///     {
     ///     Logger.Debug(csv.LineIndex + " - " + csv.GetString("projectName"));
-    /// }
+    ///     }
     /// </remarks>
     public class CsvReader
     {
         /// <summary>
-        /// Initializes a new instance of the CsvReader class with all settings for default.
+        ///     Initializes a new instance of the CsvReader class with all settings for default.
         /// </summary>
         /// <remarks>Default: Headers, European file encoding (1252) and comma as splitter</remarks>
         /// <param name="csvFilePath">The full path of the CSV file to read</param>
@@ -30,7 +30,7 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of the CsvReader class with optional headers
+        ///     Initializes a new instance of the CsvReader class with optional headers
         /// </summary>
         /// <param name="csvFilePath">The full path of the CSV file to read</param>
         /// <param name="splitter">The splitter character</param>
@@ -40,7 +40,7 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of the CsvReader class with optional headers
+        ///     Initializes a new instance of the CsvReader class with optional headers
         /// </summary>
         /// <param name="csvFilePath">The full path of the CSV file to read</param>
         /// <param name="splitter">The splitter character</param>
@@ -51,7 +51,7 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of the CsvReader class with optional headers
+        ///     Initializes a new instance of the CsvReader class with optional headers
         /// </summary>
         /// <param name="csvFilePath">The full path of the CSV file to read</param>
         /// <param name="splitter">The splitter character</param>
@@ -60,104 +60,105 @@
         /// <param name="culture">Culture for detecting integers, double, dates etc.</param>
         public CsvReader(string csvFilePath, char splitter, bool hasHeaders, Encoding encoding, CultureInfo culture)
         {
-            this.Culture = culture;
-            this.Splitter = splitter;
-            this.HasHeaders = hasHeaders;
-            this.Encoding = encoding;
-            this.CsvFile = new FileInfo(csvFilePath);
-            this.Reset();
+            Culture = culture;
+            Splitter = splitter;
+            HasHeaders = hasHeaders;
+            Encoding = encoding;
+            CsvFile = new FileInfo(csvFilePath);
+            Reset();
 
-            if (!this.CsvFile.Exists)
+            if (!CsvFile.Exists)
             {
                 throw new ArgumentException("CSV file path not found (" + csvFilePath + ")");
             }
 
-            if (this.CsvFile.Length == 0)
+            if (CsvFile.Length == 0)
             {
                 throw new ArgumentException("CSV file empty (" + csvFilePath + ")");
             }
 
-            this.Lines = File.ReadAllLines(this.CsvFile.FullName, this.Encoding);
+            Lines = File.ReadAllLines(CsvFile.FullName, Encoding);
 
             if (hasHeaders)
             {
-                this.Columns = this.Split(this.Lines[0]);
-                this.ColumnsLength = this.Columns.Length;
+                Columns = Split(Lines[0]);
+                ColumnsLength = Columns.Length;
             }
             else
             {
-                this.ColumnsLength = this.Lines[0].Length;
+                ColumnsLength = Lines[0].Length;
             }
         }
 
         /// <summary>
-        /// Gets the culture for detecting values
+        ///     Gets the culture for detecting values
         /// </summary>
-        public CultureInfo Culture { get; private set; }
+        public CultureInfo Culture { get; }
 
         /// <summary>
-        /// Gets the encoding for the file contents
+        ///     Gets the encoding for the file contents
         /// </summary>
-        public Encoding Encoding { get; private set; }
+        public Encoding Encoding { get; }
 
         /// <summary>
-        /// Gets a value indicating whether the file has headers in the first line
+        ///     Gets a value indicating whether the file has headers in the first line
         /// </summary>
-        public bool HasHeaders { get; private set; }
+        public bool HasHeaders { get; }
 
         /// <summary>
-        /// Gets the current line index
+        ///     Gets the current line index
         /// </summary>
         public int LineIndex { get; private set; }
 
         /// <summary>
-        /// Gets the FileInfo instance of the CSV file to read
+        ///     Gets the FileInfo instance of the CSV file to read
         /// </summary>
-        public FileInfo CsvFile { get; private set; }
+        public FileInfo CsvFile { get; }
 
         /// <summary>
-        /// Gets the list of lines available in the CSV file
+        ///     Gets the list of lines available in the CSV file
         /// </summary>
-        public string[] Lines { get; private set; }
+        public string[] Lines { get; }
 
         /// <summary>
-        /// Gets the columns of the current line
+        ///     Gets the columns of the current line
         /// </summary>
         public string[] CurrentLine { get; private set; }
 
         /// <summary>
-        /// Gets a list of the column names, if HasHeaders is true
+        ///     Gets a list of the column names, if HasHeaders is true
         /// </summary>
-        public string[] Columns { get; private set; }
+        public string[] Columns { get; }
 
         /// <summary>
-        /// Gets the number of columns (whether the file has header or not
+        ///     Gets the number of columns (whether the file has header or not
         /// </summary>
-        public int ColumnsLength { get; private set; }
+        public int ColumnsLength { get; }
+
         /// <summary>
-        /// Gets or sets the splitter character, default is comma (',')
+        ///     Gets or sets the splitter character, default is comma (',')
         /// </summary>
         public char Splitter { get; set; }
 
         /// <summary>
-        /// Splits a string into an array based on the splitter char
+        ///     Splits a string into an array based on the splitter char
         /// </summary>
         /// <param name="input">A full line with quotes and splitter chars</param>
         /// <returns>An array of string for each column</returns>
         public string[] Split(string input)
         {
-            bool hasQuote = false;
+            var hasQuote = false;
             var cells = new List<string>();
             var currentCell = string.Empty;
-            int counter = 1;
+            var counter = 1;
 
-            foreach (char character in input)
+            foreach (var character in input)
             {
                 if (character == '"')
                 {
                     hasQuote = !hasQuote;
                 }
-                else if (character == this.Splitter)
+                else if (character == Splitter)
                 {
                     if (hasQuote)
                     {
@@ -190,23 +191,23 @@
         }
 
         /// <summary>
-        /// Moves the line pointer and returns a value indicating whether no more lines exists
+        ///     Moves the line pointer and returns a value indicating whether no more lines exists
         /// </summary>
         /// <returns>A boolean object</returns>
         public bool Read()
         {
-            if (this.LineIndex >= this.Lines.Length)
+            if (LineIndex >= Lines.Length)
             {
                 return false;
             }
 
-            this.CurrentLine = this.Split(this.Lines[this.LineIndex]);
-            this.LineIndex++;
+            CurrentLine = Split(Lines[LineIndex]);
+            LineIndex++;
             return true;
         }
 
         /// <summary>
-        /// Returns a string object from the value of a given column index
+        ///     Returns a string object from the value of a given column index
         /// </summary>
         /// <param name="columnIndex">Index of the column to get data from</param>
         /// <returns>An string object</returns>
@@ -217,21 +218,21 @@
                 throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
-            return this.CurrentLine[columnIndex] ?? string.Empty;
+            return CurrentLine[columnIndex] ?? string.Empty;
         }
 
         /// <summary>
-        /// Returns a string object from the value of a given column name
+        ///     Returns a string object from the value of a given column name
         /// </summary>
         /// <param name="columnName">Name of the column to get data from</param>
         /// <returns>An string object</returns>
         public string GetString(string columnName)
         {
-            return this.GetString(this.GetColumnIndex(columnName));
+            return GetString(GetColumnIndex(columnName));
         }
 
         /// <summary>
-        /// Returns a int object from the value of a given column index
+        ///     Returns a int object from the value of a given column index
         /// </summary>
         /// <param name="columnIndex">Index of the column to get data from</param>
         /// <returns>An integer object</returns>
@@ -242,11 +243,11 @@
                 throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
-            return int.Parse(this.CurrentLine[columnIndex], this.Culture);
+            return int.Parse(CurrentLine[columnIndex], Culture);
         }
 
         /// <summary>
-        /// Returns a TimeSpan object from the value of a given column index
+        ///     Returns a TimeSpan object from the value of a given column index
         /// </summary>
         /// <param name="columnIndex">Index of the column to get data from</param>
         /// <returns>A TimeSpan object</returns>
@@ -257,8 +258,7 @@
                 throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
-            TimeSpan _span;
-            if (TimeSpan.TryParse(this.CurrentLine[columnIndex], out _span))
+            if (TimeSpan.TryParse(CurrentLine[columnIndex], out var _span))
             {
                 return _span;
             }
@@ -267,17 +267,17 @@
         }
 
         /// <summary>
-        /// Returns a integer object from the value of a given column name
+        ///     Returns a integer object from the value of a given column name
         /// </summary>
         /// <param name="columnName">Name of the column to get data from</param>
         /// <returns>An integer object</returns>
         public int GetInteger(string columnName)
         {
-            return this.GetInteger(this.GetColumnIndex(columnName));
+            return GetInteger(GetColumnIndex(columnName));
         }
 
         /// <summary>
-        /// Returns a double object from the value of a given column index
+        ///     Returns a double object from the value of a given column index
         /// </summary>
         /// <param name="columnIndex">Index of the column to get data from</param>
         /// <returns>An double object</returns>
@@ -288,21 +288,21 @@
                 throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
-            return double.Parse(this.CurrentLine[columnIndex], this.Culture);
+            return double.Parse(CurrentLine[columnIndex], Culture);
         }
 
         /// <summary>
-        /// Returns a doubleeger object from the value of a given column name
+        ///     Returns a doubleeger object from the value of a given column name
         /// </summary>
         /// <param name="columnName">Name of the column to get data from</param>
         /// <returns>An double object</returns>
         public double GetDouble(string columnName)
         {
-            return this.GetDouble(this.GetColumnIndex(columnName));
+            return GetDouble(GetColumnIndex(columnName));
         }
 
         /// <summary>
-        /// Returns a boolean object from the value of a given column index
+        ///     Returns a boolean object from the value of a given column index
         /// </summary>
         /// <param name="columnIndex">Index of the column to get data from</param>
         /// <returns>A boolean object</returns>
@@ -313,37 +313,36 @@
                 throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
-            bool result;
-            if (bool.TryParse(this.CurrentLine[columnIndex], out result))
+            if (bool.TryParse(CurrentLine[columnIndex], out var result))
             {
                 return result;
             }
 
-            if (this.CurrentLine[columnIndex] == "1")
+            if (CurrentLine[columnIndex] == "1")
             {
                 return true;
             }
 
-            if (this.CurrentLine[columnIndex] == "0")
+            if (CurrentLine[columnIndex] == "0")
             {
                 return false;
             }
 
-            throw new Exception("String format cannot be converted to boolean (" + this.CurrentLine[columnIndex] + ")");
+            throw new Exception("String format cannot be converted to boolean (" + CurrentLine[columnIndex] + ")");
         }
 
         /// <summary>
-        /// Returns a boolean object from the value of a given column name
+        ///     Returns a boolean object from the value of a given column name
         /// </summary>
         /// <param name="columnName">Name of the column to get data from</param>
         /// <returns>A boolean object</returns>
         public bool GetBoolean(string columnName)
         {
-            return this.GetBoolean(this.GetColumnIndex(columnName));
+            return GetBoolean(GetColumnIndex(columnName));
         }
 
         /// <summary>
-        /// Returns a guid object from the value of a given column index
+        ///     Returns a guid object from the value of a given column index
         /// </summary>
         /// <param name="columnIndex">Index of the column to get data from</param>
         /// <returns>A guid object</returns>
@@ -354,21 +353,21 @@
                 throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
-            return Guid.Parse(this.CurrentLine[columnIndex]);
+            return Guid.Parse(CurrentLine[columnIndex]);
         }
 
         /// <summary>
-        /// Returns a guid object from the value of a given column name
+        ///     Returns a guid object from the value of a given column name
         /// </summary>
         /// <param name="columnName">Name of the column to get data from</param>
         /// <returns>A guid object</returns>
         public Guid GetGuid(string columnName)
         {
-            return this.GetGuid(this.GetColumnIndex(columnName));
+            return GetGuid(GetColumnIndex(columnName));
         }
 
         /// <summary>
-        /// Returns a DateTime object from the value of a given column index
+        ///     Returns a DateTime object from the value of a given column index
         /// </summary>
         /// <param name="columnIndex">Index of the column to get data from</param>
         /// <returns>A DateTime object</returns>
@@ -379,34 +378,34 @@
                 throw new ArgumentException("Index out of bounds (tried: " + columnIndex + " length: " + ColumnsLength);
             }
 
-            return DateTime.Parse(this.CurrentLine[columnIndex], this.Culture);
+            return DateTime.Parse(CurrentLine[columnIndex], Culture);
         }
 
         /// <summary>
-        /// Returns a DateTime object from the value of a given column name
+        ///     Returns a DateTime object from the value of a given column name
         /// </summary>
         /// <param name="columnName">Name of the column to get data from</param>
         /// <returns>A DateTime object</returns>
         public DateTime GetDateTime(string columnName)
         {
-            return this.GetDateTime(this.GetColumnIndex(columnName));
+            return GetDateTime(GetColumnIndex(columnName));
         }
 
         /// <summary>
-        /// Gets the column index for a given column name (requires HasHeaders = true)
+        ///     Gets the column index for a given column name (requires HasHeaders = true)
         /// </summary>
         /// <param name="columnName">Name of a column</param>
         /// <returns>The column index</returns>
         public int GetColumnIndex(string columnName)
         {
-            if (!this.HasHeaders)
+            if (!HasHeaders)
             {
                 throw new FormatException("HasHeaders needs to be true to use this method");
             }
 
-            for (int i = 0; i < this.Columns.Length; i++)
+            for (var i = 0; i < Columns.Length; i++)
             {
-                if (this.Columns[i].ToUpper() == columnName.ToUpper())
+                if (Columns[i].ToUpper() == columnName.ToUpper())
                 {
                     return i;
                 }
@@ -416,11 +415,11 @@
         }
 
         /// <summary>
-        /// Moves the line pointer to the first line
+        ///     Moves the line pointer to the first line
         /// </summary>
         public void Reset()
         {
-            this.LineIndex = this.HasHeaders ? 1 : 0;
+            LineIndex = HasHeaders ? 1 : 0;
         }
     }
 }
