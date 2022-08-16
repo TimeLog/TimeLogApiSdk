@@ -62,5 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ServiceReference\dotnet-svcutil.params.json" />
+    <Content Include="ServiceReference\readme.md" />
   </ItemGroup>
 </Project>
