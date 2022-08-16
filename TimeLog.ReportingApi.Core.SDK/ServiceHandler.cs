@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Globalization;
 using System.ServiceModel;
-using TimeLog.ReportingApi.Core.SDK.ReportingService;
+using ServiceReference;
 
 namespace TimeLog.ReportingApi.Core.SDK
 {
