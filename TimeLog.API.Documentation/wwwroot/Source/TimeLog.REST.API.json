@@ -1823,7 +1823,7 @@
         "tags": [
           "ContractModel"
         ],
-        "summary": "Get all customer types",
+        "summary": "Get all contract models",
         "operationId": "ContractModel_GetAll",
         "consumes": [],
         "produces": [
@@ -1842,7 +1842,7 @@
         ],
         "responses": {
           "200": {
-            "description": "A list of customer types",
+            "description": "A list of contract models",
             "schema": {
               "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ContractModel.ContractModelApiReadModel"
             }
@@ -3918,6 +3918,181 @@
         ]
       }
     },
+    "/v{version}/integration-conflicts/{integrationConflictID}": {
+      "get": {
+        "tags": [
+          "IntegrationConflicts"
+        ],
+        "summary": "Get an integration conflict by the integration conflict identifier",
+        "operationId": "IntegrationConflicts_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "integrationConflictID",
+            "in": "path",
+            "description": "Integration conflict identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "An integration conflict",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.IntegrationConflicts.IntegrationConflictsApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Integration conflict with the identifier does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/integration-conflicts": {
+      "get": {
+        "tags": [
+          "IntegrationConflicts"
+        ],
+        "summary": "Get all integration conflicts by conflict status type",
+        "operationId": "IntegrationConflicts_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "conflictStatusType",
+            "in": "query",
+            "description": "Integration conflict status type (Optional)\r\n            If this parameter is not passed in, it will return all integration conflicts in all statuses.\r\n            (Active = 1, Ignored = 2, Resolved = 3)",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of integration conflicts",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.IntegrationConflicts.IntegrationConflictsApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "IntegrationConflicts"
+        ],
+        "summary": "Create new integration conflict",
+        "operationId": "IntegrationConflicts_Create",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "integrationConflictCreateModel",
+            "in": "body",
+            "description": "Integration conflict create model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.IntegrationConflicts.IntegrationConflictsApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Integration conflict is created successfully",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Integration.Models.IntegrationConflicts.IntegrationConflictsApiCreateModel"
+            }
+          },
+          "500": {
+            "description": "Integration conflict could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/legal-entity": {
       "get": {
         "tags": [
@@ -4388,6 +4563,63 @@
           },
           "500": {
             "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/normal-working-time/assign-to-employee": {
+      "post": {
+        "tags": [
+          "NormalWorkingTime"
+        ],
+        "summary": "Assigns an employee to a new normal working time",
+        "operationId": "NormalWorkingTime_AssignToEmployee",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "assignment",
+            "in": "body",
+            "description": "Normal working time id, user id and start date",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Employees.Models.NormalWorkingTime.AssignNormalWorkingTimeToEmployeeCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Request to AssignToEmployee has failed",
             "schema": {
               "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
@@ -5106,7 +5338,7 @@
         "tags": [
           "Project"
         ],
-        "summary": "Validate new customer",
+        "summary": "Validate new project created from template",
         "operationId": "Project_ValidateNewProject",
         "consumes": [
           "application/json",
@@ -5120,6 +5352,7 @@
           {
             "name": "project",
             "in": "body",
+            "description": "Create project information",
             "required": true,
             "schema": {
               "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Project.ProjectApiCreateModel"
@@ -13190,7 +13423,11 @@
             428,
             429,
             430,
-            431
+            431,
+            432,
+            433,
+            434,
+            435
           ],
           "type": "integer"
         },
@@ -13310,6 +13547,107 @@
           "description": "Gets or sets the industry GUID",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Integration.Models.IntegrationConflicts.IntegrationConflictsApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ConflictID": {
+          "format": "int32",
+          "description": "Gets or sets the conflict identifier.",
+          "type": "integer"
+        },
+        "ID": {
+          "format": "uuid",
+          "description": "Gets or sets the conflict Guid.",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "ConflictDateTime": {
+          "format": "date-time",
+          "description": "Gets or sets the conflict date time.",
+          "type": "string"
+        },
+        "ConflictType": {
+          "format": "int32",
+          "description": "Gets or sets the conflict type.",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "ConflictStatusType": {
+          "format": "int32",
+          "description": "Gets or sets the conflict status type.",
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "type": "integer"
+        },
+        "ResolveOptionTypes": {
+          "description": "Gets or sets the resolve option types available to the conflict status type.",
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "type": "integer"
+          }
+        },
+        "ResolveOptionTypeUsed": {
+          "format": "int32",
+          "description": "Gets or sets the resolve option type used.",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer"
+        },
+        "ResolvedByUserID": {
+          "format": "int32",
+          "description": "Gets or sets the user ID that resolves the conflict.",
+          "type": "integer"
+        },
+        "OriginalErrorCode": {
+          "format": "int32",
+          "description": "Gets or sets the original TimeLog error code.",
+          "type": "integer"
+        },
+        "OriginalErrorMessage": {
+          "description": "Gets or sets the original TimeLog error message.",
+          "type": "string"
+        },
+        "ExternalSystemID": {
+          "format": "int32",
+          "description": "Gets or sets the external system ID where the conflict occurs.",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Integration.Models.IntegrationConflicts.IntegrationConflictsApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "ErrorCode": {
+          "format": "int32",
+          "description": "Gets or sets the TimeLog error code.",
+          "type": "integer"
+        },
+        "ErrorMessage": {
+          "description": "Gets or sets the TimeLog error message.",
+          "type": "string"
+        },
+        "ExternalSystemID": {
+          "format": "int32",
+          "description": "Gets or sets the external system identifier.",
+          "type": "integer"
         }
       }
     },
@@ -13517,6 +13855,8 @@
             60,
             61,
             62,
+            63,
+            64,
             98,
             99
           ],
@@ -13590,6 +13930,8 @@
             60,
             61,
             62,
+            63,
+            64,
             98,
             99
           ],
@@ -13850,6 +14192,23 @@
         "IsDefault": {
           "description": "Gets or sets whether the normal working time is default",
           "type": "boolean"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Employees.Models.NormalWorkingTime.AssignNormalWorkingTimeToEmployeeCreateModel": {
+      "type": "object",
+      "properties": {
+        "UserId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "NormalWorkingTimeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "StartsAt": {
+          "format": "date-time",
+          "type": "string"
         }
       }
     },
@@ -14177,6 +14536,55 @@
         "Customer": {
           "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel",
           "description": "Gets or sets the customer."
+        },
+        "ContactID": {
+          "format": "int32",
+          "description": "Gets or sets the contact identifier.",
+          "type": "integer"
+        },
+        "Description": {
+          "description": "Gets or sets the project description.",
+          "type": "string"
+        },
+        "DepartmentID": {
+          "format": "int32",
+          "description": "Gets or sets the department identifier.",
+          "type": "integer"
+        },
+        "ProjectManagerID": {
+          "format": "int32",
+          "description": "Gets or sets the project manager identifier.",
+          "type": "integer"
+        },
+        "AccountManagerID": {
+          "format": "int32",
+          "description": "Gets or sets the account manager identifier.",
+          "type": "integer"
+        },
+        "PartnerID": {
+          "format": "int32",
+          "description": "Gets or sets the partner identifier.",
+          "type": "integer"
+        },
+        "ProjectTypeID": {
+          "format": "int32",
+          "description": "Gets or sets the project type identifier.",
+          "type": "integer"
+        },
+        "ProjectCategoryID": {
+          "format": "int32",
+          "description": "Gets or sets the project category identifier.",
+          "type": "integer"
+        },
+        "BudgetWorkHours": {
+          "format": "double",
+          "description": "Gets or sets the bugget work hours",
+          "type": "number"
+        },
+        "BudgetWorkAmount": {
+          "format": "double",
+          "description": "Gets or sets the bugget work amount",
+          "type": "number"
         }
       }
     },
@@ -14234,6 +14642,16 @@
           "format": "int32",
           "description": "Gets or sets the project category ID",
           "type": "integer"
+        },
+        "BudgetWorkHours": {
+          "format": "double",
+          "description": "Gets or sets the bugget work hours",
+          "type": "number"
+        },
+        "BudgetWorkAmount": {
+          "format": "double",
+          "description": "Gets or sets the bugget work amount",
+          "type": "number"
         }
       }
     },
@@ -14885,7 +15303,9 @@
             248,
             249,
             250,
-            251
+            251,
+            252,
+            253
           ],
           "type": "integer"
         },
@@ -16053,7 +16473,11 @@
             279,
             280,
             281,
-            282
+            282,
+            283,
+            284,
+            285,
+            286
           ],
           "type": "integer"
         },
@@ -16616,7 +17040,9 @@
             248,
             249,
             250,
-            251
+            251,
+            252,
+            253
           ],
           "type": "integer"
         },
@@ -16795,6 +17221,8 @@
             60,
             61,
             62,
+            63,
+            64,
             98,
             99
           ],
@@ -16868,6 +17296,8 @@
             60,
             61,
             62,
+            63,
+            64,
             98,
             99
           ],
@@ -17741,7 +18171,9 @@
             248,
             249,
             250,
-            251
+            251,
+            252,
+            253
           ],
           "type": "integer"
         },
@@ -18064,7 +18496,9 @@
             248,
             249,
             250,
-            251
+            251,
+            252,
+            253
           ],
           "type": "integer"
         },
@@ -18509,6 +18943,58 @@
       "description": "Service for handling normal working time in TimeLog."
     },
     {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.CurrencyExchangeServiceController[CurrencyExchangeServiceController]",
+      "description": "Service for handling currency exchange service requests in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.HourlyRateController[HourlyRateController]",
+      "description": "Service for handling hourly rates in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.ContractHourlyRateController[ContractHourlyRateController]",
+      "description": "Service for handling contract hourly rate in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.PaymentTermController[PaymentTermController]",
+      "description": "Service for handling payment terms in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.CostPriceController[CostPriceController]",
+      "description": "Service for handling cost price in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.IntegrationConflictsController[IntegrationConflictsController]",
+      "description": "Service for handling integration conflicts in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.ExternalSystemsController[ExternalSystemsController]",
+      "description": "Service for handling external systems in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.BusinessCentralController[BusinessCentralController]",
+      "description": "Service for handling change log from Business Central integration in Timelog"
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.AbsenceCodeController[AbsenceCodeController]",
+      "description": "Service for handling absence code in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.AllowanceLegislationController[AllowanceLegislationController]",
+      "description": "Service for handling allowance legislation in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.SalaryGroupController[SalaryGroupController]",
+      "description": "Service for handling salary group in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.HolidayCalendarController[HolidayCalendarController]",
+      "description": "Service for handling holiday calendar in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.SalaryAccountEmployeePostingController[SalaryAccountEmployeePostingController]",
+      "description": "Service for handling salary account employee posting in TimeLog."
+    },
+    {
       "name": "TimeLog.TLP.Web.WebApi.V1.TimeRegistration.Controllers.TimeRegistrationExternalKeysController[TimeRegistrationExternalKeysController]",
       "description": "Service for handling time registration external keys in TimeLog."
     },
@@ -18577,14 +19063,6 @@
       "description": "Service for handling project in TimeLog."
     },
     {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.ExternalSystemsController[ExternalSystemsController]",
-      "description": "Service for handling external systems in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.BusinessCentralController[BusinessCentralController]",
-      "description": "Service for handling change log from Business Central integration in Timelog"
-    },
-    {
       "name": "TimeLog.TLP.Web.WebApi.V1.Common.Controllers.UnitTypeController[UnitTypeController]",
       "description": "Service for handling unit types in TimeLog."
     },
@@ -18645,26 +19123,6 @@
       "description": "Service for handling employee expense in TimeLog."
     },
     {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.CurrencyExchangeServiceController[CurrencyExchangeServiceController]",
-      "description": "Service for handling currency exchange service requests in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.HourlyRateController[HourlyRateController]",
-      "description": "Service for handling hourly rates in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.ContractHourlyRateController[ContractHourlyRateController]",
-      "description": "Service for handling contract hourly rate in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.PaymentTermController[PaymentTermController]",
-      "description": "Service for handling payment terms in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Invoicing.Controllers.CostPriceController[CostPriceController]",
-      "description": "Service for handling cost price in TimeLog."
-    },
-    {
       "name": "TimeLog.TLP.Web.WebApi.V1.Organization.Controllers.LegalEntityController[LegalEntityController]",
       "description": "Service for handling legal entities in TimeLog."
     },
@@ -18691,26 +19149,6 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Index.Controllers.IndexController[IndexController]",
       "description": "Service for handling index in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.AbsenceCodeController[AbsenceCodeController]",
-      "description": "Service for handling absence code in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.AllowanceLegislationController[AllowanceLegislationController]",
-      "description": "Service for handling allowance legislation in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.SalaryGroupController[SalaryGroupController]",
-      "description": "Service for handling salary group in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.HolidayCalendarController[HolidayCalendarController]",
-      "description": "Service for handling holiday calendar in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.SalaryAccountEmployeePostingController[SalaryAccountEmployeePostingController]",
-      "description": "Service for handling salary account employee posting in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Settings.Controllers.BarrierController[BarrierController]",
