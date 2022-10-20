@@ -2848,6 +2848,21 @@ namespace TimeLog.TransactionalAPI.SDK.CRMService
         DomainServiceRequest = 248,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        CostPriceDrilldown = 249,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RegistrationCurrencyData = 250,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SharedSessionAccessValue = 251,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntegrationConflict = 252,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectSecurity = 253,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,
     }
     

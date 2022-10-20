@@ -1,7 +1,7 @@
 {
   "ExtendedData": {
     "inputs": [
-      "https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc"
+      "https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_8/OrganisationServiceSecure.svc"
     ],
     "collectionTypes": [
       "System.Array",
