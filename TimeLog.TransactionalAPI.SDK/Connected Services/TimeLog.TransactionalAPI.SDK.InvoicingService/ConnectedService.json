@@ -11,7 +11,7 @@
       "*, TimeLog.TransactionalAPI.SDK.InvoicingService"
     ],
     "sync": true,
-    "targetFramework": "netstandard2.1",
+    "targetFramework": "net6.0",
     "typeReuseMode": "All"
   }
 }

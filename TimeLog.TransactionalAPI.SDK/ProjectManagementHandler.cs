@@ -39,10 +39,10 @@ public class ProjectManagementHandler : IDisposable
             if (SettingsHandler.Instance.Url.Contains("https"))
             {
                 return SettingsHandler.Instance.Url +
-                       "WebServices/ProjectManagement/V1_7/ProjectManagementServiceSecure.svc";
+                       "WebServices/ProjectManagement/V1_8/ProjectManagementServiceSecure.svc";
             }
 
-            return SettingsHandler.Instance.Url + "WebServices/ProjectManagement/V1_7/ProjectManagementService.svc";
+            return SettingsHandler.Instance.Url + "WebServices/ProjectManagement/V1_8/ProjectManagementService.svc";
         }
     }
 

@@ -14,370 +14,15 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.Contract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.CustomerInvoiceSettings))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.EmployeeCostRate))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.LegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.Payment))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.PriceGroup))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerInvoiceSettings))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfEmployeeCostRate))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfLegalEntity))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPayment))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPriceGroup))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken))]
-    public partial class APIBase : object
-    {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Contract", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2")]
-    public partial class Contract : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
-    {
-        
-        private int ContractIDField;
-        
-        private string ContractTypeField;
-        
-        private string NameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ContractID
-        {
-            get
-            {
-                return this.ContractIDField;
-            }
-            set
-            {
-                this.ContractIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ContractType
-        {
-            get
-            {
-                return this.ContractTypeField;
-            }
-            set
-            {
-                this.ContractTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerInvoiceSettings", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2")]
-    public partial class CustomerInvoiceSettings : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
-    {
-        
-        private int ContactIdField;
-        
-        private int CustomerIDField;
-        
-        private int CustomerReferenceIDField;
-        
-        private double DiscountPercentageField;
-        
-        private string EanNoField;
-        
-        private int InternalReferenceIDField;
-        
-        private int InvoiceAddressTypeField;
-        
-        private int InvoiceGroupingRuleTemplateIDField;
-        
-        private int InvoiceTemplateIDField;
-        
-        private bool IsCalculateVatField;
-        
-        private bool IsNewField;
-        
-        private bool IsUseEanNoField;
-        
-        private int PaymentTermIDField;
-        
-        private double VatPercentageField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ContactId
-        {
-            get
-            {
-                return this.ContactIdField;
-            }
-            set
-            {
-                this.ContactIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CustomerID
-        {
-            get
-            {
-                return this.CustomerIDField;
-            }
-            set
-            {
-                this.CustomerIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CustomerReferenceID
-        {
-            get
-            {
-                return this.CustomerReferenceIDField;
-            }
-            set
-            {
-                this.CustomerReferenceIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double DiscountPercentage
-        {
-            get
-            {
-                return this.DiscountPercentageField;
-            }
-            set
-            {
-                this.DiscountPercentageField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EanNo
-        {
-            get
-            {
-                return this.EanNoField;
-            }
-            set
-            {
-                this.EanNoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InternalReferenceID
-        {
-            get
-            {
-                return this.InternalReferenceIDField;
-            }
-            set
-            {
-                this.InternalReferenceIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InvoiceAddressType
-        {
-            get
-            {
-                return this.InvoiceAddressTypeField;
-            }
-            set
-            {
-                this.InvoiceAddressTypeField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InvoiceGroupingRuleTemplateID
-        {
-            get
-            {
-                return this.InvoiceGroupingRuleTemplateIDField;
-            }
-            set
-            {
-                this.InvoiceGroupingRuleTemplateIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int InvoiceTemplateID
-        {
-            get
-            {
-                return this.InvoiceTemplateIDField;
-            }
-            set
-            {
-                this.InvoiceTemplateIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsCalculateVat
-        {
-            get
-            {
-                return this.IsCalculateVatField;
-            }
-            set
-            {
-                this.IsCalculateVatField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsNew
-        {
-            get
-            {
-                return this.IsNewField;
-            }
-            set
-            {
-                this.IsNewField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsUseEanNo
-        {
-            get
-            {
-                return this.IsUseEanNoField;
-            }
-            set
-            {
-                this.IsUseEanNoField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PaymentTermID
-        {
-            get
-            {
-                return this.PaymentTermIDField;
-            }
-            set
-            {
-                this.PaymentTermIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double VatPercentage
-        {
-            get
-            {
-                return this.VatPercentageField;
-            }
-            set
-            {
-                this.VatPercentageField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeCostRate", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2")]
-    public partial class EmployeeCostRate : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
-    {
-        
-        private int EmployeeCostRateIdField;
-        
-        private bool IsActiveField;
-        
-        private string NameField;
-        
-        private float RateField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int EmployeeCostRateId
-        {
-            get
-            {
-                return this.EmployeeCostRateIdField;
-            }
-            set
-            {
-                this.EmployeeCostRateIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsActive
-        {
-            get
-            {
-                return this.IsActiveField;
-            }
-            set
-            {
-                this.IsActiveField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public float Rate
-        {
-            get
-            {
-                return this.RateField;
-            }
-            set
-            {
-                this.RateField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HourlyRate", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HourlyRate", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
     public partial class HourlyRate : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
     {
         
+        private double AmountField;
+        
         private int CustomerIDField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRateDetails DetailsField;
         
         private int HourlyRateIDField;
         
@@ -391,7 +36,20 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
         
         private string NameField;
         
-        private double RateField;
+        private string ProductNoField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Amount
+        {
+            get
+            {
+                return this.AmountField;
+            }
+            set
+            {
+                this.AmountField = value;
+            }
+        }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int CustomerID
@@ -403,6 +61,19 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
             set
             {
                 this.CustomerIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRateDetails Details
+        {
+            get
+            {
+                return this.DetailsField;
+            }
+            set
+            {
+                this.DetailsField = value;
             }
         }
         
@@ -485,32 +156,432 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Rate
+        public string ProductNo
         {
             get
             {
-                return this.RateField;
+                return this.ProductNoField;
             }
             set
             {
-                this.RateField = value;
+                this.ProductNoField = value;
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LegalEntity", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2")]
-    public partial class LegalEntity : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfBatchContainerOfHourlyRate))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.BatchContainerOfHourlyRate))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.Request))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerPriceList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.CustomerPriceList))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.Contract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerInvoiceSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.CustomerInvoiceSettings))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfEmployeeCostRate))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.EmployeeCostRate))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfLegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.LegalEntity))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPayment))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.Payment))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPriceGroup))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.PriceGroup))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProductNo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ProductNo))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProduct))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.Product))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfRecurringProjectProductFutureInstance))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.RecurringProjectProductFutureInstance))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate))]
+    public partial class APIBase : object
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfBatchContainerOfHourlyRate", Namespace="http://api.timelog.com")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate))]
+    public partial class ResponseOfBatchContainerOfHourlyRate : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.BatchContainerOfHourlyRate[] ReturnField;
+        
+        private string ReturnTypeDescriptionField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.Request RequestField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseStateField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] MessagesField;
+        
+        private int ErrorCodeField;
+        
+        private bool IsReturnPagedField;
+        
+        private int TotalPageCountField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.BatchContainerOfHourlyRate[] Return
+        {
+            get
+            {
+                return this.ReturnField;
+            }
+            set
+            {
+                this.ReturnField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnTypeDescription
+        {
+            get
+            {
+                return this.ReturnTypeDescriptionField;
+            }
+            set
+            {
+                this.ReturnTypeDescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.Request Request
+        {
+            get
+            {
+                return this.RequestField;
+            }
+            set
+            {
+                this.RequestField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseState
+        {
+            get
+            {
+                return this.ResponseStateField;
+            }
+            set
+            {
+                this.ResponseStateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] Messages
+        {
+            get
+            {
+                return this.MessagesField;
+            }
+            set
+            {
+                this.MessagesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ErrorCode
+        {
+            get
+            {
+                return this.ErrorCodeField;
+            }
+            set
+            {
+                this.ErrorCodeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool IsReturnPaged
+        {
+            get
+            {
+                return this.IsReturnPagedField;
+            }
+            set
+            {
+                this.IsReturnPagedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int TotalPageCount
+        {
+            get
+            {
+                return this.TotalPageCountField;
+            }
+            set
+            {
+                this.TotalPageCountField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BatchContainerOfHourlyRate", Namespace="http://www.timelog.com/api/tlp/v1_2")]
+    public partial class BatchContainerOfHourlyRate : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate ItemField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus StatusField;
+        
+        private string MessageField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate Item
+        {
+            get
+            {
+                return this.ItemField;
+            }
+            set
+            {
+                this.ItemField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus Status
+        {
+            get
+            {
+                return this.StatusField;
+            }
+            set
+            {
+                this.StatusField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string Message
+        {
+            get
+            {
+                return this.MessageField;
+            }
+            set
+            {
+                this.MessageField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://api.timelog.com")]
+    public partial class Request : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.RequestParameter[] ParametersField;
+        
+        private string ServiceClassField;
+        
+        private string MethodNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.RequestParameter[] Parameters
+        {
+            get
+            {
+                return this.ParametersField;
+            }
+            set
+            {
+                this.ParametersField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ServiceClass
+        {
+            get
+            {
+                return this.ServiceClassField;
+            }
+            set
+            {
+                this.ServiceClassField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public string MethodName
+        {
+            get
+            {
+                return this.MethodNameField;
+            }
+            set
+            {
+                this.MethodNameField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BatchResponseOfHourlyRate", Namespace="http://www.timelog.com/api/tlp/v1_2")]
+    public partial class BatchResponseOfHourlyRate : TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfBatchContainerOfHourlyRate
+    {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfCustomerPriceList", Namespace="http://api.timelog.com")]
+    public partial class ResponseOfCustomerPriceList : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.CustomerPriceList[] ReturnField;
+        
+        private string ReturnTypeDescriptionField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.Request RequestField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseStateField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] MessagesField;
+        
+        private int ErrorCodeField;
+        
+        private bool IsReturnPagedField;
+        
+        private int TotalPageCountField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.CustomerPriceList[] Return
+        {
+            get
+            {
+                return this.ReturnField;
+            }
+            set
+            {
+                this.ReturnField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnTypeDescription
+        {
+            get
+            {
+                return this.ReturnTypeDescriptionField;
+            }
+            set
+            {
+                this.ReturnTypeDescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.Request Request
+        {
+            get
+            {
+                return this.RequestField;
+            }
+            set
+            {
+                this.RequestField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseState
+        {
+            get
+            {
+                return this.ResponseStateField;
+            }
+            set
+            {
+                this.ResponseStateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] Messages
+        {
+            get
+            {
+                return this.MessagesField;
+            }
+            set
+            {
+                this.MessagesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ErrorCode
+        {
+            get
+            {
+                return this.ErrorCodeField;
+            }
+            set
+            {
+                this.ErrorCodeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool IsReturnPaged
+        {
+            get
+            {
+                return this.IsReturnPagedField;
+            }
+            set
+            {
+                this.IsReturnPagedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int TotalPageCount
+        {
+            get
+            {
+                return this.TotalPageCountField;
+            }
+            set
+            {
+                this.TotalPageCountField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerPriceList", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class CustomerPriceList : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
     {
         
         private bool IsActiveField;
         
         private bool IsSystemField;
         
-        private System.Guid LegalEntityIDField;
-        
         private string NameField;
+        
+        private int PriceListIDField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool IsActive
@@ -539,79 +610,6 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid LegalEntityID
-        {
-            get
-            {
-                return this.LegalEntityIDField;
-            }
-            set
-            {
-                this.LegalEntityIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Payment", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2")]
-    public partial class Payment : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
-    {
-        
-        private double AmountField;
-        
-        private System.DateTime InvoiceDateField;
-        
-        private string NameField;
-        
-        private int PaymentIDField;
-        
-        private int ProjectIDField;
-        
-        private System.Nullable<int> ProjectSubContractIDField;
-        
-        private double QuantityField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Amount
-        {
-            get
-            {
-                return this.AmountField;
-            }
-            set
-            {
-                this.AmountField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime InvoiceDate
-        {
-            get
-            {
-                return this.InvoiceDateField;
-            }
-            set
-            {
-                this.InvoiceDateField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Name
         {
             get
@@ -625,166 +623,15 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PaymentID
+        public int PriceListID
         {
             get
             {
-                return this.PaymentIDField;
+                return this.PriceListIDField;
             }
             set
             {
-                this.PaymentIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProjectID
-        {
-            get
-            {
-                return this.ProjectIDField;
-            }
-            set
-            {
-                this.ProjectIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ProjectSubContractID
-        {
-            get
-            {
-                return this.ProjectSubContractIDField;
-            }
-            set
-            {
-                this.ProjectSubContractIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public double Quantity
-        {
-            get
-            {
-                return this.QuantityField;
-            }
-            set
-            {
-                this.QuantityField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PriceGroup", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_2")]
-    public partial class PriceGroup : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
-    {
-        
-        private string CurrencyNameField;
-        
-        private System.Guid IDField;
-        
-        private string ISOField;
-        
-        private bool IsActiveField;
-        
-        private bool IsDefaultField;
-        
-        private System.Guid LegalEntityIDField;
-        
-        private string NameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CurrencyName
-        {
-            get
-            {
-                return this.CurrencyNameField;
-            }
-            set
-            {
-                this.CurrencyNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid ID
-        {
-            get
-            {
-                return this.IDField;
-            }
-            set
-            {
-                this.IDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ISO
-        {
-            get
-            {
-                return this.ISOField;
-            }
-            set
-            {
-                this.ISOField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsActive
-        {
-            get
-            {
-                return this.IsActiveField;
-            }
-            set
-            {
-                this.IsActiveField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsDefault
-        {
-            get
-            {
-                return this.IsDefaultField;
-            }
-            set
-            {
-                this.IsDefaultField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid LegalEntityID
-        {
-            get
-            {
-                return this.LegalEntityIDField;
-            }
-            set
-            {
-                this.LegalEntityIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
+                this.PriceListIDField = value;
             }
         }
     }
@@ -918,52 +765,82 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://api.timelog.com")]
-    public partial class Request : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    [System.Runtime.Serialization.DataContractAttribute(Name="Contract", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class Contract : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
     {
         
-        private TimeLog.TransactionalAPI.SDK.FinancialService.RequestParameter[] ParametersField;
+        private int ContractIDField;
         
-        private string ServiceClassField;
+        private string ContractModelField;
         
-        private string MethodNameField;
+        private int ContractTypeIDField;
+        
+        private string NameField;
+        
+        private System.Nullable<System.DateTime> OrderDateField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalAPI.SDK.FinancialService.RequestParameter[] Parameters
+        public int ContractID
         {
             get
             {
-                return this.ParametersField;
+                return this.ContractIDField;
             }
             set
             {
-                this.ParametersField = value;
+                this.ContractIDField = value;
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ServiceClass
+        public string ContractModel
         {
             get
             {
-                return this.ServiceClassField;
+                return this.ContractModelField;
             }
             set
             {
-                this.ServiceClassField = value;
+                this.ContractModelField = value;
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public string MethodName
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ContractTypeID
         {
             get
             {
-                return this.MethodNameField;
+                return this.ContractTypeIDField;
             }
             set
             {
-                this.MethodNameField = value;
+                this.ContractTypeIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> OrderDate
+        {
+            get
+            {
+                return this.OrderDateField;
+            }
+            set
+            {
+                this.OrderDateField = value;
             }
         }
     }
@@ -1097,6 +974,223 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerInvoiceSettings", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class CustomerInvoiceSettings : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private int ContactIdField;
+        
+        private int CustomerIDField;
+        
+        private int CustomerReferenceIdField;
+        
+        private double DiscountPercentageField;
+        
+        private string EanNoField;
+        
+        private int InternalReferenceIdField;
+        
+        private int InvoiceAddressTypeField;
+        
+        private int InvoiceGroupingRuleTemplateIDField;
+        
+        private int InvoiceTemplateIdField;
+        
+        private bool IsCalculateVatField;
+        
+        private bool IsNewField;
+        
+        private bool IsUseEanNoField;
+        
+        private int PaymentTermIdField;
+        
+        private double VatPercentageField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ContactId
+        {
+            get
+            {
+                return this.ContactIdField;
+            }
+            set
+            {
+                this.ContactIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustomerID
+        {
+            get
+            {
+                return this.CustomerIDField;
+            }
+            set
+            {
+                this.CustomerIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustomerReferenceId
+        {
+            get
+            {
+                return this.CustomerReferenceIdField;
+            }
+            set
+            {
+                this.CustomerReferenceIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double DiscountPercentage
+        {
+            get
+            {
+                return this.DiscountPercentageField;
+            }
+            set
+            {
+                this.DiscountPercentageField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EanNo
+        {
+            get
+            {
+                return this.EanNoField;
+            }
+            set
+            {
+                this.EanNoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InternalReferenceId
+        {
+            get
+            {
+                return this.InternalReferenceIdField;
+            }
+            set
+            {
+                this.InternalReferenceIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InvoiceAddressType
+        {
+            get
+            {
+                return this.InvoiceAddressTypeField;
+            }
+            set
+            {
+                this.InvoiceAddressTypeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InvoiceGroupingRuleTemplateID
+        {
+            get
+            {
+                return this.InvoiceGroupingRuleTemplateIDField;
+            }
+            set
+            {
+                this.InvoiceGroupingRuleTemplateIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int InvoiceTemplateId
+        {
+            get
+            {
+                return this.InvoiceTemplateIdField;
+            }
+            set
+            {
+                this.InvoiceTemplateIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsCalculateVat
+        {
+            get
+            {
+                return this.IsCalculateVatField;
+            }
+            set
+            {
+                this.IsCalculateVatField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsNew
+        {
+            get
+            {
+                return this.IsNewField;
+            }
+            set
+            {
+                this.IsNewField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsUseEanNo
+        {
+            get
+            {
+                return this.IsUseEanNoField;
+            }
+            set
+            {
+                this.IsUseEanNoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentTermId
+        {
+            get
+            {
+                return this.PaymentTermIdField;
+            }
+            set
+            {
+                this.PaymentTermIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double VatPercentage
+        {
+            get
+            {
+                return this.VatPercentageField;
+            }
+            set
+            {
+                this.VatPercentageField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfEmployeeCostRate", Namespace="http://api.timelog.com")]
     public partial class ResponseOfEmployeeCostRate : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
     {
@@ -1218,6 +1312,73 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
             set
             {
                 this.TotalPageCountField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeCostRate", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class EmployeeCostRate : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private int EmployeeCostRateIdField;
+        
+        private bool IsActiveField;
+        
+        private string NameField;
+        
+        private float RateField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int EmployeeCostRateId
+        {
+            get
+            {
+                return this.EmployeeCostRateIdField;
+            }
+            set
+            {
+                this.EmployeeCostRateIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsActive
+        {
+            get
+            {
+                return this.IsActiveField;
+            }
+            set
+            {
+                this.IsActiveField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float Rate
+        {
+            get
+            {
+                return this.RateField;
+            }
+            set
+            {
+                this.RateField = value;
             }
         }
     }
@@ -1478,6 +1639,88 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LegalEntity", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class LegalEntity : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private bool IsActiveField;
+        
+        private bool IsSystemField;
+        
+        private System.Guid LegalEntityGUIDField;
+        
+        private int LegalEntityIDField;
+        
+        private string NameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsActive
+        {
+            get
+            {
+                return this.IsActiveField;
+            }
+            set
+            {
+                this.IsActiveField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsSystem
+        {
+            get
+            {
+                return this.IsSystemField;
+            }
+            set
+            {
+                this.IsSystemField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid LegalEntityGUID
+        {
+            get
+            {
+                return this.LegalEntityGUIDField;
+            }
+            set
+            {
+                this.LegalEntityGUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LegalEntityID
+        {
+            get
+            {
+                return this.LegalEntityIDField;
+            }
+            set
+            {
+                this.LegalEntityIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfPayment", Namespace="http://api.timelog.com")]
     public partial class ResponseOfPayment : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
     {
@@ -1599,6 +1842,118 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
             set
             {
                 this.TotalPageCountField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Payment", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class Payment : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private double AmountField;
+        
+        private System.DateTime InvoiceDateField;
+        
+        private string NameField;
+        
+        private int PaymentIDField;
+        
+        private int ProjectIDField;
+        
+        private System.Nullable<int> ProjectSubContractIDField;
+        
+        private double QuantityField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Amount
+        {
+            get
+            {
+                return this.AmountField;
+            }
+            set
+            {
+                this.AmountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime InvoiceDate
+        {
+            get
+            {
+                return this.InvoiceDateField;
+            }
+            set
+            {
+                this.InvoiceDateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentID
+        {
+            get
+            {
+                return this.PaymentIDField;
+            }
+            set
+            {
+                this.PaymentIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProjectID
+        {
+            get
+            {
+                return this.ProjectIDField;
+            }
+            set
+            {
+                this.ProjectIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ProjectSubContractID
+        {
+            get
+            {
+                return this.ProjectSubContractIDField;
+            }
+            set
+            {
+                this.ProjectSubContractIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Quantity
+        {
+            get
+            {
+                return this.QuantityField;
+            }
+            set
+            {
+                this.QuantityField = value;
             }
         }
     }
@@ -1732,6 +2087,1015 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PriceGroup", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class PriceGroup : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private string CurrencyNameField;
+        
+        private string ISOField;
+        
+        private bool IsActiveField;
+        
+        private bool IsDefaultField;
+        
+        private System.Guid LegalEntityIDField;
+        
+        private string NameField;
+        
+        private System.Guid PriceGroupGUIDField;
+        
+        private int PriceGroupIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CurrencyName
+        {
+            get
+            {
+                return this.CurrencyNameField;
+            }
+            set
+            {
+                this.CurrencyNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ISO
+        {
+            get
+            {
+                return this.ISOField;
+            }
+            set
+            {
+                this.ISOField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsActive
+        {
+            get
+            {
+                return this.IsActiveField;
+            }
+            set
+            {
+                this.IsActiveField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsDefault
+        {
+            get
+            {
+                return this.IsDefaultField;
+            }
+            set
+            {
+                this.IsDefaultField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid LegalEntityID
+        {
+            get
+            {
+                return this.LegalEntityIDField;
+            }
+            set
+            {
+                this.LegalEntityIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid PriceGroupGUID
+        {
+            get
+            {
+                return this.PriceGroupGUIDField;
+            }
+            set
+            {
+                this.PriceGroupGUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PriceGroupID
+        {
+            get
+            {
+                return this.PriceGroupIDField;
+            }
+            set
+            {
+                this.PriceGroupIDField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfProductNo", Namespace="http://api.timelog.com")]
+    public partial class ResponseOfProductNo : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.ProductNo[] ReturnField;
+        
+        private string ReturnTypeDescriptionField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.Request RequestField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseStateField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] MessagesField;
+        
+        private int ErrorCodeField;
+        
+        private bool IsReturnPagedField;
+        
+        private int TotalPageCountField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ProductNo[] Return
+        {
+            get
+            {
+                return this.ReturnField;
+            }
+            set
+            {
+                this.ReturnField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnTypeDescription
+        {
+            get
+            {
+                return this.ReturnTypeDescriptionField;
+            }
+            set
+            {
+                this.ReturnTypeDescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.Request Request
+        {
+            get
+            {
+                return this.RequestField;
+            }
+            set
+            {
+                this.RequestField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseState
+        {
+            get
+            {
+                return this.ResponseStateField;
+            }
+            set
+            {
+                this.ResponseStateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] Messages
+        {
+            get
+            {
+                return this.MessagesField;
+            }
+            set
+            {
+                this.MessagesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ErrorCode
+        {
+            get
+            {
+                return this.ErrorCodeField;
+            }
+            set
+            {
+                this.ErrorCodeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool IsReturnPaged
+        {
+            get
+            {
+                return this.IsReturnPagedField;
+            }
+            set
+            {
+                this.IsReturnPagedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int TotalPageCount
+        {
+            get
+            {
+                return this.TotalPageCountField;
+            }
+            set
+            {
+                this.TotalPageCountField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductNo", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class ProductNo : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private string DescriptionField;
+        
+        private bool IsActiveField;
+        
+        private int LegalEntityIDField;
+        
+        private string NameField;
+        
+        private string ProductNumberField;
+        
+        private int ProductNumberIDField;
+        
+        private bool UseVATField;
+        
+        private double VATField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description
+        {
+            get
+            {
+                return this.DescriptionField;
+            }
+            set
+            {
+                this.DescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsActive
+        {
+            get
+            {
+                return this.IsActiveField;
+            }
+            set
+            {
+                this.IsActiveField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LegalEntityID
+        {
+            get
+            {
+                return this.LegalEntityIDField;
+            }
+            set
+            {
+                this.LegalEntityIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductNumber
+        {
+            get
+            {
+                return this.ProductNumberField;
+            }
+            set
+            {
+                this.ProductNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductNumberID
+        {
+            get
+            {
+                return this.ProductNumberIDField;
+            }
+            set
+            {
+                this.ProductNumberIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool UseVAT
+        {
+            get
+            {
+                return this.UseVATField;
+            }
+            set
+            {
+                this.UseVATField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double VAT
+        {
+            get
+            {
+                return this.VATField;
+            }
+            set
+            {
+                this.VATField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfProduct", Namespace="http://api.timelog.com")]
+    public partial class ResponseOfProduct : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.Product[] ReturnField;
+        
+        private string ReturnTypeDescriptionField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.Request RequestField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseStateField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] MessagesField;
+        
+        private int ErrorCodeField;
+        
+        private bool IsReturnPagedField;
+        
+        private int TotalPageCountField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.Product[] Return
+        {
+            get
+            {
+                return this.ReturnField;
+            }
+            set
+            {
+                this.ReturnField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnTypeDescription
+        {
+            get
+            {
+                return this.ReturnTypeDescriptionField;
+            }
+            set
+            {
+                this.ReturnTypeDescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.Request Request
+        {
+            get
+            {
+                return this.RequestField;
+            }
+            set
+            {
+                this.RequestField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseState
+        {
+            get
+            {
+                return this.ResponseStateField;
+            }
+            set
+            {
+                this.ResponseStateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] Messages
+        {
+            get
+            {
+                return this.MessagesField;
+            }
+            set
+            {
+                this.MessagesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ErrorCode
+        {
+            get
+            {
+                return this.ErrorCodeField;
+            }
+            set
+            {
+                this.ErrorCodeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool IsReturnPaged
+        {
+            get
+            {
+                return this.IsReturnPagedField;
+            }
+            set
+            {
+                this.IsReturnPagedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int TotalPageCount
+        {
+            get
+            {
+                return this.TotalPageCountField;
+            }
+            set
+            {
+                this.TotalPageCountField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class Product : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private int CostCurrencyIDField;
+        
+        private string CostCurrencyISOField;
+        
+        private double CostPerUnitField;
+        
+        private System.Guid GUIDField;
+        
+        private bool IsActiveField;
+        
+        private int LegalEntityIDField;
+        
+        private string NameField;
+        
+        private int ProductIDField;
+        
+        private string ProductNumberField;
+        
+        private double SalesPricePerUnitField;
+        
+        private int SupplierIDField;
+        
+        private int UnitTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CostCurrencyID
+        {
+            get
+            {
+                return this.CostCurrencyIDField;
+            }
+            set
+            {
+                this.CostCurrencyIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CostCurrencyISO
+        {
+            get
+            {
+                return this.CostCurrencyISOField;
+            }
+            set
+            {
+                this.CostCurrencyISOField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CostPerUnit
+        {
+            get
+            {
+                return this.CostPerUnitField;
+            }
+            set
+            {
+                this.CostPerUnitField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid GUID
+        {
+            get
+            {
+                return this.GUIDField;
+            }
+            set
+            {
+                this.GUIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsActive
+        {
+            get
+            {
+                return this.IsActiveField;
+            }
+            set
+            {
+                this.IsActiveField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LegalEntityID
+        {
+            get
+            {
+                return this.LegalEntityIDField;
+            }
+            set
+            {
+                this.LegalEntityIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductID
+        {
+            get
+            {
+                return this.ProductIDField;
+            }
+            set
+            {
+                this.ProductIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductNumber
+        {
+            get
+            {
+                return this.ProductNumberField;
+            }
+            set
+            {
+                this.ProductNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SalesPricePerUnit
+        {
+            get
+            {
+                return this.SalesPricePerUnitField;
+            }
+            set
+            {
+                this.SalesPricePerUnitField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SupplierID
+        {
+            get
+            {
+                return this.SupplierIDField;
+            }
+            set
+            {
+                this.SupplierIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UnitType
+        {
+            get
+            {
+                return this.UnitTypeField;
+            }
+            set
+            {
+                this.UnitTypeField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfRecurringProjectProductFutureInstance", Namespace="http://api.timelog.com")]
+    public partial class ResponseOfRecurringProjectProductFutureInstance : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.RecurringProjectProductFutureInstance[] ReturnField;
+        
+        private string ReturnTypeDescriptionField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.Request RequestField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseStateField;
+        
+        private TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] MessagesField;
+        
+        private int ErrorCodeField;
+        
+        private bool IsReturnPagedField;
+        
+        private int TotalPageCountField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.RecurringProjectProductFutureInstance[] Return
+        {
+            get
+            {
+                return this.ReturnField;
+            }
+            set
+            {
+                this.ReturnField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnTypeDescription
+        {
+            get
+            {
+                return this.ReturnTypeDescriptionField;
+            }
+            set
+            {
+                this.ReturnTypeDescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.Request Request
+        {
+            get
+            {
+                return this.RequestField;
+            }
+            set
+            {
+                this.RequestField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ExecutionStatus ResponseState
+        {
+            get
+            {
+                return this.ResponseStateField;
+            }
+            set
+            {
+                this.ResponseStateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public TimeLog.TransactionalAPI.SDK.FinancialService.APIMessage[] Messages
+        {
+            get
+            {
+                return this.MessagesField;
+            }
+            set
+            {
+                this.MessagesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int ErrorCode
+        {
+            get
+            {
+                return this.ErrorCodeField;
+            }
+            set
+            {
+                this.ErrorCodeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public bool IsReturnPaged
+        {
+            get
+            {
+                return this.IsReturnPagedField;
+            }
+            set
+            {
+                this.IsReturnPagedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public int TotalPageCount
+        {
+            get
+            {
+                return this.TotalPageCountField;
+            }
+            set
+            {
+                this.TotalPageCountField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RecurringProjectProductFutureInstance", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class RecurringProjectProductFutureInstance : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
+    {
+        
+        private double CostPerUnitField;
+        
+        private string CurrencyOfCostField;
+        
+        private string CurrencyOfSalesPriceField;
+        
+        private double DiscountField;
+        
+        private System.DateTime InvoiceDateField;
+        
+        private bool IsInvoicedField;
+        
+        private string NameField;
+        
+        private double PricePerUnitField;
+        
+        private string ProductNumberField;
+        
+        private int QuantityField;
+        
+        private double TotalCostAmountField;
+        
+        private double TotalSalesAmountField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CostPerUnit
+        {
+            get
+            {
+                return this.CostPerUnitField;
+            }
+            set
+            {
+                this.CostPerUnitField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CurrencyOfCost
+        {
+            get
+            {
+                return this.CurrencyOfCostField;
+            }
+            set
+            {
+                this.CurrencyOfCostField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CurrencyOfSalesPrice
+        {
+            get
+            {
+                return this.CurrencyOfSalesPriceField;
+            }
+            set
+            {
+                this.CurrencyOfSalesPriceField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Discount
+        {
+            get
+            {
+                return this.DiscountField;
+            }
+            set
+            {
+                this.DiscountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime InvoiceDate
+        {
+            get
+            {
+                return this.InvoiceDateField;
+            }
+            set
+            {
+                this.InvoiceDateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsInvoiced
+        {
+            get
+            {
+                return this.IsInvoicedField;
+            }
+            set
+            {
+                this.IsInvoicedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double PricePerUnit
+        {
+            get
+            {
+                return this.PricePerUnitField;
+            }
+            set
+            {
+                this.PricePerUnitField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductNumber
+        {
+            get
+            {
+                return this.ProductNumberField;
+            }
+            set
+            {
+                this.ProductNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Quantity
+        {
+            get
+            {
+                return this.QuantityField;
+            }
+            set
+            {
+                this.QuantityField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double TotalCostAmount
+        {
+            get
+            {
+                return this.TotalCostAmountField;
+            }
+            set
+            {
+                this.TotalCostAmountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double TotalSalesAmount
+        {
+            get
+            {
+                return this.TotalSalesAmountField;
+            }
+            set
+            {
+                this.TotalSalesAmountField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SecurityToken", Namespace="http://www.timelog.com/api/tlp/v1_3")]
     public partial class SecurityToken : TimeLog.TransactionalAPI.SDK.FinancialService.APIBase
     {
@@ -1778,6 +3142,88 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
             set
             {
                 this.HashField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HourlyRateDetails", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Financial.V1_4")]
+    public partial class HourlyRateDetails : object
+    {
+        
+        private string CurrencyISOField;
+        
+        private string CurrencyNameField;
+        
+        private int LegalEntityIdField;
+        
+        private int PriceGroupIdField;
+        
+        private int ServiceIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CurrencyISO
+        {
+            get
+            {
+                return this.CurrencyISOField;
+            }
+            set
+            {
+                this.CurrencyISOField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CurrencyName
+        {
+            get
+            {
+                return this.CurrencyNameField;
+            }
+            set
+            {
+                this.CurrencyNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LegalEntityId
+        {
+            get
+            {
+                return this.LegalEntityIdField;
+            }
+            set
+            {
+                this.LegalEntityIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PriceGroupId
+        {
+            get
+            {
+                return this.PriceGroupIdField;
+            }
+            set
+            {
+                this.PriceGroupIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ServiceId
+        {
+            get
+            {
+                return this.ServiceIdField;
+            }
+            set
+            {
+                this.ServiceIdField = value;
             }
         }
     }
@@ -1905,96 +3351,166 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_2", ConfigurationName="TimeLog.TransactionalAPI.SDK.FinancialService.FinancialService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_4", ConfigurationName="TimeLog.TransactionalAPI.SDK.FinancialService.FinancialService")]
     public interface FinancialService
     {
         
-        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_2)
+        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_4)
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         TimeLog.TransactionalAPI.SDK.FinancialService.IsAliveResponse IsAlive(TimeLog.TransactionalAPI.SDK.FinancialService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalAPI.SDK.FinancialService.IsAliveRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetContractList", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetContractListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateCustomerHourlyRate", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateCustomerHourlyRateResp" +
+            "onse")]
+        TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate CreateCustomerHourlyRate(int legalEntityId, int customerId, string name, TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate[] hourlyRates, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateCustomerHourlyRate", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateCustomerHourlyRateResp" +
+            "onse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate> CreateCustomerHourlyRateAsync(int legalEntityId, int customerId, string name, TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate[] hourlyRates, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateCustomerPriceList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateCustomerPriceListRespo" +
+            "nse")]
+        TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerPriceList CreateCustomerPriceList(int legalEntityId, int customerId, int[] priceGroupIds, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateCustomerPriceList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateCustomerPriceListRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerPriceList> CreateCustomerPriceListAsync(int legalEntityId, int customerId, int[] priceGroupIds, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateStandardHourlyRate", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateStandardHourlyRateResp" +
+            "onse")]
+        TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate CreateStandardHourlyRate(int legalEntityId, string name, TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate[] hourlyRates, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateStandardHourlyRate", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/CreateStandardHourlyRateResp" +
+            "onse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate> CreateStandardHourlyRateAsync(int legalEntityId, string name, TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate[] hourlyRates, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetContractList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetContractListResponse")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfContract GetContractList(int projectID, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetContractList", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetContractListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetContractList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetContractListResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfContract> GetContractListAsync(int projectID, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetCustomerInvoiceSettings", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetCustomerInvoiceSettingsRe" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetCustomerInvoiceSettings", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetCustomerInvoiceSettingsRe" +
             "sponse")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerInvoiceSettings GetCustomerInvoiceSettings(int customerId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetCustomerInvoiceSettings", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetCustomerInvoiceSettingsRe" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetCustomerInvoiceSettings", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetCustomerInvoiceSettingsRe" +
             "sponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerInvoiceSettings> GetCustomerInvoiceSettingsAsync(int customerId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetEmployeeCostRates", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetEmployeeCostRatesResponse" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetEmployeeCostRates", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetEmployeeCostRatesResponse" +
             "")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfEmployeeCostRate GetEmployeeCostRates(TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetEmployeeCostRates", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetEmployeeCostRatesResponse" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetEmployeeCostRates", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetEmployeeCostRatesResponse" +
             "")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfEmployeeCostRate> GetEmployeeCostRatesAsync(TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetHourlyRates", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetHourlyRatesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetHourlyRates", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetHourlyRatesResponse")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate GetHourlyRates(string currencyAbb, int legalEntityId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetHourlyRates", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetHourlyRatesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetHourlyRates", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetHourlyRatesResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate> GetHourlyRatesAsync(string currencyAbb, int legalEntityId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntities", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntities", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesResponse")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfLegalEntity GetLegalEntities(TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntities", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntities", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfLegalEntity> GetLegalEntitiesAsync(TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesByCurrency", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesByCurrencyRe" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesByCurrency", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesByCurrencyRe" +
             "sponse")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfLegalEntity GetLegalEntitiesByCurrency(string currencyABB, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesByCurrency", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesByCurrencyRe" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesByCurrency", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesByCurrencyRe" +
             "sponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfLegalEntity> GetLegalEntitiesByCurrencyAsync(string currencyABB, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesByName", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesByNameRespon" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesByName", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesByNameRespon" +
             "se")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfLegalEntity GetLegalEntitiesByName(string name, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesByName", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetLegalEntitiesByNameRespon" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesByName", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetLegalEntitiesByNameRespon" +
             "se")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfLegalEntity> GetLegalEntitiesByNameAsync(string name, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetPaymentList", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetPaymentListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetNewCustomerHourlyRates", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetNewCustomerHourlyRatesRes" +
+            "ponse")]
+        TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate GetNewCustomerHourlyRates(int legalEntityId, int customerId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetNewCustomerHourlyRates", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetNewCustomerHourlyRatesRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate> GetNewCustomerHourlyRatesAsync(int legalEntityId, int customerId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetNewStandardHourlyRates", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetNewStandardHourlyRatesRes" +
+            "ponse")]
+        TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate GetNewStandardHourlyRates(int legalEntityId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetNewStandardHourlyRates", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetNewStandardHourlyRatesRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate> GetNewStandardHourlyRatesAsync(int legalEntityId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetPaymentList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetPaymentListResponse")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPayment GetPaymentList(int contractID, System.DateTime startDate, System.DateTime endDate, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetPaymentList", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetPaymentListResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetPaymentList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetPaymentListResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPayment> GetPaymentListAsync(int contractID, System.DateTime startDate, System.DateTime endDate, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetPriceGroups", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetPriceGroupsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetPriceGroups", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetPriceGroupsResponse")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPriceGroup GetPriceGroups(System.Guid legalEntityID, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetPriceGroups", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/GetPriceGroupsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetPriceGroups", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetPriceGroupsResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPriceGroup> GetPriceGroupsAsync(System.Guid legalEntityID, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/UpdateCustomerInvoiceSetting" +
-            "s", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/UpdateCustomerInvoiceSetting" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetProductNumbers", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetProductNumbersResponse")]
+        TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProductNo GetProductNumbers(int legalEntityId, bool isActive, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetProductNumbers", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetProductNumbersResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProductNo> GetProductNumbersAsync(int legalEntityId, bool isActive, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdateCustomerInvoiceSetting" +
+            "s", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdateCustomerInvoiceSetting" +
             "sResponse")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerInvoiceSettings UpdateCustomerInvoiceSettings(TimeLog.TransactionalAPI.SDK.FinancialService.CustomerInvoiceSettings invoiceSettings, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/UpdateCustomerInvoiceSetting" +
-            "s", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/UpdateCustomerInvoiceSetting" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdateCustomerInvoiceSetting" +
+            "s", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdateCustomerInvoiceSetting" +
             "sResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerInvoiceSettings> UpdateCustomerInvoiceSettingsAsync(TimeLog.TransactionalAPI.SDK.FinancialService.CustomerInvoiceSettings invoiceSettings, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/UpdatePaymentQuantity", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/UpdatePaymentQuantityRespons" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdatePaymentQuantity", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdatePaymentQuantityRespons" +
             "e")]
         TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPayment UpdatePaymentQuantity(TimeLog.TransactionalAPI.SDK.FinancialService.Payment payment, int source, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_2/FinancialService/UpdatePaymentQuantity", ReplyAction="http://www.timelog.com/api/tlp/v1_2/FinancialService/UpdatePaymentQuantityRespons" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdatePaymentQuantity", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdatePaymentQuantityRespons" +
             "e")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPayment> UpdatePaymentQuantityAsync(TimeLog.TransactionalAPI.SDK.FinancialService.Payment payment, int source, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdateProductCostPriceAndDel" +
+            "egate", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdateProductCostPriceAndDel" +
+            "egateResponse")]
+        TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProduct UpdateProductCostPriceAndDelegate(TimeLog.TransactionalAPI.SDK.FinancialService.Product product, bool updateRelatedProductSale, System.DateTime changeDate, bool updateLockedRegistrations, int source, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdateProductCostPriceAndDel" +
+            "egate", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/UpdateProductCostPriceAndDel" +
+            "egateResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProduct> UpdateProductCostPriceAndDelegateAsync(TimeLog.TransactionalAPI.SDK.FinancialService.Product product, bool updateRelatedProductSale, System.DateTime changeDate, bool updateLockedRegistrations, int source, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetRecurringProductSaleList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetRecurringProductSaleListR" +
+            "esponse")]
+        TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfRecurringProjectProductFutureInstance GetRecurringProductSaleList(int projectID, System.DateTime startDate, System.DateTime endDate, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetRecurringProductSaleList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetRecurringProductSaleListR" +
+            "esponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfRecurringProjectProductFutureInstance> GetRecurringProductSaleListAsync(int projectID, System.DateTime startDate, System.DateTime endDate, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetProductList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetProductListResponse")]
+        TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProduct GetProductList(int status, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetProductList", ReplyAction="http://www.timelog.com/api/tlp/v1_4/FinancialService/GetProductListResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProduct> GetProductListAsync(int status, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2104,6 +3620,36 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
             return ((TimeLog.TransactionalAPI.SDK.FinancialService.FinancialService)(this)).IsAliveAsync(inValue);
         }
         
+        public TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate CreateCustomerHourlyRate(int legalEntityId, int customerId, string name, TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate[] hourlyRates, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.CreateCustomerHourlyRate(legalEntityId, customerId, name, hourlyRates, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate> CreateCustomerHourlyRateAsync(int legalEntityId, int customerId, string name, TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate[] hourlyRates, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.CreateCustomerHourlyRateAsync(legalEntityId, customerId, name, hourlyRates, token);
+        }
+        
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerPriceList CreateCustomerPriceList(int legalEntityId, int customerId, int[] priceGroupIds, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.CreateCustomerPriceList(legalEntityId, customerId, priceGroupIds, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerPriceList> CreateCustomerPriceListAsync(int legalEntityId, int customerId, int[] priceGroupIds, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.CreateCustomerPriceListAsync(legalEntityId, customerId, priceGroupIds, token);
+        }
+        
+        public TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate CreateStandardHourlyRate(int legalEntityId, string name, TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate[] hourlyRates, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.CreateStandardHourlyRate(legalEntityId, name, hourlyRates, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.BatchResponseOfHourlyRate> CreateStandardHourlyRateAsync(int legalEntityId, string name, TimeLog.TransactionalAPI.SDK.FinancialService.HourlyRate[] hourlyRates, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.CreateStandardHourlyRateAsync(legalEntityId, name, hourlyRates, token);
+        }
+        
         public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfContract GetContractList(int projectID, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
         {
             return base.Channel.GetContractList(projectID, token);
@@ -2174,6 +3720,26 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
             return base.Channel.GetLegalEntitiesByNameAsync(name, token);
         }
         
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate GetNewCustomerHourlyRates(int legalEntityId, int customerId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetNewCustomerHourlyRates(legalEntityId, customerId, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate> GetNewCustomerHourlyRatesAsync(int legalEntityId, int customerId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetNewCustomerHourlyRatesAsync(legalEntityId, customerId, token);
+        }
+        
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate GetNewStandardHourlyRates(int legalEntityId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetNewStandardHourlyRates(legalEntityId, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfHourlyRate> GetNewStandardHourlyRatesAsync(int legalEntityId, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetNewStandardHourlyRatesAsync(legalEntityId, token);
+        }
+        
         public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPayment GetPaymentList(int contractID, System.DateTime startDate, System.DateTime endDate, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
         {
             return base.Channel.GetPaymentList(contractID, startDate, endDate, token);
@@ -2194,6 +3760,16 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
             return base.Channel.GetPriceGroupsAsync(legalEntityID, token);
         }
         
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProductNo GetProductNumbers(int legalEntityId, bool isActive, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetProductNumbers(legalEntityId, isActive, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProductNo> GetProductNumbersAsync(int legalEntityId, bool isActive, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetProductNumbersAsync(legalEntityId, isActive, token);
+        }
+        
         public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfCustomerInvoiceSettings UpdateCustomerInvoiceSettings(TimeLog.TransactionalAPI.SDK.FinancialService.CustomerInvoiceSettings invoiceSettings, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
         {
             return base.Channel.UpdateCustomerInvoiceSettings(invoiceSettings, token);
@@ -2212,6 +3788,36 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
         public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfPayment> UpdatePaymentQuantityAsync(TimeLog.TransactionalAPI.SDK.FinancialService.Payment payment, int source, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
         {
             return base.Channel.UpdatePaymentQuantityAsync(payment, source, token);
+        }
+        
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProduct UpdateProductCostPriceAndDelegate(TimeLog.TransactionalAPI.SDK.FinancialService.Product product, bool updateRelatedProductSale, System.DateTime changeDate, bool updateLockedRegistrations, int source, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.UpdateProductCostPriceAndDelegate(product, updateRelatedProductSale, changeDate, updateLockedRegistrations, source, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProduct> UpdateProductCostPriceAndDelegateAsync(TimeLog.TransactionalAPI.SDK.FinancialService.Product product, bool updateRelatedProductSale, System.DateTime changeDate, bool updateLockedRegistrations, int source, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.UpdateProductCostPriceAndDelegateAsync(product, updateRelatedProductSale, changeDate, updateLockedRegistrations, source, token);
+        }
+        
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfRecurringProjectProductFutureInstance GetRecurringProductSaleList(int projectID, System.DateTime startDate, System.DateTime endDate, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetRecurringProductSaleList(projectID, startDate, endDate, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfRecurringProjectProductFutureInstance> GetRecurringProductSaleListAsync(int projectID, System.DateTime startDate, System.DateTime endDate, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetRecurringProductSaleListAsync(projectID, startDate, endDate, token);
+        }
+        
+        public TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProduct GetProductList(int status, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetProductList(status, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.FinancialService.ResponseOfProduct> GetProductListAsync(int status, TimeLog.TransactionalAPI.SDK.FinancialService.SecurityToken token)
+        {
+            return base.Channel.GetProductListAsync(status, token);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
@@ -2243,7 +3849,7 @@ namespace TimeLog.TransactionalAPI.SDK.FinancialService
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_FinancialService))
             {
-                return new System.ServiceModel.EndpointAddress("https://app8.timelog.com/610patchreference/WebServices/Financial/V1_2/FinancialSe" +
+                return new System.ServiceModel.EndpointAddress("https://app8.timelog.com/610patchreference/WebServices/Financial/V1_4/FinancialSe" +
                         "rviceSecure.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));

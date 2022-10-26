@@ -15,27 +15,28 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBaseExtended))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.CustomField))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Task))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.CustomerHeader))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectHeader))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.TaskType))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Allocation))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.EmployeeHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfTask))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfAllocation))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfWorkUnit))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.WorkUnit))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.TaskHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Request))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfProject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfProjectApiReadModel))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfTask))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfTask))]
@@ -58,18 +59,18 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BatchContainerOfProject", Namespace="http://www.timelog.com/api/tlp/v1_2")]
-    public partial class BatchContainerOfProject : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBase
+    [System.Runtime.Serialization.DataContractAttribute(Name="BatchContainerOfProjectApiReadModel", Namespace="http://www.timelog.com/api/tlp/v1_2")]
+    public partial class BatchContainerOfProjectApiReadModel : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBase
     {
         
-        private TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project ItemField;
+        private TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel ItemField;
         
         private TimeLog.TransactionalAPI.SDK.ProjectManagementService.ExecutionStatus StatusField;
         
         private string MessageField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project Item
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel Item
         {
             get
             {
@@ -112,9 +113,10 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBaseExtended", Namespace="http://api.timelog.com")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ExternalSystemContext))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Task))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Allocation))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel))]
     public partial class APIBaseExtended : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBase
     {
         
@@ -199,9 +201,9 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomField", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBase))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProject[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProjectApiReadModel[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfTask))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfTask[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfTask))]
@@ -211,7 +213,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfWorkUnit))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfWorkUnit[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfWorkUnit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBaseExtended))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ExternalSystemContext[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ExternalSystemContext))]
@@ -221,7 +223,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIMessage[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIMessage))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfProject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfTask))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfAllocation))]
@@ -231,7 +233,8 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlat))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlatExternal))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectTaskFlat))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectHeader[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectHeader))]
@@ -452,6 +455,478 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
             set
             {
                 this.ExternalIDField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Project", Namespace="http://www.timelog.com/api/tlp/v1_8")]
+    public partial class Project : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBaseExtended
+    {
+        
+        private System.Guid IDField;
+        
+        private int ProjectIDField;
+        
+        private int CustomerIDField;
+        
+        private string NameField;
+        
+        private string NoField;
+        
+        private string DescriptionField;
+        
+        private string LinkField;
+        
+        private System.DateTime StartDateField;
+        
+        private System.DateTime EndDateField;
+        
+        private bool IsInternalProjectField;
+        
+        private int ProjectManagerIDField;
+        
+        private int AccountManagerIDField;
+        
+        private int DepartmentHandledByIDField;
+        
+        private int DepartmentOrderedByIDField;
+        
+        private int TypeIDField;
+        
+        private int CategoryIDField;
+        
+        private int StageIDField;
+        
+        private int LegalEntityIDField;
+        
+        private int PriceGroupIDField;
+        
+        private int CurrencyIDField;
+        
+        private int MainContractIDField;
+        
+        private double BudgetWorkHoursFixedPriceProjectField;
+        
+        private double BudgetWorkHoursFixedPriceTasksField;
+        
+        private double BudgetWorkHoursTimeAndMaterialField;
+        
+        private double BudgetWorkAmountFixedPriceProjectField;
+        
+        private double BudgetWorkAmountFixedPriceTasksField;
+        
+        private double BudgetWorkAmountTimeAndMaterialField;
+        
+        private double BudgetAmountExpensesField;
+        
+        private double BudgetAmountTravelExpensesField;
+        
+        private int ProjectContactIDField;
+        
+        private string PurchaseOrderNumberField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid ID
+        {
+            get
+            {
+                return this.IDField;
+            }
+            set
+            {
+                this.IDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProjectID
+        {
+            get
+            {
+                return this.ProjectIDField;
+            }
+            set
+            {
+                this.ProjectIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int CustomerID
+        {
+            get
+            {
+                return this.CustomerIDField;
+            }
+            set
+            {
+                this.CustomerIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public string No
+        {
+            get
+            {
+                return this.NoField;
+            }
+            set
+            {
+                this.NoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public string Description
+        {
+            get
+            {
+                return this.DescriptionField;
+            }
+            set
+            {
+                this.DescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        public string Link
+        {
+            get
+            {
+                return this.LinkField;
+            }
+            set
+            {
+                this.LinkField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        public System.DateTime StartDate
+        {
+            get
+            {
+                return this.StartDateField;
+            }
+            set
+            {
+                this.StartDateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
+        public System.DateTime EndDate
+        {
+            get
+            {
+                return this.EndDateField;
+            }
+            set
+            {
+                this.EndDateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
+        public bool IsInternalProject
+        {
+            get
+            {
+                return this.IsInternalProjectField;
+            }
+            set
+            {
+                this.IsInternalProjectField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        public int ProjectManagerID
+        {
+            get
+            {
+                return this.ProjectManagerIDField;
+            }
+            set
+            {
+                this.ProjectManagerIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        public int AccountManagerID
+        {
+            get
+            {
+                return this.AccountManagerIDField;
+            }
+            set
+            {
+                this.AccountManagerIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public int DepartmentHandledByID
+        {
+            get
+            {
+                return this.DepartmentHandledByIDField;
+            }
+            set
+            {
+                this.DepartmentHandledByIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        public int DepartmentOrderedByID
+        {
+            get
+            {
+                return this.DepartmentOrderedByIDField;
+            }
+            set
+            {
+                this.DepartmentOrderedByIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
+        public int TypeID
+        {
+            get
+            {
+                return this.TypeIDField;
+            }
+            set
+            {
+                this.TypeIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        public int CategoryID
+        {
+            get
+            {
+                return this.CategoryIDField;
+            }
+            set
+            {
+                this.CategoryIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
+        public int StageID
+        {
+            get
+            {
+                return this.StageIDField;
+            }
+            set
+            {
+                this.StageIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
+        public int LegalEntityID
+        {
+            get
+            {
+                return this.LegalEntityIDField;
+            }
+            set
+            {
+                this.LegalEntityIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
+        public int PriceGroupID
+        {
+            get
+            {
+                return this.PriceGroupIDField;
+            }
+            set
+            {
+                this.PriceGroupIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
+        public int CurrencyID
+        {
+            get
+            {
+                return this.CurrencyIDField;
+            }
+            set
+            {
+                this.CurrencyIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
+        public int MainContractID
+        {
+            get
+            {
+                return this.MainContractIDField;
+            }
+            set
+            {
+                this.MainContractIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
+        public double BudgetWorkHoursFixedPriceProject
+        {
+            get
+            {
+                return this.BudgetWorkHoursFixedPriceProjectField;
+            }
+            set
+            {
+                this.BudgetWorkHoursFixedPriceProjectField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
+        public double BudgetWorkHoursFixedPriceTasks
+        {
+            get
+            {
+                return this.BudgetWorkHoursFixedPriceTasksField;
+            }
+            set
+            {
+                this.BudgetWorkHoursFixedPriceTasksField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
+        public double BudgetWorkHoursTimeAndMaterial
+        {
+            get
+            {
+                return this.BudgetWorkHoursTimeAndMaterialField;
+            }
+            set
+            {
+                this.BudgetWorkHoursTimeAndMaterialField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
+        public double BudgetWorkAmountFixedPriceProject
+        {
+            get
+            {
+                return this.BudgetWorkAmountFixedPriceProjectField;
+            }
+            set
+            {
+                this.BudgetWorkAmountFixedPriceProjectField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
+        public double BudgetWorkAmountFixedPriceTasks
+        {
+            get
+            {
+                return this.BudgetWorkAmountFixedPriceTasksField;
+            }
+            set
+            {
+                this.BudgetWorkAmountFixedPriceTasksField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
+        public double BudgetWorkAmountTimeAndMaterial
+        {
+            get
+            {
+                return this.BudgetWorkAmountTimeAndMaterialField;
+            }
+            set
+            {
+                this.BudgetWorkAmountTimeAndMaterialField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
+        public double BudgetAmountExpenses
+        {
+            get
+            {
+                return this.BudgetAmountExpensesField;
+            }
+            set
+            {
+                this.BudgetAmountExpensesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
+        public double BudgetAmountTravelExpenses
+        {
+            get
+            {
+                return this.BudgetAmountTravelExpensesField;
+            }
+            set
+            {
+                this.BudgetAmountTravelExpensesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
+        public int ProjectContactID
+        {
+            get
+            {
+                return this.ProjectContactIDField;
+            }
+            set
+            {
+                this.ProjectContactIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=30)]
+        public string PurchaseOrderNumber
+        {
+            get
+            {
+                return this.PurchaseOrderNumberField;
+            }
+            set
+            {
+                this.PurchaseOrderNumberField = value;
             }
         }
     }
@@ -1265,8 +1740,8 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Project", Namespace="http://www.timelog.com/api/tlp/v1_7")]
-    public partial class Project : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBaseExtended
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProjectApiReadModel", Namespace="http://www.timelog.com/api/tlp/v1_8")]
+    public partial class ProjectApiReadModel : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBaseExtended
     {
         
         private System.Guid IDField;
@@ -2237,11 +2712,11 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfProject", Namespace="http://api.timelog.com")]
-    public partial class ResponseOfProject : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBase
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfProjectApiReadModel", Namespace="http://api.timelog.com")]
+    public partial class ResponseOfProjectApiReadModel : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBase
     {
         
-        private TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel[] ReturnField;
         
         private string ReturnTypeDescriptionField;
         
@@ -2258,7 +2733,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project[] Return
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel[] Return
         {
             get
             {
@@ -2543,12 +3018,12 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfBatchContainerOfProject", Namespace="http://api.timelog.com")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject))]
-    public partial class ResponseOfBatchContainerOfProject : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBase
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfBatchContainerOfProjectApiReadModel", Namespace="http://api.timelog.com")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel))]
+    public partial class ResponseOfBatchContainerOfProjectApiReadModel : TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBase
     {
         
-        private TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProject[] ReturnField;
+        private TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProjectApiReadModel[] ReturnField;
         
         private string ReturnTypeDescriptionField;
         
@@ -2565,7 +3040,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
         private int TotalPageCountField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProject[] Return
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProjectApiReadModel[] Return
         {
             get
             {
@@ -2671,8 +3146,8 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BatchResponseOfProject", Namespace="http://www.timelog.com/api/tlp/v1_2")]
-    public partial class BatchResponseOfProject : TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfProject
+    [System.Runtime.Serialization.DataContractAttribute(Name="BatchResponseOfProjectApiReadModel", Namespace="http://www.timelog.com/api/tlp/v1_2")]
+    public partial class BatchResponseOfProjectApiReadModel : TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfProjectApiReadModel
     {
     }
     
@@ -6628,6 +7103,21 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
         DomainServiceRequest = 248,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        CostPriceDrilldown = 249,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RegistrationCurrencyData = 250,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SharedSessionAccessValue = 251,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        IntegrationConflict = 252,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectSecurity = 253,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,
     }
     
@@ -6636,9 +7126,9 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.Runtime.Serialization.DataContractAttribute(Name="ValueOption", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBase))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProject[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProjectApiReadModel[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfTask))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfTask[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfTask))]
@@ -6648,7 +7138,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfWorkUnit))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfWorkUnit[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchContainerOfWorkUnit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIBaseExtended))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ExternalSystemContext[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ExternalSystemContext))]
@@ -6658,7 +7148,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIMessage[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.APIMessage))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfProject))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfBatchContainerOfTask))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfAllocation))]
@@ -6668,7 +7158,8 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlat))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlatExternal))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectTaskFlat))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel[]))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectApiReadModel))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectHeader[]))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectHeader))]
@@ -6815,11 +7306,11 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_7", ConfigurationName="TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectManagementService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_8", ConfigurationName="TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectManagementService")]
     public interface ProjectManagementService
     {
         
-        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_7)
+        // CODEGEN: Generating message contract since the wrapper namespace (http://www.timelog.com/api/tlp/v1_3) of message IsAliveRequest does not match the default value (http://www.timelog.com/api/tlp/v1_8)
         [System.ServiceModel.OperationContractAttribute(Action="IsAliveRequest", ReplyAction="IsAliveReponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.IsAliveResponse IsAlive(TimeLog.TransactionalAPI.SDK.ProjectManagementService.IsAliveRequest request);
         
@@ -6827,10 +7318,10 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.IsAliveResponse> IsAliveAsync(TimeLog.TransactionalAPI.SDK.ProjectManagementService.IsAliveRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetProjectByExternalKeyRequest", ReplyAction="GetProjectByExternalKeyReponse")]
-        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject GetProjectByExternalKey(string key, string systemName, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel GetProjectByExternalKey(string key, string systemName, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetProjectByExternalKeyRequest", ReplyAction="GetProjectByExternalKeyReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> GetProjectByExternalKeyAsync(string key, string systemName, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> GetProjectByExternalKeyAsync(string key, string systemName, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetProjectsRequest", ReplyAction="GetProjectsReponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectHeader GetProjects(int customerID, int projectManagerID, bool includeInactiveProjects, int statusID, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
@@ -6845,13 +7336,13 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectHeader> GetProjectsByCustomerAsync(System.Guid customerGuid, int projectStatusID, bool includeInactiveProjects, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreateProjectRequest", ReplyAction="CreateProjectReponse")]
-        TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject CreateProject(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel CreateProject(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreateProjectRequest", ReplyAction="CreateProjectReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject> CreateProjectAsync(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel> CreateProjectAsync(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreateProjectFromTemplateRequest", ReplyAction="CreateProjectFromTemplateReponse")]
-        TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject CreateProjectFromTemplate(
+        TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel CreateProjectFromTemplate(
                     string projectTemplateName, 
                     string projectName, 
                     string projectNo, 
@@ -6871,7 +7362,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
                     TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreateProjectFromTemplateRequest", ReplyAction="CreateProjectFromTemplateReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject> CreateProjectFromTemplateAsync(
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel> CreateProjectFromTemplateAsync(
                     string projectTemplateName, 
                     string projectName, 
                     string projectNo, 
@@ -6891,7 +7382,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
                     TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreateProjectFromTemplateByCustomerIDRequest", ReplyAction="CreateProjectFromTemplateByCustomerIDReponse")]
-        TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject CreateProjectFromTemplateByCustomerID(
+        TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel CreateProjectFromTemplateByCustomerID(
                     string projectTemplateName, 
                     string projectName, 
                     string projectNo, 
@@ -6911,7 +7402,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
                     TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="CreateProjectFromTemplateByCustomerIDRequest", ReplyAction="CreateProjectFromTemplateByCustomerIDReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject> CreateProjectFromTemplateByCustomerIDAsync(
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel> CreateProjectFromTemplateByCustomerIDAsync(
                     string projectTemplateName, 
                     string projectName, 
                     string projectNo, 
@@ -6931,22 +7422,22 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
                     TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdateProjectRequest", ReplyAction="UpdateProjectReponse")]
-        TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject UpdateProject(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel UpdateProject(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="UpdateProjectRequest", ReplyAction="UpdateProjectReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject> UpdateProjectAsync(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel> UpdateProjectAsync(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="DeleteProjectRequest", ReplyAction="DeleteProjectReponse")]
-        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject DeleteProject(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel DeleteProject(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="DeleteProjectRequest", ReplyAction="DeleteProjectReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> DeleteProjectAsync(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> DeleteProjectAsync(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="ProjectChangeStatusRequest", ReplyAction="ProjectChangeStatusReponse")]
-        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject ProjectChangeStatus(System.Guid projectGuid, int targetStatus, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel ProjectChangeStatus(System.Guid projectGuid, int targetStatus, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="ProjectChangeStatusRequest", ReplyAction="ProjectChangeStatusReponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> ProjectChangeStatusAsync(System.Guid projectGuid, int targetStatus, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> ProjectChangeStatusAsync(System.Guid projectGuid, int targetStatus, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
         [System.ServiceModel.OperationContractAttribute(Action="GetTaskByExternalKeyRequest", ReplyAction="GetTaskByExternalKeyReponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask GetTaskByExternalKey(string key, string systemName, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
@@ -6984,35 +7475,35 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
         [System.ServiceModel.OperationContractAttribute(Action="ChangeTaskStatusRequest", ReplyAction="ChangeTaskStatusReponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask> ChangeTaskStatusAsync(System.Guid taskGuid, int targetStatus, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeTaskContract", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeTaskContractRe" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/ChangeTaskContract", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/ChangeTaskContractRe" +
             "sponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask ChangeTaskContract(System.Guid taskGuid, int projectSubContractId, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeTaskContract", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeTaskContractRe" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/ChangeTaskContract", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/ChangeTaskContractRe" +
             "sponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask> ChangeTaskContractAsync(System.Guid taskGuid, int projectSubContractId, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskById", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTaskById", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTaskByIdResponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask GetTaskById(System.Guid taskGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskById", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTaskById", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTaskByIdResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask> GetTaskByIdAsync(System.Guid taskGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksByProjectId", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksByProjectIdR" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTasksByProjectId", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTasksByProjectIdR" +
             "esponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask GetTasksByProjectId(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksByProjectId", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksByProjectIdR" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTasksByProjectId", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTasksByProjectIdR" +
             "esponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask> GetTasksByProjectIdAsync(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/MoveTaskUnderParentT" +
-            "ask", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/MoveTaskUnderParentT" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/MoveTaskUnderParentT" +
+            "ask", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/MoveTaskUnderParentT" +
             "askResponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask MoveTaskUnderParentTask(int parentTaskID, TimeLog.TransactionalAPI.SDK.ProjectManagementService.Task task, bool changeToParentContract, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/MoveTaskUnderParentT" +
-            "ask", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/MoveTaskUnderParentT" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/MoveTaskUnderParentT" +
+            "ask", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/MoveTaskUnderParentT" +
             "askResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask> MoveTaskUnderParentTaskAsync(int parentTaskID, TimeLog.TransactionalAPI.SDK.ProjectManagementService.Task task, bool changeToParentContract, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
@@ -7106,49 +7597,49 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
         [System.ServiceModel.OperationContractAttribute(Action="GetTaskByTaskNoRequest", ReplyAction="GetTaskByTaskNoTextReponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask> GetTaskByTaskNoAsync(string taskNo, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkPagedResponse" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkPagedResponse" +
             "")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlat GetWorkPaged(string initials, System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkPagedResponse" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkPagedResponse" +
             "")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlat> GetWorkPagedAsync(string initials, System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkPagedWithExte" +
-            "rnalIds", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkPagedWithExte" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkPagedWithExte" +
+            "rnalIds", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkPagedWithExte" +
             "rnalIdsResponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlatExternal GetWorkPagedWithExternalIds(string systemName, int approvalLevel, string initials, System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkPagedWithExte" +
-            "rnalIds", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkPagedWithExte" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkPagedWithExte" +
+            "rnalIds", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkPagedWithExte" +
             "rnalIdsResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlatExternal> GetWorkPagedWithExternalIdsAsync(string systemName, int approvalLevel, string initials, System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkChangesPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkChangesPagedR" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkChangesPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkChangesPagedR" +
             "esponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlat GetWorkChangesPaged(string initials, System.DateTime registrationStartDate, System.DateTime registrationEndDate, System.DateTime changeStartDate, System.DateTime changeEndDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkChangesPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkChangesPagedR" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkChangesPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkChangesPagedR" +
             "esponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlat> GetWorkChangesPagedAsync(string initials, System.DateTime registrationStartDate, System.DateTime registrationEndDate, System.DateTime changeStartDate, System.DateTime changeEndDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectTasksPaged" +
-            "", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectTasksPaged" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectTasksPaged" +
+            "", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectTasksPaged" +
             "Response")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectTaskFlat GetProjectTasksPaged(System.Guid projectGuid, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectTasksPaged" +
-            "", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectTasksPaged" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectTasksPaged" +
+            "", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectTasksPaged" +
             "Response")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectTaskFlat> GetProjectTasksPagedAsync(System.Guid projectGuid, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkChangeLogPage" +
-            "d", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkChangeLogPage" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkChangeLogPage" +
+            "d", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkChangeLogPage" +
             "dResponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlat GetWorkChangeLogPaged(System.DateTime startDate, System.DateTime endDate, bool includeCreates, bool includeUpdates, bool includeDeletes, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkChangeLogPage" +
-            "d", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetWorkChangeLogPage" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkChangeLogPage" +
+            "d", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetWorkChangeLogPage" +
             "dResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfWorkUnitFlat> GetWorkChangeLogPagedAsync(System.DateTime startDate, System.DateTime endDate, bool includeCreates, bool includeUpdates, bool includeDeletes, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
@@ -7158,47 +7649,47 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
         [System.ServiceModel.OperationContractAttribute(Action="GetTasksBySearchTextWithoutFinancialRequest", ReplyAction="GetTasksBySearchTextWithoutFinancialReponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask> GetTasksBySearchTextWithoutFinancialAsync(string critiria, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectsModifiedI" +
-            "nPeriodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectsModifiedI" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectsModifiedI" +
+            "nPeriodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectsModifiedI" +
             "nPeriodPagedResponse")]
-        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject GetProjectsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel GetProjectsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectsModifiedI" +
-            "nPeriodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectsModifiedI" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectsModifiedI" +
+            "nPeriodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectsModifiedI" +
             "nPeriodPagedResponse")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> GetProjectsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> GetProjectsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksModifiedInPe" +
-            "riodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksModifiedInPe" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTasksModifiedInPe" +
+            "riodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTasksModifiedInPe" +
             "riodPagedResponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask GetTasksModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksModifiedInPe" +
-            "riodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTasksModifiedInPe" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTasksModifiedInPe" +
+            "riodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTasksModifiedInPe" +
             "riodPagedResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask> GetTasksModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskByID", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskByIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTaskByID", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTaskByIDResponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask GetTaskByID(int taskID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskByID", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetTaskByIDResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTaskByID", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetTaskByIDResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfTask> GetTaskByIDAsync(int taskID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectByID", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectByIDRespon" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectByID", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectByIDRespon" +
             "se")]
-        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject GetProjectByID(int projectID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel GetProjectByID(int projectID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectByID", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/GetProjectByIDRespon" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectByID", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/GetProjectByIDRespon" +
             "se")]
-        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> GetProjectByIDAsync(int projectID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> GetProjectByIDAsync(int projectID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeAllocationsHou" +
-            "rlyRate", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeAllocationsHou" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/ChangeAllocationsHou" +
+            "rlyRate", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/ChangeAllocationsHou" +
             "rlyRateResponse")]
         TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfAllocation ChangeAllocationsHourlyRate(int allocationId, int contractHourlyRateID, System.DateTime startDate, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeAllocationsHou" +
-            "rlyRate", ReplyAction="http://www.timelog.com/api/tlp/v1_7/ProjectManagementService/ChangeAllocationsHou" +
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/ChangeAllocationsHou" +
+            "rlyRate", ReplyAction="http://www.timelog.com/api/tlp/v1_8/ProjectManagementService/ChangeAllocationsHou" +
             "rlyRateResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfAllocation> ChangeAllocationsHourlyRateAsync(int allocationId, int contractHourlyRateID, System.DateTime startDate, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token);
     }
@@ -7310,12 +7801,12 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
             return ((TimeLog.TransactionalAPI.SDK.ProjectManagementService.ProjectManagementService)(this)).IsAliveAsync(inValue);
         }
         
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject GetProjectByExternalKey(string key, string systemName, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel GetProjectByExternalKey(string key, string systemName, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.GetProjectByExternalKey(key, systemName, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> GetProjectByExternalKeyAsync(string key, string systemName, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> GetProjectByExternalKeyAsync(string key, string systemName, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.GetProjectByExternalKeyAsync(key, systemName, token);
         }
@@ -7340,17 +7831,17 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
             return base.Channel.GetProjectsByCustomerAsync(customerGuid, projectStatusID, includeInactiveProjects, token);
         }
         
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject CreateProject(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel CreateProject(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.CreateProject(project, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject> CreateProjectAsync(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel> CreateProjectAsync(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.CreateProjectAsync(project, token);
         }
         
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject CreateProjectFromTemplate(
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel CreateProjectFromTemplate(
                     string projectTemplateName, 
                     string projectName, 
                     string projectNo, 
@@ -7372,7 +7863,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
             return base.Channel.CreateProjectFromTemplate(projectTemplateName, projectName, projectNo, customerName, legalEntityID, priceGroupID, projectManagerInitials, accountManagerInitials, handledByDepartmentNo, orderedByDepartmentNo, useProjectNumberSeries, useTasksAndMileStonesFromTemplate, useResourceGroupFromTemplate, useAllocationsFromTemplate, usePaymentPlanFromTemplate, source, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject> CreateProjectFromTemplateAsync(
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel> CreateProjectFromTemplateAsync(
                     string projectTemplateName, 
                     string projectName, 
                     string projectNo, 
@@ -7394,7 +7885,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
             return base.Channel.CreateProjectFromTemplateAsync(projectTemplateName, projectName, projectNo, customerName, legalEntityID, priceGroupID, projectManagerInitials, accountManagerInitials, handledByDepartmentNo, orderedByDepartmentNo, useProjectNumberSeries, useTasksAndMileStonesFromTemplate, useResourceGroupFromTemplate, useAllocationsFromTemplate, usePaymentPlanFromTemplate, source, token);
         }
         
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject CreateProjectFromTemplateByCustomerID(
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel CreateProjectFromTemplateByCustomerID(
                     string projectTemplateName, 
                     string projectName, 
                     string projectNo, 
@@ -7416,7 +7907,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
             return base.Channel.CreateProjectFromTemplateByCustomerID(projectTemplateName, projectName, projectNo, customerID, legalEntityID, priceGroupID, projectManagerInitials, accountManagerInitials, handledByDepartmentNo, orderedByDepartmentNo, useProjectNumberSeries, useTasksAndMileStonesFromTemplate, useResourceGroupFromTemplate, useAllocationsFromTemplate, usePaymentPlanFromTemplate, source, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject> CreateProjectFromTemplateByCustomerIDAsync(
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel> CreateProjectFromTemplateByCustomerIDAsync(
                     string projectTemplateName, 
                     string projectName, 
                     string projectNo, 
@@ -7438,32 +7929,32 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
             return base.Channel.CreateProjectFromTemplateByCustomerIDAsync(projectTemplateName, projectName, projectNo, customerID, legalEntityID, priceGroupID, projectManagerInitials, accountManagerInitials, handledByDepartmentNo, orderedByDepartmentNo, useProjectNumberSeries, useTasksAndMileStonesFromTemplate, useResourceGroupFromTemplate, useAllocationsFromTemplate, usePaymentPlanFromTemplate, source, token);
         }
         
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject UpdateProject(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel UpdateProject(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.UpdateProject(project, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProject> UpdateProjectAsync(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.BatchResponseOfProjectApiReadModel> UpdateProjectAsync(TimeLog.TransactionalAPI.SDK.ProjectManagementService.Project project, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.UpdateProjectAsync(project, token);
         }
         
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject DeleteProject(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel DeleteProject(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.DeleteProject(projectGuid, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> DeleteProjectAsync(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> DeleteProjectAsync(System.Guid projectGuid, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.DeleteProjectAsync(projectGuid, token);
         }
         
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject ProjectChangeStatus(System.Guid projectGuid, int targetStatus, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel ProjectChangeStatus(System.Guid projectGuid, int targetStatus, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.ProjectChangeStatus(projectGuid, targetStatus, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> ProjectChangeStatusAsync(System.Guid projectGuid, int targetStatus, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> ProjectChangeStatusAsync(System.Guid projectGuid, int targetStatus, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.ProjectChangeStatusAsync(projectGuid, targetStatus, token);
         }
@@ -7778,12 +8269,12 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
             return base.Channel.GetTasksBySearchTextWithoutFinancialAsync(critiria, token);
         }
         
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject GetProjectsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel GetProjectsModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.GetProjectsModifiedInPeriodPaged(startDate, endDate, page, pageSize, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> GetProjectsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> GetProjectsModifiedInPeriodPagedAsync(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.GetProjectsModifiedInPeriodPagedAsync(startDate, endDate, page, pageSize, token);
         }
@@ -7808,12 +8299,12 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
             return base.Channel.GetTaskByIDAsync(taskID, loadExternalKeys, token);
         }
         
-        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject GetProjectByID(int projectID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel GetProjectByID(int projectID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.GetProjectByID(projectID, loadExternalKeys, token);
         }
         
-        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProject> GetProjectByIDAsync(int projectID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.ProjectManagementService.ResponseOfProjectApiReadModel> GetProjectByIDAsync(int projectID, bool loadExternalKeys, TimeLog.TransactionalAPI.SDK.ProjectManagementService.SecurityToken token)
         {
             return base.Channel.GetProjectByIDAsync(projectID, loadExternalKeys, token);
         }
@@ -7857,7 +8348,7 @@ namespace TimeLog.TransactionalAPI.SDK.ProjectManagementService
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_ProjectManagementService))
             {
-                return new System.ServiceModel.EndpointAddress("https://app8.timelog.com/610patchreference/WebServices/ProjectManagement/V1_7/Pro" +
+                return new System.ServiceModel.EndpointAddress("https://app8.timelog.com/610patchreference/WebServices/ProjectManagement/V1_8/Pro" +
                         "jectManagementServiceSecure.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));

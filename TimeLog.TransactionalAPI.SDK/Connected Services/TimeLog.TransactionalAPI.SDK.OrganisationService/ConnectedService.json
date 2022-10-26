@@ -1,7 +1,7 @@
 {
   "ExtendedData": {
     "inputs": [
-      "https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_7/OrganisationServiceSecure.svc"
+      "https://app8.timelog.com/610patchreference/WebServices/Organisation/V1_8/OrganisationServiceSecure.svc"
     ],
     "collectionTypes": [
       "System.Array",
@@ -11,7 +11,7 @@
       "*, TimeLog.TransactionalAPI.SDK.OrganisationService"
     ],
     "sync": true,
-    "targetFramework": "netstandard2.1",
+    "targetFramework": "net6.0",
     "typeReuseMode": "All"
   }
 }
