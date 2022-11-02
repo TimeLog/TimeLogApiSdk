@@ -38,10 +38,10 @@ public class FinancialHandler : IDisposable
         {
             if (SettingsHandler.Instance.Url.Contains("https"))
             {
-                return SettingsHandler.Instance.Url + "WebServices/Financial/V1_2/FinancialServiceSecure.svc";
+                return SettingsHandler.Instance.Url + "WebServices/Financial/V1_4/FinancialServiceSecure.svc";
             }
 
-            return SettingsHandler.Instance.Url + "WebServices/Financial/V1_2/FinancialService.svc";
+            return SettingsHandler.Instance.Url + "WebServices/Financial/V1_4/FinancialService.svc";
         }
     }
 
