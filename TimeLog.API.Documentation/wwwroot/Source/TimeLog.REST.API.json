@@ -7367,6 +7367,203 @@
         ]
       }
     },
+    "/v{version}/salary-account": {
+      "get": {
+        "tags": [
+          "SalaryAccount"
+        ],
+        "summary": "Get all salary accounts",
+        "operationId": "SalaryAccount_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of salary accounts",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryAccount.SalaryAccountApiReadModel"
+              }
+            }
+          },
+          "500": {
+            "description": "Salary acounts could not be retrieved",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/salary-account/{salaryAccountId}/aggregation": {
+      "get": {
+        "tags": [
+          "SalaryAccount"
+        ],
+        "summary": "Get employee postings' aggregation by salary account",
+        "operationId": "SalaryAccount_GetEmployeePostingsAggregation",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "salaryAccountId",
+            "in": "path",
+            "description": "The salary account identifier.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "The user identifier. Omit this parameter to return all users.",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "balanceDate",
+            "in": "query",
+            "description": "The balance date of a salary account",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of employee postings' aggregation by salary account",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryAccountAggregation.SalaryAccountAggregationApiReadModel"
+              }
+            }
+          },
+          "500": {
+            "description": "Employee postings' aggregation could not be retrieved",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/salary-account/{salaryAccountId}/posting": {
+      "post": {
+        "tags": [
+          "SalaryAccount"
+        ],
+        "summary": "Create bulk employee postings based on a salary account and posting date.",
+        "operationId": "SalaryAccount_Create",
+        "consumes": [
+          "application/json",
+          "text/json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "salaryAccountId",
+            "in": "path",
+            "description": "The salary account identifier.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "salaryAccountEmployeeManualPostingCreateModel",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryAccountEmployeePosting.SalaryAccountEmployeeManualPostingApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "204": {
+            "description": "Employee postings were created successfully"
+          },
+          "500": {
+            "description": "Employee postings could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/salary-group": {
       "get": {
         "tags": [
@@ -15305,7 +15502,11 @@
             250,
             251,
             252,
-            253
+            253,
+            254,
+            255,
+            256,
+            257
           ],
           "type": "integer"
         },
@@ -16152,6 +16353,132 @@
         }
       }
     },
+    "TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryAccount.SalaryAccountApiReadModel": {
+      "type": "object",
+      "properties": {
+        "SalaryAccountID": {
+          "format": "int32",
+          "description": "Gets or sets the salary account identifier",
+          "type": "integer"
+        },
+        "Name": {
+          "description": "Gets or sets the salary account name",
+          "type": "string"
+        },
+        "SalaryAccountGUID": {
+          "format": "uuid",
+          "description": "Gets or sets the salary account GUID",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Description": {
+          "description": "Gets or sets the description",
+          "type": "string"
+        },
+        "IsActive": {
+          "description": "Gets or sets whether the salary account is active",
+          "type": "boolean"
+        },
+        "IsSystemSalaryAccount": {
+          "description": "Gets or sets whether the salary account is system salary account",
+          "type": "boolean"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryAccountAggregation.SalaryAccountAggregationApiReadInputModel": {
+      "required": [
+        "BalanceDate"
+      ],
+      "type": "object",
+      "properties": {
+        "UserId": {
+          "format": "int32",
+          "description": "The user identifier. Omit this parameter to return all users.",
+          "type": "integer"
+        },
+        "BalanceDate": {
+          "format": "date-time",
+          "description": "The balance date of a salary account",
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryAccountAggregation.SalaryAccountAggregationApiReadModel": {
+      "type": "object",
+      "properties": {
+        "SalaryAccountID": {
+          "format": "int32",
+          "description": "Gets or sets the salary account identifier",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "description": "The user identifier.",
+          "type": "integer"
+        },
+        "FirstName": {
+          "description": "The user's first name.",
+          "type": "string"
+        },
+        "LastName": {
+          "description": "The user's last name.",
+          "type": "string"
+        },
+        "AccountBalance": {
+          "format": "double",
+          "description": "The account balance",
+          "type": "number"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryAccountEmployeePosting.SalaryAccountEmployeeManualPostingApiCreateModel": {
+      "required": [
+        "BalanceDate",
+        "EmployeeUsers"
+      ],
+      "type": "object",
+      "properties": {
+        "BalanceDate": {
+          "format": "date-time",
+          "description": "The date of posting to an account balance",
+          "type": "string"
+        },
+        "EmployeeUsers": {
+          "description": "List of employee users.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryAccountEmployeePosting.SalaryAccountEmployeeManualPostingUserApiCreateModel"
+          }
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryAccountEmployeePosting.SalaryAccountEmployeeManualPostingUserApiCreateModel": {
+      "required": [
+        "UserId",
+        "HoursAdjustment"
+      ],
+      "type": "object",
+      "properties": {
+        "UserId": {
+          "format": "int32",
+          "description": "The user identifier.",
+          "type": "integer"
+        },
+        "HoursAdjustment": {
+          "format": "double",
+          "description": "The hours adjustment.",
+          "type": "number"
+        },
+        "CommentToManager": {
+          "description": "The comment to manager.",
+          "type": "string"
+        },
+        "CommentToEmployee": {
+          "description": "The comment to employee.",
+          "type": "string"
+        }
+      }
+    },
     "TimeLog.TLP.Web.WebApi.V1.Salary.Models.SalaryGroup.SalaryGroupApiReadModel": {
       "type": "object",
       "properties": {
@@ -16477,7 +16804,9 @@
             283,
             284,
             285,
-            286
+            286,
+            287,
+            288
           ],
           "type": "integer"
         },
@@ -17042,7 +17371,11 @@
             250,
             251,
             252,
-            253
+            253,
+            254,
+            255,
+            256,
+            257
           ],
           "type": "integer"
         },
@@ -18173,7 +18506,11 @@
             250,
             251,
             252,
-            253
+            253,
+            254,
+            255,
+            256,
+            257
           ],
           "type": "integer"
         },
@@ -18498,7 +18835,11 @@
             250,
             251,
             252,
-            253
+            253,
+            254,
+            255,
+            256,
+            257
           ],
           "type": "integer"
         },
@@ -18973,6 +19314,10 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Integration.Controllers.BusinessCentralController[BusinessCentralController]",
       "description": "Service for handling change log from Business Central integration in Timelog"
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.SalaryAccountController[SalaryAccountController]",
+      "description": "Service for handling salary account in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Salary.Controllers.AbsenceCodeController[AbsenceCodeController]",
