@@ -36,4 +36,9 @@ public class RestController : Controller
     {
         return View();
     }
+
+    public ActionResult PersonalAccessTokens()
+    {
+        return View();
+    }
 }
