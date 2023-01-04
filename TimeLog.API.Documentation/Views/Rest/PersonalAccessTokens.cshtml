@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "REST API - Personal Access Tokens";
+}
+
+<article class="article">
+    <h1>Personal Access Tokens</h1>
+    <h2 class="">Personal access token (PAT) can be used as an alternative to password to access the TimeLog REST APIs</h2>
+    <h3>
+        Create a personal access token (PAT)
+    </h3>
+    <p>
+        This page provides the step-by-step guide to create a new personal access token (PAT).
+    </p>
+    <h6>
+        1. Sign in to your TimeLog web app (https://app[x].timelog.com/[account name]).
+    </h6>
+    <h6>
+        2. Change your browser URL to <a target="_blank">https://login.timelog.com/personaltoken</a>. You will be redirected to the personal access token (PAT) page.
+    </h6>
+    <p>
+        <a href="~/pat/timelog-pat-01.png"><img src="~/pat/timelog-pat-01.png" /></a>
+    </p>
+    <h6>
+        3. Click on the [+ New Token] button.
+    </h6>
+    <h6>
+        4. Provide a name to your token. The token expiration is always set as 180 days (approx. 6 month validity).
+    </h6>
+    <p>
+        <a href="~/pat/timelog-pat-02.png"><img src="~/pat/timelog-pat-02.png" /></a>
+    </p>
+    <h6>
+        5. Click on the [Save] button to generate a new PAT token. Make a copy of your new token string as we do not store it.
+    </h6>
+    <p>
+        <a href="~/pat/timelog-pat-03.png"><img src="~/pat/timelog-pat-03.png" /></a>
+    </p>
+    <h3>
+        Use a PAT to consume the TimeLog REST APIs with POSTMAN
+    </h3>
+    <h6>
+        6. You're now able to use the PAT to consume the TimeLog REST APIs.
+    </h6>
+    <p>
+        <a href="~/pat/timelog-pat-04.png"><img src="~/pat/timelog-pat-04.png" /></a>
+    </p>
+</article>
