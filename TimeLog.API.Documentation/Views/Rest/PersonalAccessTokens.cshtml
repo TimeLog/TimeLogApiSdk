@@ -4,44 +4,96 @@
 
 <article class="article">
     <h1>Personal Access Tokens</h1>
-    <h2 class="">Personal access token (PAT) can be used as an alternative to password to access the TimeLog REST APIs</h2>
+    <h2 class="">
+        Personal access token (PAT) is used to access TimeLog REST APIs on behalf of yourself. 
+        This page provides the step-by-step guide to manage personal access token (PAT) as an alternative to using your username and password for API requests.
+    </h2>
     <h3>
         Create a personal access token (PAT)
     </h3>
     <p>
-        This page provides the step-by-step guide to create a new personal access token (PAT).
-    </p>
-    <h6>
         1. Sign in to your TimeLog web app (https://app[x].timelog.com/[account name]).
-    </h6>
-    <h6>
+    </p>
+    <p>
         2. Change your browser URL to <a target="_blank">https://login.timelog.com/personaltoken</a>. You will be redirected to the personal access token (PAT) page.
-    </h6>
+    </p>
     <p>
         <a href="~/pat/timelog-pat-01.png"><img src="~/pat/timelog-pat-01.png" /></a>
     </p>
-    <h6>
-        3. Click on the [+ New Token] button.
-    </h6>
-    <h6>
-        4. Provide a name to your token. The token expiration is always set as 180 days (approx. 6 month validity).
-    </h6>
+    <p>
+        3. Click on the [New Token] button.
+    </p>
+    <p>
+        4. Provide a name to your token. Set the expiration date or validity period for the token. 
+        TimeLog allows you to set a maximum expiration period of 2 years, but also allows you to specify a shorter expiration period. 
+    </p>
     <p>
         <a href="~/pat/timelog-pat-02.png"><img src="~/pat/timelog-pat-02.png" /></a>
     </p>
-    <h6>
-        5. Click on the [Save] button to generate a new PAT token. Make a copy of your new token string as we do not store it.
-    </h6>
+    <p>
+        5. Click on the [Save] button to generate a new PAT token and make note of the token value.
+    </p>
     <p>
         <a href="~/pat/timelog-pat-03.png"><img src="~/pat/timelog-pat-03.png" /></a>
     </p>
     <h3>
-        Use a PAT to consume the TimeLog REST APIs with POSTMAN
+        Revoke a personal access token (PAT)
     </h3>
-    <h6>
-        6. You're now able to use the PAT to consume the TimeLog REST APIs.
-    </h6>
+    <p>
+        If you suspect that a PAT has been compromised or accessed by unauthorized individuals, you should immediately revoke the token to prevent further access.
+    </p>
+    <p>
+        1. Locate the PAT you want to revoke, and select the [Revoke] button to revoke it.
+    </p>
     <p>
         <a href="~/pat/timelog-pat-04.png"><img src="~/pat/timelog-pat-04.png" /></a>
+    </p>
+    <p>
+        2. Confirm that you want to revoke the PAT if prompted.
+    </p>
+    <p>
+        <a href="~/pat/timelog-pat-05.png"><img src="~/pat/timelog-pat-05.png" /></a>
+    </p>
+    <h3>
+        Regenerate a personal access token (PAT)
+    </h3>
+    <p>
+        1. Locate the PAT you want to regenerate, and select the [Regenerate] button to regenerate it.
+    </p>
+    <p>
+        <a href="~/pat/timelog-pat-06.png"><img src="~/pat/timelog-pat-06.png" /></a>
+    </p>
+    <p>
+        2. Confirm that you want to regenerate the PAT if prompted.
+    </p>
+    <p>
+        <a href="~/pat/timelog-pat-07.png"><img src="~/pat/timelog-pat-07.png" /></a>
+    </p>
+    <p>
+        3. Once the new PAT is generated, make note of the token value.
+    </p>
+    <p>
+        <a href="~/pat/timelog-pat-03.png"><img src="~/pat/timelog-pat-03.png" /></a>
+    </p>
+    <h3>
+        Using a Personal Access Token (PAT) to authenticate and consume the TimeLog REST APIs using the POSTMAN tool
+    </h3>
+    <p>
+        1. Open POSTMAN and create a new request for the API or service that you want to test with your PAT.
+    </p>
+    <p>
+        2. In the Authorization tab of the request, select "Bearer Token" as the type of authorization.
+    </p>
+    <p>
+        3. Paste your PAT into the "Token" field.
+    </p>
+    <p>
+        4. Click on the "Send" button to test the request with your PAT.
+    </p>
+    <p>
+        5. Review the response to verify that the request was successful and that the PAT was accepted.
+    </p>
+    <p>
+        <a href="~/pat/timelog-pat-08.png"><img src="~/pat/timelog-pat-08.png" /></a>
     </p>
 </article>
