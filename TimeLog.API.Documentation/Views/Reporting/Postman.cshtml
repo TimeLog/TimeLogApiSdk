@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Using the POSTMAN tool to consume the TimeLog reporting APIs";
+}
+
+<article class="article">
+
+    <h1>@ViewBag.Title</h1>
+    <p>
+        This page will guide you through the steps to import and consume the reporting APIs using POSTMAN.
+    </p>
+    <p>
+        1. Construct the URL of the WSDL (Web Services Description Language) file for your reporting API <strong><u>https://app[x].timelog.com/[account name]/service.asmx?WSDL</u></strong>.
+    </p>
+    <p>
+        2. Open <strong>Postman</strong> and select <strong>Import</strong> button in upper left. 
+    </p>
+    <p>
+        <a href="~/postman/timelog-reporting-api-postman-01.png"><img src="~/postman/timelog-reporting-api-postman-01.png" /></a>
+    </p>
+    <p>
+        3. In the <strong>Import</strong> modal window, navigate to <strong>Link</strong> tab and enter the URL of the WSDL file. Click on the <strong>Continue</strong> button to proceed to next screen.
+    </p>
+    <p>
+        <a href="~/postman/timelog-reporting-api-postman-02.png"><img src="~/postman/timelog-reporting-api-postman-02.png" /></a>
+    </p>
+    <p>
+        4. Click on <strong>Import</strong> button to import the reporting API into Postman
+    </p>
+    <p>
+        <a href="~/postman/timelog-reporting-api-postman-03.png"><img src="~/postman/timelog-reporting-api-postman-03.png" /></a>
+    </p>
+    <p>
+        5. Once the API is imported, you will see a collection in the left-had side navigation menu. 
+        Expand the collection to see the available API operations.
+    </p>
+    <p>
+        <a href="~/postman/timelog-reporting-api-postman-04.png"><img src="~/postman/timelog-reporting-api-postman-04.png" /></a>
+    </p>
+    <p>
+        6. Click on one API operation from the collection, this will open a new tab where you can enter the required parameters for the API.
+    </p>
+    <p>
+        7. Enter the required parameters for the reporting API in the body tab of the request. Click the <strong>Send</strong> button to send the request.
+        The response from the API will be displayed in the response tab.
+    </p>
+    <p>
+        8. Review the response to ensure that the API operation is executed successfully and repeat these steps for any additional reporting APIs you want to test.
+    </p>
+    <p>
+        <a href="~/postman/timelog-reporting-api-postman-05.png"><img src="~/postman/timelog-reporting-api-postman-05.png" /></a>
+        The SiteCode, ApiID, and ApiPassword parameters are required in every request and you can extract these values from your TLP Portal under <strong>System Administration > Integrations and API > Reporting API settings</strong>.
+    </p>
+
+</article>
