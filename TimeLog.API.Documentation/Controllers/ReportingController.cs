@@ -47,4 +47,9 @@ public class ReportingController : Controller
     {
         return View();
     }
+
+    public ActionResult Postman()
+    {
+        return View();
+    }
 }
