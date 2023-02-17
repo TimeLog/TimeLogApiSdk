@@ -5120,7 +5120,7 @@
             Exposes methods needed to handle organizational data through the API (released March 2015) 
             </summary>
             <remarks>
-            https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_6/OrganisationServiceSecure.svc
+            https://app[x].timelog.com/[account name]/WebServices/Organisation/V1_8/OrganisationServiceSecure.svc
             </remarks>
         </member>
         <member name="M:TimeLog.TLP.API.Organisation.V1_8.OrganisationService.#ctor(System.Boolean)">
