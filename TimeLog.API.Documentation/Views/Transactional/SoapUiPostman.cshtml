@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Using the SoapUI and POSTMAN tools to cosume the TimeLog Transactional APIs";
+}
+
+<article class="article">
+
+    <h1>@ViewBag.Title</h1>
+    <p>
+        This page will guide you through the steps to import and consume the transactional APIs using SoapUI. 
+        It also covers how to consume the transactional APIs using Postman.
+    </p>
+    <p>
+        1. Construct the URL of the WSDL (Web Services Description Language) file for your transactional API. <br />
+        For example: SecurityService Version 1.2 <br />
+        <strong><u>https://app[x].timelog.com/[account name]/WebServices/Security/V1_2/SecurityServiceSecure.svc?WSDL</u></strong>
+    </p>
+    <p>
+        2. Launch <strong>SoapUI</strong> and select <strong>SOAP</strong> from the icons toolbar. 
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-01.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-01.png" /></a>
+    </p>
+    <p>
+        3. In the <strong>New SOAP Project</strong> modal window, enter a project name and the transactional service WSDL URL in the respective fields.
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-02.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-02.png" /></a>
+    </p>
+    <p>
+        4. Click on <strong>OK</strong> to create the project. SoapUI will generate the project structure based on the WSDL file. The structure will include the endpoints, bindings, and operations defined in the WSDL file.
+    </p>
+    <p>
+        5. In the project navigator, expand the projects node and select the endpoint you want to test. Right-click the endpoint and select <strong>New Request</strong> from the context menu. Provide a name to the request when prompted.
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-03.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-03.png" /></a>
+    </p>
+    <p>
+        6. SoapUI will generate the request structure for the selected endpoint. 
+        Enter the required parameters in the request body. Click on the ▶ button to submit the request.
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-04.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-04.png" /></a>
+    </p>
+    <p>
+        7. SoapUI will display the response from the service in the <strong>Response pane</strong>.
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-05.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-05.png" /></a>
+    </p>
+    <h3>Using the POSTMAN tool to consume the TimeLog transactional APIs</h3>
+    <p>
+        HTTP is a widely adopted and standard protocol that can be used with a wide range of programming languages and platforms. 
+        This makes it easy to integrate with other systems and services.
+    </p>
+    <p>
+        1. Open <strong>Postman</strong> and create a new request by clicking on the <strong>+</strong> button.
+    </p>
+    <p>
+        2. Select the <strong>POST</strong> method and enter the transactional service URL in the URL field.
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-06.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-06.png" /></a>
+    </p>
+    <p>
+        3. In the <strong>Headers</strong> tab, add the <strong>Content-Type</strong> header with the value of <strong>text/xml; charset=utf-8</strong>.
+        Add another header <strong>SOAPAction</strong> with the value of the transactional service method you want to call. 
+        This value can be obtained in the request header from the <strong>SoapUI</strong> tool.
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-07.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-07.png" /></a>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-08.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-08.png" /></a>
+    </p>
+    <p>
+        4. In the <strong>Body</strong> tab, select the <strong>raw</strong> option and set the body type to <strong>XML</strong>.
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-09.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-09.png" /></a>
+    </p>
+    <p>
+        5. Copy the method request body obtained from <strong>SoapUI</strong> and paste it into the body field in Postman.
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-10.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-10.png" /></a>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-11.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-11.png" /></a>
+    </p>
+    <p>
+        6. Click on the <strong>Send</strong> button to send the request. The response from the API will be displayed in the response tab.
+    </p>
+    <p>
+        7. Review the response to ensure that the API operation is executed successfully and repeat these steps for any additional transactional APIs you want to test.
+    </p>
+    <p>
+        <a href="~/soapuipostman/timelog-transactional-api-soapuipostman-12.png"><img src="~/soapuipostman/timelog-transactional-api-soapuipostman-12.png" /></a>
+    </p>
+</article>

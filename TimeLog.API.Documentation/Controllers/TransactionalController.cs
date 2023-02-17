@@ -47,4 +47,9 @@ public class TransactionalController : Controller
     {
         return View(_transactionalManager.GetMethod(id));
     }
+
+    public ActionResult SoapUiPostman()
+    {
+        return View();
+    }
 }
