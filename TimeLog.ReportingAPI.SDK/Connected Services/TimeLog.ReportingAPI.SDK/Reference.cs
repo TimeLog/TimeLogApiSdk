@@ -65,6 +65,13 @@ namespace TimeLog.ReportingAPI.SDK
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetCustomersShortList", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetCustomersShortListAsync(string siteCode, string apiID, string apiPassword, int customerStatusID, int accountManagerID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetContractPaymentsRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetContractPaymentsRaw(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, System.DateTime startDate, System.DateTime endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetContractPaymentsRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetContractPaymentsRawAsync(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, System.DateTime startDate, System.DateTime endDate);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetContractCustomersRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Xml.XmlNode GetContractCustomersRaw(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, int contractStatusID);
@@ -148,6 +155,13 @@ namespace TimeLog.ReportingAPI.SDK
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetProjectCategoriesShortList", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetProjectCategoriesShortListAsync(string siteCode, string apiID, string apiPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSalesSplitsRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetSalesSplitsRaw(string siteCode, string apiID, string apiPassword, int projectID, int status, int customerID, int projectManagerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetSalesSplitsRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetSalesSplitsRawAsync(string siteCode, string apiID, string apiPassword, int projectID, int status, int customerID, int projectManagerID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoicesRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -407,6 +421,13 @@ namespace TimeLog.ReportingAPI.SDK
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetEmployeeManagerHistoriesRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetEmployeeManagerHistoriesRawAsync(string siteCode, string apiID, string apiPassword, int employeeUserID, int employeeStatus);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetIntercompanyInvoicesRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetIntercompanyInvoicesRaw(string siteCode, string apiID, string apiPassword, int senderID, int recipientID, int accountManagerID, int projectManagerID, System.DateTime fromDate, System.DateTime toDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetIntercompanyInvoicesRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetIntercompanyInvoicesRawAsync(string siteCode, string apiID, string apiPassword, int senderID, int recipientID, int accountManagerID, int projectManagerID, System.DateTime fromDate, System.DateTime toDate);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
@@ -520,6 +541,16 @@ namespace TimeLog.ReportingAPI.SDK
         public System.Threading.Tasks.Task<System.Xml.XmlNode> GetCustomersShortListAsync(string siteCode, string apiID, string apiPassword, int customerStatusID, int accountManagerID)
         {
             return base.Channel.GetCustomersShortListAsync(siteCode, apiID, apiPassword, customerStatusID, accountManagerID);
+        }
+        
+        public System.Xml.XmlNode GetContractPaymentsRaw(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, System.DateTime startDate, System.DateTime endDate)
+        {
+            return base.Channel.GetContractPaymentsRaw(siteCode, apiID, apiPassword, projectID, customerID, projectSubContractID, startDate, endDate);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetContractPaymentsRawAsync(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, System.DateTime startDate, System.DateTime endDate)
+        {
+            return base.Channel.GetContractPaymentsRawAsync(siteCode, apiID, apiPassword, projectID, customerID, projectSubContractID, startDate, endDate);
         }
         
         public System.Xml.XmlNode GetContractCustomersRaw(string siteCode, string apiID, string apiPassword, int projectID, int customerID, int projectSubContractID, int contractStatusID)
@@ -640,6 +671,16 @@ namespace TimeLog.ReportingAPI.SDK
         public System.Threading.Tasks.Task<System.Xml.XmlNode> GetProjectCategoriesShortListAsync(string siteCode, string apiID, string apiPassword)
         {
             return base.Channel.GetProjectCategoriesShortListAsync(siteCode, apiID, apiPassword);
+        }
+        
+        public System.Xml.XmlNode GetSalesSplitsRaw(string siteCode, string apiID, string apiPassword, int projectID, int status, int customerID, int projectManagerID)
+        {
+            return base.Channel.GetSalesSplitsRaw(siteCode, apiID, apiPassword, projectID, status, customerID, projectManagerID);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetSalesSplitsRawAsync(string siteCode, string apiID, string apiPassword, int projectID, int status, int customerID, int projectManagerID)
+        {
+            return base.Channel.GetSalesSplitsRawAsync(siteCode, apiID, apiPassword, projectID, status, customerID, projectManagerID);
         }
         
         public System.Xml.XmlNode GetInvoicesRaw(string siteCode, string apiID, string apiPassword, int invoiceID, int customerID, int status, string startDate, string endDate)
@@ -1010,6 +1051,16 @@ namespace TimeLog.ReportingAPI.SDK
         public System.Threading.Tasks.Task<System.Xml.XmlNode> GetEmployeeManagerHistoriesRawAsync(string siteCode, string apiID, string apiPassword, int employeeUserID, int employeeStatus)
         {
             return base.Channel.GetEmployeeManagerHistoriesRawAsync(siteCode, apiID, apiPassword, employeeUserID, employeeStatus);
+        }
+        
+        public System.Xml.XmlNode GetIntercompanyInvoicesRaw(string siteCode, string apiID, string apiPassword, int senderID, int recipientID, int accountManagerID, int projectManagerID, System.DateTime fromDate, System.DateTime toDate)
+        {
+            return base.Channel.GetIntercompanyInvoicesRaw(siteCode, apiID, apiPassword, senderID, recipientID, accountManagerID, projectManagerID, fromDate, toDate);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetIntercompanyInvoicesRawAsync(string siteCode, string apiID, string apiPassword, int senderID, int recipientID, int accountManagerID, int projectManagerID, System.DateTime fromDate, System.DateTime toDate)
+        {
+            return base.Channel.GetIntercompanyInvoicesRawAsync(siteCode, apiID, apiPassword, senderID, recipientID, accountManagerID, projectManagerID, fromDate, toDate);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

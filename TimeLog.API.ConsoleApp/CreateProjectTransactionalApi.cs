@@ -66,8 +66,7 @@ public class CreateProjectTransactionalApi
                         {
                             Logger.Info("Project created");
                         }
-
-                        project = projectResult.Return.FirstOrDefault()?.Item;
+                        
                         var task = new Task {ID = taskGuid, Name = "First task"};
                         var taskResult = ProjectManagementHandler.Instance.ProjectManagementClient.CreateTask(
                             task,
