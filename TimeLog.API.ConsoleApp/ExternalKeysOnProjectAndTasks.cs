@@ -54,7 +54,6 @@ public class ExternalKeysOnProjectAndTasks
                 DepartmentOrderedByID = 0,
                 //Description = string.Empty,
                 EndDate = DateTime.Today.AddDays(30),
-                ExchangeRate = 0,
                 No = "MIROEBS",
                 LegalEntityID = 0,
                 PriceGroupID = 0,

@@ -55,7 +55,6 @@ public class CreateProjectTransactionalApi2
                 DepartmentOrderedByID = 0,
                 //Description = string.Empty,
                 EndDate = DateTime.Today.AddDays(30),
-                ExchangeRate = 0,
                 No = "MIROEBS",
                 LegalEntityID = 0,
                 PriceGroupID = 0,
@@ -98,9 +97,10 @@ public class CreateProjectTransactionalApi2
             }
 
             project.Item.Name = "TimeLog test implementering updated";
+            newProject.BudgetAmountExpenses = 100;
 
             var updateProjectResult =
-                ProjectManagementHandler.Instance.ProjectManagementClient.UpdateProject(project.Item,
+                ProjectManagementHandler.Instance.ProjectManagementClient.UpdateProject(newProject,
                     ProjectManagementHandler.Instance.Token);
             if (updateProjectResult.ResponseState != ExecutionStatus.Success)
             {
