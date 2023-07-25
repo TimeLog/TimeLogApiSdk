@@ -4977,54 +4977,6 @@
         ]
       }
     },
-    "/v{version}/privilege/GetPrivilegeForUser": {
-      "get": {
-        "tags": [
-          "Privilege"
-        ],
-        "summary": "Get privilege for user",
-        "operationId": "Privilege_GetPrivileges",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Privileges for the current user",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Security.Models.PrivilegeApiReadModel"
-            }
-          },
-          "500": {
-            "description": "Request to GetPrivileges has failed",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
     "/v{version}/product": {
       "get": {
         "tags": [
@@ -11261,54 +11213,6 @@
         ]
       }
     },
-    "/v{version}/widget/get-all-active-widgets": {
-      "get": {
-        "tags": [
-          "Widget"
-        ],
-        "summary": "Get accessible widgets for user",
-        "operationId": "Widget_GetActiveWidgetsForUser",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list of enabled widgets",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Security.Models.WidgetListApiReadModel"
-            }
-          },
-          "500": {
-            "description": "Request to GetActiveWidgetsForUser has failed",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
     "/v{version}/workload/book": {
       "post": {
         "tags": [
@@ -11492,10 +11396,6 @@
         "Url": {
           "description": "Gets the URL.",
           "type": "string",
-          "readOnly": true
-        },
-        "DeveloperNote": {
-          "type": "object",
           "readOnly": true
         }
       }
@@ -11967,20 +11867,6 @@
         },
         "IsFavourite": {
           "description": "Gets or sets a value indicating whether this instance is favourite.",
-          "type": "boolean"
-        },
-        "StartTime": {
-          "format": "date-time",
-          "description": "The point in time when time tracking started.",
-          "type": "string"
-        },
-        "EndTime": {
-          "format": "date-time",
-          "description": "The point in time when time tracking ended.",
-          "type": "string"
-        },
-        "IsTimestampOverlapping": {
-          "description": "A value indicates whether this timestamp overlaps with another",
           "type": "boolean"
         }
       }
@@ -13738,25 +13624,7 @@
             432,
             433,
             434,
-            435,
-            436,
-            437,
-            438,
-            439,
-            440,
-            441,
-            442,
-            443,
-            444,
-            445,
-            446,
-            447,
-            448,
-            449,
-            450,
-            451,
-            452,
-            453
+            435
           ],
           "type": "integer"
         },
@@ -14136,6 +14004,7 @@
             13,
             14,
             15,
+            16,
             17,
             18,
             19,
@@ -14185,7 +14054,6 @@
             62,
             63,
             64,
-            65,
             98,
             99
           ],
@@ -14211,6 +14079,7 @@
             13,
             14,
             15,
+            16,
             17,
             18,
             19,
@@ -14260,7 +14129,6 @@
             62,
             63,
             64,
-            65,
             98,
             99
           ],
@@ -14782,31 +14650,6 @@
           "description": "Gets or sets the payment term Guid",
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
-        }
-      }
-    },
-    "TimeLog.TLP.Web.WebApi.V1.Security.Models.PrivilegeApiReadModel": {
-      "type": "object",
-      "properties": {
-        "Type": {
-          "format": "int32",
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
-          ],
-          "type": "integer"
-        },
-        "PrivilegePackage": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
         }
       }
     },
@@ -15663,9 +15506,7 @@
             254,
             255,
             256,
-            257,
-            258,
-            259
+            257
           ],
           "type": "integer"
         },
@@ -16965,14 +16806,7 @@
             285,
             286,
             287,
-            288,
-            289,
-            290,
-            291,
-            292,
-            293,
-            294,
-            295
+            288
           ],
           "type": "integer"
         },
@@ -17199,16 +17033,6 @@
         },
         "MonthlyPeriod": {
           "description": "Gets or sets the monthly period.",
-          "type": "string"
-        },
-        "StartTime": {
-          "format": "date-time",
-          "description": "Gets or sets the point in time when time tracking started.",
-          "type": "string"
-        },
-        "EndTime": {
-          "format": "date-time",
-          "description": "Gets or sets the point in time when time tracking ended.",
           "type": "string"
         }
       }
@@ -17551,9 +17375,7 @@
             254,
             255,
             256,
-            257,
-            258,
-            259
+            257
           ],
           "type": "integer"
         },
@@ -17684,6 +17506,7 @@
             13,
             14,
             15,
+            16,
             17,
             18,
             19,
@@ -17733,7 +17556,6 @@
             62,
             63,
             64,
-            65,
             98,
             99
           ],
@@ -17759,6 +17581,7 @@
             13,
             14,
             15,
+            16,
             17,
             18,
             19,
@@ -17808,7 +17631,6 @@
             62,
             63,
             64,
-            65,
             98,
             99
           ],
@@ -17821,16 +17643,6 @@
         "AbsenceCode": {
           "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.AbsenceCode.AbsenceCodeApiReadModel",
           "description": "Gets or sets the absence code."
-        },
-        "StartTime": {
-          "format": "date-time",
-          "description": "The point in time when time tracking started.",
-          "type": "string"
-        },
-        "EndTime": {
-          "format": "date-time",
-          "description": "The point in time when time tracking ended.",
-          "type": "string"
         }
       }
     },
@@ -18158,16 +17970,6 @@
           "format": "int32",
           "description": "Gets or sets the task id of the registration.",
           "type": "integer"
-        },
-        "StartTime": {
-          "format": "date-time",
-          "description": "Gets or sets the point in time when time tracking started.",
-          "type": "string"
-        },
-        "EndTime": {
-          "format": "date-time",
-          "description": "Gets or sets the point in time when time tracking ended.",
-          "type": "string"
         },
         "TimeRegistrationID": {
           "format": "int32",
@@ -18708,9 +18510,7 @@
             254,
             255,
             256,
-            257,
-            258,
-            259
+            257
           ],
           "type": "integer"
         },
@@ -19039,9 +18839,7 @@
             254,
             255,
             256,
-            257,
-            258,
-            259
+            257
           ],
           "type": "integer"
         },
@@ -19127,11 +18925,6 @@
           "format": "double",
           "description": "Gets or sets Factor",
           "type": "number"
-        },
-        "StartTime": {
-          "format": "date-time",
-          "description": "Gets or sets the point in time when time tracking started.",
-          "type": "string"
         },
         "Comment": {
           "description": "Gets or sets the comment.",
@@ -19286,9 +19079,7 @@
           "enum": [
             1,
             4,
-            9,
-            10,
-            12
+            9
           ],
           "type": "integer"
         },
@@ -19446,57 +19237,6 @@
         "UseTimeRegistrationFinancialDataService": {
           "description": "Gets or sets value indicating the time registration financial data service is enabled",
           "type": "boolean"
-        },
-        "TimeRegistrationTimestamp": {
-          "description": "Gets or sets value indicating whether timestamps is enabled",
-          "type": "boolean"
-        },
-        "ShowWarningWhenTimestampOverlap": {
-          "description": "Gets or sets a value indicating whether a warning message should be displayed when there is an overlap in the timestamps",
-          "type": "boolean"
-        },
-        "TimeTrackingWarning": {
-          "format": "int32",
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4
-          ],
-          "type": "integer"
-        },
-        "ApprovalFlows": {
-          "type": "boolean"
-        },
-        "ProjectManagerApproval": {
-          "type": "boolean"
-        },
-        "EnhancedTimesheetApprovals": {
-          "type": "boolean"
-        }
-      }
-    },
-    "TimeLog.TLP.Web.WebApi.V1.Security.Models.WidgetListApiReadModel": {
-      "type": "object",
-      "properties": {
-        "WidgetList": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Security.Models.WidgetApiReadModel"
-          }
-        },
-        "IsReportWidgetActive": {
-          "type": "boolean"
-        }
-      }
-    },
-    "TimeLog.TLP.Web.WebApi.V1.Security.Models.WidgetApiReadModel": {
-      "type": "object",
-      "properties": {
-        "WidgetType": {
-          "description": "Gets or sets the widget type.",
-          "type": "string"
         }
       }
     },
@@ -19527,18 +19267,6 @@
     }
   },
   "tags": [
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.ClosePeriodValidationNotificationPanelController[ClosePeriodValidationNotificationPanelController]",
-      "description": ""
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeRegistrationServiceController[TimeRegistrationServiceController]",
-      "description": "Service for handling time registration service requests in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeTrackingItemController[TimeTrackingItemController]",
-      "description": "Service for handling time tracking item in TimeLog."
-    },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Employees.Controllers.CostSchedulingServiceController[CostSchedulingServiceController]",
       "description": "Service for handling time registration service requests in TimeLog."
@@ -19756,6 +19484,14 @@
       "description": "Service for handling user in TimeLog."
     },
     {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeRegistrationServiceController[TimeRegistrationServiceController]",
+      "description": "Service for handling time registration service requests in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeTrackingItemController[TimeTrackingItemController]",
+      "description": "Service for handling time tracking item in TimeLog."
+    },
+    {
       "name": "TimeLog.TLP.Web.WebApi.V1.Index.Controllers.IndexController[IndexController]",
       "description": "Service for handling index in TimeLog."
     },
@@ -19778,154 +19514,6 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V2.TimeRegistration.Controllers.TimeTrackerController[TimeTrackerController]",
       "description": "Service for handling time tracker in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.CRM.Controllers.CustomerController[CustomerController]",
-      "description": "Service for handling customer in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.ProjectManagement.Controllers.ProjectController[ProjectController]",
-      "description": "Service for handling project in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.ProjectManagement.Controllers.ProjectSubContractController[ProjectSubContractController]",
-      "description": "Service for handling contracts in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.ProjectManagement.Controllers.TaskController[TaskController]",
-      "description": "Service for handling task in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.CRM.Controllers.CustomerStatusController[CustomerStatusController]",
-      "description": "Service for handling customer in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.CRM.Controllers.PaymentTermController[PaymentTermController]",
-      "description": "Service for creating PaymentTerms in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.CRM.Controllers.IndustryCodeController[IndustryCodeController]",
-      "description": "Service for creating industries in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ProductNumber.Controllers.ProductNumberController[ProductNumberController]",
-      "description": "Service for handling task types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.TaskType.Controllers.TaskTypeController[TaskTypeController]",
-      "description": "Service for handling task types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ProjectType.Controllers.ProjectTypeController[ProjectTypeController]",
-      "description": "Service for handling project types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ProjectStage.Controllers.ProjectStageController[ProjectStageController]",
-      "description": "Service for handling project stages in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ProjectCategory.Controllers.ProjectCategoryController[ProjectCategoryController]",
-      "description": "Service for handling project categories in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ContractType.Controllers.ContractTypeController[ContractTypeController]",
-      "description": "Service for handling contract types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Settings.Controllers.ApplicationValueController[ApplicationValueController]",
-      "description": "Service for handling ApplicationValues in TimeLog using the raw API."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Settings.Controllers.FeatureController[FeatureController]",
-      "description": "Service for handling features in TimeLog using the raw API."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Settings.Controllers.SettingController[SettingController]",
-      "description": "Service for handling settings in TimeLog using the raw API."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Organisation.Controllers.DepartmentController[DepartmentController]",
-      "description": "Service for handling departments in TimeLog using the raw API."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Organisation.Controllers.LegalEntityController[LegalEntityController]",
-      "description": "Service for handling legal entities in TimeLog using the raw API."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.System.Controllers.SystemController[SystemController]",
-      "description": "Service for handling System in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.AllowanceRate.Controllers.AllowanceRateController[AllowanceRateController]",
-      "description": "Service for handling allowance legislation in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.CostPrice.Controllers.CostPriceController[CostPriceController]",
-      "description": "Service for handling cost price in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.EmployeeType.Controllers.EmployeeTypeController[EmployeeTypeController]",
-      "description": "Service for handling employee types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HolidayCalendar.Controllers.HolidayController[HolidayController]",
-      "description": "Service for handling holiday  in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HolidayCalendar.Controllers.HolidayCalendarController[HolidayCalendarController]",
-      "description": "Service for handling holiday calendar in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HourlyRates.Controllers.HourlyRateCurrencyController[HourlyRateCurrencyController]",
-      "description": "Service for handling hourly rates in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HourlyRates.Controllers.HourlyRatePriceListController[HourlyRatePriceListController]",
-      "description": "Service for handling hourly rates in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HourlyRates.Controllers.HourlyRateServiceController[HourlyRateServiceController]",
-      "description": "Service for handling hourly rates in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HourlyRates.Controllers.HourlyRateController[HourlyRateController]",
-      "description": "Service for handling hourly rates in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.NormalWorkingTime.Controllers.NormalWorkingTimeController[NormalWorkingTimeController]",
-      "description": "Service for handling normal working time in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.AbsenceCodeTypeController[AbsenceCodeTypeController]",
-      "description": "Raw API service for handling absence code type in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.AbsenceCodeController[AbsenceCodeController]",
-      "description": "Service for handling absence code in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.SalaryGroupController[SalaryGroupController]",
-      "description": "Raw API service for handling salary group in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.SalaryCodeController[SalaryCodeController]",
-      "description": "Service for handling salary code in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.SalaryAccountController[SalaryAccountController]",
-      "description": "Raw API service for handling salary account in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.SalaryAccountTypeController[SalaryAccountTypeController]",
-      "description": "Raw API service for handling salary account type in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.TimeRegistration.Controllers.TimeRegistrationController[TimeRegistrationController]",
-      "description": "Service for handling time registration in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.VRaw.User.Controllers.UserController[UserController]",
-      "description": "Service for handling user in TimeLog."
     }
   ]
 }
