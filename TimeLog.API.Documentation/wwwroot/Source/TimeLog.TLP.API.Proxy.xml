@@ -2581,6 +2581,599 @@
             Gets or sets the role's locked system flag
             </summary>
         </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.Department">
+            <summary>
+            Represents a department in TimeLog
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Department.ID">
+            <summary>
+            Gets or sets the department unique identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Department.Name">
+            <summary>
+            Gets or sets the department name
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Department.No">
+            <summary>
+            Gets or sets the department number
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Department.ParentDepartmentGuid">
+            <summary>
+            Gets or sets the parent department (top level is null)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Department.DepartmentManagerGuid">
+            <summary>
+            Gets or sets the department manager (could be null)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Department.DepartmentID">
+            <summary>
+            Gets  department integer ID
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee">
+            <summary>
+            The class is an employee representation
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.ID">
+            <summary>
+            Gets or sets the employee internal identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.EmployeeID">
+            <summary>
+            Gets or sets the employee internal identifier (int)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.UserName">
+            <summary>
+            Gets or sets the username (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.Initials">
+            <summary>
+            Gets or sets the initials (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.FirstName">
+            <summary>
+            Gets or sets the firstname (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.LastName">
+            <summary>
+            Gets or sets the lastname (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.Fullname">
+            <summary>
+            Gets or sets the full name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.EmployeeNo">
+            <summary>
+            Gets or sets the employee number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.Title">
+            <summary>
+            Gets or sets the title (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.DepartmentGuid">
+            <summary>
+            Gets or sets the department unique identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.DepartmentName">
+            <summary>
+            Gets or sets the department name (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.DepartmentNo">
+            <summary>
+            Gets or sets the department number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.InterfaceLanguage">
+            <summary>
+            Gets or sets the interface langauge (int)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.Telephone">
+            <summary>
+            Gets or sets the telephone number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.Mobile">
+            <summary>
+            Gets or sets the mobile (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.PrivateAddress">
+            <summary>
+            Gets or sets the private address (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.PrivateZip">
+            <summary>
+            Gets or sets the private zip code (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.PrivateCity">
+            <summary>
+            Gets or sets the private city (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.PrivateTelephone">
+            <summary>
+            Gets or sets the private telephone (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.ExternalIdentifier">
+            <summary>
+            Gets or sets the external identifier (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.HiredDate">
+            <summary>
+            Gets or sets the hired date (DateTime)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.TerminationDate">
+            <summary>
+            Gets or sets the termindation date (DateTime)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.IsHired">
+            <summary>
+            Gets or sets a value indicating whether the employee is hired or not (bool)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.IsLocked">
+            <summary>
+            Gets or sets a value indicating whether the employee is locked and cannot log in (bool)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.CostPriceGuid">
+            <summary>
+            Gets or sets the cost price identifier for this employee (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.CostPrice">
+            <summary>
+            Gets or sets the cost price in the system currency for this employee (double)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.HourlyRateGuid">
+            <summary>
+            Gets or sets the standard hourly rate identifier for this employee (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.HourlyRate">
+            <summary>
+            Gets or sets the standard hourly rate in system currency for this employee (double)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Employee.SalaryGroupID">
+            <summary>
+            Gets or sets the salary group ID for this employee (int)
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader">
+            <summary>
+            Represents a stripped down employee object
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader.ID">
+            <summary>
+            Gets or sets the employee internal identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader.EmployeeID">
+            <summary>
+            Gets or sets the employee internal identifier (int)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader.UserName">
+            <summary>
+            Gets or sets the username (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader.Initials">
+            <summary>
+            Gets or sets the initials (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader.FirstName">
+            <summary>
+            Gets or sets the firstname (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader.LastName">
+            <summary>
+            Gets or sets the lastname (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader.EmployeeNo">
+            <summary>
+            Gets or sets the employee number (string)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader.Fullname">
+            <summary>
+            Gets or sets a concatenation of FirstName and LastName
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.GetLegalEntities(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            gets a list of legal entity
+            </summary>
+            <param name="token">the security token</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.GetLegalEntityByID(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            gets a legal entity by GUID
+            </summary>
+            <param name="legalEntityID">page to be returned</param>
+            <param name="token">the security token</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.GetEmployeesPaged(System.Int32,System.Int32,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            gets a paged list of employees
+            </summary>
+            <param name="page">page to be returned</param>
+            <param name="pageSize">size of a page</param>
+            <param name="token">the security token</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.GetEmployeeByUsername(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets an employee by username
+            </summary>
+            <param name="username">username of the employee</param>
+            <param name="token">the security token</param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.CreateEmployee(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            creates an employee
+            </summary>
+            <param name="employeeGuid">Guid of the employee</param>
+            <param name="username"></param>
+            <param name="initials"></param>
+            <param name="firstname"></param>
+            <param name="lastname"></param>
+            <param name="employeeNo"></param>
+            <param name="email"></param>
+            <param name="title"></param>
+            <param name="telephone"></param>
+            <param name="mobile"></param>
+            <param name="normalWorkingTimeName"></param>
+            <param name="holidayCalendarName"></param>
+            <param name="allowanceLegislationName"></param>
+            <param name="employeeTypeName"></param>
+            <param name="hourlyRateName"></param>
+            <param name="costPriceName"></param>
+            <param name="externalIdentifier"></param>
+            <param name="departmentGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.CreateEmployeeNotification(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Creates a "A TimeLog account has been created for you"-email to a specific user. Normally executed as part of a user creation process.
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.UpdateEmployee(System.Guid,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Updates an employee.
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="username"></param>
+            <param name="initials"></param>
+            <param name="firstname"></param>
+            <param name="lastname"></param>
+            <param name="employeeNo"></param>
+            <param name="email"></param>
+            <param name="title"></param>
+            <param name="telephone"></param>
+            <param name="mobile"></param>
+            <param name="normalWorkingTimeName"></param>
+            <param name="holidayCalendarName"></param>
+            <param name="allowanceLegislationName"></param>
+            <param name="employeeTypeName"></param>
+            <param name="hourlyRateName"></param>
+            <param name="costPriceName"></param>
+            <param name="externalIdentifier"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.ActivateEmployee(System.Guid,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            activates (enables) an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="hiredDate"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.ChangeEmployeeDepartment(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Changes the department of an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="departmentGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.DeactivateEmployee(System.Guid,System.DateTime,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            De-activates (disables) an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="terminationDate"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.GetDepartments(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of departments
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.GetDepartmentByNo(System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a department by number
+            </summary>
+            <param name="departmentNo"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.CreateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Creates a new department
+            </summary>
+            <param name="departmentGuid"></param>
+            <param name="name"></param>
+            <param name="no"></param>
+            <param name="parentDepartmentGuid"></param>
+            <param name="departmentManagerGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.UpdateDepartment(System.Guid,System.String,System.String,System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            updates a department
+            </summary>
+            <param name="departmentGuid"></param>
+            <param name="name"></param>
+            <param name="no"></param>
+            <param name="parentDepartmentGuid"></param>
+            <param name="departmentManagerGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.DeactivateDepartment(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            De-activates a departmnent
+            </summary>
+            <param name="departmentGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.AddRoleToEmployeeByName(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Adds a role (specified by name) to an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="rolename"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.RemoveRoleFromEmployeeByName(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Removes a role (specified by name) from an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="rolename"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.AddRoleToEmployeeByGuid(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Adds a role (specified by Guid) to an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="roleGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.RemoveRoleFromEmployeeByGuid(System.Guid,System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Removes a role (specified by Guid) from an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="roleGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.GetRoles(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of roles
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.GetModules(TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets a list of available modules
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.GetEmployeeRoles(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Gets the roles of an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.AddModuleToEmployee(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Adds a moduled to an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="modulename"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.RemoveModuleFromEmployee(System.Guid,System.String,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            removes a module from an employee
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="modulename"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.AssignExternalLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Assigns an employee to an external license type
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.AssignStandardLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Assigns an employee to a standard license type
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.AssignAdvancedLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Assigns an employee to an advanced license type
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.LegalEntity">
+            <summary>
+            Represents a department in TimeLog
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.LegalEntity.ID">
+            <summary>
+            Gets or sets the legal entity unique identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.LegalEntity.LegalEntityID">
+            <summary>
+            Gets or sets the legal entity ID
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.LegalEntity.Name">
+            <summary>
+            Gets or sets the legal entity name
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.LegalEntity.CurrencyID">
+            <summary>
+            Gets or sets the legal entity currency ID
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.LegalEntity.DefaultCountryID">
+            <summary>
+            Gets or sets the legal entity default country ID
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.LegalEntity.IsActive">
+            <summary>
+            Gets or sets the legal entity status
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.LegalEntity.IsSystemLegalEntity">
+            <summary>
+            Gets or sets the legal entity system legal entity
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.ModuleType">
+            <summary>
+            Represents a module type in TimeLog
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.ModuleType.ID">
+            <summary>
+            Gets or sets the module type id
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.ModuleType.Name">
+            <summary>
+            Gets or sets the module type name
+            </summary>
+        </member>
+        <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.Role">
+            <summary>
+            Represents a department in TimeLog
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Role.ID">
+            <summary>
+            Gets or sets the role unique identifier (Guid)
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Role.RoleID">
+            <summary>
+            Gets or sets the role id
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Role.Name">
+            <summary>
+            Gets or sets the role name
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Role.Description">
+            <summary>
+            Gets or sets the role description
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Role.isActive">
+            <summary>
+            Gets or sets the role active flag
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Role.EmployeeID">
+            <summary>
+            Gets or sets the role's employee id
+            </summary>
+        </member>
+        <member name="P:TimeLog.TLP.API.Proxy.Organisation.V1_9.Role.IsLockedSystemRole">
+            <summary>
+            Gets or sets the role's locked system flag
+            </summary>
+        </member>
         <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_5.Department">
             <summary>
             Represents a department in TimeLog
