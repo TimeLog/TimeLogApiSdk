@@ -38,10 +38,10 @@ public class OrganisationHandler : IDisposable
         {
             if (SettingsHandler.Instance.Url.Contains("https"))
             {
-                return SettingsHandler.Instance.Url + "WebServices/Organisation/V1_8/OrganisationServiceSecure.svc";
+                return SettingsHandler.Instance.Url + "WebServices/Organisation/V1_9/OrganisationServiceSecure.svc";
             }
 
-            return SettingsHandler.Instance.Url + "WebServices/Organisation/V1_8/OrganisationService.svc";
+            return SettingsHandler.Instance.Url + "WebServices/Organisation/V1_9/OrganisationService.svc";
         }
     }
 
