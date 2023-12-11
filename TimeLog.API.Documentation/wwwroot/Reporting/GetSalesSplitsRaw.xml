@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tlp:SalesSplits
+	xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/SalesSplitsRaw.xsd" >
+  <tlp:SalesSplit ID="1">
+    <tlp:ProjectID>28246</tlp:ProjectID>
+    <tlp:EmployeeID>156</tlp:EmployeeID>
+    <tlp:SplitType>Dynamic</tlp:SplitType>
+    <tlp:SplitPercentage>100.00000000</tlp:SplitPercentage>
+    <tlp:SplitAmount>0.0000</tlp:SplitAmount>
+    <tlp:EmployeeLegalEntityID>1</tlp:EmployeeLegalEntityID>
+    <tlp:SystemCurrencySplitAmount>0.0000</tlp:SystemCurrencySplitAmount>
+  </tlp:SalesSplit>
+</tlp:SalesSplits>

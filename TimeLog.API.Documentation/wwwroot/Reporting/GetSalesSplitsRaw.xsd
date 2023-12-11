@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            targetNamespace="http://www.timelog.com/XML/Schema/tlp/v4_4"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+  <xsd:element name="SalesSplits">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="SalesSplit" type="tlp:SalesSplitRaw_Type" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    <xsd:key name="SalesSplit_Key">
+      <xsd:selector xpath=".//tlp:SalesSplit" />
+      <xsd:field xpath="@ID" />
+    </xsd:key>
+  </xsd:element>
+
+  <xsd:complexType name="SalesSplitRaw_Type">
+    <xsd:sequence>
+	  <xsd:element name="ProjectID" type="xsd:positiveInteger" />
+	  <xsd:element name="EmployeeID" type="xsd:positiveInteger" />
+	  <xsd:element name="SplitType" type="xsd:string" />
+	  <xsd:element name="SplitPercentage" type="xsd:decimal" />
+	  <xsd:element name="SplitAmount" type="xsd:decimal" />
+	  <xsd:element name="EmployeeLegalEntityID" type="xsd:positiveInteger" minOccurs="0" maxOccurs="1" />
+	  <xsd:element name="SystemCurrencySplitAmount" type="xsd:decimal" />
+    </xsd:sequence>
+    <xsd:attribute name="ID" type="xsd:positiveInteger" use="required" />
+  </xsd:complexType>
+
+</xsd:schema>
