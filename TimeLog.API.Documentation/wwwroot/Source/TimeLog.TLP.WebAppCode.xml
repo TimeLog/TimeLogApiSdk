@@ -730,6 +730,19 @@ TimeLog.TLP.WebAppCode
  <param name="apiPassword">The API password</param>
  <returns>A list of salary accounts in standard XML document</returns>
 </member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetSalesSplitsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Get a list of sales splits
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="projectID">ID of specific project. Set to 0 to get all projects</param>
+ <param name="status">0 for inactive projects; 1 for active projects; -2 for all projects</param>
+ <param name="customerID">ID of specific customer. Set to 0 to get all projects</param>
+ <param name="projectManagerID">ID of specific employee. Set to 0 to get all projects</param>
+ <returns>A list of sales splits in standard XML document</returns>
+</member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetSalaryAccountEmployeePostingsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime)">
  <summary>
  Get a list of salary account employee postings
