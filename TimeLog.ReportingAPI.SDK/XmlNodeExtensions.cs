@@ -18,10 +18,10 @@ public static class XmlNodeExtensions
     /// <returns>A string value (empty string if parsing fails)</returns>
     public static string GetStringSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager)
     {
-        var element = node.SelectSingleNode(xpath, namespaceManager);
-        if (element != null)
+        var _element = node.SelectSingleNode(xpath, namespaceManager);
+        if (_element != null)
         {
-            return element.InnerText;
+            return _element.InnerText;
         }
 
         return string.Empty;
@@ -36,13 +36,13 @@ public static class XmlNodeExtensions
     /// <returns>An int value (0 if parsing fails)</returns>
     public static int GetIntSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager)
     {
-        var element = node.SelectSingleNode(xpath, namespaceManager);
+        var _element = node.SelectSingleNode(xpath, namespaceManager);
 
-        if (element != null)
+        if (_element != null)
         {
-            if (int.TryParse(element.InnerText, out var result))
+            if (int.TryParse(_element.InnerText, out var _result))
             {
-                return result;
+                return _result;
             }
 
             return 0;
@@ -65,18 +65,18 @@ public static class XmlNodeExtensions
         XmlNamespaceManager namespaceManager,
         CultureInfo culture = null)
     {
-        var element = node.SelectSingleNode(xpath, namespaceManager);
+        var _element = node.SelectSingleNode(xpath, namespaceManager);
 
-        if (element != null)
+        if (_element != null)
         {
             if (culture == null)
             {
                 culture = ServiceHandler.DataCulture;
             }
 
-            if (double.TryParse(element.InnerText, NumberStyles.Any, culture, out var result))
+            if (double.TryParse(_element.InnerText, NumberStyles.Any, culture, out var _result))
             {
-                return result;
+                return _result;
             }
 
             return 0;
@@ -84,6 +84,41 @@ public static class XmlNodeExtensions
 
         return 0;
     }
+    
+    /// <summary>
+    ///     Gets a strongly typed decimal value from a given XPath. Returns 0 if parsing fails.
+    /// </summary>
+    /// <param name="node">The XML node</param>
+    /// <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
+    /// <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+    /// <param name="culture">Optional culture for conversion</param>
+    /// <returns>An decimal value (0 if parsing fails)</returns>
+    public static decimal GetDecimalSafe(
+        this XmlNode node,
+        string xpath,
+        XmlNamespaceManager namespaceManager,
+        CultureInfo culture = null)
+    {
+        var _element = node.SelectSingleNode(xpath, namespaceManager);
+
+        if (_element != null)
+        {
+            if (culture == null)
+            {
+                culture = ServiceHandler.DataCulture;
+            }
+
+            if (decimal.TryParse(_element.InnerText, NumberStyles.Any, culture, out var _result))
+            {
+                return _result;
+            }
+
+            return 0;
+        }
+
+        return 0;
+    }
+    
 
     /// <summary>
     ///     Gets a strongly typed float value from a given XPath. Returns 0 if parsing fails.
@@ -99,18 +134,18 @@ public static class XmlNodeExtensions
         XmlNamespaceManager namespaceManager,
         CultureInfo culture = null)
     {
-        var element = node.SelectSingleNode(xpath, namespaceManager);
+        var _element = node.SelectSingleNode(xpath, namespaceManager);
         
-        if (element != null)
+        if (_element != null)
         {
             if (culture == null)
             {
                 culture = ServiceHandler.DataCulture;
             }
 
-            if (float.TryParse(element.InnerText, NumberStyles.Any, culture, out var result))
+            if (float.TryParse(_element.InnerText, NumberStyles.Any, culture, out var _result))
             {
-                return result;
+                return _result;
             }
 
             return 0;
@@ -128,13 +163,13 @@ public static class XmlNodeExtensions
     /// <returns>An DateTime value (DateTime.MinValue if parsing fails)</returns>
     public static DateTime GetDateTimeSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager)
     {
-        var element = node.SelectSingleNode(xpath, namespaceManager);
+        var _element = node.SelectSingleNode(xpath, namespaceManager);
         
-        if (element != null)
+        if (_element != null)
         {
-            if (DateTime.TryParse(element.InnerText, out var result))
+            if (DateTime.TryParse(_element.InnerText, out var _result))
             {
-                return result;
+                return _result;
             }
 
             return DateTime.MinValue;
@@ -152,13 +187,13 @@ public static class XmlNodeExtensions
     /// <returns>An boolean value (false if parsing fails)</returns>
     public static bool GetBoolTimeSafe(this XmlNode node, string xpath, XmlNamespaceManager namespaceManager)
     {
-        var element = node.SelectSingleNode(xpath, namespaceManager);
+        var _element = node.SelectSingleNode(xpath, namespaceManager);
         
-        if (element != null)
+        if (_element != null)
         {
-            if (bool.TryParse(element.InnerText, out var result))
+            if (bool.TryParse(_element.InnerText, out var _result))
             {
-                return result;
+                return _result;
             }
 
             return false;

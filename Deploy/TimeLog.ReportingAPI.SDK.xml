@@ -610,6 +610,128 @@
                 Gets or sets the related project number
             </summary>
         </member>
+        <member name="T:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting">
+            <summary>
+            Placeholder for salary account employee posting
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting" /> class.
+            </summary>
+        </member>
+        <member name="M:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.#ctor(System.Xml.XmlNode,System.Xml.XmlNamespaceManager)">
+            <summary>
+                Initializes a new instance of the <see cref="T:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting" /> class.
+            </summary>
+            <param name="node">The XML node to initialize from</param>
+            <param name="namespaceManager">The namespace manager</param>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.Id">
+            <summary>
+                Gets or sets the identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.Guid">
+            <summary>
+                Gets or sets the GUID
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.EmployeeUserId">
+            <summary>
+                Gets or sets the employee user identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.EmployeeUsername">
+            <summary>
+                Gets or sets the employee username
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.EmployeeNo">
+            <summary>
+                Gets or sets the employee number
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.SalaryAccountId">
+            <summary>
+                Gets or sets the salary account identifier
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.SalaryAccountName">
+            <summary>
+                Gets or sets the salary account name
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.Date">
+            <summary>
+                Gets or sets the date
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.EntityType">
+            <summary>
+                Gets or sets the entity type
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.Hours">
+            <summary>
+                Gets or sets the hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.TotalHours">
+            <summary>
+                Gets or sets the total hours
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.Factor">
+            <summary>
+                Gets or sets the factor
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.PostingType">
+            <summary>
+                Gets or sets the posting type
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.Minutes">
+            <summary>
+                Gets or sets the minutes
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.TotalMinutes">
+            <summary>
+                Gets or sets the total minutes
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.Days">
+            <summary>
+                Gets or sets the days
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.TotalDays">
+            <summary>
+                Gets or sets the total days
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.CommentToManager">
+            <summary>
+                Gets or sets the comment to manager
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.CommentToEmployee">
+            <summary>
+                Gets or sets the comment to employee
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.Created">
+            <summary>
+                Gets or sets the created
+            </summary>
+        </member>
+        <member name="P:TimeLog.ReportingAPI.SDK.SalaryAccountEmployeePosting.CreatedBy">
+            <summary>
+                Gets or sets the created by
+            </summary>
+        </member>
         <member name="T:TimeLog.ReportingAPI.SDK.ServiceHandler">
             <summary>
                 Handling security and connectivity for the reporting API
@@ -1266,6 +1388,16 @@
             <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
             <param name="culture">Optional culture for conversion</param>
             <returns>An double value (0 if parsing fails)</returns>
+        </member>
+        <member name="M:TimeLog.ReportingAPI.SDK.XmlNodeExtensions.GetDecimalSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager,System.Globalization.CultureInfo)">
+            <summary>
+                Gets a strongly typed decimal value from a given XPath. Returns 0 if parsing fails.
+            </summary>
+            <param name="node">The XML node</param>
+            <param name="xpath">Selects the first XmlNode that matches the XPath expression</param>
+            <param name="namespaceManager">An XmlNamespaceManager to use for resolving namespaces</param>
+            <param name="culture">Optional culture for conversion</param>
+            <returns>An decimal value (0 if parsing fails)</returns>
         </member>
         <member name="M:TimeLog.ReportingAPI.SDK.XmlNodeExtensions.GetFloatSafe(System.Xml.XmlNode,System.String,System.Xml.XmlNamespaceManager,System.Globalization.CultureInfo)">
             <summary>

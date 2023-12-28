@@ -46,6 +46,7 @@ copy /y $(TargetDir)*.dll.config $(SolutionDir)Deploy</PostBuildEvent>
       <Compile Include="ProjectManager.cs" />
       <Compile Include="ProjectStatus.cs" />
       <Compile Include="ProjectType.cs" />
+      <Compile Include="SalaryAccountEmployeePosting.cs" />
       <Compile Include="ServiceHandler.cs" />
       <Compile Include="SubOpportunity.cs" />
       <Compile Include="Task.cs" />
