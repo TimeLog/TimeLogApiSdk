@@ -42,7 +42,9 @@
                 configuration.GetIntegerSafe("ProjectId"),
                 configuration.GetIntegerSafe("DepartmentId"),
                 configuration.GetDateTimeSafe("StartDate").ToString("yyyy-MM-dd"),
-                configuration.GetDateTimeSafe("EndDate").ToString("yyyy-MM-dd"));
+                configuration.GetDateTimeSafe("EndDate").ToString("yyyy-MM-dd"),
+                string.Empty,
+                string.Empty);
         }
     }
 }

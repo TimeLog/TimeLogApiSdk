@@ -35,7 +35,8 @@ public class ConsumeWorkUnitReportingApi
                         0,
                         0, 0, 0, 0, 0,
                         _startDate.ToString("yyyy-MM-dd"),
-                        _startDate.AddDays(1).ToString("yyyy-MM-dd"));
+                        _startDate.AddDays(1).ToString("yyyy-MM-dd"),
+                        string.Empty, string.Empty);
 
                     Logger.Debug("Saving " + _fileName);
                     File.WriteAllText(_fileName, raw.InnerXml);
