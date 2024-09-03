@@ -18,10 +18,17 @@ namespace TimeLog.ReportingAPI.SDK
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkUnitsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Xml.XmlNode GetWorkUnitsRaw(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize);
+        System.Xml.XmlNode GetWorkUnitsRaw(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkUnitsRaw", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize);
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkUnitsRawPaged", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetWorkUnitsRawPaged(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkUnitsRawPaged", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawPagedAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetAllocationsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -480,14 +487,24 @@ namespace TimeLog.ReportingAPI.SDK
         {
         }
         
-        public System.Xml.XmlNode GetWorkUnitsRaw(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize)
+        public System.Xml.XmlNode GetWorkUnitsRaw(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate)
         {
-            return base.Channel.GetWorkUnitsRaw(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate, page, pageSize);
+            return base.Channel.GetWorkUnitsRaw(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate);
         }
         
-        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize)
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate)
         {
-            return base.Channel.GetWorkUnitsRawAsync(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate, page, pageSize);
+            return base.Channel.GetWorkUnitsRawAsync(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate);
+        }
+        
+        public System.Xml.XmlNode GetWorkUnitsRawPaged(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize)
+        {
+            return base.Channel.GetWorkUnitsRawPaged(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate, page, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawPagedAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize)
+        {
+            return base.Channel.GetWorkUnitsRawPagedAsync(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate, page, pageSize);
         }
         
         public System.Xml.XmlNode GetAllocationsRaw(string siteCode, string apiID, string apiPassword, int allocationID, int taskID, int employeeID, int projectID)

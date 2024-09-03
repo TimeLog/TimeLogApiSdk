@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tlp:WorkUnits xmlns:tlp="http://www.timelog.com/XML/Schema/tlp/v4_4"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/WorkUnitsRaw.xsd">
+               xsi:schemaLocation="http://www.timelog.com/XML/Schema/tlp/v4_4 http://www.timelog.com/api/xsd/WorkUnitsRaw.xsd"
+			   Page="1" PageSize="10" TotalPages="1" TotalRecords="1">
   <tlp:WorkUnit ID="1" OldID="31">
   <tlp:TimeRegistrationGuid>2668E774-8393-484C-8ECE-B62876EDABE5</tlp:TimeRegistrationGuid>
   <tlp:WorkUnitGuid>FC9F4E07-D513-41FA-99E3-2A27FDE22ED9</tlp:WorkUnitGuid>

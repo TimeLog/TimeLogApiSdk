@@ -9,6 +9,10 @@
       <xsd:sequence>
         <xsd:element name="WorkUnit" type="tlp:WorkUnitRaw_Type" minOccurs="0" maxOccurs="unbounded" />
       </xsd:sequence>
+	  <xsd:attribute name="Page" type="xsd:int" use="optional" />
+      <xsd:attribute name="PageSize" type="xsd:int" use="optional" />
+      <xsd:attribute name="TotalPages" type="xsd:int" use="optional" />
+      <xsd:attribute name="TotalRecords" type="xsd:int" use="optional" />
     </xsd:complexType>
     <xsd:key name="WorkUnit_Key">
       <xsd:selector xpath=".//tlp:WorkUnit" />
