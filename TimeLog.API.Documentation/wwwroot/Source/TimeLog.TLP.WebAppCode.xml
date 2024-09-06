@@ -146,8 +146,8 @@ TimeLog.TLP.WebAppCode
  <param name="departmentID">ID of specific department. Set to 0 to get work units</param>
  <param name="startDate">Limits result to all work units registred on or later than this date</param>
  <param name="endDate">Limits result to all work units registred on or prior to this date</param>
- <param name="page">The page number to retrieve. Omit this parameter or leave it empty to retrieve all work units</param>
- <param name="pageSize">The page size to retrieve. Omit this parameter or leave it empty to retrieve all work units</param>
+ <param name="page">The page number to retrieve. Leave it empty to retrieve all work units</param>
+ <param name="pageSize">The page size to retrieve. Leave it empty to retrieve all work units</param>
  <returns>A paginated list of work unit objects in XML format</returns>
 </member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetAllocationsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
