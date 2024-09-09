@@ -11,7 +11,7 @@ namespace TimeLog.ReportingAPI.SDK
 {
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/ws/tlp/v4_4", ConfigurationName="TimeLog.ReportingAPI.SDK.ServiceSoap")]
     public interface ServiceSoap
     {
@@ -22,6 +22,13 @@ namespace TimeLog.ReportingAPI.SDK
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkUnitsRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkUnitsRawPaged", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetWorkUnitsRawPaged(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetWorkUnitsRawPaged", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawPagedAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetAllocationsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -352,6 +359,13 @@ namespace TimeLog.ReportingAPI.SDK
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetContractsRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetContractsRawAsync(string siteCode, string apiID, string apiPassword, int projectID, int contractModelType);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetContractsExtendedRaw", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetContractsExtendedRaw(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int contractModelType, System.DateTime lastModifiedSince);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetContractsExtendedRaw", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetContractsExtendedRawAsync(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int contractModelType, System.DateTime lastModifiedSince);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetHardBookingsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Xml.XmlNode GetHardBookingsRaw(string siteCode, string apiID, string apiPassword, int employeeUserId, System.DateTime startDate, System.DateTime endDate, int hardbookingType);
@@ -430,13 +444,13 @@ namespace TimeLog.ReportingAPI.SDK
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetIntercompanyInvoicesRawAsync(string siteCode, string apiID, string apiPassword, int senderID, int recipientID, int accountManagerID, int projectManagerID, System.DateTime fromDate, System.DateTime toDate);
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     public interface ServiceSoapChannel : TimeLog.ReportingAPI.SDK.ServiceSoap, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     public partial class ServiceSoapClient : System.ServiceModel.ClientBase<TimeLog.ReportingAPI.SDK.ServiceSoap>, TimeLog.ReportingAPI.SDK.ServiceSoap
     {
         
@@ -481,6 +495,16 @@ namespace TimeLog.ReportingAPI.SDK
         public System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate)
         {
             return base.Channel.GetWorkUnitsRawAsync(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate);
+        }
+        
+        public System.Xml.XmlNode GetWorkUnitsRawPaged(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize)
+        {
+            return base.Channel.GetWorkUnitsRawPaged(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate, page, pageSize);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetWorkUnitsRawPagedAsync(string siteCode, string apiID, string apiPassword, int workUnitID, int employeeID, int allocationID, int taskID, int projectID, int departmentID, string startDate, string endDate, string page, string pageSize)
+        {
+            return base.Channel.GetWorkUnitsRawPagedAsync(siteCode, apiID, apiPassword, workUnitID, employeeID, allocationID, taskID, projectID, departmentID, startDate, endDate, page, pageSize);
         }
         
         public System.Xml.XmlNode GetAllocationsRaw(string siteCode, string apiID, string apiPassword, int allocationID, int taskID, int employeeID, int projectID)
@@ -953,6 +977,16 @@ namespace TimeLog.ReportingAPI.SDK
             return base.Channel.GetContractsRawAsync(siteCode, apiID, apiPassword, projectID, contractModelType);
         }
         
+        public System.Xml.XmlNode GetContractsExtendedRaw(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int contractModelType, System.DateTime lastModifiedSince)
+        {
+            return base.Channel.GetContractsExtendedRaw(siteCode, apiID, apiPassword, customerID, projectID, contractModelType, lastModifiedSince);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetContractsExtendedRawAsync(string siteCode, string apiID, string apiPassword, int customerID, int projectID, int contractModelType, System.DateTime lastModifiedSince)
+        {
+            return base.Channel.GetContractsExtendedRawAsync(siteCode, apiID, apiPassword, customerID, projectID, contractModelType, lastModifiedSince);
+        }
+        
         public System.Xml.XmlNode GetHardBookingsRaw(string siteCode, string apiID, string apiPassword, int employeeUserId, System.DateTime startDate, System.DateTime endDate, int hardbookingType)
         {
             return base.Channel.GetHardBookingsRaw(siteCode, apiID, apiPassword, employeeUserId, startDate, endDate, hardbookingType);
@@ -1066,11 +1100,6 @@ namespace TimeLog.ReportingAPI.SDK
         public virtual System.Threading.Tasks.Task OpenAsync()
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));
-        }
-        
-        public virtual System.Threading.Tasks.Task CloseAsync()
-        {
-            return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginClose(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndClose));
         }
         
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
