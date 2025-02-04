@@ -11,6 +11,63 @@
     "http"
   ],
   "paths": {
+    "/v{version}/absence-code/get-recently-registered": {
+      "get": {
+        "tags": [
+          "AbsenceCode"
+        ],
+        "summary": "Get a list of absence code that user has registered time on",
+        "operationId": "AbsenceCode_GetRecentlyRegistered",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "includeFavouriteOnly",
+            "in": "query",
+            "description": "To see only favourite absence codes",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of absence code",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.AbsenceCode.AbsenceCodeApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetRecentlyRegistered has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/absence-code/{status}": {
       "get": {
         "tags": [
@@ -21,7 +78,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -37,6 +95,22 @@
               1,
               -1
             ]
+          },
+          {
+            "name": "includeFavouriteOnly",
+            "in": "query",
+            "description": "To see only favourite absence codes",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Absence name or number",
+            "required": false,
+            "type": "string",
+            "default": ""
           },
           {
             "name": "version",
@@ -79,54 +153,6 @@
         ]
       }
     },
-    "/v{version}/absence-code/get-recently-registered": {
-      "get": {
-        "tags": [
-          "AbsenceCode"
-        ],
-        "summary": "Get a list of absence code that user has registered time on",
-        "operationId": "AbsenceCode_GetRecentlyRegistered",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list of absence code",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.AbsenceCode.AbsenceCodeApiReadModel"
-            }
-          },
-          "500": {
-            "description": "Request to GetRecentlyRegistered has failed",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
     "/v{version}/absence-code/time-tracker": {
       "post": {
         "tags": [
@@ -136,11 +162,13 @@
         "operationId": "AbsenceCode_CreateTimeTracker",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -193,11 +221,13 @@
         "operationId": "AbsenceCode_CreateRegistrationByHours",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -250,11 +280,13 @@
         "operationId": "AbsenceCode_CreateRegistrationByFullDay",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -307,11 +339,13 @@
         "operationId": "AbsenceCode_CreateRegistrationByHalfFullDay",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -365,7 +399,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -413,7 +448,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -469,7 +505,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -517,7 +554,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -589,7 +627,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -657,7 +696,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -729,7 +769,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -802,7 +843,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -889,11 +931,13 @@
         "operationId": "ApprovalTimesheet_SubmitDates",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -949,11 +993,13 @@
         "operationId": "ApprovalTimesheet_SubmitPeriod",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1009,11 +1055,13 @@
         "operationId": "ApprovalTimesheet_SubmitTimeRegistrations",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1069,11 +1117,13 @@
         "operationId": "ApprovalTimesheet_ResubmitRejectedTimeRegistrations",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1130,7 +1180,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1178,11 +1229,13 @@
         "operationId": "Barrier_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1233,11 +1286,13 @@
         "operationId": "Barrier_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1291,7 +1346,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1347,7 +1403,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1400,7 +1457,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1448,11 +1506,13 @@
         "operationId": "Car_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1503,11 +1563,13 @@
         "operationId": "Car_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1561,7 +1623,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1615,7 +1678,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1668,7 +1732,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1716,7 +1781,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1762,6 +1828,179 @@
         ]
       }
     },
+    "/v{version}/contact": {
+      "get": {
+        "tags": [
+          "ContactPerson"
+        ],
+        "summary": "Get all the contacts",
+        "operationId": "ContactPerson_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of contacts",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ContactPerson.Models.ContactApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/contact/create": {
+      "post": {
+        "tags": [
+          "ContactPerson"
+        ],
+        "summary": "Create new contact",
+        "operationId": "ContactPerson_Create",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "contact",
+            "in": "body",
+            "description": "Create contact information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ContactPerson.Models.ContactApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ContactPerson.Models.ContactApiCreateModel"
+            }
+          },
+          "500": {
+            "description": "Contact could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/contact/validate-new-contact": {
+      "post": {
+        "tags": [
+          "ContactPerson"
+        ],
+        "summary": "Validate new contact",
+        "operationId": "ContactPerson_ValidateNewContact",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "contact",
+            "in": "body",
+            "description": "Validate contact information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ContactPerson.Models.ContactApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ContactPerson.Models.ContactApiCreateModel"
+            }
+          },
+          "500": {
+            "description": "Contact could not be validated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/contract-hourly-rate": {
       "get": {
         "tags": [
@@ -1772,7 +2011,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1818,6 +2058,181 @@
         ]
       }
     },
+    "/v{version}/contract-hourly-rate/get-by-id": {
+      "get": {
+        "tags": [
+          "ContractHourlyRate"
+        ],
+        "summary": "Get the contract hourly rates by ID",
+        "operationId": "ContractHourlyRate_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "contractHourlyRateID",
+            "in": "query",
+            "description": "Contract hourly rate ID",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of contract hourly rates",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Invoicing.Models.ContractHourlyRate.ContractHourlyRateApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetByID has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/contract-hourly-rate/create-hourly-rate": {
+      "post": {
+        "tags": [
+          "ContractHourlyRate"
+        ],
+        "summary": "Create hourly rate.\r\nThe hourly rate will only be created if an existing standard hourly rate on same amount and name does not exist.\r\nIf a new hourly rate is created it will be of the type/category passed in the model.",
+        "operationId": "ContractHourlyRate_CreateHourlyRate",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "contractHourlyRateModel",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Invoicing.Models.ContractHourlyRate.ContractHourlyRateApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contract hourly rate was created successfully"
+          },
+          "500": {
+            "description": "Contract hourly rate could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/contract-hourly-rate/validate-hourly-rate": {
+      "post": {
+        "tags": [
+          "ContractHourlyRate"
+        ],
+        "summary": "Validate hourly rate.\r\nThe hourly rate will only be created if an existing standard hourly rate on same amount and name does not exist.\r\nIf a new hourly rate is created it will be of the type/category passed in the model.",
+        "operationId": "ContractHourlyRate_ValidateHourlyRate",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "contractHourlyRateModel",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Invoicing.Models.ContractHourlyRate.ContractHourlyRateApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contract hourly rate was created successfully"
+          },
+          "500": {
+            "description": "Contract hourly rate could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/ContractModel": {
       "get": {
         "tags": [
@@ -1828,7 +2243,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1876,7 +2292,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1924,7 +2341,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -1972,7 +2390,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2040,7 +2459,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2088,7 +2508,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2144,7 +2565,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2208,7 +2630,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2271,7 +2694,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2332,11 +2756,13 @@
         "operationId": "Customer_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2392,11 +2818,13 @@
         "operationId": "Customer_ValidateNewCustomer",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2453,7 +2881,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2501,7 +2930,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2539,172 +2969,6 @@
         ]
       }
     },
-    "/v{version}/employee-expense": {
-      "get": {
-        "tags": [
-          "EmployeeExpense"
-        ],
-        "summary": "Get all the employee expenses",
-        "operationId": "EmployeeExpense_GetAll",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "userID",
-            "in": "query",
-            "description": "User identifier (optional)",
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list of employee expense",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiReadModel"
-            }
-          },
-          "500": {
-            "description": "Employee expense with the user identifier does not exist",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "EmployeeExpense"
-        ],
-        "summary": "Update employee expense",
-        "operationId": "EmployeeExpense_Update",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "model",
-            "in": "body",
-            "description": "New employee expense information",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiUpdateModel"
-            }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expense was updated successfully"
-          },
-          "500": {
-            "description": "Expense could not be updated",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      },
-      "post": {
-        "tags": [
-          "EmployeeExpense"
-        ],
-        "summary": "Create an employee expense",
-        "operationId": "EmployeeExpense_Create",
-        "consumes": [
-          "application/json",
-          "text/json"
-        ],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "model",
-            "in": "body",
-            "description": "Expense information",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiCreateModel"
-            }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Expense was created successfully"
-          },
-          "500": {
-            "description": "Expense could not be created",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
     "/v{version}/employee-expense/{employeeExpenseID}": {
       "get": {
         "tags": [
@@ -2715,7 +2979,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2769,7 +3034,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2812,6 +3078,193 @@
         ]
       }
     },
+    "/v{version}/employee-expense": {
+      "get": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Get all the employee expenses",
+        "operationId": "EmployeeExpense_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "query",
+            "description": "User identifier (optional)",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start date (optional)",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "End date (optional)",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of employee expense",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Employee expense with the user identifier does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Update employee expense",
+        "operationId": "EmployeeExpense_Update",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "New employee expense information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expense was updated successfully"
+          },
+          "500": {
+            "description": "Expense could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "EmployeeExpense"
+        ],
+        "summary": "Create an employee expense",
+        "operationId": "EmployeeExpense_Create",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "Expense information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpense.EmployeeExpenseApiCreateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expense was created successfully"
+          },
+          "500": {
+            "description": "Expense could not be created",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/employee-expense/{employeeExpenseID}/file": {
       "post": {
         "tags": [
@@ -2822,7 +3275,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2873,7 +3327,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2937,7 +3392,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -2988,7 +3444,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3052,7 +3509,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3108,7 +3566,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3162,6 +3621,69 @@
         ]
       }
     },
+    "/v{version}/employee-expense-financial-data/get-all-time-total": {
+      "get": {
+        "tags": [
+          "EmployeeExpenseFinancialData"
+        ],
+        "summary": "Get the employee expense total amount",
+        "operationId": "EmployeeExpenseFinancialData_GetAllTimeTotal",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Employee expense financial data",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.EmployeeExpenseFinancialData.EmployeeExpenseFinancialDataApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetAllTimeTotal has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/employee-projection/get-in-period": {
       "get": {
         "tags": [
@@ -3172,7 +3694,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3236,7 +3759,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3284,7 +3808,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3352,7 +3877,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3397,11 +3923,13 @@
         "operationId": "ExternalSystems_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3458,7 +3986,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3511,11 +4040,13 @@
         "operationId": "ExternalSystems_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3578,7 +4109,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3630,11 +4162,13 @@
         "operationId": "Feature_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3688,7 +4222,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3736,7 +4271,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3784,7 +4320,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3832,7 +4369,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3880,7 +4418,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3928,7 +4467,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -3984,7 +4524,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4042,11 +4583,13 @@
         "operationId": "IntegrationConflicts_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4103,7 +4646,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4141,6 +4685,109 @@
         ]
       }
     },
+    "/v{version}/legal-entity/system": {
+      "get": {
+        "tags": [
+          "LegalEntity"
+        ],
+        "operationId": "LegalEntity_SystemLegalEntity",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "500": {
+            "description": "Request to SystemLegalEntity has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/legal-entity/{legalEntityId}": {
+      "get": {
+        "tags": [
+          "LegalEntity"
+        ],
+        "operationId": "LegalEntity_GetById",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "legalEntityId",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "500": {
+            "description": "Request to GetById has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/mileage-rate": {
       "get": {
         "tags": [
@@ -4151,7 +4798,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4199,7 +4847,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4245,6 +4894,123 @@
         ]
       }
     },
+    "/v{version}/mileage-registration/{mileageRegistrationID}": {
+      "get": {
+        "tags": [
+          "MileageRegistration"
+        ],
+        "summary": "Get a Mileage Registration with its identifier",
+        "operationId": "MileageRegistration_GetByID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "mileageRegistrationID",
+            "in": "path",
+            "description": "Mileage registration identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A mileage registration",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.MileageRegistration.MileageRegistrationApiReadModel"
+            }
+          },
+          "500": {
+            "description": "MileageRegistration with the MileageRegistrationID provided does not exist",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "MileageRegistration"
+        ],
+        "summary": "Delete mileage registration using the mileage registration identifier",
+        "operationId": "MileageRegistration_Delete",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "mileageRegistrationID",
+            "in": "path",
+            "description": "The identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "ignoreTravelTimeRegistration",
+            "in": "query",
+            "description": "Travel time registration delete flag",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "MileageRegistration was deleted"
+          },
+          "500": {
+            "description": "MileageRegistration could not be deleted",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/mileage-registration": {
       "get": {
         "tags": [
@@ -4255,9 +5021,24 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
           {
             "name": "version",
             "in": "path",
@@ -4300,11 +5081,13 @@
         "operationId": "MileageRegistration_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4366,11 +5149,13 @@
         "operationId": "MileageRegistration_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4417,121 +5202,6 @@
         ]
       }
     },
-    "/v{version}/mileage-registration/{mileageRegistrationID}": {
-      "get": {
-        "tags": [
-          "MileageRegistration"
-        ],
-        "summary": "Get a Mileage Registration with its identifier",
-        "operationId": "MileageRegistration_GetByID",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "mileageRegistrationID",
-            "in": "path",
-            "description": "Mileage registration identifier",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A mileage registration",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.MileageRegistration.MileageRegistrationApiReadModel"
-            }
-          },
-          "500": {
-            "description": "MileageRegistration with the MileageRegistrationID provided does not exist",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "MileageRegistration"
-        ],
-        "summary": "Delete mileage registration using the mileage registration identifier",
-        "operationId": "MileageRegistration_Delete",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "mileageRegistrationID",
-            "in": "path",
-            "description": "The identifier",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "ignoreTravelTimeRegistration",
-            "in": "query",
-            "description": "Travel time registration delete flag",
-            "required": false,
-            "type": "boolean",
-            "default": false
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "MileageRegistration was deleted"
-          },
-          "500": {
-            "description": "MileageRegistration could not be deleted",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
     "/v{version}/normal-working-time": {
       "get": {
         "tags": [
@@ -4542,7 +5212,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4589,11 +5260,13 @@
         "operationId": "NormalWorkingTime_AssignToEmployee",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4647,7 +5320,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4703,7 +5377,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4756,11 +5431,13 @@
         "operationId": "Payment_CreatePayment",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4813,11 +5490,13 @@
         "operationId": "Payment_ValidateNewPayment",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4871,7 +5550,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4939,7 +5619,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -4977,6 +5658,55 @@
         ]
       }
     },
+    "/v{version}/privilege/user-privileges": {
+      "get": {
+        "tags": [
+          "Privilege"
+        ],
+        "summary": "Get privilege for user",
+        "operationId": "Privilege_GetPrivileges",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Privileges for the current user",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Security.Models.PrivilegeApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetPrivileges has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/product": {
       "get": {
         "tags": [
@@ -4987,7 +5717,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5035,7 +5766,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5088,11 +5820,13 @@
         "operationId": "Project_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5154,7 +5888,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5217,11 +5952,13 @@
         "operationId": "Project_UpdateStatus",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5282,11 +6019,13 @@
         "operationId": "Project_CreateFromTemplate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5342,11 +6081,13 @@
         "operationId": "Project_ValidateNewProject",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5403,7 +6144,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5451,7 +6193,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5507,7 +6250,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5560,11 +6304,13 @@
         "operationId": "ProjectExpense_CreateProjectExpense",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5617,11 +6363,13 @@
         "operationId": "ProjectExpense_ValidateProjectExpense",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5675,7 +6423,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5728,11 +6477,13 @@
         "operationId": "ProjectExternalKeys_UpdateExternalKeys",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5795,7 +6546,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5856,7 +6608,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5920,7 +6673,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -5984,7 +6738,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6056,7 +6811,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6120,7 +6876,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6192,7 +6949,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6263,11 +7021,13 @@
         "operationId": "ProjectHeader_CreateEmployeeExpense",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6320,11 +7080,13 @@
         "operationId": "ProjectHeader_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6381,7 +7143,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6429,7 +7192,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6485,7 +7249,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6540,11 +7305,13 @@
         "operationId": "ProjectSubContract_PrepaidServicesContractCreate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6597,11 +7364,13 @@
         "operationId": "ProjectSubContract_FixedPriceBasicContractCreate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6654,11 +7423,13 @@
         "operationId": "ProjectSubContract_PrepaidServicesContractValidate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6711,11 +7482,13 @@
         "operationId": "ProjectSubContract_TaskDrivenRevenueContractCreate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6768,11 +7541,13 @@
         "operationId": "ProjectSubContract_TimeMaterialBasicContractCreate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6825,11 +7600,13 @@
         "operationId": "ProjectSubContract_FixedPriceBasicContractValidate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6882,11 +7659,13 @@
         "operationId": "ProjectSubContract_TaskDrivenRevenueContractValidate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6939,11 +7718,13 @@
         "operationId": "ProjectSubContract_TimeMaterialBasicContractValidate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -6987,6 +7768,65 @@
         ]
       }
     },
+    "/v{version}/contract/update-recurring-contract-payment-plan-amount": {
+      "post": {
+        "tags": [
+          "ProjectSubContract"
+        ],
+        "summary": "Update amount on payment plan on contract.\r\nOnly for recurring contracts",
+        "operationId": "ProjectSubContract_RecurringContractPaymentPlanAmountUpdate",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectSubContract.RecurringPaymentPlanAmountUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Payment plan amount was update successfully"
+          },
+          "500": {
+            "description": "Payment plan could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/contract/create-time-material-account-end-balancing-contract": {
       "post": {
         "tags": [
@@ -6996,11 +7836,13 @@
         "operationId": "ProjectSubContract_TimeMaterialAccountEndBalancingContractCreate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7053,11 +7895,13 @@
         "operationId": "ProjectSubContract_TimeMaterialAccountEndBalancingContractValidate",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7101,6 +7945,65 @@
         ]
       }
     },
+    "/v{version}/contract/validate-update-recurring-contract-payment-plan-amount": {
+      "post": {
+        "tags": [
+          "ProjectSubContract"
+        ],
+        "summary": "Validate update amount on payment plan on contract.\r\nOnly for recurring contracts",
+        "operationId": "ProjectSubContract_RecurringContractPaymentPlanAmountUpdateValidate",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "description": "",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectSubContract.RecurringPaymentPlanAmountUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Payment plan amount was update successfully"
+          },
+          "500": {
+            "description": "Payment plan could not be updated",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/project-template/get-all": {
       "get": {
         "tags": [
@@ -7111,7 +8014,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7159,7 +8063,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7207,7 +8112,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7252,11 +8158,13 @@
         "operationId": "Role_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7308,7 +8216,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7377,7 +8286,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7428,7 +8338,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7502,11 +8413,13 @@
         "operationId": "SalaryAccount_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7574,7 +8487,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7621,11 +8535,13 @@
         "operationId": "Setting_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7679,7 +8595,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7735,7 +8652,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7788,11 +8706,13 @@
         "operationId": "Task_CreateTask",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7836,54 +8756,6 @@
         ]
       }
     },
-    "/v{version}/task/get-recently-registered": {
-      "get": {
-        "tags": [
-          "Task"
-        ],
-        "summary": "Get a list of task that the user has registered time on",
-        "operationId": "Task_GetRecentlyRegistered",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list of task",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
-            }
-          },
-          "500": {
-            "description": "Request to GetRecentlyRegistered has failed",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
     "/v{version}/task/travel-time-task-for-time-tracking": {
       "get": {
         "tags": [
@@ -7894,7 +8766,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -7950,7 +8823,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8014,7 +8888,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8068,6 +8943,63 @@
         ]
       }
     },
+    "/v{version}/task/get-recently-registered": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Get a list of task that the user has registered time on",
+        "operationId": "Task_GetRecentlyRegistered",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "includeFavouriteOnly",
+            "in": "query",
+            "description": "To see only favourite tasks",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetRecentlyRegistered has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/task/search-for-time-tracking": {
       "get": {
         "tags": [
@@ -8078,7 +9010,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8093,6 +9026,14 @@
             "name": "searchAll",
             "in": "query",
             "description": "if set to true [search all].",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "includeFavouriteOnly",
+            "in": "query",
+            "description": "To see only favourite tasks",
             "required": false,
             "type": "boolean",
             "default": false
@@ -8132,214 +9073,6 @@
         ]
       }
     },
-    "/v{version}/task/search-for-time-tracking-order-by-recent-registration": {
-      "get": {
-        "tags": [
-          "Task"
-        ],
-        "summary": "Search for task that the user can register time on, with the task information (Result is ordered by recent registration)",
-        "operationId": "Task_SearchForTimeTrackingOrderByRecentRegistration",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "searchText",
-            "in": "query",
-            "description": "Task name or task number",
-            "required": false,
-            "type": "string",
-            "default": ""
-          },
-          {
-            "name": "searchAll",
-            "in": "query",
-            "description": "if set to true [search all].",
-            "required": false,
-            "type": "boolean",
-            "default": false
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list of task",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
-            }
-          },
-          "500": {
-            "description": "Request to SearchForTimeTrackingOrderByRecentRegistration has failed",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
-    "/v{version}/task/search-for-time-tracking-by-project-id": {
-      "get": {
-        "tags": [
-          "Task"
-        ],
-        "summary": "Search for task that the user can register time on, that belongs to a project",
-        "operationId": "Task_SearchForTimeTrackingByProjectID",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "projectID",
-            "in": "query",
-            "description": "Project identifier",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "searchText",
-            "in": "query",
-            "description": "Task name or task number",
-            "required": false,
-            "type": "string",
-            "default": ""
-          },
-          {
-            "name": "searchAll",
-            "in": "query",
-            "description": "if set to true [search all].",
-            "required": false,
-            "type": "boolean",
-            "default": false
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list of task",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
-            }
-          },
-          "500": {
-            "description": "Request to SearchForTimeTrackingByProjectID has failed",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
-    "/v{version}/task/search-for-time-tracking-by-customer-id": {
-      "get": {
-        "tags": [
-          "Task"
-        ],
-        "summary": "Search for task that the user can register time on, that belongs to a customer",
-        "operationId": "Task_SearchForTimeTrackingByCustomerID",
-        "consumes": [],
-        "produces": [
-          "application/json",
-          "text/json"
-        ],
-        "parameters": [
-          {
-            "name": "customerID",
-            "in": "query",
-            "description": "Customer identifier",
-            "required": true,
-            "type": "integer",
-            "format": "int32"
-          },
-          {
-            "name": "searchText",
-            "in": "query",
-            "description": "Task name or task number",
-            "required": false,
-            "type": "string",
-            "default": ""
-          },
-          {
-            "name": "searchAll",
-            "in": "query",
-            "description": "if set to true [search all].",
-            "required": false,
-            "type": "boolean",
-            "default": false
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "description": "The requested API version",
-            "required": true,
-            "type": "string",
-            "default": "1"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "A list of task",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
-            }
-          },
-          "500": {
-            "description": "Request to SearchForTimeTrackingByCustomerID has failed",
-            "schema": {
-              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
-            }
-          },
-          "401": {
-            "description": "Invalid authentication token"
-          }
-        },
-        "security": [
-          {
-            "oauth2": [
-              ""
-            ]
-          }
-        ]
-      }
-    },
     "/v{version}/task/search-for-time-tracking-by-project-id-order-by-travel-time-task": {
       "get": {
         "tags": [
@@ -8350,7 +9083,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8422,7 +9156,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8494,7 +9229,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8556,6 +9292,241 @@
         ]
       }
     },
+    "/v{version}/task/search-for-time-tracking-order-by-recent-registration": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, with the task information (Result is ordered by recent registration)",
+        "operationId": "Task_SearchForTimeTrackingOrderByRecentRegistration",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Task name or task number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "searchAll",
+            "in": "query",
+            "description": "if set to true [search all].",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "includeFavouriteOnly",
+            "in": "query",
+            "description": "To see only favourite tasks",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingOrderByRecentRegistration has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-for-time-tracking-by-project-id": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, that belongs to a project",
+        "operationId": "Task_SearchForTimeTrackingByProjectID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "projectID",
+            "in": "query",
+            "description": "Project identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Task name or task number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "searchAll",
+            "in": "query",
+            "description": "if set to true [search all].",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "includeFavouriteOnly",
+            "in": "query",
+            "description": "To see only favourite tasks",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingByProjectID has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/task/search-for-time-tracking-by-customer-id": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Search for task that the user can register time on, that belongs to a customer",
+        "operationId": "Task_SearchForTimeTrackingByCustomerID",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "customerID",
+            "in": "query",
+            "description": "Customer identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "Task name or task number",
+            "required": false,
+            "type": "string",
+            "default": ""
+          },
+          {
+            "name": "searchAll",
+            "in": "query",
+            "description": "if set to true [search all].",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "includeFavouriteOnly",
+            "in": "query",
+            "description": "To see only favourite tasks",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.Task.TaskApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to SearchForTimeTrackingByCustomerID has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/task/registration": {
       "post": {
         "tags": [
@@ -8565,11 +9536,13 @@
         "operationId": "Task_CreateRegistration",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8622,11 +9595,13 @@
         "operationId": "Task_CreateSubTask",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8679,11 +9654,13 @@
         "operationId": "Task_ValidateNewTask",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8737,7 +9714,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8790,11 +9768,13 @@
         "operationId": "TaskExternalKeys_UpdateExternalKeys",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8857,7 +9837,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8918,7 +9899,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -8966,7 +9948,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9021,11 +10004,13 @@
         "operationId": "TimeRegistration_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9049,6 +10034,12 @@
         "responses": {
           "200": {
             "description": "Time registration was updated"
+          },
+          "400": {
+            "description": "Invalid input model"
+          },
+          "422": {
+            "description": "Business rules violation"
           },
           "500": {
             "description": "Time registration could not be updated",
@@ -9076,11 +10067,13 @@
         "operationId": "TimeRegistration_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9104,6 +10097,12 @@
         "responses": {
           "200": {
             "description": "Time registration was created"
+          },
+          "400": {
+            "description": "Invalid input model"
+          },
+          "422": {
+            "description": "Business rules violation"
           },
           "500": {
             "description": "Time registration could not be created"
@@ -9130,11 +10129,13 @@
         "operationId": "TimeRegistration_ImportTimeregistration",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9184,11 +10185,13 @@
         "operationId": "TimeRegistration_UpdateTime",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9238,11 +10241,13 @@
         "operationId": "TimeRegistration_CreateTimeTracker",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9295,11 +10300,13 @@
         "operationId": "TimeRegistration_ValidateImportTimeregistration",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9349,11 +10356,13 @@
         "operationId": "TimeRegistration_UpdateHoursAbsence",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9403,11 +10412,13 @@
         "operationId": "TimeRegistration_UpdateFullDayAbsence",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9457,11 +10468,13 @@
         "operationId": "TimeRegistration_UpdateHalfOrFullDaysAbsence",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9512,7 +10525,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9558,6 +10572,70 @@
         ]
       }
     },
+    "/v{version}/time-registration/delete-approved-absence/{timeRegistrationId}": {
+      "post": {
+        "tags": [
+          "TimeRegistration"
+        ],
+        "summary": "Delete approved absence",
+        "operationId": "TimeRegistration_DeleteApprovedAbsence",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "timeRegistrationId",
+            "in": "path",
+            "description": "Time registration identifier",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "comment",
+            "in": "body",
+            "description": "Comment for the",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Absence was deleted"
+          },
+          "500": {
+            "description": "Absence does not exist"
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/time-registration/{id}": {
       "delete": {
         "tags": [
@@ -9568,7 +10646,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9592,8 +10671,11 @@
           "200": {
             "description": "Time registration was deleted"
           },
-          "500": {
+          "404": {
             "description": "Time registration does not exist"
+          },
+          "500": {
+            "description": "Time registration could not be deleted"
           },
           "401": {
             "description": "Invalid authentication token"
@@ -9618,7 +10700,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9671,11 +10754,13 @@
         "operationId": "TimeRegistrationExternalKeys_UpdateExternalKeys",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9738,7 +10823,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9799,7 +10885,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9855,7 +10942,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9911,7 +10999,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -9975,7 +11064,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10039,7 +11129,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10135,7 +11226,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10180,11 +11272,13 @@
         "operationId": "TimeTracker_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10238,11 +11332,13 @@
         "operationId": "TimeTracker_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10299,7 +11395,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10353,7 +11450,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10406,7 +11504,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10453,11 +11552,13 @@
         "operationId": "TimeTracker_StartTimeTrackerForTask",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10510,11 +11611,13 @@
         "operationId": "TimeTracker_StartTimeTrackerForAbsence",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10568,7 +11671,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10614,6 +11718,63 @@
         ]
       }
     },
+    "/v{version}/time-tracking-item/get-weekly-registrations": {
+      "get": {
+        "tags": [
+          "TimeTrackingItem"
+        ],
+        "summary": "Get a list of time tracking item grouped expanded information by Task by the given period with norm hour",
+        "operationId": "TimeTrackingItem_GetWeeklyRegistrations",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Start of the period",
+            "required": true,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of time tracking item",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemExpandedApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetWeeklyRegistrations has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/time-tracking-item/get-by-date": {
       "get": {
         "tags": [
@@ -10624,7 +11785,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10688,7 +11850,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10742,6 +11905,65 @@
         ]
       }
     },
+    "/v{version}/time-tracking-item/save-favourite": {
+      "post": {
+        "tags": [
+          "TimeTrackingItem"
+        ],
+        "summary": "Add or remove favourite to task",
+        "operationId": "TimeTrackingItem_SaveFavourite",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "requestModel",
+            "in": "body",
+            "description": "Payload that requires Task reference identifier and boolean to define favourite or not",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.SaveFavouriteRequestModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A time tracking item"
+          },
+          "500": {
+            "description": "No time tracking item matching the identifier is found",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/unit-type": {
       "get": {
         "tags": [
@@ -10752,7 +11974,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10800,7 +12023,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10845,11 +12069,13 @@
         "operationId": "User_Update",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10903,7 +12129,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -10951,7 +12178,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -11006,11 +12234,13 @@
         "operationId": "User_Create",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -11066,11 +12296,13 @@
         "operationId": "User_ValidateNewUser",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -11127,7 +12359,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -11175,7 +12408,8 @@
         "consumes": [],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -11222,11 +12456,13 @@
         "operationId": "Workload_BookWorkload",
         "consumes": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "produces": [
           "application/json",
-          "text/json"
+          "text/json",
+          "application/problem+json"
         ],
         "parameters": [
           {
@@ -11358,6 +12594,10 @@
           "description": "Gets or sets a value indicating whether this instance is public visible.",
           "type": "boolean"
         },
+        "IsFavourite": {
+          "description": "Gets or sets a value indicating whether this absence is favourite or not.",
+          "type": "boolean"
+        },
         "ID": {
           "format": "uuid",
           "description": "Gets or sets the identifier.",
@@ -11396,6 +12636,10 @@
         "Url": {
           "description": "Gets the URL.",
           "type": "string",
+          "readOnly": true
+        },
+        "DeveloperNote": {
+          "type": "object",
           "readOnly": true
         }
       }
@@ -11868,6 +13112,20 @@
         "IsFavourite": {
           "description": "Gets or sets a value indicating whether this instance is favourite.",
           "type": "boolean"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "description": "The point in time when time tracking started.",
+          "type": "string"
+        },
+        "EndTime": {
+          "format": "date-time",
+          "description": "The point in time when time tracking ended.",
+          "type": "string"
+        },
+        "IsTimestampOverlapping": {
+          "description": "A value indicates whether this timestamp overlaps with another",
+          "type": "boolean"
         }
       }
     },
@@ -12076,6 +13334,11 @@
         "UserType": {
           "description": "Gets or sets the user type.",
           "type": "string"
+        },
+        "LegalEntityID": {
+          "format": "int32",
+          "description": "Gets or sets legal entity id.",
+          "type": "integer"
         }
       }
     },
@@ -12181,6 +13444,217 @@
         }
       }
     },
+    "TimeLog.TLP.Web.WebApi.V1.ContactPerson.Models.ContactApiReadModel": {
+      "type": "object",
+      "properties": {
+        "ID": {
+          "format": "int32",
+          "description": "Gets or sets the ID",
+          "type": "integer"
+        },
+        "GUID": {
+          "format": "uuid",
+          "description": "Gets or sets the GUID",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "FirstName": {
+          "description": "Gets or sets the Name",
+          "type": "string"
+        },
+        "LastName": {
+          "description": "Gets or sets the Last Name",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "Gets or sets the phone number",
+          "type": "string"
+        },
+        "Fax": {
+          "description": "Gets or sets the fax number",
+          "type": "string"
+        },
+        "Email": {
+          "description": "Gets or sets the email",
+          "type": "string"
+        },
+        "Department": {
+          "description": "Gets or sets the customers website",
+          "type": "string"
+        },
+        "Address": {
+          "description": "Gets or sets the customer address",
+          "type": "string"
+        },
+        "Address2": {
+          "description": "Gets or sets the customer address",
+          "type": "string"
+        },
+        "Address3": {
+          "description": "Gets or sets the customer address",
+          "type": "string"
+        },
+        "ZipCode": {
+          "description": "Gets or sets the customer address zip code",
+          "type": "string"
+        },
+        "City": {
+          "description": "Gets or sets the customer address city",
+          "type": "string"
+        },
+        "State": {
+          "description": "Gets or sets the customer address state",
+          "type": "string"
+        },
+        "CountryID": {
+          "format": "int32",
+          "description": "Gets or sets the customer address country",
+          "type": "integer"
+        },
+        "CustomerID": {
+          "format": "int32",
+          "description": "Gets or sets the customer ID",
+          "type": "integer"
+        },
+        "Initials": {
+          "description": "Gets or sets the Initials",
+          "type": "string"
+        },
+        "PrivatePhone": {
+          "description": "Gets or sets the Private Phone",
+          "type": "string"
+        },
+        "Mobile": {
+          "description": "Gets or sets the Mobile",
+          "type": "string"
+        },
+        "JobTitle": {
+          "description": "Gets or sets the Job Title",
+          "type": "string"
+        },
+        "ProfessionalTitle1": {
+          "description": "Gets or sets the Professional Title 1",
+          "type": "string"
+        },
+        "ProfessionalTitle2": {
+          "description": "Gets or sets the Professional Title 2",
+          "type": "string"
+        },
+        "Salutation": {
+          "description": "Gets or sets the Salutation",
+          "type": "string"
+        },
+        "ShownName": {
+          "description": "Gets or sets the Shown Name",
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.ContactPerson.Models.ContactApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "FirstName": {
+          "description": "Gets or sets the Name",
+          "type": "string"
+        },
+        "LastName": {
+          "description": "Gets or sets the Last Name",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "Gets or sets the phone number",
+          "type": "string"
+        },
+        "Fax": {
+          "description": "Gets or sets the fax number",
+          "type": "string"
+        },
+        "Email": {
+          "description": "Gets or sets the email",
+          "type": "string"
+        },
+        "Department": {
+          "description": "Gets or sets the Department",
+          "type": "string"
+        },
+        "Address": {
+          "description": "Gets or sets the customer address",
+          "type": "string"
+        },
+        "Address2": {
+          "description": "Gets or sets the customer address",
+          "type": "string"
+        },
+        "Address3": {
+          "description": "Gets or sets the customer address",
+          "type": "string"
+        },
+        "ZipCode": {
+          "description": "Gets or sets the customer address zip code",
+          "type": "string"
+        },
+        "City": {
+          "description": "Gets or sets the customer address city",
+          "type": "string"
+        },
+        "State": {
+          "description": "Gets or sets the customer address state",
+          "type": "string"
+        },
+        "CountryID": {
+          "format": "int32",
+          "description": "Gets or sets the customer address country",
+          "type": "integer"
+        },
+        "OwnerID": {
+          "format": "int32",
+          "description": "Gets or sets the owner ID",
+          "type": "integer"
+        },
+        "CustomerID": {
+          "format": "int32",
+          "description": "Gets or sets the Customer ID",
+          "type": "integer"
+        },
+        "Salutation": {
+          "description": "Gets or sets the Salutation",
+          "type": "string"
+        },
+        "Initials": {
+          "description": "Gets or sets the initials",
+          "type": "string"
+        },
+        "JobTitle": {
+          "description": "Gets or sets the job title",
+          "type": "string"
+        },
+        "Mobile": {
+          "description": "Gets or sets the mobile phone number",
+          "type": "string"
+        },
+        "PrivatePhone": {
+          "description": "Gets or sets the private phone number",
+          "type": "string"
+        },
+        "Comment": {
+          "description": "Gets or sets the mobile phone number",
+          "type": "string"
+        },
+        "ProfessionalTitle1": {
+          "description": "Gets or sets the Professional Title1",
+          "type": "string"
+        },
+        "ProfessionalTitle2": {
+          "description": "Gets or sets the ProfessionalTitle2",
+          "type": "string"
+        },
+        "Birthday": {
+          "format": "date-time",
+          "description": "Gets or sets the Birthday",
+          "type": "string"
+        }
+      }
+    },
     "TimeLog.TLP.Web.WebApi.V1.Invoicing.Models.ContractHourlyRate.ContractHourlyRateApiReadModel": {
       "type": "object",
       "properties": {
@@ -12232,6 +13706,43 @@
         },
         "CurrencyISO": {
           "description": "Gets or sets the currency ISO",
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Invoicing.Models.ContractHourlyRate.ContractHourlyRateApiCreateModel": {
+      "type": "object",
+      "properties": {
+        "ContractHourlyRateCreateCategory": {
+          "format": "int32",
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "type": "integer"
+        },
+        "ProjectId": {
+          "format": "int32",
+          "description": "Gets or set the projectId for the entity",
+          "type": "integer"
+        },
+        "ProjectSubContractId": {
+          "format": "int32",
+          "description": "Gets or set the ProjectSubContractId for the entity",
+          "type": "integer"
+        },
+        "ContractHourlyRateName": {
+          "description": "Gets or set the new hourly rate name",
+          "type": "string"
+        },
+        "ContractHourlyRateValue": {
+          "format": "double",
+          "description": "Gets or set the value of the hourly rate",
+          "type": "number"
+        },
+        "ProductNo": {
+          "description": "Gets or set the product no. for the hourly rate",
           "type": "string"
         }
       }
@@ -12575,6 +14086,11 @@
         "EanNo": {
           "description": "Gets or sets the EAN no.",
           "type": "string"
+        },
+        "LanguageID": {
+          "format": "int32",
+          "description": "Gets or sets the language ID used for the invoice.",
+          "type": "integer"
         }
       }
     },
@@ -12603,6 +14119,11 @@
         "IsActive": {
           "description": "Gets or sets a value indicating whether this instance is active.",
           "type": "boolean"
+        },
+        "CustomerStatusType": {
+          "format": "int32",
+          "description": "Gets or sets the CustomerStatus Type.",
+          "type": "integer"
         }
       }
     },
@@ -12750,6 +14271,10 @@
         "IsFileUrlLoaded": {
           "description": "Gets or sets a value indicating whether this instance is file URL loaded.",
           "type": "boolean"
+        },
+        "Status": {
+          "description": "Gets or sets the status value indicating whether this instance's status is Approved or still Pending.",
+          "type": "string"
         }
       }
     },
@@ -12787,6 +14312,11 @@
         "Customer": {
           "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel",
           "description": "Gets or sets the customer."
+        },
+        "MainContractId": {
+          "format": "int32",
+          "description": "Gets or sets the main contract Id.",
+          "type": "integer"
         }
       }
     },
@@ -13624,7 +15154,71 @@
             432,
             433,
             434,
-            435
+            435,
+            436,
+            437,
+            438,
+            439,
+            440,
+            441,
+            442,
+            443,
+            444,
+            445,
+            446,
+            447,
+            448,
+            449,
+            450,
+            451,
+            452,
+            453,
+            454,
+            455,
+            456,
+            457,
+            458,
+            459,
+            460,
+            461,
+            462,
+            463,
+            464,
+            465,
+            466,
+            467,
+            468,
+            469,
+            470,
+            471,
+            472,
+            473,
+            474,
+            475,
+            476,
+            477,
+            478,
+            479,
+            480,
+            481,
+            482,
+            483,
+            484,
+            485,
+            486,
+            487,
+            488,
+            489,
+            490,
+            491,
+            492,
+            493,
+            494,
+            495,
+            496,
+            497,
+            498,
+            499
           ],
           "type": "integer"
         },
@@ -13870,6 +15464,11 @@
           "type": "string",
           "example": "00000000-0000-0000-0000-000000000000"
         },
+        "CurrencyID": {
+          "format": "int32",
+          "description": "Gets or sets the Currency ID.",
+          "type": "integer"
+        },
         "CurrencyISO": {
           "description": "Gets or sets the Currency ISO.",
           "type": "string"
@@ -14004,7 +15603,6 @@
             13,
             14,
             15,
-            16,
             17,
             18,
             19,
@@ -14054,6 +15652,7 @@
             62,
             63,
             64,
+            65,
             98,
             99
           ],
@@ -14079,7 +15678,6 @@
             13,
             14,
             15,
-            16,
             17,
             18,
             19,
@@ -14129,6 +15727,7 @@
             62,
             63,
             64,
+            65,
             98,
             99
           ],
@@ -14653,6 +16252,30 @@
         }
       }
     },
+    "TimeLog.TLP.Web.WebApi.V1.Security.Models.PrivilegeApiReadModel": {
+      "type": "object",
+      "properties": {
+        "Type": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "type": "integer"
+        },
+        "PrivilegePackage": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "TimeLog.TLP.Web.WebApi.V1.Expenses.Models.Product.ProductApiReadModel": {
       "type": "object",
       "properties": {
@@ -14849,6 +16472,11 @@
           "format": "double",
           "description": "Gets or sets the bugget work amount",
           "type": "number"
+        },
+        "LanguageID": {
+          "format": "int32",
+          "description": "Gets or sets the language ID used for the invoice.",
+          "type": "integer"
         }
       }
     },
@@ -14948,6 +16576,21 @@
         "PartnerID": {
           "format": "int32",
           "description": "Gets or sets the partner ID",
+          "type": "integer"
+        },
+        "ContactID": {
+          "format": "int32",
+          "description": "Gets or sets the contact person",
+          "type": "integer"
+        },
+        "InvoicingCustomerReferenceID": {
+          "format": "int32",
+          "description": "Gets or sets the Customer Reference ID on the projects invoicing settings",
+          "type": "integer"
+        },
+        "LanguageID": {
+          "format": "int32",
+          "description": "Gets or sets the language ID used for the invoice.",
           "type": "integer"
         }
       }
@@ -15506,7 +17149,18 @@
             254,
             255,
             256,
-            257
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268
           ],
           "type": "integer"
         },
@@ -16167,6 +17821,26 @@
         }
       }
     },
+    "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectSubContract.RecurringPaymentPlanAmountUpdateModel": {
+      "type": "object",
+      "properties": {
+        "ProjectId": {
+          "format": "int32",
+          "description": "Gets or set the projectNo for the entity",
+          "type": "integer"
+        },
+        "ProjectSubContractId": {
+          "format": "int32",
+          "description": "Gets or set the ProjectSubContractId for the entity",
+          "type": "integer"
+        },
+        "PaymentPlanAmount": {
+          "format": "double",
+          "description": "Gets or set the value of the hourly rate",
+          "type": "number"
+        }
+      }
+    },
     "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectSubContract.TimeMaterialAccountEndBalancingContractApiCreateModel": {
       "type": "object",
       "properties": {
@@ -16806,7 +18480,19 @@
             285,
             286,
             287,
-            288
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            297,
+            298,
+            299,
+            300
           ],
           "type": "integer"
         },
@@ -16870,6 +18556,10 @@
         },
         "IsTravelTimeTask": {
           "description": "Gets or sets a value indicating whether this instance is a travel time task.",
+          "type": "boolean"
+        },
+        "IsFavourite": {
+          "description": "Gets or sets a value indicating whether this task is favourite or not.",
           "type": "boolean"
         }
       }
@@ -17033,6 +18723,16 @@
         },
         "MonthlyPeriod": {
           "description": "Gets or sets the monthly period.",
+          "type": "string"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "description": "Gets or sets the point in time when time tracking started.",
+          "type": "string"
+        },
+        "EndTime": {
+          "format": "date-time",
+          "description": "Gets or sets the point in time when time tracking ended.",
           "type": "string"
         }
       }
@@ -17375,7 +19075,18 @@
             254,
             255,
             256,
-            257
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268
           ],
           "type": "integer"
         },
@@ -17506,7 +19217,6 @@
             13,
             14,
             15,
-            16,
             17,
             18,
             19,
@@ -17556,6 +19266,7 @@
             62,
             63,
             64,
+            65,
             98,
             99
           ],
@@ -17581,7 +19292,6 @@
             13,
             14,
             15,
-            16,
             17,
             18,
             19,
@@ -17631,6 +19341,7 @@
             62,
             63,
             64,
+            65,
             98,
             99
           ],
@@ -17643,6 +19354,16 @@
         "AbsenceCode": {
           "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Salary.Models.AbsenceCode.AbsenceCodeApiReadModel",
           "description": "Gets or sets the absence code."
+        },
+        "StartTime": {
+          "format": "date-time",
+          "description": "The point in time when time tracking started.",
+          "type": "string"
+        },
+        "EndTime": {
+          "format": "date-time",
+          "description": "The point in time when time tracking ended.",
+          "type": "string"
         }
       }
     },
@@ -17740,6 +19461,15 @@
         "MonthlyPeriod": {
           "description": "Gets or sets the monthly period.",
           "type": "string"
+        },
+        "IsCalendarEvent": {
+          "description": "Gets or sets if this is a calendar event",
+          "type": "boolean"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "description": "Gets or sets the start time.",
+          "type": "string"
         }
       }
     },
@@ -17835,6 +19565,15 @@
           "type": "number"
         },
         "MonthlyPeriod": {
+          "type": "string"
+        },
+        "IsCalendarEvent": {
+          "description": "Gets or sets if this is a calendar event",
+          "type": "boolean"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "description": "Gets or sets the start time.",
           "type": "string"
         }
       }
@@ -17970,6 +19709,16 @@
           "format": "int32",
           "description": "Gets or sets the task id of the registration.",
           "type": "integer"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "description": "Gets or sets the point in time when time tracking started.",
+          "type": "string"
+        },
+        "EndTime": {
+          "format": "date-time",
+          "description": "Gets or sets the point in time when time tracking ended.",
+          "type": "string"
         },
         "TimeRegistrationID": {
           "format": "int32",
@@ -18510,7 +20259,18 @@
             254,
             255,
             256,
-            257
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268
           ],
           "type": "integer"
         },
@@ -18839,7 +20599,18 @@
             254,
             255,
             256,
-            257
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268
           ],
           "type": "integer"
         },
@@ -18926,6 +20697,11 @@
           "description": "Gets or sets Factor",
           "type": "number"
         },
+        "StartTime": {
+          "format": "date-time",
+          "description": "Gets or sets the point in time when time tracking started.",
+          "type": "string"
+        },
         "Comment": {
           "description": "Gets or sets the comment.",
           "type": "string"
@@ -18933,6 +20709,321 @@
         "Minute": {
           "format": "int32",
           "description": "Gets or sets the minute.",
+          "type": "integer"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemExpandedApiReadModel": {
+      "type": "object",
+      "properties": {
+        "TotalRegisteredHours": {
+          "format": "double",
+          "description": "Gets or sets the total registered hours for the date range.",
+          "type": "number"
+        },
+        "TotalNormHours": {
+          "format": "double",
+          "description": "Gets or sets the total norm hours for the date range.",
+          "type": "number"
+        },
+        "TotalHoursDifference": {
+          "format": "double",
+          "description": "Gets or sets the total hours difference for the date range.",
+          "type": "number"
+        },
+        "Tasks": {
+          "description": "Gets or sets the list of task user registered.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemExpandedGroup"
+          }
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemExpandedGroup": {
+      "type": "object",
+      "properties": {
+        "Date": {
+          "format": "date-time",
+          "description": "Gets or sets the date chosen.",
+          "type": "string"
+        },
+        "RegisteredHours": {
+          "format": "double",
+          "description": "Gets or sets the registered hours for the date range.",
+          "type": "number"
+        },
+        "NormHours": {
+          "format": "double",
+          "description": "Gets or sets the norm hours for the date range.",
+          "type": "number"
+        },
+        "HoursDifference": {
+          "format": "double",
+          "description": "Gets or sets the hours difference for the date range.",
+          "type": "number"
+        },
+        "TaskInfos": {
+          "description": "Gets or sets the list of task infos user registered.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemExpandedTask"
+          }
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemExpandedTask": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "format": "int32",
+          "description": "Gets or sets the customer identifier.",
+          "type": "integer"
+        },
+        "CustomerName": {
+          "description": "Gets or sets the name of the customer.",
+          "type": "string"
+        },
+        "CustomerNo": {
+          "description": "Gets or sets the customer no.",
+          "type": "string"
+        },
+        "ProjectID": {
+          "format": "int32",
+          "description": "Gets or sets the project identifier.",
+          "type": "integer"
+        },
+        "ProjectName": {
+          "description": "Gets or sets the name of the project.",
+          "type": "string"
+        },
+        "ProjectNo": {
+          "description": "Gets or sets the project no.",
+          "type": "string"
+        },
+        "TaskID": {
+          "format": "int32",
+          "description": "Gets or sets the task identifier.",
+          "type": "integer"
+        },
+        "TaskName": {
+          "description": "Gets or sets the name of the task.",
+          "type": "string"
+        },
+        "TaskFullName": {
+          "description": "Gets or sets the full name of the task.",
+          "type": "string"
+        },
+        "IsFixedPrice": {
+          "description": "Gets or sets the is fixed price.",
+          "type": "boolean"
+        },
+        "TaskNo": {
+          "description": "Gets or sets the task no.",
+          "type": "string"
+        },
+        "TaskIsActive": {
+          "description": "Gets or sets the task is active.",
+          "type": "boolean"
+        },
+        "AbsenceCodeID": {
+          "format": "int32",
+          "description": "Gets or sets the absence code identifier.",
+          "type": "integer"
+        },
+        "AbsenceName": {
+          "description": "Gets or sets the name of the absence.",
+          "type": "string"
+        },
+        "AbsenceCode": {
+          "description": "Gets or sets the absence code.",
+          "type": "string"
+        },
+        "AdditionalTextIsRequired": {
+          "description": "Gets or sets a value indicating whether [additional text is required].",
+          "type": "boolean"
+        },
+        "DefaultBillable": {
+          "description": "Gets or sets a value indicating whether [default billable].",
+          "type": "boolean"
+        },
+        "IsETCProject": {
+          "description": "Gets or sets a value indicating whether this instance is etc project.",
+          "type": "boolean"
+        },
+        "ShowBillable": {
+          "description": "Gets or sets a value indicating whether [show billable].",
+          "type": "boolean"
+        },
+        "IsFavourite": {
+          "description": "Gets or sets a value indicating whether this instance is favourite.",
+          "type": "boolean"
+        },
+        "EntityID": {
+          "format": "int32",
+          "description": "Gets or sets the entity identifier.",
+          "type": "integer"
+        },
+        "EntityType": {
+          "format": "int32",
+          "description": "Gets or sets the type of the entity.",
+          "type": "integer"
+        },
+        "AbsenceIsActive": {
+          "description": "Gets or sets the absence is active.",
+          "type": "boolean"
+        },
+        "Registrations": {
+          "description": "Gets or sets the list of registrations for this task.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemExpandedRegistration"
+          }
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemExpandedRegistration": {
+      "type": "object",
+      "properties": {
+        "AllocatedHour": {
+          "format": "int32",
+          "description": "Gets or sets the allocated hour.",
+          "type": "integer"
+        },
+        "TimeRegistrationID": {
+          "format": "int32",
+          "description": "Gets or sets the time registration identifier.",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "description": "Gets or sets the user identifier.",
+          "type": "integer"
+        },
+        "Created": {
+          "format": "date-time",
+          "description": "Gets or sets the created.",
+          "type": "string"
+        },
+        "CreatedBy": {
+          "format": "int32",
+          "description": "Gets or sets the created by.",
+          "type": "integer"
+        },
+        "LastModified": {
+          "format": "date-time",
+          "description": "Gets or sets the last modified.",
+          "type": "string"
+        },
+        "LastModifiedBy": {
+          "format": "int32",
+          "description": "Gets or sets the last modified by.",
+          "type": "integer"
+        },
+        "IsBillable": {
+          "description": "Gets or sets a value indicating whether this instance is billable.",
+          "type": "boolean"
+        },
+        "Status": {
+          "description": "Gets or sets a value indicating whether this {TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.TimeTrackingItemApiReadModel} is status.",
+          "type": "boolean"
+        },
+        "Date": {
+          "format": "date-time",
+          "description": "Gets or sets the date.",
+          "type": "string"
+        },
+        "MonthlyPeriod": {
+          "description": "Gets or sets the MonthlyPeriod",
+          "type": "string"
+        },
+        "Comment": {
+          "description": "Gets or sets the comment.",
+          "type": "string"
+        },
+        "Hours": {
+          "format": "double",
+          "description": "Gets or sets the hours.",
+          "type": "number"
+        },
+        "AdditionalTextField": {
+          "description": "Gets or sets the additional text field.",
+          "type": "string"
+        },
+        "InvoiceStatus": {
+          "description": "Gets or sets a value indicating whether [invoice status].",
+          "type": "boolean"
+        },
+        "TimeRegistrationApprovalStatus": {
+          "format": "int32",
+          "description": "Gets or sets a value indicating whether [time registration approval status].",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "type": "integer"
+        },
+        "TimeTrackingFormat": {
+          "format": "int32",
+          "description": "Gets or sets the time tracking format.",
+          "type": "integer"
+        },
+        "Minutes": {
+          "format": "int32",
+          "description": "Gets or sets the minutes.",
+          "type": "integer"
+        },
+        "BillableHours": {
+          "format": "double",
+          "description": "Gets or sets the billable hours.",
+          "type": "number"
+        },
+        "BillableMinutes": {
+          "format": "int32",
+          "description": "Gets or sets the billable minutes.",
+          "type": "integer"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "description": "The point in time when time tracking started.",
+          "type": "string"
+        },
+        "EndTime": {
+          "format": "date-time",
+          "description": "The point in time when time tracking ended.",
+          "type": "string"
+        },
+        "IsTimestampOverlapping": {
+          "description": "A value indicates whether this timestamp overlaps with another",
+          "type": "boolean"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.Registration.Models.TimeTrackingItem.SaveFavouriteRequestModel": {
+      "type": "object",
+      "properties": {
+        "ReferenceID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "GroupType": {
+          "format": "int32",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
           "type": "integer"
         }
       }
@@ -19079,7 +21170,8 @@
           "enum": [
             1,
             4,
-            9
+            9,
+            12
           ],
           "type": "integer"
         },
@@ -19172,6 +21264,10 @@
           "description": "Gets or sets a value indicating whether [rounding of billable time].",
           "type": "boolean"
         },
+        "IsMLEActive": {
+          "description": "Gets or sets a value indicating whether MLE is active.",
+          "type": "boolean"
+        },
         "Privileges": {
           "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Common.Models.UserSetting.PrivilegeApiReadModel",
           "description": "Gets or sets the privileges."
@@ -19237,6 +21333,42 @@
         "UseTimeRegistrationFinancialDataService": {
           "description": "Gets or sets value indicating the time registration financial data service is enabled",
           "type": "boolean"
+        },
+        "TimeRegistrationTimestamp": {
+          "description": "Gets or sets value indicating whether timestamps is enabled",
+          "type": "boolean"
+        },
+        "ShowWarningWhenTimestampOverlap": {
+          "description": "Gets or sets a value indicating whether a warning message should be displayed when there is an overlap in the timestamps",
+          "type": "boolean"
+        },
+        "TimeTrackingWarning": {
+          "format": "int32",
+          "enum": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        },
+        "ApprovalFlows": {
+          "type": "boolean"
+        },
+        "ProjectManagerApproval": {
+          "type": "boolean"
+        },
+        "EnhancedTimesheetApprovals": {
+          "type": "boolean"
+        },
+        "CommentIsMandatory": {
+          "description": "Time tracking comment setting",
+          "type": "boolean"
+        },
+        "ShowExpenseCurrency": {
+          "description": "Gets or sets the value for showing the currency dropdown or not.",
+          "type": "boolean"
         }
       }
     },
@@ -19267,6 +21399,254 @@
     }
   },
   "tags": [
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.ProjectManagement.Controllers.PaymentController[PaymentController]",
+      "description": "Service for handling payment in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.ProjectManagement.Controllers.ContractHourlyRateController[ContractHourlyRateController]",
+      "description": "Service for handling hourly rates in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.ProjectManagement.Controllers.ProjectController[ProjectController]",
+      "description": "Service for handling project in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.ProjectManagement.Controllers.ProjectSubContractController[ProjectSubContractController]",
+      "description": "Service for handling contracts in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.ProjectManagement.Controllers.TaskController[TaskController]",
+      "description": "Service for handling task in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.CRM.Controllers.ContactPersonController[ContactPersonController]",
+      "description": "Service for creating PaymentTerms in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.CRM.Controllers.CustomerController[CustomerController]",
+      "description": "Service for handling customer in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.CRM.Controllers.CustomerStatusController[CustomerStatusController]",
+      "description": "Service for handling customer in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.CRM.Controllers.PaymentTermController[PaymentTermController]",
+      "description": "Service for creating PaymentTerms in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.CRM.Controllers.IndustryCodeController[IndustryCodeController]",
+      "description": "Service for creating industries in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ProductNumber.Controllers.ProductNumberController[ProductNumberController]",
+      "description": "Service for handling task types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.TaskType.Controllers.TaskTypeController[TaskTypeController]",
+      "description": "Service for handling task types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ProjectType.Controllers.ProjectTypeController[ProjectTypeController]",
+      "description": "Service for handling project types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ProjectStage.Controllers.ProjectStageController[ProjectStageController]",
+      "description": "Service for handling project stages in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ProjectCategory.Controllers.ProjectCategoryController[ProjectCategoryController]",
+      "description": "Service for handling project categories in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.ProjectManagement.ContractType.Controllers.ContractTypeController[ContractTypeController]",
+      "description": "Service for handling contract types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Settings.Controllers.ApplicationValueController[ApplicationValueController]",
+      "description": "Service for handling ApplicationValues in TimeLog using the raw API."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Settings.Controllers.FeatureController[FeatureController]",
+      "description": "Service for handling features in TimeLog using the raw API."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Settings.Controllers.SettingController[SettingController]",
+      "description": "Service for handling settings in TimeLog using the raw API."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Organisation.Controllers.DepartmentController[DepartmentController]",
+      "description": "Service for handling departments in TimeLog using the raw API."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.Organisation.Controllers.LegalEntityController[LegalEntityController]",
+      "description": "Service for handling legal entities in TimeLog using the raw API."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.System.Controllers.SystemController[SystemController]",
+      "description": "Service for handling System in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.AllowanceRate.Controllers.AllowanceRateController[AllowanceRateController]",
+      "description": "Service for handling allowance legislation in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.CostPrice.Controllers.CostPriceController[CostPriceController]",
+      "description": "Service for handling cost price in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.EmployeeType.Controllers.EmployeeTypeController[EmployeeTypeController]",
+      "description": "Service for handling employee types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HolidayCalendar.Controllers.HolidayController[HolidayController]",
+      "description": "Service for handling holiday  in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HolidayCalendar.Controllers.HolidayCalendarController[HolidayCalendarController]",
+      "description": "Service for handling holiday calendar in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HourlyRates.Controllers.HourlyRateCurrencyController[HourlyRateCurrencyController]",
+      "description": "Service for handling hourly rates in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HourlyRates.Controllers.HourlyRatePriceListController[HourlyRatePriceListController]",
+      "description": "Service for handling hourly rates in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HourlyRates.Controllers.HourlyRateServiceController[HourlyRateServiceController]",
+      "description": "Service for handling hourly rates in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.HourlyRates.Controllers.HourlyRateController[HourlyRateController]",
+      "description": "Service for handling hourly rates in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.NormalWorkingTime.Controllers.NormalWorkingTimeController[NormalWorkingTimeController]",
+      "description": "Service for handling normal working time in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.AbsenceCodeTypeController[AbsenceCodeTypeController]",
+      "description": "Raw API service for handling absence code type in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.AbsenceCodeController[AbsenceCodeController]",
+      "description": "Service for handling absence code in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.SalaryGroupController[SalaryGroupController]",
+      "description": "Raw API service for handling salary group in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.SalaryCodeController[SalaryCodeController]",
+      "description": "Service for handling salary code in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.SalaryAccountController[SalaryAccountController]",
+      "description": "Raw API service for handling salary account in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.SystemAdministration.User.Salary.Controllers.SalaryAccountTypeController[SalaryAccountTypeController]",
+      "description": "Raw API service for handling salary account type in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.TimeRegistration.Controllers.TimeRegistrationController[TimeRegistrationController]",
+      "description": "Service for handling time registration in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.VRaw.User.Controllers.UserController[UserController]",
+      "description": "Service for handling user in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.CRM.Controllers.ContactPersonController[ContactPersonController]",
+      "description": "Service for handling contact persons in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.CRM.Controllers.IndustryController[IndustryController]",
+      "description": "Service for handling industries in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.CRM.Controllers.CustomerStatusController[CustomerStatusController]",
+      "description": "Service for handling customer in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.CRM.Controllers.CustomerController[CustomerController]",
+      "description": "Service for handling customer in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Adapters.ContactAdapter[ContactAdapter]",
+      "description": "The contact adapter."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectExternalKeysController[ProjectExternalKeysController]",
+      "description": "Service for handling project external keys in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskExternalKeysController[TaskExternalKeysController]",
+      "description": "Service for handling task external keys in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.PaymentController[PaymentController]",
+      "description": "Service for handling payments in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectTemplateController[ProjectTemplateController]",
+      "description": "Service for handling project templates in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectSubContractController[ProjectSubContractController]",
+      "description": "Service for handling contracts in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.AllocationController[AllocationController]",
+      "description": "Service for handling allocations in TimeLog"
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskTypeController[TaskTypeController]",
+      "description": "Service for handling task types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectTypeController[ProjectTypeController]",
+      "description": "Service for handling project types in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectCategoryController[ProjectCategoryController]",
+      "description": "Service for handling project categories in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ContractModelController[ContractModelController]",
+      "description": "Service for handling contract models in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectHeaderController[ProjectHeaderController]",
+      "description": "Service for handling project header in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskController[TaskController]",
+      "description": "Service for handling task in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectController[ProjectController]",
+      "description": "Service for handling project in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.ClosePeriodValidationNotificationPanelController[ClosePeriodValidationNotificationPanelController]",
+      "description": ""
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeRegistrationServiceController[TimeRegistrationServiceController]",
+      "description": "Service for handling time registration service requests in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeTrackingItemController[TimeTrackingItemController]",
+      "description": "Service for handling time tracking item in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V1.Settings.Controllers.BarrierController[BarrierController]",
+      "description": "Service for handling barrier in TimeLog."
+    },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Employees.Controllers.CostSchedulingServiceController[CostSchedulingServiceController]",
       "description": "Service for handling time registration service requests in TimeLog."
@@ -19356,58 +21736,6 @@
       "description": "Service for handling time tracker in TimeLog."
     },
     {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectExternalKeysController[ProjectExternalKeysController]",
-      "description": "Service for handling project external keys in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskExternalKeysController[TaskExternalKeysController]",
-      "description": "Service for handling task external keys in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.PaymentController[PaymentController]",
-      "description": "Service for handling payments in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectTemplateController[ProjectTemplateController]",
-      "description": "Service for handling project templates in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectSubContractController[ProjectSubContractController]",
-      "description": "Service for handling contracts in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.AllocationController[AllocationController]",
-      "description": "Service for handling allocations in TimeLog"
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskTypeController[TaskTypeController]",
-      "description": "Service for handling task types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectTypeController[ProjectTypeController]",
-      "description": "Service for handling project types in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectCategoryController[ProjectCategoryController]",
-      "description": "Service for handling project categories in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ContractModelController[ContractModelController]",
-      "description": "Service for handling contract models in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectHeaderController[ProjectHeaderController]",
-      "description": "Service for handling project header in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.TaskController[TaskController]",
-      "description": "Service for handling task in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Controllers.ProjectController[ProjectController]",
-      "description": "Service for handling project in TimeLog."
-    },
-    {
       "name": "TimeLog.TLP.Web.WebApi.V1.Common.Controllers.UnitTypeController[UnitTypeController]",
       "description": "Service for handling unit types in TimeLog."
     },
@@ -19422,18 +21750,6 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Common.Controllers.UserSettingController[UserSettingController]",
       "description": "Service for handling user settings in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.CRM.Controllers.IndustryController[IndustryController]",
-      "description": "Service for handling industries in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.CRM.Controllers.CustomerStatusController[CustomerStatusController]",
-      "description": "Service for handling customer in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.CRM.Controllers.CustomerController[CustomerController]",
-      "description": "Service for handling customer in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V1.Expenses.Controllers.ProductController[ProductController]",
@@ -19484,24 +21800,24 @@
       "description": "Service for handling user in TimeLog."
     },
     {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeRegistrationServiceController[TimeRegistrationServiceController]",
-      "description": "Service for handling time registration service requests in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Registration.Controllers.TimeTrackingItemController[TimeTrackingItemController]",
-      "description": "Service for handling time tracking item in TimeLog."
-    },
-    {
       "name": "TimeLog.TLP.Web.WebApi.V1.Index.Controllers.IndexController[IndexController]",
       "description": "Service for handling index in TimeLog."
     },
     {
-      "name": "TimeLog.TLP.Web.WebApi.V1.Settings.Controllers.BarrierController[BarrierController]",
-      "description": "Service for handling barrier in TimeLog."
-    },
-    {
       "name": "TimeLog.TLP.Web.WebApi.V2.Employee.Controllers.ResourcePlannerController[ResourcePlannerController]",
       "description": "Service for handling bookings in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V2.Expenses.Controllers.EmployeeExpenseController[EmployeeExpenseController]",
+      "description": "Service for handling employee expense in TimeLog."
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V2.Reporting.Controllers.InsightsServiceWidgetDataController[InsightsServiceWidgetDataController]",
+      "description": "This controller is only a intermediate controller to make it possible for the react frontend to retrieve data from the TimeLog.Insights service. \r\n            Until a solution for inter service connections are possible we will have to go through TLP.\r\n            OBS: Do NOT use this controller for any other purpose than the widget data from the TimeLog.Insights!"
+    },
+    {
+      "name": "TimeLog.TLP.Web.WebApi.V2.TimeRegistration.Controllers.TimeTrackerController[TimeTrackerController]",
+      "description": "Service for handling time tracker in TimeLog."
     },
     {
       "name": "TimeLog.TLP.Web.WebApi.V2.Index.Controllers.IndexController[IndexController]",
@@ -19510,10 +21826,6 @@
     {
       "name": "TimeLog.TLP.Web.WebApi.V2.Organization.Controllers.UsersController[UsersController]",
       "description": "Service for handling user in TimeLog."
-    },
-    {
-      "name": "TimeLog.TLP.Web.WebApi.V2.TimeRegistration.Controllers.TimeTrackerController[TimeTrackerController]",
-      "description": "Service for handling time tracker in TimeLog."
     }
   ]
 }
