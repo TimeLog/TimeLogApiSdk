@@ -30,5 +30,8 @@
 	    <tlp:LegalEntityID>1</tlp:LegalEntityID>
 	    <tlp:ApprovalManagerUserID>1</tlp:ApprovalManagerUserID>
 	    <tlp:ApprovalManagerEmployeeID>16</tlp:ApprovalManagerEmployeeID>
+		<tlp:DefaultHourlyRateID>64</tlp:DefaultHourlyRateID>
+		<tlp:DefaultHourlyRate>1500.0000</tlp:DefaultHourlyRate>
+		<tlp:DefaultHourlyRateCurrency>DKK</tlp:DefaultHourlyRateCurrency>
 	</tlp:Employee>
 </tlp:Employees>
