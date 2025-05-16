@@ -3079,6 +3079,14 @@
             <param name="token"></param>
             <returns></returns>
         </member>
+        <member name="M:TimeLog.TLP.API.Proxy.Organisation.V1_9.IOrganisationService.AssignTimeExpenseLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            Assigns an employee to a time and expense registration license type
+            </summary>
+            <param name="employeeGuid"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
         <member name="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.LegalEntity">
             <summary>
             Represents a department in TimeLog

@@ -13,7 +13,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBase", Namespace="http://www.timelog.com/api/tlp/v1_2")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.OrganisationService.LegalEntity))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.OrganisationService.EmployeeHeader))]
@@ -37,7 +37,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="LegalEntity", Namespace="http://www.timelog.com/api/tlp/v1_9")]
     public partial class LegalEntity : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -149,7 +149,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeHeader", Namespace="http://www.timelog.com/api/tlp/v1_9")]
     public partial class EmployeeHeader : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -276,7 +276,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Role", Namespace="http://www.timelog.com/api/tlp/v1_9")]
     public partial class Role : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -388,7 +388,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ModuleType", Namespace="http://www.timelog.com/api/tlp/v1_9")]
     public partial class ModuleType : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -425,7 +425,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfLegalEntity", Namespace="http://api.timelog.com")]
     public partial class ResponseOfLegalEntity : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -552,7 +552,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Request", Namespace="http://api.timelog.com")]
     public partial class Request : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -604,7 +604,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfEmployee", Namespace="http://api.timelog.com")]
     public partial class ResponseOfEmployee : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -731,7 +731,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIBaseExtended", Namespace="http://api.timelog.com")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.OrganisationService.ExternalSystemContext))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.OrganisationService.Department))]
@@ -816,7 +816,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomField", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.OrganisationService.SecurityToken))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase))]
@@ -1010,7 +1010,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ExternalSystemContext", Namespace="http://api.timelog.com")]
     public partial class ExternalSystemContext : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBaseExtended
     {
@@ -1047,7 +1047,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Department", Namespace="http://www.timelog.com/api/tlp/v1_9")]
     public partial class Department : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBaseExtended
     {
@@ -1144,7 +1144,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Employee", Namespace="http://www.timelog.com/api/tlp/v1_9")]
     public partial class Employee : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBaseExtended
     {
@@ -1586,7 +1586,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfEmployeeHeader", Namespace="http://api.timelog.com")]
     public partial class ResponseOfEmployeeHeader : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -1713,7 +1713,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfDepartment", Namespace="http://api.timelog.com")]
     public partial class ResponseOfDepartment : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -1840,7 +1840,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfRole", Namespace="http://api.timelog.com")]
     public partial class ResponseOfRole : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -1967,7 +1967,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ResponseOfModuleType", Namespace="http://api.timelog.com")]
     public partial class ResponseOfModuleType : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -2094,7 +2094,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SecurityToken", Namespace="http://www.timelog.com/api/tlp/v1_3")]
     public partial class SecurityToken : TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase
     {
@@ -2145,7 +2145,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ExecutionStatus", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common")]
     public enum ExecutionStatus : int
     {
@@ -2164,7 +2164,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIMessage", Namespace="http://api.timelog.com")]
     public partial class APIMessage : object
     {
@@ -2216,7 +2216,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="RequestParameter", Namespace="http://api.timelog.com")]
     public partial class RequestParameter : object
     {
@@ -2252,7 +2252,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="APIMessageSeverity", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.API.Proxy.Communication.V1_0")]
     public enum APIMessageSeverity : int
     {
@@ -2267,7 +2267,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         Message = 2,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DataAction", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Attributes")]
     public enum DataAction : int
     {
@@ -2291,7 +2291,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         Undefined = 99,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DomainType", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.Common")]
     public enum DomainType : int
     {
@@ -3065,11 +3065,38 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         Office = 260,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
+        Competence = 261,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CompetenceGroup = 262,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CompetenceValue = 263,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NumberSeries = 264,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FilterView = 265,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FilterValue = 266,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TravelUnit = 267,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProjectStage = 268,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InvoicingFee = 269,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
         NotSpecified = 0,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ValueOption", Namespace="http://api.timelog.com/services/customfield/1_0")]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.OrganisationService.SecurityToken))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TimeLog.TransactionalAPI.SDK.OrganisationService.APIBase))]
@@ -3157,7 +3184,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DataTypeEnum", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields")]
     public enum DataTypeEnum : int
     {
@@ -3181,7 +3208,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         CheckBox = 5,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ValidateModelEnum", Namespace="http://schemas.datacontract.org/2004/07/TimeLog.TLP.CustomFields")]
     public enum ValidateModelEnum : int
     {
@@ -3205,7 +3232,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         IsNotNull = 5,
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.timelog.com/api/tlp/v1_9", ConfigurationName="TimeLog.TransactionalAPI.SDK.OrganisationService.OrganisationService")]
     public interface OrganisationService
     {
@@ -3499,6 +3526,16 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
             "ToEmployeeResponse")]
         System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignAdvancedLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalAPI.SDK.OrganisationService.SecurityToken token);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_9/OrganisationService/AssignTimeExpenseLicenseT" +
+            "ypeToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_9/OrganisationService/AssignTimeExpenseLicenseT" +
+            "ypeToEmployeeResponse")]
+        TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfEmployeeHeader AssignTimeExpenseLicenseTypeToEmployee(System.Guid employeeGuid, TimeLog.TransactionalAPI.SDK.OrganisationService.SecurityToken token);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_9/OrganisationService/AssignTimeExpenseLicenseT" +
+            "ypeToEmployee", ReplyAction="http://www.timelog.com/api/tlp/v1_9/OrganisationService/AssignTimeExpenseLicenseT" +
+            "ypeToEmployeeResponse")]
+        System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignTimeExpenseLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalAPI.SDK.OrganisationService.SecurityToken token);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/api/tlp/v1_9/OrganisationService/GetEmployeesModifiedInPer" +
             "iodPaged", ReplyAction="http://www.timelog.com/api/tlp/v1_9/OrganisationService/GetEmployeesModifiedInPer" +
             "iodPagedResponse")]
@@ -3521,7 +3558,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="IsAlive", WrapperNamespace="http://www.timelog.com/api/tlp/v1_3", IsWrapped=true)]
     public partial class IsAliveRequest
@@ -3533,7 +3570,7 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="IsAliveResponse", WrapperNamespace="http://www.timelog.com/api/tlp/v1_3", IsWrapped=true)]
     public partial class IsAliveResponse
@@ -3552,13 +3589,13 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     public interface OrganisationServiceChannel : TimeLog.TransactionalAPI.SDK.OrganisationService.OrganisationService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
     public partial class OrganisationServiceClient : System.ServiceModel.ClientBase<TimeLog.TransactionalAPI.SDK.OrganisationService.OrganisationService>, TimeLog.TransactionalAPI.SDK.OrganisationService.OrganisationService
     {
         
@@ -3969,6 +4006,16 @@ namespace TimeLog.TransactionalAPI.SDK.OrganisationService
         public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignAdvancedLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalAPI.SDK.OrganisationService.SecurityToken token)
         {
             return base.Channel.AssignAdvancedLicenseTypeToEmployeeAsync(employeeGuid, token);
+        }
+        
+        public TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfEmployeeHeader AssignTimeExpenseLicenseTypeToEmployee(System.Guid employeeGuid, TimeLog.TransactionalAPI.SDK.OrganisationService.SecurityToken token)
+        {
+            return base.Channel.AssignTimeExpenseLicenseTypeToEmployee(employeeGuid, token);
+        }
+        
+        public System.Threading.Tasks.Task<TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfEmployeeHeader> AssignTimeExpenseLicenseTypeToEmployeeAsync(System.Guid employeeGuid, TimeLog.TransactionalAPI.SDK.OrganisationService.SecurityToken token)
+        {
+            return base.Channel.AssignTimeExpenseLicenseTypeToEmployeeAsync(employeeGuid, token);
         }
         
         public TimeLog.TransactionalAPI.SDK.OrganisationService.ResponseOfEmployee GetEmployeesModifiedInPeriodPaged(System.DateTime startDate, System.DateTime endDate, int page, int pageSize, TimeLog.TransactionalAPI.SDK.OrganisationService.SecurityToken token)
