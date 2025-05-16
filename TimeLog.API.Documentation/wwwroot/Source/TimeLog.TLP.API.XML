@@ -5696,6 +5696,15 @@
             <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader"/>
             <returns>An employee header object</returns>
         </member>
+        <member name="M:TimeLog.TLP.API.Organisation.V1_9.OrganisationService.AssignTimeExpenseLicenseTypeToEmployee(System.Guid,TimeLog.TLP.API.Proxy.Security.V1_3.SecurityToken)">
+            <summary>
+            assigns time and expense registration license type to an employee
+            </summary>
+            <param name="employeeGuid">Employee unique identifier (Guid)</param>
+            <param name="token">Security token associated with the request (SecurityToken)</param>
+            <see cref="T:TimeLog.TLP.API.Proxy.Organisation.V1_9.EmployeeHeader"/>
+            <returns>An employee header object</returns>
+        </member>
         <member name="T:TimeLog.TLP.API.Organisation.V1_9.OrganisationServiceSecure">
             <summary>
             Exposes methods needed to handle organizational data through the API.
