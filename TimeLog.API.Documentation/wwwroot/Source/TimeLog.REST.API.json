@@ -3715,6 +3715,14 @@
             "format": "date-time"
           },
           {
+            "name": "includeAllEmployees",
+            "in": "query",
+            "description": "If need to see all employees other than current user",
+            "required": false,
+            "type": "boolean",
+            "default": false
+          },
+          {
             "name": "version",
             "in": "path",
             "description": "The requested API version",
