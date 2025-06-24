@@ -18,6 +18,8 @@
   <tlp:CustomerId>668</tlp:CustomerId>
   <tlp:CustomerName>TimeLog</tlp:CustomerName>
   <tlp:Date>2020-04-17T00:00:00</tlp:Date>
+  <tlp:StartTime>2020-04-17T12:28:00</tlp:StartTime>
+  <tlp:EndTime>2020-04-17T14:28:00</tlp:EndTime>
   <tlp:Note>Meeting</tlp:Note>
   <tlp:AdditionalTextField> </tlp:AdditionalTextField>
   <tlp:ActualExchangeRate>100.0000</tlp:ActualExchangeRate>
@@ -45,6 +47,7 @@
   <tlp:InvAmount>0.0000</tlp:InvAmount>
   <tlp:CostAmount>1100.0000</tlp:CostAmount>
   <tlp:CostAmountCurrency>1100.0000</tlp:CostAmountCurrency>
+  <tlp:HourlyRateId>500008</tlp:HourlyRateId>
   <tlp:InvoiceStatus>0</tlp:InvoiceStatus>
   <tlp:BillableStatus>1</tlp:BillableStatus>
   <tlp:IsBillable>1</tlp:IsBillable>
