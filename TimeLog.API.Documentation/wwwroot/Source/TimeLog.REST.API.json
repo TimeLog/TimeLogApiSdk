@@ -8650,6 +8650,114 @@
         ]
       }
     },
+    "/v{version}/task/filter": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Get filtered list of extended task information",
+        "operationId": "GetAllByFilter",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "query",
+            "description": "Filter by project ID",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "taskId",
+            "in": "query",
+            "description": "Filter by task ID",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "taskGuid",
+            "in": "query",
+            "description": "Filter by task GUID",
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "isActive",
+            "in": "query",
+            "description": "Filter by active status",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "taskStatus",
+            "in": "query",
+            "description": "Filter by task status (0=NotSet, 1=New, 2=InProgress, etc.)",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "isBillable",
+            "in": "query",
+            "description": "Filter by billable status",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Filter by start date (inclusive)",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "Filter by end date (inclusive)",
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieve a list of task success"
+          },
+          "500": {
+            "description": "Failed to retrieve the list of task",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/task": {
       "get": {
         "tags": [
