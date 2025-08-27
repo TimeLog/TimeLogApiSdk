@@ -2555,6 +2555,65 @@
         ]
       }
     },
+    "/v{version}/customer/by-number/{customerNumber}": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get customers with the customer number",
+        "operationId": "Customer_GetByCustomerNumber",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "customerNumber",
+            "in": "path",
+            "description": "Customer number",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer details",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+              }
+            }
+          },
+          "500": {
+            "description": "Request to GetByCustomerNumber has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/customer/search-for-time-tracking": {
       "get": {
         "tags": [
@@ -2730,6 +2789,68 @@
           },
           "500": {
             "description": "Request to SearchForExpenseTravelRegistrationOrderByRecentRegistration has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
+    "/v{version}/customer/update": {
+      "put": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Update existing customer",
+        "operationId": "Customer_Update",
+        "consumes": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "customer",
+            "in": "body",
+            "description": "Update customer information",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiUpdateModel"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Customer updated successfully",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Customer could not be updated",
             "schema": {
               "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
             }
@@ -13998,6 +14119,152 @@
         },
         "OrganizationNo": {
           "description": "Gets or sets the organization no.",
+          "type": "string"
+        }
+      }
+    },
+    "TimeLog.TLP.Web.WebApi.V1.CRM.Models.Customer.CustomerApiUpdateModel": {
+      "type": "object",
+      "properties": {
+        "CustomerID": {
+          "format": "int32",
+          "description": "Gets or sets the customer identifier (required for update)",
+          "type": "integer"
+        },
+        "Name": {
+          "description": "Gets or sets the Name",
+          "type": "string"
+        },
+        "CustomerNo": {
+          "description": "Gets or sets the Customer no.",
+          "type": "string"
+        },
+        "CurrencyID": {
+          "format": "int32",
+          "description": "Gets or sets the Currency ID",
+          "type": "integer"
+        },
+        "CustomerStatusID": {
+          "format": "int32",
+          "description": "Gets or sets the Customer status ID",
+          "type": "integer"
+        },
+        "NickName": {
+          "description": "Gets or sets the Nick name",
+          "type": "string"
+        },
+        "CountryID": {
+          "format": "int32",
+          "description": "Gets or sets the customer address country",
+          "type": "integer"
+        },
+        "CustomerSince": {
+          "format": "date-time",
+          "description": "Gets or sets the date the customer started",
+          "type": "string"
+        },
+        "OrganizationNo": {
+          "description": "Gets or sets the organization no",
+          "type": "string"
+        },
+        "PrimaryKAMID": {
+          "format": "int32",
+          "description": "Gets or sets the user name of the Primary KAM",
+          "type": "integer"
+        },
+        "SecondaryKAMID": {
+          "format": "int32",
+          "description": "Gets or sets the ID of the Secondary KAM",
+          "type": "integer"
+        },
+        "IndustryID": {
+          "format": "int32",
+          "description": "Gets or sets the Industry ID",
+          "type": "integer"
+        },
+        "Phone": {
+          "description": "Gets or sets the phone number",
+          "type": "string"
+        },
+        "Fax": {
+          "description": "Gets or sets the fax number",
+          "type": "string"
+        },
+        "Email": {
+          "description": "Gets or sets the email",
+          "type": "string"
+        },
+        "Website": {
+          "description": "Gets or sets the customers website",
+          "type": "string"
+        },
+        "Address": {
+          "description": "Gets or sets the customer address",
+          "type": "string"
+        },
+        "Address2": {
+          "description": "Gets or sets the customer address line 2",
+          "type": "string"
+        },
+        "Address3": {
+          "description": "Gets or sets the customer address line 3",
+          "type": "string"
+        },
+        "ZipCode": {
+          "description": "Gets or sets the customer address zip code",
+          "type": "string"
+        },
+        "City": {
+          "description": "Gets or sets the customer address city",
+          "type": "string"
+        },
+        "State": {
+          "description": "Gets or sets the customer address state",
+          "type": "string"
+        },
+        "VatNo": {
+          "description": "Gets or sets the VAT no",
+          "type": "string"
+        },
+        "UseInvoicingAddress": {
+          "description": "Gets or sets if customer have separate invoicing address",
+          "type": "boolean"
+        },
+        "InvoicingName": {
+          "description": "Gets or sets the customer invoicing name",
+          "type": "string"
+        },
+        "InvoicingAddress": {
+          "description": "Gets or sets the customer invoicing address",
+          "type": "string"
+        },
+        "InvoicingAddress2": {
+          "description": "Gets or sets the customer invoicing address line 2",
+          "type": "string"
+        },
+        "InvoicingAddress3": {
+          "description": "Gets or sets the customer invoicing address line 3",
+          "type": "string"
+        },
+        "InvoicingAddressZipCode": {
+          "description": "Gets or sets the customer invoicing address zip code",
+          "type": "string"
+        },
+        "InvoicingAddressCity": {
+          "description": "Gets or sets the customer invoicing address city",
+          "type": "string"
+        },
+        "InvoicingAddressState": {
+          "description": "Gets or sets the customer invoicing address state",
+          "type": "string"
+        },
+        "InvoicingAddressCountryID": {
+          "format": "int32",
+          "description": "Gets or sets the customer invoicing address country",
+          "type": "integer"
+        },
+        "CreditorID": {
+          "description": "Gets or sets the creditor ID",
           "type": "string"
         }
       }
