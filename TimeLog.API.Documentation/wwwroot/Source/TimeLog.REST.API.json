@@ -3996,6 +3996,76 @@
         ]
       }
     },
+    "/v{version}/expense-type/all/list": {
+      "get": {
+        "tags": [
+          "ExpenseType"
+        ],
+        "summary": "Get a list of expense type by status (all, inactive, active)",
+        "operationId": "ExpenseType_GetAll",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/problem+json"
+        ],
+        "parameters": [
+          {
+            "name": "legalEntityId",
+            "in": "query",
+            "description": "legal entity",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "An enum of ActiveStatus, can be all(-1), inactive(0) or active(1)",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "enum": [
+              0,
+              1,
+              -1
+            ]
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "The requested API version",
+            "required": true,
+            "type": "string",
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of expense type",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.Expenses.Models.ExpenseType.ExpenseTypeExtendedApiReadModel"
+            }
+          },
+          "500": {
+            "description": "Request to GetAll has failed",
+            "schema": {
+              "$ref": "#/definitions/TimeLog.TLP.Web.Infrastructure.WebApi.Common.ResponseError"
+            }
+          },
+          "401": {
+            "description": "Invalid authentication token"
+          }
+        },
+        "security": [
+          {
+            "oauth2": [
+              ""
+            ]
+          }
+        ]
+      }
+    },
     "/v{version}/external-systems": {
       "get": {
         "tags": [
