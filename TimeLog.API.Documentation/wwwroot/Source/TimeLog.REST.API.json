@@ -4001,7 +4001,7 @@
         "tags": [
           "ExpenseType"
         ],
-        "summary": "Get a list of expense type by status (all, inactive, active)",
+        "summary": "Get all expense types, with optional filtering by legal entity and status",
         "operationId": "ExpenseType_GetAll",
         "consumes": [],
         "produces": [
