@@ -23,3 +23,13 @@ spec:
                 name: apidocumentationapp
                 port:
                   number: 80
+    - host: docs.timelog.com
+      http:
+        paths:
+          - path: /(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: apidocumentationapp
+                port:
+                  number: 80
