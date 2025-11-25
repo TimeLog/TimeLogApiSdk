@@ -11,6 +11,7 @@ spec:
   tls:
     - hosts:
         - api.timelog.com
+        - docs.timelog.com
       secretName: tls-secret
   rules:
     - host: api.timelog.com
