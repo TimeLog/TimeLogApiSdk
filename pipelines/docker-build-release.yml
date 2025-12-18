@@ -1,0 +1,67 @@
+trigger:
+  tags:
+    include:
+      - 'v*.*.*'
+  branches:
+    include:
+      - 'main'
+
+pr: none
+
+resources:
+- repo: self
+
+variables:
+- name: dockerRegistryServiceConnection
+  value: 'Timelog Docker Registry'
+- name: imageRepository
+  value: 'apidocumentationapp'
+- name: containerRegistry
+  value: 'timelog.azurecr.io'
+- name: vmImageName
+  value: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  displayName: 'Build and Push Docker Image'
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+
+    - task: Bash@3
+      displayName: 'Extract git tag for Docker image'
+      inputs:
+        targetType: 'inline'
+        script: |
+          if [[ "$(Build.SourceBranchName)" == "main" ]]; then
+            # Main branch build - use Build.BuildNumber with dots replaced by dashes
+            TAG_NAME=$(echo "$(Build.BuildNumber)" | sed 's/\./-/g')
+            echo "Main branch build - Docker image tag: $TAG_NAME"
+            echo "##vso[task.setvariable variable=buildNumber]$(Build.BuildNumber)"
+          else
+            # Tag build - extract version from tag name
+            TAG_NAME=$(echo "$(Build.SourceBranchName)" | sed 's/^v//')
+            echo "Tag build - Docker image tag: $TAG_NAME"
+            echo "##vso[task.setvariable variable=buildNumber]$(Build.SourceBranchName)"
+          fi
+          echo "##vso[task.setvariable variable=imageTag]$TAG_NAME"
+
+    - task: Docker@2
+      displayName: Build Docker image
+      inputs:
+        command: build
+        repository: $(imageRepository)
+        dockerfile: '**/Dockerfile'
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: $(imageTag)
+
+    - task: Docker@2
+      displayName: Push to timelog.azurecr.io
+      inputs:
+        command: push
+        repository: $(imageRepository)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: $(imageTag)
