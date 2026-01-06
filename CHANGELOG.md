@@ -58,4 +58,4 @@ Update below when *actual* new versions appear.
 -->
 
 [unreleased]: https://github.com/TimeLog/TimeLogApiSdk/compare/v1.0.0...master
-[1.0.0]: https://github.com/TimeLog/TimeLogApiSdk/commit/v1.0.0
+[1.0.0]: https://github.com/TimeLog/TimeLogApiSdk/releases/tag/v1.0.0
