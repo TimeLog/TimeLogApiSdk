@@ -28,6 +28,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 12-02-2026
+
+### Added
+
+- Added email to the User Get APIs response
+
 ## [1.0.0] - 18-12-2025
 
 ### Added
@@ -57,5 +63,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Update below when *actual* new versions appear.
 -->
 
-[unreleased]: https://github.com/TimeLog/TimeLogApiSdk/compare/v1.0.0...master
+[unreleased]: https://github.com/TimeLog/TimeLogApiSdk/branchCompare?baseVersion=GTv1.0.1&targetVersion=GBmaster&_a=commits
+[1.0.1]: https://github.com/TimeLog/TimeLogApiSdk/branchCompare?baseVersion=GTv1.0.0&targetVersion=GTv1.0.1&_a=commits
 [1.0.0]: https://github.com/TimeLog/TimeLogApiSdk/releases/tag/v1.0.0
