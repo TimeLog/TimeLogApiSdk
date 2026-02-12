@@ -13646,6 +13646,10 @@
           "format": "int32",
           "description": "Gets or sets legal entity id.",
           "type": "integer"
+        },
+		    "Email": {
+          "description": "Gets or sets email.",
+          "type": "string"
         }
       }
     },
