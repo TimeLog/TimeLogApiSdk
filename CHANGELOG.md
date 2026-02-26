@@ -28,6 +28,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 26-02-2026
+
+### Removed
+- Removed old text for making GET requests obsolete in Reporting API. 
+
 ## [1.0.1] - 12-02-2026
 
 ### Added
