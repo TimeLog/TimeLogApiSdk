@@ -28,6 +28,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 09-03-2026
+
+### Added
+
+- Added new fields for license type and role IDs on user create/update endpoints.
+- Added approval manager through user update endpoint.
+
 ## [1.0.2] - 26-02-2026
 
 ### Removed
@@ -68,6 +75,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Update below when *actual* new versions appear.
 -->
 
-[unreleased]: https://github.com/TimeLog/TimeLogApiSdk/branchCompare?baseVersion=GTv1.0.1&targetVersion=GBmaster&_a=commits
+[unreleased]: https://github.com/TimeLog/TimeLogApiSdk/branchCompare?baseVersion=GTv1.0.2&targetVersion=GBmaster&_a=commits
+[1.0.2]: https://github.com/TimeLog/TimeLogApiSdk/branchCompare?baseVersion=GTv1.0.1&targetVersion=GTv1.0.2&_a=commits
 [1.0.1]: https://github.com/TimeLog/TimeLogApiSdk/branchCompare?baseVersion=GTv1.0.0&targetVersion=GTv1.0.1&_a=commits
 [1.0.0]: https://github.com/TimeLog/TimeLogApiSdk/releases/tag/v1.0.0

@@ -13647,7 +13647,7 @@
           "description": "Gets or sets legal entity id.",
           "type": "integer"
         },
-		    "Email": {
+        "Email": {
           "description": "Gets or sets email.",
           "type": "string"
         }
@@ -21515,6 +21515,33 @@
         "LastName": {
           "description": "Gets or sets the last name.",
           "type": "string"
+        },
+        "ApprovalManagerInitials": {
+          "description": "Gets or sets the approval manager initials.",
+          "type": "string"
+        },
+        "ApprovalManagerStartDate": {
+          "format": "date-time",
+          "description": "Gets or sets the effective start date for the approval manager.",
+          "type": "string"
+        },
+        "UserLicenseType": {
+          "format": "int32",
+          "description": "Gets or sets the user license type.\r\nSupported types are: Standard = 2, Limited = 7, and TimeExpense = 8.\r\nLimited (7) and TimeExpense (8) are only available if the customer subscription supports it.\r\nIf not provided, the existing license type will be preserved.",
+          "enum": [
+            2,
+            7,
+            8
+          ],
+          "type": "integer"
+        },
+        "UserRoleIDs": {
+          "description": "Gets or sets the active roles on the user.\r\nOnly applicable for Standard license type.\r\nIf not provided or empty, the existing roles will be preserved.\r\nIf provided with values, the specified roles will be added to the existing roles on the user, and UserLicenseType must be explicitly set to Standard (2).\r\nThis is required even if the user is already a Standard user, to confirm the license type before role changes.",
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          }
         }
       }
     },
@@ -21602,6 +21629,16 @@
         "SalaryGroupID": {
           "format": "int32",
           "description": "Gets or sets the salary group id.",
+          "type": "integer"
+        },
+        "UserLicenseType": {
+          "format": "int32",
+          "description": "Gets or sets the user license type.\r\nSupported types are: Standard = 2, Limited = 7, and TimeExpense = 8.\r\nLimited (7) and TimeExpense (8) are only available if the customer subscription supports it.\r\nDefault is Standard (2).",
+          "enum": [
+            2,
+            7,
+            8
+          ],
           "type": "integer"
         },
         "UserRoleIDs": {
