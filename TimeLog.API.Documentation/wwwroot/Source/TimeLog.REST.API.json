@@ -16855,13 +16855,23 @@
         },
         "BudgetWorkHours": {
           "format": "double",
-          "description": "Gets or sets the bugget work hours",
+          "description": "Gets or sets the budgeted work hours",
           "type": "number"
         },
         "BudgetWorkAmount": {
           "format": "double",
-          "description": "Gets or sets the bugget work amount",
+          "description": "Gets or sets the budgeted work amount",
           "type": "number"
+        },
+         "StartDate": {
+          "format": "date-time",
+          "description": "Gets or sets the project start date",
+          "type": "string"
+        },
+         "EndDate": {
+          "format": "date-time",
+          "description": "Gets or sets the project end date",
+          "type": "string"
         }
       }
     },
