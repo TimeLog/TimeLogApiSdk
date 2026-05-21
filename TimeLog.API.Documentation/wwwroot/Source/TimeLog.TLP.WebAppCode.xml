@@ -398,6 +398,22 @@ TimeLog.TLP.WebAppCode
  <param name="endDate">Limits result to invoices with invoice date on or prior to this date</param>
  <returns>A list of invoice line objects in XML format</returns>
 </member>
+<member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoiceLinesRawWithHeader(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String,System.Boolean)">
+ <summary>
+ Gets a list of invoice lines and optionally includes headers depending on the parameters provided
+ </summary>
+ <param name="siteCode">Unique identification for your TimeLog account</param>
+ <param name="apiID">The API ID</param>
+ <param name="apiPassword">The API password</param>
+ <param name="invoiceLineID">ID of specific invoiceline. Set to 0 to get all invoices</param>
+ <param name="customerID">ID of specific customer. Set to 0 to get all customers</param>
+ <param name="projectID">ID of specific project. Set to 0 to get all projects</param>
+ <param name="invoiceID">ID of specific invoice. Set to 0 to get all invoices</param>
+ <param name="startDate">Limits result to invoices with invoice date on or later than this date</param>
+ <param name="endDate">Limits result to invoices with invoice date on or prior to this date</param>
+ <param name="includeHeaders">Indicates whether to include headers in the result</param>
+ <returns>A list of invoice line objects in XML format</returns>
+</member>
 <member name="M:TimeLog.TLP.WebAppCode.Service.GetInvoiceLineDetailsRaw(System.String,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.String)">
  <summary>
  Gets a list of invoice line details

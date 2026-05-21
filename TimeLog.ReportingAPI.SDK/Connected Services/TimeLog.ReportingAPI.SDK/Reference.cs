@@ -181,8 +181,15 @@ namespace TimeLog.ReportingAPI.SDK
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Xml.XmlNode GetInvoiceLinesRaw(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoiceLinesRawWithHeader", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Xml.XmlNode GetInvoiceLinesRawWithHeader(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate, bool includeHeader);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoiceLinesRaw", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoiceLinesRawAsync(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoiceLinesRawWithHeader", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoiceLinesRawWithHeaderAsync(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate, bool includeHeader);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.timelog.com/ws/tlp/v4_4/GetInvoiceLineDetailsRaw", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -720,11 +727,21 @@ namespace TimeLog.ReportingAPI.SDK
         public System.Xml.XmlNode GetInvoiceLinesRaw(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate)
         {
             return base.Channel.GetInvoiceLinesRaw(siteCode, apiID, apiPassword, invoiceLineID, customerID, projectID, invoiceID, startDate, endDate);
+        } 
+        
+        public System.Xml.XmlNode GetInvoiceLinesRawWithHeader(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate, bool includeHeader)
+        {
+            return base.Channel.GetInvoiceLinesRawWithHeader(siteCode, apiID, apiPassword, invoiceLineID, customerID, projectID, invoiceID, startDate, endDate, includeHeader);
         }
         
         public System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoiceLinesRawAsync(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate)
         {
             return base.Channel.GetInvoiceLinesRawAsync(siteCode, apiID, apiPassword, invoiceLineID, customerID, projectID, invoiceID, startDate, endDate);
+        }
+
+        public System.Threading.Tasks.Task<System.Xml.XmlNode> GetInvoiceLinesRawWithHeaderAsync(string siteCode, string apiID, string apiPassword, int invoiceLineID, int customerID, int projectID, int invoiceID, string startDate, string endDate, bool includeHeader)
+        {
+            return base.Channel.GetInvoiceLinesRawWithHeader(siteCode, apiID, apiPassword, invoiceLineID, customerID, projectID, invoiceID, startDate, endDate, includeHeader);
         }
         
         public System.Xml.XmlNode GetInvoiceLineDetailsRaw(string siteCode, string apiID, string apiPassword, int invoiceLineDetailID, int customerID, int projectID, int invoiceID, string startDate, string endDate)
