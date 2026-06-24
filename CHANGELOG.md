@@ -28,6 +28,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.4] - 24-06-2026
+
+### Added
+
+- Added new endpoint GetInvoiceLinesRawWithHeader
+
+
 ## [1.0.3] - 09-03-2026
 
 ### Added
