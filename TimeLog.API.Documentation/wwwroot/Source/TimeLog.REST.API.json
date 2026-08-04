@@ -14687,6 +14687,11 @@
           "description": "Gets or sets the project identifier.",
           "type": "integer"
         },
+        "ProjectSubContractID": {
+          "format": "int32",
+          "description": "Gets or sets the project sub contract identifier the expense is booked on.",
+          "type": "integer"
+        },
         "ImageUrls": {
           "description": "Gets or sets the image urls.\r\nDoes not contain urls for other file types",
           "type": "array",
@@ -14988,6 +14993,16 @@
         "ProjectID": {
           "format": "int32",
           "description": "Gets or sets the project identifier.",
+          "type": "integer"
+        },
+        "ProjectSubContractID": {
+          "format": "int32",
+          "description": "Gets or sets the project sub contract identifier the expense is booked on. When omitted or 0, the project's default expense contract is used. Prepaid services contracts cannot be selected.",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "description": "Gets or sets the user identifier of the employee the expense is created for. When omitted, the expense is created for the current user. Creating an expense for another user requires the same privileges as registering time on their behalf.",
           "type": "integer"
         }
       }
@@ -15994,6 +16009,11 @@
           "description": "Gets or sets the project identifier.",
           "type": "integer"
         },
+        "ProjectSubContractID": {
+          "format": "int32",
+          "description": "Gets or sets the project sub contract identifier the mileage is booked on.",
+          "type": "integer"
+        },
         "Project": {
           "$ref": "#/definitions/TimeLog.TLP.Web.WebApi.V1.ProjectManagement.Models.ProjectHeader.ProjectHeaderApiReadModel",
           "description": "Gets or sets the project."
@@ -16364,6 +16384,16 @@
         "ProjectID": {
           "format": "int32",
           "description": "Gets or sets the project identifier.",
+          "type": "integer"
+        },
+        "ProjectSubContractID": {
+          "format": "int32",
+          "description": "Gets or sets the project sub contract identifier the mileage is booked on. When omitted or 0, the project's default mileage contract is used. Prepaid services contracts cannot be selected.",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "description": "Gets or sets the user identifier of the employee the mileage registration is created for. When omitted, the mileage registration is created for the current user. Creating a mileage registration for another user requires the same privileges as registering time on their behalf.",
           "type": "integer"
         },
         "CarID": {
@@ -17725,6 +17755,16 @@
           "format": "int32",
           "description": "Gets or sets the project identifier.",
           "type": "integer"
+        },
+        "ProjectSubContractID": {
+          "format": "int32",
+          "description": "Gets or sets the project sub contract identifier the expense is booked on. When omitted or 0, the project's default expense contract is used. Prepaid services contracts cannot be selected.",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "description": "Gets or sets the user identifier of the employee the expense is created for. When omitted, the expense is created for the current user. Creating an expense for another user requires the same privileges as registering time on their behalf.",
+          "type": "integer"
         }
       }
     },
@@ -17766,6 +17806,16 @@
         "ProjectID": {
           "format": "int32",
           "description": "Gets or sets the project identifier.",
+          "type": "integer"
+        },
+        "ProjectSubContractID": {
+          "format": "int32",
+          "description": "Gets or sets the project sub contract identifier the mileage is booked on. When omitted or 0, the project's default mileage contract is used. Prepaid services contracts cannot be selected.",
+          "type": "integer"
+        },
+        "UserID": {
+          "format": "int32",
+          "description": "Gets or sets the user identifier of the employee the mileage registration is created for. When omitted, the mileage registration is created for the current user. Creating a mileage registration for another user requires the same privileges as registering time on their behalf.",
           "type": "integer"
         },
         "CarID": {
