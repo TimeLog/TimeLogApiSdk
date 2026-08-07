@@ -28,6 +28,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- REST API documentation: optional `UserID` (create on behalf of another user) and `ProjectSubContractID` (book on a specific contract) on the employee expense and mileage registration create endpoints, including the nested creates on project-header. Omitting them keeps the previous behavior (current user, default contract)
+- REST API documentation: `ProjectSubContractID` on the employee expense and mileage registration read models
+- REST API documentation: an explicitly supplied `ProjectSubContractID` must belong to the project and cannot be a prepaid services contract; violations return a business rule error
+
 ## [1.0.4] - 24-06-2026
 
 ### Added
